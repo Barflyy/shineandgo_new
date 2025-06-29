@@ -55,6 +55,12 @@ const TransformationsSection = () => {
     updateSliderPosition(e.clientX);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    updateSliderPosition(e.touches[0].clientX);
+  };
+
   const updateSliderPosition = (clientX: number) => {
     if (!sliderRef.current) return;
     
@@ -71,37 +77,51 @@ const TransformationsSection = () => {
       }
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (isDragging) {
+        updateSliderPosition(e.touches[0].clientX);
+      }
+    };
+
     const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    const handleTouchEnd = () => {
       setIsDragging(false);
     };
 
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      document.addEventListener('touchend', handleTouchEnd);
       
       return () => {
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseup', handleMouseUp);
+        document.removeEventListener('touchmove', handleTouchMove);
+        document.removeEventListener('touchend', handleTouchEnd);
       };
     }
   }, [isDragging]);
 
   return (
-    <section className="py-8 relative overflow-hidden">
+    <section className="py-8 relative overflow-hidden transformations-section">
       <div className="absolute inset-0 bg-[#0f172a]/30 backdrop-blur-xl"></div>
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 hero-title">
           Transformations Premium
         </h2>
-        <p className="text-sm sm:text-base text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
+        <p className="text-sm sm:text-base text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto hero-subtitle">
           Découvrez la magie de mes services de nettoyage premium professionnel
         </p>
         
-        <div className="max-w-lg sm:max-w-xl mx-auto relative">
-          {/* Boutons de navigation - Vraiment à l'extérieur */}
+        <div className="max-w-lg sm:max-w-xl mx-auto relative transformations-grid">
+          {/* Boutons de navigation - Optimisés pour mobile */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 sm:-translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 sm:-translate-x-12 lg:-translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Transformation précédente"
           >
             <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
@@ -109,20 +129,21 @@ const TransformationsSection = () => {
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 sm:translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-8 sm:translate-x-12 lg:translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Transformation suivante"
           >
             <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
           </button>
 
           {/* Carrousel principal */}
-          <div className="mb-4 sm:mb-6">
+          <div className="mb-4 sm:mb-6 transformation-item">
             {/* Image avec slider */}
-            <div className="relative aspect-[3/2] sm:aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] rounded-lg overflow-hidden shadow-2xl transformation-images">
               <div 
                 ref={sliderRef}
                 className="relative w-full h-full cursor-ew-resize select-none"
                 onMouseDown={handleMouseDown}
+                onTouchStart={handleTouchStart}
               >
                 {/* Image Avant (toujours visible en arrière-plan) */}
                 <div className="absolute inset-0">
@@ -130,7 +151,7 @@ const TransformationsSection = () => {
                     src={transformations[currentIndex].before}
                     alt="Avant"
                     fill
-                    className="object-contain sm:object-cover pointer-events-none"
+                    className="object-cover transformation-image"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 400px"
                   />
                 </div>
@@ -147,7 +168,7 @@ const TransformationsSection = () => {
                       src={transformations[currentIndex].after}
                       alt="Après"
                       fill
-                      className="object-contain sm:object-cover pointer-events-none"
+                      className="object-cover transformation-image"
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 400px"
                     />
                   </div>
@@ -159,12 +180,12 @@ const TransformationsSection = () => {
                   style={{ left: `${sliderPosition}%` }}
                 />
                 
-                {/* Poignée du slider */}
+                {/* Poignée du slider - Optimisée pour mobile */}
                 <div 
-                  className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-20"
+                  className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-20 min-w-[44px] min-h-[44px]"
                   style={{ left: `${sliderPosition}%` }}
                 >
-                  <div className="w-1 h-4 bg-gray-400 rounded-full" />
+                  <div className="w-1 h-4 sm:h-5 bg-gray-400 rounded-full" />
                 </div>
                 
                 {/* Indicateur de position */}
@@ -175,7 +196,7 @@ const TransformationsSection = () => {
             </div>
           </div>
 
-          {/* Indicateurs de navigation */}
+          {/* Indicateurs de navigation - Optimisés pour mobile */}
           <div className="flex justify-center gap-2 sm:gap-3">
             {transformations.map((_, index) => (
               <button
@@ -184,7 +205,7 @@ const TransformationsSection = () => {
                   setCurrentIndex(index);
                   setSliderPosition(50);
                 }}
-                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
                   currentIndex === index 
                     ? 'bg-blue-400 scale-125' 
                     : 'bg-gray-400 hover:bg-gray-300'
