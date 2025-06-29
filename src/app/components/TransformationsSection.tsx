@@ -55,16 +55,6 @@ const TransformationsSection = () => {
     updateSliderPosition(e.clientX);
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
-    if (isDragging) {
-      updateSliderPosition(e.clientX);
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
   const updateSliderPosition = (clientX: number) => {
     if (!sliderRef.current) return;
     
@@ -75,6 +65,16 @@ const TransformationsSection = () => {
   };
 
   useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        updateSliderPosition(e.clientX);
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);

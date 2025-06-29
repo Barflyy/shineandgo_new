@@ -1,472 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Car, Sparkles, Star, Phone, MessageCircle, Clock, MapPin, Shield, Droplets, ChevronRight, Menu, X, Award, Zap, Heart, CheckCircle, Users, Calendar, Plus, Minus, Info, TrendingUp, Timer } from 'lucide-react';
+import React, { useState } from 'react';
+import { Car, Sparkles, Star, Phone, MessageCircle, Clock, MapPin, Shield, ChevronRight, Award, Zap, Heart, Users, Info, TrendingUp } from 'lucide-react';
 import DevisSimulator from './components/DevisSimulator';
 import TransformationsSection from './components/TransformationsSection';
 
-// Types pour le configurateur
-type VehicleType = 'voiture' | 'camion' | 'autre';
-
-interface VehicleData {
-  price: number;
-  time: number;
-  label: string;
-  icon: string;
-}
-
-interface ServiceType {
-  id: string;
-  name: string;
-  price: number;
-  time: number;
-  description: string;
-  features: string[];
-  duration: string;
-  target: string;
-}
-
-interface ServiceData {
-  base: Record<VehicleType, VehicleData>;
-  services: ServiceType[];
-}
-
-// Mise à jour des props des composants avec les types
-interface VehicleSelectorProps {
-  selectedVehicle: VehicleType;
-  onSelect: (vehicle: VehicleType) => void;
-}
-
-interface StateSliderProps {
-  value: number;
-  onChange: (value: number) => void;
-}
-
-interface ServiceTogglerProps {
-  service: ServiceType;
-  selected: boolean;
-  onToggle: (serviceId: string) => void;
-}
-
-interface PriceCalculatorProps {
-  basePrice: number;
-  selectedServices: string[];
-  vehicleState: number;
-}
-
-// Données du configurateur
-const serviceData: ServiceData = {
-  base: {
-    voiture: { 
-      price: 0, 
-      time: 0, 
-      label: "Voiture", 
-      icon: "🚗"
-    },
-    camion: { 
-      price: 0, 
-      time: 0, 
-      label: "Camion", 
-      icon: "🚚"
-    },
-    autre: { 
-      price: 0, 
-      time: 0, 
-      label: "Autre", 
-      icon: "🚐"
-    }
-  },
-  services: [
-    { 
-      id: 'deepclean', 
-      name: 'Deep Clean', 
-      price: 150, 
-      time: 180,
-      description: "Nettoyage complet intérieur & extérieur haut de gamme",
-      features: [
-        "Prélavage et lavage à la main sans micro-rayures",
-        "Nettoyage des jantes, passages de roues et détails extérieurs",
-        "Décontamination ferreuse & goudron (carrosserie et jantes)",
-        "Aspiration complète de l'habitacle (sièges, tapis, coffre)",
-        "Nettoyage en profondeur des plastiques, grilles, joints",
-        "Détachage des tissus, moquettes ou nettoyage du cuir (Pol Star)",
-        "Finition nourrissante (Leather Star ou dressing plastiques)",
-        "Vitres intérieures/extérieures",
-        "Traitement hydrophobe carrosserie & vitres"
-      ],
-      duration: "2h30 à 3h30 selon l'état du véhicule",
-      target: "Clients exigeants, véhicules très sales ou avant une vente"
-    },
-    { 
-      id: 'maintenance', 
-      name: 'Maintenance Wash', 
-      price: 70, 
-      time: 90,
-      description: "Entretien régulier pour garder votre voiture impeccable",
-      features: [
-        "Lavage extérieur complet (prélavage + main)",
-        "Nettoyage jantes & passages de roues",
-        "Aspiration rapide intérieur (sièges, tapis, coffre)",
-        "Dépoussiérage des plastiques et surfaces visibles",
-        "Vitres intérieures/extérieures",
-        "Retouches hydrophobes si besoin"
-      ],
-      duration: "1h15 à 1h45",
-      target: "Fidélisation, entretien mensuel ou bimensuel"
-    }
-  ]
-};
-
-// Composant VehicleSelector
-const VehicleSelector: React.FC<VehicleSelectorProps> = ({ selectedVehicle, onSelect }) => {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-      {Object.entries(serviceData.base).map(([key, vehicle]) => (
-        <button
-          key={key}
-          onClick={() => onSelect(key as VehicleType)}
-          className={`group relative bg-white/5 backdrop-blur-sm border ${
-            selectedVehicle === key ? 'border-blue-400' : 'border-white/10'
-          } rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:bg-white/10 hover:scale-105`}
-        >
-          <div className="text-2xl sm:text-4xl mb-2 sm:mb-4">{vehicle.icon}</div>
-          <div className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">{vehicle.label}</div>
-          <div className="text-xs sm:text-sm text-gray-400">À partir de {vehicle.price}€</div>
-          <div className="text-xs text-gray-500 mt-1">{vehicle.time} min</div>
-          {selectedVehicle === key && (
-            <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-5 h-5 sm:w-6 sm:h-6 bg-blue-400 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-            </div>
-          )}
-        </button>
-      ))}
-    </div>
-  );
-};
-
-// Composant ServiceSelector
-const ServiceSelector: React.FC<{ selectedService: string; onSelect: (service: string) => void }> = ({ selectedService, onSelect }) => {
-  return (
-    <div className="space-y-4 sm:space-y-6">
-      {serviceData.services.map((service) => (
-        <button
-          key={service.id}
-          onClick={() => onSelect(service.id)}
-          className={`w-full group relative bg-gradient-to-br ${
-            selectedService === service.id 
-              ? 'from-blue-500/20 to-cyan-500/20 border-blue-400' 
-              : 'from-white/5 to-white/5 border-white/10'
-          } backdrop-blur-sm border rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 transition-all duration-300 hover:from-blue-500/10 hover:to-cyan-500/10`}
-        >
-          <div className="flex flex-col">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4">
-              <div className="mb-3 sm:mb-0">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2">{service.name}</h3>
-                <p className="text-sm sm:text-base text-gray-300">{service.description}</p>
-              </div>
-              <div className="text-left sm:text-right">
-                <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1">{service.price}€</div>
-                <div className="text-xs sm:text-sm text-gray-400">TTC</div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
-              <div className="space-y-2 sm:space-y-3">
-                {service.features.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-2 sm:space-x-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm text-gray-300">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-white/5 rounded-lg sm:rounded-xl p-3 sm:p-4 space-y-3 sm:space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <div className="bg-white/5 rounded-lg p-2 sm:p-3 text-center">
-                    <div className="flex items-center justify-center space-x-1 sm:space-x-2 mb-1">
-                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                      <span className="text-xs sm:text-sm font-medium">Durée</span>
-                    </div>
-                    <span className="text-xs sm:text-sm text-gray-300">{service.duration}</span>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-2 sm:p-3 text-center">
-                    <div className="flex items-center justify-center space-x-1 sm:space-x-2 mb-1">
-                      <Users className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-                      <span className="text-xs sm:text-sm font-medium">Public cible</span>
-                    </div>
-                    <span className="text-xs sm:text-sm text-gray-300">{service.target}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {selectedService === service.id && (
-              <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center shadow-lg">
-                <CheckCircle className="w-5 h-5 text-white" />
-              </div>
-            )}
-          </div>
-        </button>
-      ))}
-    </div>
-  );
-};
-
-// Composant StateSlider
-const StateSlider: React.FC<StateSliderProps> = ({ value, onChange }) => {
-  const getEmoji = (value: number): string => {
-    if (value <= 3) return "✨";
-    if (value <= 6) return "🧹";
-    if (value <= 8) return "🧼";
-    return "🚿";
-  };
-
-  return (
-    <div className="mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <div className="text-lg font-semibold">État de votre véhicule</div>
-        <div className="text-2xl">{getEmoji(value)}</div>
-      </div>
-      <input
-        type="range"
-        min="1"
-        max="10"
-        value={value}
-        onChange={(e) => onChange(parseInt(e.target.value))}
-        className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer"
-      />
-      <div className="flex justify-between text-sm text-gray-400 mt-2">
-        <span>Peu sale</span>
-        <span>Très sale</span>
-      </div>
-    </div>
-  );
-};
-
-// Composant ServiceToggler
-const ServiceToggler: React.FC<ServiceTogglerProps> = ({ service, selected, onToggle }) => {
-  return (
-    <div className="relative">
-      <div 
-        className={`group bg-white/5 backdrop-blur-sm border ${
-          selected ? 'border-blue-400' : 'border-white/10'
-        } rounded-2xl p-6 transition-all duration-300 hover:bg-white/10`}
-      >
-        <div className="flex items-start justify-between">
-          <div className="flex-1">
-            <div className="flex items-center space-x-2 mb-2">
-              <h3 className="font-semibold">{service.name}</h3>
-            </div>
-            <p className="text-sm text-gray-400 mb-4">{service.description}</p>
-            <div className="flex items-center space-x-4 text-sm">
-              <div className="flex items-center space-x-1">
-                <Timer className="w-4 h-4 text-blue-400" />
-                <span>{service.time} min</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <TrendingUp className="w-4 h-4 text-green-400" />
-                <span>+{service.price}€</span>
-              </div>
-            </div>
-          </div>
-          <button
-            onClick={() => onToggle(service.id)}
-            className={`w-12 h-6 rounded-full p-1 transition-colors duration-300 ${
-              selected ? 'bg-blue-400' : 'bg-white/20'
-            }`}
-          >
-            <div className={`w-4 h-4 bg-white rounded-full transform transition-transform duration-300 ${
-              selected ? 'translate-x-6' : ''
-            }`} />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Composant PriceCalculator
-const PriceCalculator: React.FC<PriceCalculatorProps> = ({ basePrice, selectedServices, vehicleState }) => {
-  const calculateTotal = (): number => {
-    const service = serviceData.services.find(s => s.id === selectedServices[0]);
-    return service?.price || 0;
-  };
-
-  const total = calculateTotal();
-  const selectedService = serviceData.services.find(s => s.id === selectedServices[0]);
-
-  return (
-    <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm border border-blue-400/20 rounded-2xl p-8">
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold mb-2">Votre Devis</h3>
-        <p className="text-gray-300">Prix final TTC</p>
-      </div>
-
-      <div className="space-y-6">
-        <div className="bg-white/5 rounded-xl p-4">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-gray-400">Service</span>
-            <span className="font-semibold">{selectedService?.name}</span>
-          </div>
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-gray-400">Durée</span>
-            <span className="font-semibold">{selectedService?.duration}</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-gray-400">Public cible</span>
-            <span className="font-semibold">{selectedService?.target}</span>
-          </div>
-        </div>
-
-        <div className="bg-white/5 rounded-xl p-4">
-          <div className="flex items-center justify-between">
-            <span className="text-lg font-semibold">Total</span>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-blue-400">{total}€</div>
-              <div className="text-sm text-gray-400">TTC</div>
-            </div>
-          </div>
-        </div>
-
-        <a 
-          href="https://wa.me/32472303701"
-          className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 w-full px-6 py-4 rounded-xl font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 relative z-10" />
-          <span className="relative z-10">Réserver maintenant</span>
-          <div className="relative z-10 bg-white/20 rounded-full px-2 py-1 text-xs">Gratuit</div>
-        </a>
-
-        <div className="text-center text-sm text-gray-400">
-          <div className="flex items-center justify-center space-x-2">
-            <Shield className="w-4 h-4" />
-            <span>Service garanti et assuré</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const PremiumCarCleaningLanding = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const [isVisible, setIsVisible] = useState({});
-  const [sliderPosition, setSliderPosition] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1);
-  const [selectedVehicle, setSelectedVehicle] = useState<VehicleType>('voiture');
-  const [selectedService, setSelectedService] = useState('deepclean');
-  const [vehicleState, setVehicleState] = useState(50);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Fonction pour gérer le début du glissement
-  const handleSliderStart = (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault();
-    setIsDragging(true);
-    handleSliderMove(e);
-  };
-
-  // Fonction pour gérer le déplacement du slider
-  const handleSliderMove = (e: React.MouseEvent | React.TouchEvent) => {
-    if (!isDragging && e.type !== 'mousedown' && e.type !== 'touchstart') return;
-
-    const container = e.currentTarget.getBoundingClientRect();
-    const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const position = ((x - container.left) / container.width) * 100;
-    setSliderPosition(Math.min(Math.max(position, 0), 100));
-  };
-
-  // Fonction pour gérer la fin du glissement
-  const handleSliderEnd = () => {
-    setIsDragging(false);
-  };
-
-  // Ajouter les écouteurs d'événements globaux
-  useEffect(() => {
-    const handleGlobalMouseUp = () => {
-      setIsDragging(false);
-    };
-
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      if (isDragging) {
-        const container = document.querySelector('.slider-container');
-        if (container) {
-          const rect = container.getBoundingClientRect();
-          const position = ((e.clientX - rect.left) / rect.width) * 100;
-          setSliderPosition(Math.min(Math.max(position, 0), 100));
-        }
-      }
-    };
-
-    window.addEventListener('mouseup', handleGlobalMouseUp);
-    window.addEventListener('mousemove', handleGlobalMouseMove);
-
-    return () => {
-      window.removeEventListener('mouseup', handleGlobalMouseUp);
-      window.removeEventListener('mousemove', handleGlobalMouseMove);
-    };
-  }, [isDragging]);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisible(prev => ({
-            ...prev,
-            [entry.target.id]: entry.isIntersecting
-          }));
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('[id]');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const services = [
-    {
-      icon: <Sparkles className="w-10 h-10" />,
-      title: "Nettoyage Intérieur Premium",
-      description: "Aspiration profonde des sièges et moquettes, nettoyage et protection du cuir, désinfection complète de l'habitacle",
-      price: "À partir de 89€",
-      features: ["Aspiration haute puissance", "Traitement cuir premium", "Désinfection UV", "Parfum signature"],
-      duration: "2-3h",
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: <Droplets className="w-10 h-10" />,
-      title: "Lavage Extérieur Détaillé",
-      description: "Prélavage mousse active, lavage haute pression, application cire nanotechnologie, lustrage jantes et pneus",
-      price: "À partir de 69€",
-      features: ["Mousse active pH neutre", "Cire céramique", "Jantes brillantes", "Pneus rénovés"],
-      duration: "1.5-2h",
-      gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: <Shield className="w-10 h-10" />,
-      title: "Protection Céramique",
-      description: "Traitement céramique longue durée, protection UV optimale, effet hydrophobe garantie 2 ans",
-      price: "À partir de 299€",
-      features: ["Garantie 2 ans", "Protection UV", "Effet hydrophobe", "Brillance durable"],
-      duration: "4-6h",
-      gradient: "from-amber-500 to-orange-500"
-    }
-  ];
 
   const testimonials = [
     {
       name: "Marie Dubois",
-      text: "Un service absolument exceptionnel ! Ma BMW n'a jamais été ainsi impeccable. L'équipe est d'un professionnalisme remarquable et d'une ponctualité parfaite.",
+      text: "Un service absolument exceptionnel ! Ma BMW n&apos;a jamais été ainsi impeccable. Le professionnalisme est remarquable et la ponctualité parfaite.",
       rating: 5,
       car: "BMW Série 5",
       location: "Verviers",
@@ -474,7 +19,7 @@ const PremiumCarCleaningLanding = () => {
     },
     {
       name: "Pierre Martin",
-      text: "Travail extraordinaire sur ma Porsche. Ils ont littéralement redonné une seconde jeunesse à l'intérieur cuir. Je recommande les yeux fermés !",
+      text: "Travail extraordinaire sur ma Porsche. Il a littéralement redonné une seconde jeunesse à l&apos;intérieur cuir. Je recommande les yeux fermés !",
       rating: 5,
       car: "Porsche Cayenne",
       location: "Spa",
@@ -490,83 +35,28 @@ const PremiumCarCleaningLanding = () => {
     }
   ];
 
-  const stats = [
-    { number: "500+", label: "Véhicules transformés", icon: <Car className="w-6 h-6" /> },
-    { number: "98%", label: "Clients satisfaits", icon: <Heart className="w-6 h-6" /> },
-    { number: "7j/7", label: "Service disponible", icon: <Clock className="w-6 h-6" /> },
-    { number: "5★", label: "Note moyenne", icon: <Star className="w-6 h-6" /> }
+  const navItems = [
+    { name: 'Accueil', href: '#accueil' },
+    { name: 'Services', href: '#services' },
+    { name: 'Transformations', href: '#transformations' },
+    { name: 'À propos', href: '#apropos' },
+    { name: 'Témoignages', href: '#temoignages' },
+    { name: 'Contact', href: '#contact' }
   ];
 
-  // Composant StepIndicator
-  const StepIndicator = () => {
-    const steps = [
-      { number: 1, label: "Véhicule" },
-      { number: 2, label: "Service" }
-    ];
-
-    return (
-      <div className="flex items-center justify-between mb-8">
-        {steps.map((step) => (
-          <div key={step.number} className="flex items-center">
-            <div 
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
-                currentStep === step.number 
-                  ? 'bg-blue-400 text-white' 
-                  : currentStep > step.number 
-                    ? 'bg-green-400 text-white' 
-                    : 'bg-white/10 text-gray-400'
-              }`}
-            >
-              {currentStep > step.number ? <CheckCircle className="w-4 h-4" /> : step.number}
-            </div>
-            <div className="ml-2 text-sm font-medium text-gray-300">{step.label}</div>
-            {step.number < steps.length && (
-              <div className="w-12 h-0.5 mx-4 bg-white/10">
-                <div 
-                  className={`h-full bg-blue-400 transition-all duration-300 ${
-                    currentStep > step.number ? 'w-full' : 'w-0'
-                  }`}
-                />
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    );
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    const element = document.querySelector(href) as HTMLElement;
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   // Composant Header
   const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-      const handleScroll = () => {
-        setIsScrolled(window.scrollY > 50);
-      };
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const navItems = [
-      { name: 'Accueil', href: '#accueil' },
-      { name: 'Services', href: '#services' },
-      { name: 'Transformations', href: '#transformations' },
-      { name: 'À propos', href: '#apropos' },
-      { name: 'Témoignages', href: '#temoignages' },
-      { name: 'Contact', href: '#contact' }
-    ];
-
-    const handleNavClick = (href: string) => {
-      setIsMobileMenuOpen(false);
-      const element = document.querySelector(href) as HTMLElement;
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    };
-
     return (
       <header className="w-full z-40 transition-all duration-500 bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl">
         <div className="container mx-auto px-4 sm:px-6">
@@ -718,12 +208,12 @@ const PremiumCarCleaningLanding = () => {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
             Votre Véhicule
             <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Mérite l'Excellence
+              Mérite l&apos;Excellence
             </span>
           </h1>
           
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-gray-300 max-w-[95%] sm:max-w-[90%] mx-auto leading-relaxed px-2">
-            Service premium d'excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
+            Service premium d&apos;excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
           </p>
 
           {/* CTA Buttons */}
@@ -788,8 +278,8 @@ const PremiumCarCleaningLanding = () => {
               </h2>
               
               <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                Je m'engage à révolutionner les standards du nettoyage automobile premium en Belgique. 
-                En tant qu'artisan passionné, je privilégie votre confort et votre satisfaction en utilisant exclusivement des produits haut de gamme européens et des techniques professionnelles de pointe.
+                Je m&apos;engage à révolutionner les standards du nettoyage automobile premium en Belgique. 
+                En tant qu&apos;artisan passionné, je privilégie votre confort et votre satisfaction en utilisant exclusivement des produits haut de gamme européens et des techniques professionnelles de pointe.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -847,7 +337,7 @@ const PremiumCarCleaningLanding = () => {
               Expérience Premium
             </h2>
             <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-4">
-              Découvrez les témoignages de mes clients satisfaits qui ont vécu l'expérience Shine&Go premium
+              Découvrez les témoignages de mes clients satisfaits qui ont vécu l&apos;expérience Shine&Go premium
             </p>
           </div>
 
@@ -876,7 +366,7 @@ const PremiumCarCleaningLanding = () => {
                 </div>
                 
                 <p className="text-gray-300 italic leading-relaxed text-xs sm:text-sm lg:text-base">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
               </div>
             ))}
@@ -893,11 +383,11 @@ const PremiumCarCleaningLanding = () => {
           </div>
           
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4 sm:mb-6">
-            Prêt à <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Découvrir</span> l'Excellence ?
+            Prêt à <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Découvrir</span> l&apos;Excellence ?
           </h2>
           
           <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-            Contactez-moi dès maintenant pour un devis personnalisé gratuit et vivez l'expérience Shine&Go premium
+            Contactez-moi dès maintenant pour un devis personnalisé gratuit et vivez l&apos;expérience Shine&Go premium
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 px-4">
@@ -948,7 +438,7 @@ const PremiumCarCleaningLanding = () => {
               </div>
               
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                Service premium d'excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
+                Service premium d&apos;excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
               </p>
               
               <div className="flex items-center space-x-4">
@@ -1120,7 +610,7 @@ const PremiumCarCleaningLanding = () => {
             <div className="text-center mt-6 pt-6 border-t border-white/5">
               <div className="flex items-center justify-center space-x-2 text-sm text-gray-400">
                 <Heart className="w-4 h-4 text-red-400 animate-pulse" />
-                <span>Fait avec passion pour l'excellence premium automobile</span>
+                <span>Fait avec passion pour l&apos;excellence premium automobile</span>
                 <TrendingUp className="w-4 h-4 text-green-400" />
               </div>
             </div>

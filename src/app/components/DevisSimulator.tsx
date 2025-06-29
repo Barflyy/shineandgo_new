@@ -177,7 +177,7 @@ export default function DevisSimulator() {
                                       <>
                                         <div className="flex items-start space-x-2">
                                           <span className="text-green-400 mt-1">✔️</span>
-                                          <span className="text-xs sm:text-sm text-gray-300">Aspiration rapide de l'habitacle (tapis, sièges, coffre)</span>
+                                          <span className="text-xs sm:text-sm text-gray-300">Aspiration rapide de l&apos;habitacle (tapis, sièges, coffre)</span>
                                         </div>
                                         <div className="flex items-start space-x-2">
                                           <span className="text-green-400 mt-1">✔️</span>
