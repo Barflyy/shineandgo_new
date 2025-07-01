@@ -121,7 +121,7 @@ const TransformationsSection = () => {
           {/* Boutons de navigation - Optimisés pour mobile */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 sm:-translate-x-12 lg:-translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 sm:-translate-x-12 lg:-translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[48px] min-h-[48px] flex items-center justify-center slider-handle"
             aria-label="Transformation précédente"
           >
             <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
@@ -129,7 +129,7 @@ const TransformationsSection = () => {
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-8 sm:translate-x-12 lg:translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-8 sm:translate-x-12 lg:translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[48px] min-h-[48px] flex items-center justify-center slider-handle"
             aria-label="Transformation suivante"
           >
             <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
@@ -182,10 +182,10 @@ const TransformationsSection = () => {
                 
                 {/* Poignée du slider - Optimisée pour mobile */}
                 <div 
-                  className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-20 min-w-[44px] min-h-[44px]"
+                  className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-20 min-w-[48px] min-h-[48px] slider-handle"
                   style={{ left: `${sliderPosition}%` }}
                 >
-                  <div className="w-1 h-4 sm:h-5 bg-gray-400 rounded-full" />
+                  <div className="w-1 h-5 sm:h-6 bg-gray-400 rounded-full" />
                 </div>
                 
                 {/* Indicateur de position */}

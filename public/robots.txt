@@ -2,4 +2,29 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.shineandgo.be/sitemap.xml 
+Sitemap: https://www.shineandgo.be/sitemap.xml
+
+# Optimisations pour mobile
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Optimisations pour les images
+User-agent: Googlebot-Image
+Allow: /transformations/
+Allow: /public/
+
+# Optimisations pour les médias
+User-agent: *
+Allow: /transformations/*.jpeg
+Allow: /transformations/*.jpg
+Allow: /transformations/*.png
+Allow: /transformations/*.webp
+
+# Bloquer les fichiers inutiles
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Optimisations pour les performances
+Crawl-delay: 1 

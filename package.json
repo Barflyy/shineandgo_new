@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lighthouse": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'",
+    "test:mobile": "npm run build && npm run start & sleep 5 && npm run lighthouse && pkill -f 'next start'"
   },
   "dependencies": {
+    "critters": "^0.0.20",
     "framer-motion": "^12.15.0",
     "lucide-react": "^0.511.0",
     "next": "15.3.3",

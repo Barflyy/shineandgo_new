@@ -100,7 +100,7 @@ export default function DevisSimulator() {
                       onClick={() => setVehicleType(type)}
                       className={`group relative bg-white/5 backdrop-blur-sm border devis-option ${
                         vehicleType === type ? 'border-blue-400' : 'border-white/10'
-                      } rounded-lg sm:rounded-xl p-3 sm:p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105`}
+                      } rounded-lg sm:rounded-xl p-3 sm:p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105 min-h-[80px]`}
                     >
                       <div className="text-2xl sm:text-3xl mb-1 sm:mb-2 devis-option-icon">{VEHICLE_ICONS[type]}</div>
                       <div className="font-medium text-xs sm:text-sm devis-option-title">{type}</div>

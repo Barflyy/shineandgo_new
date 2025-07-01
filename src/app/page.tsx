@@ -102,11 +102,12 @@ const PremiumCarCleaningLanding = () => {
               </a>
             </div>
 
-            {/* Menu Mobile Button */}
+            {/* Menu Mobile Button - Optimisé pour mobile */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-105"
+              className="lg:hidden relative w-12 h-12 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-105 min-w-[48px] min-h-[48px]"
               aria-label="Menu mobile"
+              aria-expanded={isMobileMenuOpen}
             >
               <div className={`w-6 h-6 relative transition-all duration-300 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
                 <span className={`absolute top-1 left-0 w-6 h-0.5 bg-white transition-all duration-300 ${
@@ -129,13 +130,13 @@ const PremiumCarCleaningLanding = () => {
         } overflow-hidden`}>
           <div className="bg-gradient-to-br from-slate-900/98 via-slate-800/98 to-slate-900/98 backdrop-blur-xl border-t border-white/10">
             <div className="container mx-auto px-4 py-6">
-              {/* Navigation Mobile */}
+              {/* Navigation Mobile - Optimisée pour mobile */}
               <nav className="space-y-2 mb-8">
                 {navItems.map((item, index) => (
                   <button
                     key={item.name}
                     onClick={() => handleNavClick(item.href)}
-                    className={`w-full text-left text-lg font-medium text-gray-300 hover:text-white transition-all duration-300 py-4 px-4 rounded-xl hover:bg-white/10 transform hover:translate-x-2 hover:shadow-lg group ${
+                    className={`w-full text-left text-base font-medium text-gray-300 hover:text-white transition-all duration-300 py-4 px-4 rounded-xl hover:bg-white/10 transform hover:translate-x-2 hover:shadow-lg group menu-item min-h-[56px] ${
                       isMobileMenuOpen ? 'menu-item-enter' : ''
                     }`}
                     style={{ 
@@ -144,18 +145,18 @@ const PremiumCarCleaningLanding = () => {
                   >
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      {item.name}
+                      <span className="text-base">{item.name}</span>
                     </div>
                   </button>
                 ))}
               </nav>
 
-              {/* CTA Mobile */}
+              {/* CTA Mobile - Optimisés pour mobile */}
               <div className="space-y-3 mb-6">
                 <a
                   href="https://wa.me/32472303701"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-6 py-4 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3 group"
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-6 py-4 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3 group cta-button min-h-[56px]"
                 >
                   <MessageCircle className="w-5 h-5 group-hover:animate-bounce" />
                   <span>WhatsApp Direct</span>
@@ -163,7 +164,7 @@ const PremiumCarCleaningLanding = () => {
                 <a
                   href="tel:+32472303701"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-6 py-4 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3 group"
+                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-6 py-4 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3 group cta-button min-h-[56px]"
                 >
                   <Phone className="w-5 h-5 group-hover:animate-pulse" />
                   <span>Appel Direct</span>
@@ -216,11 +217,11 @@ const PremiumCarCleaningLanding = () => {
             Service premium d&apos;excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4">
+          {/* CTA Buttons - Optimisés pour mobile */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4 hero-cta">
             <a 
               href="https://wa.me/32472303701"
-              className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden"
+              className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden cta-button hero-cta-button min-h-[56px]"
             >
               <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 relative z-10" />
@@ -230,7 +231,7 @@ const PremiumCarCleaningLanding = () => {
             
             <a 
               href="tel:+32472303701"
-              className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden"
+              className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden cta-button hero-cta-button min-h-[56px]"
             >
               <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 relative z-10" />
@@ -618,13 +619,14 @@ const PremiumCarCleaningLanding = () => {
         </div>
       </footer>
 
-      {/* Floating Action Button */}
+      {/* Floating Action Button - Optimisé pour mobile */}
       <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
         <a 
           href="https://wa.me/32472303701"
-          className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-110 animate-pulse"
+          className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-110 animate-pulse min-w-[56px] min-h-[56px]"
+          aria-label="Contact WhatsApp"
         >
-          <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
+          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
         </a>
       </div>
     </div>

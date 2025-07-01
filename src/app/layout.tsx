@@ -6,11 +6,15 @@ import Analytics from "./analytics";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -29,6 +33,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+
   openGraph: {
     title: "Shine&Go - Car wash & nettoyage auto premium à Herve & région",
     description: "Car wash et service de nettoyage automobile haut de gamme à Herve, Verviers, Dison, Pepinster, Spa, Limbourg. À domicile, 7j/7. Devis gratuit, WhatsApp direct.",
@@ -65,6 +70,15 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code', // À remplacer par votre code Google Search Console
   },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'Shine&Go',
+    'application-name': 'Shine&Go',
+    'msapplication-TileColor': '#1f2937',
+    'theme-color': '#1f2937',
+  },
 };
 
 export default function RootLayout({
@@ -75,10 +89,17 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
+
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1f2937" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Shine&Go" />
+        <meta name="application-name" content="Shine&Go" />
+        <meta name="msapplication-TileColor" content="#1f2937" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
