@@ -11,7 +11,7 @@ export default function VerificationPage() {
     <div>
       <h1>Page de vérification Google Search Console</h1>
       <p>Cette page est utilisée pour la vérification de votre site dans Google Search Console.</p>
-      <p>Remplacez "votre-code-de-verification-google" par votre code réel.</p>
+      <p>Remplacez &quot;votre-code-de-verification-google&quot; par votre code réel.</p>
     </div>
   )
 } 
