@@ -58,7 +58,7 @@ export default function StepByStepDevisSimulator() {
 
   const generateWhatsAppMessage = () => {
     if (!vehicleType || !dirtLevel) return '';
-    const message = `Bonjour, je souhaite un devis pour un ${vehicleType}, prestation Nettoyage Intensif, niveau de saleté : ${dirtLevel}. Prix estimé : ${calculatePrice()}€`;
+    const message = `Bonjour ! 😊 Je souhaiterais avoir un devis pour un(e) ${vehicleType}, avec la formule Nettoyage Intensif.\nNiveau de saleté : ${dirtLevel}.\nPourriez-vous me confirmer le tarif estimé à ${calculatePrice()}€ et me donner vos prochaines disponibilités ? Merci beaucoup !`;
     return encodeURIComponent(message);
   };
 
@@ -150,9 +150,10 @@ export default function StepByStepDevisSimulator() {
                     <button
                       key={type}
                       onClick={() => setVehicleType(type)}
-                      className={`relative bg-white/5 backdrop-blur-sm border rounded-lg p-3 transition-all duration-300 hover:bg-white/10 min-h-[80px] ${
+                      className={`relative backdrop-blur-sm border rounded-lg p-3 transition-all duration-300 hover:bg-white/10 min-h-[80px] ${
                         vehicleType === type ? 'border-blue-400 bg-blue-500/10' : 'border-white/10'
                       }`}
+                      style={vehicleType === type ? undefined : { backgroundColor: 'rgba(255,255,255,0.05)' }}
                     >
                       <div className="text-xl mb-1">{VEHICLE_ICONS[type]}</div>
                       <div className="font-medium text-xs">{type}</div>
