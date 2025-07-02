@@ -107,38 +107,39 @@ const TransformationsSection = () => {
   }, [isDragging]);
 
   return (
-    <section className="py-8 relative overflow-hidden transformations-section">
-      <div className="absolute inset-0 bg-[#0f172a]/30 backdrop-blur-xl"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 hero-title">
-          Transformations Premium
-        </h2>
-        <p className="text-sm sm:text-base text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto hero-subtitle">
-          Découvrez la magie de mes services de nettoyage premium professionnel
-        </p>
+    <section className="py-8 md:py-16 relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            Transformations Premium
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+            Découvrez la magie de mes services de nettoyage premium professionnel
+          </p>
+        </div>
         
-        <div className="max-w-lg sm:max-w-xl mx-auto relative transformations-grid">
-          {/* Boutons de navigation - Optimisés pour mobile */}
+        <div className="max-w-lg md:max-w-2xl mx-auto relative">
+          {/* Boutons de navigation - Mobile-optimized */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 sm:-translate-x-12 lg:-translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[48px] min-h-[48px] flex items-center justify-center slider-handle"
+            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 md:p-2 text-white transition-colors duration-300 z-20 w-10 h-10 md:w-10 md:h-10 flex items-center justify-center"
             aria-label="Transformation précédente"
           >
-            <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
+            <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-8 sm:translate-x-12 lg:translate-x-16 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-all duration-300 hover:scale-110 z-20 min-w-[48px] min-h-[48px] flex items-center justify-center slider-handle"
+            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 md:p-2 text-white transition-colors duration-300 z-20 w-10 h-10 md:w-10 md:h-10 flex items-center justify-center"
             aria-label="Transformation suivante"
           >
-            <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
+            <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>
 
           {/* Carrousel principal */}
-          <div className="mb-4 sm:mb-6 transformation-item">
+          <div className="mb-4 md:mb-6">
             {/* Image avec slider */}
-            <div className="relative aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] rounded-lg overflow-hidden shadow-2xl transformation-images">
+            <div className="relative aspect-[4/3] rounded-lg md:rounded-xl overflow-hidden shadow-lg md:shadow-xl">
               <div 
                 ref={sliderRef}
                 className="relative w-full h-full cursor-ew-resize select-none"
@@ -151,8 +152,8 @@ const TransformationsSection = () => {
                     src={transformations[currentIndex].before}
                     alt="Avant"
                     fill
-                    className="object-cover transformation-image"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 400px"
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 600px"
                   />
                 </div>
                 
@@ -168,8 +169,8 @@ const TransformationsSection = () => {
                       src={transformations[currentIndex].after}
                       alt="Après"
                       fill
-                      className="object-cover transformation-image"
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 400px"
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 600px"
                     />
                   </div>
                 </div>
@@ -180,24 +181,24 @@ const TransformationsSection = () => {
                   style={{ left: `${sliderPosition}%` }}
                 />
                 
-                {/* Poignée du slider - Optimisée pour mobile */}
+                {/* Poignée du slider - Mobile-optimized */}
                 <div 
-                  className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-20 min-w-[48px] min-h-[48px] slider-handle"
+                  className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-lg flex items-center justify-center cursor-ew-resize z-20"
                   style={{ left: `${sliderPosition}%` }}
                 >
-                  <div className="w-1 h-5 sm:h-6 bg-gray-400 rounded-full" />
+                  <div className="w-1 h-4 md:h-5 bg-gray-400 rounded-full" />
                 </div>
                 
                 {/* Indicateur de position */}
-                <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm rounded-full px-2 sm:px-4 py-1 sm:py-2 text-white text-xs sm:text-sm pointer-events-none z-10">
+                <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm rounded-full px-2 md:px-3 py-1 md:py-1 text-white text-xs md:text-sm pointer-events-none z-10">
                   {currentIndex + 1} / {transformations.length}
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Indicateurs de navigation - Optimisés pour mobile */}
-          <div className="flex justify-center gap-2 sm:gap-3">
+          {/* Indicateurs de navigation - Mobile-optimized */}
+          <div className="flex justify-center gap-1.5 md:gap-2">
             {transformations.map((_, index) => (
               <button
                 key={index}
@@ -205,10 +206,8 @@ const TransformationsSection = () => {
                   setCurrentIndex(index);
                   setSliderPosition(50);
                 }}
-                className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
-                  currentIndex === index 
-                    ? 'bg-blue-400 scale-125' 
-                    : 'bg-gray-400 hover:bg-gray-300'
+                className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-colors duration-300 ${
+                  index === currentIndex ? 'bg-blue-400' : 'bg-gray-400'
                 }`}
                 aria-label={`Aller à la transformation ${index + 1}`}
               />

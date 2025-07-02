@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Car, Sparkles, Star, Phone, MessageCircle, Clock, MapPin, Shield, ChevronRight, Award, Zap, Heart, Users, Info, TrendingUp } from 'lucide-react';
-import DevisSimulator from './components/DevisSimulator';
+import { Sparkles, Star, Phone, MessageCircle, Clock, MapPin, Shield, Award, Zap, Heart, Users, Info } from 'lucide-react';
+import StepByStepDevisSimulator from './components/StepByStepDevisSimulator';
 import TransformationsSection from './components/TransformationsSection';
 
 const PremiumCarCleaningLanding = () => {
@@ -11,7 +11,7 @@ const PremiumCarCleaningLanding = () => {
   const testimonials = [
     {
       name: "Marie Dubois",
-      text: "Un service absolument exceptionnel ! Ma BMW n&apos;a jamais été ainsi impeccable. Le professionnalisme est remarquable et la ponctualité parfaite.",
+      text: "Un service absolument exceptionnel ! Ma BMW n'a jamais été ainsi impeccable. Le professionnalisme est remarquable et la ponctualité parfaite.",
       rating: 5,
       car: "BMW Série 5",
       location: "Verviers",
@@ -19,7 +19,7 @@ const PremiumCarCleaningLanding = () => {
     },
     {
       name: "Pierre Martin",
-      text: "Travail extraordinaire sur ma Porsche. Il a littéralement redonné une seconde jeunesse à l&apos;intérieur cuir. Je recommande les yeux fermés !",
+      text: "Travail extraordinaire sur ma Porsche. Il a littéralement redonné une seconde jeunesse à l'intérieur cuir. Je recommande les yeux fermés !",
       rating: 5,
       car: "Porsche Cayenne",
       location: "Spa",
@@ -55,68 +55,57 @@ const PremiumCarCleaningLanding = () => {
     }
   };
 
-  // Composant Header
+  // Header mobile-first
   const Header = () => {
     return (
-      <header className="w-full z-40 transition-all duration-500 bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            {/* Logo */}
-            <div className="flex flex-row items-center group cursor-pointer h-full" onClick={() => handleNavClick('#accueil')}>
-              <div className="flex flex-col leading-tight">
-                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Shine&Go
-                </span>
-                <span className="text-xs text-gray-400 -mt-1">Premium Service</span>
-              </div>
+      <header className="fixed top-0 w-full z-50 bg-slate-900/95 backdrop-blur-xl border-b border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo simplifié */}
+            <div className="flex items-center cursor-pointer" onClick={() => handleNavClick('#accueil')}>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Shine&Go
+              </span>
             </div>
 
-            {/* Navigation Desktop - Espacement contrôlé */}
-            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 mx-8 xl:mx-12">
+            {/* Navigation Desktop - Épurée */}
+            <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 relative group nav-link px-2 py-1 whitespace-nowrap"
+                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300"
                 >
                   {item.name}
                 </button>
               ))}
             </nav>
 
-            {/* CTA Desktop */}
-            <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
+            {/* CTA Desktop - Simplifié */}
+            <div className="hidden lg:flex items-center space-x-3">
               <a
                 href="https://wa.me/32472303701"
-                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-3 xl:px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center space-x-2 group"
+                className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 flex items-center space-x-2"
               >
-                <MessageCircle className="w-4 h-4 group-hover:animate-bounce" />
+                <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp</span>
-              </a>
-              <a
-                href="tel:+32472303701"
-                className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-3 xl:px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center space-x-2 group"
-              >
-                <Phone className="w-4 h-4 group-hover:animate-pulse" />
-                <span>Appeler</span>
               </a>
             </div>
 
-            {/* Menu Mobile Button - Optimisé pour mobile */}
+            {/* Menu Mobile - Minimaliste */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden relative w-12 h-12 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-105 min-w-[48px] min-h-[48px]"
+              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-300"
               aria-label="Menu mobile"
-              aria-expanded={isMobileMenuOpen}
             >
-              <div className={`w-6 h-6 relative transition-all duration-300 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
-                <span className={`absolute top-1 left-0 w-6 h-0.5 bg-white transition-all duration-300 ${
+              <div className="w-5 h-5 relative">
+                <span className={`absolute top-1 left-0 w-5 h-0.5 bg-white transition-all duration-300 ${
                   isMobileMenuOpen ? 'rotate-45 translate-y-2' : '-translate-y-1'
                 }`}></span>
-                <span className={`absolute top-1/2 left-0 w-6 h-0.5 bg-white transition-all duration-300 ${
+                <span className={`absolute top-1/2 left-0 w-5 h-0.5 bg-white transition-all duration-300 ${
                   isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
                 }`}></span>
-                <span className={`absolute bottom-1 left-0 w-6 h-0.5 bg-white transition-all duration-300 ${
+                <span className={`absolute bottom-1 left-0 w-5 h-0.5 bg-white transition-all duration-300 ${
                   isMobileMenuOpen ? '-rotate-45 -translate-y-2' : 'translate-y-1'
                 }`}></span>
               </div>
@@ -124,65 +113,41 @@ const PremiumCarCleaningLanding = () => {
           </div>
         </div>
 
-        {/* Menu Mobile */}
-        <div className={`lg:hidden transition-all duration-500 ease-in-out ${
+        {/* Menu Mobile - Épuré */}
+        <div className={`lg:hidden transition-all duration-300 ${
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
-          <div className="bg-gradient-to-br from-slate-900/98 via-slate-800/98 to-slate-900/98 backdrop-blur-xl border-t border-white/10">
+          <div className="bg-slate-900/98 backdrop-blur-xl border-t border-white/10">
             <div className="container mx-auto px-4 py-6">
-              {/* Navigation Mobile - Optimisée pour mobile */}
-              <nav className="space-y-2 mb-8">
-                {navItems.map((item, index) => (
+              <nav className="space-y-2 mb-6">
+                {navItems.map((item) => (
                   <button
                     key={item.name}
                     onClick={() => handleNavClick(item.href)}
-                    className={`w-full text-left text-base font-medium text-gray-300 hover:text-white transition-all duration-300 py-4 px-4 rounded-xl hover:bg-white/10 transform hover:translate-x-2 hover:shadow-lg group menu-item min-h-[56px] ${
-                      isMobileMenuOpen ? 'menu-item-enter' : ''
-                    }`}
-                    style={{ 
-                      animationDelay: `${index * 100}ms`
-                    }}
+                    className="w-full text-left text-base font-medium text-gray-300 hover:text-white transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
                   >
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <span className="text-base">{item.name}</span>
-                    </div>
+                    {item.name}
                   </button>
                 ))}
               </nav>
 
-              {/* CTA Mobile - Optimisés pour mobile */}
-              <div className="space-y-3 mb-6">
+              <div className="space-y-3">
                 <a
                   href="https://wa.me/32472303701"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-6 py-4 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3 group cta-button min-h-[56px]"
+                  className="w-full bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg text-base font-medium transition-colors duration-300 flex items-center justify-center space-x-2"
                 >
-                  <MessageCircle className="w-5 h-5 group-hover:animate-bounce" />
+                  <MessageCircle className="w-5 h-5" />
                   <span>WhatsApp Direct</span>
                 </a>
                 <a
                   href="tel:+32472303701"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-6 py-4 rounded-xl text-base font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-3 group cta-button min-h-[56px]"
+                  className="w-full bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg text-base font-medium transition-colors duration-300 flex items-center justify-center space-x-2"
                 >
-                  <Phone className="w-5 h-5 group-hover:animate-pulse" />
+                  <Phone className="w-5 h-5" />
                   <span>Appel Direct</span>
                 </a>
-              </div>
-
-              {/* Info Mobile */}
-              <div className="pt-6 border-t border-white/10">
-                <div className="grid grid-cols-2 gap-4 text-sm text-gray-400">
-                  <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg p-3 border border-white/5">
-                    <Clock className="w-4 h-4 text-blue-400" />
-                    <span>7j/7 • 8h-20h</span>
-                  </div>
-                  <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg p-3 border border-white/5">
-                    <MapPin className="w-4 h-4 text-blue-400" />
-                    <span>Verviers</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -192,62 +157,57 @@ const PremiumCarCleaningLanding = () => {
   };
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-white bg-slate-900">
       {/* Header */}
       <Header />
 
-      {/* Hero Section */}
-      <section id="accueil" className="relative h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] overflow-hidden flex items-center justify-center">
-        {/* Background Animations */}
-        <div className="absolute inset-0 pointer-events-none select-none z-0">
-          <div className="absolute top-1/4 left-1/4 w-[18vw] h-[18vw] max-w-[12rem] max-h-[12rem] bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-[18vw] h-[18vw] max-w-[12rem] max-h-[12rem] bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[24vw] h-[24vw] max-w-[18rem] max-h-[18rem] bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-2000" />
+      {/* Hero Section - Mobile-first */}
+      <section id="accueil" className="pt-16 min-h-screen flex items-center justify-center relative">
+        {/* Background subtil */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-blue-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-32 h-32 md:w-64 md:h-64 bg-cyan-500/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
             Votre Véhicule
-            <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Mérite l&apos;Excellence
             </span>
           </h1>
           
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-gray-300 max-w-[95%] sm:max-w-[90%] mx-auto leading-relaxed px-2">
+          <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             Service premium d&apos;excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
           </p>
 
-          {/* CTA Buttons - Optimisés pour mobile */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4 hero-cta">
+          {/* CTA Buttons - Mobile-first */}
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 md:mb-8">
             <a 
               href="https://wa.me/32472303701"
-              className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden cta-button hero-cta-button min-h-[56px]"
+              className="bg-green-500 hover:bg-green-600 px-6 md:px-8 py-4 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
             >
-              <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 relative z-10" />
-              <span className="relative z-10">WhatsApp Direct</span>
-              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp Direct</span>
             </a>
             
             <a 
               href="tel:+32472303701"
-              className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden cta-button hero-cta-button min-h-[56px]"
+              className="bg-blue-500 hover:bg-blue-600 px-6 md:px-8 py-4 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
             >
-              <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 relative z-10" />
-              <span className="relative z-10">Appel Direct</span>
-              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+              <Phone className="w-5 h-5" />
+              <span>Appel Direct</span>
             </a>
           </div>
 
-          {/* Preuves Sociales Renforcées */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-8 text-xs sm:text-sm text-gray-400">
-            <div className="flex items-center space-x-1 sm:space-x-2">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-              <span>Rejoint par <span className="text-white font-semibold">50+</span> clients satisfaits</span>
+          {/* Preuves sociales - Minimalistes */}
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 md:space-x-8 text-sm text-gray-400">
+            <div className="flex items-center space-x-2">
+              <Users className="w-4 h-4 text-blue-400" />
+              <span>50+ clients satisfaits</span>
             </div>
-            <div className="flex items-center space-x-1 sm:space-x-2">
-              <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+            <div className="flex items-center space-x-2">
+              <Star className="w-4 h-4 text-yellow-400" />
               <span>5/5 sur Google</span>
             </div>
           </div>
@@ -255,104 +215,118 @@ const PremiumCarCleaningLanding = () => {
       </section>
 
       {/* Transformations Section */}
-      <section id="transformations">
+      <section id="transformations" className="py-8 md:py-16">
         <TransformationsSection />
       </section>
 
       {/* Devis Simulator Section */}
-      <section id="services">
-        <DevisSimulator />
+      <section id="services" className="py-8 md:py-16">
+        <StepByStepDevisSimulator />
       </section>
 
-      {/* About Section Premium */}
-      <section id="apropos" className="py-12 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 mb-4 sm:mb-6 border border-white/20">
-                <Award className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" />
-                <span className="text-xs sm:text-sm font-medium">Service Premium</span>
+      {/* About Section - Mobile-first */}
+      <section id="apropos" className="py-8 md:py-16 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-8 md:mb-12">
+              <div className="inline-flex items-center space-x-2 bg-blue-500/20 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+                <Award className="w-4 h-4 text-blue-400" />
+                <span className="text-sm font-medium">À propos de Shine&Go</span>
               </div>
               
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6">
-                Excellence & <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Confort</span>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+                Le soin auto <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">haut de gamme</span>
+                <br />
+                <span className="text-white">directement chez vous</span>
               </h2>
-              
-              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                Je m&apos;engage à révolutionner les standards du nettoyage automobile premium en Belgique. 
-                En tant qu&apos;artisan passionné, je privilégie votre confort et votre satisfaction en utilisant exclusivement des produits haut de gamme européens et des techniques professionnelles de pointe.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                    <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
-                    <span className="font-semibold text-sm sm:text-base">Produits Premium</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-gray-300">Formules biodégradables haut de gamme certifiées</p>
-                </div>
-                
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                    <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
-                    <span className="font-semibold text-sm sm:text-base">Confort Client</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-gray-300">Service à domicile et flexibilité totale</p>
-                </div>
-              </div>
             </div>
 
-            <div className="order-1 lg:order-2">
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-500/30 to-cyan-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-sm border border-white/20">
-                  <div className="space-y-4 sm:space-y-6">
-                    {[
-                      { icon: Award, title: "Service Premium", desc: "Excellence et attention aux détails" },
-                      { icon: Clock, title: "Flexibilité Totale", desc: "Horaires adaptés à vos besoins" },
-                      { icon: Car, title: "Spécialiste Luxe", desc: "Expertise véhicules haut de gamme" },
-                      { icon: Heart, title: "Confort Garanti", desc: "Service à domicile, zéro contrainte" }
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-start space-x-3 sm:space-x-4 group hover:transform hover:translate-x-2 transition-all duration-300">
-                        <div className="bg-blue-500/20 p-2 sm:p-3 rounded-lg sm:rounded-xl group-hover:bg-blue-500/30 transition-colors duration-300">
-                          <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white mb-1 text-sm sm:text-base">{item.title}</h4>
-                          <p className="text-xs sm:text-sm text-gray-300">{item.desc}</p>
-                        </div>
-                      </div>
-                    ))}
+            {/* Content Grid - Mobile-first */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+              {/* Carte 1 - Excellence Premium */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10">
+                <div className="flex items-center mb-4">
+                  <div className="bg-blue-500 p-3 rounded-lg mr-4">
+                    <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Excellence Premium</h3>
                 </div>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  Chez Shine&Go, nous transformons chaque véhicule en véritable vitrine de propreté. 
+                  Installés à Herve, nous intervenons chez vous avec des produits haut de gamme (Koch Chemie, CarPro, P&S) et un savoir-faire professionnel.
+                </p>
+              </div>
+
+              {/* Carte 2 - Confort Total */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10">
+                <div className="flex items-center mb-4">
+                  <div className="bg-green-500 p-3 rounded-lg mr-4">
+                    <Heart className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Confort Total</h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  Nous ne faisons pas juste &quot;un lavage&quot;, nous redonnons à votre voiture l&apos;éclat qu&apos;elle mérite, avec un souci du détail qui fait toute la différence. 
+                  Que ce soit pour un nettoyage complet ou un entretien régulier, vous êtes entre de bonnes mains.
+                </p>
+              </div>
+
+              {/* Carte 3 - Notre Mission */}
+              <div className="bg-blue-500/10 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="bg-blue-500 p-3 rounded-lg mr-4">
+                    <span className="text-xl md:text-2xl">🎯</span>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Notre Mission</h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  Un résultat irréprochable, sans compromis, sans perte de temps pour vous. 
+                  Nous nous engageons à fournir un service premium qui dépasse vos attentes.
+                </p>
+              </div>
+
+              {/* Carte 4 - Zones Desservies */}
+              <div className="bg-green-500/10 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-green-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="bg-green-500 p-3 rounded-lg mr-4">
+                    <span className="text-xl md:text-2xl">📍</span>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Zones Desservies</h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  Herve, Battice, Liège, Verviers, Aubel, Soumagne et alentours. 
+                  Service à domicile premium dans toute la région pour votre confort.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section Témoignages */}
-      <section id="temoignages" className="py-12 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+      {/* Section Témoignages - Mobile-first */}
+      <section id="temoignages" className="py-8 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Expérience Premium
             </h2>
-            <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-4">
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
               Découvrez les témoignages de mes clients satisfaits qui ont vécu l&apos;expérience Shine&Go premium
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:bg-white/10 transition-all duration-500 transform hover:scale-105"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6 hover:bg-white/10 transition-colors duration-300"
               >
-                <div className="flex items-center mb-4 sm:mb-6">
-                  <div className="text-3xl sm:text-4xl mr-3 sm:mr-4">{testimonial.image}</div>
+                <div className="flex items-center mb-4">
+                  <div className="text-2xl md:text-3xl mr-3 md:mr-4">{testimonial.image}</div>
                   <div>
-                    <div className="font-bold text-blue-400 text-sm sm:text-base">{testimonial.name}</div>
-                    <div className="text-xs sm:text-sm text-gray-400">{testimonial.car}</div>
+                    <div className="font-bold text-blue-400 text-sm md:text-base">{testimonial.name}</div>
+                    <div className="text-xs md:text-sm text-gray-400">{testimonial.car}</div>
                     <div className="text-xs text-gray-500 flex items-center mt-1">
                       <MapPin className="w-3 h-3 mr-1" />
                       {testimonial.location}
@@ -360,13 +334,13 @@ const PremiumCarCleaningLanding = () => {
                   </div>
                 </div>
                 
-                <div className="flex mb-3 sm:mb-4">
+                <div className="flex mb-3 md:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
                 
-                <p className="text-gray-300 italic leading-relaxed text-xs sm:text-sm lg:text-base">
+                <p className="text-gray-300 italic leading-relaxed text-sm md:text-base">
                   &quot;{testimonial.text}&quot;
                 </p>
               </div>
@@ -375,119 +349,91 @@ const PremiumCarCleaningLanding = () => {
         </div>
       </section>
 
-      {/* Contact Section Ultra Premium */}
-      <section id="contact" className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 mb-6 sm:mb-8 border border-white/20">
-            <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-            <span className="text-xs sm:text-sm font-medium">Service Premium</span>
+      {/* Contact Section - Mobile-first */}
+      <section id="contact" className="py-8 md:py-16 relative">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-flex items-center space-x-2 bg-white/10 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
+            <Phone className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-medium">Service Premium</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">
             Prêt à <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Découvrir</span> l&apos;Excellence ?
           </h2>
           
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
             Contactez-moi dès maintenant pour un devis personnalisé gratuit et vivez l&apos;expérience Shine&Go premium
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 px-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <a 
               href="https://wa.me/32472303701"
-              className="group relative bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full font-bold text-base sm:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden"
+              className="bg-green-500 hover:bg-green-600 px-6 md:px-8 py-4 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
             >
-              <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative z-10" />
-              <span className="relative z-10">WhatsApp Direct</span>
-              <div className="relative z-10 bg-white/20 rounded-full px-2 py-1 text-xs">Gratuit</div>
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp Direct</span>
             </a>
             
             <a 
               href="tel:+32472303701"
-              className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full font-bold text-base sm:text-lg lg:text-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-2 sm:space-x-3 overflow-hidden"
+              className="bg-blue-500 hover:bg-blue-600 px-6 md:px-8 py-4 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
             >
-              <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              <Phone className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 relative z-10" />
-              <span className="relative z-10">+32 472 30 37 01</span>
-              <div className="relative z-10 bg-white/20 rounded-full px-2 py-1 text-xs">24h/7j</div>
+              <Phone className="w-5 h-5" />
+              <span>+32 472 30 37 01</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* Footer Ultra Premium Moderne */}
-      <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 sm:py-16 lg:py-20 border-t border-white/20 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          {/* Section Principale */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+      {/* Footer - Mobile-first */}
+      <footer className="bg-slate-800 py-8 md:py-12 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
             
             {/* Logo et Description */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="flex flex-col items-start mb-6">
-                  <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                    Shine&Go
-                  </span>
-                  <span className="text-sm text-gray-400 -mt-1">Premium Service</span>
-                </div>
+            <div>
+              <div className="mb-4">
+                <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Shine&Go
+                </span>
               </div>
               
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
                 Service premium d&apos;excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
               </p>
               
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3">
                 <a 
                   href="https://wa.me/32472303701"
-                  className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="bg-green-500 hover:bg-green-600 p-2 rounded-lg transition-colors duration-300"
                 >
-                  <MessageCircle className="w-5 h-5 text-white group-hover:animate-bounce" />
+                  <MessageCircle className="w-4 h-4 text-white" />
                 </a>
                 <a 
                   href="tel:+32472303701"
-                  className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-lg transition-colors duration-300"
                 >
-                  <Phone className="w-5 h-5 text-white group-hover:animate-pulse" />
-                </a>
-                <a 
-                  href="mailto:contact@shinego.be"
-                  className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-                >
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                  <Phone className="w-4 h-4 text-white" />
                 </a>
               </div>
             </div>
 
             {/* Services */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6 flex items-center space-x-2">
-                <Sparkles className="w-5 h-5 text-blue-400" />
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
+                <Sparkles className="w-4 h-4 text-blue-400" />
                 <span>Mes Services</span>
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {[
-                  { name: 'Deep Clean Premium', desc: 'Service complet haut de gamme' },
-                  { name: 'Maintenance Wash', desc: 'Entretien régulier premium' },
-                  { name: 'Détail Extérieur', desc: 'Finition parfaite premium' },
-                  { name: 'Nettoyage Intérieur', desc: 'Habitacle impeccable' },
-                  { name: 'Traitement Hydrophobe', desc: 'Protection durable premium' }
+                  'Deep Clean Premium',
+                  'Maintenance Wash',
+                  'Détail Extérieur',
+                  'Nettoyage Intérieur',
+                  'Traitement Hydrophobe'
                 ].map((service, index) => (
-                  <li key={index} className="group">
-                    <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full group-hover:scale-150 transition-transform duration-300" />
-                      <div>
-                        <div className="text-white font-medium text-sm">{service.name}</div>
-                        <div className="text-gray-400 text-xs">{service.desc}</div>
-                      </div>
-                    </div>
+                  <li key={index} className="text-gray-300 text-sm">
+                    {service}
                   </li>
                 ))}
               </ul>
@@ -495,138 +441,44 @@ const PremiumCarCleaningLanding = () => {
 
             {/* Informations */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6 flex items-center space-x-2">
-                <Info className="w-5 h-5 text-blue-400" />
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
+                <Info className="w-4 h-4 text-blue-400" />
                 <span>Informations</span>
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {[
-                  { icon: Clock, text: '7j/7 • 8h-20h', desc: 'Flexibilité premium' },
-                  { icon: MapPin, text: 'Herve & Région', desc: 'Service à domicile' },
-                  { icon: Shield, text: 'Garantie 100%', desc: 'Satisfaction premium' },
-                  { icon: Zap, text: 'Intervention 2h', desc: 'Réactivité premium' },
-                  { icon: Award, text: 'Service Premium', desc: 'Excellence garantie' }
+                  { icon: Clock, text: '7j/7 • 8h-20h' },
+                  { icon: MapPin, text: 'Herve & Région' },
+                  { icon: Shield, text: 'Garantie 100%' },
+                  { icon: Zap, text: 'Intervention 2h' },
+                  { icon: Award, text: 'Service Premium' }
                 ].map((info, index) => (
-                  <li key={index} className="group">
-                    <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
-                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <info.icon className="w-4 h-4 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="text-white font-medium text-sm">{info.text}</div>
-                        <div className="text-gray-400 text-xs">{info.desc}</div>
-                      </div>
-                    </div>
+                  <li key={index} className="flex items-center space-x-2 text-gray-300 text-sm">
+                    <info.icon className="w-4 h-4 text-blue-400" />
+                    <span>{info.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
-
-            {/* Contact Rapide */}
-            <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6 flex items-center space-x-2">
-                <MessageCircle className="w-5 h-5 text-blue-400" />
-                <span>Contact Rapide</span>
-              </h3>
-              
-              <div className="space-y-4">
-                <a 
-                  href="https://wa.me/32472303701"
-                  className="group block bg-gradient-to-r from-green-500/10 to-green-600/10 hover:from-green-500/20 hover:to-green-600/20 border border-green-500/20 hover:border-green-500/40 rounded-xl p-4 transition-all duration-300 transform hover:scale-105"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <MessageCircle className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">WhatsApp Direct</div>
-                      <div className="text-green-400 text-xs">Réponse immédiate</div>
-                    </div>
-                  </div>
-                </a>
-
-                <a 
-                  href="tel:+32472303701"
-                  className="group block bg-gradient-to-r from-blue-500/10 to-cyan-500/10 hover:from-blue-500/20 hover:to-cyan-500/20 border border-blue-500/20 hover:border-blue-500/40 rounded-xl p-4 transition-all duration-300 transform hover:scale-105"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Phone className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">+32 472 30 37 01</div>
-                      <div className="text-blue-400 text-xs">24h/7j disponible</div>
-                    </div>
-                  </div>
-                </a>
-
-                <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-xl p-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
-                      <Star className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">5/5 sur Google</div>
-                      <div className="text-yellow-400 text-xs">50+ clients satisfaits</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Section Bas */}
-          <div className="border-t border-white/10 pt-8 sm:pt-12">
-            <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-              
-              {/* Copyright et Informations */}
-              <div className="text-center lg:text-left">
-                <div className="text-white mb-2">
-                  <p className="text-base sm:text-lg font-semibold">&copy; 2025 Shine&Go Premium</p>
-                  <p className="text-sm text-gray-400">Car wash & nettoyage automobile à Herve et sa région</p>
-                  <p className="text-xs text-gray-400 mt-2">Rue Moreau, 20, 4650 Herve • +32 472 30 37 01</p>
-                </div>
-              </div>
-
-              {/* Liens Légaux */}
-              <div className="flex flex-wrap justify-center lg:justify-end space-x-6 text-sm">
-                {[
-                  { name: 'Mentions légales', href: '#' },
-                  { name: 'Politique de confidentialité', href: '#' },
-                  { name: 'Conditions générales', href: '#' },
-                  { name: 'Cookies', href: '#' }
-                ].map((link, index) => (
-                  <a 
-                    key={index}
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:underline"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Message Final */}
-            <div className="text-center mt-6 pt-6 border-t border-white/5">
-              <div className="flex items-center justify-center space-x-2 text-sm text-gray-400">
-                <Heart className="w-4 h-4 text-red-400 animate-pulse" />
-                <span>Fait avec passion pour l&apos;excellence premium automobile</span>
-                <TrendingUp className="w-4 h-4 text-green-400" />
-              </div>
-            </div>
+          {/* Copyright */}
+          <div className="border-t border-white/10 pt-6 md:pt-8 text-center">
+            <p className="text-gray-400 text-sm">
+              &copy; 2025 Shine&Go Premium • Rue Moreau, 20, 4650 Herve • +32 472 30 37 01
+            </p>
           </div>
         </div>
       </footer>
 
-      {/* Floating Action Button - Optimisé pour mobile */}
-      <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
+      {/* Floating Action Button - Mobile-optimized */}
+      <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50">
         <a 
           href="https://wa.me/32472303701"
-          className="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-110 animate-pulse min-w-[56px] min-h-[56px]"
+          className="bg-green-500 hover:bg-green-600 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg transition-colors duration-300"
           aria-label="Contact WhatsApp"
         >
-          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
+          <MessageCircle className="w-6 h-6 md:w-7 md:h-7 text-white" />
         </a>
       </div>
     </div>
