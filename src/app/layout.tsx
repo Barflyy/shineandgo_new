@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Shine&Go Premium",
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/vercel.svg',
         width: 1200,
         height: 630,
         alt: 'Shine&Go Premium - Service de nettoyage automobile haut de gamme',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shine&Go - Car wash & nettoyage auto premium à Herve & région",
     description: "Car wash et service de nettoyage automobile haut de gamme à Herve, Verviers, Dison, Pepinster, Spa, Limbourg. À domicile, 7j/7. Devis gratuit, WhatsApp direct.",
-    images: ['/og-image.jpg'],
+    images: ['/vercel.svg'],
   },
   robots: {
     index: true,
@@ -67,9 +67,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code', // À remplacer par votre code Google Search Console
-  },
+  // TODO: Ajouter votre code de vérification Google Search Console
+  // verification: {
+  //   google: 'votre-code-de-verification-google',
+  // },
   other: {
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
@@ -91,7 +92,7 @@ export default function RootLayout({
       <head>
 
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/vercel.svg" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1f2937" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -107,7 +108,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Shine&Go Premium",
-              "image": "https://www.shineandgo.be/logo.png",
+              "image": "https://www.shineandgo.be/vercel.svg",
               "@id": "https://www.shineandgo.be/",
               "url": "https://www.shineandgo.be/",
               "telephone": "+32472303701",
