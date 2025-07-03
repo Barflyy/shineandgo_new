@@ -9,7 +9,7 @@ export default function Analytics() {
       {/* Vercel Analytics */}
       <VercelAnalytics />
 
-      {/* Google Analytics 4 */}
+      {/* Google Analytics 4 - Balise officielle Google */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-9MZK3M3Z7T"
         strategy="afterInteractive"
@@ -19,13 +19,7 @@ export default function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-9MZK3M3Z7T', {
-            page_title: document.title,
-            page_location: window.location.href,
-            send_page_view: true,
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure'
-          });
+          gtag('config', 'G-9MZK3M3Z7T');
 
           // Track WhatsApp clicks
           document.addEventListener('click', function(e) {
