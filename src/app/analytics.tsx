@@ -1,13 +1,17 @@
 'use client';
 
 import Script from 'next/script';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 
 export default function Analytics() {
   return (
     <>
+      {/* Vercel Analytics */}
+      <VercelAnalytics />
+
       {/* Google Analytics 4 */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        src="https://www.googletagmanager.com/gtag/js?id=G-9MZK3M3Z7T"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -15,9 +19,45 @@ export default function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'GA_MEASUREMENT_ID', {
+          gtag('config', 'G-9MZK3M3Z7T', {
             page_title: document.title,
             page_location: window.location.href,
+            send_page_view: true,
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+          });
+
+          // Track WhatsApp clicks
+          document.addEventListener('click', function(e) {
+            if (e.target.closest('a[href*="wa.me"]')) {
+              gtag('event', 'click', {
+                event_category: 'engagement',
+                event_label: 'whatsapp_contact',
+                value: 1
+              });
+            }
+          });
+
+          // Track phone calls
+          document.addEventListener('click', function(e) {
+            if (e.target.closest('a[href^="tel:"]')) {
+              gtag('event', 'click', {
+                event_category: 'engagement',
+                event_label: 'phone_call',
+                value: 1
+              });
+            }
+          });
+
+          // Track devis form interactions
+          document.addEventListener('click', function(e) {
+            if (e.target.closest('a[href*="#devis"]')) {
+              gtag('event', 'click', {
+                event_category: 'engagement',
+                event_label: 'devis_request',
+                value: 1
+              });
+            }
           });
         `}
       </Script>

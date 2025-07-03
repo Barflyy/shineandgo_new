@@ -14,6 +14,7 @@
     "seo:full": "npm run generate:pages && npm run update:sitemap"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "critters": "^0.0.20",
     "framer-motion": "^12.15.0",
     "lucide-react": "^0.511.0",
