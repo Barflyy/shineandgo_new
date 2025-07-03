@@ -102,12 +102,12 @@ const TransformationsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Transformation principale */}
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-8 mb-6 md:mb-8">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 md:p-8 mb-4 md:mb-8">
             <div className="relative">
               {/* Images Avant/Après */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 {/* Image AVANT */}
-                <div className="relative aspect-[16/9] md:aspect-[4/3] rounded-lg overflow-hidden bg-gray-800">
+                <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-gray-800">
                   {isLoading && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
                       <Loader2 className="w-8 h-8 animate-spin text-white" />
@@ -117,7 +117,7 @@ const TransformationsSection = () => {
                     src={transformations[currentIndex].before}
                     alt="Avant"
                     fill
-                    className={`object-cover object-center transition-opacity duration-300 ${
+                    className={`object-contain object-center transition-opacity duration-300 ${
                       isLoading ? 'opacity-0' : 'opacity-100'
                     }`}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
@@ -132,7 +132,7 @@ const TransformationsSection = () => {
                 </div>
                 
                 {/* Image APRÈS */}
-                <div className="relative aspect-[16/9] md:aspect-[4/3] rounded-lg overflow-hidden bg-gray-800">
+                <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-gray-800">
                   {isLoading && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
                       <Loader2 className="w-8 h-8 animate-spin text-white" />
@@ -142,7 +142,7 @@ const TransformationsSection = () => {
                     src={transformations[currentIndex].after}
                     alt="Après"
                     fill
-                    className={`object-cover object-center transition-opacity duration-300 ${
+                    className={`object-contain object-center transition-opacity duration-300 ${
                       isLoading ? 'opacity-0' : 'opacity-100'
                     }`}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
@@ -158,11 +158,11 @@ const TransformationsSection = () => {
               </div>
               
               {/* Navigation */}
-              <div className="flex justify-between items-center mt-6">
+              <div className="flex justify-between items-center mt-4 md:mt-6">
                 <button
                   onClick={prevSlide}
                   disabled={isLoading}
-                  className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 text-sm font-medium transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 text-sm font-medium transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="Transformation précédente"
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -176,7 +176,7 @@ const TransformationsSection = () => {
                 <button
                   onClick={nextSlide}
                   disabled={isLoading}
-                  className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 text-sm font-medium transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 text-sm font-medium transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label="Transformation suivante"
                 >
                   <span className="hidden sm:inline">Suivant</span>
