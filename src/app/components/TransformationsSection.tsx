@@ -123,7 +123,6 @@ const TransformationsSection = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     priority={currentIndex < 2}
                     quality={85}
-
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
@@ -149,7 +148,6 @@ const TransformationsSection = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     priority={currentIndex < 2}
                     quality={85}
-
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
@@ -157,16 +155,6 @@ const TransformationsSection = () => {
                     <span className="text-sm md:text-xs font-semibold text-white">APRÈS</span>
                   </div>
                 </div>
-              </div>
-
-              {/* Informations de la transformation */}
-              <div className="mt-4 text-center">
-                <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                  {transformations[currentIndex].title}
-                </h3>
-                <p className="text-gray-300 text-sm md:text-base">
-                  {transformations[currentIndex].description}
-                </p>
               </div>
               
               {/* Navigation */}
