@@ -1,30 +1,75 @@
+# Robots.txt optimisé pour Shine&Go Premium
+# https://www.shineandgo.be/robots.txt
+
+# Tous les robots
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.shineandgo.be/sitemap.xml
+# Optimisations spécifiques pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
 
-# Optimisations pour mobile
+# Optimisations pour Googlebot Mobile
 User-agent: Googlebot-Mobile
 Allow: /
+Crawl-delay: 1
 
 # Optimisations pour les images
 User-agent: Googlebot-Image
+Allow: /
 Allow: /transformations/
 Allow: /public/
+Crawl-delay: 1
 
-# Optimisations pour les médias
-User-agent: *
+# Optimisations pour Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Optimisations pour les autres moteurs
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Autoriser l'indexation des ressources importantes
 Allow: /transformations/*.jpeg
 Allow: /transformations/*.jpg
 Allow: /transformations/*.png
 Allow: /transformations/*.webp
+Allow: /public/*.svg
+Allow: /public/*.ico
 
-# Bloquer les fichiers inutiles
+# Bloquer les fichiers et dossiers inutiles
 Disallow: /_next/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /sitemap.xml
+Disallow: /robots.txt
 
-# Optimisations pour les performances
-Crawl-delay: 1 
+# Bloquer les paramètres d'URL inutiles
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+
+# Sitemap principal
+Sitemap: https://www.shineandgo.be/sitemap.xml
+
+# Sitemaps spécifiques (optionnels)
+Sitemap: https://www.shineandgo.be/sitemap-images.xml
+Sitemap: https://www.shineandgo.be/sitemap-videos.xml
+
+# Informations sur le site
+# Site: Shine&Go Premium - Nettoyage Auto & Car Wash à Herve
+# Contact: +32 472 30 37 01
+# Email: contact@shinego.be 

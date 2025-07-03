@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, CheckCircle, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
+import { CheckCircle, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 
 type VehicleType = 'Citadine' | 'Berline' | 'SUV' | 'Break' | 'Monospace' | 'Utilitaire';
 type DirtLevel = 'Propre' | 'Moyen' | 'Très sale';
@@ -45,7 +45,7 @@ const VEHICLE_ICONS = {
 export default function StepByStepDevisSimulator() {
   const [currentStep, setCurrentStep] = useState(1);
   const [vehicleType, setVehicleType] = useState<VehicleType | null>(null);
-  const [dirtLevel, setDirtLevel] = useState<DirtLevel | null>(null);
+  const [dirtLevel, setDirtLevel] = useState<DirtLevel>('Propre');
 
   const totalSteps = 4;
 
@@ -87,23 +87,14 @@ export default function StepByStepDevisSimulator() {
   // Removed unused functions getStepTitle and getStepIcon
 
   return (
-    <section className="py-6 relative">
+    <div className="relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center space-x-2 bg-blue-500/20 rounded-full px-3 py-1.5 mb-3">
-            <Sparkles className="w-3 h-3 text-blue-400" />
-            <span className="text-xs font-medium">Simulateur de Devis</span>
-          </div>
-          <h2 className="text-xl font-bold mb-3">
-            Obtenez votre <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">devis instantané</span>
-          </h2>
-        </div>
 
         <div className="max-w-lg mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow-xl h-[600px] overflow-y-auto flex flex-col flex-1">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow-xl h-[600px] flex flex-col">
             
             {/* Indicateur de progression */}
-            <div className="mb-6">
+            <div className="mb-8">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs text-gray-400">Étape {currentStep} sur {totalSteps}</span>
                 <span className="text-xs text-gray-400">{Math.round((currentStep / totalSteps) * 100)}%</span>
@@ -117,7 +108,7 @@ export default function StepByStepDevisSimulator() {
             </div>
 
             {/* Titre de l'étape */}
-            <div className="text-center mb-6">
+            <div className="text-center mb-8">
               <h3 className="text-xl font-bold text-white mb-1">
                 {(() => {
                   switch (currentStep) {
@@ -324,6 +315,6 @@ export default function StepByStepDevisSimulator() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

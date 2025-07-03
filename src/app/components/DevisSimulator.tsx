@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, Car, Droplets, Zap, CheckCircle, Info, MessageCircle } from 'lucide-react';
+import { Car, Droplets, Zap, CheckCircle, Info, MessageCircle } from 'lucide-react';
 
 type VehicleType = 'Citadine' | 'Berline' | 'SUV' | 'Break' | 'Monospace' | 'Utilitaire';
 type WashType = 'Nettoyage Intensif' | 'Entretien Régulier';
@@ -68,21 +68,17 @@ export default function DevisSimulator() {
   };
 
   return (
-    <section className="py-8 md:py-16 relative">
+    <section className="py-12 md:py-20 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12">
-          <div className="inline-flex items-center space-x-2 bg-blue-500/20 rounded-full px-3 md:px-4 py-2 mb-4 md:mb-6">
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-sm font-medium">Simulateur de Devis</span>
-          </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">
-            Obtenez votre <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">devis instantané</span>
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 text-white">
+            Obtenez votre devis instantané
           </h2>
         </div>
 
         <div className="max-w-3xl md:max-w-4xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6 lg:p-8 shadow-xl">
-            <div className="space-y-6 md:space-y-8">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 lg:p-10 shadow-xl">
+            <div className="space-y-8 md:space-y-10">
               {/* Type de véhicule */}
               <div className="space-y-3 md:space-y-4">
                 <label className="block text-sm font-medium text-gray-300 mb-3 md:mb-4 flex items-center space-x-2">

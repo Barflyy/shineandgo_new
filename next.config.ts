@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Exclure le dossier scripts/ de la compilation
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+  
   // Optimisations pour les performances mobile
   experimental: {
     optimizeCss: true,
@@ -63,6 +66,12 @@ const nextConfig: NextConfig = {
   
   // Optimisation du webpack
   webpack: (config, { dev, isServer }) => {
+    // Exclure le dossier scripts/ de la compilation
+    config.module.rules.push({
+      test: /\.(ts|tsx|js|jsx)$/,
+      exclude: /scripts/,
+    });
+    
     // Optimisations pour la production
     if (!dev && !isServer) {
       config.optimization.splitChunks = {

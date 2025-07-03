@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "lighthouse": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'",
-    "test:mobile": "npm run build && npm run start & sleep 5 && npm run lighthouse && pkill -f 'next start'"
+    "test:mobile": "npm run build && npm run start & sleep 5 && npm run lighthouse && pkill -f 'next start'",
+    "generate:pages": "npx tsx scripts/generate-pages.ts",
+    "update:sitemap": "npx tsx scripts/update-sitemap.ts",
+    "seo:full": "npm run generate:pages && npm run update:sitemap"
   },
   "dependencies": {
     "critters": "^0.0.20",

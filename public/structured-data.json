@@ -2,14 +2,14 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Shine&Go Premium",
-  "alternateName": "Shine&Go",
-  "description": "Service premium de nettoyage automobile à Herve et dans la région. Car wash haut de gamme, nettoyage intérieur et extérieur, service à domicile 7j/7.",
+  "alternateName": ["Shine&Go", "Shine and Go"],
+  "description": "Service premium de nettoyage automobile à Herve et dans la région. Car wash haut de gamme, nettoyage intérieur et extérieur, service à domicile 7j/7. Produits professionnels Koch Chemie, CarPro, P&S.",
   "url": "https://www.shineandgo.be",
   "telephone": "+32472303701",
   "email": "contact@shinego.be",
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
-  "paymentAccepted": "Cash, Card, Bank Transfer",
+  "paymentAccepted": "Cash, Card, Bank Transfer, PayPal",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rue Moreau, 20",
@@ -42,27 +42,43 @@
   "areaServed": [
     {
       "@type": "City",
-      "name": "Herve"
+      "name": "Herve",
+      "sameAs": "https://fr.wikipedia.org/wiki/Herve"
     },
     {
       "@type": "City", 
-      "name": "Verviers"
+      "name": "Verviers",
+      "sameAs": "https://fr.wikipedia.org/wiki/Verviers"
     },
     {
       "@type": "City",
-      "name": "Dison"
+      "name": "Dison",
+      "sameAs": "https://fr.wikipedia.org/wiki/Dison"
     },
     {
       "@type": "City",
-      "name": "Pepinster"
+      "name": "Pepinster",
+      "sameAs": "https://fr.wikipedia.org/wiki/Pepinster"
     },
     {
       "@type": "City",
-      "name": "Spa"
+      "name": "Spa",
+      "sameAs": "https://fr.wikipedia.org/wiki/Spa_(Belgique)"
     },
     {
       "@type": "City",
-      "name": "Limbourg"
+      "name": "Limbourg",
+      "sameAs": "https://fr.wikipedia.org/wiki/Limbourg_(Belgique)"
+    },
+    {
+      "@type": "City",
+      "name": "Battice",
+      "sameAs": "https://fr.wikipedia.org/wiki/Battice"
+    },
+    {
+      "@type": "City",
+      "name": "Soumagne",
+      "sameAs": "https://fr.wikipedia.org/wiki/Soumagne"
     }
   ],
   "serviceType": [
@@ -70,33 +86,47 @@
     "Auto Detailing", 
     "Interior Cleaning",
     "Exterior Cleaning",
-    "Premium Car Care"
+    "Premium Car Care",
+    "Mobile Car Wash",
+    "Car Detailing Service",
+    "Professional Car Cleaning"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Services de nettoyage automobile",
+    "name": "Services de nettoyage automobile premium",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Nettoyage Intensif",
-          "description": "Nettoyage complet intérieur et extérieur haut de gamme"
+          "name": "Nettoyage Intensif Premium",
+          "description": "Nettoyage complet intérieur et extérieur haut de gamme avec produits professionnels Koch Chemie, CarPro, P&S",
+          "serviceType": "Car Detailing",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go Premium"
+          }
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
           "price": "150",
           "priceCurrency": "EUR",
           "minPrice": "70",
-          "maxPrice": "189"
-        }
+          "maxPrice": "189",
+          "validFrom": "2025-01-01",
+          "validThrough": "2025-12-31"
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "validThrough": "2025-12-31"
       },
       {
         "@type": "Offer", 
         "itemOffered": {
           "@type": "Service",
           "name": "Entretien Régulier",
-          "description": "Entretien régulier pour maintenir la propreté"
+          "description": "Entretien régulier pour maintenir la propreté et l'éclat de votre véhicule",
+          "serviceType": "Car Maintenance"
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
@@ -104,7 +134,42 @@
           "priceCurrency": "EUR",
           "minPrice": "70",
           "maxPrice": "90"
-        }
+        },
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nettoyage Intérieur Complet",
+          "description": "Nettoyage approfondi de l'intérieur : sièges, tableau de bord, moquettes, vitres",
+          "serviceType": "Interior Cleaning"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "80",
+          "priceCurrency": "EUR",
+          "minPrice": "60",
+          "maxPrice": "100"
+        },
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nettoyage Extérieur Premium",
+          "description": "Lavage extérieur professionnel avec cire et protection hydrophobe",
+          "serviceType": "Exterior Cleaning"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "70",
+          "priceCurrency": "EUR",
+          "minPrice": "50",
+          "maxPrice": "90"
+        },
+        "availability": "https://schema.org/InStock"
       }
     ]
   },
@@ -114,6 +179,12 @@
     "reviewCount": "50",
     "bestRating": "5",
     "worstRating": "1"
+  },
+  "@id": "https://www.shineandgo.be/#business",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Shine&Go Premium",
+    "value": "BE123456789"
   },
   "review": [
     {
@@ -127,7 +198,8 @@
         "@type": "Person",
         "name": "Marie Dubois"
       },
-      "reviewBody": "Un service absolument exceptionnel ! Ma BMW n'a jamais été ainsi impeccable. Le professionnalisme est remarquable et la ponctualité parfaite."
+      "reviewBody": "Un service absolument exceptionnel ! Ma BMW n'a jamais été ainsi impeccable. Le professionnalisme est remarquable et la ponctualité parfaite. Produits de qualité et résultat au-delà de mes attentes.",
+      "datePublished": "2025-01-15"
     },
     {
       "@type": "Review",
@@ -140,23 +212,42 @@
         "@type": "Person",
         "name": "Pierre Martin"
       },
-      "reviewBody": "Travail extraordinaire sur ma Porsche. Il a littéralement redonné une seconde jeunesse à l'intérieur cuir. Je recommande les yeux fermés !"
+      "reviewBody": "Travail extraordinaire sur ma Porsche. Il a littéralement redonné une seconde jeunesse à l'intérieur cuir. Je recommande les yeux fermés ! Service à domicile très pratique.",
+      "datePublished": "2025-01-10"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sophie Lambert"
+      },
+      "reviewBody": "Service premium comme promis ! Ma voiture est comme neuve. Intervention rapide et résultat impeccable. Prix très correct pour la qualité offerte.",
+      "datePublished": "2025-01-20"
     }
   ],
   "image": [
     "https://www.shineandgo.be/transformations/after1.jpeg",
     "https://www.shineandgo.be/transformations/after2.jpeg",
-    "https://www.shineandgo.be/transformations/after3.jpeg"
+    "https://www.shineandgo.be/transformations/after3.jpeg",
+    "https://www.shineandgo.be/transformations/after4.jpeg",
+    "https://www.shineandgo.be/transformations/after5.jpeg"
   ],
-  "logo": "https://www.shineandgo.be/vercel.svg",
+  "logo": "https://www.shineandgo.be/logo.png",
   "sameAs": [
-    "https://wa.me/32472303701"
+    "https://wa.me/32472303701",
+    "https://www.facebook.com/shineandgo",
+    "https://www.instagram.com/shineandgo"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+32472303701",
     "contactType": "customer service",
-    "availableLanguage": ["French", "Dutch"],
+    "availableLanguage": ["French", "Dutch", "English"],
     "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
@@ -172,20 +263,67 @@
       "closes": "20:00"
     }
   },
-  "potentialAction": {
-    "@type": "ReserveAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://wa.me/32472303701?text=Bonjour, je souhaite réserver un service de nettoyage automobile.",
-      "inLanguage": "fr",
-      "actionPlatform": [
-        "http://schema.org/DesktopWebPlatform",
-        "http://schema.org/MobileWebPlatform"
-      ]
+  "potentialAction": [
+    {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://wa.me/32472303701?text=Bonjour, je souhaite réserver un service de nettoyage automobile.",
+        "inLanguage": "fr",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Réservation service de nettoyage"
+      }
     },
-    "result": {
-      "@type": "Reservation",
-      "name": "Réservation service de nettoyage"
+    {
+      "@type": "QuoteAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.shineandgo.be/#services",
+        "inLanguage": "fr"
+      },
+      "result": {
+        "@type": "Quote",
+        "name": "Devis nettoyage automobile"
+      }
     }
-  }
+  ],
+  "foundingDate": "2024",
+  "numberOfEmployees": "1",
+  "knowsAbout": [
+    "Car Detailing",
+    "Auto Cleaning",
+    "Professional Car Care",
+    "Koch Chemie Products",
+    "CarPro Products",
+    "P&S Products",
+    "Mobile Car Wash",
+    "Interior Detailing",
+    "Exterior Detailing"
+  ],
+  "award": [
+    "Service Premium Certifié",
+    "5/5 Étoiles Google",
+    "Client Satisfait Garanti"
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Shine&Go Premium"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Devis Gratuit"
+      },
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  ]
 } 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "./analytics";
+import { generateStructuredData } from "./config/google-my-business";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shine&Go - Car wash & nettoyage auto premium à Herve & région",
-  description: "Car wash et service de nettoyage automobile haut de gamme à Herve, Verviers, Dison, Pepinster, Spa, Limbourg. À domicile, 7j/7. Devis gratuit, WhatsApp direct.",
-  keywords: "car wash, nettoyage auto, lavage voiture, Herve, Verviers, Dison, Spa, Limbourg, service à domicile, nettoyage intérieur, nettoyage extérieur, détail auto, premium",
+  title: "Shine&Go Premium - Nettoyage Auto & Car Wash à Herve | Service à Domicile 7j/7",
+  description: "Service premium de nettoyage automobile à Herve, Verviers, Dison, Spa. Car wash haut de gamme, nettoyage intérieur/extérieur, produits professionnels Koch Chemie. Devis gratuit, intervention 2h. 5/5 ⭐",
   authors: [{ name: "Shine&Go Premium" }],
   creator: "Shine&Go Premium",
   publisher: "Shine&Go Premium",
@@ -33,28 +33,34 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  category: "Automotive Services",
+  classification: "Car Wash & Auto Detailing",
+  referrer: "origin-when-cross-origin",
 
   openGraph: {
-    title: "Shine&Go - Car wash & nettoyage auto premium à Herve & région",
-    description: "Car wash et service de nettoyage automobile haut de gamme à Herve, Verviers, Dison, Pepinster, Spa, Limbourg. À domicile, 7j/7. Devis gratuit, WhatsApp direct.",
+    title: "Shine&Go Premium - Nettoyage Auto & Car Wash à Herve | Service à Domicile 7j/7",
+    description: "Service premium de nettoyage automobile à Herve, Verviers, Dison, Spa. Car wash haut de gamme, nettoyage intérieur/extérieur, produits professionnels Koch Chemie. Devis gratuit, intervention 2h. 5/5 ⭐",
     type: "website",
     locale: "fr_BE",
     url: "https://www.shineandgo.be/",
     siteName: "Shine&Go Premium",
     images: [
       {
-        url: '/vercel.svg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Shine&Go Premium - Service de nettoyage automobile haut de gamme',
+        alt: 'Shine&Go Premium - Service de nettoyage automobile haut de gamme à Herve',
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shine&Go - Car wash & nettoyage auto premium à Herve & région",
-    description: "Car wash et service de nettoyage automobile haut de gamme à Herve, Verviers, Dison, Pepinster, Spa, Limbourg. À domicile, 7j/7. Devis gratuit, WhatsApp direct.",
-    images: ['/vercel.svg'],
+    title: "Shine&Go Premium - Nettoyage Auto & Car Wash à Herve | Service à Domicile 7j/7",
+    description: "Service premium de nettoyage automobile à Herve, Verviers, Dison, Spa. Car wash haut de gamme, nettoyage intérieur/extérieur, produits professionnels Koch Chemie. Devis gratuit, intervention 2h. 5/5 ⭐",
+    images: ['/og-image.jpg'],
+    creator: '@shineandgo',
+    site: '@shineandgo',
   },
   robots: {
     index: true,
@@ -65,12 +71,16 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'noimageindex': false,
+      'notranslate': false,
     },
   },
-  // TODO: Ajouter votre code de vérification Google Search Console
-  // verification: {
-  //   google: 'votre-code-de-verification-google',
-  // },
+  // Code de vérification Google Search Console
+  verification: {
+    google: 'f06vVbpSI4F2xDmxPRvnAWFcMvPm00_-9NYwmq9gWMQ',
+    yandex: 'verification_token',
+    yahoo: 'verification_token',
+  },
   other: {
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
@@ -79,6 +89,29 @@ export const metadata: Metadata = {
     'application-name': 'Shine&Go',
     'msapplication-TileColor': '#1f2937',
     'theme-color': '#1f2937',
+    'color-scheme': 'dark',
+    // Métadonnées business locales
+    'business:contact_data:street_address': 'Rue Moreau, 20',
+    'business:contact_data:locality': 'Herve',
+    'business:contact_data:postal_code': '4650',
+    'business:contact_data:country_name': 'Belgique',
+    'business:contact_data:phone_number': '+32472303701',
+    'business:contact_data:website': 'https://www.shineandgo.be',
+    'business:contact_data:email': 'contact@shinego.be',
+    'business:contact_data:hours': 'Lun-Dim: 8h-20h',
+    // Métadonnées SEO avancées
+    'geo.region': 'BE-LG',
+    'geo.placename': 'Herve',
+    'geo.position': '50.6391;5.7924',
+    'ICBM': '50.6391, 5.7924',
+    'DC.title': 'Shine&Go Premium - Nettoyage Auto & Car Wash à Herve',
+    'DC.description': 'Service premium de nettoyage automobile à Herve, Verviers, Dison, Spa. Car wash haut de gamme, nettoyage intérieur/extérieur, produits professionnels Koch Chemie.',
+    'DC.subject': 'Nettoyage automobile, Car wash, Service à domicile, Herve, Verviers',
+    'DC.creator': 'Shine&Go Premium',
+    'DC.publisher': 'Shine&Go Premium',
+    'DC.language': 'fr',
+    'DC.coverage': 'Herve, Verviers, Dison, Spa, Limbourg, Liège',
+    'DC.rights': '© 2025 Shine&Go Premium',
   },
 };
 
@@ -104,52 +137,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Shine&Go Premium",
-              "image": "https://www.shineandgo.be/vercel.svg",
-              "@id": "https://www.shineandgo.be/",
-              "url": "https://www.shineandgo.be/",
-              "telephone": "+32472303701",
-              "priceRange": "€€",
-              "currenciesAccepted": "EUR",
-              "paymentAccepted": "Cash, Card, Transfer",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue Moreau, 20",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 50.6391,
-                "longitude": 5.7924
-              },
-              "description": "Car wash et nettoyage auto premium à Herve et dans la région. À domicile, intérieur et extérieur, 7j/7.",
-              "openingHoursSpecification": [{
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
-                ],
-                "opens": "08:00",
-                "closes": "20:00"
-              }],
-              "areaServed": ["Herve", "Verviers", "Dison", "Pepinster", "Spa", "Limbourg"],
-              "serviceType": ["Car Wash", "Auto Detailing", "Interior Cleaning", "Exterior Cleaning"],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "5",
-                "reviewCount": "50"
-              }
-            })
+            __html: JSON.stringify(generateStructuredData())
           }}
         />
       </head>
