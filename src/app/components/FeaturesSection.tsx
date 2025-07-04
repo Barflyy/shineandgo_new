@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Shield, Star, Zap, Award, Heart } from 'lucide-react';
+import { Shield, Star, Zap } from 'lucide-react';
 
 interface FeaturesSectionProps {
   cityName: string;

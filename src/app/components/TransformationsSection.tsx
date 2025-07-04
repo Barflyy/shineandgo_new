@@ -85,7 +85,7 @@ const TransformationsSection = () => {
 
     setIsLoading(true);
     preloadImages();
-  }, [currentIndex]);
+  }, [currentIndex, transformations]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % transformations.length);

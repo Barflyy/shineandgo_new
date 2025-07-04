@@ -86,7 +86,7 @@ export default function CityPage() {
               </h2>
               
               <p className="text-white/90 mb-8 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Obtenez votre devis personnalisé en quelques clics et profitez d'un service premium à domicile avec nos produits haut de gamme.
+                Obtenez votre devis personnalisé en quelques clics et profitez ddddd&apos;unapos;unapos;unapos;unapos;un service premium à domicile avec nos produits haut de gamme.
               </p>
 
               {/* Benefits */}

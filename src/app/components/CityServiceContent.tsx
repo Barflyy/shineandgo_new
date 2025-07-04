@@ -1,4 +1,4 @@
-import { Sparkles, Heart, Clock, Shield, Zap, MapPin, Star, Users, Car, CheckCircle } from 'lucide-react';
+import { Sparkles, Heart, Clock, Shield, Zap, Star, Users, Car, CheckCircle } from 'lucide-react';
 import React from 'react';
 
 interface CityServiceContentProps {
@@ -8,7 +8,7 @@ interface CityServiceContentProps {
   nearbyCities: string[];
 }
 
-const CityServiceContent: React.FC<CityServiceContentProps> = ({ city, region, villages, nearbyCities }) => {
+const CityServiceContent: React.FC<CityServiceContentProps> = ({ city, region, villages }) => {
   return (
     <section className="relative mb-8">
       {/* Badge Premium */}
@@ -47,7 +47,7 @@ const CityServiceContent: React.FC<CityServiceContentProps> = ({ city, region, v
               <Zap className="w-6 h-6 text-green-400 bg-green-900/30 rounded-lg p-1" />
               <span className="font-bold text-white">Branchement requis</span>
             </div>
-            <p className="text-gray-300 text-sm">Branchement d'eau et électricité requis</p>
+            <p className="text-gray-300 text-sm">Branchement d&apos;eau et électricité requis</p>
           </div>
           <div className="bg-white/10 rounded-xl p-5 flex flex-col gap-4 border border-white/10">
             <div className="flex items-center gap-3 mb-1">
