@@ -106,7 +106,7 @@ const PremiumCarCleaningLanding = () => {
       <Header />
 
       {/* Hero Section - Mobile-first */}
-      <section id="accueil" className="pt-12 md:pt-20 min-h-[80vh] md:min-h-screen flex items-center justify-center relative">
+      <section id="accueil" className="min-h-[80vh] md:min-h-[85vh] flex items-center justify-center relative">
         {/* Background subtil */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-blue-500/10 rounded-full blur-3xl" />
