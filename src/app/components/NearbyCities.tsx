@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getCityDisplayName } from "../utils/cityData";
 
 interface NearbyCitiesProps {
   currentCity: string;
@@ -26,7 +27,7 @@ const NearbyCities: React.FC<NearbyCitiesProps> = ({ currentCity, nearbyCities }
           Service disponible dans les villes voisines
         </h3>
         <p className="text-white/80 text-center mb-8">
-          Shine&Go intervient également dans les communes environnantes de {currentCity}
+          Shine&Go intervient également dans les communes environnantes de {getCityDisplayName(currentCity)}
         </p>
         <div className="grid grid-cols-3 gap-4">
           {nearbyCities.map((city, index) => (
@@ -35,7 +36,7 @@ const NearbyCities: React.FC<NearbyCitiesProps> = ({ currentCity, nearbyCities }
               href={`/zone-intervention/${city.slug}`}
               className={`bg-gradient-to-r ${gradientClasses[index % gradientClasses.length]} rounded-lg p-3 text-center transition-all duration-300 border border-white/10 hover:border-white/20 min-h-[80px] flex flex-col justify-center`}
             >
-              <h4 className="text-white font-semibold text-xs leading-tight truncate">{city.name}</h4>
+              <h4 className="text-white font-semibold text-xs leading-tight truncate">{getCityDisplayName(city.slug)}</h4>
             </Link>
           ))}
         </div>
