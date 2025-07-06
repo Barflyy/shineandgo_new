@@ -3,6 +3,8 @@ import Link from "next/link";
 import Header from "./Header";
 import NearbyCities from "./NearbyCities";
 import CityServiceContent from "./CityServiceContent";
+import StepByStepDevisSimulator from "./StepByStepDevisSimulator";
+import TransformationsSection from "./TransformationsSection";
 import { getCityData, getCityAccroche, getCityTemoignage, getNearbyCities, getCityDisplayName } from "../utils/cityData";
 
 interface CityPageTemplateProps {
@@ -115,6 +117,22 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
           </div>
         </div>
 
+        {/* Section Transformations Avant/Après */}
+        <div className="mb-12">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Transformations à {cityName}
+              </h2>
+              <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
+                Découvrez nos réalisations avant/après dans la région. 
+                Chaque transformation témoigne de notre expertise et de notre souci du détail.
+              </p>
+            </div>
+            <TransformationsSection />
+          </div>
+        </div>
+
         {/* Services Section */}
         <div className="mb-12">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
@@ -201,6 +219,22 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
               </div>
             </div>
             <div className="text-center text-xs text-white/60 mt-2">Tarifs indicatifs, hors options et niveau de saleté.</div>
+          </div>
+        </div>
+
+        {/* Simulateur de devis */}
+        <div className="mb-12">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Devis personnalisé à {cityName}
+              </h2>
+              <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
+                Obtenez un devis instantané et personnalisé pour votre véhicule. 
+                Notre simulateur vous guide étape par étape pour un tarif précis.
+              </p>
+            </div>
+            <StepByStepDevisSimulator />
           </div>
         </div>
 

@@ -16,6 +16,14 @@
     </image:image>
   </url>
 
+  <!-- Page principale des zones d'intervention -->
+  <url>
+    <loc>https://www.shineandgo.be/zone-intervention</loc>
+    <lastmod>2025-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Pages de villes - Zone d'intervention -->
   <url>
     <loc>https://www.shineandgo.be/zone-intervention/amay</loc>

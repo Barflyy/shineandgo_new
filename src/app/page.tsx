@@ -276,7 +276,7 @@ const PremiumCarCleaningLanding = () => {
         <div className="container mx-auto px-4 flex justify-center">
           <div className="contact-section w-full flex flex-col items-center justify-center gap-8">
             <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Prêt à redonner de l’éclat à votre véhicule&nbsp;?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Prêt à redonner de l&apos;éclat à votre véhicule&nbsp;?</h2>
               <p className="text-gray-300 text-base md:text-lg mb-2">Contactez-moi dès maintenant pour un devis rapide ou une réservation directe.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
@@ -303,6 +303,51 @@ const PremiumCarCleaningLanding = () => {
               >
                 <Sparkles className="w-6 h-6" />
                 <span>Simulateur de devis</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Zones d'intervention Section - Mobile-first */}
+      <section className="py-8 md:py-16 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            {/* Titre et description */}
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">
+                Zones d&apos;intervention
+              </h2>
+              <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                Service premium à domicile dans toute la région. Découvrez les villes où nous intervenons pour redonner l&apos;éclat à votre véhicule.
+              </p>
+            </div>
+
+            {/* Grille des villes principales */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-12">
+              {[
+                'Herve', 'Liège', 'Verviers', 'Dison', 'Spa', 'Huy', 'Aubel', 'Aywaille', 'Battice'
+              ].map((ville, index) => (
+                <a
+                  key={index}
+                  href={`/zone-intervention/${ville.toLowerCase().replace(/[éèêë]/g, 'e').replace(/[àâä]/g, 'a').replace(/[ùûü]/g, 'u').replace(/[ôö]/g, 'o').replace(/[îï]/g, 'i').replace(/[ç]/g, 'c').replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3 md:p-4 text-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
+                >
+                  <span className="text-sm md:text-base text-gray-300 group-hover:text-white transition-colors duration-300 hover:underline">
+                    {ville}
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            {/* Lien vers toutes les villes */}
+            <div className="text-center">
+              <a
+                href="/zone-intervention"
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 rounded-lg font-semibold text-base md:text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-400/20 hover:scale-105"
+              >
+                <MapPin className="w-5 h-5 mr-2" />
+                Voir toutes les villes desservies
               </a>
             </div>
           </div>
