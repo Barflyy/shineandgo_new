@@ -20,6 +20,8 @@ const NearbyCities: React.FC<NearbyCitiesProps> = ({ currentCity, nearbyCities }
     "from-emerald-600/20 to-green-600/20 hover:from-emerald-600/30 hover:to-green-600/30",
   ];
 
+  if (!Array.isArray(nearbyCities) || nearbyCities.length === 0) return null;
+
   return (
     <div className="mt-16">
       <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">

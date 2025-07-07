@@ -6,6 +6,10 @@ import { CheckCircle, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react'
 type VehicleType = 'Citadine' | 'Berline' | 'SUV' | 'Break' | 'Monospace' | 'Utilitaire';
 type DirtLevel = 'Propre' | 'Moyen' | 'Très sale';
 
+interface StepByStepDevisSimulatorProps {
+  city?: string;
+}
+
 const PRICES = {
   'Citadine': {
     'Nettoyage Intensif': 149,
@@ -42,7 +46,7 @@ const VEHICLE_ICONS = {
   'Utilitaire': '🚚',
 };
 
-export default function StepByStepDevisSimulator() {
+export default function StepByStepDevisSimulator({ city }: StepByStepDevisSimulatorProps) {
   const [currentStep, setCurrentStep] = useState(1);
   const [vehicleType, setVehicleType] = useState<VehicleType | null>(null);
   const [dirtLevel, setDirtLevel] = useState<DirtLevel>('Propre');
@@ -58,7 +62,7 @@ export default function StepByStepDevisSimulator() {
 
   const generateWhatsAppMessage = () => {
     if (!vehicleType || !dirtLevel) return '';
-    const message = `Bonjour ! 😊 Je souhaiterais avoir un devis pour un(e) ${vehicleType}, avec la formule Nettoyage Intensif.\nNiveau de saleté : ${dirtLevel}.\nPourriez-vous me confirmer le tarif estimé à ${calculatePrice()}€ et me donner vos prochaines disponibilités ? Merci beaucoup !`;
+    const message = `Bonjour ! 😊 Je souhaiterais avoir un devis pour un(e) ${vehicleType}, avec la formule Nettoyage Intensif à ${city ?? ''}.\nNiveau de saleté : ${dirtLevel}.\nPourriez-vous me confirmer le tarif estimé à ${calculatePrice()}€ et me donner vos prochaines disponibilités ? Merci beaucoup !`;
     return encodeURIComponent(message);
   };
 
@@ -125,7 +129,7 @@ export default function StepByStepDevisSimulator() {
                   switch (currentStep) {
                     case 1: return 'Sélectionnez la catégorie de votre voiture';
                     case 2: return 'Découvrez le détail de la prestation';
-                    case 3: return 'Indiquez l\'état de propreté de votre véhicule';
+                    case 3: return "Indiquez l'état de propreté de votre véhicule";
                     case 4: return 'Vérifiez votre demande avant envoi WhatsApp';
                     default: return '';
                   }

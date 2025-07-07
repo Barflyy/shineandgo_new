@@ -11,7 +11,8 @@
     "test:mobile": "npm run build && npm run start & sleep 5 && npm run lighthouse && pkill -f 'next start'",
     "generate:pages": "npx tsx scripts/generate-pages.ts",
     "update:sitemap": "npx tsx scripts/update-sitemap.ts",
-    "seo:full": "npm run generate:pages && npm run update:sitemap"
+    "seo:full": "npm run generate:pages && npm run update:sitemap",
+    "fix:nearby-cities": "node scripts/fix-nearby-cities-placeholder.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
