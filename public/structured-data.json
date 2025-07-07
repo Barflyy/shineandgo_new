@@ -99,7 +99,57 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Nettoyage Intensif Premium",
+          "name": "Nettoyage Intérieur Complet",
+          "description": "Nettoyage approfondi de l'intérieur : sièges, tableau de bord, moquettes, vitres",
+          "serviceType": "Interior Cleaning",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go Premium"
+          }
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "95",
+          "priceCurrency": "EUR",
+          "minPrice": "95",
+          "maxPrice": "130",
+          "validFrom": "2025-01-01",
+          "validThrough": "2025-12-31"
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "validThrough": "2025-12-31"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nettoyage Extérieur Premium",
+          "description": "Lavage extérieur professionnel avec cire et protection hydrophobe",
+          "serviceType": "Exterior Cleaning",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go Premium"
+          }
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "65",
+          "priceCurrency": "EUR",
+          "minPrice": "65",
+          "maxPrice": "90",
+          "validFrom": "2025-01-01",
+          "validThrough": "2025-12-31"
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "validThrough": "2025-12-31"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nettoyage Intérieur + Extérieur Premium",
           "description": "Nettoyage complet intérieur et extérieur haut de gamme avec produits professionnels Koch Chemie, CarPro, P&S",
           "serviceType": "Car Detailing",
           "provider": {
@@ -109,67 +159,16 @@
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "price": "150",
+          "price": "149",
           "priceCurrency": "EUR",
-          "minPrice": "70",
-          "maxPrice": "189",
+          "minPrice": "149",
+          "maxPrice": "199",
           "validFrom": "2025-01-01",
           "validThrough": "2025-12-31"
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2025-01-01",
         "validThrough": "2025-12-31"
-      },
-      {
-        "@type": "Offer", 
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Entretien Régulier",
-          "description": "Entretien régulier pour maintenir la propreté et l'éclat de votre véhicule",
-          "serviceType": "Car Maintenance"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "70",
-          "priceCurrency": "EUR",
-          "minPrice": "70",
-          "maxPrice": "90"
-        },
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Nettoyage Intérieur Complet",
-          "description": "Nettoyage approfondi de l'intérieur : sièges, tableau de bord, moquettes, vitres",
-          "serviceType": "Interior Cleaning"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "80",
-          "priceCurrency": "EUR",
-          "minPrice": "60",
-          "maxPrice": "100"
-        },
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Nettoyage Extérieur Premium",
-          "description": "Lavage extérieur professionnel avec cire et protection hydrophobe",
-          "serviceType": "Exterior Cleaning"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "70",
-          "priceCurrency": "EUR",
-          "minPrice": "50",
-          "maxPrice": "90"
-        },
-        "availability": "https://schema.org/InStock"
       }
     ]
   },
