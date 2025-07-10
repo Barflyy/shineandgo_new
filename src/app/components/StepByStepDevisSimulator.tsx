@@ -1,85 +1,400 @@
 'use client';
 
 import { useState } from 'react';
-import { CheckCircle, MessageCircle, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CheckCircle, MessageCircle, ArrowRight, ArrowLeft, Shield, Clock, MapPin, Sparkles } from 'lucide-react';
+import React from 'react';
 
-type VehicleType = 'Citadine' | 'Berline' | 'SUV' | 'Break' | 'Monospace' | 'Utilitaire';
+type ServiceCategory = 'Nettoyage' | 'Detailing';
+type VehicleType = 'Citadine' | 'Berline' | 'Break' | 'SUV' | 'Monospace' | 'Utilitaire';
 type ServiceType = 'Intérieur seul' | 'Extérieur seul' | 'Intérieur + Extérieur';
-type DirtLevel = 'Propre' | 'Moyen' | 'Très sale';
 
 interface StepByStepDevisSimulatorProps {
   city?: string;
 }
 
 const PRICES = {
-  'Citadine': {
-    'Intérieur seul': 95,
-    'Extérieur seul': 65,
-    'Intérieur + Extérieur': 149,
+  'Nettoyage': {
+    'Citadine': {
+      'Intérieur seul': 39,
+      'Extérieur seul': 49,
+      'Intérieur + Extérieur': 79,
+    },
+    'Berline': {
+      'Intérieur seul': 44,
+      'Extérieur seul': 54,
+      'Intérieur + Extérieur': 89,
+    },
+    'SUV': {
+      'Intérieur seul': 49,
+      'Extérieur seul': 59,
+      'Intérieur + Extérieur': 99,
+    },
+    'Break': {
+      'Intérieur seul': 54,
+      'Extérieur seul': 64,
+      'Intérieur + Extérieur': 109,
+    },
+    'Monospace': {
+      'Intérieur seul': 59,
+      'Extérieur seul': 69,
+      'Intérieur + Extérieur': 119,
+    },
+    'Utilitaire': {
+      'Intérieur seul': 64,
+      'Extérieur seul': 74,
+      'Intérieur + Extérieur': 129,
+    },
   },
-  'Berline': {
-    'Intérieur seul': 105,
-    'Extérieur seul': 70,
-    'Intérieur + Extérieur': 159,
+  'Detailing': {
+    'Citadine': {
+      'Intérieur seul': 180,
+      'Extérieur seul': 120,
+      'Intérieur + Extérieur': 280,
+    },
+    'Berline': {
+      'Intérieur seul': 200,
+      'Extérieur seul': 140,
+      'Intérieur + Extérieur': 320,
+    },
+    'SUV': {
+      'Intérieur seul': 220,
+      'Extérieur seul': 160,
+      'Intérieur + Extérieur': 360,
+    },
+    'Break': {
+      'Intérieur seul': 210,
+      'Extérieur seul': 150,
+      'Intérieur + Extérieur': 340,
+    },
+    'Monospace': {
+      'Intérieur seul': 230,
+      'Extérieur seul': 170,
+      'Intérieur + Extérieur': 380,
+    },
+    'Utilitaire': {
+      'Intérieur seul': 250,
+      'Extérieur seul': 190,
+      'Intérieur + Extérieur': 420,
+    },
   },
-  'SUV': {
-    'Intérieur seul': 115,
-    'Extérieur seul': 80,
-    'Intérieur + Extérieur': 179,
-  },
-  'Break': {
-    'Intérieur seul': 110,
-    'Extérieur seul': 75,
-    'Intérieur + Extérieur': 169,
-  },
-  'Monospace': {
-    'Intérieur seul': 120,
-    'Extérieur seul': 85,
-    'Intérieur + Extérieur': 189,
-  },
-  'Utilitaire': {
-    'Intérieur seul': 130,
-    'Extérieur seul': 90,
-    'Intérieur + Extérieur': 199,
-  },
-};
-
-const DIRT_LEVEL_PRICES = {
-  'Propre': 0,
-  'Moyen': 20,
-  'Très sale': 40,
 };
 
 const VEHICLE_ICONS = {
   'Citadine': '🚗',
   'Berline': '🚙',
-  'SUV': '🚐',
   'Break': '🚗',
+  'SUV': '🚐',
   'Monospace': '🚐',
   'Utilitaire': '🚚',
 };
 
-const SERVICES = ['Intérieur seul', 'Extérieur seul', 'Intérieur + Extérieur'] as ServiceType[];
+// Descriptions détaillées des services
+const SERVICE_DESCRIPTIONS = {
+  'Intérieur seul': {
+    title: 'Nettoyage intérieur',
+    description: 'Aspiration de l\'habitacle, nettoyage plastiques, nettoyage des vitres',
+    details: [
+      'Aspiration de l\'habitacle',
+      'Nettoyage plastiques',
+      'Nettoyage des vitres',
+      'Nettoyage des tapis de sols'
+    ]
+  },
+  'Extérieur seul': {
+    title: 'Nettoyage extérieur',
+    description: 'Prélavage à la mousse active, lavage manuel, jantes et protection',
+    details: [
+      'Prélavage à la mousse active',
+      'Lavage manuel de la carrosserie',
+      'Jantes et pneus (face visible)',
+      'Vitres extérieures',
+      'Seuils de portes',
+      'Séchage micro fibre sans traces'
+    ]
+  },
+  'Intérieur + Extérieur': {
+    title: 'Nettoyage complet',
+    description: 'Intérieur + Extérieur - Transformation garantie',
+    details: [
+      'Tous les services intérieur',
+      'Tous les services extérieur',
+      'Résultat garanti'
+    ]
+  }
+};
+
+
+
+// Composant pour l'étape de sélection du véhicule
+const VehicleSelectionStep = ({ vehicleType, setVehicleType }: { vehicleType: VehicleType | null, setVehicleType: (type: VehicleType) => void }) => (
+  <div className="w-full max-w-4xl">
+    <div className="text-center mb-3 sm:mb-4">
+      <h2 className="text-lg sm:text-xl font-bold text-white mb-2">Quel type de véhicule ?</h2>
+    </div>
+    
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
+      {(Object.keys(VEHICLE_ICONS) as VehicleType[]).map((type) => (
+        <button
+          key={type}
+          onClick={() => setVehicleType(type)}
+          className={`group relative p-3 sm:p-4 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-105 ${
+            vehicleType === type 
+              ? 'bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border-2 border-blue-400/50 shadow-xl shadow-blue-500/25' 
+              : 'bg-gradient-to-br from-white/10 to-white/5 border border-white/20 hover:border-white/30 hover:bg-white/15'
+          }`}
+        >
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+              {VEHICLE_ICONS[type]}
+            </div>
+            <div className="font-bold text-white text-xs sm:text-sm">{type}</div>
+            {vehicleType === type && (
+              <div className="absolute top-1 right-1 sm:top-2 sm:right-2">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+              </div>
+            )}
+          </div>
+        </button>
+      ))}
+    </div>
+  </div>
+);
+
+// Composant pour l'étape de sélection du service
+const ServiceSelectionStep = ({ serviceType, selectService }: { serviceType: ServiceType | null, selectService: (service: ServiceType) => void }) => (
+  <div className="w-full max-w-5xl">
+    <div className="text-center mb-2 sm:mb-4">
+      <h2 className="text-lg sm:text-xl font-bold text-white mb-2">Choisissez votre prestation</h2>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-4">
+      {/* Service Intérieur */}
+      <div
+        onClick={() => selectService('Intérieur seul')}
+        className={`group relative p-2 sm:p-4 rounded-lg sm:rounded-xl transition-colors duration-200 cursor-pointer ${
+          serviceType === 'Intérieur seul' 
+            ? 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border-2 border-green-400/50 shadow-xl shadow-green-500/25' 
+            : 'bg-gradient-to-br from-white/10 to-white/5 border border-white/20 hover:border-white/30 hover:bg-white/15'
+        }`}
+      >
+        <div className="text-center mb-2">
+          <div className="text-xl sm:text-3xl mb-1 transition-transform duration-200 group-hover:scale-105">🧽</div>
+          <h3 className="text-sm sm:text-lg font-bold text-white mb-1">{SERVICE_DESCRIPTIONS['Intérieur seul'].title}</h3>
+        </div>
+        
+        <div className="space-y-1">
+          <div className="text-xs font-semibold text-green-400 flex items-center justify-center">
+            <CheckCircle className="w-3 h-3 mr-1" />
+            INCLUS
+          </div>
+          <div className="space-y-1">
+            {SERVICE_DESCRIPTIONS['Intérieur seul'].details.map((detail, index) => (
+              <div key={index} className="flex items-center space-x-1 text-xs text-gray-300">
+                <div className="w-1.5 h-1.5 bg-green-400 rounded-full flex-shrink-0"></div>
+                <span>{detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+
+      </div>
+
+      {/* Service Extérieur */}
+      <div
+        onClick={() => selectService('Extérieur seul')}
+        className={`group relative p-2 sm:p-4 rounded-lg sm:rounded-xl transition-colors duration-200 cursor-pointer ${
+          serviceType === 'Extérieur seul' 
+            ? 'bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border-2 border-blue-400/50 shadow-xl shadow-blue-500/25' 
+            : 'bg-gradient-to-br from-white/10 to-white/5 border border-white/20 hover:border-white/30 hover:bg-white/15'
+        }`}
+      >
+        <div className="text-center mb-2">
+          <div className="text-xl sm:text-3xl mb-1 transition-transform duration-200 group-hover:scale-105">🚿</div>
+          <h3 className="text-sm sm:text-lg font-bold text-white mb-1">{SERVICE_DESCRIPTIONS['Extérieur seul'].title}</h3>
+        </div>
+        
+        <div className="space-y-1">
+          <div className="text-xs font-semibold text-blue-400 flex items-center justify-center">
+            <CheckCircle className="w-3 h-3 mr-1" />
+            INCLUS
+          </div>
+          <div className="space-y-1">
+            {SERVICE_DESCRIPTIONS['Extérieur seul'].details.map((detail, index) => (
+              <div key={index} className="flex items-center space-x-1 text-xs text-gray-300">
+                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></div>
+                <span>{detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+
+      </div>
+
+      {/* Service Complet */}
+      <div
+        onClick={() => selectService('Intérieur + Extérieur')}
+        className={`group relative p-2 sm:p-4 rounded-lg sm:rounded-xl transition-colors duration-200 cursor-pointer ${
+          serviceType === 'Intérieur + Extérieur' 
+            ? 'bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-2 border-purple-400/50 shadow-xl shadow-purple-500/25' 
+            : 'bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-400/30 hover:border-purple-400/50 hover:bg-purple-500/25'
+        }`}
+      >
+        <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs px-2 sm:px-3 py-1 rounded-full font-bold z-10">
+          POPULAIRE
+        </div>
+        
+        <div className="text-center mb-2">
+          <div className="text-xl sm:text-3xl mb-1 transition-transform duration-200 group-hover:scale-105">✨</div>
+          <h3 className="text-sm sm:text-lg font-bold text-white mb-1">{SERVICE_DESCRIPTIONS['Intérieur + Extérieur'].title}</h3>
+        </div>
+        
+        <div className="space-y-1">
+          <div className="text-xs font-semibold text-purple-400 flex items-center justify-center">
+            <CheckCircle className="w-3 h-3 mr-1" />
+            INCLUS
+          </div>
+          <div className="space-y-1">
+            {SERVICE_DESCRIPTIONS['Intérieur + Extérieur'].details.map((detail, index) => (
+              <div key={index} className="flex items-center space-x-1 text-xs text-gray-300">
+                <div className="w-1.5 h-1.5 bg-purple-400 rounded-full flex-shrink-0"></div>
+                <span>{detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+);
+
+// Composant pour l'étape de récapitulatif
+const SummaryStep = ({ vehicleType, serviceType, serviceCategory, calculatePrice }: {
+  vehicleType: VehicleType | null;
+  serviceType: ServiceType | null;
+  serviceCategory: ServiceCategory | null;
+  calculatePrice: () => number;
+}) => (
+  <div className="w-full max-w-4xl">
+    <div className="text-center mb-3 sm:mb-4">
+      <h2 className="text-lg sm:text-xl font-bold text-white mb-2">Votre devis personnalisé</h2>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
+      {/* Carte principale */}
+      <div className="lg:col-span-2 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-xl">
+        <div className="flex items-center justify-center mb-3 sm:mb-4">
+          <div className="text-2xl sm:text-3xl mr-2 sm:mr-3">{VEHICLE_ICONS[vehicleType as VehicleType]}</div>
+          <div className="text-center">
+            <div className="text-base sm:text-lg font-bold text-white">{vehicleType}</div>
+            <div className="text-gray-400 text-xs sm:text-sm">Véhicule sélectionné</div>
+          </div>
+        </div>
+
+        <div className="space-y-2 sm:space-y-3">
+          <div className="flex items-center justify-between p-2 sm:p-3 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg border border-blue-400/20">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="text-lg sm:text-xl">
+                {serviceType === 'Intérieur seul' && '🧽'}
+                {serviceType === 'Extérieur seul' && '🚿'}
+                {serviceType === 'Intérieur + Extérieur' && '✨'}
+              </div>
+              <div>
+                <div className="font-bold text-white text-sm sm:text-base">
+                  {serviceType && SERVICE_DESCRIPTIONS[serviceType].title}
+                </div>
+                <div className="text-gray-400 text-xs">
+                  {serviceType && SERVICE_DESCRIPTIONS[serviceType].description}
+                </div>
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                {serviceCategory && vehicleType && serviceType ? PRICES[serviceCategory][vehicleType][serviceType] : 0}€
+              </div>
+              <div className="text-gray-400 text-xs">Prix de base</div>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between p-2 sm:p-3 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg border border-green-400/20">
+            <div className="text-sm sm:text-base font-bold text-white">Total estimé</div>
+            <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              {calculatePrice()}€
+            </div>
+          </div>
+        </div>
+
+        <p className="text-xs text-gray-400 mt-2 sm:mt-3 text-center">
+          * Prix indicatif. Devis définitif après inspection
+        </p>
+      </div>
+
+      {/* Avantages */}
+      <div className="space-y-2 sm:space-y-3">
+        <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-400/20 rounded-lg p-2 sm:p-3">
+          <div className="flex items-center space-x-1 sm:space-x-2 mb-1">
+            <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-green-400" />
+            <h4 className="font-semibold text-green-400 text-xs sm:text-sm">Commodité</h4>
+          </div>
+          <p className="text-xs text-gray-300">
+            Je viens à vous, pas besoin de vous déplacer.
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/20 rounded-lg p-2 sm:p-3">
+          <div className="flex items-center space-x-1 sm:space-x-2 mb-1">
+            <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
+            <h4 className="font-semibold text-blue-400 text-xs sm:text-sm">Gain de temps</h4>
+          </div>
+          <p className="text-xs text-gray-300">
+            Votre voiture est propre pendant que vous bossez, mangez, vous reposez.
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-400/20 rounded-lg p-2 sm:p-3">
+          <div className="flex items-center space-x-1 sm:space-x-2 mb-1">
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
+            <h4 className="font-semibold text-purple-400 text-xs sm:text-sm">Soin et professionnalisme</h4>
+          </div>
+          <p className="text-xs text-gray-300">
+            Je travaille seul, avec les meilleurs produits. Pas à la chaîne.
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-400/20 rounded-lg p-2 sm:p-3">
+          <div className="flex items-center space-x-1 sm:space-x-2 mb-1">
+            <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" />
+            <h4 className="font-semibold text-yellow-400 text-xs sm:text-sm">Confiance</h4>
+          </div>
+          <p className="text-xs text-gray-300">
+            Un seul prestataire, toujours le même niveau de service.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default function StepByStepDevisSimulator({ city }: StepByStepDevisSimulatorProps) {
   const [currentStep, setCurrentStep] = useState(1);
+  const [serviceCategory, setServiceCategory] = useState<ServiceCategory | null>(null);
   const [vehicleType, setVehicleType] = useState<VehicleType | null>(null);
   const [serviceType, setServiceType] = useState<ServiceType | null>(null);
-  const [dirtLevel, setDirtLevel] = useState<DirtLevel>('Propre');
-  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
 
-  const totalSteps = 4;
+  const totalSteps = 3;
 
   const calculatePrice = () => {
-    if (!vehicleType || !serviceType || !dirtLevel) return 0;
-    const basePrice = PRICES[vehicleType][serviceType];
-    const dirtLevelPrice = DIRT_LEVEL_PRICES[dirtLevel];
-    return basePrice + dirtLevelPrice;
+    if (!serviceCategory || !vehicleType || !serviceType) return 0;
+    const basePrice = PRICES[serviceCategory][vehicleType][serviceType];
+    return basePrice;
   };
 
   const generateWhatsAppMessage = () => {
-    if (!vehicleType || !serviceType || !dirtLevel) return '';
-    const message = `Bonjour ! 😊 Je souhaiterais avoir un devis pour un(e) ${vehicleType}, avec la formule ${serviceType} à ${city ?? ''}.\nNiveau de saleté : ${dirtLevel}.\nPourriez-vous me confirmer le tarif estimé à ${calculatePrice()}€ et me donner vos prochaines disponibilités ? Merci beaucoup !`;
+    if (!serviceCategory || !vehicleType || !serviceType) return '';
+    const message = `Bonjour ! 😊 Je souhaiterais avoir un devis pour un(e) ${vehicleType}, avec la formule ${serviceType} (${serviceCategory}) à ${city ?? ''}.\nPourriez-vous me confirmer le tarif estimé à ${calculatePrice()}€ et me donner vos prochaines disponibilités ? Merci beaucoup !`;
     return encodeURIComponent(message);
   };
 
@@ -99,8 +414,7 @@ export default function StepByStepDevisSimulator({ city }: StepByStepDevisSimula
     switch (currentStep) {
       case 1: return vehicleType !== null;
       case 2: return serviceType !== null;
-      case 3: return dirtLevel !== null;
-      case 4: return true; // Étape de récapitulatif
+      case 3: return true;
       default: return false;
     }
   };
@@ -109,333 +423,101 @@ export default function StepByStepDevisSimulator({ city }: StepByStepDevisSimula
     setServiceType(service);
   };
 
-  // Trie dynamique des services selon le prix pour le véhicule sélectionné
-  const sortedServices = vehicleType
-    ? [...SERVICES].sort((a, b) => PRICES[vehicleType][a] - PRICES[vehicleType][b])
-    : SERVICES;
+  // Définir automatiquement le serviceCategory basé sur le serviceType
+  React.useEffect(() => {
+    if (serviceType) {
+      setServiceCategory('Nettoyage');
+    }
+  }, [serviceType]);
 
   return (
-    <div className="relative">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-2 sm:p-4">
+      <div className="w-full max-w-5xl">
+        {/* En-tête avec progression */}
+        <div className="text-center mb-4 sm:mb-6">
+          <h1 className="text-xl sm:text-2xl font-bold text-white mb-2">Devis personnalisé</h1>
+          <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Étape {currentStep} sur {totalSteps}</p>
+          
+          {/* Indicateur de progression */}
+          <div className="flex justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
+            {Array.from({ length: totalSteps }, (_, i) => (
+              <div
+                key={i}
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  i + 1 <= currentStep ? 'bg-gradient-to-r from-blue-500 to-cyan-500' : 'bg-white/20'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
 
-        <div className="max-w-lg mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow-xl h-[600px] flex flex-col">
-            
-            {/* Indicateur de progression */}
-            <div className="mb-8">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs text-gray-400">Étape {currentStep} sur {totalSteps}</span>
-                <span className="text-xs text-gray-400">{Math.round((currentStep / totalSteps) * 100)}%</span>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-1.5">
-                <div 
-                  className="bg-gradient-to-r from-blue-400 to-cyan-400 h-1.5 rounded-full transition-all duration-500"
-                  style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-                ></div>
-              </div>
-            </div>
-
-            {/* Titre de l'étape */}
-            <div className="text-center mb-8">
-              <h3 className="text-xl font-bold text-white mb-1">
-                {(() => {
-                  switch (currentStep) {
-                    case 1: return 'Type de véhicule';
-                    case 2: return 'Service premium';
-                    case 3: return '';
-                    case 4: return 'Récapitulatif';
-                    default: return '';
-                  }
-                })()}
-              </h3>
-              <p className="text-xs text-gray-400">
-                {(() => {
-                  switch (currentStep) {
-                    case 1: return 'Sélectionnez la catégorie de votre voiture';
-                    case 2: return 'Choisissez votre prestation';
-                    case 3: return '';
-                    case 4: return 'Vérifiez votre demande avant envoi WhatsApp';
-                    default: return '';
-                  }
-                })()}
-              </p>
-            </div>
-
-            {/* Contenu de l'étape */}
-            <div className="mb-4 flex-1 flex flex-col justify-center items-center">
+        {/* Contenu principal */}
+        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl h-[750px] sm:h-[600px]">
+          <div className="flex flex-col h-full">
+            {/* Contenu des étapes */}
+            <div className="flex-1 flex items-center justify-center">
               {currentStep === 1 && (
-                <div className="w-full max-w-lg grid grid-cols-2 gap-3">
-                  {(Object.keys(VEHICLE_ICONS) as VehicleType[]).map((type) => (
-                    <button
-                      key={type}
-                      onClick={() => setVehicleType(type)}
-                      className={`relative backdrop-blur-sm border rounded-lg p-3 transition-all duration-300 hover:bg-white/10 min-h-[80px] ${
-                        vehicleType === type ? 'border-blue-400 bg-blue-500/10' : 'border-white/10'
-                      }`}
-                      style={vehicleType === type ? undefined : { backgroundColor: 'rgba(255,255,255,0.05)' }}
-                    >
-                      <div className="text-xl mb-1">{VEHICLE_ICONS[type]}</div>
-                      <div className="font-medium text-xs">{type}</div>
-                      <div className="text-xs text-gray-400 mt-1">
-                        À partir de {PRICES[type]['Extérieur seul']}€
-                      </div>
-                      {vehicleType === type && (
-                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
-                          <CheckCircle className="w-2.5 h-2.5 text-white" />
-                        </div>
-                      )}
-                    </button>
-                  ))}
-                </div>
+                <VehicleSelectionStep 
+                  vehicleType={vehicleType} 
+                  setVehicleType={setVehicleType} 
+                />
               )}
 
               {currentStep === 2 && (
-                <div className="w-full max-w-md">
-                  {/* Indicateurs de progression du carrousel */}
-                  <div className="flex justify-center mb-3 space-x-2">
-                    {sortedServices.map((_, index) => (
-                      <div
-                        key={index}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          index === currentServiceIndex ? 'bg-blue-400' : 'bg-gray-600'
-                        }`}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Carte du service actuel avec flèches intégrées */}
-                  <div className="relative flex items-center justify-center">
-                    {/* Flèche gauche */}
-                    <button
-                      onClick={() => setCurrentServiceIndex(currentServiceIndex - 1)}
-                      disabled={currentServiceIndex === 0}
-                      className={`absolute left-0 z-10 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 bg-white/10 hover:bg-white/20 text-white ${
-                        currentServiceIndex === 0 ? 'opacity-30 cursor-not-allowed' : ''
-                      }`}
-                      style={{ top: '50%', transform: 'translateY(-50%)' }}
-                      aria-label="Service précédent"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 min-h-[160px] w-full mx-10">
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-base font-bold text-white">{sortedServices[currentServiceIndex]}</h3>
-                        {serviceType === sortedServices[currentServiceIndex] && (
-                          <div className="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
-                            <CheckCircle className="w-2.5 h-2.5 text-white" />
-                          </div>
-                        )}
-                      </div>
-                      <div className="space-y-2 text-xs text-gray-300 mb-4">
-                        {sortedServices[currentServiceIndex] === 'Intérieur seul' && (
-                          <>
-                            <p>🧽 <strong>Nettoyage complet intérieur</strong></p>
-                            <p>• Aspiration complète (sièges, tapis, coffre)</p>
-                            <p>• Nettoyage plastiques, vitres, contours</p>
-                            <p>• Détails et finitions intérieures</p>
-                            <p className="text-xs text-gray-400 italic mt-1">
-                              Idéal pour un entretien régulier de l&apos;intérieur.
-                            </p>
-                          </>
-                        )}
-                        {sortedServices[currentServiceIndex] === 'Extérieur seul' && (
-                          <>
-                            <p>🚿 <strong>Lavage extérieur premium</strong></p>
-                            <p>• Lavage extérieur soigné avec finitions</p>
-                            <p>• Détails extérieurs (jantes, seuils)</p>
-                            <p>• Protection et brillance</p>
-                            <p className="text-xs text-gray-400 italic mt-1">
-                              Idéal pour un lavage extérieur rapide et efficace.
-                            </p>
-                          </>
-                        )}
-                        {sortedServices[currentServiceIndex] === 'Intérieur + Extérieur' && (
-                          <>
-                            <p>✨ <strong>Service complet haut de gamme</strong></p>
-                            <p>• Intérieur et extérieur inclus</p>
-                            <p>• Produits professionnels Koch Chemie</p>
-                            <p>• Détail minutieux complet</p>
-                            <p className="text-xs text-gray-400 italic mt-1">
-                              Idéal pour un véhicule très sale ou un entretien ponctuel complet.
-                            </p>
-                          </>
-                        )}
-                      </div>
-
-                      {vehicleType && (
-                        <div className="border-t border-white/10 pt-3">
-                          <div className="text-blue-400 font-bold text-base">
-                            {PRICES[vehicleType][sortedServices[currentServiceIndex]]}€
-                          </div>
-                          <div className="text-xs text-gray-400">Prix pour votre {vehicleType}</div>
-                        </div>
-                      )}
-
-                      {/* Bouton de sélection */}
-                      <button
-                        onClick={() => selectService(sortedServices[currentServiceIndex])}
-                        className={`w-full mt-3 py-2 px-4 rounded-lg font-medium transition-all duration-300 text-sm ${
-                          serviceType === sortedServices[currentServiceIndex]
-                            ? 'bg-green-500 text-white'
-                            : 'bg-blue-500 hover:bg-blue-600 text-white'
-                        }`}
-                      >
-                        {serviceType === sortedServices[currentServiceIndex] ? 'Sélectionné ✓' : 'Sélectionner ce service'}
-                      </button>
-                    </div>
-
-                    {/* Flèche droite */}
-                    <button
-                      onClick={() => setCurrentServiceIndex(currentServiceIndex + 1)}
-                      disabled={currentServiceIndex === sortedServices.length - 1}
-                      className={`absolute right-0 z-10 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 bg-white/10 hover:bg-white/20 text-white ${
-                        currentServiceIndex === sortedServices.length - 1 ? 'opacity-30 cursor-not-allowed' : ''
-                      }`}
-                      style={{ top: '50%', transform: 'translateY(-50%)' }}
-                      aria-label="Service suivant"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
+                <ServiceSelectionStep 
+                  serviceType={serviceType} 
+                  selectService={selectService} 
+                />
               )}
 
               {currentStep === 3 && (
-                <div className="w-full max-w-lg flex flex-col items-center">
-                  <div className="mb-6 w-full text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <span className="text-2xl">🧼</span>
-                      <span className="ml-2 text-lg font-bold text-white">Quel est l’état actuel du véhicule ?</span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 gap-3 w-full">
-                    {(['Propre', 'Moyen', 'Très sale'] as DirtLevel[]).map((level) => (
-                      <button
-                        key={level}
-                        onClick={() => setDirtLevel(level)}
-                        className={`relative bg-white/5 backdrop-blur-sm border rounded-lg p-4 transition-all duration-300 hover:bg-white/10 min-h-[80px] text-left ${
-                          dirtLevel === level 
-                            ? 'border-blue-400 bg-blue-500/10' 
-                            : 'border-white/10'
-                        }`}
-                      >
-                        <div className="flex items-center mb-1">
-                          <div className="text-base font-bold mr-2">
-                            {level === 'Propre' && '◽ Propre'}
-                            {level === 'Moyen' && '◽ Sale'}
-                            {level === 'Très sale' && '◽ Très sale'}
-                          </div>
-                          {dirtLevel === level && (
-                            <div className="ml-2 w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
-                              <CheckCircle className="w-2.5 h-2.5 text-white" />
-                            </div>
-                          )}
-                        </div>
-                        <div className="text-xs text-gray-300">
-                          {level === 'Propre' && 'Entretien récent, pas de poils ni taches'}
-                          {level === 'Moyen' && 'Poussières, traces, usage normal'}
-                          {level === 'Très sale' && 'Taches incrustées, poils, sable, odeurs'}
-                        </div>
-                        <div className="text-blue-400 font-semibold text-sm mt-2">
-                          +{DIRT_LEVEL_PRICES[level]}€
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {currentStep === 4 && (
-                <div className="w-full max-w-lg bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-2 bg-white/5 rounded-lg">
-                      <div>
-                        <div className="font-semibold text-white text-sm">Type de véhicule</div>
-                        <div className="text-xs text-gray-400">{vehicleType}</div>
-                      </div>
-                      <div className="text-blue-400 font-bold text-sm">{PRICES[vehicleType!][serviceType!]}€</div>
-                    </div>
-
-                    <div className="flex items-center justify-between p-2 bg-white/5 rounded-lg">
-                      <div>
-                        <div className="font-semibold text-white text-sm">Type de service</div>
-                        <div className="text-xs text-gray-400">{serviceType}</div>
-                      </div>
-                      <div className="text-blue-400 font-bold text-sm">Inclus</div>
-                    </div>
-
-                    <div className="flex items-center justify-between p-2 bg-white/5 rounded-lg">
-                      <div>
-                        <div className="font-semibold text-white text-sm">Niveau de saleté</div>
-                        <div className="text-xs text-gray-400">{dirtLevel}</div>
-                      </div>
-                      <div className="text-blue-400 font-bold text-sm">+{DIRT_LEVEL_PRICES[dirtLevel!]}€</div>
-                    </div>
-
-                    <div className="border-t border-white/10 pt-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="text-base font-bold text-white">Total estimé</div>
-                        <div className="text-xl font-bold text-blue-400">{calculatePrice()}€</div>
-                      </div>
-                      <p className="text-xs text-gray-400 mb-3">
-                        * Prix indicatif. Devis définitif après inspection du véhicule
-                      </p>
-                      <div className="p-2 bg-green-500/10 border border-green-500/20 rounded-lg">
-                        <div className="flex items-center space-x-2 mb-1">
-                          <span className="text-sm">🎁</span>
-                          <h4 className="font-semibold text-green-400 text-xs">Cadeau inclus</h4>
-                        </div>
-                        <p className="text-xs text-gray-300">
-                          <strong>Protection et brillance</strong> offerte.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <SummaryStep 
+                  vehicleType={vehicleType}
+                  serviceType={serviceType}
+                  serviceCategory={serviceCategory}
+                  calculatePrice={calculatePrice}
+                />
               )}
             </div>
 
             {/* Navigation */}
-            <div className="mt-auto">
-              <div className="flex items-center justify-between">
-                <button
-                  onClick={prevStep}
-                  disabled={currentStep === 1}
-                  className={`flex items-center space-x-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-300 text-sm ${
-                    currentStep === 1 
-                      ? 'bg-gray-700 text-gray-500 cursor-not-allowed' 
-                      : 'bg-white/10 text-white hover:bg-white/20'
-                  }`}
-                >
-                  <ArrowLeft className="w-3 h-3" />
-                  <span>Précédent</span>
-                </button>
+            <div className="mt-8 sm:mt-8 flex items-center justify-between">
+              <button
+                onClick={prevStep}
+                disabled={currentStep === 1}
+                className={`flex items-center space-x-1 sm:space-x-2 px-4 sm:px-6 py-3 sm:py-3 rounded-lg sm:rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
+                  currentStep === 1 
+                    ? 'bg-gradient-to-br from-gray-700 to-gray-600 text-gray-500 cursor-not-allowed' 
+                    : 'bg-gradient-to-br from-white/20 to-white/10 text-white hover:from-white/30 hover:to-white/20 border border-white/20'
+                }`}
+              >
+                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Précédent</span>
+              </button>
 
-                <button
-                  onClick={currentStep < totalSteps ? nextStep : () => window.open(`https://wa.me/32472303701?text=${generateWhatsAppMessage()}`, '_blank')}
-                  disabled={currentStep < totalSteps ? !canProceed() : false}
-                  className={`flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-300 text-sm w-32 ${
-                    currentStep < totalSteps 
-                      ? (canProceed()
-                          ? 'bg-blue-500 text-white hover:bg-blue-600'
-                          : 'bg-gray-700 text-gray-500 cursor-not-allowed')
-                      : 'bg-green-500 text-white hover:bg-green-600'
-                  }`}
-                >
-                  {currentStep < totalSteps ? (
-                    <>
-                      <span>{currentStep === 3 ? 'Récap' : 'Suivant'}</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </>
-                  ) : (
-                    <>
-                      <MessageCircle className="w-3 h-3" />
-                      <span>WhatsApp</span>
-                    </>
-                  )}
-                </button>
-              </div>
+              <button
+                onClick={currentStep < totalSteps ? nextStep : () => window.open(`https://wa.me/32472303701?text=${generateWhatsAppMessage()}`, '_blank')}
+                disabled={currentStep < totalSteps ? !canProceed() : false}
+                className={`flex items-center justify-center space-x-1 sm:space-x-2 px-6 sm:px-8 py-3 sm:py-3 rounded-lg sm:rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
+                  currentStep < totalSteps 
+                    ? (canProceed()
+                        ? 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/25'
+                        : 'bg-gradient-to-br from-gray-700 to-gray-600 text-gray-500 cursor-not-allowed')
+                    : 'bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white shadow-lg shadow-green-500/25'
+                }`}
+              >
+                {currentStep < totalSteps ? (
+                  <>
+                    <span>Suivant</span>
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </>
+                ) : (
+                  <>
+                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span>WhatsApp</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
         </div>

@@ -174,59 +174,55 @@ const PremiumCarCleaningLanding = () => {
 
             {/* Content Grid - Mobile-first */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {/* Carte 1 - Excellence Premium */}
+              {/* Carte 1 - Qualité Premium Garantie */}
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
                 <div className="flex items-center mb-6">
                   <div className="bg-blue-500 p-3 rounded-lg mr-4">
-                    <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Excellence Premium</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Qualité Premium Garantie</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  Chez Shine&Go, nous transformons chaque véhicule en véritable vitrine de propreté. 
-                  Installés à Herve, nous intervenons chez vous avec des produits haut de gamme (Koch Chemie, CarPro, P&S) et un savoir-faire professionnel.
+                  Nous utilisons exclusivement des produits professionnels haut de gamme (Koch Chemie, CarPro, P&S) pour un nettoyage impeccable qui protège et valorise votre véhicule sur le long terme.
                 </p>
               </div>
 
-              {/* Carte 2 - Confort Total */}
+              {/* Carte 2 - Service Mobile & Confortable */}
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
+                <div className="flex items-center mb-6">
+                  <div className="bg-green-500 p-3 rounded-lg mr-4">
+                    <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Service Mobile & Confortable</h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  On vient à vous, où que vous soyez à Herve et ses environs, pour un nettoyage complet sans que vous ayez à bouger — un vrai gain de temps et zéro stress.
+                </p>
+              </div>
+
+              {/* Carte 3 - Détail & Excellence */}
+              <div className="bg-blue-500/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-blue-500/20">
+                <div className="flex items-center mb-6">
+                  <div className="bg-blue-500 p-3 rounded-lg mr-4">
+                    <Zap className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Détail & Excellence</h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  Chaque recoin est pris en charge avec minutie : pas juste un lavage, mais une vraie remise à neuf qui redonne à votre voiture tout son éclat d&apos;origine.
+                </p>
+              </div>
+
+              {/* Carte 4 - Engagement & Fiabilité */}
+              <div className="bg-green-500/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-green-500/20">
                 <div className="flex items-center mb-6">
                   <div className="bg-green-500 p-3 rounded-lg mr-4">
                     <Heart className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Confort Total</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-white">Engagement & Fiabilité</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  Nous ne faisons pas juste &quot;un lavage&quot;, nous redonnons à votre voiture l&apos;éclat qu&apos;elle mérite, avec un souci du détail qui fait toute la différence. 
-                  Que ce soit pour un nettoyage complet ou un entretien régulier, vous êtes entre de bonnes mains.
-                </p>
-              </div>
-
-              {/* Carte 3 - Notre Mission */}
-              <div className="bg-blue-500/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-blue-500/20">
-                <div className="flex items-center mb-6">
-                  <div className="bg-blue-500 p-3 rounded-lg mr-4">
-                    <span className="text-xl md:text-2xl">🎯</span>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Notre Mission</h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  Un résultat irréprochable, sans compromis, sans perte de temps pour vous. 
-                  Nous nous engageons à fournir un service premium qui dépasse vos attentes.
-                </p>
-              </div>
-
-              {/* Carte 4 - Zones Desservies */}
-              <div className="bg-green-500/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-green-500/20">
-                <div className="flex items-center mb-6">
-                  <div className="bg-green-500 p-3 rounded-lg mr-4">
-                    <span className="text-xl md:text-2xl">📍</span>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Zones Desservies</h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  Herve, Battice, Liège, Verviers, Aubel, Soumagne et alentours. 
-                  Service à domicile premium dans toute la région pour votre confort.
+                  Notre mission : un résultat irréprochable, livré rapidement, avec une équipe passionnée et professionnelle qui dépasse toujours vos attentes.
                 </p>
               </div>
             </div>
