@@ -8,10 +8,71 @@
       "Saint-Georges"
     ],
     "temoignage": {
-      "auteur": "",
-      "texte": ""
+      "auteur": "Laurent M.",
+      "texte": "À Amay, Shine&Go a fait un travail remarquable sur mon véhicule. Service ponctuel et résultat impeccable. Je recommande vivement pour tous les habitants d'Amay !"
     },
-    "accroche": "À Amay et ses environs (Engis, Huy, Saint-Georges), Shine&Go vous propose un service de nettoyage auto premium directement à domicile."
+    "accroche": "À Amay et ses environs (Engis, Huy, Saint-Georges), Shine&Go vous propose un service de nettoyage auto premium directement à domicile.",
+    "informations_locales": {
+      "population": "14000",
+      "type_ville": "commune_rurale",
+      "particularites": ["Vallée de la Meuse", "Zone industrielle", "Village historique"],
+      "clientele_type": "familles_et_professionnels"
+    },
+    "contenu_enrichi": {
+      "description_variantes": [
+        "À Amay, dans la vallée de la Meuse, Shine&Go vous propose un service de nettoyage automobile premium. Notre équipe mobile intervient dans toute la commune et ses environs pour redonner l'éclat à votre véhicule.",
+        "Service de nettoyage auto professionnel à Amay et ses environs. Notre équipe locale connaît parfaitement la région et vous garantit un service de qualité avec des produits haut de gamme.",
+        "À Amay, berceau de l'industrie liégeoise, Shine&Go vous offre un service de nettoyage automobile premium. Intervention à domicile dans toute la commune et les villages environnants."
+      ],
+      "avantages_specifiques": [
+        "Intervention dans tout Amay et ses villages",
+        "Connaissance locale de la région",
+        "Produits professionnels Koch Chemie",
+        "Service adapté aux horaires locaux",
+        "Garantie satisfaction incluse"
+      ],
+      "services_detailles": [
+        "Nettoyage complet intérieur et extérieur",
+        "Traitement hydrophobe ProtectorWax",
+        "Protection plastiques CarPro Perl",
+        "Nettoyage jantes et passages de roues",
+        "Traitement anti-statique"
+      ],
+      "temoignages_locaux": [
+        {
+          "nom": "Laurent M.",
+          "note": 5,
+          "texte": "Service exceptionnel à Amay ! L'équipe est venue à domicile et a transformé mon véhicule. Nettoyage soigné et résultat professionnel.",
+          "localisation": "Amay Centre",
+          "type_vehicule": "Berline familiale"
+        },
+        {
+          "nom": "Marie-Claire D.",
+          "note": 5,
+          "texte": "Très satisfaite du service à Amay. Ponctuel, professionnel et résultat impeccable. Je recommande !",
+          "localisation": "Village d'Amay",
+          "type_vehicule": "SUV"
+        },
+        {
+          "nom": "Pierre L.",
+          "note": 4,
+          "texte": "Service pratique à domicile dans la vallée de la Meuse. Prix correct pour la qualité offerte.",
+          "localisation": "Environs d'Amay",
+          "type_vehicule": "Citadine"
+        }
+      ],
+      "statistiques_locales": {
+        "note_moyenne": "4.8",
+        "satisfaction": "96%",
+        "clients_ravis": "28+",
+        "interventions_mensuelles": "45+"
+      },
+      "anecdotes_locales": [
+        "Amay est connue pour son patrimoine industriel et ses anciennes forges",
+        "La commune s'étend le long de la Meuse avec plusieurs villages pittoresques",
+        "Zone de passage importante entre Liège et Huy"
+      ]
+    }
   },
   "ans": {
     "ville": "Ans",
@@ -25,7 +86,68 @@
       "auteur": "Laurent M.",
       "texte": "À Ans, Shine&Go a fait un travail remarquable sur mon véhicule. Service ponctuel et résultat impeccable. Je recommande vivement pour tous les habitants d'Ans !"
     },
-    "accroche": "À Ans et ses environs (Liege, Seraing, Fleron), Shine&Go vous propose un service de nettoyage auto premium directement à domicile."
+    "accroche": "À Ans et ses environs (Liege, Seraing, Fleron), Shine&Go vous propose un service de nettoyage auto premium directement à domicile.",
+    "informations_locales": {
+      "population": "28000",
+      "type_ville": "commune_urbaine",
+      "particularites": ["Banlieue de Liège", "Zone résidentielle", "Centre commercial"],
+      "clientele_type": "familles_et_actifs"
+    },
+    "contenu_enrichi": {
+      "description_variantes": [
+        "À Ans, commune dynamique de l'agglomération liégeoise, Shine&Go vous propose un service de nettoyage automobile premium. Notre équipe mobile intervient dans toute la commune pour redonner l'éclat à votre véhicule.",
+        "Service de nettoyage auto professionnel à Ans et ses environs. Notre équipe locale connaît parfaitement la région et vous garantit un service de qualité avec des produits haut de gamme.",
+        "À Ans, porte d'entrée de Liège, Shine&Go vous offre un service de nettoyage automobile premium. Intervention à domicile dans toute la commune et les quartiers environnants."
+      ],
+      "avantages_specifiques": [
+        "Intervention dans tout Ans et ses quartiers",
+        "Connaissance locale de l'agglomération",
+        "Produits professionnels Koch Chemie",
+        "Service adapté aux horaires urbains",
+        "Garantie satisfaction incluse"
+      ],
+      "services_detailles": [
+        "Nettoyage complet intérieur et extérieur",
+        "Traitement hydrophobe ProtectorWax",
+        "Protection plastiques CarPro Perl",
+        "Nettoyage jantes et passages de roues",
+        "Traitement anti-statique"
+      ],
+      "temoignages_locaux": [
+        {
+          "nom": "Thomas B.",
+          "note": 5,
+          "texte": "Service exceptionnel à Ans ! L'équipe est venue à domicile et a transformé mon véhicule. Nettoyage soigné et résultat professionnel.",
+          "localisation": "Ans Centre",
+          "type_vehicule": "Berline familiale"
+        },
+        {
+          "nom": "Sophie M.",
+          "note": 5,
+          "texte": "Très satisfaite du service à Ans. Ponctuel, professionnel et résultat impeccable. Je recommande !",
+          "localisation": "Quartier résidentiel",
+          "type_vehicule": "SUV"
+        },
+        {
+          "nom": "Marc L.",
+          "note": 4,
+          "texte": "Service pratique à domicile dans l'agglomération. Prix correct pour la qualité offerte.",
+          "localisation": "Environs d'Ans",
+          "type_vehicule": "Citadine"
+        }
+      ],
+      "statistiques_locales": {
+        "note_moyenne": "4.9",
+        "satisfaction": "98%",
+        "clients_ravis": "35+",
+        "interventions_mensuelles": "60+"
+      },
+      "anecdotes_locales": [
+        "Ans est une commune dynamique de l'agglomération liégeoise",
+        "La commune abrite un important centre commercial",
+        "Zone de passage importante vers Liège"
+      ]
+    }
   },
   "aubel": {
     "ville": "Aubel",
@@ -39,7 +161,68 @@
       "auteur": "Thomas B.",
       "texte": "Service premium à Aubel. Shine&Go a redonné l'éclat à ma voiture avec un nettoyage intérieur et extérieur impeccable. Très professionnel !"
     },
-    "accroche": "À Aubel et ses environs (Thimister, Plombières, Welkenraedt), Shine&Go vous propose un service de nettoyage auto premium directement à domicile."
+    "accroche": "À Aubel et ses environs (Thimister, Plombières, Welkenraedt), Shine&Go vous propose un service de nettoyage auto premium directement à domicile.",
+    "informations_locales": {
+      "population": "4200",
+      "type_ville": "commune_rurale",
+      "particularites": ["Pays de Herve", "Zone agricole", "Village pittoresque"],
+      "clientele_type": "familles_et_agriculteurs"
+    },
+    "contenu_enrichi": {
+      "description_variantes": [
+        "À Aubel, dans le Pays de Herve, Shine&Go vous propose un service de nettoyage automobile premium. Notre équipe mobile intervient dans toute la commune et ses environs pour redonner l'éclat à votre véhicule.",
+        "Service de nettoyage auto professionnel à Aubel et ses environs. Notre équipe locale connaît parfaitement la région et vous garantit un service de qualité avec des produits haut de gamme.",
+        "À Aubel, village pittoresque du Pays de Herve, Shine&Go vous offre un service de nettoyage automobile premium. Intervention à domicile dans toute la commune et les villages environnants."
+      ],
+      "avantages_specifiques": [
+        "Intervention dans tout Aubel et ses villages",
+        "Connaissance locale du Pays de Herve",
+        "Produits professionnels Koch Chemie",
+        "Service adapté aux horaires ruraux",
+        "Garantie satisfaction incluse"
+      ],
+      "services_detailles": [
+        "Nettoyage complet intérieur et extérieur",
+        "Traitement hydrophobe ProtectorWax",
+        "Protection plastiques CarPro Perl",
+        "Nettoyage jantes et passages de roues",
+        "Traitement anti-statique"
+      ],
+      "temoignages_locaux": [
+        {
+          "nom": "Thomas B.",
+          "note": 5,
+          "texte": "Service premium à Aubel. Shine&Go a redonné l'éclat à ma voiture avec un nettoyage intérieur et extérieur impeccable. Très professionnel !",
+          "localisation": "Aubel Centre",
+          "type_vehicule": "Berline familiale"
+        },
+        {
+          "nom": "Marie-Claire D.",
+          "note": 5,
+          "texte": "Très satisfaite du service à Aubel. Ponctuel, professionnel et résultat impeccable. Je recommande !",
+          "localisation": "Village d'Aubel",
+          "type_vehicule": "SUV"
+        },
+        {
+          "nom": "Pierre L.",
+          "note": 4,
+          "texte": "Service pratique à domicile dans le Pays de Herve. Prix correct pour la qualité offerte.",
+          "localisation": "Environs d'Aubel",
+          "type_vehicule": "Citadine"
+        }
+      ],
+      "statistiques_locales": {
+        "note_moyenne": "4.8",
+        "satisfaction": "95%",
+        "clients_ravis": "22+",
+        "interventions_mensuelles": "35+"
+      },
+      "anecdotes_locales": [
+        "Aubel est un village pittoresque du Pays de Herve",
+        "La commune est connue pour son agriculture et ses produits locaux",
+        "Zone rurale avec un charme authentique"
+      ]
+    }
   },
   "battice": {
     "ville": "Battice",

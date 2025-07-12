@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Star, Sparkles, MapPin } from 'lucide-react';
 
 interface HeaderProps {
   cityName?: string;
@@ -10,11 +10,10 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ cityName }) => {
   const navItems = [
     { name: 'Accueil', href: '/' },
-    { name: 'Devis', href: '/#services' },
-    { name: 'Transformations', href: '/#transformations' },
-    { name: 'À propos', href: '/#apropos' },
-    { name: 'Témoignages', href: '/#temoignages' },
-    { name: 'Contact', href: '/#contact' }
+    { name: 'Comment ça marche', href: '/#how-it-works' },
+    { name: 'Nos services', href: '/#services' },
+    { name: 'Avant/Après', href: '/#transformations' },
+    { name: 'Avis clients', href: '/#temoignages' }
   ];
 
   const handleNavClick = (href: string) => {
@@ -28,61 +27,86 @@ const Header: React.FC<HeaderProps> = ({ cityName }) => {
   };
 
   return (
-    <header className="w-full z-50 bg-slate-900/95 backdrop-blur-xl border-b border-white/10">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo simplifié */}
-          <div className="flex items-center cursor-pointer" onClick={() => handleNavClick('/')}>
-            <span className="text-xl font-bold text-white">
-              Shine&Go
-            </span>
-            {cityName && (
-              <span className="text-sm text-gray-400 ml-2">
-                - {cityName}
+    <header className="w-full z-50 sticky top-0">
+      {/* Section navigation avec fond amélioré - Version mise à jour */}
+      <div className="relative">
+        {/* Fond glassmorphism moderne avec plus de transparence */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-800/70 to-slate-900/80 backdrop-blur-xl border-b border-white/10"></div>
+        
+        {/* Effet de brillance subtil amélioré */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-40"></div>
+        
+        {/* Effet de profondeur supplémentaire */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/20"></div>
+        
+        {/* Contenu du header */}
+        <div className="relative container mx-auto px-4">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo simplifié avec effet */}
+            <div className="flex items-center cursor-pointer group" onClick={() => handleNavClick('/')}>
+              <span className="text-xl md:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
+                Shine&Go
               </span>
-            )}
-          </div>
+              
+              {cityName && (
+                <span className="text-sm text-gray-400 ml-2 font-medium group-hover:text-gray-300 transition-colors duration-300">
+                  - {cityName}
+                </span>
+              )}
+            </div>
 
-          {/* Navigation Desktop - Épurée */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {/* Navigation Desktop - Style moderne amélioré */}
+            <nav className="hidden lg:flex items-center space-x-1">
+              {navItems.map((item, index) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="relative group px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 text-gray-300 hover:text-white hover:bg-white/10 backdrop-blur-sm"
+                >
+                  {/* Effet de brillance au hover amélioré */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                  <span className="relative z-10">{item.name}</span>
+                </button>
+              ))}
+            </nav>
+
+            {/* CTA Desktop - Style premium amélioré */}
+            <div className="hidden lg:flex items-center space-x-3">
               <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className={`nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300`}
+                onClick={() => {
+                  if (window.Calendly) {
+                    window.Calendly.initPopupWidget({
+                      url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
+                    });
+                  }
+                }}
+                className="group relative bg-gradient-to-r from-emerald-500/30 to-green-500/30 hover:from-emerald-500/40 hover:to-green-500/40 backdrop-blur-md border border-emerald-400/40 hover:border-emerald-300/60 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
               >
-                {item.name}
+                {/* Effet de brillance amélioré */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                <MessageCircle className="w-4 h-4 relative z-10" />
+                <span className="relative z-10">Réserver</span>
               </button>
-            ))}
-          </nav>
+            </div>
 
-          {/* CTA Desktop - Simplifié */}
-          <div className="hidden lg:flex items-center space-x-3">
-            <a
-              href="https://wa.me/32472303701"
-              className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 flex items-center space-x-2"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp</span>
-            </a>
-          </div>
-
-          {/* CTA Mobile - Icônes à droite */}
-          <div className="flex lg:hidden items-center space-x-3">
-            <a
-              href="https://wa.me/32472303701"
-              className="bg-green-500 hover:bg-green-600 p-2 rounded-full transition-colors duration-300 flex items-center justify-center"
-              aria-label="WhatsApp Direct"
-            >
-              <MessageCircle className="w-5 h-5 text-white" />
-            </a>
-            <a
-              href="tel:+32472303701"
-              className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full transition-colors duration-300 flex items-center justify-center"
-              aria-label="Appel Direct"
-            >
-              <Phone className="w-5 h-5 text-white" />
-            </a>
+            {/* CTA Mobile - Style moderne amélioré */}
+            <div className="flex lg:hidden items-center">
+              <button
+                onClick={() => {
+                  if (window.Calendly) {
+                    window.Calendly.initPopupWidget({
+                      url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
+                    });
+                  }
+                }}
+                className="group relative bg-gradient-to-r from-emerald-500/30 to-green-500/30 hover:from-emerald-500/40 hover:to-green-500/40 backdrop-blur-md border border-emerald-400/40 hover:border-emerald-300/60 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
+                aria-label="Réserver maintenant"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                <MessageCircle className="w-4 h-4 relative z-10" />
+                <span className="relative z-10">Réserver</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

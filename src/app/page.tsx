@@ -1,9 +1,13 @@
 "use client";
 
 import React from 'react';
-import { Sparkles, Star, Phone, MessageCircle, Clock, MapPin, Shield, Award, Zap, Heart, Users, Info, ChevronLeft, ChevronRight } from 'lucide-react';
-import StepByStepDevisSimulator from './components/StepByStepDevisSimulator';
+import { Sparkles, Star, Clock, MapPin, Shield, Award, Zap, Heart, Info, ChevronLeft, ChevronRight, MessageCircle, Phone, Gift, Users, CheckCircle } from 'lucide-react';
 import TransformationsSection from './components/TransformationsSection';
+import Hero from './components/Hero';
+import PricingTable from './components/PricingTable';
+import Header from './components/Header';
+import HowItWorks from './components/HowItWorks';
+import CalendlyPopup from './components/CalendlyPopup';
 
 const PremiumCarCleaningLanding = () => {
   const testimonials = [
@@ -17,11 +21,10 @@ const PremiumCarCleaningLanding = () => {
   
   const navItems = [
     { name: 'Accueil', href: '#accueil' },
-    { name: 'Devis', href: '#services' },
-    { name: 'Transformations', href: '#transformations' },
-    { name: 'À propos', href: '#apropos' },
-    { name: 'Témoignages', href: '#temoignages' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Comment ça marche', href: '#how-it-works' },
+    { name: 'Nos services', href: '#services' },
+    { name: 'Avant/Après', href: '#transformations' },
+    { name: 'Avis clients', href: '#temoignages' }
   ];
 
   const handleNavClick = (href: string) => {
@@ -34,316 +37,223 @@ const PremiumCarCleaningLanding = () => {
     }
   };
 
-  // Header mobile-first
-  const Header = () => {
-    return (
-      <header className="w-full z-50 bg-slate-900/95 backdrop-blur-xl border-b border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo simplifié */}
-            <div className="flex items-center cursor-pointer" onClick={() => handleNavClick('#accueil')}>
-              <span className="text-xl font-bold text-white">
-                Shine&Go
-              </span>
-            </div>
 
-            {/* Navigation Desktop - Épurée */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300`}
-                >
-                  {item.name}
-                </button>
-              ))}
-            </nav>
-
-            {/* CTA Desktop - Simplifié */}
-            <div className="hidden lg:flex items-center space-x-3">
-              <a
-                href="https://wa.me/32472303701"
-                className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 flex items-center space-x-2"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp</span>
-              </a>
-            </div>
-
-            {/* CTA Mobile - Icônes à droite */}
-            <div className="flex lg:hidden items-center space-x-3">
-              <a
-                href="https://wa.me/32472303701"
-                className="bg-green-500 hover:bg-green-600 p-2 rounded-full transition-colors duration-300 flex items-center justify-center"
-                aria-label="WhatsApp Direct"
-              >
-                <MessageCircle className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="tel:+32472303701"
-                className="bg-blue-500 hover:bg-blue-600 p-2 rounded-full transition-colors duration-300 flex items-center justify-center"
-                aria-label="Appel Direct"
-              >
-                <Phone className="w-5 h-5 text-white" />
-              </a>
-            </div>
-
-            {/* Menu Mobile - Amélioré */}
-            {/* SUPPRIMÉ : Pas de menu mobile */}
-          </div>
-        </div>
-
-        {/* Menu Mobile - Amélioré */}
-        {/* SUPPRIMÉ : Pas de menu mobile */}
-      </header>
-    );
-  };
 
   return (
-    <div className="min-h-screen text-white bg-slate-900">
+    <div className="min-h-screen text-white bg-slate-900 relative overflow-hidden">
+      {/* Global Background Effects */}
+      <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+      <div className="fixed inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5"></div>
+      <div className="fixed top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="fixed bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+      
       {/* Header */}
       <Header />
 
-      {/* Hero Section - Mobile-first */}
-      <section id="accueil" className="min-h-[80vh] md:min-h-[85vh] flex items-center justify-center relative">
-        {/* Background subtil */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-blue-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-32 h-32 md:w-64 md:h-64 bg-cyan-500/10 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-tight text-white">
-            Votre Véhicule<br />
-            Mérite l&apos;Excellence
-          </h1>
-          
-          <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-            Service premium d&apos;excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
-          </p>
-
-          {/* CTA Buttons - Mobile-first */}
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 md:mb-10">
-            <a 
-              href="https://wa.me/32472303701"
-              className="bg-green-500 hover:bg-green-600 px-6 md:px-8 py-4 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp Direct</span>
-            </a>
-            
-            <a 
-              href="tel:+32472303701"
-              className="bg-blue-500 hover:bg-blue-600 px-6 md:px-8 py-4 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto"
-            >
-              <Phone className="w-5 h-5" />
-              <span>Appel Direct</span>
-            </a>
-          </div>
-
-          {/* Preuves sociales - Minimalistes */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 md:space-x-8 text-sm text-gray-400">
-            <div className="flex items-center space-x-2">
-              <Users className="w-4 h-4 text-blue-400" />
-              <span>50+ clients satisfaits</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Star className="w-4 h-4 text-yellow-400" />
-              <span>5/5 sur Google</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <Hero />
 
       {/* Transformations Section */}
-      <section id="transformations" className="py-8 md:py-16">
-        <TransformationsSection />
-      </section>
-
-      {/* Devis Simulator Section */}
-      <section id="services" className="py-8 md:py-16">
-        <StepByStepDevisSimulator />
-      </section>
-
-      {/* About Section - Mobile-first */}
-      <section id="apropos" className="py-8 md:py-16 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-
-
-            {/* Content Grid - Mobile-first */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {/* Carte 1 - Qualité Premium Garantie */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
-                <div className="flex items-center mb-6">
-                  <div className="bg-blue-500 p-3 rounded-lg mr-4">
-                    <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Qualité Premium Garantie</h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  Nous utilisons exclusivement des produits professionnels haut de gamme (Koch Chemie, CarPro, P&S) pour un nettoyage impeccable qui protège et valorise votre véhicule sur le long terme.
-                </p>
-              </div>
-
-              {/* Carte 2 - Service Mobile & Confortable */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
-                <div className="flex items-center mb-6">
-                  <div className="bg-green-500 p-3 rounded-lg mr-4">
-                    <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Service Mobile & Confortable</h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  On vient à vous, où que vous soyez à Herve et ses environs, pour un nettoyage complet sans que vous ayez à bouger — un vrai gain de temps et zéro stress.
-                </p>
-              </div>
-
-              {/* Carte 3 - Détail & Excellence */}
-              <div className="bg-blue-500/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-blue-500/20">
-                <div className="flex items-center mb-6">
-                  <div className="bg-blue-500 p-3 rounded-lg mr-4">
-                    <Zap className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Détail & Excellence</h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  Chaque recoin est pris en charge avec minutie : pas juste un lavage, mais une vraie remise à neuf qui redonne à votre voiture tout son éclat d&apos;origine.
-                </p>
-              </div>
-
-              {/* Carte 4 - Engagement & Fiabilité */}
-              <div className="bg-green-500/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-green-500/20">
-                <div className="flex items-center mb-6">
-                  <div className="bg-green-500 p-3 rounded-lg mr-4">
-                    <Heart className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">Engagement & Fiabilité</h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                  Notre mission : un résultat irréprochable, livré rapidement, avec une équipe passionnée et professionnelle qui dépasse toujours vos attentes.
-                </p>
-              </div>
-            </div>
-          </div>
+      <section id="transformations" className="py-16 md:py-24 relative">
+        <div className="relative z-10">
+          <TransformationsSection />
         </div>
       </section>
 
-      {/* Section Témoignages - Mobile-first */}
-      <section id="temoignages" className="py-8 md:py-16">
-        <div className="container mx-auto px-4">
-          {/* Carrousel d'avis */}
-          <div className="relative max-w-lg mx-auto">
-            {/* Bouton précédent */}
-            <button
-              onClick={() => setCurrentTestimonial((c) => (c - 1 + testimonials.length) % testimonials.length)}
-              aria-label="Avis précédent"
-              className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 shadow-lg transition-colors duration-200 flex items-center justify-center"
-              style={{transform: 'translateY(-50%)'}}
-            >
-              <ChevronLeft className="w-6 h-6 text-blue-400" />
-            </button>
-            {/* Carte d'avis */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 shadow-xl text-center mx-8 animate-fade-in h-60 md:h-56 flex flex-col justify-center overflow-y-auto">
-              <div className="font-bold text-blue-400 text-base md:text-lg mb-1">{testimonials[currentTestimonial].name}</div>
-              <div className="flex justify-center mb-4">
-                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <p className="italic text-gray-300 text-sm md:text-base">“{testimonials[currentTestimonial].text}”</p>
-            </div>
-            {/* Bouton suivant */}
-            <button
-              onClick={() => setCurrentTestimonial((c) => (c + 1) % testimonials.length)}
-              aria-label="Avis suivant"
-              className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 shadow-lg transition-colors duration-200 flex items-center justify-center"
-              style={{transform: 'translateY(-50%)'}}
-            >
-              <ChevronRight className="w-6 h-6 text-blue-400" />
-            </button>
-          </div>
-        </div>
+      {/* How It Works Section */}
+      <section id="how-it-works">
+        <HowItWorks />
       </section>
 
-      {/* Contact Section - Mobile-first */}
-      <section id="contact" className="py-8 md:py-16 relative">
-        <div className="container mx-auto px-4 flex justify-center">
-          <div className="contact-section w-full flex flex-col items-center justify-center gap-8">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">Prêt à redonner de l&apos;éclat à votre véhicule&nbsp;?</h2>
-              <p className="text-gray-300 text-base md:text-lg mb-2">Contactez-moi dès maintenant pour un devis rapide ou une réservation directe.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
-              <a 
-                href="https://wa.me/32472303701"
-                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 px-8 py-4 rounded-xl font-bold text-lg text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 border-2 border-green-400/20"
-                aria-label="WhatsApp Direct"
-              >
-                <MessageCircle className="w-6 h-6" />
-                <span>WhatsApp Direct</span>
-              </a>
-              <a 
-                href="tel:+32472303701"
-                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 px-8 py-4 rounded-xl font-bold text-lg text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 border-2 border-blue-400/20"
-                aria-label="Appel Direct"
-              >
-                <Phone className="w-6 h-6" />
-                <span>Appel Direct</span>
-              </a>
-              <a 
-                href="#services"
-                className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 px-8 py-4 rounded-xl font-bold text-lg text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 border-2 border-purple-400/20"
-                aria-label="Simulateur de devis"
-              >
-                <Sparkles className="w-6 h-6" />
-                <span>Simulateur de devis</span>
-              </a>
-            </div>
-          </div>
-        </div>
+      {/* Pricing Table Section */}
+      <section id="services">
+        <PricingTable />
       </section>
 
-      {/* Zones d'intervention Section - Mobile-first */}
-      <section className="py-8 md:py-16 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+
+
+
+
+      {/* Section Témoignages - Design moderne */}
+      <section id="temoignages" className="py-16 md:py-24 relative">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
             {/* Titre et description */}
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">
-                Zones d&apos;intervention
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-full border border-yellow-500/30 mb-6">
+                <Star className="w-4 h-4 mr-2 text-yellow-400" />
+                <span className="text-yellow-300 text-sm font-medium">Avis clients</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Ce que disent nos clients
               </h2>
-              <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                Service premium à domicile dans toute la région. Découvrez les villes où nous intervenons pour redonner l&apos;éclat à votre véhicule.
+              <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                Découvrez les témoignages de nos clients satisfaits qui ont transformé leur véhicule avec Shine&Go.
               </p>
             </div>
 
-            {/* Grille des villes principales */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-12">
+            {/* Carrousel d'avis moderne */}
+            <div className="relative max-w-4xl mx-auto">
+              {/* Bouton précédent */}
+              <button
+                onClick={() => setCurrentTestimonial((c) => (c - 1 + testimonials.length) % testimonials.length)}
+                aria-label="Avis précédent"
+                className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50 rounded-full p-3 md:p-4 shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
+                style={{transform: 'translateY(-50%)'}}
+              >
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-blue-300" />
+              </button>
+
+              {/* Carte d'avis principale */}
+              <div className="relative mx-12 md:mx-16">
+                <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 md:p-12 shadow-2xl text-center group hover:shadow-3xl transition-all duration-500 hover:scale-105">
+                  {/* Effet de brillance au hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  
+                  {/* Contenu */}
+                  <div className="relative z-10">
+                    {/* Avatar et nom */}
+                    <div className="mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Users className="w-8 h-8 text-blue-300" />
+                      </div>
+                      <div className="font-bold text-blue-300 text-lg md:text-xl mb-2">{testimonials[currentTestimonial].name}</div>
+                    </div>
+
+                    {/* Étoiles */}
+                    <div className="flex justify-center mb-6">
+                      {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 fill-current mx-1 group-hover:scale-110 transition-transform duration-300" />
+                      ))}
+                    </div>
+
+                    {/* Citation */}
+                    <div className="relative">
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-4xl text-blue-400/30">"</div>
+                      <p className="italic text-gray-200 text-base md:text-lg leading-relaxed relative z-10">"{testimonials[currentTestimonial].text}"</p>
+                    </div>
+
+                    {/* Badge de satisfaction */}
+                    <div className="mt-6">
+                      <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-4 py-2 rounded-full border border-green-400/30">
+                        <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
+                        <span className="text-green-300 text-sm font-medium">Client satisfait</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bouton suivant */}
+              <button
+                onClick={() => setCurrentTestimonial((c) => (c + 1) % testimonials.length)}
+                aria-label="Avis suivant"
+                className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50 rounded-full p-3 md:p-4 shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
+                style={{transform: 'translateY(-50%)'}}
+              >
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-blue-300" />
+              </button>
+            </div>
+
+            {/* Indicateurs de navigation */}
+            <div className="flex justify-center mt-8 md:mt-12 space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentTestimonial 
+                      ? 'bg-gradient-to-r from-blue-500 to-cyan-500 scale-125' 
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                  aria-label={`Aller à l'avis ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Statistiques */}
+            <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm border border-blue-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">5.0</div>
+                <div className="text-gray-300 text-sm md:text-base">Note moyenne</div>
+              </div>
+              <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm border border-green-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-green-300 mb-2">100%</div>
+                <div className="text-gray-300 text-sm md:text-base">Satisfaction</div>
+              </div>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-purple-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-purple-300 mb-2">50+</div>
+                <div className="text-gray-300 text-sm md:text-base">Clients ravis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Zones d'intervention Section - Style artistique moderne */}
+      <section className="py-16 md:py-24 relative">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Titre et description */}
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm rounded-full border border-green-400/30 mb-6">
+                <MapPin className="w-4 h-4 mr-2 text-green-400" />
+                <span className="text-green-300 text-sm font-medium">Service mobile</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Zones d&apos;intervention
+              </h2>
+              <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                Service premium à domicile dans toute la région. Découvrez les villes où nous intervenons pour redonner l&apos;éclat à votre véhicule avec nos prestations haut de gamme.
+              </p>
+            </div>
+
+            {/* Grille des villes principales avec design moderne */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
               {[
-                'Herve', 'Liège', 'Verviers', 'Dison', 'Spa', 'Huy', 'Aubel', 'Aywaille', 'Battice'
+                'Herve', 'Liège', 'Verviers', 'Dison', 'Spa', 'Huy', 'Aubel', 'Aywaille'
               ].map((ville, index) => (
                 <a
                   key={index}
                   href={`/zone-intervention/${ville.toLowerCase().replace(/[éèêë]/g, 'e').replace(/[àâä]/g, 'a').replace(/[ùûü]/g, 'u').replace(/[ôö]/g, 'o').replace(/[îï]/g, 'i').replace(/[ç]/g, 'c').replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3 md:p-4 text-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
+                  className="group relative bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8 text-center hover:bg-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl"
                 >
-                  <span className="text-sm md:text-base text-gray-300 group-hover:text-white transition-colors duration-300 hover:underline">
-                    {ville}
-                  </span>
+                  {/* Effet de brillance au hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  
+                  {/* Contenu */}
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <MapPin className="w-8 h-8 text-green-300" />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors duration-300">
+                      {ville}
+                    </h3>
+                    <p className="text-gray-300 text-sm md:text-base">
+                      Service premium à domicile
+                    </p>
+                    <div className="mt-4 inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-3 py-1 rounded-full border border-green-400/30">
+                      <span className="text-green-300 text-xs font-medium">Disponible</span>
+                    </div>
+                  </div>
                 </a>
               ))}
             </div>
 
-            {/* Lien vers toutes les villes */}
+            {/* Lien vers toutes les villes avec design moderne */}
             <div className="text-center">
               <a
                 href="/zone-intervention"
-                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 rounded-lg font-semibold text-base md:text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-400/20 hover:scale-105"
+                className="group relative inline-flex items-center justify-center px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 rounded-xl font-bold text-base md:text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-green-400/30 hover:scale-105 hover:border-emerald-400/50"
               >
-                <MapPin className="w-5 h-5 mr-2" />
-                Voir toutes les villes desservies
+                {/* Effet de brillance */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                
+                <MapPin className="w-5 h-5 mr-3 relative z-10" />
+                <span className="relative z-10">Voir toutes les villes desservies</span>
               </a>
             </div>
           </div>
@@ -351,101 +261,90 @@ const PremiumCarCleaningLanding = () => {
       </section>
 
       {/* Footer - Mobile-first */}
-      <footer className="bg-slate-800 py-12 md:py-16 border-t border-white/10">
+      <footer className="bg-slate-800/80 backdrop-blur-xl text-white pt-8 md:pt-12 pb-4 border-t border-white/10 relative z-10">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-8 md:mb-12">
-            
-            {/* Logo et Description */}
-            <div>
-              <div className="mb-4">
-                <span className="text-xl md:text-2xl font-bold text-white">
-                  Shine&Go
-                </span>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+            {/* Bloc action */}
+            <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm rounded-xl p-6 border border-green-500/20">
+              <div className="flex items-center mb-4">
+                <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-lg mr-3">
+                  <Sparkles className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-white">Prêt à briller ?</h3>
               </div>
-              
-              <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                Service premium d&apos;excellence en nettoyage automobile. Votre véhicule mérite le meilleur traitement avec mes prestations haut de gamme à Herve et dans la région.
-              </p>
-              
-              <div className="flex items-center space-x-3">
-                <a 
-                  href="https://wa.me/32472303701"
-                  className="bg-green-500 hover:bg-green-600 p-2 rounded-lg transition-colors duration-300"
-                >
-                  <MessageCircle className="w-4 h-4 text-white" />
-                </a>
-                <a 
-                  href="tel:+32472303701"
-                  className="bg-blue-500 hover:bg-blue-600 p-2 rounded-lg transition-colors duration-300"
-                >
-                  <Phone className="w-4 h-4 text-white" />
-                </a>
+              <div className="mb-6">
+                <div className="inline-flex items-center bg-emerald-500/20 px-3 py-2 rounded-full border border-emerald-400/30 mb-3">
+                  <Gift className="w-4 h-4 mr-2 text-emerald-300" />
+                  <span className="text-emerald-200 text-sm font-medium">ProtectorWax + CarPro Perl offerts</span>
+                </div>
+                <p className="text-emerald-300 font-semibold text-sm">Valeur : 40 €</p>
               </div>
+              <button 
+                onClick={() => {
+                  if (window.Calendly) {
+                    window.Calendly.initPopupWidget({
+                      url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
+                    });
+                  }
+                }}
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-6 py-4 rounded-lg font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-emerald-500/25 border-2 border-emerald-400/30"
+              >
+                ✨ Réserver mon créneau
+              </button>
             </div>
 
-            {/* Services */}
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-                <Sparkles className="w-4 h-4 text-blue-400" />
-                <span>Mes Services</span>
-              </h3>
-              <ul className="space-y-2">
-                {[
-                  'Deep Clean Premium',
-                  'Maintenance Wash',
-                  'Détail Extérieur',
-                  'Nettoyage Intérieur',
-                  'Traitement Hydrophobe'
-                ].map((service, index) => (
-                  <li key={index} className="text-gray-300 text-sm">
-                    {service}
+            {/* Coordonnées */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h4 className="font-bold text-lg mb-4 text-white">Contact</h4>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center space-x-2">
+                  <span className="text-lg">📞</span>
+                  <a href="tel:+32472303701" className="text-gray-300 hover:text-white transition-colors duration-300">0472 30 37 01</a>
+                </li>
+                                  <li className="flex items-center space-x-2">
+                    <span className="text-lg">✉️</span>
+                    <a href="mailto:nathangodfroid@gmail.com" className="text-gray-300 hover:text-white transition-colors duration-300">nathangodfroid@gmail.com</a>
                   </li>
-                ))}
+                <li className="flex items-center space-x-2">
+                  <span className="text-lg">🚐</span>
+                  <span className="text-gray-300">Mobile 25 km autour de Herve</span>
+                </li>
               </ul>
             </div>
 
-            {/* Informations */}
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-                <Info className="w-4 h-4 text-blue-400" />
-                <span>Informations</span>
-              </h3>
-              <ul className="space-y-2">
-                {[
-                  { icon: Clock, text: '7j/7 • 8h-20h' },
-                  { icon: MapPin, text: 'Herve & Région' },
-                  { icon: Shield, text: 'Garantie 100%' },
-                  { icon: Zap, text: 'Intervention 2h' },
-                  { icon: Award, text: 'Service Premium' }
-                ].map((info, index) => (
-                  <li key={index} className="flex items-center space-x-2 text-gray-300 text-sm">
-                    <info.icon className="w-4 h-4 text-blue-400" />
-                    <span>{info.text}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Liens rapides */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h4 className="font-bold text-lg mb-4 text-white">Navigation</h4>
+                              <ul className="space-y-3 text-sm">
+                  <li><a href="/" className="text-gray-300 hover:text-white transition-colors duration-300">Accueil</a></li>
+                  <li><a href="/#how-it-works" className="text-gray-300 hover:text-white transition-colors duration-300">Comment ça marche</a></li>
+                  <li><a href="/#services" className="text-gray-300 hover:text-white transition-colors duration-300">Nos services</a></li>
+                  <li><a href="/#transformations" className="text-gray-300 hover:text-white transition-colors duration-300">Avant/Après</a></li>
+                  <li><a href="/#temoignages" className="text-gray-300 hover:text-white transition-colors duration-300">Avis clients</a></li>
+                </ul>
+            </div>
+
+            {/* Légal */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h4 className="font-bold text-lg mb-4 text-white">Mentions légales</h4>
+                              <ul className="space-y-3 text-sm">
+                  <li className="text-gray-300">BE1014725710 – Shine & Go</li>
+                  <li><a href="/legal" className="text-gray-300 hover:text-white transition-colors duration-300">Mentions légales</a></li>
+                  <li><a href="/privacy" className="text-gray-300 hover:text-white transition-colors duration-300">Confidentialité & cookies</a></li>
+                  <li><a href="/cgv" className="text-gray-300 hover:text-white transition-colors duration-300">Conditions générales</a></li>
+                </ul>
             </div>
           </div>
 
-          {/* Copyright */}
-          <div className="border-t border-white/10 pt-8 md:pt-10 text-center">
-            <p className="text-gray-400 text-sm">
-              &copy; 2025 Shine&Go Premium • Rue Moreau, 20, 4650 Herve • +32 472 30 37 01
-            </p>
+          <div className="text-center text-xs mt-6 text-gray-400 border-t border-white/10 pt-4">
+            © 2025 Shine & Go – Tous droits réservés
           </div>
         </div>
       </footer>
 
-      {/* Floating Action Button - Mobile-optimized */}
-      <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50">
-        <a 
-          href="https://wa.me/32472303701"
-          className="bg-green-500 hover:bg-green-600 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg transition-colors duration-300"
-          aria-label="Contact WhatsApp"
-        >
-          <MessageCircle className="w-6 h-6 md:w-7 md:h-7 text-white" />
-        </a>
-      </div>
+      {/* Calendly Popup en bas à droite */}
+      <CalendlyPopup />
+
     </div>
   );
 };

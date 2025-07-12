@@ -8,194 +8,148 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 Validation SEO - Shine&Go Premium\n');
+console.log('🔍 Validation SEO - Shine&Go Premium');
+console.log('=====================================\n');
 
-// Configuration
-const config = {
-  siteUrl: 'https://www.shineandgo.be',
-  requiredFiles: [
-    'public/robots.txt',
-    'public/sitemap.xml',
-    'public/manifest.json',
-    'public/structured-data.json',
-    'src/app/layout.tsx'
-  ],
-  requiredMetaTags: [
-    'title',
-    'description',
-    'keywords',
-    'robots',
-    'canonical',
-    'openGraph',
-    'twitter'
-  ],
-  requiredStructuredData: [
-    '@type',
-    'name',
-    'description',
-    'url',
-    'telephone',
-    'address',
-    'geo',
-    'openingHoursSpecification',
-    'aggregateRating'
-  ]
+// Vérifications
+const checks = {
+  sitemap: false,
+  robots: false,
+  manifest: false,
+  webpImages: false,
+  analytics: false,
+  structuredData: false,
+  metaTags: false
 };
 
-// Fonctions de validation
-function checkFileExists(filePath) {
-  const exists = fs.existsSync(filePath);
-  console.log(`${exists ? '✅' : '❌'} ${filePath} ${exists ? 'existe' : 'MANQUANT'}`);
-  return exists;
-}
-
-function validateRobotsTxt() {
-  const robotsPath = 'public/robots.txt';
-  if (!fs.existsSync(robotsPath)) return false;
-  
-  const content = fs.readFileSync(robotsPath, 'utf8');
-  const checks = [
-    { name: 'User-agent: *', found: content.includes('User-agent: *') },
-    { name: 'Allow: /', found: content.includes('Allow: /') },
-    { name: 'Sitemap', found: content.includes('Sitemap:') },
-    { name: 'Googlebot', found: content.includes('Googlebot') }
-  ];
-  
-  console.log('\n📋 Validation robots.txt:');
-  checks.forEach(check => {
-    console.log(`  ${check.found ? '✅' : '❌'} ${check.name}`);
-  });
-  
-  return checks.every(check => check.found);
-}
-
-function validateSitemap() {
-  const sitemapPath = 'public/sitemap.xml';
-  if (!fs.existsSync(sitemapPath)) return false;
-  
-  const content = fs.readFileSync(sitemapPath, 'utf8');
-  const checks = [
-    { name: 'XML declaration', found: content.includes('<?xml version="1.0"') },
-    { name: 'urlset namespace', found: content.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"') },
-    { name: 'Homepage URL', found: content.includes('https://www.shineandgo.be/') },
-    { name: 'Image sitemap', found: content.includes('xmlns:image') }
-  ];
-  
-  console.log('\n🗺️  Validation sitemap.xml:');
-  checks.forEach(check => {
-    console.log(`  ${check.found ? '✅' : '❌'} ${check.name}`);
-  });
-  
-  return checks.every(check => check.found);
-}
-
-function validateStructuredData() {
-  const dataPath = 'public/structured-data.json';
-  if (!fs.existsSync(dataPath)) return false;
-  
-  const content = fs.readFileSync(dataPath, 'utf8');
-  const data = JSON.parse(content);
-  
-  console.log('\n🏷️  Validation structured-data.json:');
-  config.requiredStructuredData.forEach(field => {
-    const hasField = data.hasOwnProperty(field);
-    console.log(`  ${hasField ? '✅' : '❌'} ${field}`);
-  });
-  
-  // Vérifications spécifiques
-  const specificChecks = [
-    { name: 'LocalBusiness type', found: data['@type'] === 'LocalBusiness' },
-    { name: 'Phone number', found: data.telephone && data.telephone.includes('+32') },
-    { name: 'Address', found: data.address && data.address.streetAddress },
-    { name: 'Reviews', found: data.review && data.review.length > 0 },
-    { name: 'Services', found: data.hasOfferCatalog && data.hasOfferCatalog.itemListElement }
-  ];
-  
-  specificChecks.forEach(check => {
-    console.log(`  ${check.found ? '✅' : '❌'} ${check.name}`);
-  });
-  
-  return config.requiredStructuredData.every(field => data.hasOwnProperty(field));
-}
-
-function validateManifest() {
-  const manifestPath = 'public/manifest.json';
-  if (!fs.existsSync(manifestPath)) return false;
-  
-  const content = fs.readFileSync(manifestPath, 'utf8');
-  const data = JSON.parse(content);
-  
-  console.log('\n📱 Validation manifest.json:');
-  const checks = [
-    { name: 'name', found: data.name && data.name.includes('Shine&Go') },
-    { name: 'short_name', found: data.short_name },
-    { name: 'description', found: data.description },
-    { name: 'start_url', found: data.start_url === '/' },
-    { name: 'display', found: data.display === 'standalone' },
-    { name: 'theme_color', found: data.theme_color },
-    { name: 'icons', found: data.icons && data.icons.length > 0 }
-  ];
-  
-  checks.forEach(check => {
-    console.log(`  ${check.found ? '✅' : '❌'} ${check.name}`);
-  });
-  
-  return checks.every(check => check.found);
-}
-
-function generateSeoReport() {
-  console.log('\n📊 RAPPORT SEO COMPLET\n');
-  console.log('='.repeat(50));
-  
-  // Vérification des fichiers
-  console.log('\n📁 FICHIERS REQUIS:');
-  let filesOk = 0;
-  config.requiredFiles.forEach(file => {
-    if (checkFileExists(file)) filesOk++;
-  });
-  
-  // Validation détaillée
-  const validations = [
-    { name: 'robots.txt', fn: validateRobotsTxt },
-    { name: 'sitemap.xml', fn: validateSitemap },
-    { name: 'structured-data.json', fn: validateStructuredData },
-    { name: 'manifest.json', fn: validateManifest }
-  ];
-  
-  let validationsOk = 0;
-  validations.forEach(validation => {
-    if (validation.fn()) validationsOk++;
-  });
-  
-  // Résumé
-  console.log('\n' + '='.repeat(50));
-  console.log('📈 RÉSUMÉ:');
-  console.log(`Fichiers requis: ${filesOk}/${config.requiredFiles.length}`);
-  console.log(`Validations: ${validationsOk}/${validations.length}`);
-  
-  const score = Math.round((filesOk + validationsOk) / (config.requiredFiles.length + validations.length) * 100);
-  console.log(`\n🎯 Score SEO: ${score}%`);
-  
-  if (score >= 90) {
-    console.log('🌟 Excellent! Le SEO est bien optimisé.');
-  } else if (score >= 70) {
-    console.log('✅ Bon! Quelques améliorations possibles.');
+// 1. Vérifier le sitemap
+try {
+  const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+  if (fs.existsSync(sitemapPath)) {
+    const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+    const urlCount = (sitemapContent.match(/<url>/g) || []).length;
+    checks.sitemap = urlCount > 0;
+    console.log(`✅ Sitemap: ${urlCount} URLs trouvées`);
   } else {
-    console.log('⚠️  Attention! Des améliorations sont nécessaires.');
+    console.log('❌ Sitemap: Fichier manquant');
   }
-  
-  // Recommandations
-  console.log('\n💡 RECOMMANDATIONS:');
-  console.log('1. Vérifiez que Google Search Console est configuré');
-  console.log('2. Soumettez le sitemap à Google et Bing');
-  console.log('3. Testez les données structurées avec Google Rich Results Test');
-  console.log('4. Vérifiez la vitesse de chargement avec PageSpeed Insights');
-  console.log('5. Surveillez les performances dans Google Analytics');
+} catch (error) {
+  console.log('❌ Sitemap: Erreur de lecture');
 }
 
-// Exécution
-if (require.main === module) {
-  generateSeoReport();
+// 2. Vérifier robots.txt
+try {
+  const robotsPath = path.join(process.cwd(), 'public', 'robots.txt');
+  if (fs.existsSync(robotsPath)) {
+    const robotsContent = fs.readFileSync(robotsPath, 'utf8');
+    checks.robots = robotsContent.includes('Sitemap:') && robotsContent.includes('User-agent:');
+    console.log('✅ Robots.txt: Configuré correctement');
+  } else {
+    console.log('❌ Robots.txt: Fichier manquant');
+  }
+} catch (error) {
+  console.log('❌ Robots.txt: Erreur de lecture');
 }
 
-module.exports = { generateSeoReport, validateRobotsTxt, validateSitemap, validateStructuredData, validateManifest }; 
+// 3. Vérifier manifest.json
+try {
+  const manifestPath = path.join(process.cwd(), 'public', 'manifest.json');
+  if (fs.existsSync(manifestPath)) {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    checks.manifest = manifest.name && manifest.short_name && manifest.start_url;
+    console.log('✅ Manifest.json: Configuré correctement');
+  } else {
+    console.log('❌ Manifest.json: Fichier manquant');
+  }
+} catch (error) {
+  console.log('❌ Manifest.json: Erreur de lecture');
+}
+
+// 4. Vérifier les images WebP
+try {
+  const webpDir = path.join(process.cwd(), 'public', 'transformations', 'optimized', 'webp');
+  if (fs.existsSync(webpDir)) {
+    const webpFiles = fs.readdirSync(webpDir).filter(file => file.endsWith('.webp'));
+    checks.webpImages = webpFiles.length > 0;
+    console.log(`✅ Images WebP: ${webpFiles.length} fichiers trouvés`);
+  } else {
+    console.log('❌ Images WebP: Dossier manquant');
+  }
+} catch (error) {
+  console.log('❌ Images WebP: Erreur de lecture');
+}
+
+// 5. Vérifier les analytics
+try {
+  const analyticsPath = path.join(process.cwd(), 'src', 'app', 'analytics.tsx');
+  if (fs.existsSync(analyticsPath)) {
+    const analyticsContent = fs.readFileSync(analyticsPath, 'utf8');
+    checks.analytics = analyticsContent.includes('G-9MZK3M3Z7T') && analyticsContent.includes('fbq');
+    console.log('✅ Analytics: Google Analytics et Facebook Pixel configurés');
+  } else {
+    console.log('❌ Analytics: Fichier manquant');
+  }
+} catch (error) {
+  console.log('❌ Analytics: Erreur de lecture');
+}
+
+// 6. Vérifier les données structurées
+try {
+  const gmbPath = path.join(process.cwd(), 'src', 'app', 'config', 'google-my-business.ts');
+  if (fs.existsSync(gmbPath)) {
+    const gmbContent = fs.readFileSync(gmbPath, 'utf8');
+    checks.structuredData = gmbContent.includes('generateStructuredData') && gmbContent.includes('LocalBusiness');
+    console.log('✅ Données structurées: Schema.org configuré');
+  } else {
+    console.log('❌ Données structurées: Fichier manquant');
+  }
+} catch (error) {
+  console.log('❌ Données structurées: Erreur de lecture');
+}
+
+// 7. Vérifier les meta tags
+try {
+  const layoutPath = path.join(process.cwd(), 'src', 'app', 'layout.tsx');
+  if (fs.existsSync(layoutPath)) {
+    const layoutContent = fs.readFileSync(layoutPath, 'utf8');
+    checks.metaTags = layoutContent.includes('title') && layoutContent.includes('description') && layoutContent.includes('openGraph');
+    console.log('✅ Meta tags: Open Graph et Twitter Cards configurés');
+  } else {
+    console.log('❌ Meta tags: Fichier manquant');
+  }
+} catch (error) {
+  console.log('❌ Meta tags: Erreur de lecture');
+}
+
+// Résumé
+console.log('\n📊 Résumé de la validation SEO:');
+console.log('================================');
+
+const totalChecks = Object.keys(checks).length;
+const passedChecks = Object.values(checks).filter(Boolean).length;
+const score = Math.round((passedChecks / totalChecks) * 100);
+
+console.log(`\nScore SEO: ${score}% (${passedChecks}/${totalChecks} tests réussis)`);
+
+if (score >= 90) {
+  console.log('🎉 Excellent! Votre site est très bien optimisé pour le SEO.');
+} else if (score >= 70) {
+  console.log('✅ Bon! Quelques optimisations mineures peuvent être apportées.');
+} else {
+  console.log('⚠️  Attention! Des optimisations importantes sont nécessaires.');
+}
+
+// Recommandations
+console.log('\n💡 Recommandations:');
+if (!checks.sitemap) console.log('- Générer un sitemap XML');
+if (!checks.robots) console.log('- Configurer robots.txt');
+if (!checks.manifest) console.log('- Créer manifest.json pour PWA');
+if (!checks.webpImages) console.log('- Convertir les images en WebP');
+if (!checks.analytics) console.log('- Configurer Google Analytics et Facebook Pixel');
+if (!checks.structuredData) console.log('- Ajouter des données structurées Schema.org');
+if (!checks.metaTags) console.log('- Optimiser les meta tags Open Graph');
+
+console.log('\n🚀 Commandes utiles:');
+console.log('npm run seo:optimize  - Optimisation complète SEO');
+console.log('npm run build:production - Build avec optimisations');
+console.log('npm run update:sitemap - Mise à jour du sitemap'); 

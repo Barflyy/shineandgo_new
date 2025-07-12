@@ -1,10 +1,12 @@
-import { generateMetadata as _generateMetadata } from '../../components/CityPageTemplate';
+import { generateMetadata as generateCityMetadata } from '../../utils/cityMetadata';
 import CityPageTemplate from '../../components/CityPageTemplate';
 
-export function generateMetadata() {
-  return _generateMetadata({ params: { citySlug: "seraing" } });
-}
 
+
+
+
+
+export const generateMetadata = () => generateCityMetadata('seraing');
 export default function CityPage() {
   return <CityPageTemplate citySlug="seraing" />;
 }

@@ -1,4 +1,4 @@
-import cityData from '../../../villes_shineandgo_personnalise.json';
+import cityData from '../../../villes_shineandgo_enrichi.json';
 
 export interface CityInfo {
   ville: string;
@@ -161,4 +161,4 @@ export function getCityDisplayName(slug: string): string {
   }
   // Si non trouvé, on retourne le slug capitalisé
   return slug ? slug.charAt(0).toUpperCase() + slug.slice(1) : '';
-} 
+}

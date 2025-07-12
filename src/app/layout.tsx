@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "./analytics";
 import { generateStructuredData } from "./config/google-my-business";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     'business:contact_data:locality': 'Herve',
     'business:contact_data:postal_code': '4650',
     'business:contact_data:country_name': 'Belgique',
-    'business:contact_data:phone_number': '+32472303701',
+    'business:contact_data:phone_number': '0472303701',
     'business:contact_data:website': 'https://www.shineandgo.be',
     'business:contact_data:email': 'contact@shinego.be',
     'business:contact_data:hours': 'Lun-Dim: 8h-20h',
