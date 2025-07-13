@@ -66,7 +66,7 @@ const TransformationsSection = () => {
               <Sparkles className="w-4 h-4 mr-2 text-blue-400" />
               <span className="text-blue-300 text-sm font-medium">Transformations</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Avant / Après
             </h2>
             <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">

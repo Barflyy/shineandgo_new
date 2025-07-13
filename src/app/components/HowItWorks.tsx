@@ -10,9 +10,9 @@ export default function HowItWorks() {
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
             <span className="text-accent text-sm font-medium">Processus simplifié</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Comment ça marche ?
-          </h2>
+                      <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Comment ça marche ?
+            </h2>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Un processus simple en 3 étapes pour un résultat exceptionnel
           </p>

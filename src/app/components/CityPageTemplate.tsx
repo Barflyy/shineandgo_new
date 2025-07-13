@@ -98,7 +98,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 <CheckCircle className="w-4 h-4 mr-2 text-blue-400" />
                 <span className="text-blue-300 text-sm font-medium">Avantages locaux</span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Pourquoi choisir Shine&Go à {cityContent.ville} ?
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -158,7 +158,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 <Sparkles className="w-4 h-4 mr-2 text-green-400" />
                 <span className="text-green-300 text-sm font-medium">Nos prestations</span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Services à {cityContent.ville}
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -247,7 +247,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 <Star className="w-4 h-4 mr-2 text-yellow-400" />
                 <span className="text-yellow-300 text-sm font-medium">Avis clients {cityContent.ville}</span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Ce que disent nos clients à {cityContent.ville}
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -403,7 +403,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 <MapPin className="w-4 h-4 mr-2 text-green-400" />
                 <span className="text-green-300 text-sm font-medium">Service mobile</span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 À proximité
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">

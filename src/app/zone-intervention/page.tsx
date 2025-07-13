@@ -64,7 +64,7 @@ const ZonesInterventionPage = () => {
                 <MapPin className="w-4 h-4 mr-2 text-green-400" />
                 <span className="text-green-300 text-sm font-medium">Service mobile premium</span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 text-white bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Zones d&apos;intervention
               </h1>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">

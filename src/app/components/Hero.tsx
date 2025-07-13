@@ -37,7 +37,7 @@ export default function Hero() {
       {/* (supprimé à la demande de l'utilisateur) */}
 
       <div className="container mx-auto px-4 text-center relative z-20 flex flex-col justify-center min-h-screen">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-white">
+        <h1 className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-white">
           Votre voiture showroom en 90 min,<br />
           sans lever le petit doigt !
         </h1>
@@ -51,7 +51,7 @@ export default function Hero() {
         </div>
 
         {/* Benefits list */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+        <div className="hidden md:flex flex-col sm:flex-row gap-6 justify-center mb-8">
           <div className="flex items-center justify-center space-x-3 text-base md:text-lg text-gray-300">
             <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-green-400 flex-shrink-0" />
             <span>100 % mobile</span>
