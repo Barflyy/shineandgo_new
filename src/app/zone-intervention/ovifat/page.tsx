@@ -1,12 +1,22 @@
 import { generateMetadata as generateCityMetadata } from '../../utils/cityMetadata';
 import CityPageTemplate from '../../components/CityPageTemplate';
-
-
-
-
-
+import { generateCityStructuredData } from '../../utils/cityStructuredData';
 
 export const generateMetadata = () => generateCityMetadata('ovifat');
+
 export default function CityPage() {
-  return <CityPageTemplate citySlug="ovifat" />;
+  // Générer les données structurées pour Ovifat
+  const structuredData = generateCityStructuredData('ovifat', 'Ovifat');
+  
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
+      <CityPageTemplate citySlug="ovifat" />
+    </>
+  );
 }

@@ -177,6 +177,51 @@ export const generateStructuredData = () => {
         "@type": "Reservation",
         "name": "Réservation service de nettoyage"
       }
-    }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de nettoyage automobile",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Nettoyage extérieur complet",
+            "description": "Lavage carrosserie, vitres, jantes avec produits professionnels Koch Chemie"
+          },
+          "price": "35",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Nettoyage intérieur premium",
+            "description": "Nettoyage complet de l'habitacle avec produits spécialisés"
+          },
+          "price": "30",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pack complet premium",
+            "description": "Nettoyage intérieur et extérieur avec traitements de protection"
+          },
+          "price": "65",
+          "priceCurrency": "EUR"
+        }
+      ]
+    },
+    "foundingDate": "2024",
+    "numberOfEmployees": "2",
+    "knowsAbout": [
+      "Nettoyage automobile professionnel",
+      "Produits Koch Chemie",
+      "Traitement hydrophobe",
+      "Protection plastiques",
+      "Service mobile à domicile"
+    ]
   };
 }; 

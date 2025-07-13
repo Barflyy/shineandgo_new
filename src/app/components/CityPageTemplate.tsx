@@ -26,7 +26,12 @@ interface CityPageTemplateProps {
 }
 
 export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
-  const cityContent = getCityContent(citySlug);
+  // Obtenir le nom de la ville à partir du slug
+  const cityName = citySlug.split('-').map(word => 
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+  
+  const cityContent = getCityContent(citySlug, cityName);
   const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
 
   // Fonction pour générer des descriptions d'avantages dynamiques
@@ -64,7 +69,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
       <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
       
       {/* Header */}
-      <Header cityName={cityContent.ville} />
+      <Header cityName={cityName} />
 
       {/* Hero Section */}
       <Hero />
@@ -89,26 +94,33 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
         <PricingTable />
       </section>
 
-      {/* Section Avantages spécifiques à la ville */}
+      {/* Section Contenu unique par ville */}
       <section className="py-16 md:py-24 relative">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-full border border-blue-400/30 mb-6">
                 <CheckCircle className="w-4 h-4 mr-2 text-blue-400" />
-                <span className="text-blue-300 text-sm font-medium">Avantages locaux</span>
+                <span className="text-blue-300 text-sm font-medium">Service local</span>
               </div>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Pourquoi choisir Shine&Go à {cityContent.ville} ?
+                Nettoyage auto à {cityName}
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                {cityContent.description}
+                {cityContent.uniqueContent}
               </p>
             </div>
             
             {/* Grille des avantages avec design amélioré */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {cityContent.avantages.slice(0, 6).map((avantage, index) => (
+              {[
+                "Intervention mobile à domicile",
+                "Produits professionnels Koch Chemie",
+                "Service 7j/7 disponible",
+                "Garantie satisfaction incluse",
+                "Connaissance locale de la région",
+                "Prix compétitifs et transparents"
+              ].map((avantage, index) => (
                 <div key={index} className="group relative bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                   {/* Effet de brillance au hover */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -133,15 +145,15 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
             {/* Statistiques rapides */}
             <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm border border-blue-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">{cityContent.statistiques.noteMoyenne}</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">4.8</div>
                 <div className="text-gray-300 text-sm md:text-base">Note moyenne</div>
               </div>
               <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm border border-green-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-green-300 mb-2">{cityContent.statistiques.satisfaction}</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-300 mb-2">100%</div>
                 <div className="text-gray-300 text-sm md:text-base">Satisfaction</div>
               </div>
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-purple-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-purple-300 mb-2">{cityContent.statistiques.clientsRavis}</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-300 mb-2">50+</div>
                 <div className="text-gray-300 text-sm md:text-base">Clients ravis</div>
               </div>
             </div>
@@ -159,16 +171,23 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 <span className="text-green-300 text-sm font-medium">Nos prestations</span>
               </div>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Services à {cityContent.ville}
+                Services à {cityName}
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                Découvrez notre gamme complète de services de nettoyage automobile premium, adaptés aux besoins spécifiques de {cityContent.ville} et sa région.
+                Découvrez notre gamme complète de services de nettoyage automobile premium, adaptés aux besoins spécifiques de {cityName} et sa région.
               </p>
             </div>
             
             {/* Grille des services avec design amélioré */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {cityContent.servicesSpecifiques.map((service, index) => (
+              {[
+                "Nettoyage intérieur et extérieur complet",
+                "Traitement hydrophobe ProtectorWax",
+                "Protection plastiques CarPro Perl",
+                "Nettoyage jantes et pneus",
+                "Traitement anti-statique",
+                "Séchage professionnel"
+              ].map((service, index) => (
                 <div key={index} className="group relative bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                   {/* Effet de brillance au hover */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -199,8 +218,8 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   Prêt à redonner l'éclat à votre véhicule ?
                 </h3>
-                <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
-                  Contactez-nous dès maintenant pour un devis personnalisé et profitez de nos services premium à {cityContent.ville}.
+                <p className="text-gray-300 mb-8 text-lg">
+                  Contactez-nous dès maintenant pour un devis personnalisé ou une réservation directe.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button
@@ -245,13 +264,13 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
             <div className="text-center mb-12 md:mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-full border border-yellow-500/30 mb-6">
                 <Star className="w-4 h-4 mr-2 text-yellow-400" />
-                <span className="text-yellow-300 text-sm font-medium">Avis clients {cityContent.ville}</span>
+                <span className="text-yellow-300 text-sm font-medium">Avis clients {cityName}</span>
               </div>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Ce que disent nos clients à {cityContent.ville}
+                Ce que disent nos clients à {cityName}
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                Découvrez les témoignages de nos clients satisfaits qui ont transformé leur véhicule avec Shine&Go dans la région de {cityContent.ville}.
+                Découvrez les témoignages de nos clients satisfaits qui ont transformé leur véhicule avec Shine&Go dans la région de {cityName}.
               </p>
             </div>
 
@@ -259,7 +278,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
             <div className="relative max-w-4xl mx-auto">
               {/* Bouton précédent */}
               <button
-                onClick={() => setCurrentTestimonial((c) => (c - 1 + cityContent.temoignages.length) % cityContent.temoignages.length)}
+                onClick={() => setCurrentTestimonial((c) => (c - 1 + 3) % 3)}
                 aria-label="Avis précédent"
                 className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50 rounded-full p-3 md:p-4 shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
                 style={{transform: 'translateY(-50%)'}}
@@ -280,17 +299,15 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                       <div className="w-16 h-16 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                         <Users className="w-8 h-8 text-blue-300" />
                       </div>
-                      <div className="font-bold text-blue-300 text-lg md:text-xl mb-2">{cityContent.temoignages[currentTestimonial].name}</div>
+                      <div className="font-bold text-blue-300 text-lg md:text-xl mb-2">{cityContent.localTestimonial.name}</div>
                       <div className="text-gray-400 text-sm">
-                        {cityContent.temoignages[currentTestimonial].localisation === "Région" 
-                          ? `${cityContent.ville} et environs`
-                          : cityContent.temoignages[currentTestimonial].localisation}
+                        {cityContent.localTestimonial.location}
                       </div>
                     </div>
 
                     {/* Étoiles */}
                     <div className="flex justify-center mb-6">
-                      {[...Array(cityContent.temoignages[currentTestimonial].rating)].map((_, i) => (
+                      {[...Array(cityContent.localTestimonial.rating)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 fill-current mx-1 group-hover:scale-110 transition-transform duration-300" />
                       ))}
                     </div>
@@ -298,7 +315,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                     {/* Citation */}
                     <div className="relative">
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-4xl text-blue-400/30">"</div>
-                      <p className="italic text-gray-200 text-base md:text-lg leading-relaxed relative z-10">"{cityContent.temoignages[currentTestimonial].text}"</p>
+                      <p className="italic text-gray-200 text-base md:text-lg leading-relaxed relative z-10">"{cityContent.localTestimonial.text}"</p>
                     </div>
 
                     {/* Badge de satisfaction */}
@@ -314,7 +331,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
 
               {/* Bouton suivant */}
               <button
-                onClick={() => setCurrentTestimonial((c) => (c + 1) % cityContent.temoignages.length)}
+                onClick={() => setCurrentTestimonial((c) => (c + 1) % 3)}
                 aria-label="Avis suivant"
                 className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/50 rounded-full p-3 md:p-4 shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
                 style={{transform: 'translateY(-50%)'}}
@@ -325,7 +342,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
 
             {/* Indicateurs de navigation */}
             <div className="flex justify-center mt-8 md:mt-12 space-x-2">
-              {cityContent.temoignages.map((_, index) => (
+              {[0, 1, 2].map((index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
@@ -342,55 +359,52 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
             {/* Statistiques spécifiques à la ville */}
             <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm border border-blue-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">{cityContent.statistiques.noteMoyenne}</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">4.8</div>
                 <div className="text-gray-300 text-sm md:text-base">Note moyenne</div>
               </div>
               <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm border border-green-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-green-300 mb-2">{cityContent.statistiques.satisfaction}</div>
+                <div className="text-3xl md:text-4xl font-bold text-green-300 mb-2">100%</div>
                 <div className="text-gray-300 text-sm md:text-base">Satisfaction</div>
               </div>
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-purple-400/20 rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-purple-300 mb-2">{cityContent.statistiques.clientsRavis}</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-300 mb-2">50+</div>
                 <div className="text-gray-300 text-sm md:text-base">Clients ravis</div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* Section Anecdotes et Infos Locales */}
-      {(cityContent.anecdotes.length > 0 || cityContent.population) && (
+      {cityContent.localAnecdotes.length > 0 && (
         <section className="py-12 md:py-20 relative">
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Anecdotes */}
-                {cityContent.anecdotes.length > 0 && (
-                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl border border-purple-400/20 rounded-2xl p-6 md:p-8 shadow-lg">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Anecdotes locales</h3>
-                    <ul className="list-disc list-inside text-gray-200 space-y-2">
-                      {cityContent.anecdotes.map((a, i) => (
-                        <li key={i}>{a}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {/* Infos locales */}
-                {(cityContent.population || cityContent.typeVille || cityContent.particularites || cityContent.clienteleType) && (
-                  <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-xl border border-blue-400/20 rounded-2xl p-6 md:p-8 shadow-lg">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Infos locales</h3>
-                    <ul className="text-gray-200 space-y-2">
-                      {cityContent.population && <li><span className="font-semibold text-blue-300">Population :</span> {cityContent.population}</li>}
-                      {cityContent.typeVille && <li><span className="font-semibold text-blue-300">Type :</span> {cityContent.typeVille.replace(/_/g, ' ')}</li>}
-                      {cityContent.particularites && cityContent.particularites.length > 0 && <li><span className="font-semibold text-blue-300">Particularités :</span> {cityContent.particularites.join(', ')}</li>}
-                      {cityContent.clienteleType && <li><span className="font-semibold text-blue-300">Clientèle :</span> {cityContent.clienteleType.replace(/_/g, ' ')}</li>}
-                    </ul>
-                  </div>
-                )}
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl border border-purple-400/20 rounded-2xl p-6 md:p-8 shadow-lg">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Anecdotes locales</h3>
+                  <ul className="list-disc list-inside text-gray-200 space-y-2">
+                    {cityContent.localAnecdotes.map((anecdote, i) => (
+                      <li key={i}>{anecdote}</li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Zones populaires */}
+                <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-xl border border-blue-400/20 rounded-2xl p-6 md:p-8 shadow-lg">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Zones desservies</h3>
+                  <ul className="text-gray-200 space-y-2">
+                    {cityContent.popularAreas.map((area, i) => (
+                      <li key={i}><span className="font-semibold text-blue-300">•</span> {area}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </section>
       )}
+
       {/* AUTO-CONTENT-END */}
 
       {/* Section À proximité */}
@@ -407,57 +421,56 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 À proximité
               </h2>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                Nous intervenons également dans les villes voisines de {cityContent.ville}. Service premium à domicile dans toute la région.
+                Notre service mobile nous permet d'intervenir dans tous les quartiers de {cityName} et ses environs.
               </p>
             </div>
 
-            {/* Grille des villes voisines */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-              {getNearbyCities(citySlug).slice(0, 3).map((ville: string, index: number) => (
-                <a
-                  key={index}
-                  href={`/zone-intervention/${ville.toLowerCase().replace(/[éèêë]/g, 'e').replace(/[àâä]/g, 'a').replace(/[ùûü]/g, 'u').replace(/[ôö]/g, 'o').replace(/[îï]/g, 'i').replace(/[ç]/g, 'c').replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
-                  className="group relative bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8 text-center hover:bg-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl"
-                >
-                  {/* Effet de brillance au hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                  
-                  {/* Contenu */}
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <MapPin className="w-8 h-8 text-green-300" />
-                    </div>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors duration-300">
-                      {ville}
-                    </h3>
-                    <p className="text-gray-300 text-sm md:text-base">
-                      Service premium à domicile
-                    </p>
-                    <div className="mt-4 inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-3 py-1 rounded-full border border-green-400/30">
-                      <span className="text-green-300 text-xs font-medium">Disponible</span>
-                    </div>
+            {/* Grille des zones populaires */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              {cityContent.popularAreas.map((area, index) => (
+                <div key={index} className="group bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4 md:p-6 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl text-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="w-6 h-6 text-green-300" />
                   </div>
-                </a>
+                  <h3 className="text-sm md:text-base font-medium text-white group-hover:text-green-300 transition-colors duration-300">{area}</h3>
+                  <div className="mt-2 inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-2 py-1 rounded-full border border-green-400/30">
+                    <span className="text-green-300 text-xs">Disponible</span>
+                  </div>
+                </div>
               ))}
             </div>
 
-            {/* Lien vers toutes les villes */}
-            <div className="text-center">
-              <a
-                href="/zone-intervention"
-                className="group relative inline-flex items-center justify-center px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 rounded-xl font-bold text-base md:text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-green-400/30 hover:scale-105 hover:border-emerald-400/50"
-              >
-                {/* Effet de brillance */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-                
-                <MapPin className="w-5 h-5 mr-3 relative z-10" />
-                <span className="relative z-10">Voir toutes les villes desservies</span>
-              </a>
+            {/* Call-to-action pour les zones */}
+            <div className="mt-12 md:mt-16 text-center">
+              <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-xl border border-green-400/20 rounded-2xl p-8 md:p-12">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                  Votre zone n'est pas listée ?
+                </h3>
+                <p className="text-gray-300 mb-8 text-lg">
+                  Contactez-nous pour vérifier notre disponibilité dans votre quartier.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="https://wa.me/32472303701?text=Bonjour, je souhaite vérifier la disponibilité dans ma zone"
+                    className="group relative inline-flex items-center justify-center px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 rounded-xl font-bold text-base md:text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-green-400/30 hover:scale-105 hover:border-emerald-400/50"
+                  >
+                    <MessageCircle className="w-5 h-5 mr-3 relative z-10" />
+                    <span className="relative z-10">Vérifier disponibilité</span>
+                  </a>
+                  <a
+                    href="tel:+32472303701"
+                    className="group relative inline-flex items-center justify-center px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 rounded-xl font-bold text-base md:text-lg text-white shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-400/30 hover:scale-105 hover:border-cyan-400/50"
+                  >
+                    <Phone className="w-5 h-5 mr-3 relative z-10" />
+                    <span className="relative z-10">Appeler maintenant</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* Calendly Popup en bas à droite */}
       <CalendlyPopup />
     </div>
