@@ -252,18 +252,17 @@ body::before {
   }
 
   .devis-option {
-    padding: 1rem !important;
-    margin-bottom: 0.75rem !important;
-    min-height: 80px !important;
-    border-radius: 12px !important;
+    padding: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .devis-option-icon {
-    font-size: 2rem !important;
+    width: 2rem !important;
+    height: 2rem !important;
   }
 
   .devis-option-content {
-    gap: 0.5rem !important;
+    margin-left: 0.5rem !important;
   }
 
   .devis-option-title {
@@ -464,5 +463,26 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ===== ANIMATION POUR "VOTRE VOITURE" ===== */
+
+@keyframes heroGlow {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-glow {
+  animation: heroGlow 2s ease-in-out infinite;
 }
 

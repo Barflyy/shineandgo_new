@@ -138,13 +138,12 @@ export const generateStructuredData = () => {
       "@type": "City",
       "name": area
     })),
-    "serviceType": googleMyBusinessConfig.services,
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": googleMyBusinessConfig.rating.toString(),
-      "reviewCount": googleMyBusinessConfig.reviewCount.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
+      "ratingValue": googleMyBusinessConfig.rating,
+      "reviewCount": googleMyBusinessConfig.reviewCount,
+      "bestRating": 5,
+      "worstRating": 1
     },
     "sameAs": [
       googleMyBusinessConfig.socialLinks.whatsapp,
@@ -189,7 +188,7 @@ export const generateStructuredData = () => {
             "name": "Nettoyage extérieur complet",
             "description": "Lavage carrosserie, vitres, jantes avec produits professionnels Koch Chemie"
           },
-          "price": "35",
+          "price": 35,
           "priceCurrency": "EUR"
         },
         {
@@ -199,7 +198,7 @@ export const generateStructuredData = () => {
             "name": "Nettoyage intérieur premium",
             "description": "Nettoyage complet de l'habitacle avec produits spécialisés"
           },
-          "price": "30",
+          "price": 30,
           "priceCurrency": "EUR"
         },
         {
@@ -209,13 +208,13 @@ export const generateStructuredData = () => {
             "name": "Pack complet premium",
             "description": "Nettoyage intérieur et extérieur avec traitements de protection"
           },
-          "price": "65",
+          "price": 65,
           "priceCurrency": "EUR"
         }
       ]
     },
     "foundingDate": "2024",
-    "numberOfEmployees": "2",
+    "numberOfEmployees": 2,
     "knowsAbout": [
       "Nettoyage automobile professionnel",
       "Produits Koch Chemie",

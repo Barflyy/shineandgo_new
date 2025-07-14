@@ -81,16 +81,7 @@
       "sameAs": "https://fr.wikipedia.org/wiki/Soumagne"
     }
   ],
-  "serviceType": [
-    "Car Wash",
-    "Auto Detailing", 
-    "Interior Cleaning",
-    "Exterior Cleaning",
-    "Premium Car Care",
-    "Mobile Car Wash",
-    "Car Detailing Service",
-    "Professional Car Cleaning"
-  ],
+
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Services de nettoyage automobile premium",
@@ -109,10 +100,10 @@
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "price": "95",
+          "price": 95,
           "priceCurrency": "EUR",
-          "minPrice": "95",
-          "maxPrice": "130",
+          "minPrice": 95,
+          "maxPrice": 130,
           "validFrom": "2025-01-01",
           "validThrough": "2025-12-31"
         },
@@ -134,10 +125,10 @@
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "price": "65",
+          "price": 65,
           "priceCurrency": "EUR",
-          "minPrice": "65",
-          "maxPrice": "90",
+          "minPrice": 65,
+          "maxPrice": 90,
           "validFrom": "2025-01-01",
           "validThrough": "2025-12-31"
         },
@@ -159,10 +150,10 @@
         },
         "priceSpecification": {
           "@type": "PriceSpecification",
-          "price": "149",
+          "price": 149,
           "priceCurrency": "EUR",
-          "minPrice": "149",
-          "maxPrice": "199",
+          "minPrice": 149,
+          "maxPrice": 199,
           "validFrom": "2025-01-01",
           "validThrough": "2025-12-31"
         },
@@ -174,10 +165,10 @@
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "50",
-    "bestRating": "5",
-    "worstRating": "1"
+    "ratingValue": 5.0,
+    "reviewCount": 50,
+    "bestRating": 5,
+    "worstRating": 1
   },
   "@id": "https://www.shineandgo.be/#business",
   "identifier": {
@@ -190,8 +181,8 @@
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
+        "ratingValue": 5,
+        "bestRating": 5
       },
       "author": {
         "@type": "Person",
@@ -204,8 +195,8 @@
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating", 
-        "ratingValue": "5",
-        "bestRating": "5"
+        "ratingValue": 5,
+        "bestRating": 5
       },
       "author": {
         "@type": "Person",
@@ -218,8 +209,8 @@
       "@type": "Review",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
+        "ratingValue": 5,
+        "bestRating": 5
       },
       "author": {
         "@type": "Person",
@@ -293,7 +284,7 @@
     }
   ],
   "foundingDate": "2024",
-  "numberOfEmployees": "1",
+  "numberOfEmployees": 1,
   "knowsAbout": [
     "Car Detailing",
     "Auto Cleaning",
@@ -321,8 +312,8 @@
         "@type": "Service",
         "name": "Devis Gratuit"
       },
-      "price": "0",
-      "priceCurrency": "EUR"
+              "price": 0,
+        "priceCurrency": "EUR"
     }
   ]
 } 

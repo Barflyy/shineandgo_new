@@ -27,85 +27,84 @@ const Header: React.FC<HeaderProps> = ({ cityName }) => {
   };
 
   return (
-    <header className="w-full z-50 sticky top-0">
-      {/* Section navigation avec fond amélioré - Version mise à jour */}
-      <div className="relative">
-        {/* Fond glassmorphism moderne avec plus de transparence */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-800/70 to-slate-900/80 backdrop-blur-xl border-b border-white/10"></div>
-        
-        {/* Effet de brillance subtil amélioré */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-40"></div>
-        
-        {/* Effet de profondeur supplémentaire */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/20"></div>
-        
-        {/* Contenu du header */}
-        <div className="relative container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo simplifié avec effet */}
-            <div className="flex items-center cursor-pointer group" onClick={() => handleNavClick('/')}>
-              <span className="text-xl md:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
-                Shine&Go
-              </span>
-              
-              {cityName && (
-                <span className="text-sm text-gray-400 ml-2 font-medium group-hover:text-gray-300 transition-colors duration-300">
-                  - {cityName}
+    <header className="fixed top-0 left-0 right-0 z-50 pt-4">
+      {/* Header flottant avec design compact */}
+      <div className="mx-4 md:mx-8 lg:mx-12">
+        <div className="relative">
+          {/* Fond glassmorphism flottant */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/85 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl"></div>
+          
+          {/* Effet de brillance subtil */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-30 rounded-2xl"></div>
+          
+          {/* Contenu du header */}
+          <div className="relative px-6 py-4">
+            <div className="flex items-center justify-between">
+              {/* Logo simplifié avec effet */}
+              <div className="flex items-center cursor-pointer group" onClick={() => handleNavClick('/')}>
+                <span className="text-lg md:text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
+                  Shine&Go
                 </span>
-              )}
-            </div>
+                
+                {cityName && (
+                  <span className="text-xs text-gray-400 ml-2 font-medium group-hover:text-gray-300 transition-colors duration-300">
+                    - {cityName}
+                  </span>
+                )}
+              </div>
 
-            {/* Navigation Desktop - Style moderne amélioré */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              {navItems.map((item, index) => (
+              {/* Navigation Desktop - Style moderne compact */}
+              <nav className="hidden lg:flex items-center space-x-1">
+                {navItems.map((item, index) => (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.href)}
+                    className="relative group px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300 hover:scale-105 text-gray-300 hover:text-white hover:bg-white/10 backdrop-blur-sm"
+                  >
+                    {/* Effet de brillance au hover */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                    <span className="relative z-10">{item.name}</span>
+                  </button>
+                ))}
+              </nav>
+
+              {/* CTA Desktop - Style premium compact */}
+              <div className="hidden lg:flex items-center">
                 <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className="relative group px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 text-gray-300 hover:text-white hover:bg-white/10 backdrop-blur-sm"
+                  onClick={() => {
+                    if (window.Calendly) {
+                      window.Calendly.initPopupWidget({
+                        url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
+                      });
+                    }
+                  }}
+                  className="group relative bg-gradient-to-r from-emerald-500/40 to-green-500/40 hover:from-emerald-500/50 hover:to-green-500/50 backdrop-blur-md border border-emerald-400/50 hover:border-emerald-300/70 px-4 py-2 rounded-xl text-xs font-medium transition-all duration-300 flex items-center space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
                 >
-                  {/* Effet de brillance au hover amélioré */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                  <span className="relative z-10">{item.name}</span>
+                  {/* Effet de brillance */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                  <MessageCircle className="w-3 h-3 relative z-10" />
+                  <span className="relative z-10">Réserver</span>
                 </button>
-              ))}
-            </nav>
+              </div>
 
-            {/* CTA Desktop - Style premium amélioré */}
-            <div className="hidden lg:flex items-center space-x-3">
-              <button
-                onClick={() => {
-                  if (window.Calendly) {
-                    window.Calendly.initPopupWidget({
-                      url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
-                    });
-                  }
-                }}
-                className="group relative bg-gradient-to-r from-emerald-500/30 to-green-500/30 hover:from-emerald-500/40 hover:to-green-500/40 backdrop-blur-md border border-emerald-400/40 hover:border-emerald-300/60 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
-              >
-                {/* Effet de brillance amélioré */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                <MessageCircle className="w-4 h-4 relative z-10" />
-                <span className="relative z-10">Réserver</span>
-              </button>
-            </div>
-
-            {/* CTA Mobile - Style moderne amélioré */}
-            <div className="flex lg:hidden items-center">
-              <button
-                onClick={() => {
-                  if (window.Calendly) {
-                    window.Calendly.initPopupWidget({
-                      url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
-                    });
-                  }
-                }}
-                className="group relative bg-gradient-to-r from-emerald-500/30 to-green-500/30 hover:from-emerald-500/40 hover:to-green-500/40 backdrop-blur-md border border-emerald-400/40 hover:border-emerald-300/60 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
-                aria-label="Réserver maintenant"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                <MessageCircle className="w-4 h-4 relative z-10" />
-                <span className="relative z-10">Réserver</span>
-              </button>
+              {/* CTA Mobile - Style moderne compact */}
+              <div className="flex lg:hidden items-center">
+                <button
+                  onClick={() => {
+                    if (window.Calendly) {
+                      window.Calendly.initPopupWidget({
+                        url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
+                      });
+                    }
+                  }}
+                  className="group relative bg-gradient-to-r from-emerald-500/40 to-green-500/40 hover:from-emerald-500/50 hover:to-green-500/50 backdrop-blur-md border border-emerald-400/50 hover:border-emerald-300/70 px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300 flex items-center space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
+                  aria-label="Réserver maintenant"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                  <MessageCircle className="w-3 h-3 relative z-10" />
+                  <span className="relative z-10">Réserver</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
