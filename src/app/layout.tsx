@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shine&Go Premium - Nettoyage Auto & Car Wash à Herve | Service à Domicile 7j/7",
-  description: "Service premium de nettoyage automobile à Herve, Verviers, Dison, Spa. Car wash haut de gamme, nettoyage intérieur/extérieur, produits professionnels Koch Chemie. Devis gratuit, intervention 2h. 5/5 ⭐",
+  title: "Shine&Go – Nettoyage voiture à domicile | Herve, Verviers, Liège, Huy",
+  description: "Nettoyage auto et lavage voiture à domicile avec résultats showroom garantis. Service rapide, mobile, 5/5. Réservez en ligne sous 72h.",
   keywords: [
     "nettoyage auto herve",
     "car wash herve",
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
 
   openGraph: {
-    title: "Shine&Go Premium - Nettoyage Auto & Car Wash à Herve | Service à Domicile 7j/7",
-    description: "Service premium de nettoyage automobile à Herve, Verviers, Dison, Spa. Car wash haut de gamme, nettoyage intérieur/extérieur, produits professionnels Koch Chemie. Devis gratuit, intervention 2h. 5/5 ⭐",
+    title: "Shine&Go – Nettoyage voiture à domicile | Herve, Verviers, Liège, Huy",
+    description: "Nettoyage auto et lavage voiture à domicile avec résultats showroom garantis. Service rapide, mobile, 5/5. Réservez en ligne sous 72h.",
     type: "website",
     locale: "fr_BE",
     url: "https://www.shineandgo.be/",
@@ -79,8 +79,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shine&Go Premium - Nettoyage Auto & Car Wash à Herve | Service à Domicile 7j/7",
-    description: "Service premium de nettoyage automobile à Herve, Verviers, Dison, Spa. Car wash haut de gamme, nettoyage intérieur/extérieur, produits professionnels Koch Chemie. Devis gratuit, intervention 2h. 5/5 ⭐",
+    title: "Shine&Go – Nettoyage voiture à domicile | Herve, Verviers, Liège, Huy",
+    description: "Nettoyage auto et lavage voiture à domicile avec résultats showroom garantis. Service rapide, mobile, 5/5. Réservez en ligne sous 72h.",
     images: ['/og-image.jpg'],
     creator: '@shineandgo',
     site: '@shineandgo',
@@ -146,7 +146,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/vercel.svg" />
         <link rel="manifest" href="/manifest.json" />

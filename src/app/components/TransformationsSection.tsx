@@ -1,190 +1,146 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, CheckCircle } from 'lucide-react';
 
 const TransformationsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
-  const transformations = useMemo(() => [
+  const transformations = [
     {
-      before: '/transformations/optimized/berline-familiale-sale-avant-nettoyage-herve.jpeg',
-      after: '/transformations/optimized/berline-familiale-propre-apres-nettoyage-herve.jpeg'
+      id: 1,
+      before: "/transformations/optimized/webp/berline-familiale-sale-avant-nettoyage-herve.webp",
+      after: "/transformations/optimized/webp/berline-familiale-propre-apres-nettoyage-herve.webp"
     },
     {
-      before: '/transformations/optimized/citadine-premium-sale-avant-lavage-aubel.jpeg',
-      after: '/transformations/optimized/citadine-premium-propre-apres-lavage-aubel.jpeg'
+      id: 2,
+      before: "/transformations/optimized/webp/citadine-premium-sale-avant-lavage-aubel.webp",
+      after: "/transformations/optimized/webp/citadine-premium-propre-apres-lavage-aubel.webp"
     },
     {
-      before: '/transformations/optimized/interieur-voiture-sale-avant-nettoyage-dison.jpeg',
-      after: '/transformations/optimized/interieur-voiture-propre-apres-nettoyage-dison.jpeg'
+      id: 3,
+      before: "/transformations/optimized/webp/interieur-voiture-sale-avant-nettoyage-dison.webp",
+      after: "/transformations/optimized/webp/interieur-voiture-propre-apres-nettoyage-dison.webp"
     },
     {
-      before: '/transformations/optimized/monospace-familial-sale-avant-nettoyage-huy.jpeg',
-      after: '/transformations/optimized/monospace-familial-propre-apres-nettoyage-huy.jpeg'
+      id: 4,
+      before: "/transformations/optimized/webp/monospace-familial-sale-avant-nettoyage-huy.webp",
+      after: "/transformations/optimized/webp/monospace-familial-propre-apres-nettoyage-huy.webp"
     },
     {
-      before: '/transformations/optimized/suv-premium-sale-avant-lavage-verviers.jpeg',
-      after: '/transformations/optimized/suv-premium-propre-apres-lavage-verviers.jpeg'
+      id: 5,
+      before: "/transformations/optimized/webp/utilitaire-commercial-sale-avant-nettoyage-liege.webp",
+      after: "/transformations/optimized/webp/utilitaire-commercial-propre-apres-nettoyage-liege.webp"
     },
     {
-      before: '/transformations/optimized/utilitaire-commercial-sale-avant-nettoyage-liege.jpeg',
-      after: '/transformations/optimized/utilitaire-commercial-propre-apres-nettoyage-liege.jpeg'
-    },
-    {
-      before: '/transformations/optimized/voiture-sport-sale-avant-detailing-spa.jpeg',
-      after: '/transformations/optimized/voiture-sport-propre-apres-detailing-spa.jpeg'
-    },
-  ], []);
-
-  // Précharger les images intelligemment
-  useEffect(() => {
-    const preloadImages = async () => {
-      const imagesToPreload = [];
-      
-      // Image actuelle
-      imagesToPreload.push(transformations[currentIndex].before);
-      imagesToPreload.push(transformations[currentIndex].after);
-      
-      // Image suivante
-      const nextIndex = (currentIndex + 1) % transformations.length;
-      imagesToPreload.push(transformations[nextIndex].before);
-      imagesToPreload.push(transformations[nextIndex].after);
-      
-      // Image précédente
-      const prevIndex = (currentIndex - 1 + transformations.length) % transformations.length;
-      imagesToPreload.push(transformations[prevIndex].before);
-      imagesToPreload.push(transformations[prevIndex].after);
-
-      const loadPromises = imagesToPreload.map((src) => {
-        return new Promise((resolve) => {
-          const img = new window.Image();
-          img.onload = () => resolve(src);
-          img.onerror = () => {
-            console.warn(`Failed to load image: ${src}`);
-            resolve(src);
-          };
-          img.src = src;
-        });
-      });
-
-      await Promise.all(loadPromises);
-      setIsLoading(false);
-    };
-
-    setIsLoading(true);
-    preloadImages();
-  }, [currentIndex, transformations]);
+      id: 6,
+      before: "/transformations/optimized/webp/voiture-sport-sale-avant-detailing-spa.webp",
+      after: "/transformations/optimized/webp/voiture-sport-propre-apres-detailing-spa.webp"
+    }
+  ];
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % transformations.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % transformations.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + transformations.length) % transformations.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + transformations.length) % transformations.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
   };
 
   return (
-    <div className="relative">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Transformation principale */}
-          <div className="relative">
-            {/* Images Avant/Après */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-              {/* Image AVANT */}
-              <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl">
-                {isLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm">
-                    <Loader2 className="w-12 h-12 animate-spin text-white/60" />
+    <div className="w-full">
+      {/* Titre et description */}
+      <div className="text-center mb-2">
+        <div className="inline-flex items-center px-2 py-0.5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-lg border border-purple-400/30">
+          <Star className="w-3 h-3 mr-1 text-purple-400" />
+          <span className="text-purple-300 text-xs font-medium">Transformations</span>
+        </div>
+      </div>
+
+      {/* Carrousel de transformations */}
+      <div className="relative max-w-xs md:max-w-2xl mx-auto">
+        {/* Bouton précédent */}
+        <button
+          onClick={prevSlide}
+          aria-label="Transformation précédente"
+          className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-purple-500 shadow-lg hover:shadow-xl border border-purple-200/50 transition-all duration-200"
+          style={{transform: 'translateY(-50%)'}}
+        >
+          <ChevronLeft className="w-5 h-5 md:w-7 md:h-7" />
+        </button>
+
+        {/* Conteneur principal */}
+        <div className="relative mx-auto">
+          <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-lg p-2 md:p-5 shadow group hover:shadow-md transition-all duration-200 hover:scale-102">
+            {/* Effet de brillance au hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg"></div>
+            {/* Contenu */}
+            <div className="relative z-10">
+              {/* Images avant/après */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+                {/* Image Avant */}
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-lg border border-red-400/20 flex items-center justify-center">
+                    <span className="text-red-300 font-bold text-xs md:text-sm">AVANT</span>
                   </div>
-                )}
-                <Image
-                  src={transformations[currentIndex].before}
-                  alt="Avant transformation"
-                  fill
-                  className={`object-cover object-center transition-all duration-700 ease-out ${
-                    isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-                  } group-hover:scale-105`}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority={currentIndex < 2}
-                  quality={90}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
-                  <span className="text-sm font-medium text-white tracking-wide">AVANT</span>
-                </div>
-              </div>
-              
-              {/* Image APRÈS */}
-              <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-900 to-emerald-800 shadow-2xl">
-                {isLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-emerald-900/80 backdrop-blur-sm">
-                    <Loader2 className="w-12 h-12 animate-spin text-white/60" />
-                  </div>
-                )}
-                <Image
-                  src={transformations[currentIndex].after}
-                  alt="Après transformation"
-                  fill
-                  className={`object-cover object-center transition-all duration-700 ease-out ${
-                    isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-                  } group-hover:scale-105`}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority={currentIndex < 2}
-                  quality={90}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-4 left-4 bg-emerald-600/40 backdrop-blur-md rounded-full px-4 py-2 border border-emerald-300/20">
-                  <span className="text-sm font-medium text-white tracking-wide">APRÈS</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Navigation moderne */}
-            <div className="flex justify-center items-center mt-8 md:mt-12 space-x-4">
-              <button
-                onClick={prevSlide}
-                disabled={isLoading}
-                className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full border border-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-110"
-                aria-label="Transformation précédente"
-              >
-                <ChevronLeft className="w-5 h-5 text-white group-hover:text-emerald-300 transition-colors duration-300" />
-              </button>
-              
-              {/* Indicateurs de progression */}
-              <div className="flex space-x-2">
-                {transformations.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentIndex 
-                        ? 'bg-emerald-400 scale-125' 
-                        : 'bg-white/30 hover:bg-white/50'
-                    }`}
-                    aria-label={`Aller à la transformation ${index + 1}`}
+                  <Image
+                    src={transformations[currentIndex].before}
+                    alt="Avant nettoyage"
+                    width={400}
+                    height={300}
+                    className="w-full h-24 md:h-40 object-cover rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-200"
+                    priority={currentIndex === 0}
                   />
-                ))}
+                </div>
+                {/* Image Après */}
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg border border-green-400/20 flex items-center justify-center">
+                    <span className="text-green-300 font-bold text-xs md:text-sm">APRÈS</span>
+                  </div>
+                  <Image
+                    src={transformations[currentIndex].after}
+                    alt="Après nettoyage"
+                    width={400}
+                    height={300}
+                    className="w-full h-24 md:h-40 object-cover rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-200"
+                    priority={currentIndex === 0}
+                  />
+                </div>
               </div>
-              
-              <button
-                onClick={nextSlide}
-                disabled={isLoading}
-                className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full border border-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-110"
-                aria-label="Transformation suivante"
-              >
-                <ChevronRight className="w-5 h-5 text-white group-hover:text-emerald-300 transition-colors duration-300" />
-              </button>
             </div>
           </div>
         </div>
+
+        {/* Bouton suivant */}
+        <button
+          onClick={nextSlide}
+          aria-label="Transformation suivante"
+          className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-purple-500 shadow-lg hover:shadow-xl border border-purple-200/50 transition-all duration-200"
+          style={{transform: 'translateY(-50%)'}}
+        >
+          <ChevronRight className="w-5 h-5 md:w-7 md:h-7" />
+        </button>
+      </div>
+
+      {/* Indicateurs de navigation */}
+      <div className="flex justify-center mt-3 md:mt-6 space-x-0.5 md:space-x-2">
+        {transformations.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-200 min-h-[8px] min-w-[8px] md:min-h-[12px] md:min-w-[12px] ${
+              index === currentIndex 
+                ? 'bg-gradient-to-r from-purple-500 to-pink-500 scale-110' 
+                : 'bg-white/30 hover:bg-white/50'
+            }`}
+            aria-label={`Aller à la transformation ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );

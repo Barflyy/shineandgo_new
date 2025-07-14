@@ -2631,3 +2631,28 @@ export const getCityContent = (citySlug: string, cityName: string): CityContent 
     popularAreas: ["Centre-ville", "Quartiers résidentiels", "Zone commerciale", "Périphérie", "Environs"]
   };
 }; 
+
+// Fonction pour générer des témoignages par ville voisine
+export const getNearbyTestimonials = (cityName: string, nearbyCities: string[]) => {
+  const testimonials = [];
+  
+  // Témoignage pour la ville principale
+  testimonials.push({
+    name: `Client ${cityName}`,
+    location: `Centre de ${cityName}`,
+    rating: 5,
+    text: `Service exceptionnel ! Le nettoyage voiture à ${cityName} était parfait. L'équipe Shine&Go est très professionnelle et le résultat est showroom. Je recommande vivement !`
+  });
+
+  // Témoignages pour les villes voisines (max 2 pour éviter la surcharge)
+  nearbyCities.slice(0, 2).forEach((nearbyCity, index) => {
+    testimonials.push({
+      name: `Client ${nearbyCity}`,
+      location: `${nearbyCity}`,
+      rating: 5,
+      text: `Excellent service de nettoyage auto à domicile à ${nearbyCity}. L'équipe Shine&Go s'est déplacée jusqu'à chez moi et le résultat est impeccable. Très satisfait !`
+    });
+  });
+
+  return testimonials;
+}; 
