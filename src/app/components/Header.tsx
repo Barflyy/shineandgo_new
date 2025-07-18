@@ -1,158 +1,234 @@
-"use client";
+'use client';
 
-import React, { useState } from 'react';
-import { Phone, MessageCircle, Star, Sparkles, MapPin, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Phone, Menu, X } from 'lucide-react';
 
-interface HeaderProps {
-  cityName?: string;
-}
-
-const Header: React.FC<HeaderProps> = ({ cityName }) => {
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems = [
-    { name: 'Accueil', href: '/#accueil' },
-    { name: 'Comment ça marche', href: '/#how-it-works' },
-    { name: 'Nos services', href: '/#services' },
-    { name: 'Avant/Après', href: '/#transformations' },
-    { name: 'Avis clients', href: '/#temoignages' }
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
 
-  const handleNavClick = (href: string) => {
-    setIsMobileMenuOpen(false);
-    if (href.startsWith('/#')) {
-      // Navigation interne sur la page principale
-      const element = document.querySelector(href.replace('/#', '#')) as HTMLElement;
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    } else {
-      // Navigation vers une autre page
-      window.location.href = href;
-    }
-  };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const handleCalendlyClick = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
-      });
+  const handleBooking = () => {
+    try {
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Erreur ouverture Calendly:', error);
     }
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pt-2 sm:pt-4">
-      {/* Header flottant avec design compact */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative">
-          {/* Fond glassmorphism flottant */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/85 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl"></div>
-          
-          {/* Effet de brillance subtil */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-30 rounded-2xl"></div>
-          
-          {/* Contenu du header */}
-          <div className="relative px-4 sm:px-6 py-3 sm:py-4">
-            <div className="flex items-center justify-between">
-              {/* Logo simplifié avec effet */}
-              <button 
-                onClick={() => handleNavClick('/#accueil')}
-                className="flex items-center cursor-pointer group"
-                aria-label="Retour à l'accueil"
-              >
-                <span className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-300 break-words hyphens-auto">
-                  Shine&Go
-                </span>
-                
-                {cityName && (
-                  <span className="text-xs text-gray-400 ml-1 sm:ml-2 font-medium group-hover:text-gray-300 transition-colors duration-300 hidden sm:inline break-words hyphens-auto">
-                    - {cityName}
-                  </span>
-                )}
-              </button>
+    <header
+      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-lg border-b border-ui-border/70 pt-safe ${
+        isScrolled 
+          ? 'bg-white/80 shadow-sm' 
+          : 'bg-white/95'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2 min-w-0">
+            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-shine-blue-dark break-words min-w-0">
+              Shine&Go
+            </div>
+          </Link>
 
-              {/* Navigation Desktop - Style moderne compact */}
-              <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Navigation principale">
-                {navItems.map((item, index) => (
-                  <button
-                    key={item.name}
-                    onClick={() => handleNavClick(item.href)}
-                    className="relative group px-2 sm:px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300 hover:scale-105 text-gray-300 hover:text-white hover:bg-white/10 backdrop-blur-sm min-h-[44px] min-w-[44px]"
-                    aria-label={`Aller à la section ${item.name}`}
-                  >
-                    {/* Effet de brillance au hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-                    <span className="relative z-10 break-words hyphens-auto">{item.name}</span>
-                  </button>
-                ))}
-              </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+            <button
+              onClick={() => {
+                const servicesSection = document.getElementById('services-section');
+                if (servicesSection) {
+                  servicesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => {
+                const pricingSection = document.getElementById('pricing-section');
+                if (pricingSection) {
+                  pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+            >
+              Tarifs
+            </button>
+            <button
+              onClick={() => {
+                const zonesSection = document.getElementById('zones-section');
+                if (zonesSection) {
+                  zonesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+            >
+              Zones
+            </button>
+            <button
+              onClick={() => {
+                const testimonialsSection = document.getElementById('testimonials-section');
+                if (testimonialsSection) {
+                  testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+            >
+              Avis
+            </button>
+            <button
+              onClick={() => {
+                const faqSection = document.getElementById('faq-section');
+                if (faqSection) {
+                  faqSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+            >
+              FAQ
+            </button>
+          </nav>
 
-              {/* CTA Desktop - Style premium compact */}
-              <div className="hidden lg:flex items-center">
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+            <a 
+              href="tel:+32472303701"
+              className="flex items-center space-x-2 text-shine-blue-dark hover:text-shine-blue-primary min-w-0"
+            >
+              <Phone className="w-4 h-4 flex-shrink-0" />
+              <span className="font-medium break-words min-w-0">0472 30 37 01</span>
+            </a>
+            <button
+              onClick={handleBooking}
+              className="inline-flex items-center gap-1 lg:gap-2 rounded-full bg-shine-blue-primary px-3 lg:px-6 py-2 lg:py-3 text-xs lg:text-sm font-semibold text-white shadow-md hover:bg-shine-blue-light focus-visible:outline focus-visible:ring-2 focus-visible:ring-shine-blue-primary min-w-0"
+            >
+              <span className="break-words min-w-0 hidden lg:inline">Réserver maintenant</span>
+              <span className="break-words min-w-0 lg:hidden">Réserver</span>
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-1.5 sm:p-2 text-shine-blue-dark hover:text-shine-blue-primary"
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-gray-200/50 shadow-lg z-50">
+            <div className="py-4 sm:py-6 px-4 sm:px-6 space-y-4 sm:space-y-6 max-h-[80vh] overflow-y-auto">
+              {/* Navigation Links */}
+              <div className="space-y-3 sm:space-y-4">
                 <button
-                  onClick={handleCalendlyClick}
-                  className="group relative bg-gradient-to-r from-emerald-500/40 to-green-500/40 hover:from-emerald-500/50 hover:to-green-500/50 backdrop-blur-md border border-emerald-400/50 hover:border-emerald-300/70 px-3 sm:px-4 py-2 rounded-xl text-xs font-medium transition-all duration-300 flex items-center space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25 min-h-[44px] min-w-[44px]"
-                  aria-label="Réserver un nettoyage voiture"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const servicesSection = document.getElementById('services-section');
+                      if (servicesSection) {
+                        servicesSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
+                  className="w-full text-left block py-2.5 sm:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base sm:text-lg cursor-pointer break-words min-w-0"
                 >
-                  {/* Effet de brillance */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-                  <MessageCircle className="w-3 h-3 relative z-10" />
-                  <span className="relative z-10">Réserver</span>
+                  Services
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const pricingSection = document.getElementById('pricing-section');
+                      if (pricingSection) {
+                        pricingSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
+                  className="w-full text-left block py-2.5 sm:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base sm:text-lg cursor-pointer break-words min-w-0"
+                >
+                  Tarifs
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const zonesSection = document.getElementById('zones-section');
+                      if (zonesSection) {
+                        zonesSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
+                  className="w-full text-left block py-2.5 sm:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base sm:text-lg cursor-pointer break-words min-w-0"
+                >
+                  Zones d&apos;intervention
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const testimonialsSection = document.getElementById('testimonials-section');
+                      if (testimonialsSection) {
+                        testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
+                  className="w-full text-left block py-2.5 sm:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base sm:text-lg cursor-pointer break-words min-w-0"
+                >
+                  Avis
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const faqSection = document.getElementById('faq-section');
+                      if (faqSection) {
+                        faqSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
+                  className="w-full text-left block py-2.5 sm:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base sm:text-lg cursor-pointer break-words min-w-0"
+                >
+                  FAQ
                 </button>
               </div>
 
-              {/* Bouton mobile menu */}
-              <div className="flex lg:hidden items-center space-x-2">
-                <button
-                  onClick={handleCalendlyClick}
-                  className="group relative bg-gradient-to-r from-emerald-500/40 to-green-500/40 hover:from-emerald-500/50 hover:to-green-500/50 backdrop-blur-md border border-emerald-400/50 hover:border-emerald-300/70 px-2 sm:px-3 py-2 rounded-xl text-xs font-medium transition-all duration-300 flex items-center space-x-1 sm:space-x-2 text-emerald-200 hover:text-emerald-100 hover:scale-105 shadow-lg hover:shadow-emerald-500/25 min-h-[44px] min-w-[44px]"
-                  aria-label="Réserver maintenant"
+              {/* Contact Section */}
+              <div className="pt-4 sm:pt-6 border-t border-gray-200/50 space-y-3 sm:space-y-4">
+                <a 
+                  href="tel:+32472303701"
+                  className="flex items-center justify-center space-x-2 sm:space-x-3 text-shine-blue-dark hover:text-shine-blue-primary py-2.5 sm:py-3 px-3 sm:px-4 bg-gray-50 rounded-lg min-w-0"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-                  <MessageCircle className="w-3 h-3 relative z-10" />
-                  <span className="relative z-10 hidden sm:inline">Réserver</span>
-                </button>
-                
-                <button
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="group relative bg-gradient-to-r from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 backdrop-blur-md border border-white/20 hover:border-white/30 px-2 py-2 rounded-xl text-xs font-medium transition-all duration-300 flex items-center justify-center hover:scale-105 shadow-lg min-h-[44px] min-w-[44px]"
-                  aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-                  aria-expanded={isMobileMenuOpen}
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                  <span className="font-semibold text-base sm:text-lg break-words min-w-0">0472 30 37 01</span>
+                </a>
+                <button 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(handleBooking, 100);
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-shine-blue-primary px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-lg hover:bg-shine-blue-light focus-visible:outline focus-visible:ring-2 focus-visible:ring-shine-blue-primary min-w-0"
                 >
-                  {isMobileMenuOpen ? (
-                    <X className="w-4 h-4 text-white" />
-                  ) : (
-                    <Menu className="w-4 h-4 text-white" />
-                  )}
+                  <span className="break-words min-w-0">Réserver maintenant</span>
                 </button>
               </div>
             </div>
-
-            {/* Menu mobile */}
-            {isMobileMenuOpen && (
-              <div className="lg:hidden mt-4 bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-xl border border-white/20 rounded-xl p-4 shadow-2xl">
-                <nav className="space-y-2" role="navigation" aria-label="Menu mobile">
-                  {navItems.map((item) => (
-                    <button
-                      key={item.name}
-                      onClick={() => handleNavClick(item.href)}
-                      className="w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 text-gray-300 hover:text-white hover:bg-white/10 backdrop-blur-sm break-words hyphens-auto min-h-[44px]"
-                      aria-label={`Aller à la section ${item.name}`}
-                    >
-                      {item.name}
-                    </button>
-                  ))}
-                </nav>
-              </div>
-            )}
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
-};
-
-export default Header; 
+} 

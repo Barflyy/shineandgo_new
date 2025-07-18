@@ -1,0 +1,21 @@
+/* Définition de la police Lemfont Bold */
+@font-face {
+  font-family: 'Lemfont';
+  src: url('/fonts/Lemfont-Bold.woff2') format('woff2'),
+       url('/fonts/Lemfont-Bold.woff') format('woff'),
+       url('/fonts/Lemfont-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback pour les navigateurs qui ne supportent pas Lemfont */
+@font-face {
+  font-family: 'Lemfont';
+  src: url('/fonts/Lemfont-Bold.woff2') format('woff2'),
+       url('/fonts/Lemfont-Bold.woff') format('woff'),
+       url('/fonts/Lemfont-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+} 

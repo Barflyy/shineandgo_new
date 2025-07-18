@@ -1,149 +1,144 @@
-"use client";
+'use client';
 
-import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Star, CheckCircle } from 'lucide-react';
+import { Star } from 'lucide-react';
+import { useHydration } from '../hooks/useHydration';
 
-const TransformationsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function TransformationsSection() {
+  const isHydrated = useHydration();
 
   const transformations = [
     {
       id: 1,
-      before: "/transformations/optimized/webp/berline-familiale-sale-avant-nettoyage-herve.webp",
-      after: "/transformations/optimized/webp/berline-familiale-propre-apres-nettoyage-herve.webp"
+      before: '/transformations/webp/berline-familiale-sale-avant-nettoyage-herve.webp',
+      after: '/transformations/webp/berline-familiale-propre-apres-nettoyage-herve.webp',
+      title: 'Berline Familiale',
+      location: 'Herve',
+      rating: 5,
+      description: 'Nettoyage complet intérieur et extérieur'
     },
     {
       id: 2,
-      before: "/transformations/optimized/webp/citadine-premium-sale-avant-lavage-aubel.webp",
-      after: "/transformations/optimized/webp/citadine-premium-propre-apres-lavage-aubel.webp"
+      before: '/transformations/webp/citadine-premium-sale-avant-lavage-aubel.webp',
+      after: '/transformations/webp/citadine-premium-propre-apres-lavage-aubel.webp',
+      title: 'Citadine Premium',
+      location: 'Aubel',
+      rating: 5,
+      description: 'Lavage extérieur avec traitement hydrophobe'
     },
     {
       id: 3,
-      before: "/transformations/optimized/webp/interieur-voiture-sale-avant-nettoyage-dison.webp",
-      after: "/transformations/optimized/webp/interieur-voiture-propre-apres-nettoyage-dison.webp"
-    },
-    {
-      id: 4,
-      before: "/transformations/optimized/webp/monospace-familial-sale-avant-nettoyage-huy.webp",
-      after: "/transformations/optimized/webp/monospace-familial-propre-apres-nettoyage-huy.webp"
-    },
-    {
-      id: 5,
-      before: "/transformations/optimized/webp/utilitaire-commercial-sale-avant-nettoyage-liege.webp",
-      after: "/transformations/optimized/webp/utilitaire-commercial-propre-apres-nettoyage-liege.webp"
-    },
-    {
-      id: 6,
-      before: "/transformations/optimized/webp/voiture-sport-sale-avant-detailing-spa.webp",
-      after: "/transformations/optimized/webp/voiture-sport-propre-apres-detailing-spa.webp"
+      before: '/transformations/webp/interieur-voiture-sale-avant-nettoyage-dison.webp',
+      after: '/transformations/webp/interieur-voiture-propre-apres-nettoyage-dison.webp',
+      title: 'Intérieur Voiture',
+      location: 'Dison',
+      rating: 5,
+      description: 'Nettoyage intérieur en profondeur'
     }
   ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % transformations.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + transformations.length) % transformations.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
-    <div className="w-full">
-      {/* Titre et description */}
-      <div className="text-center mb-2">
-        <div className="inline-flex items-center px-2 py-0.5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-lg border border-purple-400/30">
-          <Star className="w-3 h-3 mr-1 text-purple-400" />
-          <span className="text-purple-300 text-xs font-medium">Transformations</span>
-        </div>
-      </div>
-
-      {/* Carrousel de transformations */}
-      <div className="relative max-w-xs md:max-w-2xl mx-auto">
-        {/* Bouton précédent */}
-        <button
-          onClick={prevSlide}
-          aria-label="Transformation précédente"
-          className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-purple-500 shadow-lg hover:shadow-xl border border-purple-200/50 transition-all duration-200"
-          style={{transform: 'translateY(-50%)'}}
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface-light">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        <motion.div
+          initial={isHydrated ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <ChevronLeft className="w-5 h-5 md:w-7 md:h-7" />
-        </button>
+          <h2 className="text-[clamp(1.5rem,1.25rem+2vw,1.75rem)] font-bold text-text-primary mb-3 sm:mb-4">
+            Transformations spectaculaires
+          </h2>
+          <p className="text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] text-text-primary max-w-3xl mx-auto">
+            Découvrez les résultats de nos interventions avant/après
+          </p>
+        </motion.div>
 
-        {/* Conteneur principal */}
-        <div className="relative mx-auto">
-          <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-lg p-2 md:p-5 shadow group hover:shadow-md transition-all duration-200 hover:scale-102">
-            {/* Effet de brillance au hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg"></div>
-            {/* Contenu */}
-            <div className="relative z-10">
-              {/* Images avant/après */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-                {/* Image Avant */}
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-lg border border-red-400/20 flex items-center justify-center">
-                    <span className="text-red-300 font-bold text-xs md:text-sm">AVANT</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {transformations.map((transformation, index) => (
+            <motion.div
+              key={transformation.id}
+              initial={isHydrated ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: isHydrated ? index * 0.1 : 0 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <div className="rounded-2xl bg-white shadow-md p-4 sm:p-6 transition-transform hover:scale-[1.02]">
+                {/* Images Before/After */}
+                <div className="relative mb-4 sm:mb-6">
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="relative">
+                      <Image
+                        src={transformation.before}
+                        alt={`Avant nettoyage voiture ${transformation.title} ${transformation.location} - Car wash mobile Shine&Go lavage auto professionnel`}
+                        width={200}
+                        height={150}
+                        className="w-full h-32 object-cover rounded-lg"
+                      />
+                      <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                        Avant
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <Image
+                        src={transformation.after}
+                        alt={`Après nettoyage voiture ${transformation.title} ${transformation.location} - Résultat car wash lavage automobile Shine&Go`}
+                        width={200}
+                        height={150}
+                        className="w-full h-32 object-cover rounded-lg"
+                      />
+                      <div className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
+                        Après
+                      </div>
+                    </div>
                   </div>
-                  <Image
-                    src={transformations[currentIndex].before}
-                    alt="Avant nettoyage"
-                    width={400}
-                    height={300}
-                    className="w-full h-24 md:h-40 object-cover rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-200"
-                    priority={currentIndex === 0}
-                  />
                 </div>
-                {/* Image Après */}
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg border border-green-400/20 flex items-center justify-center">
-                    <span className="text-green-300 font-bold text-xs md:text-sm">APRÈS</span>
+
+                {/* Content */}
+                <div className="text-left">
+                  <h3 className="text-[clamp(1.25rem,1.1rem+1.3vw,1.375rem)] font-bold text-text-primary mb-2">
+                    {transformation.title}
+                  </h3>
+                  <p className="text-[clamp(0.9375rem,0.8rem+0.5vw,1rem)] text-text-primary mb-3">
+                    {transformation.location}
+                  </p>
+                  
+                  {/* Rating */}
+                  <div className="flex space-x-1 mb-3">
+                    {[...Array(transformation.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
                   </div>
-                  <Image
-                    src={transformations[currentIndex].after}
-                    alt="Après nettoyage"
-                    width={400}
-                    height={300}
-                    className="w-full h-24 md:h-40 object-cover rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-200"
-                    priority={currentIndex === 0}
-                  />
+                  
+                  <p className="text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] text-text-primary">
+                    {transformation.description}
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Bouton suivant */}
-        <button
-          onClick={nextSlide}
-          aria-label="Transformation suivante"
-          className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-purple-500 shadow-lg hover:shadow-xl border border-purple-200/50 transition-all duration-200"
-          style={{transform: 'translateY(-50%)'}}
+        {/* CTA */}
+        <motion.div
+          initial={isHydrated ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: isHydrated ? 0.3 : 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12 sm:mt-16"
         >
-          <ChevronRight className="w-5 h-5 md:w-7 md:h-7" />
-        </button>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-4 sm:px-6 py-2.5 sm:py-3 text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] font-semibold text-white shadow-md transition-colors hover:bg-accent-hover focus-visible:outline focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            Voir plus de transformations
+          </motion.button>
+        </motion.div>
       </div>
-
-      {/* Indicateurs de navigation */}
-      <div className="flex justify-center mt-3 md:mt-6 space-x-0.5 md:space-x-2">
-        {transformations.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-200 min-h-[8px] min-w-[8px] md:min-h-[12px] md:min-w-[12px] ${
-              index === currentIndex 
-                ? 'bg-gradient-to-r from-purple-500 to-pink-500 scale-110' 
-                : 'bg-white/30 hover:bg-white/50'
-            }`}
-            aria-label={`Aller à la transformation ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
-};
-
-export default TransformationsSection; 
+} 

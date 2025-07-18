@@ -7,19 +7,9 @@ import Hero from './Hero';
 import PricingTable from './PricingTable';
 import Header from './Header';
 import HowItWorks from './HowItWorks';
-import CalendlyPopup from './CalendlyPopup';
+
 import { getCityContent, getNearbyTestimonials } from '../utils/cityContent';
 import { getNearbyCities, getCityData } from '../utils/cityData';
-
-// Déclaration de type pour Calendly
-declare global {
-  interface Window {
-    Calendly?: {
-      initPopupWidget: (options: { url: string }) => void;
-      initBadgeWidget: (options: any) => void;
-    };
-  }
-}
 
 interface CityPageTemplateProps {
   citySlug: string;
@@ -234,6 +224,14 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
   const localTestimonials = getLocalTestimonials(cityName);
   const localInfo = getLocalInfo(cityName);
 
+  const handleBooking = () => {
+    try {
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Erreur ouverture Calendly:', error);
+    }
+  };
+
   return (
     <>
       {/* Schema.org FAQPage JSON-LD */}
@@ -248,10 +246,10 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
       <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
       
       {/* Header */}
-      <Header cityName={cityName} />
+      <Header />
 
       {/* Hero Section */}
-      <Hero cityName={cityName} neighborhoods={neighborhoods} region={region} />
+      <Hero />
 
       {/* AUTO-CONTENT-START */}
       {/* Contenu unique par ville : description, avantages, services, témoignages, statistiques */}
@@ -279,20 +277,20 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
           {/* Section principale - Nettoyage voiture à domicile */}
           <div className="text-center space-y-8 md:space-y-12">
             {/* Badge premium avec animation */}
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-full border border-blue-400/30 shadow-lg hover:shadow-blue-500/25 transition-all duration-500 hover:scale-105">
-              <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
-              <CheckCircle className="w-5 h-5 mr-2 text-blue-400" />
-              <span className="text-blue-300 text-sm font-semibold tracking-wide">Service Premium Local</span>
+            <div className="inline-flex items-center px-4 sm:px-6 py-3 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-full border border-blue-400/30 shadow-lg hover:shadow-blue-500/25 transition-all duration-500 hover:scale-105 min-w-0">
+              <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 sm:mr-3 animate-pulse flex-shrink-0"></div>
+              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-blue-400 flex-shrink-0" />
+              <span className="text-blue-300 text-sm font-semibold tracking-wide break-words min-w-0">Service Premium Local</span>
             </div>
             
             {/* Titre principal avec effet de gradient animé */}
             <div className="relative">
-              <h1 className="text-[clamp(2rem,7vw,3.5rem)] font-bold text-center text-balance hyphens-auto leading-tight">
-                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x">
+              <h1 className="text-[clamp(2rem,7vw,3.5rem)] font-bold text-center text-balance hyphens-auto leading-tight break-words">
+                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x break-words">
                   Nettoyage voiture à {cityName}
                 </span>
                 <br />
-                <span className="text-white">
+                <span className="text-white break-words">
                   Service à domicile
                 </span>
               </h1>
@@ -303,14 +301,14 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
 
             {/* Paragraphe d'intro avec design amélioré */}
             <div className="max-w-5xl mx-auto space-y-6">
-              <div className="bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 md:p-10">
+              <div className="bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 sm:p-8 md:p-10">
                 <p className="text-[clamp(1.1rem,3.5vw,1.3rem)] break-words hyphens-auto text-center leading-relaxed">
                   Shine&Go est spécialisé dans le <strong className="text-emerald-300">nettoyage voiture</strong> à domicile à {cityName}{neighborhoods.length > 0 ? `, ${neighborhoods.join(', ')}` : ''} et dans toute la {region}. Notre service 100% mobile réalise un <strong className="text-cyan-300">lavage voiture</strong> complet (intérieur+extérieur) avec des produits pro (Koch Chemie, CarPro). Que vous cherchiez un <strong className="text-blue-300">nettoyage auto</strong> rapide ou un traitement showroom complet, nous nous adaptons à vos besoins.
                 </p>
                 
                 {/* Anecdote locale avec design distinctif */}
                 <div className="mt-6 p-4 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-xl border border-emerald-400/20">
-                  <p className="italic text-sm text-center text-emerald-200">
+                  <p className="italic text-sm text-center text-emerald-200 break-words hyphens-auto">
                     📍 {getCityAnecdote(cityName)}
                   </p>
                 </div>
@@ -863,13 +861,7 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
                 <p className="text-emerald-300 font-semibold text-sm">Valeur : 40 €</p>
               </div>
               <button 
-                onClick={() => {
-                  if (window.Calendly) {
-                    window.Calendly.initPopupWidget({
-                      url: 'https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1'
-                    });
-                  }
-                }}
+                onClick={handleBooking}
                 className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 text-white px-6 py-4 rounded-lg font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-emerald-500/25 border-2 border-emerald-400/30"
               >
                 <span className="text-sm sm:text-base md:text-lg">Réserver un nettoyage voiture à {cityName}</span>
@@ -929,9 +921,6 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
           </div>
         </div>
       </footer>
-
-      {/* Calendly Popup en bas à droite */}
-      <CalendlyPopup />
 
     </div>
     </>

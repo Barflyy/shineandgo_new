@@ -1,183 +1,378 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
-import { Star, Clock, MapPin, Shield, Award, Zap, Heart, Info, ChevronLeft, ChevronRight, MessageCircle, Phone, Users, CheckCircle } from 'lucide-react';
+/**
+ * Shine&Go - Page d'accueil moderne
+ * 
+ * Structure des sections :
+ * 1. Hero - Section principale avec CTA
+ * 2. SocialProof - Avis clients et statistiques
+ * 3. Benefits - Avantages du service
+ * 4. Process - Étapes du processus
+ * 5. Services - Découverte de l'offre
+ * 6. BeforeAfter - Slider avant/après
+ * 7. FinalCTA - Call-to-action final
+ * 8. FAQ - Questions fréquentes
+ */
 
-// Import dynamique des composants client pour optimiser le FCP
-const TransformationsSection = dynamic(() => import('./components/TransformationsSection'), {
-  loading: () => <div className="h-64 bg-slate-800/50 rounded-xl animate-pulse" />
-});
+import { Metadata } from 'next';
+import Script from 'next/script';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import SocialProof from './components/SocialProof';
+import BenefitsSection from './components/BenefitsSection';
+import HowItWorks from './components/HowItWorks';
+import ServicesSection from './components/ServicesSection';
+import BeforeAfterTestimonials from './components/BeforeAfterTestimonials';
+import FinalCTA from './components/FinalCTA';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
+import ScrollProgress from './components/ScrollProgress';
 
-const Hero = dynamic(() => import('./components/Hero'), {
-  loading: () => <div className="h-96 bg-slate-800/50 rounded-xl animate-pulse" />
-});
 
-const PricingTable = dynamic(() => import('./components/PricingTable'), {
-  loading: () => <div className="h-96 bg-slate-800/50 rounded-xl animate-pulse" />
-});
+export const metadata: Metadata = {
+  title: "Nettoyage Voiture à Domicile | Lavage Auto Mobile dès 39€ – Shine&Go",
+  description: "🚗 Service nettoyage voiture et lavage auto mobile à domicile dès 39€. Car wash premium avec produits professionnels. Garantie satisfaction 100%.",
+  keywords: [
+    // Mots-clés principaux génériques
+    "nettoyage voiture",
+    "lavage auto",
+    "nettoyage auto",
+    "nettoyage véhicule",
+    "lavage voiture",
+    "lavage véhicule",
+    "car wash",
+    "détailing automobile",
+    "car detailing",
+    
+    // Mots-clés avec localisation générale
+    "nettoyage voiture à domicile",
+    "lavage auto mobile",
+    "car wash à domicile",
+    "service mobile nettoyage",
+    "nettoyage auto domicile",
+    "lavage véhicule domicile",
+    
+    // Mots-clés spécialisés
+    "nettoyage intérieur voiture",
+    "nettoyage extérieur voiture",
+    "lavage intérieur auto",
+    "lavage extérieur auto",
+    "détailing intérieur",
+    "détailing extérieur",
+    
+    // Mots-clés premium/qualité
+    "nettoyage professionnel voiture",
+    "lavage professionnel auto",
+    "car wash premium",
+    "nettoyage voiture professionnel",
+    "service premium automobile",
+    
+    // Mots-clés produits
+    "produits Koch Chemie",
+    "ProtectorWax",
+    "CarPro Perl",
+    "produits professionnels auto",
+    
+    // Mots-clés action/conversion
+    "devis nettoyage voiture",
+    "réserver nettoyage auto",
+    "tarif lavage voiture",
+    "prix nettoyage automobile"
+  ].join(", "),
+  openGraph: {
+    title: "Nettoyage Voiture & Lavage Auto à Domicile | Service Mobile Premium – Shine&Go",
+    description: "🚗 Service de nettoyage automobile mobile : lavage voiture, car wash, détailing à domicile. Produits premium, résultats garantis. Réservation en ligne 24h/24.",
+    type: "website",
+    locale: "fr_BE",
+    url: "https://www.shineandgo.be/",
+    siteName: "Shine&Go Premium",
+    images: [
+      {
+        url: '/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Avant/Après nettoyage voiture professionnel - Shine&Go Premium',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nettoyage Voiture & Lavage Auto à Domicile | Service Mobile Premium",
+    description: "🚗 Service de nettoyage automobile mobile : produits premium, résultats garantis. Réservation en ligne 24h/24.",
+    images: ['/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg'],
+  },
+  alternates: {
+    canonical: "https://www.shineandgo.be/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'geo.region': 'BE-WLX',
+    'geo.placename': 'Wallonie',
+    'DC.subject': 'Nettoyage automobile, Car wash, Lavage voiture, Détailing auto, Service mobile',
+  },
+};
 
-const Header = dynamic(() => import('./components/Header'), {
-  loading: () => <div className="h-16 bg-slate-800/50 rounded-xl animate-pulse" />
-});
-
-const HowItWorks = dynamic(() => import('./components/HowItWorks'), {
-  loading: () => <div className="h-96 bg-slate-800/50 rounded-xl animate-pulse" />
-});
-
-// Composant client pour les témoignages avec état
-const TestimonialsSection = dynamic(() => import('./components/TestimonialsSection'), {
-  loading: () => <div className="h-96 bg-slate-800/50 rounded-xl animate-pulse" />
-});
-
-// Composant client pour les zones d'intervention
-const ZonesInterventionSection = dynamic(() => import('./components/ZonesInterventionSection'), {
-  loading: () => <div className="h-96 bg-slate-800/50 rounded-xl animate-pulse" />
-});
-
-// Composant client pour CalendlyPopup
-const CalendlyPopupClient = dynamic(() => import('./components/CalendlyPopupClient'), {
-  loading: () => <div className="h-16 w-16 bg-slate-800/50 rounded-full animate-pulse" />
-});
-
-// Composant client pour le bouton de réservation
-const BookingButton = dynamic(() => import('./components/BookingButton'), {
-  loading: () => <div className="h-48 bg-slate-800/50 rounded-xl animate-pulse" />
-});
-
-const PremiumCarCleaningLanding = () => {
+export default function HomePage() {
   return (
-    <div className="min-h-screen text-white bg-slate-900 relative overflow-hidden">
-      {/* Global Background Effects - Optimisés pour prefers-reduced-motion */}
-      <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div className="fixed inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5"></div>
-      
-      {/* Effets de fond conditionnels pour l'accessibilité - Utilisation de classes CSS */}
-      
-      <div className="fixed top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl bg-animation"></div>
-      <div className="fixed bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl bg-animation" style={{animationDelay: '1s'}}></div>
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl bg-animation" style={{animationDelay: '0.5s'}}></div>
+    <div className="min-h-screen bg-gradient-to-br from-white via-surface-light/30 to-hero-bg/40 overflow-x-hidden">
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress />
       
       {/* Header */}
       <Header />
 
-      {/* Hero Section */}
-      <Hero />
+      {/* Main content with optimized sales funnel */}
+      <main className="overscroll-contain w-full">
+        {/* 1. Hero - Promesse + 1er CTA */}
+        <section className="snap-start min-h-screen w-full">
+          <Hero />
+        </section>
 
-      {/* Transformations Section */}
-      <section id="transformations" className="py-8 md:py-12 lg:py-16 relative">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <TransformationsSection />
-        </div>
-      </section>
+        {/* 2. Social Proof condensée - Crédibilité instantanée */}
+        <section className="w-full">
+          <SocialProof />
+        </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works">
-        <HowItWorks />
-      </section>
+        {/* 3. Benefits - Désir / différenciation */}
+        <section className="w-full">
+          <BenefitsSection />
+        </section>
 
-      {/* Section Pourquoi choisir Shine&Go */}
-      <section className="py-8 md:py-12 lg:py-16 relative">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center space-y-6 md:space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-green-500/20 backdrop-blur-sm rounded-full border border-emerald-400/30">
-              <Shield className="w-4 h-4 mr-2 text-emerald-400" />
-              <span className="text-emerald-300 text-sm font-medium">Excellence</span>
-            </div>
-            <h2 className="text-[clamp(1.2rem,4vw,1.75rem)] font-semibold text-balance break-words hyphens-auto bg-gradient-to-r from-emerald-300 to-green-300 bg-clip-text text-transparent">
-              Pourquoi choisir notre service de lavage voiture à domicile ?
-            </h2>
-            <div className="bg-gradient-to-r from-emerald-500/10 to-green-500/10 backdrop-blur-sm border border-emerald-400/20 rounded-2xl p-6 md:p-8 max-w-5xl mx-auto">
-              <p className="text-[clamp(1rem,3.5vw,1.25rem)] break-words hyphens-auto text-gray-200 leading-relaxed">
-                Fini les <span className="text-red-300 font-semibold">files d'attente au car wash</span>. <span className="text-emerald-300 font-semibold">Shine&Go</span> se déplace avec tout le nécessaire pour un <span className="text-emerald-300 font-semibold">nettoyage auto complet</span>, intérieur et extérieur, à domicile. Chaque <span className="text-emerald-300 font-semibold">lavage voiture</span> inclut des prestations soignées : <span className="text-green-300 font-medium">aspiration, plastiques, jantes, vitres, traitement hydrophobe et protection</span>. Notre objectif : vous offrir un <span className="text-emerald-300 font-semibold">lavage auto haut de gamme</span>, rapide et efficace, avec résultat <span className="text-yellow-300 font-semibold">"wow" garanti</span>.
-              </p>
-              
-              {/* Maillage interne ajouté */}
-              <div className="mt-6 p-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl border border-blue-400/20">
-                <p className="text-sm text-blue-200 break-words hyphens-auto">
-                  <span className="font-semibold">Découvrez aussi notre service dans les villes voisines :</span>{' '}
-                  <a href="/zone-intervention/liege" className="text-blue-300 hover:text-blue-200 underline transition-colors">Liège</a>,{' '}
-                  <a href="/zone-intervention/verviers" className="text-blue-300 hover:text-blue-200 underline transition-colors">Verviers</a>,{' '}
-                  <a href="/zone-intervention/spa" className="text-blue-300 hover:text-blue-200 underline transition-colors">Spa</a>,{' '}
-                  <a href="/zone-intervention/huy" className="text-blue-300 hover:text-blue-200 underline transition-colors">Huy</a>{' '}
-                  et <a href="/zone-intervention" className="text-blue-300 hover:text-blue-200 underline transition-colors">toutes nos zones d'intervention</a>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* 4. Process 3 étapes - Lever la friction */}
+        <section className="w-full">
+          <HowItWorks />
+        </section>
 
-      {/* Pricing Table Section */}
-      <section id="services">
-        <PricingTable />
-      </section>
+        {/* 5. Services - Découverte de l'offre */}
+        <section id="services-section" className="w-full">
+          <ServicesSection />
+        </section>
 
-      {/* Section Témoignages - Composant client */}
-      <TestimonialsSection />
+        {/* 6. Avant / Après + Témoignages - Preuve finale */}
+        <section className="w-full">
+          <BeforeAfterTestimonials />
+        </section>
 
-      {/* Zones d'intervention Section - Composant client */}
-      <ZonesInterventionSection />
+        {/* 7. CTA final - Action */}
+        <section className="w-full">
+          <FinalCTA />
+        </section>
 
-      {/* Footer - Mobile-first */}
-      <footer className="bg-slate-800/80 backdrop-blur-xl text-white pt-8 md:pt-12 pb-4 border-t border-white/10 relative z-10">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-            {/* Bloc action */}
-            <BookingButton />
+        {/* 8. FAQ Section - Support */}
+        <section className="w-full">
+          <FAQ />
+        </section>
+      </main>
 
-            {/* Coordonnées */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h4 className="font-bold text-lg mb-4 text-white">Contact</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center space-x-2">
-                  <span className="text-lg">📞</span>
-                  <a href="tel:+32472303701" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Appeler le 0472 30 37 01">0472 30 37 01</a>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <span className="text-lg">✉️</span>
-                  <a href="mailto:nathangodfroid@gmail.com" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Envoyer un email à nathangodfroid@gmail.com">nathangodfroid@gmail.com</a>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <span className="text-lg">🚐</span>
-                  <span className="text-gray-300">Mobile 25 km autour de Herve</span>
-                </li>
-              </ul>
-            </div>
+      {/* Footer */}
+      <Footer />
 
-            {/* Liens rapides */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h4 className="font-bold text-lg mb-4 text-white">Navigation</h4>
-              <ul className="space-y-3 text-sm">
-                <li><a href="/" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Aller à la page d'accueil">Accueil</a></li>
-                <li><a href="/#how-it-works" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Voir comment ça marche">Comment ça marche</a></li>
-                <li><a href="/#services" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Voir nos services">Nos services</a></li>
-                <li><a href="/#transformations" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Voir les transformations avant/après">Avant/Après</a></li>
-                <li><a href="/#temoignages" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Lire les avis clients">Avis clients</a></li>
-              </ul>
-            </div>
 
-            {/* Légal */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h4 className="font-bold text-lg mb-4 text-white">Mentions légales</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="text-gray-300">BE1014725710 – Shine & Go</li>
-                <li><a href="/legal" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Lire les mentions légales">Mentions légales</a></li>
-                <li><a href="/privacy" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Lire la politique de confidentialité">Confidentialité & cookies</a></li>
-                <li><a href="/cgv" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Lire les conditions générales">Conditions générales</a></li>
-              </ul>
-            </div>
-          </div>
 
-          <div className="text-center text-xs mt-6 text-gray-400 border-t border-white/10 pt-4">
-            © 2025 Shine & Go – Tous droits réservés
-          </div>
-        </div>
-      </footer>
+      {/* Schema.org Organization + Services JSON-LD */}
+      <Script
+        id="organization-services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Shine&Go Premium",
+            "alternateName": "Shine&Go",
+            "description": "Service premium de nettoyage automobile mobile : lavage voiture, car wash, détailing à domicile. Leader en Belgique avec produits professionnels Koch Chemie.",
+            "url": "https://www.shineandgo.be",
+            "telephone": "+32472303701",
+            "email": "contact@shineandgo.be",
+            "logo": "https://www.shineandgo.be/logo.png",
+            "image": "https://www.shineandgo.be/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Rue Moreau, 20",
+              "addressLocality": "Herve",
+              "postalCode": "4650",
+              "addressCountry": "BE",
+              "addressRegion": "Wallonie"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 50.6391,
+              "longitude": 5.7924
+            },
+            "openingHours": "Mo-Su 08:00-20:00",
+            "priceRange": "39€-149€",
+            "currenciesAccepted": "EUR",
+            "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+            "serviceArea": {
+              "@type": "State",
+              "name": "Wallonie"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Liège"
+              },
+              {
+                "@type": "City", 
+                "name": "Verviers"
+              },
+              {
+                "@type": "City",
+                "name": "Spa"
+              },
+              {
+                "@type": "City",
+                "name": "Huy"
+              },
+              {
+                "@type": "City",
+                "name": "Herve"
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services de nettoyage automobile premium",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Nettoyage Intérieur Fraîcheur",
+                    "description": "Aspiration complète, nettoyage plastiques, vitres intérieures, protection CarPro Perl",
+                    "serviceType": "Car Interior Cleaning"
+                  },
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "39",
+                    "priceCurrency": "EUR",
+                    "minPrice": "39",
+                    "maxPrice": "64"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service", 
+                    "name": "Nettoyage Extérieur Brillance",
+                    "description": "Mousse active, lavage manuel, vitres extérieures, CarPro offert",
+                    "serviceType": "Car Exterior Washing"
+                  },
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "49",
+                    "priceCurrency": "EUR",
+                    "minPrice": "49",
+                    "maxPrice": "74"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Pack Sérénité Complet",
+                    "description": "Intérieur + Extérieur complets, protection 2 mois, produits premium",
+                    "serviceType": "Complete Car Detailing"
+                  },
+                  "priceSpecification": {
+                    "@type": "PriceSpecification", 
+                    "price": "79",
+                    "priceCurrency": "EUR",
+                    "minPrice": "79",
+                    "maxPrice": "129"
+                  }
+                }
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "500",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "sameAs": [
+              "https://www.facebook.com/shineandgo",
+              "https://www.instagram.com/shineandgo"
+            ],
+            "founder": {
+              "@type": "Person",
+              "name": "Nathan Godfroid"
+            },
+            "foundingDate": "2023",
+            "slogan": "Votre voiture comme neuve, sans bouger de chez vous"
+          })
+        }}
+      />
 
-      {/* Calendly Popup en bas à droite - Composant client */}
-      <CalendlyPopupClient />
-
+      {/* Schema.org FAQ for Featured Snippets */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                                 "name": "Quel est le prix d'un nettoyage voiture complet ?",
+                 "acceptedAnswer": {
+                   "@type": "Answer",
+                   "text": "Le prix d'un nettoyage voiture complet varie de 79€ à 129€ selon le type de véhicule. Notre Pack Sérénité inclut nettoyage intérieur + extérieur avec produits professionnels Koch Chemie et CarPro."
+                 }
+              },
+              {
+                "@type": "Question", 
+                "name": "Combien de temps dure un lavage auto à domicile ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Un lavage auto à domicile dure en moyenne 90 minutes pour un nettoyage complet. Le service car wash mobile Shine&Go inclut intérieur, extérieur et protection avec équipement professionnel."
+                }
+              },
+              {
+                "@type": "Question",
+                                 "name": "Quels produits utilisez-vous pour le car wash mobile ?",
+                 "acceptedAnswer": {
+                   "@type": "Answer", 
+                   "text": "Nous utilisons exclusivement des produits professionnels Koch Chemie et CarPro pour le nettoyage automobile. Ces produits de qualité garantissent un résultat showroom longue durée."
+                 }
+              },
+              {
+                "@type": "Question",
+                "name": "Comment réserver un nettoyage voiture à domicile ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Réservez votre nettoyage voiture en 2 minutes via WhatsApp, téléphone ou formulaire en ligne. Service disponible 7j/7 de 8h à 20h avec confirmation immédiate."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Dans quelles zones faites-vous le lavage auto mobile ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Notre service de lavage auto mobile couvre toute la Wallonie : Liège, Verviers, Spa, Huy, Herve et plus de 50 communes. Détailing automobile à domicile avec équipement complet."
+                }
+              },
+                             {
+                 "@type": "Question", 
+                 "name": "Quelle est la différence entre car wash et nettoyage voiture complet ?",
+                 "acceptedAnswer": {
+                   "@type": "Answer",
+                   "text": "Le car wash basique est un lavage extérieur, tandis que le nettoyage voiture complet inclut intérieur, extérieur, protection et finition soignée. Shine&Go propose un service complet avec produits professionnels."
+                 }
+               }
+            ]
+          })
+        }}
+      />
     </div>
   );
-};
-
-export default PremiumCarCleaningLanding;
+} 

@@ -1,103 +1,179 @@
 'use client';
 
-import { Phone, MapPin, Sparkles, ArrowRight } from 'lucide-react';
+import { Calendar, Truck, Sparkles, ArrowRight, Clock, CheckCircle, Star, Users, Award, Zap } from 'lucide-react';
 
 export default function HowItWorks() {
+  const steps = [
+    {
+      number: "1",
+      icon: Calendar,
+      title: "Réservation express",
+      subtitle: "",
+      description: "Contactez-nous par WhatsApp, téléphone ou formulaire. Confirmation immédiate et créneau garanti sous 72 h.",
+      features: [],
+      gradient: "from-emerald-500 to-blue-600",
+      bgGradient: "from-emerald-500/10 to-blue-500/5",
+      iconBg: "from-emerald-500 to-blue-600",
+      glowColor: "from-emerald-500 to-blue-600"
+    },
+    {
+      number: "2",
+      icon: Truck,
+      title: "Intervention mobile",
+      subtitle: "",
+      description: "Nous arrivons avec tout le matériel professionnel ; il suffit d'un point d'eau et d'une prise 230 V.",
+      features: [],
+      gradient: "from-blue-500 to-purple-600",
+      bgGradient: "from-blue-500/10 to-purple-500/5",
+      iconBg: "from-blue-500 to-purple-600",
+      glowColor: "from-blue-500 to-purple-600"
+    },
+    {
+      number: "3",
+      icon: Sparkles,
+      title: "Résultat showroom",
+      subtitle: "",
+      description: "Votre véhicule retrouve son éclat d'origine. Satisfaction 100 % ou ré-intervention gratuite sous 48 h.",
+      features: [],
+      gradient: "from-purple-500 to-pink-600",
+      bgGradient: "from-purple-500/10 to-pink-500/5",
+      iconBg: "from-purple-500 to-pink-600",
+      glowColor: "from-purple-500 to-pink-600"
+    }
+  ];
+
+  const handleBooking = () => {
+    try {
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Erreur ouverture Calendly:', error);
+    }
+  };
+
   return (
-    <section className="py-8 md:py-12 lg:py-16 relative">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center space-y-6 md:space-y-8">
-          <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-            <span className="text-accent text-xs sm:text-sm font-medium">Processus simplifié</span>
+    <section className="relative py-16 md:py-24 bg-white">
+      {/* Clean background like Hero */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-blue-50/30"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Clean header like Hero */}
+        <div className="text-center mb-12 md:mb-20">
+          {/* Simple badge */}
+          <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-2 shadow-lg mb-6">
+            <Zap className="w-4 h-4 text-purple-500" />
+            <span className="text-sm font-semibold text-slate-700">Processus simple</span>
+            <CheckCircle className="w-4 h-4 text-green-500" />
           </div>
-          <h2 className="text-[clamp(1.2rem,4vw,1.75rem)] font-semibold text-balance break-words hyphens-auto text-white bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Comment ça marche ?
+
+          {/* Clean typography like Hero */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 mb-6">
+            <span className="block">
+              Comment ça marche ?
+            </span>
+            <span className="block text-blue-600">
+              Un nettoyage voiture en 3 étapes, simple et rapide
+            </span>
           </h2>
-          <p className="text-[clamp(1rem,3.5vw,1.25rem)] break-words hyphens-auto text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Un processus simple en 3 étapes pour un résultat exceptionnel
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12 lg:mt-16">
-          {/* Étape 1 */}
-          <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl sm:rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 hover:border-white/20 transition-all duration-500 hover:scale-105 h-full">
-              <div className="flex flex-col items-center text-center h-full">
-                <div className="relative mb-4 sm:mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-xl sm:rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:border-white/40 transition-all duration-500">
-                    <Phone className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-lg">
-                    1
-                  </div>
-                </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 break-words hyphens-auto">Réservez en 60 s</h3>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed flex-grow break-words hyphens-auto">
-                  Formulaire ou WhatsApp pour un devis rapide
-                </p>
-              </div>
-            </div>
-            {/* Arrow connector */}
-            <div className="hidden lg:block absolute top-1/2 -right-6 z-20">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-            </div>
-          </div>
+        {/* Clean process steps like Hero */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {steps.map((step, index) => (
+            <div key={index} className="bg-white border border-slate-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
 
-          {/* Étape 2 */}
-          <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl sm:rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 hover:border-white/20 transition-all duration-500 hover:scale-105 h-full">
-              <div className="flex flex-col items-center text-center h-full">
-                <div className="relative mb-4 sm:mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-xl sm:rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:border-white/40 transition-all duration-500">
-                    <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-lg">
-                    2
-                  </div>
+                {/* Step icon and number */}
+                <div className="flex items-center justify-center mb-6">
+                    <div className="relative w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center">
+                      <step.icon className="w-8 h-8 text-white" />
+                      
+                      {/* Step number badge */}
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-white border-2 border-blue-600 rounded-full flex items-center justify-center">
+                        <span className="text-blue-600 font-bold text-sm">{index + 1}</span>
+                      </div>
+                    </div>
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 break-words hyphens-auto">On vient chez vous</h3>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed flex-grow break-words hyphens-auto">
-                  Eau + 220 V à prévoir
-                </p>
-              </div>
+                  
+                  {/* Step title */}
+                  <h3 className="text-xl font-black text-slate-900 text-center mb-2">
+                    {step.title}
+                  </h3>
+                  
+                  {/* Step subtitle */}
+                  <p className="text-sm text-blue-600 text-center mb-4 font-semibold">
+                    {step.subtitle}
+                  </p>
+                  
+                  {/* Step description */}
+                  <p className="text-slate-600 text-center leading-relaxed mb-6">
+                    {step.description}
+                  </p>
+                  
+                  {/* Step features */}
+                  <div className="space-y-3 flex-1">
+                    {step.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                          <CheckCircle className="w-3 h-3 text-green-500" />
+                        </div>
+                        <span className="text-sm font-semibold text-slate-700 flex-1">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
             </div>
-            {/* Arrow connector */}
-            <div className="hidden lg:block absolute top-1/2 -right-6 z-20">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500/20 to-green-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-            </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Étape 3 */}
-          <div className="group relative sm:col-span-2 lg:col-span-1">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl sm:rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 hover:border-white/20 transition-all duration-500 hover:scale-105 h-full">
-              <div className="flex flex-col items-center text-center h-full">
-                <div className="relative mb-4 sm:mb-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500/30 to-emerald-500/30 rounded-xl sm:rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 group-hover:border-white/40 transition-all duration-500">
-                    <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+        {/* Clean CTA Section like Hero */}
+        <div className="text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-slate-200 rounded-xl p-8 md:p-12 shadow-lg">
+              
+              {/* CTA badge */}
+              <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-2 shadow-lg mb-6">
+                <Sparkles className="w-4 h-4 text-green-500" />
+                <span className="text-sm font-semibold text-slate-700">Prêt à commencer ?</span>
+              </div>
+              
+              {/* CTA Title */}
+              <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
+                <span className="text-blue-600">
+                  Réservez votre créneau maintenant
+                </span>
+              </h3>
+              
+              {/* CTA Description */}
+              <p className="text-slate-600 mb-8 text-lg">
+                <span className="font-semibold text-slate-900">Service 5 étoiles</span>, résultat garanti 🚀
+              </p>
+              
+              {/* CTA Button */}
+              <button 
+                onClick={handleBooking}
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mb-8"
+              >
+                  <span>🚀 Réserver maintenant</span>
+                  <ArrowRight className="w-5 h-5" />
+              </button>
+              
+              {/* Trust indicators */}
+              <div className="flex flex-wrap justify-center gap-4">
+                {[
+                  { icon: CheckCircle, text: "Résultat garanti", color: "text-green-500" },
+                  { icon: Clock, text: "Service rapide", color: "text-blue-500" },
+                  { icon: Star, text: "5 étoiles", color: "text-yellow-500" }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-xl shadow-lg">
+                    <item.icon className={`w-4 h-4 ${item.color}`} />
+                    <span className="text-sm font-semibold text-slate-700">{item.text}</span>
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-lg">
-                    3
-                  </div>
-                </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4 break-words hyphens-auto">Admirez le résultat</h3>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-3 flex-grow break-words hyphens-auto">
-                  Résultat garanti
-                </p>
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30">
-                  <span className="text-green-300 text-xs sm:text-sm font-medium">🛡️ Garantie Wipe-&-Wow incluse</span>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   );
 } 

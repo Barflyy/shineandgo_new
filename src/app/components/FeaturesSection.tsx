@@ -1,11 +1,17 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Shield, Star, Zap } from 'lucide-react';
+import { useHydration } from '../hooks/useHydration';
 
 interface FeaturesSectionProps {
   cityName: string;
 }
 
 const FeaturesSection: React.FC<FeaturesSectionProps> = ({ cityName }) => {
+  const isHydrated = useHydration();
+
   const features = [
     {
       icon: <Zap className="w-6 h-6" />,
@@ -34,12 +40,15 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({ cityName }) => {
   ];
 
   return (
-    <div className="grid md:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
       {features.map((feature, index) => (
-        <div
+        <motion.div
           key={index}
-          className={`group relative overflow-hidden bg-gradient-to-br ${feature.bgGradient} backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl`}
-          style={{ animationDelay: feature.delay }}
+          initial={isHydrated ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: isHydrated ? index * 0.1 : 0 }}
+          viewport={{ once: true }}
+          className={`group relative overflow-hidden bg-gradient-to-br ${feature.bgGradient} backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl`}
         >
           {/* Background glow effect */}
           <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`} />
@@ -47,17 +56,17 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({ cityName }) => {
           {/* Content */}
           <div className="relative z-10">
             {/* Icon with animated background */}
-            <div className={`w-14 h-14 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+            <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
               <div className="text-white">
                 {feature.icon}
               </div>
             </div>
             
             {/* Text content */}
-            <h4 className="text-white font-bold text-lg mb-2 group-hover:text-white transition-colors duration-300">
+            <h4 className="text-white font-bold text-[clamp(1.25rem,1.1rem+1.3vw,1.375rem)] mb-2 group-hover:text-white transition-colors duration-300">
               {feature.title}
             </h4>
-            <p className="text-white/80 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+            <p className="text-white text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] leading-relaxed group-hover:text-white transition-colors duration-300">
               {feature.description}
             </p>
             
@@ -67,7 +76,7 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({ cityName }) => {
           
           {/* Corner accent */}
           <div className={`absolute top-0 right-0 w-8 h-8 bg-gradient-to-br ${feature.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300 rounded-bl-2xl`} />
-        </div>
+        </motion.div>
       ))}
     </div>
   );
