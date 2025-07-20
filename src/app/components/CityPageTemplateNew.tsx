@@ -6,19 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import ScrollProgress from './ScrollProgress';
 
-// Déclaration TypeScript pour Calendly
-declare global {
-  interface Window {
-    Calendly?: {
-      initInlineWidget: (options: {
-        url: string;
-        parentElement: Element | null;
-        minWidth: string;
-        height: string;
-      }) => void;
-    };
-  }
-}
+
 
 interface CityPageTemplateProps {
   citySlug: string;
@@ -27,7 +15,7 @@ interface CityPageTemplateProps {
 
 // Données de test pour les villes
 const getCityData = (citySlug: string) => {
-  const cities = {
+  const cities: { [key: string]: any } = {
     'liege': {
       name: 'Liège',
       postalCodes: ['4000', '4020', '4030'],
