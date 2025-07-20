@@ -28,10 +28,7 @@ const faqData = [
     question: "Y a-t-il une garantie sur le nettoyage voiture ?",
     answer: "Absolument ! Nous garantissons 100% de satisfaction sur tous nos services. Si le résultat ne vous convient pas, nous revenons gratuitement sous 48h pour parfaire le travail. C'est notre engagement qualité sur chaque nettoyage automobile."
   },
-  {
-    question: "Faut-il un point d'eau pour le service mobile ?",
-    answer: "Non, notre service est entièrement autonome ! Nous apportons nos propres réservoirs d'eau (600L), groupe électrogène, aspirateurs professionnels et tout l'équipement. Vous avez juste besoin d'un espace pour stationner votre véhicule."
-  },
+
   {
     question: "Quelle différence avec un lavage voiture classique ?",
     answer: "Notre nettoyage automobile mobile utilise des produits professionnels, technique 2 seaux, protection hydrophobe et traitement plastiques. Plus complet qu'un lavage classique, nous obtenons une finition niveau showroom avec protection longue durée."
@@ -50,7 +47,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-white">
+    <section id="faq-section" className="relative py-16 md:py-24 bg-white">
       {/* Clean background like Hero */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-blue-50/30"></div>
       

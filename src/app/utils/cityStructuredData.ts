@@ -119,17 +119,17 @@ export const generateCityStructuredData = (citySlug: string, cityName: string) =
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock"
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Pack complet premium",
-              "description": `Nettoyage intérieur et extérieur avec traitements de protection à ${cityName}`
-            },
-            "price": "65",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock"
-          }
+                      {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pack complet",
+                "description": `Nettoyage intérieur et extérieur avec traitements de protection à ${cityName}`
+              },
+              "price": "65",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock"
+            }
         ],
         "potentialAction": {
           "@type": "ReserveAction",
@@ -175,7 +175,7 @@ export const generateCityStructuredData = (citySlug: string, cityName: string) =
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Pack complet premium",
+                "name": "Pack complet",
                 "description": `Nettoyage intérieur et extérieur avec traitements de protection à ${cityName}`
               },
               "price": "65",

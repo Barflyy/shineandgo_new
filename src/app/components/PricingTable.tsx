@@ -30,7 +30,7 @@ export default function PricingTable() {
             Choisissez votre formule (Prix barrés = prix normal)
           </h2>
           <p className="text-[clamp(1rem,0.9rem+0.8vw,1.25rem)] text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 break-words" style={{ wordBreak: 'keep-all', hyphens: 'auto', overflowWrap: 'break-word' }}>
-            <span className="font-semibold text-orange-600">⚡ Seulement 15 créneaux disponibles cette semaine</span> - 90% de nos clients choisissent le Pack Premium
+            <span className="font-semibold text-orange-600">⚡ Seulement 15 créneaux disponibles cette semaine</span>
           </p>
         </div>
 

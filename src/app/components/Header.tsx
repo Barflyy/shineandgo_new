@@ -57,21 +57,8 @@ export default function Header() {
             </button>
             <button
               onClick={() => {
-                const pricingSection = document.getElementById('pricing-section');
-                if (pricingSection) {
-                  pricingSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
-            >
-              Tarifs
-            </button>
-            <button
-              onClick={() => {
-                const zonesSection = document.getElementById('zones-section');
-                if (zonesSection) {
-                  zonesSection.scrollIntoView({ behavior: 'smooth' });
-                }
+                // Redirection vers la page zones d'intervention
+                window.location.href = '/zone-intervention';
               }}
               className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
             >
@@ -79,6 +66,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => {
+                // Scroll vers la section BeforeAfterTestimonials
                 const testimonialsSection = document.getElementById('testimonials-section');
                 if (testimonialsSection) {
                   testimonialsSection.scrollIntoView({ behavior: 'smooth' });
@@ -90,6 +78,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => {
+                // Scroll vers la section FAQ
                 const faqSection = document.getElementById('faq-section');
                 if (faqSection) {
                   faqSection.scrollIntoView({ behavior: 'smooth' });
@@ -152,24 +141,8 @@ export default function Header() {
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setTimeout(() => {
-                      const pricingSection = document.getElementById('pricing-section');
-                      if (pricingSection) {
-                        pricingSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }, 100);
-                  }}
-                  className="w-full text-left block py-2.5 sm:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base sm:text-lg cursor-pointer break-words min-w-0"
-                >
-                  Tarifs
-                </button>
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    setTimeout(() => {
-                      const zonesSection = document.getElementById('zones-section');
-                      if (zonesSection) {
-                        zonesSection.scrollIntoView({ behavior: 'smooth' });
-                      }
+                      // Redirection vers la page zones d'intervention
+                      window.location.href = '/zone-intervention';
                     }, 100);
                   }}
                   className="w-full text-left block py-2.5 sm:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base sm:text-lg cursor-pointer break-words min-w-0"
@@ -180,6 +153,7 @@ export default function Header() {
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setTimeout(() => {
+                      // Scroll vers la section BeforeAfterTestimonials
                       const testimonialsSection = document.getElementById('testimonials-section');
                       if (testimonialsSection) {
                         testimonialsSection.scrollIntoView({ behavior: 'smooth' });
@@ -194,6 +168,7 @@ export default function Header() {
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setTimeout(() => {
+                      // Scroll vers la section FAQ
                       const faqSection = document.getElementById('faq-section');
                       if (faqSection) {
                         faqSection.scrollIntoView({ behavior: 'smooth' });

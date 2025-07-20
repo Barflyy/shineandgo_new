@@ -34,9 +34,9 @@ module.exports = {
         'zones-text': '#0F766E',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        kamerik: ['Kamerik 105', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['Kamerik 105', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        inter: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         '6xl': '72rem', // ≈1280px

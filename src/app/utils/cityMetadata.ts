@@ -10,8 +10,8 @@ interface CityMetadata {
 
 const cityMetadata: Record<string, CityMetadata> = {
   'liege': {
-    title: 'Shine&Go – Nettoyage voiture à Liège | Lavage auto à domicile',
-    description: 'Nettoyage auto et lavage voiture à domicile à Liège, Herstal, Seraing & Ans. Service 100 % mobile, résultat showroom garanti. Réservez en ligne !',
+    title: 'Nettoyage voiture à domicile à Liège – Shine&Go',
+    description: 'Showroom en 90 min, sans quitter votre parking. Valeting mobile premium à Liège. Réservation < 5 min ✨',
     keywords: [
       'nettoyage voiture liège',
       'nettoyage auto liège',

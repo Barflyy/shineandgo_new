@@ -1,5 +1,5 @@
 import { generateMetadata as generateCityMetadata } from '../../utils/cityMetadata';
-import CityPageTemplate from '../../components/CityPageTemplate';
+import CityPageTemplateNew from '../../components/CityPageTemplateNew';
 import { generateCityStructuredData } from '../../utils/cityStructuredData';
 
 export const generateMetadata = () => generateCityMetadata('dison');
@@ -16,7 +16,7 @@ export default function CityPage() {
           __html: JSON.stringify(structuredData)
         }}
       />
-      <CityPageTemplate citySlug="dison" />
+      <CityPageTemplateNew citySlug="dison" cityName="Dison" />
     </>
   );
 }

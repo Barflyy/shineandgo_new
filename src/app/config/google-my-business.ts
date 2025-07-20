@@ -205,7 +205,7 @@ export const generateStructuredData = () => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Pack complet premium",
+            "name": "Pack complet",
             "description": "Nettoyage intérieur et extérieur avec traitements de protection"
           },
           "price": 65,

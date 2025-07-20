@@ -75,7 +75,9 @@
   --color-zones-text: #0F766E;
 }
 
+/* Configuration globale de la police Inter */
 html {
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   scroll-behavior: smooth;
   font-size: 16px; /* Taille de base pour mobile */
   
@@ -92,6 +94,23 @@ html {
   @media (min-width: 768px) { /* md breakpoint */
     --header-height: 80px; /* md:h-20 */
   }
+}
+
+/* Configuration du body avec Inter */
+body {
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Classes utilitaires pour Inter */
+.font-inter {
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif !important;
+}
+
+.font-sans {
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif !important;
 }
 
 /* Fallback pour les navigateurs qui ne supportent pas svh */
@@ -318,25 +337,15 @@ html {
   opacity: 1;
 }
 
-body {
-  background: #ffffff;
-  font-family: var(--font-inter), 'Inter', Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px; /* Taille minimale pour la lisibilité mobile */
-  line-height: 1.6;
-}
-
-/* Utilisation de Space Grotesk pour les titres (style startup dynamique) */
-h1, h2 {
-  font-family: var(--font-display), 'Space Grotesk', 'Inter', Arial, Helvetica, sans-serif;
+/* Utilisation d'Inter pour tous les titres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   font-weight: 700;
 }
 
-/* Utilisation d'Inter pour les titres moyens et le reste */
-h3, h4, h5, h6, p, span, div, button, a {
-  font-family: var(--font-inter), 'Inter', Arial, Helvetica, sans-serif;
+/* Utilisation d'Inter pour le reste du contenu */
+p, span, div, button, a {
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
 }
 
 /* Classes utilitaires pour Space Grotesk */
@@ -356,11 +365,6 @@ h3, h4, h5, h6, p, span, div, button, a {
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
   font-variant-numeric: tabular-nums;
   font-weight: 600;
-}
-
-/* Classes utilitaires pour Inter */
-.font-inter {
-  font-family: var(--font-inter), 'Inter', Arial, Helvetica, sans-serif;
 }
 
 /* Prévenir le flou sur le texte pendant les animations */

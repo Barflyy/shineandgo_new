@@ -114,7 +114,7 @@ export default function BeforeAfterTestimonials() {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-white">
+    <section id="testimonials-section" className="relative py-16 md:py-24 bg-white">
       {/* Clean background like Hero */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-blue-50/30"></div>
       

@@ -31,25 +31,7 @@ export const servicePacks: ServicePack[] = [
     buttonText: 'Choisir Essentiel',
     savings: 5
   },
-  {
-    id: 'premium',
-    name: 'Pack Premium',
-    price: 80,
-    originalPrice: 89,
-    description: 'Nettoyage approfondi avec produits professionnels',
-    features: [
-      'Tout du Pack Essentiel',
-      'Nettoyage approfondi des sièges',
-      'Traitement des plastiques',
-      'Cirage des pneus',
-      'Durée: 90 minutes'
-    ],
-    popular: true,
-    duration: '90 min',
-    image: '/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg',
-    buttonText: 'Choisir Premium',
-    savings: 9
-  },
+
   {
     id: 'detailing',
     name: 'Pack Détailing',

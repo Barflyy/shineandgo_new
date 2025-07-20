@@ -8,7 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
   display: 'swap',
   preload: true,
   variable: '--font-inter',
@@ -188,7 +188,7 @@ export default function RootLayout({
         
         <Analytics />
       </head>
-      <body className="font-sans antialiased relative min-h-screen">
+      <body className="font-inter antialiased relative min-h-screen">
         {/* Enhanced Site Background */}
         <div className="fixed inset-0 -z-50 overflow-hidden">
           {/* Base gradient background */}
@@ -198,29 +198,15 @@ export default function RootLayout({
           <div className="absolute top-0 left-0 w-full h-full">
             {/* Large decorative circles */}
             <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-indigo-200/30 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/3 -left-32 w-80 h-80 bg-gradient-to-br from-purple-100/15 to-blue-200/25 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-br from-indigo-100/20 to-sky-200/30 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-indigo-100/20 to-blue-200/30 rounded-full blur-3xl animate-pulse"></div>
             
-            {/* Subtle geometric patterns */}
-            <div className="absolute inset-0 opacity-[0.015]">
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_25%_25%,theme(colors.blue.600)_1px,transparent_1px)] bg-[length:64px_64px]"></div>
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_75%_75%,theme(colors.indigo.600)_1px,transparent_1px)] bg-[length:48px_48px]"></div>
-            </div>
-            
-            {/* Animated gradient orbs */}
-            <div className="absolute top-1/4 right-1/3 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-transparent rounded-full blur-xl animate-bounce" style={{ animationDuration: '8s', animationDelay: '2s' }}></div>
-            <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-gradient-to-br from-indigo-200/25 to-transparent rounded-full blur-lg animate-bounce" style={{ animationDuration: '10s', animationDelay: '4s' }}></div>
+            {/* Medium decorative elements */}
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-200/10 to-indigo-300/20 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-gradient-to-tl from-indigo-200/10 to-blue-300/20 rounded-full blur-2xl"></div>
           </div>
-          
-          {/* Subtle mesh overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(255,255,255,0.1)_50%,transparent_100%)] bg-[length:200px_100%] animate-pulse" style={{ animationDuration: '15s' }}></div>
         </div>
 
-        {/* Content with enhanced backdrop */}
-        <div className="relative z-10 min-h-screen backdrop-blur-[0.5px]">
-          {children}
-        </div>
-        
+        {children}
         <SpeedInsights />
       </body>
     </html>
