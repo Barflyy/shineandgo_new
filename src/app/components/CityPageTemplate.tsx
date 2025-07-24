@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { Sparkles, Star, MapPin, ChevronLeft, ChevronRight, MessageCircle, Phone, Gift, Users, CheckCircle } from 'lucide-react';
-import TransformationsSection from './TransformationsSection';
 import Hero from './Hero';
-import PricingTable from './PricingTable';
 import Header from './Header';
 import HowItWorks from './HowItWorks';
 
@@ -254,21 +252,16 @@ export default function CityPageTemplate({ citySlug }: CityPageTemplateProps) {
       {/* AUTO-CONTENT-START */}
       {/* Contenu unique par ville : description, avantages, services, témoignages, statistiques */}
 
-      {/* Transformations Section */}
-      <section id="transformations" className="py-8 md:py-12 lg:py-16 relative">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <TransformationsSection />
-        </div>
-      </section>
+
 
       {/* How It Works Section */}
       <section id="how-it-works">
         <HowItWorks />
       </section>
 
-      {/* Pricing Table Section */}
+      {/* Services Section - Temporairement supprimé PricingTable */}
       <section id="services">
-        <PricingTable />
+        {/* Services content will be added here */}
       </section>
 
       {/* Section Contenu unique par ville - Design amélioré */}

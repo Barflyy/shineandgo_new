@@ -1,6 +1,7 @@
 'use client';
 
 import { Check, Sparkles, Car, Shield, Star, ArrowRight, Award, Zap, Clock, CheckCircle, Brush } from 'lucide-react';
+import Link from 'next/link';
 
 const vehicleTypes = [
   { name: "Citadine", icon: "🚗" },
@@ -16,13 +17,12 @@ const services = [
     name: "Intérieur « Fraîcheur »",
     price: "39",
     duration: "45 min",
-    description: "Aspiration complète, plastiques, vitres intérieures, protection CarPro Perl.",
+    description: "Aspiration complète sièges & sols, nettoyage tableau de bord et plastiques, vitres intérieures sans traces, protection UV avec CarPro Perl.",
     features: [
-      "Aspiration sièges & sols",
-      "Plastiques + tableau de bord nettoyés",
+      "Aspiration complète sièges & sols",
+      "Nettoyage tableau de bord et plastiques",
       "Vitres intérieures sans traces",
-      "Protection UV CarPro Perl",
-      "Finition soignée des détails"
+      "Protection UV avec CarPro Perl"
     ],
     pricing: {
       "Citadine": 39,
@@ -46,13 +46,12 @@ const services = [
     name: "Pack « Sérénité »",
     price: "79",
     duration: "90 min",
-    description: "Intérieur + Extérieur complets, protection express 2 mois, produits premium.",
+    description: "Lavage voiture intérieur & extérieur complet, mousse active & rinçage haute pression, protection 2 mois ProtectorWax Koch-Chemie, plastiques protégés CarPro Perl.",
     features: [
-      "Intérieur + extérieur complets",
-      "Mousse active + rinçage haute pression",
-      "ProtectorWax Koch-Chemie offert (protection 2 mois)",
-      "Plastiques protégés CarPro Perl",
-      "Finition showroom premium"
+      "Lavage voiture intérieur & extérieur complet",
+      "Mousse active & rinçage haute pression",
+      "Protection 2 mois ProtectorWax Koch-Chemie",
+      "Plastiques protégés CarPro Perl"
     ],
     pricing: {
       "Citadine": 79,
@@ -76,13 +75,12 @@ const services = [
     name: "Extérieur « Brillance »",
     price: "49",
     duration: "45 min",
-    description: "Mousse active, lavage main, vitres extérieures, seuils, ProtectorWax offerte.",
+    description: "Mousse active dégraissante, lavage manuel technique professionnel, vitres extérieures & seuils de porte impeccables, ProtectorWax Koch-Chemie inclus.",
     features: [
       "Mousse active dégraissante",
-      "Lavage manuel technique pro",
-      "Vitres extérieures impeccables",
-      "Seuils de porte nettoyés",
-      "ProtectorWax Koch-Chemie offert"
+      "Lavage manuel technique professionnel",
+      "Vitres extérieures & seuils de porte impeccables",
+      "ProtectorWax Koch-Chemie inclus"
     ],
     pricing: {
       "Citadine": 49,
@@ -139,12 +137,7 @@ export default function ServicesSection() {
 
           {/* Clean typography like Hero */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 mb-6">
-            <span className="block">
-              Nos forfaits
-            </span>
-            <span className="block text-blue-600">
-              sur mesure
-            </span>
+            Nos forfaits sur-mesure de lavage voiture
           </h2>
           
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -187,7 +180,19 @@ export default function ServicesSection() {
                   {/* Service Info */}
                   <div className="text-center mb-6">
                     <h3 className="text-xl md:text-2xl font-black mb-3 leading-tight text-slate-900">
-                      {service.name}
+                      {service.name === "Intérieur « Fraîcheur »" ? (
+                        <Link href="/nettoyage-interieur-voiture" className="hover:text-blue-600 transition-colors duration-200">
+                          Intérieur Fraîcheur
+                        </Link>
+                      ) : service.name === "Pack « Sérénité »" ? (
+                        <Link href="/nettoyage-complet-voiture" className="hover:text-blue-600 transition-colors duration-200">
+                          Pack Sérénité
+                        </Link>
+                      ) : service.name === "Extérieur « Brillance »" ? (
+                        <Link href="/nettoyage-exterieur-voiture" className="hover:text-blue-600 transition-colors duration-200">
+                          Extérieur Brillance
+                        </Link>
+                      ) : service.name}
                     </h3>
                     
                     {/* Prix moderne avec "à partir de" */}
@@ -272,7 +277,7 @@ export default function ServicesSection() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-2 shadow-lg mb-6">
                 <Car className="w-4 h-4 text-blue-500" />
-                <span className="text-sm font-semibold text-slate-700">Frais de déplacement</span>
+                <span className="text-sm font-semibold text-slate-700">Frais de Déplacement</span>
               </div>
 
               {/* Title */}
@@ -291,7 +296,7 @@ export default function ServicesSection() {
                     <h4 className="text-lg font-bold text-slate-900">Zone gratuite</h4>
                   </div>
                   <p className="text-slate-700 mb-3">
-                    <span className="font-semibold text-green-600">Gratuit</span> dans un rayon de 25 km de Herve
+                    <span className="font-semibold text-green-600">Gratuit</span> dans un rayon de 25 km autour de Herve
                   </p>
                   <p className="text-sm text-slate-600">
                     Codes postaux : <span className="font-mono font-semibold">4650–4850</span>
@@ -359,7 +364,7 @@ export default function ServicesSection() {
                 onClick={handleBooking}
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 sm:px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mb-8"
               >
-                  <span>🚗 Réserver maintenant</span>
+                  <span>📞 Réserver maintenant</span>
                   <ArrowRight className="w-5 h-5" />
               </button>
 

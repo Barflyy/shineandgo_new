@@ -7,9 +7,9 @@ export default function HowItWorks() {
     {
       number: "1",
       icon: Calendar,
-      title: "Réservation express",
+      title: "Réservation Express",
       subtitle: "",
-      description: "Contactez-nous par WhatsApp, téléphone ou formulaire. Confirmation immédiate et créneau garanti sous 72 h.",
+      description: "WhatsApp, téléphone, formulaire. Confirmation immédiate, créneau garanti sous 72 h.",
       features: [],
       gradient: "from-emerald-500 to-blue-600",
       bgGradient: "from-emerald-500/10 to-blue-500/5",
@@ -19,9 +19,9 @@ export default function HowItWorks() {
     {
       number: "2",
       icon: Truck,
-      title: "Intervention mobile",
+      title: "Intervention Mobile Rapide",
       subtitle: "",
-      description: "Nous arrivons avec tout le matériel professionnel ; il suffit d'un point d'eau et d'une prise 230 V.",
+      description: "Nous apportons tout le matériel pro (point d'eau + prise 230 V nécessaires).",
       features: [],
       gradient: "from-blue-500 to-purple-600",
       bgGradient: "from-blue-500/10 to-purple-500/5",
@@ -31,7 +31,7 @@ export default function HowItWorks() {
     {
       number: "3",
       icon: Sparkles,
-      title: "Résultat showroom",
+      title: "Résultat Showroom",
       subtitle: "",
       description: "Votre véhicule retrouve son éclat d'origine. Satisfaction 100 % ou ré-intervention gratuite sous 48 h.",
       features: [],
@@ -68,14 +68,11 @@ export default function HowItWorks() {
 
           {/* Clean typography like Hero */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 mb-6">
-            <span className="block">
-              Comment ça marche ?
-            </span>
-            <span className="block text-blue-600">
-              Un nettoyage voiture en 3 étapes, simple et rapide
-            </span>
+            Comment fonctionne notre lavage auto à domicile ?
           </h2>
         </div>
+
+
 
         {/* Clean process steps like Hero */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">

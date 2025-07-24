@@ -2,41 +2,39 @@
 
 import { useState } from 'react';
 import { ChevronDown, Sparkles, HelpCircle, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const faqData = [
   {
-    question: "Quels sont les prix pour un nettoyage voiture à domicile ?",
-    answer: "Nos tarifs démarrent à 39€ pour un nettoyage intérieur (citadine), 49€ pour un lavage extérieur, et 79€ pour le service complet intérieur + extérieur. Tous nos prix incluent les produits professionnels Koch Chemie et CarPro, l'équipement mobile et le déplacement."
+    question: "Quels sont les prix pour un lavage voiture à domicile ?",
+    answer: (
+      <>
+        À partir de 39€ pour le <Link href="/nettoyage-interieur-voiture" className="text-blue-600 hover:text-blue-700 font-medium">nettoyage intérieur</Link>, 
+        49€ pour le <Link href="/nettoyage-exterieur-voiture" className="text-blue-600 hover:text-blue-700 font-medium">nettoyage extérieur</Link>, 
+        79€ pour le <Link href="/nettoyage-complet-voiture" className="text-blue-600 hover:text-blue-700 font-medium">nettoyage complet</Link>.
+      </>
+    )
   },
   {
-    question: "Combien de temps dure un lavage auto mobile ?",
-    answer: "Un nettoyage intérieur ou extérieur seul prend 45 minutes. Le service complet (intérieur + extérieur) dure 90 minutes maximum. Notre équipe mobile arrive avec tout l'équipement professionnel pour un service rapide et efficace."
+    question: "Combien de temps dure un lavage voiture mobile ?",
+    answer: "Entre 45 et 90 min selon la formule choisie."
   },
   {
-    question: "Quels produits utilisez-vous pour le nettoyage automobile ?",
-    answer: "Nous utilisons exclusivement des produits professionnels haut de gamme : Koch Chemie pour le lavage extérieur et CarPro Perl pour la protection des plastiques. Ces produits garantissent une finition showroom et une protection longue durée de votre véhicule."
+    question: "Quels produits utilisez-vous ?",
+    answer: "Produits professionnels premium Koch Chemie et CarPro."
   },
   {
-    question: "Dans quelles zones proposez-vous le service mobile ?",
-    answer: "Notre service de nettoyage voiture mobile couvre toute la Wallonie avec plus de 60 communes desservies. Nous intervenons dans un rayon de 30km autour de notre base. Contactez-nous pour vérifier la disponibilité dans votre zone."
+    question: "Dans quelles zones proposez-vous le service ?",
+    answer: "Toute la Wallonie, déplacement gratuit ≤ 25 km de Herve."
   },
   {
-    question: "Comment réserver un lavage auto à domicile ?",
-    answer: "Très simple ! Contactez-nous par téléphone au +32 472 30 37 01, WhatsApp, ou via notre formulaire en ligne. Nous confirmons votre créneau immédiatement avec intervention sous 72h maximum. Paiement après service par CB, espèces ou virement."
-  },
-  {
-    question: "Y a-t-il une garantie sur le nettoyage voiture ?",
-    answer: "Absolument ! Nous garantissons 100% de satisfaction sur tous nos services. Si le résultat ne vous convient pas, nous revenons gratuitement sous 48h pour parfaire le travail. C'est notre engagement qualité sur chaque nettoyage automobile."
-  },
-
-  {
-    question: "Quelle différence avec un lavage voiture classique ?",
-    answer: "Notre nettoyage automobile mobile utilise des produits professionnels, technique 2 seaux, protection hydrophobe et traitement plastiques. Plus complet qu'un lavage classique, nous obtenons une finition niveau showroom avec protection longue durée."
+    question: "Y a-t-il une garantie sur le lavage voiture ?",
+    answer: "Oui, résultat garanti ou ré-intervention gratuite."
   }
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleBooking = () => {
     try {
@@ -64,16 +62,11 @@ export default function FAQ() {
           
           {/* Clean typography like Hero */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 mb-6">
-            <span className="block">
-              Questions fréquentes
-            </span>
-            <span className="block text-blue-600">
-              lavage auto mobile
-            </span>
+            Questions fréquentes – lavage voiture à domicile
           </h2>
           
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Tout savoir sur notre <span className="font-semibold text-slate-900">nettoyage voiture à domicile</span> et notre <span className="font-semibold text-slate-900">service mobile professionnel</span>
+            Tout savoir sur notre <span className="font-semibold text-slate-900">lavage voiture à domicile</span> et notre <span className="font-semibold text-slate-900">service mobile professionnel</span>
           </p>
         </div>
 
@@ -124,11 +117,11 @@ export default function FAQ() {
               </div>
               
               {/* CTA Title */}
-              <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
+              <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
                 <span className="text-blue-600">
-                  Nous contacter
+                  Votre voiture mérite le meilleur lavage auto
                 </span>
-              </h3>
+              </h2>
               
               {/* CTA Description */}
               <p className="text-slate-600 mb-8 text-lg">

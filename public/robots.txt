@@ -63,11 +63,11 @@ Disallow: /*?fbclid=*
 Disallow: /*?gclid=*
 
 # Sitemap principal
-Sitemap: https://www.shineandgo.be/sitemap.xml
+Sitemap: https://www.shineandgo.be/api/sitemap
 
 # Sitemaps spécifiques (optionnels)
-Sitemap: https://www.shineandgo.be/sitemap-images.xml
-Sitemap: https://www.shineandgo.be/sitemap-videos.xml
+Sitemap: https://www.shineandgo.be/api/sitemap-images
+Sitemap: https://www.shineandgo.be/api/sitemap-videos
 
 # Informations sur le site
 # Site: Shine&Go Premium - Nettoyage Auto & Car Wash à Herve

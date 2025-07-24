@@ -83,7 +83,42 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
+      // Enable container queries
+      container: {
+        center: true,
+        padding: '2rem',
+        screens: {
+          '2xl': '1400px',
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/container-queries'),
+    require('tailwindcss-fluid-type')({
+      settings: {
+        fontSizeMin: 1.125, // 18px
+        fontSizeMax: 4.5, // 72px
+        ratioMin: 1.2, // Minor Third
+        ratioMax: 1.333, // Perfect Fourth
+        screenMin: 20, // 320px
+        screenMax: 96, // 1536px
+        unit: 'rem',
+        prefix: '',
+        extendValues: true,
+      },
+      values: {
+        'xs': [-2, 1.6],
+        'sm': [-1, 1.6],
+        'base': [0, 1.6],
+        'lg': [1, 1.6],
+        'xl': [2, 1.2],
+        '2xl': [3, 1.2],
+        '3xl': [4, 1.1],
+        '4xl': [5, 1.1],
+        '5xl': [6, 1.05],
+        '6xl': [7, 1],
+      },
+    }),
+  ],
 } 

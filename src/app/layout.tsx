@@ -6,6 +6,7 @@ import Analytics from "./analytics";
 import { generateStructuredData } from "./config/google-my-business";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -25,52 +26,6 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Shine&Go Premium – Nettoyage Voiture & Car Wash Mobile | Service à Domicile",
   description: "🚗 Service premium de nettoyage automobile mobile : lavage voiture, car wash, détailing à domicile. Produits professionnels, résultats garantis. Réservation 24h/24.",
-  keywords: [
-    // Mots-clés génériques principaux
-    "nettoyage voiture",
-    "lavage auto",
-    "car wash",
-    "nettoyage automobile",
-    "détailing voiture",
-    "lavage véhicule",
-    "nettoyage auto",
-    
-    // Services spécialisés
-    "nettoyage intérieur voiture",
-    "nettoyage extérieur voiture",
-    "lavage intérieur auto",
-    "lavage extérieur auto",
-    "car detailing",
-    "détailing automobile",
-    
-    // Service mobile
-    "service mobile nettoyage auto",
-    "nettoyage voiture à domicile",
-    "lavage auto mobile",
-    "car wash à domicile",
-    "service à domicile nettoyage auto",
-    "nettoyage auto domicile",
-    
-    // Qualité et produits
-    "produits koch chemie",
-    "carpro",
-    "carpro perl",
-    "nettoyage professionnel voiture",
-    "lavage professionnel auto",
-    "car wash premium",
-    "produits professionnels auto",
-    
-    // Actions et conversions
-    "devis gratuit nettoyage auto",
-    "réserver nettoyage voiture",
-    "tarif lavage auto",
-    "prix nettoyage automobile",
-    
-    // Localisation générale (pour le layout global)
-    "car detailing belgique",
-    "nettoyage auto wallonie",
-    "service mobile belgique"
-  ],
   authors: [{ name: "Shine&Go Premium" }],
   creator: "Shine&Go Premium",
   publisher: "Shine&Go Premium",
@@ -172,6 +127,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.shineandgo.be" />
         <meta name="robots" content="index, follow" />
@@ -188,7 +144,7 @@ export default function RootLayout({
         
         <Analytics />
       </head>
-      <body className="font-inter antialiased relative min-h-screen">
+      <body className="font-inter antialiased relative min-h-screen touch-optimized scroll-mobile overscroll-contain">
         {/* Enhanced Site Background */}
         <div className="fixed inset-0 -z-50 overflow-hidden">
           {/* Base gradient background */}

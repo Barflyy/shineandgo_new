@@ -1,15 +1,16 @@
 /**
- * Shine&Go - Page d'accueil moderne
+ * Shine&Go - Page d'accueil optimisée selon nouveau contenu
  * 
- * Structure des sections :
- * 1. Hero - Section principale avec CTA
- * 2. SocialProof - Avis clients et statistiques
- * 3. Benefits - Avantages du service
- * 4. Process - Étapes du processus
- * 5. Services - Découverte de l'offre
- * 6. BeforeAfter - Slider avant/après
- * 7. FinalCTA - Call-to-action final
- * 8. FAQ - Questions fréquentes
+ * Structure selon nouveau contenu :
+ * 1. Header collant (60-72px) - Logo, nav, numéro, bouton Réserver
+ * 2. Hero (above-the-fold) - Badge localisation, H1 bénéfice, sous-titre douleur→solution, triple bénéfice, double CTA, urgence, visuel avant/après 16:9
+ * 3. Section "Pourquoi choisir Shine&Go ?" - 4 raisons principales
+ * 4. Section "Avant/Après : La Transformation" - Slider interactif + témoignages
+ * 5. Section "Nos Forfaits Sur-Mesure de Nettoyage Voiture" - 3 cartes avec badges
+ * 6. Section "Frais de Déplacement" - Transparence sur les frais
+ * 7. Section "Comment fonctionne notre service de lavage auto à domicile ?" - 3 étapes
+ * 8. Section "Questions fréquentes – Lavage Auto Mobile" - FAQ condensée
+ * 9. Footer - Coordonnées, horaires, liens RGPD, réseaux, pictos paiement
  */
 
 import { Metadata } from 'next';
@@ -17,69 +18,20 @@ import Script from 'next/script';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
-import BenefitsSection from './components/BenefitsSection';
 import HowItWorks from './components/HowItWorks';
 import ServicesSection from './components/ServicesSection';
 import BeforeAfterTestimonials from './components/BeforeAfterTestimonials';
-import FinalCTA from './components/FinalCTA';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 
 
 export const metadata: Metadata = {
-  title: "Nettoyage Voiture à Domicile | Lavage Auto Mobile dès 39€ – Shine&Go",
-  description: "🚗 Service nettoyage voiture et lavage auto mobile à domicile dès 39€. Car wash premium avec produits professionnels. Garantie satisfaction 100%.",
-  keywords: [
-    // Mots-clés principaux génériques
-    "nettoyage voiture",
-    "lavage auto",
-    "nettoyage auto",
-    "nettoyage véhicule",
-    "lavage voiture",
-    "lavage véhicule",
-    "car wash",
-    "détailing automobile",
-    "car detailing",
-    
-    // Mots-clés avec localisation générale
-    "nettoyage voiture à domicile",
-    "lavage auto mobile",
-    "car wash à domicile",
-    "service mobile nettoyage",
-    "nettoyage auto domicile",
-    "lavage véhicule domicile",
-    
-    // Mots-clés spécialisés
-    "nettoyage intérieur voiture",
-    "nettoyage extérieur voiture",
-    "lavage intérieur auto",
-    "lavage extérieur auto",
-    "détailing intérieur",
-    "détailing extérieur",
-    
-    // Mots-clés premium/qualité
-    "nettoyage professionnel voiture",
-    "lavage professionnel auto",
-    "car wash premium",
-    "nettoyage voiture professionnel",
-    "service premium automobile",
-    
-    // Mots-clés produits
-    "produits Koch Chemie",
-    "ProtectorWax",
-    "CarPro Perl",
-    "produits professionnels auto",
-    
-    // Mots-clés action/conversion
-    "devis nettoyage voiture",
-    "réserver nettoyage auto",
-    "tarif lavage voiture",
-    "prix nettoyage automobile"
-  ].join(", "),
+  title: "Lavage Voiture à Domicile en Wallonie | Shine&Go – Nettoyage Auto Pro",
+  description: "Shine&Go offre un lavage voiture à domicile premium en Wallonie. Nettoyage auto intérieur & extérieur dès 39€. Résultat showroom garanti en 90 min.",
   openGraph: {
-    title: "Nettoyage Voiture & Lavage Auto à Domicile | Service Mobile Premium – Shine&Go",
-    description: "🚗 Service de nettoyage automobile mobile : lavage voiture, car wash, détailing à domicile. Produits premium, résultats garantis. Réservation en ligne 24h/24.",
+    title: "Lavage Voiture & Nettoyage Auto à Domicile | Valeting Mobile Professionnel – Shine&Go",
+    description: "🚗 Service de lavage voiture mobile : valeting mobile professionnel, finition showroom garantie, produits premium Koch-Chemie & CarPro. Réservation en ligne 24h/24.",
     type: "website",
     locale: "fr_BE",
     url: "https://www.shineandgo.be/",
@@ -89,15 +41,15 @@ export const metadata: Metadata = {
         url: '/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Avant/Après nettoyage voiture professionnel - Shine&Go Premium',
+        alt: 'Avant/Après lavage voiture professionnel - Shine&Go Premium',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nettoyage Voiture & Lavage Auto à Domicile | Service Mobile Premium",
-    description: "🚗 Service de nettoyage automobile mobile : produits premium, résultats garantis. Réservation en ligne 24h/24.",
+    title: "Lavage Voiture & Nettoyage Auto à Domicile | Valeting Mobile Professionnel",
+    description: "🚗 Service de lavage voiture mobile : valeting mobile professionnel, finition showroom garantie. Réservation en ligne 24h/24.",
     images: ['/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg'],
   },
   alternates: {
@@ -117,66 +69,105 @@ export const metadata: Metadata = {
   other: {
     'geo.region': 'BE-WLX',
     'geo.placename': 'Wallonie',
-    'DC.subject': 'Nettoyage automobile, Car wash, Lavage voiture, Détailing auto, Service mobile',
+    'DC.subject': 'Lavage voiture, Valeting mobile professionnel, Nettoyage automobile, Car wash, Lavage voiture à domicile, Service mobile',
   },
 };
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-surface-light/30 to-hero-bg/40 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-white via-surface-light/30 to-hero-bg/40 overflow-x-hidden touch-optimized">
       {/* Scroll Progress Indicator */}
       <ScrollProgress />
       
       {/* Header */}
       <Header />
 
-      {/* Main content with optimized sales funnel */}
-      <main className="overscroll-contain w-full">
-        {/* 1. Hero - Promesse + 1er CTA */}
-        <section className="snap-start min-h-screen w-full">
+      {/* Main content optimized for mobile-first responsive design */}
+      <main className="overscroll-contain w-full scroll-mobile">
+        
+        {/* 1. HERO (above-the-fold) - Optimized for mobile viewport */}
+        <section className="snap-start min-h-svh w-full relative">
           <Hero />
         </section>
 
-        {/* 2. Social Proof condensée - Crédibilité instantanée */}
-        <section className="w-full">
-          <SocialProof />
+        {/* 2. SECTION "Pourquoi choisir Shine&Go ?" - Mobile-first spacing */}
+        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <SocialProof />
+          </div>
         </section>
 
-        {/* 3. Benefits - Désir / différenciation */}
-        <section className="w-full">
-          <BenefitsSection />
+        {/* 3. SECTION "Avant/Après : La Transformation" - Responsive container */}
+        <section className="w-full py-12 md:py-16 lg:py-20 bg-slate-50/80 container-mobile">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <BeforeAfterTestimonials />
+          </div>
         </section>
 
-        {/* 4. Process 3 étapes - Lever la friction */}
-        <section className="w-full">
-          <HowItWorks />
+        {/* 4. SECTION "Nos Forfaits Sur-Mesure de Nettoyage Voiture" - Touch-optimized */}
+        <section id="services-section" className="w-full py-12 md:py-16 lg:py-20 container-mobile touch-optimized">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <ServicesSection />
+          </div>
         </section>
 
-        {/* 5. Services - Découverte de l'offre */}
-        <section id="services-section" className="w-full">
-          <ServicesSection />
+        {/* 5. SECTION "Comment fonctionne notre service de lavage auto à domicile ?" */}
+        <section className="w-full py-12 md:py-16 lg:py-20 bg-slate-50/80 container-mobile">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <HowItWorks />
+          </div>
         </section>
 
-        {/* 6. Avant / Après + Témoignages - Preuve finale */}
-        <section className="w-full">
-          <BeforeAfterTestimonials />
+        {/* 6. SECTION "Questions fréquentes – Lavage Auto Mobile" */}
+        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <FAQ />
+          </div>
         </section>
-
-        {/* 7. CTA final - Action */}
-        <section className="w-full">
-          <FinalCTA />
-        </section>
-
-        {/* 8. FAQ Section - Support */}
-        <section className="w-full">
-          <FAQ />
-        </section>
+        
       </main>
 
       {/* Footer */}
       <Footer />
 
-
+      {/* Schema.org SiteNavigationElement for Navigation */}
+      <Script
+        id="navigation-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SiteNavigationElement",
+            "name": "Navigation principale Shine&Go",
+            "hasPart": [
+              {
+                "@type": "WebPage",
+                "name": "Nettoyage intérieur voiture",
+                "url": "https://www.shineandgo.be/nettoyage-interieur-voiture",
+                "description": "Service de nettoyage intérieur voiture à domicile avec aspiration et protection UV"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Nettoyage extérieur voiture",
+                "url": "https://www.shineandgo.be/nettoyage-exterieur-voiture",
+                "description": "Service de nettoyage extérieur voiture à domicile avec protection hydrophobe"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Nettoyage complet voiture",
+                "url": "https://www.shineandgo.be/nettoyage-complet-voiture",
+                "description": "Service de nettoyage complet voiture intérieur et extérieur à domicile"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Zones d'intervention",
+                "url": "https://www.shineandgo.be/zone-intervention",
+                "description": "Zones de service de nettoyage voiture à domicile en Wallonie"
+              }
+            ]
+          })
+        }}
+      />
 
       {/* Schema.org Organization + Services JSON-LD */}
       <Script
@@ -188,7 +179,7 @@ export default function HomePage() {
             "@type": "Organization",
             "name": "Shine&Go Premium",
             "alternateName": "Shine&Go",
-            "description": "Service premium de nettoyage automobile mobile : lavage voiture, car wash, détailing à domicile. Leader en Belgique avec produits professionnels Koch Chemie.",
+            "description": "Service premium de lavage voiture mobile : valeting mobile professionnel, finition showroom garantie. Leader en Belgique avec produits professionnels Koch Chemie et CarPro.",
             "url": "https://www.shineandgo.be",
             "telephone": "+32472303701",
             "email": "contact@shineandgo.be",
@@ -239,15 +230,15 @@ export default function HomePage() {
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Services de nettoyage automobile premium",
+              "name": "Services de lavage voiture premium",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Nettoyage Intérieur Fraîcheur",
-                    "description": "Aspiration complète, nettoyage plastiques, vitres intérieures, protection CarPro Perl",
-                    "serviceType": "Car Interior Cleaning"
+                    "name": "Lavage Voiture Intérieur Fraîcheur",
+                    "description": "Aspiration complète sièges & sols, nettoyage tableau de bord et plastiques, vitres intérieures sans traces, protection UV avec CarPro Perl",
+                    "serviceType": "Car Interior Washing"
                   },
                   "priceSpecification": {
                     "@type": "PriceSpecification",
@@ -261,8 +252,8 @@ export default function HomePage() {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service", 
-                    "name": "Nettoyage Extérieur Brillance",
-                    "description": "Mousse active, lavage manuel, vitres extérieures, CarPro offert",
+                    "name": "Lavage Voiture Extérieur Brillance",
+                    "description": "Mousse active dégraissante, lavage manuel technique professionnel, vitres extérieures & seuils de porte impeccables, ProtectorWax Koch-Chemie inclus",
                     "serviceType": "Car Exterior Washing"
                   },
                   "priceSpecification": {
@@ -277,9 +268,9 @@ export default function HomePage() {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Pack Sérénité Complet",
-                    "description": "Intérieur + Extérieur complets, protection 2 mois, produits premium",
-                    "serviceType": "Complete Car Detailing"
+                    "name": "Pack Sérénité Lavage Voiture Complet",
+                    "description": "Lavage voiture intérieur & extérieur complet, mousse active & rinçage haute pression, protection 2 mois ProtectorWax Koch-Chemie, plastiques protégés CarPro Perl",
+                    "serviceType": "Complete Car Washing"
                   },
                   "priceSpecification": {
                     "@type": "PriceSpecification", 
@@ -307,7 +298,7 @@ export default function HomePage() {
               "name": "Nathan Godfroid"
             },
             "foundingDate": "2023",
-            "slogan": "Votre voiture comme neuve, sans bouger de chez vous"
+            "slogan": "Votre voiture comme neuve, directement chez vous"
           })
         }}
       />
@@ -323,53 +314,64 @@ export default function HomePage() {
             "mainEntity": [
               {
                 "@type": "Question",
-                                 "name": "Quel est le prix d'un nettoyage voiture complet ?",
-                 "acceptedAnswer": {
-                   "@type": "Answer",
-                   "text": "Le prix d'un nettoyage voiture complet varie de 79€ à 129€ selon le type de véhicule. Notre Pack Sérénité inclut nettoyage intérieur + extérieur avec produits professionnels Koch Chemie et CarPro."
-                 }
-              },
-              {
-                "@type": "Question", 
-                "name": "Combien de temps dure un lavage auto à domicile ?",
+                "name": "Quels sont les prix pour un lavage voiture à domicile ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Un lavage auto à domicile dure en moyenne 90 minutes pour un nettoyage complet. Le service car wash mobile Shine&Go inclut intérieur, extérieur et protection avec équipement professionnel."
+                  "text": "Nos tarifs démarrent à 39€ pour un lavage intérieur, 49€ pour un lavage extérieur et 79€ pour le service complet intérieur + extérieur."
                 }
               },
               {
                 "@type": "Question",
-                                 "name": "Quels produits utilisez-vous pour le car wash mobile ?",
-                 "acceptedAnswer": {
-                   "@type": "Answer", 
-                   "text": "Nous utilisons exclusivement des produits professionnels Koch Chemie et CarPro pour le nettoyage automobile. Ces produits de qualité garantissent un résultat showroom longue durée."
-                 }
-              },
-              {
-                "@type": "Question",
-                "name": "Comment réserver un nettoyage voiture à domicile ?",
+                "name": "Combien de temps dure un lavage voiture mobile ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Réservez votre nettoyage voiture en 2 minutes via WhatsApp, téléphone ou formulaire en ligne. Service disponible 7j/7 de 8h à 20h avec confirmation immédiate."
+                  "text": "Un lavage voiture mobile dure entre 45 et 90 minutes selon la formule choisie."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Dans quelles zones faites-vous le lavage auto mobile ?",
+                "name": "Quels produits utilisez-vous pour le nettoyage auto ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Notre service de lavage auto mobile couvre toute la Wallonie : Liège, Verviers, Spa, Huy, Herve et plus de 50 communes. Détailing automobile à domicile avec équipement complet."
+                  "text": "Nous utilisons exclusivement des produits professionnels premium de Koch-Chemie et CarPro."
                 }
               },
-                             {
-                 "@type": "Question", 
-                 "name": "Quelle est la différence entre car wash et nettoyage voiture complet ?",
-                 "acceptedAnswer": {
-                   "@type": "Answer",
-                   "text": "Le car wash basique est un lavage extérieur, tandis que le nettoyage voiture complet inclut intérieur, extérieur, protection et finition soignée. Shine&Go propose un service complet avec produits professionnels."
-                 }
-               }
+              {
+                "@type": "Question",
+                "name": "Dans quelles zones proposez-vous le lavage voiture à domicile ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Notre service couvre toute la Wallonie, avec un déplacement gratuit dans un rayon de 25 km autour de Herve."
+                }
+              }
             ]
+          })
+        }}
+      />
+
+      {/* Schema.org Product Reviews for Rich Snippets */}
+      <Script
+        id="product-reviews-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Lavage voiture à domicile Shine&Go",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "ratingCount": "30",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": "39",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.shineandgo.be"
+            }
           })
         }}
       />

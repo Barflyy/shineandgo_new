@@ -4,27 +4,6 @@ import Script from 'next/script';
 export const metadata: Metadata = {
   title: "Nettoyage Voiture à Domicile : 60 Zones d'Intervention Province de Liège – Shine&Go",
   description: "🚗 Service mobile Premium Car Care de nettoyage voiture à domicile dans 60+ villes de la Province de Liège. Valeting auto mobile avec produits Koch Chemie. Déplacement gratuit ≤25km.",
-  keywords: [
-    'nettoyage voiture domicile',
-    'valeting auto mobile',
-    'detailing Liège',
-    'nettoyage auto province Liège',
-    'car wash domicile',
-    'service automobile mobile',
-    'Premium Car Care',
-    'Koch Chemie',
-    'zones intervention',
-    'Province de Liège',
-    'Verviers',
-    'Spa',
-    'Huy',
-    'Herve',
-    'Eupen',
-    'Chaudfontaine',
-    'Seraing',
-    'Theux',
-    'Aywaille'
-  ],
   openGraph: {
     title: "Nettoyage Voiture à Domicile : 60 Zones d'Intervention Province de Liège",
     description: "Service mobile Premium Car Care de nettoyage voiture à domicile dans 60+ villes de la Province de Liège. Valeting auto mobile avec produits Koch Chemie.",

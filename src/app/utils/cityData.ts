@@ -1,4 +1,36 @@
-import cityData from '../../../villes_shineandgo_enrichi.json';
+// Données temporaires en attendant le fichier JSON
+const cityData = {
+  "liege": {
+    ville: "Liège",
+    region: "province de Liège",
+    voisines: ["Verviers", "Seraing", "Flemalle"],
+    temoignage: {
+      auteur: "Thomas",
+      texte: "Service exceptionnel à Liège, je recommande !"
+    },
+    accroche: "À Liège, faites confiance à Shine&Go pour votre nettoyage auto."
+  },
+  "herve": {
+    ville: "Herve",
+    region: "province de Liège",
+    voisines: ["Verviers", "Spa", "Welkenraedt"],
+    temoignage: {
+      auteur: "Marie",
+      texte: "Très satisfaite du service à Herve."
+    },
+    accroche: "À Herve, votre véhicule mérite le meilleur avec Shine&Go."
+  },
+  "verviers": {
+    ville: "Verviers",
+    region: "province de Liège",
+    voisines: ["Spa", "Herve", "Liege"],
+    temoignage: {
+      auteur: "Pierre",
+      texte: "Nettoyage impeccable à Verviers."
+    },
+    accroche: "À Verviers, découvrez un service de nettoyage auto premium."
+  }
+};
 
 export interface CityInfo {
   ville: string;

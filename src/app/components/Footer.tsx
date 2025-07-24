@@ -36,7 +36,7 @@ export default function Footer() {
               
               {/* Description */}
               <p className="text-slate-300 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
-                Service premium de valeting automobile à domicile. <span className="font-semibold text-white">Réservez maintenant</span> et redonnez de l'éclat à votre véhicule.
+                Shine&Go – Service Premium Car Care
               </p>
               
               {/* CTA Button */}
@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         {/* Clean Contact & Information */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           
           {/* Company Info */}
           <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
@@ -61,20 +61,65 @@ export default function Footer() {
             {/* Brand */}
             <div className="mb-4">
               <h4 className="font-black text-2xl mb-2 text-white">
-                Shine & Go
+                Shine&Go
               </h4>
               <div className="flex items-center gap-2 text-blue-400">
                 <Sparkles className="w-4 h-4" />
-                <span className="text-sm font-medium">Premium Car Care</span>
+                <span className="text-sm font-medium">Service Premium Car Care</span>
               </div>
             </div>
             
             {/* Description */}
             <p className="text-slate-300 leading-relaxed text-sm">
-              Nettoyage voiture à domicile dans la Wallonie.
+              Lavage voiture à domicile en Wallonie.
               <br />
-              Résultat showroom en 90 min.
+              Résultat showroom garanti en 90 min.
             </p>
+          </div>
+
+          {/* Services */}
+          <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
+            
+            <h4 className="font-bold text-xl text-white mb-4 flex items-center gap-2">
+              <Car className="w-5 h-5 text-blue-400" />
+              Services
+            </h4>
+            
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/nettoyage-interieur-voiture"
+                  className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors duration-200"
+                >
+                  <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
+                    <span className="text-sm">🧹</span>
+                  </div>
+                  <span className="text-sm">Nettoyage intérieur voiture</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/nettoyage-exterieur-voiture"
+                  className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors duration-200"
+                >
+                  <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
+                    <span className="text-sm">🚿</span>
+                  </div>
+                  <span className="text-sm">Nettoyage extérieur voiture</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/nettoyage-complet-voiture"
+                  className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors duration-200"
+                >
+                  <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
+                    <span className="text-sm">✨</span>
+                  </div>
+                  <span className="text-sm">Nettoyage complet voiture</span>
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Contact */}
@@ -102,7 +147,7 @@ export default function Footer() {
                   <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
                     <Phone className="w-4 h-4 text-green-400" />
                   </div>
-                  <span className="text-sm">0472 30 37 01</span>
+                  <span className="text-sm">📞 Contact : 0472 30 37 01</span>
                 </a>
               </li>
               <li>
@@ -110,7 +155,7 @@ export default function Footer() {
                   <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
                     <MessageCircle className="w-4 h-4 text-green-400" />
                   </div>
-                  <span className="text-sm">WhatsApp 7 j/7, 8 h – 20 h</span>
+                  <span className="text-sm">WhatsApp 7j/7, 8 h – 20 h</span>
                 </div>
               </li>
               <li>
@@ -133,19 +178,7 @@ export default function Footer() {
           <div className="bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 shadow-lg">
             <div className="flex items-center gap-2">
               <Star className="w-4 h-4 text-yellow-400" />
-              <span className="text-sm font-medium text-slate-300">5 / 5 sur Google</span>
-            </div>
-          </div>
-          <div className="bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 shadow-lg">
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-blue-400" />
-              <span className="text-sm font-medium text-slate-300">30 + véhicules traités</span>
-            </div>
-          </div>
-          <div className="bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 shadow-lg">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-green-400" />
-              <span className="text-sm font-medium text-slate-300">100 % de clients satisfaits</span>
+              <span className="text-sm font-medium text-slate-300">⭐ 4,9/5 sur Google – 100% satisfaction clients</span>
             </div>
           </div>
         </div>
@@ -159,7 +192,7 @@ export default function Footer() {
               <div className="text-center md:text-left">
                 <p className="text-slate-400 text-sm flex items-center gap-2">
                   <Heart className="w-4 h-4 text-red-400" />
-                  © Shine & Go 2025 – Tous droits réservés
+                  © Shine&Go 2025 – Tous droits réservés
                 </p>
               </div>
               
@@ -177,6 +210,13 @@ export default function Footer() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* SEO Footer Text */}
+        <div className="mt-8 text-center">
+          <p className="text-slate-500 text-xs leading-relaxed max-w-4xl mx-auto">
+            Shine&Go – Lavage voiture à domicile en Wallonie | Nettoyage auto pro intérieur & extérieur | Intervention rapide en 90 min | Produits Koch-Chemie & CarPro | 0472 30 37 01
+          </p>
         </div>
 
       </div>
