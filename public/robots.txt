@@ -1,5 +1,5 @@
 # Robots.txt optimisé pour Shine&Go Premium
-# https://www.shineandgo.be/robots.txt
+# https://shineandgo.be/robots.txt
 
 # Tous les robots
 User-agent: *
@@ -63,11 +63,11 @@ Disallow: /*?fbclid=*
 Disallow: /*?gclid=*
 
 # Sitemap principal
-Sitemap: https://www.shineandgo.be/api/sitemap
+Sitemap: https://shineandgo.be/api/sitemap
 
 # Sitemaps spécifiques (optionnels)
-Sitemap: https://www.shineandgo.be/api/sitemap-images
-Sitemap: https://www.shineandgo.be/api/sitemap-videos
+Sitemap: https://shineandgo.be/api/sitemap-images
+Sitemap: https://shineandgo.be/api/sitemap-videos
 
 # Informations sur le site
 # Site: Shine&Go Premium - Nettoyage Auto & Car Wash à Herve

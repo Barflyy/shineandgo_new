@@ -298,7 +298,7 @@ export const generateCityMetadata = (citySlug: string): Metadata => {
       type: 'website',
       locale: 'fr_FR',
       siteName: 'Shine&Go',
-      url: `https://www.shineandgo.be/nettoyage-voiture-${citySlug}`,
+      url: `https://shineandgo.be/nettoyage-voiture-${citySlug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -317,7 +317,7 @@ export const generateCityMetadata = (citySlug: string): Metadata => {
       },
     },
     alternates: {
-      canonical: `https://www.shineandgo.be/nettoyage-voiture-${citySlug}`,
+      canonical: `https://shineandgo.be/nettoyage-voiture-${citySlug}`,
     },
   };
 };

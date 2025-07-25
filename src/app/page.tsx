@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     images: ['/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg'],
   },
   alternates: {
-    canonical: "https://www.shineandgo.be/",
+    canonical: "https://shineandgo.be/",
   },
   robots: {
     index: true,

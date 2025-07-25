@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.shineandgo.be'),
+  metadataBase: new URL('https://shineandgo.be'),
   alternates: {
     canonical: '/',
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: "🚗 Service premium de nettoyage automobile mobile : lavage voiture, car wash, détailing à domicile. Produits professionnels, résultats garantis.",
     type: "website",
     locale: "fr_BE",
-    url: "https://www.shineandgo.be/",
+    url: "https://shineandgo.be/",
     siteName: "Shine&Go Premium",
     images: [
       {
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     'business:contact_data:postal_code': '4650',
     'business:contact_data:country_name': 'Belgique',
     'business:contact_data:phone_number': '0472303701',
-    'business:contact_data:website': 'https://www.shineandgo.be',
+    'business:contact_data:website': 'https://shineandgo.be',
     'business:contact_data:email': 'contact@shinego.be',
     'business:contact_data:hours': 'Lun-Dim: 8h-20h',
     'geo.region': 'BE-LG',
