@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'Shine&Go',
-    url: 'https://www.shineandgo.be/nettoyage-voiture',
+          url: 'https://shineandgo.be/nettoyage-voiture',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://www.shineandgo.be/nettoyage-voiture',
+    canonical: 'https://shineandgo.be/nettoyage-voiture',
   },
 };
 

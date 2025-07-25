@@ -18,7 +18,7 @@ export const generateCityStructuredData = (
     faqs?: Array<{ question: string; answer: string }>;
   }
 ) => {
-  const baseUrl = `https://www.shineandgo.be/nettoyage-voiture-${citySlug}`;
+  const baseUrl = `https://shineandgo.be/nettoyage-voiture-${citySlug}`;
   
   // Utiliser les données du CSV ou les valeurs par défaut
   const title = additionalData?.title || `Nettoyage Auto ${cityName} - Shine&Go Premium`;
@@ -54,8 +54,8 @@ export const generateCityStructuredData = (
   
   // Fil d'Ariane personnalisé du CSV ou par défaut
   const breadcrumb = additionalData?.breadcrumb || {
-    l1: { name: "Accueil", url: "https://www.shineandgo.be" },
-    l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
+          l1: { name: "Accueil", url: "https://shineandgo.be" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
     l3: { name: `Nettoyage voiture à ${cityName}`, url: baseUrl }
   };
   
@@ -73,7 +73,7 @@ export const generateCityStructuredData = (
         "publisher": {
           "@type": "Organization",
           "name": "Shine&Go Premium",
-          "url": "https://www.shineandgo.be"
+          "url": "https://shineandgo.be"
         },
         "mainEntity": {
           "@type": "Service",
@@ -83,9 +83,9 @@ export const generateCityStructuredData = (
           "url": baseUrl,
           "provider": {
             "@type": "LocalBusiness",
-            "@id": "https://www.shineandgo.be/#business",
+            "@id": "https://shineandgo.be/#business",
             "name": "Shine&Go Premium",
-            "url": "https://www.shineandgo.be",
+            "url": "https://shineandgo.be",
             "telephone": "+32472303701",
             "email": "contact@shinego.be",
             "address": {

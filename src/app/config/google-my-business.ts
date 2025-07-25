@@ -1,8 +1,8 @@
 export const googleMyBusinessConfig = {
   // Informations de base
   businessName: "Shine&Go Premium",
-  businessId: "BE123456789", // Remplacez par votre vrai ID d'entreprise
-  website: "https://www.shineandgo.be",
+  businessId: "BE1014725710", // Remplacez par votre vrai ID d'entreprise
+  website: "https://shineandgo.be",
   
   // Place ID pour l'API Google My Business
   placeId: "0x66682fcc80bbecd1:0xe1f7275cce87435a", // Place ID de Shine&Go
@@ -105,7 +105,7 @@ export const generateStructuredData = () => {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.shineandgo.be/#business",
+    "@id": "https://shineandgo.be/#business",
     "name": googleMyBusinessConfig.businessName,
     "alternateName": "Shine&Go",
     "description": googleMyBusinessConfig.seo.description,

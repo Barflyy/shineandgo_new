@@ -4,7 +4,7 @@
   "name": "Shine&Go Premium",
   "alternateName": ["Shine&Go", "Shine and Go"],
   "description": "Service premium de nettoyage automobile à Herve et dans la région. Car wash haut de gamme, nettoyage intérieur et extérieur, service à domicile 7j/7. Produits professionnels Koch Chemie, CarPro, P&S.",
-  "url": "https://www.shineandgo.be",
+  "url": "https://shineandgo.be",
   "telephone": "+32472303701",
   "email": "contact@shinego.be",
   "priceRange": "€€",
@@ -170,7 +170,7 @@
     "bestRating": 5,
     "worstRating": 1
   },
-  "@id": "https://www.shineandgo.be/#business",
+      "@id": "https://shineandgo.be/#business",
   "identifier": {
     "@type": "PropertyValue",
     "name": "Shine&Go Premium",
@@ -221,13 +221,13 @@
     }
   ],
   "image": [
-    "https://www.shineandgo.be/transformations/after1.jpeg",
-    "https://www.shineandgo.be/transformations/after2.jpeg",
-    "https://www.shineandgo.be/transformations/after3.jpeg",
-    "https://www.shineandgo.be/transformations/after4.jpeg",
-    "https://www.shineandgo.be/transformations/after5.jpeg"
+          "https://shineandgo.be/transformations/after1.jpeg",
+      "https://shineandgo.be/transformations/after2.jpeg",
+      "https://shineandgo.be/transformations/after3.jpeg",
+      "https://shineandgo.be/transformations/after4.jpeg",
+      "https://shineandgo.be/transformations/after5.jpeg"
   ],
-  "logo": "https://www.shineandgo.be/logo.png",
+      "logo": "https://shineandgo.be/logo.png",
   "sameAs": [
     "https://wa.me/32472303701",
     "https://www.facebook.com/shineandgo",
@@ -274,7 +274,7 @@
       "@type": "QuoteAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://www.shineandgo.be/#services",
+        "urlTemplate": "https://shineandgo.be/#services",
         "inLanguage": "fr"
       },
       "result": {

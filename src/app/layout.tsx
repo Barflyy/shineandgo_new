@@ -132,7 +132,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://www.shineandgo.be" />
+        <link rel="canonical" href="https://shineandgo.be" />
         <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content="X08CcPH1dVGJLHAq8ykJr8YQlNOuOp2OYcGqMFB7bIE" />
         
