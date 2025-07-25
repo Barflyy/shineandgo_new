@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Lavage extérieur voiture à domicile en Wallonie : carrosserie, jantes, vitres, protection hydrophobe. Dès 49€ avec Shine&Go.",
     type: "website",
     locale: "fr_BE",
-    url: "https://www.shineandgo.be/nettoyage-exterieur-voiture",
+    url: "https://shineandgo.be/nettoyage-exterieur-voiture",
     siteName: "Shine&Go Premium",
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     images: ['/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg'],
   },
   alternates: {
-    canonical: "https://www.shineandgo.be/nettoyage-exterieur-voiture",
+    canonical: "https://shineandgo.be/nettoyage-exterieur-voiture",
   },
   robots: {
     index: true,
@@ -636,11 +636,11 @@ export default function NettoyageExterieurPage() {
             "name": "Shine&Go Premium",
             "alternateName": "Shine&Go",
             "description": "Service premium de nettoyage extérieur voiture mobile : lavage auto mobile professionnel, finition showroom garantie. Leader en Belgique avec produits professionnels Koch Chemie et CarPro.",
-            "url": "https://www.shineandgo.be",
+            "url": "https://shineandgo.be",
             "telephone": "+32472303701",
             "email": "contact@shineandgo.be",
-            "logo": "https://www.shineandgo.be/logo.png",
-            "image": "https://www.shineandgo.be/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg",
+            "logo": "https://shineandgo.be/logo.png",
+            "image": "https://shineandgo.be/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Rue Moreau, 20",
@@ -785,7 +785,7 @@ export default function NettoyageExterieurPage() {
             "provider": {
               "@type": "LocalBusiness",
               "name": "Shine&Go",
-              "image": "https://www.shineandgo.be/logo.png",
+              "image": "https://shineandgo.be/logo.png",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Herve",
@@ -794,7 +794,7 @@ export default function NettoyageExterieurPage() {
                 "addressCountry": "BE"
               },
               "telephone": "+32 472 30 37 01",
-              "url": "https://www.shineandgo.be/nettoyage-exterieur-voiture"
+              "url": "https://shineandgo.be/nettoyage-exterieur-voiture"
             },
             "areaServed": {
               "@type": "Place",
@@ -853,7 +853,7 @@ export default function NettoyageExterieurPage() {
               "priceCurrency": "EUR",
               "price": "49",
               "availability": "https://schema.org/InStock",
-              "url": "https://www.shineandgo.be/nettoyage-exterieur-voiture"
+              "url": "https://shineandgo.be/nettoyage-exterieur-voiture"
             }
           })
         }}

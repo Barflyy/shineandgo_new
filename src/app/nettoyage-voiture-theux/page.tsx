@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Nettoyage auto mobile à Theux : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-theux",
+      canonical: "https://shineandgo.be/nettoyage-voiture-theux",
     },
     openGraph: {
       title: "Lavage auto mobile à Theux : intérieur & extérieur | Shine&Go",
       description: "Nettoyage auto mobile à Theux : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-theux.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-theux.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Theux",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Lavage auto mobile à Theux : intérieur & extérieur | Shine&Go",
       description: "Nettoyage auto mobile à Theux : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-theux.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-theux.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function TheuxPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Theux",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Theux", url: "https://www.shineandgo.be/nettoyage-voiture-theux" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Theux", url: "https://shineandgo.be/nettoyage-voiture-theux" },
     },
     faqs: [
       {

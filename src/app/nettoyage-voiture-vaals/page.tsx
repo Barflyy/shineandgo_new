@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Besoin d’un car wash à domicile à Vaals ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-vaals",
+      canonical: "https://shineandgo.be/nettoyage-voiture-vaals",
     },
     openGraph: {
       title: "Nettoyage voiture Vaals à domicile | Résultat showroom garanti",
       description: "Besoin d’un car wash à domicile à Vaals ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-vaals.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-vaals.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Vaals",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Nettoyage voiture Vaals à domicile | Résultat showroom garanti",
       description: "Besoin d’un car wash à domicile à Vaals ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-vaals.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-vaals.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function VaalsPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Vaals",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Vaals", url: "https://www.shineandgo.be/nettoyage-voiture-vaals" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Vaals", url: "https://shineandgo.be/nettoyage-voiture-vaals" },
     },
     faqs: [
       {

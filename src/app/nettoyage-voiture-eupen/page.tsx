@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Nettoyage auto mobile à Eupen : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-eupen",
+      canonical: "https://shineandgo.be/nettoyage-voiture-eupen",
     },
     openGraph: {
       title: "Nettoyage voiture à domicile à Eupen | Shine&Go (service premium)",
       description: "Nettoyage auto mobile à Eupen : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-eupen.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-eupen.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Eupen",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Nettoyage voiture à domicile à Eupen | Shine&Go (service premium)",
       description: "Nettoyage auto mobile à Eupen : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-eupen.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-eupen.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function EupenPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Eupen",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Eupen", url: "https://www.shineandgo.be/nettoyage-voiture-eupen" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Eupen", url: "https://shineandgo.be/nettoyage-voiture-eupen" },
     },
     faqs: [
       {

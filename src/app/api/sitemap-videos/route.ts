@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const baseUrl = 'https://www.shineandgo.be';
+  const baseUrl = 'https://shineandgo.be';
   const currentDate = new Date().toISOString().split('T')[0];
 
   // Vidéos de démonstration avec métadonnées optimisées

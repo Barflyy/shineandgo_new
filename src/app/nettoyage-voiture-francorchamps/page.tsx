@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Lavage et nettoyage voiture à domicile à Francorchamps. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-francorchamps",
+      canonical: "https://shineandgo.be/nettoyage-voiture-francorchamps",
     },
     openGraph: {
       title: "Lavage voiture à Francorchamps (Wallonie) | Shine&Go se déplace chez vous",
       description: "Lavage et nettoyage voiture à domicile à Francorchamps. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-francorchamps.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-francorchamps.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Francorchamps",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Lavage voiture à Francorchamps (Wallonie) | Shine&Go se déplace chez vous",
       description: "Lavage et nettoyage voiture à domicile à Francorchamps. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-francorchamps.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-francorchamps.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function FrancorchampsPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Francorchamps",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Francorchamps", url: "https://www.shineandgo.be/nettoyage-voiture-francorchamps" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Francorchamps", url: "https://shineandgo.be/nettoyage-voiture-francorchamps" },
     },
     faqs: [
       {

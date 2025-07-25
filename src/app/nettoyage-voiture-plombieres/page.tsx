@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Lavage et nettoyage voiture à domicile à Plombieres. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-plombieres",
+      canonical: "https://shineandgo.be/nettoyage-voiture-plombieres",
     },
     openGraph: {
       title: "Nettoyage voiture à domicile à Plombieres | Shine&Go (service premium)",
       description: "Lavage et nettoyage voiture à domicile à Plombieres. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-plombieres.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-plombieres.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Plombieres",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Nettoyage voiture à domicile à Plombieres | Shine&Go (service premium)",
       description: "Lavage et nettoyage voiture à domicile à Plombieres. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-plombieres.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-plombieres.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function PlombieresPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Plombieres",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Plombieres", url: "https://www.shineandgo.be/nettoyage-voiture-plombieres" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Plombieres", url: "https://shineandgo.be/nettoyage-voiture-plombieres" },
     },
     faqs: [
       {

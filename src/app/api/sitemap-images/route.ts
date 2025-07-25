@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const baseUrl = 'https://www.shineandgo.be';
+  const baseUrl = 'https://shineandgo.be';
   const currentDate = new Date().toISOString().split('T')[0];
 
   // Images de transformations avec métadonnées optimisées
@@ -11,98 +11,98 @@ export async function GET() {
       title: 'Berline familiale propre après nettoyage - Herve',
       caption: 'Avant/après nettoyage complet d\'une berline familiale à Herve',
       geoLocation: 'Herve, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/berline-familiale-sale-avant-nettoyage-herve.jpeg',
       title: 'Berline familiale sale avant nettoyage - Herve',
       caption: 'État initial d\'une berline familiale avant nettoyage professionnel',
       geoLocation: 'Herve, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/citadine-premium-propre-apres-lavage-aubel.jpeg',
       title: 'Citadine premium propre après lavage - Aubel',
       caption: 'Résultat exceptionnel sur une citadine premium à Aubel',
       geoLocation: 'Aubel, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/citadine-premium-sale-avant-lavage-aubel.jpeg',
       title: 'Citadine premium sale avant lavage - Aubel',
       caption: 'État initial d\'une citadine premium avant nettoyage',
       geoLocation: 'Aubel, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/interieur-voiture-propre-apres-nettoyage-dison.jpeg',
       title: 'Intérieur voiture propre après nettoyage - Dison',
       caption: 'Nettoyage intérieur professionnel d\'un véhicule à Dison',
       geoLocation: 'Dison, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/interieur-voiture-sale-avant-nettoyage-dison.jpeg',
       title: 'Intérieur voiture sale avant nettoyage - Dison',
       caption: 'État initial de l\'intérieur avant nettoyage professionnel',
       geoLocation: 'Dison, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/monospace-familial-propre-apres-nettoyage-huy.jpeg',
       title: 'Monospace familial propre après nettoyage - Huy',
       caption: 'Transformation complète d\'un monospace familial à Huy',
       geoLocation: 'Huy, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/monospace-familial-sale-avant-nettoyage-huy.jpeg',
       title: 'Monospace familial sale avant nettoyage - Huy',
       caption: 'État initial d\'un monospace familial avant nettoyage',
       geoLocation: 'Huy, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/suv-premium-propre-apres-lavage-verviers.jpeg',
       title: 'SUV premium propre après lavage - Verviers',
       caption: 'Résultat premium sur un SUV à Verviers',
       geoLocation: 'Verviers, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/suv-premium-sale-avant-lavage-verviers.jpeg',
       title: 'SUV premium sale avant lavage - Verviers',
       caption: 'État initial d\'un SUV premium avant nettoyage',
       geoLocation: 'Verviers, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/utilitaire-commercial-propre-apres-nettoyage-liege.jpeg',
       title: 'Utilitaire commercial propre après nettoyage - Liège',
       caption: 'Nettoyage professionnel d\'un utilitaire commercial à Liège',
       geoLocation: 'Liège, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/utilitaire-commercial-sale-avant-nettoyage-liege.jpeg',
       title: 'Utilitaire commercial sale avant nettoyage - Liège',
       caption: 'État initial d\'un utilitaire commercial avant nettoyage',
       geoLocation: 'Liège, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/voiture-sport-propre-apres-detailing-spa.jpeg',
       title: 'Voiture sport propre après detailing - Spa',
       caption: 'Detailing professionnel d\'une voiture sport à Spa',
       geoLocation: 'Spa, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     },
     {
       url: '/transformations/voiture-sport-sale-avant-detailing-spa.jpeg',
       title: 'Voiture sport sale avant detailing - Spa',
       caption: 'État initial d\'une voiture sport avant detailing',
       geoLocation: 'Spa, Belgique',
-      license: 'https://www.shineandgo.be/license'
+      license: 'https://shineandgo.be/license'
     }
   ];
 

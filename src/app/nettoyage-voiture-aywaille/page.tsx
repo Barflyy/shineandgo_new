@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Lavage et nettoyage voiture à domicile à Aywaille. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-aywaille",
+      canonical: "https://shineandgo.be/nettoyage-voiture-aywaille",
     },
     openGraph: {
       title: "Nettoyage voiture Aywaille à domicile | Résultat showroom garanti",
       description: "Lavage et nettoyage voiture à domicile à Aywaille. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-aywaille.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-aywaille.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Aywaille",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Nettoyage voiture Aywaille à domicile | Résultat showroom garanti",
       description: "Lavage et nettoyage voiture à domicile à Aywaille. Service complet intérieur/extérieur, produits premium, résultat showroom. Devis gratuit.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-aywaille.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-aywaille.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function AywaillePage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Aywaille",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Aywaille", url: "https://www.shineandgo.be/nettoyage-voiture-aywaille" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Aywaille", url: "https://shineandgo.be/nettoyage-voiture-aywaille" },
     },
     faqs: [
       {

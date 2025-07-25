@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: "🚗 Service de lavage voiture mobile : valeting mobile professionnel, finition showroom garantie, produits premium Koch-Chemie & CarPro. Réservation en ligne 24h/24.",
     type: "website",
     locale: "fr_BE",
-    url: "https://www.shineandgo.be/",
+    url: "https://shineandgo.be/",
     siteName: "Shine&Go Premium",
     images: [
       {
@@ -143,25 +143,25 @@ export default function HomePage() {
               {
                 "@type": "WebPage",
                 "name": "Nettoyage intérieur voiture",
-                "url": "https://www.shineandgo.be/nettoyage-interieur-voiture",
+                "url": "https://shineandgo.be/nettoyage-interieur-voiture",
                 "description": "Service de nettoyage intérieur voiture à domicile avec aspiration et protection UV"
               },
               {
                 "@type": "WebPage",
                 "name": "Nettoyage extérieur voiture",
-                "url": "https://www.shineandgo.be/nettoyage-exterieur-voiture",
+                "url": "https://shineandgo.be/nettoyage-exterieur-voiture",
                 "description": "Service de nettoyage extérieur voiture à domicile avec protection hydrophobe"
               },
               {
                 "@type": "WebPage",
                 "name": "Nettoyage complet voiture",
-                "url": "https://www.shineandgo.be/nettoyage-complet-voiture",
+                "url": "https://shineandgo.be/nettoyage-complet-voiture",
                 "description": "Service de nettoyage complet voiture intérieur et extérieur à domicile"
               },
               {
                 "@type": "WebPage",
                 "name": "Services de nettoyage",
-                "url": "https://www.shineandgo.be/#services",
+                "url": "https://shineandgo.be/#services",
                 "description": "Services de nettoyage voiture à domicile en Wallonie"
               }
             ]
@@ -180,11 +180,11 @@ export default function HomePage() {
             "name": "Shine&Go Premium",
             "alternateName": "Shine&Go",
             "description": "Service premium de lavage voiture mobile : valeting mobile professionnel, finition showroom garantie. Leader en Belgique avec produits professionnels Koch Chemie et CarPro.",
-            "url": "https://www.shineandgo.be",
+            "url": "https://shineandgo.be",
             "telephone": "+32472303701",
             "email": "contact@shineandgo.be",
-            "logo": "https://www.shineandgo.be/logo.png",
-            "image": "https://www.shineandgo.be/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg",
+            "logo": "https://shineandgo.be/logo.png",
+            "image": "https://shineandgo.be/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Rue Moreau, 20",
@@ -370,7 +370,7 @@ export default function HomePage() {
               "priceCurrency": "EUR",
               "price": "39",
               "availability": "https://schema.org/InStock",
-              "url": "https://www.shineandgo.be"
+              "url": "https://shineandgo.be"
             }
           })
         }}

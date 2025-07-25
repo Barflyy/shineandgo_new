@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Besoin d’un car wash à domicile à Montzen ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-montzen",
+      canonical: "https://shineandgo.be/nettoyage-voiture-montzen",
     },
     openGraph: {
       title: "Nettoyage voiture Montzen à domicile | Résultat showroom garanti",
       description: "Besoin d’un car wash à domicile à Montzen ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-montzen.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-montzen.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Montzen",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Nettoyage voiture Montzen à domicile | Résultat showroom garanti",
       description: "Besoin d’un car wash à domicile à Montzen ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-montzen.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-montzen.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function MontzenPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Montzen",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Montzen", url: "https://www.shineandgo.be/nettoyage-voiture-montzen" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Montzen", url: "https://shineandgo.be/nettoyage-voiture-montzen" },
     },
     faqs: [
       {

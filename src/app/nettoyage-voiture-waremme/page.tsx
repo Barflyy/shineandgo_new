@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Lavage voiture Waremme à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-waremme",
+      canonical: "https://shineandgo.be/nettoyage-voiture-waremme",
     },
     openGraph: {
       title: "Lavage voiture à Waremme (Wallonie) | Shine&Go se déplace chez vous",
       description: "Lavage voiture Waremme à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-waremme.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-waremme.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Waremme",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Lavage voiture à Waremme (Wallonie) | Shine&Go se déplace chez vous",
       description: "Lavage voiture Waremme à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-waremme.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-waremme.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function WaremmePage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Waremme",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Waremme", url: "https://www.shineandgo.be/nettoyage-voiture-waremme" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Waremme", url: "https://shineandgo.be/nettoyage-voiture-waremme" },
     },
     faqs: [
       {

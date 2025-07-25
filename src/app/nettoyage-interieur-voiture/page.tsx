@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Nettoyage intérieur voiture à domicile en Wallonie. Aspiration sièges, plastiques et vitres, protection UV incluse. Dès 39€ avec Shine&Go.",
     type: "website",
     locale: "fr_BE",
-    url: "https://www.shineandgo.be/nettoyage-interieur-voiture",
+    url: "https://shineandgo.be/nettoyage-interieur-voiture",
     siteName: "Shine&Go Premium",
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     images: ['/transformations/interieur-voiture-propre-apres-nettoyage-dison.jpeg'],
   },
   alternates: {
-    canonical: "https://www.shineandgo.be/nettoyage-interieur-voiture",
+    canonical: "https://shineandgo.be/nettoyage-interieur-voiture",
   },
   robots: {
     index: true,
@@ -627,11 +627,11 @@ export default function NettoyageInterieurPage() {
             "name": "Shine&Go Premium",
             "alternateName": "Shine&Go",
             "description": "Service premium de nettoyage intérieur voiture mobile : valeting mobile professionnel, finition showroom garantie. Leader en Belgique avec produits professionnels Koch Chemie et CarPro.",
-            "url": "https://www.shineandgo.be",
+            "url": "https://shineandgo.be",
             "telephone": "+32472303701",
             "email": "contact@shineandgo.be",
-            "logo": "https://www.shineandgo.be/logo.png",
-            "image": "https://www.shineandgo.be/transformations/interieur-voiture-propre-apres-nettoyage-dison.jpeg",
+            "logo": "https://shineandgo.be/logo.png",
+            "image": "https://shineandgo.be/transformations/interieur-voiture-propre-apres-nettoyage-dison.jpeg",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Rue Moreau, 20",
@@ -768,7 +768,7 @@ export default function NettoyageInterieurPage() {
             "provider": {
               "@type": "LocalBusiness",
               "name": "Shine&Go",
-              "image": "https://www.shineandgo.be/logo.png",
+              "image": "https://shineandgo.be/logo.png",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Herve",
@@ -777,7 +777,7 @@ export default function NettoyageInterieurPage() {
                 "addressCountry": "BE"
               },
               "telephone": "+32 472 30 37 01",
-              "url": "https://www.shineandgo.be/nettoyage-interieur-voiture"
+              "url": "https://shineandgo.be/nettoyage-interieur-voiture"
             },
             "areaServed": {
               "@type": "Place",
@@ -836,7 +836,7 @@ export default function NettoyageInterieurPage() {
               "priceCurrency": "EUR",
               "price": "39",
               "availability": "https://schema.org/InStock",
-              "url": "https://www.shineandgo.be/nettoyage-interieur-voiture"
+              "url": "https://shineandgo.be/nettoyage-interieur-voiture"
             }
           })
         }}

@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Nettoyage auto mobile à Wanze : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-wanze",
+      canonical: "https://shineandgo.be/nettoyage-voiture-wanze",
     },
     openGraph: {
       title: "Lavage auto mobile à Wanze : intérieur & extérieur | Shine&Go",
       description: "Nettoyage auto mobile à Wanze : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-wanze.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-wanze.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Wanze",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Lavage auto mobile à Wanze : intérieur & extérieur | Shine&Go",
       description: "Nettoyage auto mobile à Wanze : intérieur, extérieur, pack complet. Déplacement gratuit ≤25 km. Réservez votre créneau en ligne.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-wanze.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-wanze.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function WanzePage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Wanze",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Wanze", url: "https://www.shineandgo.be/nettoyage-voiture-wanze" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Wanze", url: "https://shineandgo.be/nettoyage-voiture-wanze" },
     },
     faqs: [
       {

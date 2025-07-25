@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Lavage voiture Dison à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-dison",
+      canonical: "https://shineandgo.be/nettoyage-voiture-dison",
     },
     openGraph: {
       title: "Lavage voiture à Dison (Wallonie) | Shine&Go se déplace chez vous",
       description: "Lavage voiture Dison à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-dison.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-dison.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Dison",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Lavage voiture à Dison (Wallonie) | Shine&Go se déplace chez vous",
       description: "Lavage voiture Dison à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-dison.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-dison.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function DisonPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Dison",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Dison", url: "https://www.shineandgo.be/nettoyage-voiture-dison" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Dison", url: "https://shineandgo.be/nettoyage-voiture-dison" },
     },
     faqs: [
       {

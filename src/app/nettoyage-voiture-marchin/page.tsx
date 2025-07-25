@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Besoin d’un car wash à domicile à Marchin ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-marchin",
+      canonical: "https://shineandgo.be/nettoyage-voiture-marchin",
     },
     openGraph: {
       title: "Nettoyage voiture Marchin à domicile | Résultat showroom garanti",
       description: "Besoin d’un car wash à domicile à Marchin ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-marchin.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-marchin.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Marchin",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Nettoyage voiture Marchin à domicile | Résultat showroom garanti",
       description: "Besoin d’un car wash à domicile à Marchin ? Shine&Go vient chez vous : nettoyage intérieur & extérieur, finition pro, sans file d’attente.",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-marchin.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-marchin.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function MarchinPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Marchin",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Marchin", url: "https://www.shineandgo.be/nettoyage-voiture-marchin" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Marchin", url: "https://shineandgo.be/nettoyage-voiture-marchin" },
     },
     faqs: [
       {

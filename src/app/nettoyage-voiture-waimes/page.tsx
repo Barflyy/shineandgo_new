@@ -11,14 +11,14 @@ export const generateMetadata = (): Metadata => {
     description: "Lavage voiture Waimes à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
-      canonical: "https://www.shineandgo.be/nettoyage-voiture-waimes",
+      canonical: "https://shineandgo.be/nettoyage-voiture-waimes",
     },
     openGraph: {
       title: "Nettoyage voiture à domicile à Waimes | Shine&Go (service premium)",
       description: "Lavage voiture Waimes à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
       images: [
         {
-          url: "https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-waimes.jpg",
+          url: "https://shineandgo.be/images/avant-apres-nettoyage-voiture-waimes.jpg",
           width: 1200,
           height: 630,
           alt: "nettoyage voiture domicile Waimes",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: "Nettoyage voiture à domicile à Waimes | Shine&Go (service premium)",
       description: "Lavage voiture Waimes à domicile : aspirateur, mousse active, protection cire. Formules dès 39€. Satisfaction garantie !",
-      images: ["https://www.shineandgo.be/images/avant-apres-nettoyage-voiture-waimes.jpg"],
+      images: ["https://shineandgo.be/images/avant-apres-nettoyage-voiture-waimes.jpg"],
     },
     other: {
       'geo.latitude': "",
@@ -51,9 +51,9 @@ export default function WaimesPage() {
     dateModified: "2025-07-24",
     imageDescription: "Nettoyage voiture à domicile à Waimes",
     breadcrumb: {
-      l1: { name: "Accueil", url: "https://www.shineandgo.be/" },
-      l2: { name: "Nettoyage voiture", url: "https://www.shineandgo.be/#services" },
-      l3: { name: "Nettoyage voiture à Waimes", url: "https://www.shineandgo.be/nettoyage-voiture-waimes" },
+      l1: { name: "Accueil", url: "https://shineandgo.be/" },
+      l2: { name: "Nettoyage voiture", url: "https://shineandgo.be/#services" },
+      l3: { name: "Nettoyage voiture à Waimes", url: "https://shineandgo.be/nettoyage-voiture-waimes" },
     },
     faqs: [
       {

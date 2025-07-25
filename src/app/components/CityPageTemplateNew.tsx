@@ -3707,27 +3707,7 @@ const ReferralSection = ({ cityName }: { cityName: string }) => {
 };
 
 // Schéma FAQ pour SEO
-const FAQSchema = ({ cityName, faqs }: { cityName: string; faqs: any[] }) => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-};
 
 // Template principal
 export default function CityPageTemplateNew({ citySlug, cityName, csvData }: CityPageTemplateProps) {
@@ -3763,8 +3743,7 @@ export default function CityPageTemplateNew({ citySlug, cityName, csvData }: Cit
       <ScrollProgress />
       <Header />
       
-      {/* Schema.org pour FAQ */}
-      <FAQSchema cityName={cityName} faqs={faqs} />
+
       
       {/* 1. Hero avec H1 + promesse (ATTENTION) */}
       <CityHero cityName={cityName} cityData={cityData} />
