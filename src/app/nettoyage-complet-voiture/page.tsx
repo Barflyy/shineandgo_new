@@ -690,13 +690,7 @@ export default function NettoyageCompletPage() {
                 }
               ]
             },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "500",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
+
             "sameAs": [
               "https://www.facebook.com/shineandgo",
               "https://www.instagram.com/shineandgo"
@@ -833,13 +827,7 @@ export default function NettoyageCompletPage() {
             "@context": "https://schema.org/",
             "@type": "Product",
             "name": "Nettoyage complet voiture à domicile Shine&Go",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "ratingCount": "30",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
+
             "offers": {
               "@type": "Offer",
               "priceCurrency": "EUR",
