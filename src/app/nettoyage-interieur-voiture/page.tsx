@@ -139,7 +139,7 @@ export default function NettoyageInterieurPage() {
                     </a>
                     
                     <a
-                      href="https://calendly.com/shineandgo"
+                      href="https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:flex-1 rounded-xl border-2 border-blue-600 bg-transparent px-4 sm:px-6 py-3 sm:py-4 text-center font-bold text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-0 transition-all duration-200 active:scale-95 min-h-[44px] sm:min-h-[48px] flex items-center justify-center relative z-10 cursor-pointer text-sm sm:text-base"
@@ -598,7 +598,7 @@ export default function NettoyageInterieurPage() {
                     📞 0472 30 37 01
                   </a>
                   <a 
-                    href="https://calendly.com/shineandgo"
+                    href="https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-8 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors duration-200 shadow-lg"

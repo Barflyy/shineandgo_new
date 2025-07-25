@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { generateVariedContent } from './spintax';
 
 interface CityMetadata {
   title: string;
@@ -269,7 +270,19 @@ export const getDefaultCityMetadata = (citySlug: string): CityMetadata => {
 };
 
 export const getCityMetadata = (citySlug: string): CityMetadata => {
-  return cityMetadata[citySlug] || getDefaultCityMetadata(citySlug);
+  const defaultMetadata = cityMetadata[citySlug] || getDefaultCityMetadata(citySlug);
+  
+  // Générer du contenu varié avec spintax
+  const cityName = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
+  const variedContent = generateVariedContent(cityName);
+  
+  return {
+    title: variedContent.title,
+    description: variedContent.metaDescription,
+    keywords: defaultMetadata.keywords,
+    ogTitle: variedContent.ogTitle,
+    ogDescription: variedContent.ogDescription
+  };
 };
 
 export const generateCityMetadata = (citySlug: string): Metadata => {
@@ -285,7 +298,7 @@ export const generateCityMetadata = (citySlug: string): Metadata => {
       type: 'website',
       locale: 'fr_FR',
       siteName: 'Shine&Go',
-      url: `https://www.shineandgo.be/zone-intervention/${citySlug}`,
+      url: `https://www.shineandgo.be/nettoyage-voiture-${citySlug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -304,7 +317,7 @@ export const generateCityMetadata = (citySlug: string): Metadata => {
       },
     },
     alternates: {
-      canonical: `https://www.shineandgo.be/zone-intervention/${citySlug}`,
+      canonical: `https://www.shineandgo.be/nettoyage-voiture-${citySlug}`,
     },
   };
 };

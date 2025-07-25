@@ -25,7 +25,7 @@ const faqData = [
   },
   {
     question: "Dans quelles zones proposez-vous le service ?",
-    answer: "Toute la Wallonie, déplacement gratuit ≤ 25 km de Herve."
+    answer: "Toute la Wallonie, déplacement gratuit ≤ 25 km à partir de Herve."
   },
   {
     question: "Y a-t-il une garantie sur le lavage voiture ?",
@@ -38,7 +38,7 @@ export default function FAQ() {
 
   const handleBooking = () => {
     try {
-      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }

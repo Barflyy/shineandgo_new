@@ -212,20 +212,35 @@ html {
   }
 }
 
-/* Optimisations pour les petits écrans (iPhone SE) */
+/* Optimisations pour les petits écrans (iPhone SE) avec font-size-adjust */
 @media screen and (max-width: 375px) {
   .text-hero-title {
     font-size: clamp(2rem, 1.25rem + 2.5vw, 3rem);
     line-height: 1.15;
+    font-size-adjust: 0.5; /* Améliore la lisibilité sur petit écran */
   }
   
   .text-hero-subtitle {
     font-size: clamp(1rem, 0.875rem + 0.4vw, 1.125rem);
     line-height: 1.5;
+    font-size-adjust: 0.45; /* Optimisation pour le texte secondaire */
   }
   
   .text-cta-primary {
     font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+    font-size-adjust: 0.4; /* Optimisation pour les boutons */
+  }
+  
+  /* Amélioration générale de la lisibilité sur mobile */
+  body {
+    font-size-adjust: 0.5;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Optimisation pour les paragraphes sur mobile */
+  p {
+    font-size-adjust: 0.48;
+    line-height: 1.6;
   }
 }
 
@@ -318,6 +333,18 @@ html {
   scroll-behavior: smooth;
   font-size: 16px; /* Taille de base pour mobile */
   -webkit-text-size-adjust: 100%; /* Empêche le zoom automatique sur iOS */
+  
+  /* Optimisation font-size-adjust pour améliorer la lisibilité sur mobile */
+  font-size-adjust: 0.5; /* Améliore la lisibilité en ajustant la taille x-height */
+  
+  /* Scroll restoration optimisé pour une meilleure UX */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  
+  /* Optimisations pour éviter les clignotements */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   
   /* Variables pour les safe areas */
   --sat: env(safe-area-inset-top, 0px);
@@ -504,7 +531,7 @@ body {
   }
 }
 
-/* Scroll progress indicator */
+/* Scroll progress indicator optimisé */
 #scroll-progress {
   position: fixed;
   top: 0;
@@ -517,6 +544,63 @@ body {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transition: transform 0.1s ease-out;
+}
+
+/* Animation douce scroll restoration pour améliorer l'UX */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimisation du scroll restoration pour les navigateurs modernes */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Animation douce pour les ancres */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Animation douce pour les scrolls programmatiques */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimisation pour les éléments avec scroll */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+/* Animation douce pour les transitions de page */
+.page-transition {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 /* Scroll-snap container optimizations */

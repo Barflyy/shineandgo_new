@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, ArrowRight, Car, Sparkles, Shield, Users, Star, Ca
 export default function Footer() {
   const handleBooking = () => {
     try {
-      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }
@@ -136,7 +136,7 @@ export default function Footer() {
                   <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
                     <MapPin className="w-4 h-4 text-blue-400" />
                   </div>
-                  <span className="text-sm">Herve et alentours (déplacement gratuit ≤ 25 km)</span>
+                  <span className="text-sm">Herve et alentours (déplacement gratuit ≤ 25 km à partir de Herve)</span>
                 </div>
               </li>
               <li>

@@ -160,9 +160,9 @@ export default function HomePage() {
               },
               {
                 "@type": "WebPage",
-                "name": "Zones d'intervention",
-                "url": "https://www.shineandgo.be/zone-intervention",
-                "description": "Zones de service de nettoyage voiture à domicile en Wallonie"
+                "name": "Services de nettoyage",
+                "url": "https://www.shineandgo.be/#services",
+                "description": "Services de nettoyage voiture à domicile en Wallonie"
               }
             ]
           })

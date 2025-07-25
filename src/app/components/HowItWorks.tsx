@@ -44,7 +44,7 @@ export default function HowItWorks() {
 
   const handleBooking = () => {
     try {
-      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }

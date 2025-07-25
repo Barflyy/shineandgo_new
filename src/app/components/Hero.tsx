@@ -17,7 +17,7 @@ export default function Hero() {
     
     // Ouverture Calendly
     try {
-      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }
@@ -111,9 +111,7 @@ export default function Hero() {
                   aria-label="Réserver maintenant"
                 >
                   <span className="flex items-center gap-1.5 sm:gap-2">
-                    <span>📞 <strong>0472 30 37 01</strong></span>
-                    <span>•</span>
-                    <span><strong>[Réserver maintenant]</strong></span>
+                    <span>📅 <strong>Réserver maintenant</strong></span>
                   </span>
                 </button>
                 

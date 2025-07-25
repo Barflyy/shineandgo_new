@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import "./fonts.css";
 import Analytics from "./analytics";
+import SmoothScroll from "./components/SmoothScroll";
 import { generateStructuredData } from "./config/google-my-business";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -13,6 +14,7 @@ const inter = Inter({
   display: 'swap',
   preload: true,
   variable: '--font-inter',
+  fallback: ['system-ui', 'Arial', 'sans-serif'],
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -21,6 +23,7 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
   preload: true,
   variable: '--font-display',
+  fallback: ['Inter', 'system-ui', 'Arial', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
@@ -145,24 +148,26 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body className="font-inter antialiased relative min-h-screen touch-optimized scroll-mobile overscroll-contain">
-        {/* Enhanced Site Background */}
-        <div className="fixed inset-0 -z-50 overflow-hidden">
-          {/* Base gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50"></div>
-          
-          {/* Geometric shapes for depth */}
-          <div className="absolute top-0 left-0 w-full h-full">
-            {/* Large decorative circles */}
-            <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-indigo-200/30 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-indigo-100/20 to-blue-200/30 rounded-full blur-3xl animate-pulse"></div>
+        <SmoothScroll>
+          {/* Enhanced Site Background */}
+          <div className="fixed inset-0 -z-50 overflow-hidden">
+            {/* Base gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50"></div>
             
-            {/* Medium decorative elements */}
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-200/10 to-indigo-300/20 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-gradient-to-tl from-indigo-200/10 to-blue-300/20 rounded-full blur-2xl"></div>
+            {/* Geometric shapes for depth */}
+            <div className="absolute top-0 left-0 w-full h-full">
+              {/* Large decorative circles */}
+              <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-indigo-200/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-indigo-100/20 to-blue-200/30 rounded-full blur-3xl animate-pulse"></div>
+              
+              {/* Medium decorative elements */}
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-200/10 to-indigo-300/20 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-gradient-to-tl from-indigo-200/10 to-blue-300/20 rounded-full blur-2xl"></div>
+            </div>
           </div>
-        </div>
 
-        {children}
+          {children}
+        </SmoothScroll>
         <SpeedInsights />
       </body>
     </html>

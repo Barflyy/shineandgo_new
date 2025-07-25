@@ -20,7 +20,7 @@ export default function Header() {
 
   const handleBooking = () => {
     try {
-      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }
@@ -37,7 +37,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-12 sm:h-14 md:h-16 lg:h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 min-w-0">
+          <Link href="/" className="flex items-center space-x-2 min-w-0" aria-label="Retour à l'accueil - Shine&Go">
             <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-shine-blue-dark break-words min-w-0">
               Shine&Go
             </div>
@@ -47,25 +47,43 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {/* Services Dropdown */}
             <div className="relative">
-              <button
-                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                onBlur={() => setTimeout(() => setIsServicesDropdownOpen(false), 200)}
-                className="flex items-center gap-1 text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
-              >
-                Services
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
+                          <button
+              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+              onBlur={() => setTimeout(() => setIsServicesDropdownOpen(false), 200)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setIsServicesDropdownOpen(!isServicesDropdownOpen);
+                }
+                if (e.key === 'Escape') {
+                  setIsServicesDropdownOpen(false);
+                }
+              }}
+              aria-expanded={isServicesDropdownOpen}
+              aria-haspopup="true"
+              aria-label="Menu des services"
+              className="flex items-center gap-1 text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md"
+            >
+              Services
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
               
               {/* Services Dropdown Menu */}
               {isServicesDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-lg z-50">
+                <div 
+                  className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-lg z-50"
+                  role="menu"
+                  aria-label="Services disponibles"
+                >
                   <div className="py-2">
                     <Link
                       href="/nettoyage-interieur-voiture"
-                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-inset rounded-md"
                       onClick={() => setIsServicesDropdownOpen(false)}
+                      role="menuitem"
+                      aria-label="Nettoyage intérieur voiture - Aspiration et protection UV"
                     >
-                      <span className="text-lg">🧹</span>
+                      <span className="text-lg" aria-hidden="true">🧹</span>
                       <div>
                         <div className="font-medium">Nettoyage intérieur</div>
                         <div className="text-sm text-gray-500">Aspiration & protection UV</div>
@@ -73,10 +91,12 @@ export default function Header() {
                     </Link>
                     <Link
                       href="/nettoyage-exterieur-voiture"
-                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-inset rounded-md"
                       onClick={() => setIsServicesDropdownOpen(false)}
+                      role="menuitem"
+                      aria-label="Nettoyage extérieur voiture - Carrosserie et protection"
                     >
-                      <span className="text-lg">🚿</span>
+                      <span className="text-lg" aria-hidden="true">🚿</span>
                       <div>
                         <div className="font-medium">Nettoyage extérieur</div>
                         <div className="text-sm text-gray-500">Carrosserie & protection</div>
@@ -84,10 +104,12 @@ export default function Header() {
                     </Link>
                     <Link
                       href="/nettoyage-complet-voiture"
-                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-inset rounded-md"
                       onClick={() => setIsServicesDropdownOpen(false)}
+                      role="menuitem"
+                      aria-label="Nettoyage complet voiture - Intérieur et extérieur"
                     >
-                      <span className="text-lg">✨</span>
+                      <span className="text-lg" aria-hidden="true">✨</span>
                       <div>
                         <div className="font-medium">Nettoyage complet</div>
                         <div className="text-sm text-gray-500">Intérieur + extérieur</div>
@@ -99,12 +121,25 @@ export default function Header() {
             </div>
             <button
               onClick={() => {
-                // Redirection vers la page zones d'intervention
-                window.location.href = '/zone-intervention';
+                // Scroll vers la section services
+                const servicesSection = document.getElementById('services-section');
+                if (servicesSection) {
+                  servicesSection.scrollIntoView({ behavior: 'smooth' });
+                }
               }}
-              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  const servicesSection = document.getElementById('services-section');
+                  if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
+              aria-label="Aller à la section services"
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
             >
-              Zones
+              Services
             </button>
             <button
               onClick={() => {
@@ -114,7 +149,17 @@ export default function Header() {
                   testimonialsSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  const testimonialsSection = document.getElementById('testimonials-section');
+                  if (testimonialsSection) {
+                    testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
+              aria-label="Aller à la section avis clients"
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
             >
               Avis
             </button>
@@ -126,7 +171,17 @@ export default function Header() {
                   faqSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  const faqSection = document.getElementById('faq-section');
+                  if (faqSection) {
+                    faqSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
+              aria-label="Aller à la section questions fréquentes"
+              className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
             >
               FAQ
             </button>
@@ -136,14 +191,22 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <a 
               href="tel:+32472303701"
-              className="flex items-center space-x-2 text-shine-blue-dark hover:text-shine-blue-primary min-w-0"
+              className="flex items-center space-x-2 text-shine-blue-dark hover:text-shine-blue-primary min-w-0 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
+              aria-label="Appeler Shine&Go au 0472 30 37 01"
             >
-              <Phone className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+              <Phone className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" aria-hidden="true" />
               <span className="font-medium break-words min-w-0 text-sm sm:text-base">0472 30 37 01</span>
             </a>
             <button
               onClick={handleBooking}
-              className="inline-flex items-center gap-1 lg:gap-2 rounded-full bg-shine-blue-primary px-2.5 sm:px-3 lg:px-6 py-1.5 sm:py-2 lg:py-3 text-xs lg:text-sm font-semibold text-white shadow-md hover:bg-shine-blue-light focus-visible:outline focus-visible:ring-2 focus-visible:ring-shine-blue-primary min-w-0"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleBooking();
+                }
+              }}
+              aria-label="Réserver un nettoyage voiture maintenant"
+              className="inline-flex items-center gap-1 lg:gap-2 rounded-full bg-shine-blue-primary px-2.5 sm:px-3 lg:px-6 py-1.5 sm:py-2 lg:py-3 text-xs lg:text-sm font-semibold text-white shadow-md hover:bg-shine-blue-light focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-shine-blue-primary min-w-0"
             >
               <span className="break-words min-w-0 hidden lg:inline">Réserver maintenant</span>
               <span className="break-words min-w-0 lg:hidden">Réserver</span>
@@ -153,9 +216,17 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-1 sm:p-1.5 md:p-2 text-shine-blue-dark hover:text-shine-blue-primary"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+              }
+            }}
+            aria-expanded={isMobileMenuOpen}
+            aria-label={isMobileMenuOpen ? "Fermer le menu mobile" : "Ouvrir le menu mobile"}
+            className="lg:hidden p-1 sm:p-1.5 md:p-2 text-shine-blue-dark hover:text-shine-blue-primary focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md"
           >
-            {isMobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />}
+            {isMobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" aria-hidden="true" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" aria-hidden="true" />}
           </button>
         </div>
 
@@ -196,13 +267,16 @@ export default function Header() {
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setTimeout(() => {
-                      // Redirection vers la page zones d'intervention
-                      window.location.href = '/zone-intervention';
+                      // Scroll vers la section services
+                      const servicesSection = document.getElementById('services-section');
+                      if (servicesSection) {
+                        servicesSection.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }, 100);
                   }}
                   className="w-full text-left block py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-sm sm:text-base md:text-lg cursor-pointer break-words min-w-0"
                 >
-                  Zones d&apos;intervention
+                  Nos Services
                 </button>
                 <button
                   onClick={() => {

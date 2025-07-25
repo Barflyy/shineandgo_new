@@ -105,7 +105,7 @@ const services = [
 export default function ServicesSection() {
   const handleBooking = () => {
     try {
-      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }
@@ -113,7 +113,7 @@ export default function ServicesSection() {
 
   const handleServiceBooking = () => {
     try {
-      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go?hide_event_type_details=1&hide_gdpr_banner=1', '_blank', 'noopener,noreferrer');
+      window.open('https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }
@@ -296,7 +296,7 @@ export default function ServicesSection() {
                     <h4 className="text-lg font-bold text-slate-900">Zone gratuite</h4>
                   </div>
                   <p className="text-slate-700 mb-3">
-                    <span className="font-semibold text-green-600">Gratuit</span> dans un rayon de 25 km autour de Herve
+                    <span className="font-semibold text-green-600">Gratuit</span> dans un rayon de 25 km à partir de Herve
                   </p>
                   <p className="text-sm text-slate-600">
                     Codes postaux : <span className="font-mono font-semibold">4650–4850</span>
