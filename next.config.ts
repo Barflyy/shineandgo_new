@@ -13,12 +13,14 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+  },
+  
+  // Configuration Turbopack (remplace experimental.turbo)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
     },
   },
@@ -122,6 +124,34 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Optimisations pour les polices
+      {
+        source: '/fonts/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+      // Optimisations pour les CSS critiques
+      {
+        source: '/_next/static/css/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Content-Type',
+            value: 'text/css',
+          },
+        ],
+      },
     ];
   },
   
@@ -149,6 +179,13 @@ const nextConfig: NextConfig = {
             chunks: 'all',
             enforce: true,
           },
+          // Optimisation spécifique pour les CSS
+          styles: {
+            name: 'styles',
+            test: /\.css$/,
+            chunks: 'all',
+            enforce: true,
+          },
         },
       };
       
@@ -164,6 +201,15 @@ const nextConfig: NextConfig = {
             },
           },
         ],
+      });
+      
+      // Optimisation des polices
+      config.module.rules.push({
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/fonts/[name].[hash][ext]',
+        },
       });
     }
     

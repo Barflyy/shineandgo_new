@@ -4,6 +4,7 @@ import "./globals.css";
 import "./fonts.css";
 import Analytics from "./analytics";
 import SmoothScroll from "./components/SmoothScroll";
+import CriticalCSS from "./components/CriticalCSS";
 import { generateStructuredData } from "./config/google-my-business";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -132,12 +133,22 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" />
+        
+        {/* Préchargement des ressources critiques */}
+        <link rel="preload" href="/fonts/Lemfont-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Lemfont-Bold.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        
+        {/* DNS prefetch pour les ressources externes */}
+        <link rel="dns-prefetch" href="//assets.calendly.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        
         {/* Le canonical sera défini par chaque page via generateMetadata */}
         <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content="X08CcPH1dVGJLHAq8ykJr8YQlNOuOp2OYcGqMFB7bIE" />
         
-        {/* Calendly Widget Script */}
-        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        {/* Calendly Widget Script - chargement différé */}
+        <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
         
         {/* Structured Data */}
         <script
@@ -148,6 +159,7 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body className="font-inter antialiased relative min-h-screen touch-optimized scroll-mobile overscroll-contain">
+        <CriticalCSS />
         <SmoothScroll>
           {/* Enhanced Site Background */}
           <div className="fixed inset-0 -z-50 overflow-hidden">

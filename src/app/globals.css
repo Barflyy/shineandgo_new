@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
 
 /* ===== TYPOGRAPHIE FLUIDE OPTIMISÉE ===== */
 @layer utilities {
@@ -98,1943 +95,251 @@
   }
   
   .text-hero-subtitle {
-    font-size: clamp(1rem, 0.75rem + 0.8vw, 1.25rem);
-    line-height: 1.4;
-  }
-  
-  /* Container queries pour adaptation fine */
-  .text-hero-title-container {
-    font-size: clamp(1.5rem, 0.875rem + 1.5vw, 2.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-  }
-  
-  .text-hero-subtitle-container {
-    font-size: clamp(0.875rem, 0.625rem + 0.6vw, 1.125rem);
+    font-size: clamp(1rem, 0.75rem + 0.8vw, 1.5rem);
     line-height: 1.4;
   }
 }
 
-/* ===== OPTIMISATIONS D'ACCESSIBILITÉ POUR LA TYPOGRAPHIE FLUIDE ===== */
-
-/* Base HTML pour respecter le zoom utilisateur */
+/* ===== STYLES DE BASE OPTIMISÉS ===== */
 html {
-  font-size: 100%; /* Laisse le zoom utilisateur intact */
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Rapport line-height constant pour éviter les "lignes collées" */
 .text-fluid-h1,
 .text-fluid-h2,
 .text-fluid-h3,
-.text-hero-title {
-  line-height: 1.1;
+.text-fluid-h4,
+.text-fluid-h5,
+.text-fluid-h6 {
+  font-weight: 700;
+  color: #1E293B;
 }
 
 .text-fluid-body,
-.text-fluid-large,
-.text-hero-subtitle {
-  line-height: 1.4;
+.text-fluid-p {
+  font-weight: 400;
+  color: #475569;
+  line-height: 1.6;
 }
 
 .text-fluid-small,
-.text-cta-primary,
-.text-cta-secondary {
-  line-height: 1.5;
+.text-fluid-caption {
+  font-weight: 400;
+  color: #64748B;
 }
 
-.text-badge,
-.text-caption {
-  line-height: 1.3;
+.text-badge {
+  font-weight: 600;
+  color: #2563EB;
 }
 
-/* Support pour prefers-reduced-motion */
+/* ===== OPTIMISATIONS MOBILES ===== */
 @media (prefers-reduced-motion: reduce) {
   .text-fluid-h1,
   .text-fluid-h2,
   .text-fluid-h3,
-  .text-hero-title,
-  .text-hero-subtitle,
-  .text-cta-primary,
-  .text-cta-secondary,
-  .text-badge,
-  .text-caption {
-    /* Désactiver les animations de texte si l'utilisateur préfère moins de mouvement */
+  .text-fluid-h4,
+  .text-fluid-h5,
+  .text-fluid-h6,
+  .text-fluid-body,
+  .text-fluid-p,
+  .text-fluid-small,
+  .text-fluid-caption,
+  .text-badge {
     animation: none !important;
     transition: none !important;
   }
 }
 
-/* Test de zoom 125% / 150% - s'assurer que clamp() ne bride pas la lisibilité */
-@media screen and (min-resolution: 120dpi) {
-  .text-fluid-h1 {
-    font-size: clamp(2.75rem, 1.75rem + 3vw, 5rem);
-  }
-  
-  .text-fluid-h2 {
-    font-size: clamp(2.25rem, 1.5rem + 2vw, 4rem);
-  }
-  
-  .text-hero-title {
-    font-size: clamp(2.5rem, 1.75rem + 3vw, 4.5rem);
-  }
-}
-
-/* Support pour text-balance (si disponible) */
-@supports (text-wrap: balance) {
-  .text-fluid-h1,
-  .text-fluid-h2,
-  .text-fluid-h3,
-  .text-hero-title {
-    text-wrap: balance;
-  }
-}
-
-/* Optimisations pour les écrans haute densité */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .text-fluid-h1,
-  .text-fluid-h2,
-  .text-fluid-h3,
-  .text-hero-title {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-}
-
-/* Container queries pour la typographie adaptative */
-@container (min-width: 28rem) {
-  .text-hero-title {
-    font-size: clamp(2.25rem, 1.25rem + 2vw, 3.5rem);
-  }
-  
-  .text-hero-subtitle {
-    font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem);
-  }
-}
-
-/* Optimisations pour les petits écrans (iPhone SE) avec font-size-adjust */
-@media screen and (max-width: 375px) {
-  .text-hero-title {
-    font-size: clamp(2rem, 1.25rem + 2.5vw, 3rem);
-    line-height: 1.15;
-    font-size-adjust: 0.5; /* Améliore la lisibilité sur petit écran */
-  }
-  
-  .text-hero-subtitle {
-    font-size: clamp(1rem, 0.875rem + 0.4vw, 1.125rem);
-    line-height: 1.5;
-    font-size-adjust: 0.45; /* Optimisation pour le texte secondaire */
-  }
-  
-  .text-cta-primary {
-    font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
-    font-size-adjust: 0.4; /* Optimisation pour les boutons */
-  }
-  
-  /* Amélioration générale de la lisibilité sur mobile */
-  body {
-    font-size-adjust: 0.5;
-    text-rendering: optimizeLegibility;
-  }
-  
-  /* Optimisation pour les paragraphes sur mobile */
-  p {
-    font-size-adjust: 0.48;
-    line-height: 1.6;
-  }
-}
-
-/* Optimisations pour les très grands écrans */
-@media screen and (min-width: 1920px) {
-  .text-hero-title {
-    font-size: clamp(3rem, 2rem + 2vw, 5rem);
-  }
-  
-  .text-hero-subtitle {
-    font-size: clamp(1.25rem, 1rem + 0.5vw, 1.75rem);
-  }
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  
-  /* Design System "Lemlist" - Couleurs personnalisées */
-  --color-accent: #2563EB;
-  --color-accent-hover: #3B82F6;
-  --color-surface-light: #F5F9FF;
-  --color-surface-cta: #E9F6FF;
-  --color-text-primary: #1E293B;
-  --color-ui-border: #E2E8F0;
-  
-  /* Couleurs Tailwind équivalentes */
-  --color-blue-600: #2563EB;
-  --color-blue-500: #3B82F6;
-  --color-sky-50: #F5F9FF;
-  --color-sky-100: #E9F6FF;
-  --color-slate-900: #1E293B;
-  --color-slate-200: #E2E8F0;
-  
-  /* Couleurs spécifiques pour les sections */
-  --color-hero-bg: #F5F9FF;
-  --color-hero-text: #1E293B;
-  --color-benefits-bg: #F0F9FF;
-  --color-benefits-text: #0C4A6E;
-  --color-process-bg: #FEF7FF;
-  --color-process-text: #581C87;
-  --color-services-bg: #F0FDF4;
-  --color-services-text: #166534;
-  --color-testimonials-bg: #FFFBEB;
-  --color-testimonials-text: #92400E;
-  --color-faq-bg: #EEF2FF;
-  --color-faq-text: #3730A3;
-  --color-zones-bg: #F0FDFA;
-  --color-zones-text: #0F766E;
-}
-
-/* Configuration globale mobile-first */
-html {
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
-  scroll-behavior: smooth;
-  font-size: 16px; /* Taille de base pour mobile */
-  -webkit-text-size-adjust: 100%; /* Empêche le zoom automatique sur iOS */
-  
-  /* Optimisation font-size-adjust pour améliorer la lisibilité sur mobile */
-  font-size-adjust: 0.5; /* Améliore la lisibilité en ajustant la taille x-height */
-  
-  /* Scroll restoration optimisé pour une meilleure UX */
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  
-  /* Optimisations pour éviter les clignotements */
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
-  /* Variables pour les safe areas */
-  --sat: env(safe-area-inset-top, 0px);
-  --sab: env(safe-area-inset-bottom, 0px);
-  --sal: env(safe-area-inset-left, 0px);
-  --sar: env(safe-area-inset-right, 0px);
-  
-  /* Variables pour la hauteur du header selon spécifications funnel */
-  --header-height: 60px; /* 60px mobile */
-  
-  /* Media queries pour ajuster la hauteur du header */
-  @media (min-width: 640px) { /* sm breakpoint */
-    --header-height: 64px; /* 64px tablet */
-  }
-  
-  @media (min-width: 768px) { /* md breakpoint */
-    --header-height: 72px; /* 72px desktop selon specs */
-  }
-}
-
-/* Configuration du body mobile-first */
+/* ===== STYLES CRITIQUES POUR LE RENDU INITIAL ===== */
 body {
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  
-  /* Optimisations mobile */
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  
-  /* Permettre la sélection de texte sur les éléments appropriés */
-  * {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-  }
-  
-  /* Empêcher la sélection sur les éléments interactifs */
-  button, .btn, [role="button"], a {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #1E293B;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Classes utilitaires pour Inter */
 .font-inter {
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif !important;
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
-.font-sans {
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif !important;
-}
-
-/* Fallback pour les navigateurs qui ne supportent pas svh */
-@supports not (height: 100svh) {
-  .min-h-svh {
-    min-height: 100vh;
-  }
-  
-  .snap-start {
-    min-height: 100vh;
-  }
-}
-
-/* Optimisations spécifiques pour iPhone SE (petit écran) */
-@media screen and (max-width: 375px) and (max-height: 667px) {
-  .hero-content {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    gap: 0.5rem;
-  }
-  
-  .hero-title {
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 0.8rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
-  }
-  
-  .hero-buttons {
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .hero-buttons a,
-  .hero-buttons button {
-    padding: 0.6rem 1.25rem;
-    font-size: 0.8rem;
-  }
-  
-  .hero-trust {
-    gap: 0.75rem;
-    font-size: 0.7rem;
-  }
-  
-  .hero-trust svg {
-    width: 0.875rem;
-    height: 0.875rem;
-  }
-}
-
-/* Optimisations pour iPhone 12/13/14 (écran moyen) */
-@media screen and (min-width: 390px) and (max-width: 428px) and (min-height: 844px) {
-  .hero-content {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    gap: 1rem;
-  }
-  
-  .hero-title {
-    font-size: clamp(1.75rem, 4.5vw, 2.25rem);
-    margin-bottom: 1rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-  }
-  
-  .hero-buttons {
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  .hero-buttons a,
-  .hero-buttons button {
-    padding: 0.875rem 1.75rem;
-    font-size: 0.95rem;
-  }
-  
-  .hero-trust {
-    gap: 0.875rem;
-    font-size: 0.8rem;
-  }
-}
-
-/* Optimisations pour iPhone Plus/Pro Max (grand écran) */
-@media screen and (min-width: 428px) and (max-width: 926px) and (min-height: 926px) {
-  .hero-content {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    gap: 1.25rem;
-  }
-  
-  .hero-title {
-    font-size: clamp(2rem, 5vw, 2.75rem);
-    margin-bottom: 1.25rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.75rem;
-    line-height: 1.5;
-  }
-  
-  .hero-buttons {
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .hero-buttons a,
-  .hero-buttons button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-  
-  .hero-trust {
-    gap: 1rem;
-    font-size: 0.875rem;
-  }
-}
-
-/* Scroll progress indicator optimisé */
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #2563EB, #3B82F6);
-  z-index: 9999;
-  transform-origin: left;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 0.1s ease-out;
-}
-
-/* Animation douce scroll restoration pour améliorer l'UX */
-html {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Optimisation du scroll restoration pour les navigateurs modernes */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Animation douce pour les ancres */
-  html:focus-within {
-    scroll-behavior: smooth;
-  }
-}
-
-/* Animation douce pour les scrolls programmatiques */
-.smooth-scroll {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Optimisation pour les éléments avec scroll */
-.scroll-container {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  scroll-behavior: smooth;
-}
-
-/* Animation douce pour les transitions de page */
-.page-transition {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.page-transition-enter {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.page-transition-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-transition-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-transition-exit-active {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-/* Scroll-snap container optimizations */
-.snap-y {
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-}
-
-.snap-start {
-  scroll-snap-align: start;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Ensure sections take full viewport height */
-.snap-start > * {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Ensure smooth scrolling works with snap */
-html {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Prevent iOS rubber-band scrolling on the main container */
-.overscroll-contain {
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Progressive enhancement: if snap not supported, layout still functions */
-@supports not (scroll-snap-type: y mandatory) {
-  .snap-y {
-    scroll-snap-type: none;
-  }
-  
-  .snap-start {
-    scroll-snap-align: none;
-    min-height: auto;
-  }
-}
-
-/* Accessibility: Respect reduced motion preferences for scroll-snap */
-@media (prefers-reduced-motion: reduce) {
-  .snap-y {
-    scroll-snap-type: none;
-  }
-  
-  .snap-start {
-    scroll-snap-align: none;
-  }
-  
-  #scroll-progress {
-    display: none;
-  }
-}
-
-/* Keyboard navigation support */
-.snap-start:focus-within {
-  scroll-snap-align: start;
-}
-
-/* Visual indicator for scroll-snap sections (optional) */
-.snap-start::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.snap-start:focus-within::before {
-  opacity: 1;
-}
-
-/* Utilisation d'Inter pour tous les titres */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
-  font-weight: 700;
-}
-
-/* Utilisation d'Inter pour le reste du contenu */
-p, span, div, button, a {
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
-}
-
-/* Classes utilitaires pour Space Grotesk */
 .font-display {
-  font-family: var(--font-display), 'Space Grotesk', 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-family: var(--font-display), 'Space Grotesk', Inter, system-ui, sans-serif;
 }
 
-/* Police monospace pour les chiffres (prix, statistiques) */
-.font-mono {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
-  font-variant-numeric: tabular-nums;
-}
-
-/* Classe spécifique pour les prix */
-.price {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-}
-
-/* Prévenir le flou sur le texte pendant les animations */
-* {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Optimisations pour les éléments sans animations */
-[data-framer-motion] {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Optimisation pour éviter le flou sur les textes */
-h1, h2, h3, h4, h5, h6, p, span, div {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* Optimisations pour le texte sans animations */
-.motion-text {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Prévenir le flash de contenu non stylé (FOUC) */
-html {
-  /* Styles de base pour éviter le FOUC */
-}
-
-/* Optimisations GPU sans animations */
+/* ===== UTILITAIRES DE PERFORMANCE ===== */
 .will-change-transform {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
-/* Coupe les anims si l'utilisateur préfère */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  .motion-safe\:animate-fade-up {
-    animation: none !important;
-  }
-  
-  .motion-reduce\:opacity-100 {
-    opacity: 1 !important;
-  }
-}
-
-/* Safe area utilities pour les appareils avec notch/home bar */
-.pt-safe {
-  padding-top: env(safe-area-inset-top);
-}
-
-.pb-safe {
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.px-safe {
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-}
-
-/* Optimisations pour les petits écrans (iPhone SE, etc.) */
-@media (max-height: 700px) {
-  .min-h-svh {
-    min-height: 100svh; /* Fallback pour les navigateurs qui ne supportent pas svh */
-  }
-}
-
-/* Optimisation pour l'hydratation React sans animations */
-body {
-  opacity: 1;
-}
-
-/* Masquer le contenu pendant l'hydratation */
-body[data-hydrating="true"] {
-  opacity: 0;
-}
-
-/* Optimisations spécifiques pour éviter le clignotement sur mobile */
-@media (max-width: 768px) {
-  /* Réduire les animations sur mobile pour éviter le clignotement */
-  .motion-text {
-    will-change: auto;
-    transform: none;
-  }
-  
-  /* Désactiver les animations complexes sur mobile */
-  [data-framer-motion] {
-    will-change: auto;
-  }
-  
-  /* Optimisations pour mobile sans animations */
-* {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-  
-  /* Prévenir le clignotement du header sur mobile */
-  header {
-    transform: translateY(0) !important;
-    transition: none !important;
-  }
-}
-
-/* Optimisations pour les écrans tactiles */
-@media (hover: none) and (pointer: coarse) {
-  /* Désactiver les animations hover sur mobile */
-  .hover\:scale-105:hover,
-  .hover\:scale-110:hover {
-    transform: none !important;
-  }
-  
-  /* Réduire les animations sur écrans tactiles */
-  .motion-text {
-    will-change: auto;
-    transform: none;
-  }
-  
-  /* Optimiser les performances sur mobile */
-  * {
-    backface-visibility: visible;
-    -webkit-backface-visibility: visible;
-  }
-  
-  /* Prévenir le clignotement du header sur écrans tactiles */
-  header {
-    transform: translateY(0) !important;
-    transition: none !important;
-  }
-}
-
-/* Classes responsives pour les boutons sans animations */
-.btn-responsive {
-  @apply inline-flex items-center gap-2 sm:gap-1.5 rounded-full px-6 py-3 text-sm font-semibold focus-visible:outline focus-visible:ring-2 focus-visible:ring-accent;
-}
-
-.btn-primary {
-  @apply bg-accent text-white shadow-md hover:bg-accent-hover;
-}
-
-.btn-secondary {
-  @apply border border-ui-border bg-white text-text-primary shadow-sm hover:bg-slate-50;
-}
-
-.btn-link {
-  @apply text-sm font-medium text-text-primary hover:text-accent;
-}
-
-body::before {
-  content: "";
-  display: none;
-}
-
-/* ===== OPTIMISATIONS SPÉCIFIQUES MOBILE ===== */
-
-/* Viewport height mobile-safe */
-.min-h-mobile-safe {
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
-.h-mobile-safe {
-  height: 100vh;
-  height: 100svh;
-}
-
-/* Containers mobile-first */
-.container-mobile {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 640px) {
-  .container-mobile {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .container-mobile {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container-mobile {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-}
-
-/* Espacements mobile-first */
-.spacing-mobile-y {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-@media (min-width: 640px) {
-  .spacing-mobile-y {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .spacing-mobile-y {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .spacing-mobile-y {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-
-/* Grilles responsive mobile-first */
-.grid-mobile {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .grid-mobile-sm-2 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .grid-mobile-md-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .grid-mobile-md-3 {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .grid-mobile-lg-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .grid-mobile-lg-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Texte mobile-first */
-.text-mobile-sm {
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
-.text-mobile-base {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.text-mobile-lg {
-  font-size: 1.125rem;
-  line-height: 1.4;
-}
-
-.text-mobile-xl {
-  font-size: 1.25rem;
-  line-height: 1.3;
-}
-
-@media (min-width: 640px) {
-  .text-mobile-sm {
-    font-size: 1rem;
-  }
-  
-  .text-mobile-base {
-    font-size: 1.125rem;
-  }
-  
-  .text-mobile-lg {
-    font-size: 1.25rem;
-  }
-  
-  .text-mobile-xl {
-    font-size: 1.5rem;
-  }
-}
-
-/* Boutons mobile optimisés */
-.btn-mobile {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 0.75rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-align: center;
-  transition: all 0.2s ease;
-  min-height: 44px; /* Taille tactile recommandée */
-  min-width: 44px;
-}
-
-@media (min-width: 640px) {
-  .btn-mobile {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-}
-
-/* Optimisations touch pour iOS/Android */
 .touch-optimized {
   -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
   touch-action: manipulation;
 }
 
-/* Scrolling optimisé pour mobile */
-.scroll-mobile {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  scroll-behavior: smooth;
-}
-
-/* Images responsive mobile */
-.img-mobile {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 100%;
-}
-
-/* Aspect ratios mobile-first */
-.aspect-mobile-square {
-  aspect-ratio: 1 / 1;
-}
-
-.aspect-mobile-video {
-  aspect-ratio: 16 / 9;
-}
-
-.aspect-mobile-portrait {
-  aspect-ratio: 3 / 4;
-}
-
-@media (min-width: 640px) {
-  .aspect-mobile-video {
-    aspect-ratio: 16 / 9;
-  }
-  
-  .aspect-mobile-portrait {
-    aspect-ratio: 4 / 3;
-  }
-}
-
-/* Classes pour hauteur header selon funnel specs */
-.h-header {
-  height: var(--header-height);
-}
-
-.h-15 {
-  height: 60px;
-}
-
-.h-18 {
-  height: 72px;
-}
-
-/* ===== RESPONSIVE DESIGN UNIFORME ===== */
-
-/* Optimisations générales pour tous les écrans */
-.container {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* Optimisations pour les écrans moyens et grands */
-@media (min-width: 768px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* Optimisations pour les très grands écrans */
-@media (min-width: 1024px) {
-  .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-/* ===== TYPOGRAPHIE FLUIDE ET CÉSURES ===== */
-
-/* Gestion des mots longs et césures automatiques */
-p, h1, h2, h3, h4, h5, h6, span, div {
-  hyphens: auto;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-}
-
-/* Typographie fluide avec clamp() */
-.text-fluid-1 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-.text-fluid-2 {
-  font-size: clamp(1.25rem, 3vw, 2rem);
-}
-
-.text-fluid-3 {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-.text-fluid-4 {
-  font-size: clamp(1.5rem, 4vw + 0.5rem, 2rem); /* ~24px à 32px */
-}
-
-.text-hero-title {
-  font-size: clamp(2.25rem, 1.5rem + 3vw, 3rem); /* ~36px à 48px, fluide */
-}
-
-/* Support pour text-balance (si disponible) */
-@supports (text-wrap: balance) {
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
-}
-
-/* ===== GRID ET FLEXBOX RESPONSIFS ===== */
-
-/* Grille flexible pour les cartes */
-.grid-responsive {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .grid-responsive {
-    gap: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .grid-responsive {
-    gap: 2rem;
-  }
-}
-
-/* Flexbox responsive pour les boutons */
-.flex-responsive {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-@media (min-width: 640px) {
-  .flex-responsive {
-    gap: 1rem;
-  }
-}
-
-/* ===== OPTIMISATIONS DE PERFORMANCE ===== */
-
-/* Amélioration de l'accessibilité */
+/* ===== ANIMATIONS OPTIMISÉES ===== */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
 
-  html {
-    scroll-behavior: auto;
+/* ===== STYLES SPÉCIFIQUES SHINE&GO ===== */
+.text-shine-blue-primary {
+  color: #2563EB;
+}
+
+.text-shine-blue-dark {
+  color: #1D4ED8;
+}
+
+.text-shine-blue-light {
+  color: #3B82F6;
+}
+
+.bg-shine-blue-primary {
+  background-color: #2563EB;
+}
+
+.bg-shine-blue-dark {
+  background-color: #1D4ED8;
+}
+
+.bg-shine-blue-light {
+  background-color: #3B82F6;
+}
+
+.border-shine-blue-primary {
+  border-color: #2563EB;
+}
+
+.border-shine-blue-dark {
+  border-color: #1D4ED8;
+}
+
+.border-shine-blue-light {
+  border-color: #3B82F6;
+}
+
+/* ===== VARIABLES CSS OPTIMISÉES ===== */
+:root {
+  --header-height: 80px;
+  --container-padding: 1rem;
+  --border-radius: 0.5rem;
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 350ms ease-out;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== RESPONSIVE DESIGN OPTIMISÉ ===== */
+@media (min-width: 640px) {
+  :root {
+    --container-padding: 1.5rem;
   }
 }
 
-/* Optimisation pour les écrans haute densité */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .backdrop-blur-sm {
-    backdrop-filter: blur(8px);
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
   }
 }
 
-/* ===== ANIMATIONS D'APPARITION COMPATIBLES iOS ===== */
-
-/* Animation fade-in-up pour les éléments */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 2.5rem;
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
+/* ===== UTILITAIRES DE LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
-/* Optimisations pour iOS */
-@supports (-webkit-touch-callout: none) {
-  .animate-fade-in-up {
-    -webkit-transform: translateY(20px);
-    -webkit-animation: fadeInUp 0.8s ease-out forwards;
-  }
+.min-h-svh {
+  min-height: 100svh;
 }
 
-/* ===== ANIMATIONS DE FOND RESPECTUEUSES ===== */
-
-/* Animation de pulsation pour les éléments de fond */
-@keyframes bg-pulse {
-  0%, 100% {
-    opacity: 0.1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.2;
-    transform: scale(1.05);
-  }
+.h-screen-minus-header {
+  height: calc(100vh - var(--header-height));
 }
 
-/* Animations de scroll optimisées iPhone */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ===== FOCUS ET ACCESSIBILITÉ ===== */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96) translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-/* Animation de gradient pour les titres */
-@keyframes gradient-x {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 3s ease infinite;
-}
-
-/* Classe pour l'animation de fond avec support pour prefers-reduced-motion */
-.bg-animation {
-  animation: bg-pulse 3s ease-in-out infinite;
-}
-
-/* Désactivation des animations pour les utilisateurs qui préfèrent moins de mouvement */
-@media (prefers-reduced-motion: reduce) {
-  .bg-animation {
-    animation: none;
+/* ===== OPTIMISATIONS MOBILES AVANCÉES ===== */
+@media (hover: none) and (pointer: coarse) {
+  button:hover,
+  a:hover,
+  [role="button"]:hover {
+    transform: none !important;
   }
   
-  /* Désactiver toutes les animations de scroll sur demande */
-  .animate-fade-in-up,
-  .animate-fade-in,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .animate-scale-in {
-    animation: none !important;
-    opacity: 1 !important;
+  .hover\:scale-110:hover {
     transform: none !important;
   }
 }
 
-/* ===== STYLES SPÉCIFIQUES ===== */
-
-/* Styles pour le header */
-.header-scrolled {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* Animation pour le menu mobile */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.menu-mobile-enter {
-  animation: slideDown 0.3s ease-out;
-}
-
-/* Animation pour les éléments du menu mobile */
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-}
-
-.menu-item-enter {
-  animation: slideInFromLeft 0.3s ease-out forwards;
-}
-
-/* Animation pour le menu mobile slide-in */
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Animation pour l'overlay du menu */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Animation pour les boutons du menu */
-@keyframes buttonSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Styles pour le menu mobile amélioré */
-.mobile-menu-overlay {
-  animation: fadeIn 0.3s ease-out;
-}
-
-.mobile-menu-content {
-  animation: slideInRight 0.4s ease-out;
-}
-
-.mobile-menu-button {
-  animation: buttonSlideIn 0.3s ease-out;
-  animation-delay: calc(var(--index) * 0.1s);
-}
-
-/* Amélioration de l'accessibilité pour le menu mobile */
-@media (prefers-reduced-motion: reduce) {
-  .mobile-menu-overlay,
-  .mobile-menu-content,
-  .mobile-menu-button {
-    animation: none;
-    transition: none;
-  }
-}
-
-/* Effet underline animé et translation sur les liens du menu desktop */
-.nav-link {
-  position: relative;
-  transition: color 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.2s cubic-bezier(0.4,0,0.2,1);
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #60a5fa, #06b6d4);
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  opacity: 0.8;
-}
-.nav-link:hover {
-  color: #60a5fa;
-  transform: translateY(-2px) scale(1.05);
-}
-.nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-/* Animations pour les icônes */
-.group:hover .group-hover\:animate-bounce {
-  animation: bounce 1s infinite;
-}
-
-.group:hover .group-hover\:animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* ===== OPTIMISATIONS SPÉCIFIQUES PAR COMPOSANT ===== */
-
-/* Simulateur de devis - Mobile */
-@media (max-width: 768px) {
-  .devis-simulator {
-    padding: 1rem;
-  }
-  
-  .devis-option {
-    margin-bottom: 1rem;
-  }
-  
-  .devis-option-icon {
-    width: 2rem;
-    height: 2rem;
-  }
-  
-  .devis-option-content {
-    padding: 0.75rem;
-  }
-  
-  .devis-option-title {
-    font-size: 0.875rem;
-  }
-  
-  .devis-option-description {
-    font-size: 0.75rem;
-  }
-  
-  .devis-option-price {
-    font-size: 1rem;
-  }
-}
-
-/* ===== ACCESSIBILITÉ ET INTERACTIONS ===== */
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
-  border-radius: 0.25rem;
-}
-
-/* Amélioration du contraste pour la lisibilité */
-.text-gray-300 {
-  color: #d1d5db;
-}
-
-.text-gray-400 {
-  color: #9ca3af;
-}
-
-/* Optimisations pour les écrans tactiles */
-@media (hover: none) and (pointer: coarse) {
-  button:hover,
-  .hover\:scale-105:hover {
-    transform: none;
-  }
-  
-  .hover\:scale-110:hover {
-    transform: none;
-  }
-}
-
-/* ===== OPTIMISATIONS D'IMAGES ===== */
-
+/* ===== STYLES D'IMAGES OPTIMISÉS ===== */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* ===== RÉDUCTION DES ANIMATIONS ===== */
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-pulse,
-  .animate-bounce,
-  .animate-spin {
-    animation: none;
-  }
-  
-  .transition-all,
-  .transition-transform,
-  .transition-opacity {
-    transition: none;
-  }
-}
-
-/* ===== UTILITAIRES RESPONSIFS ===== */
-
-@media (max-width: 480px) {
-  .hidden-mobile {
-    display: none !important;
-  }
-}
-
-@media (min-width: 481px) {
-  .mobile-only {
-    display: none !important;
-  }
-}
-
-/* ===== STYLES DE BASE ===== */
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ===== NOUVELLES COULEURS SHINE&GO ===== */
-
-.text-shine-blue-primary {
-  color: rgb(var(--shine-blue-primary));
-}
-
-.text-shine-blue-dark {
-  color: rgb(var(--shine-blue-dark));
-}
-
-.text-shine-blue-light {
-  color: rgb(var(--shine-blue-light));
-}
-
-.bg-shine-blue-primary {
-  background-color: rgb(var(--shine-blue-primary));
-}
-
-.bg-shine-blue-dark {
-  background-color: rgb(var(--shine-blue-dark));
-}
-
-.bg-shine-blue-light {
-  background-color: rgb(var(--shine-blue-light));
-}
-
-.border-shine-blue-primary {
-  border-color: rgb(var(--shine-blue-primary));
-}
-
-.border-shine-blue-dark {
-  border-color: rgb(var(--shine-blue-dark));
-}
-
-.border-shine-blue-light {
-  border-color: rgb(var(--shine-blue-light));
-}
-
-/* ===== ANIMATIONS PERSONNALISÉES ===== */
-
-@keyframes fadeInMenu {
-  0% {
+/* ===== ANIMATIONS DE BASE ===== */
+@keyframes fadeInUp {
+  from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.fade-in-menu {
-  animation: fadeInMenu 0.3s ease-out forwards;
-}
-
-.fade-in-menu.delay-1 { animation-delay: 0.1s; }
-.fade-in-menu.delay-2 { animation-delay: 0.2s; }
-.fade-in-menu.delay-3 { animation-delay: 0.3s; }
-.fade-in-menu.delay-4 { animation-delay: 0.4s; }
-.fade-in-menu.delay-5 { animation-delay: 0.5s; }
-.fade-in-menu.delay-6 { animation-delay: 0.6s; }
-
-/* ===== VARIABLES CSS ===== */
-
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96%;
-  --accent-foreground: 222.2 84% 4.9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
-  --radius: 0.5rem;
-  --chart-1: 12 76% 61%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
-  --sidebar: 0 0% 100%;
-  --sidebar-foreground: 222.2 84% 4.9%;
-  --sidebar-primary: 222.2 47.4% 11.2%;
-  --sidebar-primary-foreground: 210 40% 98%;
-  --sidebar-accent: 210 40% 96%;
-  --sidebar-accent-foreground: 222.2 84% 4.9%;
-  --sidebar-border: 214.3 31.8% 91.4%;
-  --sidebar-ring: 222.2 84% 4.9%;
-  
-  /* Nouvelles couleurs Shine&Go */
-  --shine-blue-primary: 49, 107, 255;
-  --shine-blue-dark: 33, 56, 86;
-  --shine-blue-light: 59, 130, 246;
-}
-
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
-  --sidebar: 222.2 84% 4.9%;
-  --sidebar-foreground: 210 40% 98%;
-  --sidebar-primary: 210 40% 98%;
-  --sidebar-primary-foreground: 222.2 47.4% 11.2%;
-  --sidebar-accent: 217.2 32.6% 17.5%;
-  --sidebar-accent-foreground: 210 40% 98%;
-  --sidebar-border: 217.2 32.6% 17.5%;
-  --sidebar-ring: 212.7 26.8% 83.9%;
-}
-
-/* ===== OPTIMISATIONS POUR LES ÉCRANS TACTILES ===== */
-
-@media (hover: none) and (pointer: coarse) {
-  * {
-    cursor: default;
-  }
-  
-  body {
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  /* Optimisations animations sur mobile */
-  .animate-fade-in-up,
-  .animate-fade-in,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .animate-scale-in {
-    animation-duration: 0.4s !important;
-    will-change: auto;
-  }
-}
-
-/* ===== ANIMATIONS DE SCROLL OPTIMISÉES ===== */
-
-/* Classes utilitaires pour les animations */
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+  animation: fadeInUp 0.6s ease-out;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  opacity: 0;
+/* ===== UTILITAIRES DE PERFORMANCE ===== */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  opacity: 0;
+.contain-layout {
+  contain: layout;
 }
 
-.animate-slide-in-right {
-  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  opacity: 0;
+.contain-paint {
+  contain: paint;
 }
 
-.animate-scale-in {
-  animation: scaleIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  opacity: 0;
+.contain-size {
+  contain: size;
 }
 
-/* Délais pour animations staggerées */
-.animate-delay-100 { animation-delay: 100ms; }
-.animate-delay-200 { animation-delay: 200ms; }
-.animate-delay-300 { animation-delay: 300ms; }
-.animate-delay-400 { animation-delay: 400ms; }
-.animate-delay-500 { animation-delay: 500ms; }
-.animate-delay-600 { animation-delay: 600ms; }
-
-/* Animation spéciale pour clip-path reveal */
-@keyframes clipReveal {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0 0% 0 0);
-  }
+.contain-style {
+  contain: style;
 }
-
-.animate-clip-reveal {
-  animation: clipReveal 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* Animation pour flip card */
-@keyframes flipIn {
-  from {
-    transform: perspective(400px) rotateY(-90deg);
-    opacity: 0;
-  }
-  to {
-    transform: perspective(400px) rotateY(0deg);
-    opacity: 1;
-  }
-}
-
-.animate-flip-in {
-  animation: flipIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  opacity: 0;
-}
-
-/* Optimisations spécifiques iPhone */
-@supports (-webkit-overflow-scrolling: touch) {
-  .animate-fade-in-up,
-  .animate-fade-in,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .animate-scale-in,
-  .animate-clip-reveal,
-  .animate-flip-in {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-  }
-}
-
-/* Classe utilitaire pour parallax */
-.parallax-element {
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-/* Désactiver parallax sur mobile */
-@media (hover: none) and (pointer: coarse) {
-  .parallax-element {
-    transform: none !important;
-  }
-}
-
-/* Amélioration des performances sur Safari/iPhone */
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .animate-fade-in-up,
-  .animate-fade-in,
-  .animate-slide-in-left,
-  .animate-slide-in-right,
-  .animate-scale-in {
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-}
-
-/* Animation pour le bandeau défilant */
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none;
-  }
-}
-
-/* ===== PRÉVENTION DES CLIGNOTEMENTS ===== */
-
-/* Masquer les éléments avant le chargement des animations */
-.hero-preload {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-}
-
-.hero-loaded {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out;
-}
-
-/* ===== OPTIMISATIONS SPÉCIFIQUES SAFARI ===== */
-
-/* Optimisations Safari pour éviter les clignotements */
-@supports (-webkit-touch-callout: none) {
-  /* Forcer l'accélération GPU sur Safari */
-  [data-framer-motion],
-  .hero-animation {
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    perspective: 1000px;
-    -webkit-perspective: 1000px;
-    will-change: transform, opacity;
-  }
-  
-  /* Optimisations spécifiques pour le texte animé */
-  .bg-clip-text {
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-  }
-  
-  /* Prévenir les clignotements sur les éléments de texte */
-  h1, h2, h3, h4, h5, h6, p, span {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-  
-  /* Optimisations pour les éléments positionnés absolument */
-  .absolute {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  
-  /* Optimisations spécifiques pour le texte animé du Hero */
-  .inline-block.relative {
-    display: inline-block !important;
-    position: relative !important;
-    vertical-align: top !important;
-  }
-  
-  /* S'assurer que le positionnement absolu fonctionne correctement */
-  .inline-block.relative .absolute {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    line-height: inherit !important;
-  }
-  
-  /* Réduire les animations continues sur Safari */
-  .animate-float,
-  .animate-pulse,
-  .animate-bounce {
-    animation-duration: 4s !important;
-    animation-timing-function: ease-in-out !important;
-  }
-  
-  /* Optimiser les transitions hover */
-  .hover\:scale-105:hover,
-  .hover\:scale-110:hover {
-    transform: translateZ(0) scale(1.02) !important;
-    -webkit-transform: translateZ(0) scale(1.02) !important;
-  }
-  
-  /* Prévenir les clignotements sur les éléments animés */
-  .motion-safe\:animate-fade-up,
-  .animate-fade-in-up {
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-  }
-}
-
-/* Optimisations pour les appareils à faible performance */
-@media (max-width: 768px) {
-  /* Désactiver les animations continues sur mobile */
-  .animate-float,
-  .animate-pulse,
-  .animate-bounce {
-    animation: none !important;
-  }
-  
-  /* Réduire les animations d'apparition */
-  .animate-fade-in-up {
-    animation-duration: 0.4s !important;
-  }
-  
-  /* Optimiser les performances GPU */
-  [data-framer-motion] {
-    will-change: auto;
-    transform: none;
-  }
-  
-  /* Désactiver les animations sur mobile pour éviter les clignotements */
-  .hero-preload {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-  }
-}
-
-/* Désactiver les animations pour les utilisateurs qui préfèrent moins de mouvement */
-@media (prefers-reduced-motion: reduce) {
-  .hero-preload,
-  .hero-loaded {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    transition: none !important;
-  }
-  
-  [data-framer-motion] {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-/* ===== HERO SANS ANIMATIONS ===== */
-
-/* Animations supprimées pour éviter les clignotements */
 

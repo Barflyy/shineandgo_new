@@ -59,6 +59,13 @@ module.exports = {
       ],
     },
   },
+  // Optimisations de performance
+  corePlugins: {
+    // Désactiver les plugins non utilisés pour réduire la taille
+    preflight: true,
+    container: false, // Utiliser notre propre container
+    accessibility: false, // Gérer manuellement
+  },
   theme: {
     extend: {
       colors: {
@@ -149,6 +156,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/container-queries'),
+    // Optimisation du plugin fluid-type pour réduire la taille
     require('tailwindcss-fluid-type')({
       settings: {
         fontSizeMin: 1.125, // 18px
@@ -174,5 +182,34 @@ module.exports = {
         '6xl': [7, 1],
       },
     }),
+    // Plugin personnalisé pour optimiser les performances
+    function({ addUtilities, theme }) {
+      const newUtilities = {
+        '.content-visibility-auto': {
+          'content-visibility': 'auto',
+          'contain-intrinsic-size': '0 500px',
+        },
+        '.contain-layout': {
+          'contain': 'layout',
+        },
+        '.contain-paint': {
+          'contain': 'paint',
+        },
+        '.contain-size': {
+          'contain': 'size',
+        },
+        '.contain-style': {
+          'contain': 'style',
+        },
+        '.will-change-transform': {
+          'will-change': 'transform',
+        },
+        '.touch-optimized': {
+          '-webkit-tap-highlight-color': 'transparent',
+          'touch-action': 'manipulation',
+        },
+      }
+      addUtilities(newUtilities)
+    }
   ],
 } 
