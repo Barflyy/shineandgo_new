@@ -603,6 +603,44 @@ export default function NettoyageCompletPage() {
             </div>
           </div>
         </section>
+
+        {/* Bloc SEO optimisé */}
+        <section className="text-sm text-gray-500 max-w-5xl mx-auto px-4 py-8 border-t border-gray-100">
+          <h2 className="text-lg font-semibold mb-4 text-gray-700">Nettoyage complet voiture à domicile – Shine&Go</h2>
+
+          <div className="space-y-3">
+            <p>
+              Offrez à votre véhicule un traitement complet avec notre service de 
+              <strong>nettoyage intérieur & extérieur à domicile</strong>. <strong>Shine&Go</strong> vous propose 
+              une prestation ultra-complète, idéale pour redonner à votre voiture son éclat d'origine sans effort.
+            </p>
+
+            <p>
+              Le forfait comprend : <strong>aspiration approfondie</strong>, <strong>nettoyage plastique</strong>, 
+              <strong>vitres intérieures</strong>, <strong>lavage extérieur manuel</strong>, <strong>jantes</strong>, 
+              <strong>protection de carrosserie</strong> et finitions premium. Tout est pris en charge par nos soins 
+              avec des produits de qualité comme <strong>Koch Chemie</strong> et <strong>CarPro Perl</strong>.
+            </p>
+
+            <p>
+              Ce service est particulièrement adapté si vous souhaitez vendre votre véhicule, le rendre après un leasing, 
+              ou simplement repartir sur des bases propres. Il convient à tous les types de véhicules : 
+              <strong>citadine</strong>, <strong>SUV</strong>, <strong>monospace</strong>, <strong>utilitaire</strong>.
+            </p>
+
+            <p>
+              Nous nous déplaçons gratuitement jusqu'à 25 km autour de <strong>Herve</strong> et couvrons aussi 
+              <strong>Soumagne</strong>, <strong>Verviers</strong>, <strong>Liège</strong>, <strong>Seraing</strong>, 
+              <strong>Aywaille</strong>, <strong>Chênée</strong>, <strong>Dison</strong> et plus encore.
+            </p>
+
+            <p className="text-gray-600 font-medium">
+              Réservez dès maintenant votre <strong>nettoyage complet voiture à domicile</strong> en ligne ou via WhatsApp. 
+              <strong>Shine&Go</strong> vous garantit une <strong>intervention rapide</strong>, <strong>un résultat professionnel</strong> 
+              et <strong>une satisfaction totale</strong>.
+            </p>
+          </div>
+        </section>
         
       </main>
 

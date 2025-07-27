@@ -619,6 +619,45 @@ export default function NettoyageExterieurPage() {
             </div>
           </div>
         </section>
+
+        {/* Bloc SEO optimisé */}
+        <section className="text-sm text-gray-500 max-w-5xl mx-auto px-4 py-8 border-t border-gray-100">
+          <h2 className="text-lg font-semibold mb-4 text-gray-700">Lavage extérieur voiture à domicile – Shine&Go</h2>
+
+          <div className="space-y-3">
+            <p>
+              Le <strong>nettoyage extérieur de votre voiture</strong> ne se limite pas à l'esthétique : 
+              il protège votre carrosserie des agressions extérieures (UV, pluie acide, sel, poussières…). 
+              Avec <strong>Shine&Go</strong>, vous bénéficiez d'un <strong>lavage voiture à domicile</strong> 
+              professionnel, rapide et sans compromis.
+            </p>
+
+            <p>
+              Nos prestations incluent un <strong>prélavage à la mousse active</strong> pour décoller les impuretés, 
+              un lavage manuel en douceur pour éviter les micro-rayures, le <strong>nettoyage des jantes</strong>, 
+              des vitres et des seuils de porte. Nous terminons par l'application d'un <strong>protecteur hydrophobe</strong> 
+              de type <strong>ProtectorWax</strong> de chez Koch Chemie.
+            </p>
+
+            <p>
+              Nous intervenons dans toute la <strong>province de Liège</strong> : <strong>Herve</strong>, 
+              <strong>Battice</strong>, <strong>Verviers</strong>, <strong>Fléron</strong>, <strong>Chaudfontaine</strong>, 
+              et bien d'autres. Chaque service est réalisé à domicile, sans besoin d'équipement spécifique de votre part.
+            </p>
+
+            <p>
+              Notre méthode respecte toutes les peintures, y compris les teintes mates ou vernies. 
+              Votre véhicule retrouve un aspect showroom en moins de 45 minutes, sans traces ni résidus.
+            </p>
+
+            <p className="text-gray-600 font-medium">
+              Besoin d'un <strong>lavage extérieur premium</strong> sans bouger de chez vous ? 
+              Contactez-nous sur WhatsApp ou remplissez le 
+              <a href="/nettoyage-exterieur-voiture" className="underline"> formulaire dédié</a>. 
+              Intervention garantie sous 72 h avec <strong>résultat professionnel</strong>.
+            </p>
+          </div>
+        </section>
         
       </main>
 

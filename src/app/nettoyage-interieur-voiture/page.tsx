@@ -610,6 +610,45 @@ export default function NettoyageInterieurPage() {
             </div>
           </div>
         </section>
+
+        {/* Bloc SEO optimisé */}
+        <section className="text-sm text-gray-500 max-w-5xl mx-auto px-4 py-8 border-t border-gray-100">
+          <h2 className="text-lg font-semibold mb-4 text-gray-700">Nettoyage intérieur voiture à domicile – Shine&Go</h2>
+
+          <div className="space-y-3">
+            <p>
+              Le <strong>nettoyage intérieur de votre voiture</strong> est essentiel pour votre confort, votre santé 
+              et la valeur de votre véhicule. Chez <strong>Shine&Go</strong>, nous proposons un service complet 
+              à domicile, dans toute la <strong>province de Liège</strong>, incluant <strong>Herve</strong>, 
+              <strong>Verviers</strong>, <strong>Soumagne</strong> et alentours.
+            </p>
+
+            <p>
+              Notre prestation comprend l'<strong>aspiration en profondeur</strong> des sièges et tapis, 
+              le <strong>nettoyage complet des plastiques</strong>, le <strong>dépoussiérage minutieux</strong>, 
+              le lavage sans traces des vitres et l'application d'un <strong>dressing protecteur</strong> de qualité 
+              comme <strong>CarPro Perl</strong>. Le tout réalisé en moins d'une heure avec une finition professionnelle.
+            </p>
+
+            <p>
+              Nous utilisons des produits haut de gamme tels que <strong>Koch Chemie</strong> et <strong>P&S Xpress</strong>, 
+              parfaitement adaptés aux tissus, cuirs et plastiques. Chaque intervention est pensée pour respecter 
+              les matériaux tout en leur redonnant leur éclat.
+            </p>
+
+            <p>
+              Que vous soyez un particulier ou une entreprise, le service <strong>Shine&Go</strong> s'adapte 
+              à vos besoins. Plus besoin de vous déplacer, notre service de <strong>nettoyage auto à domicile</strong> 
+              vient directement à vous avec tout le matériel nécessaire.
+            </p>
+
+            <p className="text-gray-600 font-medium">
+              Réservez votre <strong>nettoyage intérieur voiture</strong> dès aujourd'hui via WhatsApp ou via notre 
+              <a href="/nettoyage-interieur-voiture" className="underline"> formulaire en ligne</a>. 
+              Intervention rapide sous 72 h avec <strong>résultat garanti</strong>.
+            </p>
+          </div>
+        </section>
         
       </main>
 
