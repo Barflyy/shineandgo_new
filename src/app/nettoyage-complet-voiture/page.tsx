@@ -604,8 +604,8 @@ export default function NettoyageCompletPage() {
           </div>
         </section>
 
-        {/* Bloc SEO optimisé */}
-        <section className="text-sm text-gray-500 max-w-5xl mx-auto px-4 py-8 border-t border-gray-100">
+        {/* Bloc SEO optimisé - Invisible pour les utilisateurs */}
+        <section className="sr-only">
           <h2 className="text-lg font-semibold mb-4 text-gray-700">Nettoyage complet voiture à domicile – Shine&Go</h2>
 
           <div className="space-y-3">
