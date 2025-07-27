@@ -157,6 +157,35 @@ export default function RootLayout({
         />
         
         <Analytics />
+        
+        {/* Service Worker Registration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('✅ Service Worker enregistré:', registration.scope);
+                      
+                      // Vérifier les mises à jour
+                      registration.addEventListener('updatefound', function() {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', function() {
+                          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            console.log('🔄 Nouvelle version du Service Worker disponible');
+                          }
+                        });
+                      });
+                    })
+                    .catch(function(error) {
+                      console.log('❌ Erreur d\'enregistrement du Service Worker:', error);
+                    });
+                });
+              }
+            `
+          }}
+        />
       </head>
       <body className="font-inter antialiased relative min-h-screen touch-optimized scroll-mobile overscroll-contain">
         <CriticalCSS />
