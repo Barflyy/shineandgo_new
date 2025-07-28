@@ -1,79 +1,71 @@
 /**
- * Shine&Go - Page d'accueil optimisée selon nouveau contenu
- * 
- * Structure selon nouveau contenu :
- * 1. Header collant (60-72px) - Logo, nav, numéro, bouton Réserver
- * 2. Hero (above-the-fold) - Badge localisation, H1 bénéfice, sous-titre douleur→solution, triple bénéfice, double CTA, urgence, visuel avant/après 16:9
- * 3. Section "Pourquoi choisir Shine&Go ?" - 4 raisons principales
- * 4. Section "Avant/Après : La Transformation" - Slider interactif + témoignages
- * 5. Section "Nos Forfaits Sur-Mesure de Nettoyage Voiture" - 3 cartes avec badges
- * 6. Section "Frais de Déplacement" - Transparence sur les frais
- * 7. Section "Comment fonctionne notre service de lavage auto à domicile ?" - 3 étapes
- * 8. Section "Questions fréquentes – Lavage Auto Mobile" - FAQ condensée
- * 9. Footer - Coordonnées, horaires, liens RGPD, réseaux, pictos paiement
+ * Shine&Go - Page d'accueil optimisée
  */
 
 import { Metadata } from 'next';
 import Script from 'next/script';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import SocialProof from './components/SocialProof';
-import HowItWorks from './components/HowItWorks';
-import ServicesSection from './components/ServicesSection';
-import BeforeAfterTestimonials from './components/BeforeAfterTestimonials';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
-import ScrollProgress from './components/ScrollProgress';
+import Header from '@/shared/components/HeaderWrapper';
+import Hero from '@/shared/components/Hero';
+import SocialProof from '@/shared/components/SocialProof';
+import Testimonials from '@/shared/components/Testimonials';
+import HowItWorks from '@/shared/components/HowItWorks';
+import ServicesSection from '@/shared/components/ServicesSection';
+import BeforeAfterTestimonials from '@/shared/components/BeforeAfterTestimonials';
+import FAQ from '@/shared/components/FAQ';
+import Footer from '@/shared/components/Footer';
+import ScrollProgress from '@/shared/components/ScrollProgress';
 
-
-export const metadata: Metadata = {
-  title: "Lavage Voiture à Domicile en Wallonie | Shine&Go – Nettoyage Auto Pro",
-  description: "Shine&Go offre un lavage voiture à domicile premium en Wallonie. Nettoyage auto intérieur & extérieur dès 39€. Résultat showroom garanti en 90 min.",
-  openGraph: {
-    title: "Lavage Voiture & Nettoyage Auto à Domicile | Valeting Mobile Professionnel – Shine&Go",
-    description: "🚗 Service de lavage voiture mobile : valeting mobile professionnel, finition showroom garantie, produits premium Koch-Chemie & CarPro. Réservation en ligne 24h/24.",
-    type: "website",
-    locale: "fr_BE",
-    url: "https://shineandgo.be/",
-    siteName: "Shine&Go Premium",
-    images: [
-      {
-        url: '/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg',
-        width: 1200,
-        height: 630,
-        alt: 'Avant/Après lavage voiture professionnel - Shine&Go Premium',
-        type: 'image/jpeg',
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Lavage Voiture & Nettoyage Auto à Domicile | Valeting Mobile Professionnel",
-    description: "🚗 Service de lavage voiture mobile : valeting mobile professionnel, finition showroom garantie. Réservation en ligne 24h/24.",
-    images: ['/transformations/berline-familiale-propre-apres-nettoyage-herve.jpeg'],
-  },
-  alternates: {
-    canonical: "https://shineandgo.be/",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Lavage voiture à domicile en Wallonie | Shine&Go – Devis gratuit",
+    description: "Shine&Go : lavage voiture à domicile en Wallonie. Intérieur & extérieur à la main, finition showroom en 90 min. Devis gratuit + 10 € offerts.",
+    keywords: "lavage voiture, lavage auto, lavage de véhicule, nettoyage voiture, lavage voiture à domicile, nettoyage voiture à domicile, lavage voiture à la main, lavage auto à proximité, tarif nettoyage intérieur voiture, prix lavage voiture à domicile",
+    openGraph: {
+      title: "Lavage voiture à domicile en Wallonie | Shine&Go – Devis gratuit",
+      description: "Shine&Go : lavage voiture à domicile en Wallonie. Intérieur & extérieur à la main, finition showroom en 90 min. Devis gratuit + 10 € offerts.",
+      type: "website",
+      locale: "fr_BE",
+      url: "https://shineandgo.be/",
+      siteName: "Shine&Go Premium",
+      images: [
+        {
+          url: '/hero-images/lavage-interieur-voiture.jpeg',
+          width: 1200,
+          height: 630,
+          alt: 'Lavage voiture à domicile en Wallonie - Shine&Go',
+          type: 'image/jpeg',
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Lavage voiture à domicile en Wallonie | Shine&Go – Devis gratuit",
+      description: "Shine&Go : lavage voiture à domicile en Wallonie. Intérieur & extérieur à la main, finition showroom en 90 min. Devis gratuit + 10 € offerts.",
+      images: ['/hero-images/lavage-interieur-voiture.jpeg'],
+    },
+    alternates: {
+      canonical: "https://shineandgo.be/",
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-  other: {
-    'geo.region': 'BE-WLX',
-    'geo.placename': 'Wallonie',
-    'DC.subject': 'Lavage voiture, Valeting mobile professionnel, Nettoyage automobile, Car wash, Lavage voiture à domicile, Service mobile',
-  },
-};
+    other: {
+      'geo.region': 'BE-WLX',
+      'geo.placename': 'Wallonie',
+      'DC.subject': 'Lavage voiture, Lavage auto, Nettoyage voiture, Lavage voiture à domicile, Lavage voiture à la main, Lavage auto à proximité',
+    },
+  };
+}
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-surface-light/30 to-hero-bg/40 overflow-x-hidden touch-optimized">
       {/* Scroll Progress Indicator */}
@@ -87,38 +79,141 @@ export default function HomePage() {
         
         {/* 1. HERO (above-the-fold) - Optimized for mobile viewport */}
         <section className="snap-start min-h-svh w-full relative">
-          <Hero />
+          <div className="relative min-h-screen flex items-center justify-center bg-white">
+            <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+                Lavage voiture à domicile en Wallonie
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-gray-700">
+                Service mobile professionnel : intérieur & extérieur à la main avec produits Koch-Chemie et CarPro. Résultat showroom en 90 min, garantie satisfaction. Devis gratuit et 10 € offerts.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+                >
+                  Devis gratuit
+                </a>
+                <a
+                  href="https://wa.me/32472303701"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* 2. SECTION "Pourquoi choisir Shine&Go ?" - Mobile-first spacing */}
+        {/* 2. SECTION "Nos services de lavage auto à domicile" */}
+        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <ServicesSection />
+          </div>
+        </section>
+        
+        {/* 3. SECTION "Zones desservies" */}
+        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Zones desservies
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Service mobile à domicile dans un rayon de 25 km autour de Herve. Déplacement gratuit, puis 0,60 €/km A/R.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="h-full flex flex-col p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Villes principales</h3>
+                  <ul className="text-gray-600 space-y-2 flex-grow">
+                    <li>• Liège</li>
+                    <li>• Verviers</li>
+                    <li>• Herve</li>
+                    <li>• Soumagne</li>
+                    <li>• Battice</li>
+                    <li>• Spa</li>
+                    <li>• Chaudfontaine</li>
+                    <li>• Fléron</li>
+                    <li>• Aubel</li>
+                    <li>• Welkenraedt</li>
+                    <li>• Pepinster</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="h-full flex flex-col p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Codes postaux</h3>
+                  <ul className="text-gray-600 space-y-2 flex-grow">
+                    <li>• 4650 - Herve</li>
+                    <li>• 4000 - Liège</li>
+                    <li>• 4800 - Verviers</li>
+                    <li>• 4630 - Soumagne</li>
+                    <li>• 4651 - Battice</li>
+                    <li>• 4900 - Spa</li>
+                    <li>• 4050 - Chaudfontaine</li>
+                    <li>• 4623 - Fléron</li>
+                    <li>• 4880 - Aubel</li>
+                    <li>• 4840 - Welkenraedt</li>
+                    <li>• 4860 - Pepinster</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="h-full flex flex-col p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Service mobile</h3>
+                  <p className="text-gray-600 mb-4 flex-grow">
+                    Intervention à domicile en 90 min selon la formule choisie.
+                  </p>
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <p className="text-sm text-blue-800">
+                      <strong>Déplacement gratuit :</strong> 25 km autour de Herve<br/>
+                      <strong>Au-delà :</strong> 0,60 €/km aller-retour
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* 4. SECTION "Avis clients" */}
+        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <Testimonials />
+          </div>
+        </section>
+        
+        {/* 4.5. SECTION "Avantages du service" */}
         <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <SocialProof />
           </div>
         </section>
-
-        {/* 3. SECTION "Avant/Après : La Transformation" - Responsive container */}
-        <section className="w-full py-12 md:py-16 lg:py-20 bg-slate-50/80 container-mobile">
+        
+        {/* 5. SECTION "Avant/Après : résultats" */}
+        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <BeforeAfterTestimonials />
           </div>
         </section>
-
-        {/* 4. SECTION "Nos Forfaits Sur-Mesure de Nettoyage Voiture" - Touch-optimized */}
-        <section id="services-section" className="w-full py-12 md:py-16 lg:py-20 container-mobile touch-optimized">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <ServicesSection />
-          </div>
-        </section>
-
-        {/* 5. SECTION "Comment fonctionne notre service de lavage auto à domicile ?" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 bg-slate-50/80 container-mobile">
+        
+        {/* 6. SECTION "Comment ça marche" */}
+        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <HowItWorks />
           </div>
         </section>
-
-        {/* 6. SECTION "Questions fréquentes – Lavage Auto Mobile" */}
+        
+        {/* 7. SECTION "FAQ lavage voiture à domicile" */}
         <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <FAQ />
