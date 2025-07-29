@@ -1,13 +1,13 @@
 'use client';
 
 import Script from 'next/script';
-import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
+// import { Analytics } from '@vercel/analytics/react';
 
 export default function Analytics() {
   return (
     <>
-      {/* Vercel Analytics */}
-      <VercelAnalytics />
+      {/* Vercel Analytics - Temporarily disabled */}
+      {/* <Analytics /> */}
 
       {/* Google Analytics 4 - Balise officielle Google */}
       <Script

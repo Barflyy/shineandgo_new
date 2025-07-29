@@ -1,7 +1,7 @@
 {
-  "name": "Shine&Go Premium - Car Wash & Nettoyage Auto",
+  "name": "Shine&Go – Nettoyage auto à domicile",
   "short_name": "Shine&Go",
-  "description": "Service premium de nettoyage automobile à Herve et dans la région. À domicile, 7j/7.",
+  "description": "Service de nettoyage automobile à domicile à Herve et dans la région. À domicile, 24h/24.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",

@@ -1,4 +1,4 @@
-# Robots.txt optimisé pour Shine&Go Premium
+# Robots.txt optimisé pour Shine&Go – Nettoyage auto à domicile
 # https://shineandgo.be/robots.txt
 
 # Tous les robots
@@ -70,6 +70,8 @@ Sitemap: https://shineandgo.be/api/sitemap-images
 Sitemap: https://shineandgo.be/api/sitemap-videos
 
 # Informations sur le site
-# Site: Shine&Go Premium - Nettoyage Auto & Car Wash à Herve
+# Site: Shine&Go – Nettoyage auto à domicile
+# Adresse: Rue Moreau 20, 4650 Herve, Belgique
 # Contact: +32 472 30 37 01
-# Email: contact@shinego.be 
+# Email: contact@shinego.be
+# Horaires: 24h/24 

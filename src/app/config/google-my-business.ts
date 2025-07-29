@@ -1,6 +1,6 @@
 export const googleMyBusinessConfig = {
   // Informations de base
-  businessName: "Shine&Go Premium",
+  businessName: "Shine&Go – Nettoyage auto à domicile",
   businessId: "BE1014725710", // Remplacez par votre vrai ID d'entreprise
   website: "https://shineandgo.be",
   
@@ -15,11 +15,11 @@ export const googleMyBusinessConfig = {
   
   // Coordonnées
   address: {
-    street: "Rue Moreau, 20",
+    street: "Rue Moreau 20",
     city: "Herve",
     postalCode: "4650",
     country: "Belgique",
-    fullAddress: "Rue Moreau, 20, 4650 Herve, Belgique"
+    fullAddress: "Rue Moreau 20, 4650 Herve, Belgique"
   },
   
   // Contact
@@ -28,19 +28,11 @@ export const googleMyBusinessConfig = {
   email: "contact@shinego.be",
   
   // Horaires d'ouverture
-  openingHours: {
-    monday: { open: "08:00", close: "20:00" },
-    tuesday: { open: "08:00", close: "20:00" },
-    wednesday: { open: "08:00", close: "20:00" },
-    thursday: { open: "08:00", close: "20:00" },
-    friday: { open: "08:00", close: "20:00" },
-    saturday: { open: "08:00", close: "20:00" },
-    sunday: { open: "08:00", close: "20:00" }
-  },
+  openingHours: "24h/24",
   
   // Évaluations (seront mises à jour dynamiquement si API activée)
   rating: 5.0,
-  reviewCount: 50,
+  reviewCount: 8,
   
   // Services
   services: [
@@ -52,14 +44,7 @@ export const googleMyBusinessConfig = {
   ],
   
   // Zones desservies
-  serviceAreas: [
-    "Herve",
-    "Verviers", 
-    "Dison",
-    "Pepinster",
-    "Spa",
-    "Limbourg"
-  ],
+  serviceAreas: ["Herve", "Verviers", "Dison", "Spa", "Limbourg"],
   
   // Liens sociaux
   socialLinks: {
@@ -70,7 +55,7 @@ export const googleMyBusinessConfig = {
   
   // Configuration SEO
   seo: {
-    title: "Shine&Go Premium - Car wash & nettoyage auto à Herve",
+    title: "Shine&Go – Nettoyage auto à domicile - Car wash & nettoyage auto à Herve",
     description: "Service premium de nettoyage automobile à Herve et dans la région. Car wash haut de gamme, nettoyage intérieur et extérieur, service à domicile 7j/7.",
     keywords: "car wash, nettoyage auto, lavage voiture, Herve, Verviers, Dison, Spa, Limbourg, service à domicile"
   }
@@ -128,12 +113,7 @@ export const generateStructuredData = () => {
       "latitude": 50.6391,
       "longitude": 5.7924
     },
-    "openingHoursSpecification": Object.entries(googleMyBusinessConfig.openingHours).map(([day, hours]) => ({
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": day.charAt(0).toUpperCase() + day.slice(1),
-      "opens": hours.open,
-      "closes": hours.close
-    })),
+    "openingHours": googleMyBusinessConfig.openingHours,
     "areaServed": googleMyBusinessConfig.serviceAreas.map(area => ({
       "@type": "City",
       "name": area
@@ -157,8 +137,8 @@ export const generateStructuredData = () => {
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "08:00",
-        "closes": "20:00"
+        "opens": "00:00",
+        "closes": "23:59"
       }
     },
     "potentialAction": {

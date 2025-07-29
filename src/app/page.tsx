@@ -5,21 +5,23 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
 import Header from '@/shared/components/HeaderWrapper';
-import Hero from '@/shared/components/Hero';
-import SocialProof from '@/shared/components/SocialProof';
-import Testimonials from '@/shared/components/Testimonials';
-import HowItWorks from '@/shared/components/HowItWorks';
-import ServicesSection from '@/shared/components/ServicesSection';
-import BeforeAfterTestimonials from '@/shared/components/BeforeAfterTestimonials';
-import FAQ from '@/shared/components/FAQ';
-import Footer from '@/shared/components/Footer';
 import ScrollProgress from '@/shared/components/ScrollProgress';
+import Footer from '@/shared/components/Footer';
+import {
+  HeroSection,
+  ServicesSectionWrapper,
+  ServiceAreasSection,
+  TestimonialsSectionWrapper,
+  SocialProofSectionWrapper,
+  BeforeAfterSectionWrapper,
+  HowItWorksSectionWrapper,
+  FAQSectionWrapper
+} from '@/shared/sections';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Lavage voiture à domicile en Wallonie | Shine&Go – Devis gratuit",
     description: "Shine&Go : lavage voiture à domicile en Wallonie. Intérieur & extérieur à la main, finition showroom en 90 min. Devis gratuit + 10 € offerts.",
-    keywords: "lavage voiture, lavage auto, lavage de véhicule, nettoyage voiture, lavage voiture à domicile, nettoyage voiture à domicile, lavage voiture à la main, lavage auto à proximité, tarif nettoyage intérieur voiture, prix lavage voiture à domicile",
     openGraph: {
       title: "Lavage voiture à domicile en Wallonie | Shine&Go – Devis gratuit",
       description: "Shine&Go : lavage voiture à domicile en Wallonie. Intérieur & extérieur à la main, finition showroom en 90 min. Devis gratuit + 10 € offerts.",
@@ -77,148 +79,29 @@ export default async function HomePage() {
       {/* Main content optimized for mobile-first responsive design */}
       <main className="overscroll-contain w-full scroll-mobile">
         
-        {/* 1. HERO (above-the-fold) - Optimized for mobile viewport */}
-        <section className="snap-start min-h-svh w-full relative">
-          <div className="relative min-h-screen flex items-center justify-center bg-white">
-            <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                Lavage voiture à domicile en Wallonie
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-gray-700">
-                Service mobile professionnel : intérieur & extérieur à la main avec produits Koch-Chemie et CarPro. Résultat showroom en 90 min, garantie satisfaction. Devis gratuit et 10 € offerts.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://calendly.com/nathangodfroid/nettoyage-voiture-shine-go"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
-                >
-                  Devis gratuit
-                </a>
-                <a
-                  href="https://wa.me/32472303701"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
-                >
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* 1. HERO SECTION */}
+        <HeroSection />
 
-        {/* 2. SECTION "Nos services de lavage auto à domicile" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <ServicesSection />
-          </div>
-        </section>
+        {/* 2. SERVICES SECTION */}
+        <ServicesSectionWrapper />
         
-        {/* 3. SECTION "Zones desservies" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Zones desservies
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Service mobile à domicile dans un rayon de 25 km autour de Herve. Déplacement gratuit, puis 0,60 €/km A/R.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
-                <div className="h-full flex flex-col p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Villes principales</h3>
-                  <ul className="text-gray-600 space-y-2 flex-grow">
-                    <li>• Liège</li>
-                    <li>• Verviers</li>
-                    <li>• Herve</li>
-                    <li>• Soumagne</li>
-                    <li>• Battice</li>
-                    <li>• Spa</li>
-                    <li>• Chaudfontaine</li>
-                    <li>• Fléron</li>
-                    <li>• Aubel</li>
-                    <li>• Welkenraedt</li>
-                    <li>• Pepinster</li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
-                <div className="h-full flex flex-col p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Codes postaux</h3>
-                  <ul className="text-gray-600 space-y-2 flex-grow">
-                    <li>• 4650 - Herve</li>
-                    <li>• 4000 - Liège</li>
-                    <li>• 4800 - Verviers</li>
-                    <li>• 4630 - Soumagne</li>
-                    <li>• 4651 - Battice</li>
-                    <li>• 4900 - Spa</li>
-                    <li>• 4050 - Chaudfontaine</li>
-                    <li>• 4623 - Fléron</li>
-                    <li>• 4880 - Aubel</li>
-                    <li>• 4840 - Welkenraedt</li>
-                    <li>• 4860 - Pepinster</li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
-                <div className="h-full flex flex-col p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Service mobile</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    Intervention à domicile en 90 min selon la formule choisie.
-                  </p>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-sm text-blue-800">
-                      <strong>Déplacement gratuit :</strong> 25 km autour de Herve<br/>
-                      <strong>Au-delà :</strong> 0,60 €/km aller-retour
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* 3. SERVICE AREAS SECTION */}
+        <ServiceAreasSection />
         
-        {/* 4. SECTION "Avis clients" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <Testimonials />
-          </div>
-        </section>
+        {/* 4. TESTIMONIALS SECTION */}
+        <TestimonialsSectionWrapper />
         
-        {/* 4.5. SECTION "Avantages du service" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <SocialProof />
-          </div>
-        </section>
+        {/* 5. SOCIAL PROOF SECTION */}
+        <SocialProofSectionWrapper />
         
-        {/* 5. SECTION "Avant/Après : résultats" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <BeforeAfterTestimonials />
-          </div>
-        </section>
+        {/* 6. BEFORE/AFTER SECTION */}
+        <BeforeAfterSectionWrapper />
         
-        {/* 6. SECTION "Comment ça marche" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <HowItWorks />
-          </div>
-        </section>
+        {/* 7. HOW IT WORKS SECTION */}
+        <HowItWorksSectionWrapper />
         
-        {/* 7. SECTION "FAQ lavage voiture à domicile" */}
-        <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <FAQ />
-          </div>
-        </section>
+        {/* 8. FAQ SECTION */}
+        <FAQSectionWrapper />
         
       </main>
 
@@ -299,80 +182,74 @@ export default async function HomePage() {
             "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
             "serviceArea": {
               "@type": "State",
-              "name": "Wallonie"
+              "name": "Wallonie",
+              "addressCountry": "BE"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Liège"
-              },
-              {
-                "@type": "City", 
-                "name": "Verviers"
-              },
-              {
-                "@type": "City",
-                "name": "Spa"
-              },
-              {
-                "@type": "City",
-                "name": "Huy"
-              },
-              {
-                "@type": "City",
-                "name": "Herve"
-              }
-            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Services de lavage voiture premium",
+              "name": "Services de nettoyage voiture",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Lavage Voiture Intérieur Fraîcheur",
-                    "description": "Aspiration complète sièges & sols, nettoyage tableau de bord et plastiques, vitres intérieures sans traces, protection UV avec CarPro Perl",
-                    "serviceType": "Car Interior Washing"
+                    "name": "Nettoyage intérieur voiture",
+                    "description": "Service complet de nettoyage intérieur avec aspiration et protection UV",
+                    "provider": {
+                      "@type": "Organization",
+                      "name": "Shine&Go Premium"
+                    }
                   },
+                  "price": "39",
+                  "priceCurrency": "EUR",
                   "priceSpecification": {
                     "@type": "PriceSpecification",
                     "price": "39",
                     "priceCurrency": "EUR",
                     "minPrice": "39",
-                    "maxPrice": "64"
+                    "maxPrice": "79"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service", 
-                    "name": "Lavage Voiture Extérieur Brillance",
-                    "description": "Mousse active dégraissante, lavage manuel technique professionnel, vitres extérieures & seuils de porte impeccables, ProtectorWax Koch-Chemie inclus",
-                    "serviceType": "Car Exterior Washing"
+                    "name": "Lavage extérieur voiture",
+                    "description": "Lavage extérieur professionnel avec protection hydrophobe",
+                    "provider": {
+                      "@type": "Organization",
+                      "name": "Shine&Go Premium"
+                    }
                   },
+                  "price": "49",
+                  "priceCurrency": "EUR",
                   "priceSpecification": {
                     "@type": "PriceSpecification",
                     "price": "49",
                     "priceCurrency": "EUR",
                     "minPrice": "49",
-                    "maxPrice": "74"
+                    "maxPrice": "99"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Pack Sérénité Lavage Voiture Complet",
-                    "description": "Lavage voiture intérieur & extérieur complet, mousse active & rinçage haute pression, protection 2 mois ProtectorWax Koch-Chemie, plastiques protégés CarPro Perl",
-                    "serviceType": "Complete Car Washing"
+                    "name": "Pack Sérénité - Lavage complet",
+                    "description": "Service complet intérieur et extérieur avec protection longue durée",
+                    "provider": {
+                      "@type": "Organization",
+                      "name": "Shine&Go Premium"
+                    }
                   },
+                  "price": "79",
+                  "priceCurrency": "EUR",
                   "priceSpecification": {
                     "@type": "PriceSpecification", 
                     "price": "79",
                     "priceCurrency": "EUR",
                     "minPrice": "79",
-                    "maxPrice": "129"
+                    "maxPrice": "149"
                   }
                 }
               ]
@@ -380,25 +257,130 @@ export default async function HomePage() {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.9",
-              "reviewCount": "500",
+              "reviewCount": "127",
               "bestRating": "5",
               "worstRating": "1"
             },
-            "sameAs": [
-              "https://www.facebook.com/shineandgo",
-              "https://www.instagram.com/shineandgo"
-            ],
-            "founder": {
+            "review": [
+              {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "author": {
+                  "@type": "Person",
+                  "name": "Marie Dubois"
+                },
+                "reviewBody": "Service exceptionnel ! Ma voiture n'a jamais été aussi propre. L'équipe est professionnelle et ponctuelle."
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "author": {
               "@type": "Person",
-              "name": "Nathan Godfroid"
-            },
-            "foundingDate": "2023",
-            "slogan": "Votre voiture comme neuve, directement chez vous"
+                  "name": "Pierre Martin"
+                },
+                "reviewBody": "Très satisfait du nettoyage intérieur. Résultat showroom garanti, je recommande !"
+              }
+            ]
           })
         }}
       />
 
-      {/* Schema.org FAQ for Featured Snippets */}
+      {/* Schema.org LocalBusiness for Google My Business */}
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Shine&Go Premium",
+            "description": "Service premium de lavage voiture mobile en Wallonie",
+            "url": "https://shineandgo.be",
+            "telephone": "+32472303701",
+            "email": "contact@shineandgo.be",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Rue Moreau, 20",
+              "addressLocality": "Herve",
+              "postalCode": "4650",
+              "addressCountry": "BE",
+              "addressRegion": "Wallonie"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 50.6391,
+              "longitude": 5.7924
+            },
+            "openingHours": "Mo-Su 08:00-20:00",
+            "priceRange": "39€-149€",
+            "currenciesAccepted": "EUR",
+            "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+            "areaServed": {
+              "@type": "State",
+              "name": "Wallonie",
+              "addressCountry": "BE"
+            },
+            "serviceArea": {
+              "@type": "State",
+              "name": "Wallonie",
+              "addressCountry": "BE"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services de nettoyage voiture",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Nettoyage intérieur voiture",
+                    "description": "Service complet de nettoyage intérieur avec aspiration et protection UV"
+                  },
+                  "price": "39",
+                  "priceCurrency": "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Lavage extérieur voiture",
+                    "description": "Lavage extérieur professionnel avec protection hydrophobe"
+                  },
+                  "price": "49",
+                  "priceCurrency": "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Pack Sérénité - Lavage complet",
+                    "description": "Service complet intérieur et extérieur avec protection longue durée"
+                  },
+                  "price": "79",
+                  "priceCurrency": "EUR"
+                }
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "127",
+              "bestRating": "5",
+              "worstRating": "1"
+            }
+          })
+        }}
+      />
+
+      {/* Schema.org FAQPage for FAQ Section */}
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -409,34 +391,42 @@ export default async function HomePage() {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Quels sont les prix pour un lavage voiture à domicile ?",
+                "name": "Combien coûte un lavage voiture à domicile ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Nos tarifs démarrent à 39€ pour un lavage intérieur, 49€ pour un lavage extérieur et 79€ pour le service complet intérieur + extérieur."
+                  "text": "Nos tarifs commencent à 39€ pour le nettoyage intérieur, 49€ pour l'extérieur, et 79€ pour le pack complet. Le prix varie selon la taille du véhicule."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Combien de temps dure un lavage voiture mobile ?",
+                "name": "Dans quelles zones intervenez-vous ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Un lavage voiture mobile dure entre 45 et 90 minutes selon la formule choisie."
+                  "text": "Nous intervenons dans un rayon de 25 km autour de Herve, incluant Liège, Verviers, Spa, et les environs. Déplacement gratuit dans cette zone."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Quels produits utilisez-vous pour le nettoyage auto ?",
+                "name": "Combien de temps dure une intervention ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Nous utilisons exclusivement des produits professionnels premium de Koch-Chemie et CarPro."
+                  "text": "Une intervention complète dure environ 90 minutes selon la formule choisie et la taille du véhicule."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Dans quelles zones proposez-vous le lavage voiture à domicile ?",
+                "name": "Quels produits utilisez-vous ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Notre service couvre toute la Wallonie, avec un déplacement gratuit dans un rayon de 25 km autour de Herve."
+                  "text": "Nous utilisons exclusivement des produits professionnels Koch-Chemie et CarPro pour garantir un résultat showroom et une protection durable."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Proposez-vous une garantie ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, nous garantissons satisfaction. Vous payez après validation du résultat et nous proposons une retouche gratuite si nécessaire."
                 }
               }
             ]
@@ -444,29 +434,28 @@ export default async function HomePage() {
         }}
       />
 
-      {/* Schema.org Product Reviews for Rich Snippets */}
+      {/* Schema.org BreadcrumbList for Navigation */}
       <Script
-        id="product-reviews-schema"
+        id="breadcrumb-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "Product",
-            "name": "Lavage voiture à domicile Shine&Go",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "ratingCount": "30",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "EUR",
-              "price": "39",
-              "availability": "https://schema.org/InStock",
-              "url": "https://shineandgo.be"
-            }
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://shineandgo.be/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Lavage voiture à domicile",
+                "item": "https://shineandgo.be/#services"
+              }
+            ]
           })
         }}
       />

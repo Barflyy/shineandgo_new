@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import "./globals.css";
-import "./fonts.css";
+import "./shared/styles/globals.css";
+import "./shared/styles/fonts.css";
 import Analytics from "./analytics";
-import SmoothScroll from "./components/SmoothScroll";
-import CriticalCSS from "./components/CriticalCSS";
+import SmoothScroll from "./shared/components/SmoothScroll";
+import CriticalCSS from "./shared/components/CriticalCSS";
 import { generateStructuredData } from "./config/google-my-business";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+// import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
 const inter = Inter({
@@ -90,6 +90,7 @@ export const metadata: Metadata = {
     yahoo: 'verification_token',
   },
   other: {
+    'viewport': 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
@@ -209,7 +210,7 @@ export default function RootLayout({
 
           {children}
         </SmoothScroll>
-        <SpeedInsights />
+        {/* <SpeedInsights /> */}
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   // Exclure le dossier scripts/ de la compilation
@@ -37,6 +38,12 @@ const nextConfig: NextConfig = {
     unoptimized: false,
     loader: 'default',
     path: '/_next/image',
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
   },
   
   // Compression et optimisation
@@ -163,6 +170,22 @@ const nextConfig: NextConfig = {
       exclude: /scripts/,
     });
     
+    // Ajouter les alias de chemins
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@": path.join(__dirname, "src"),
+      "@/app": path.join(__dirname, "src/app"),
+      "@/shared": path.join(__dirname, "src/app/shared"),
+      "@/components": path.join(__dirname, "src/app/shared/components"),
+      "@/utils": path.join(__dirname, "src/app/shared/utils"),
+      "@/types": path.join(__dirname, "src/app/shared/types"),
+      "@/styles": path.join(__dirname, "src/app/shared/styles"),
+      "@/features": path.join(__dirname, "src/app/features"),
+      "@/api": path.join(__dirname, "src/app/api"),
+      "@/content": path.join(__dirname, "content"),
+      "@/docs": path.join(__dirname, "docs"),
+    };
+    
     // Optimisations pour la production
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
@@ -222,6 +245,10 @@ const nextConfig: NextConfig = {
       {
         source: '/sitemap.xml',
         destination: '/api/sitemap',
+      },
+      {
+        source: '/sitemap-index.xml',
+        destination: '/api/sitemap-index',
       },
     ];
   },

@@ -1,0 +1,639 @@
+@import "tailwindcss";
+
+/* ===== TYPOGRAPHIE FLUIDE OPTIMISÉE ===== */
+@layer utilities {
+  /* Typographie fluide pour les titres principaux */
+  .text-fluid-h1 {
+    font-size: clamp(2.25rem, 1.25rem + 3.2vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-fluid-h2 {
+    font-size: clamp(1.125rem, 0.85rem + 1.2vw, 1.75rem);
+    line-height: 1.4;
+  }
+
+  /* Typographie fluide PLUS PETITE pour le hero */
+  .text-hero-h1 {
+    font-size: clamp(1.75rem, 1rem + 2vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-hero-h2 {
+    font-size: clamp(1rem, 0.75rem + 0.8vw, 1.5rem);
+    line-height: 1.4;
+  }
+
+  /* Container query specific typography adjustments */
+  @container (min-width: 28rem) {
+    .text-fluid-h1 {
+      font-size: clamp(2.5rem, 1.5rem + 3.5vw, 5rem);
+    }
+    .text-fluid-h2 {
+      font-size: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+    }
+    .text-hero-h1 {
+      font-size: clamp(2rem, 1.25rem + 2.5vw, 4rem);
+    }
+    .text-hero-h2 {
+      font-size: clamp(1.125rem, 0.875rem + 1vw, 1.75rem);
+    }
+  }
+
+  @container (min-width: 48rem) {
+    .text-fluid-h1 {
+      font-size: clamp(3rem, 2rem + 4vw, 5.5rem);
+    }
+    .text-fluid-h2 {
+      font-size: clamp(1.5rem, 1.25rem + 2vw, 2.25rem);
+    }
+    .text-hero-h1 {
+      font-size: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+    }
+    .text-hero-h2 {
+      font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem);
+    }
+  }
+  
+  .text-fluid-subhead {
+    font-size: clamp(1.125rem, .85rem + 1.2vw, 1.75rem);
+    line-height: 1.4;
+  }
+  
+  .text-fluid-small {
+    font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1rem);
+    line-height: 1.5;
+  }
+  
+  .text-fluid-caption {
+    font-size: clamp(0.75rem, 0.625rem + 0.4vw, 0.875rem);
+    line-height: 1.4;
+  }
+  
+  .text-fluid-badge {
+    font-size: clamp(0.75rem, 0.625rem + 0.4vw, 0.875rem);
+    line-height: 1.3;
+  }
+  
+  .text-fluid-cta-primary {
+    font-size: clamp(0.875rem, 0.75rem + 0.3vw, 1rem);
+    line-height: 1.4;
+  }
+  
+  .text-fluid-cta-secondary {
+    font-size: clamp(0.75rem, 0.625rem + 0.25vw, 0.875rem);
+    line-height: 1.4;
+  }
+  
+  /* Classes spécifiques pour le hero */
+  .text-hero-title {
+    font-size: clamp(1.75rem, 1rem + 2vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-hero-subtitle {
+    font-size: clamp(1rem, 0.75rem + 0.8vw, 1.5rem);
+    line-height: 1.4;
+  }
+
+  /* Mobile-first typography improvements */
+  .text-mobile-optimized {
+    font-size: clamp(1rem, 0.875rem + 0.3vw, 1.125rem);
+    line-height: 1.6;
+  }
+
+  .text-mobile-body {
+    font-size: clamp(1rem, 0.875rem + 0.3vw, 1.125rem);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  .text-mobile-heading {
+    font-size: clamp(1.5rem, 1.25rem + 0.5vw, 2rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* =================================== */
+/* MEDIA QUERIES MOBILE OPTIMISÉES */
+/* =================================== */
+
+/* Pour tous les écrans jusqu'à 768px de large (tablettes et mobiles) */
+@media (max-width: 768px) {
+  
+  /* --- Section Héros --- */
+  .hero-section h1,
+  #hero-title {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    padding: 0 20px;
+    margin-bottom: 25px !important;
+  }
+
+  .hero-section p,
+  .hero-subtitle {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+    padding: 0 20px;
+    margin-bottom: 30px !important;
+  }
+  
+  .hero-section .cta-button,
+  .hero-cta {
+    width: 90% !important;
+    padding: 20px 28px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 30px auto 0 !important;
+    min-height: 64px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .hero-section .cta-button:hover,
+  .hero-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4) !important;
+  }
+
+  .hero-section .cta-button:active,
+  .hero-cta:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3) !important;
+  }
+
+  /* --- Puces bénéfices --- */
+  .benefits-list {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 0 20px;
+    margin-bottom: 40px !important;
+  }
+
+  .benefits-list li {
+    text-align: left !important;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+  }
+
+  /* --- Services Section --- */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 0 20px;
+  }
+
+  .service-card {
+    padding: 30px 25px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%) !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .service-card h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .service-card .price {
+    font-size: 32px !important;
+  }
+
+  /* --- FAQ Section --- */
+  .faq-item {
+    border-radius: 16px !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%) !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    margin-bottom: 20px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .faq-item:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .faq-item button {
+    padding: 24px 25px !important;
+    min-height: 64px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    border-radius: 16px !important;
+  }
+
+  .faq-content {
+    padding: 0 25px 25px !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    color: #4a5568 !important;
+  }
+
+  /* --- Footer --- */
+  .footer-cta {
+    padding: 24px 20px !important;
+  }
+
+  .footer-cta button {
+    width: 100% !important;
+    min-height: 56px !important;
+    font-size: 18px !important;
+  }
+
+  /* --- Navigation --- */
+  .mobile-menu-item {
+    padding: 16px 20px !important;
+    min-height: 48px !important;
+    font-size: 16px !important;
+  }
+
+  /* --- Conteneurs généraux --- */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* --- Espacements et Sections --- */
+  .section-padding {
+    padding: 60px 0 !important;
+  }
+
+  .section-margin {
+    margin: 60px 0 !important;
+  }
+
+  /* --- Alternance de couleurs de fond --- */
+  .section-white {
+    background: #ffffff !important;
+  }
+
+  .section-light {
+    background: #f8fafc !important;
+  }
+
+  /* --- Espacement des conteneurs --- */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* Pour les très petits écrans (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  
+  .hero-section h1,
+  #hero-title {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    font-weight: 700 !important;
+  }
+
+  .hero-section p,
+  .hero-subtitle {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+  }
+  
+  .hero-section .cta-button,
+  .hero-cta {
+    width: 95% !important;
+    padding: 18px 24px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    min-height: 60px !important;
+  }
+
+  .benefits-list li {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+
+  .service-card {
+    padding: 20px 16px !important;
+  }
+
+  .service-card h3 {
+    font-size: 18px !important;
+  }
+
+  .service-card .price {
+    font-size: 28px !important;
+  }
+}
+
+/* ===== STYLES DE BASE OPTIMISÉS ===== */
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-fluid-h1,
+.text-fluid-h2,
+.text-fluid-h3,
+.text-fluid-h4,
+.text-fluid-h5,
+.text-fluid-h6 {
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.text-fluid-body,
+.text-fluid-p {
+  font-weight: 400;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.text-fluid-small,
+.text-fluid-caption {
+  font-weight: 400;
+  color: #64748B;
+}
+
+.text-badge {
+  font-weight: 600;
+  color: #2563EB;
+}
+
+/* ===== OPTIMISATIONS MOBILES ===== */
+@media (prefers-reduced-motion: reduce) {
+  .text-fluid-h1,
+  .text-fluid-h2,
+  .text-fluid-h3,
+  .text-fluid-h4,
+  .text-fluid-h5,
+  .text-fluid-h6,
+  .text-fluid-body,
+  .text-fluid-p,
+  .text-fluid-small,
+  .text-fluid-caption,
+  .text-badge {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== STYLES CRITIQUES POUR LE RENDU INITIAL ===== */
+body {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #1E293B;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.font-inter {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), 'Space Grotesk', Inter, system-ui, sans-serif;
+}
+
+/* ===== UTILITAIRES DE PERFORMANCE ===== */
+.will-change-transform {
+  will-change: transform;
+}
+
+.touch-optimized {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* ===== ANIMATIONS OPTIMISÉES ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== STYLES SPÉCIFIQUES SHINE&GO ===== */
+.text-shine-blue-primary {
+  color: #2563EB;
+}
+
+.text-shine-blue-dark {
+  color: #1D4ED8;
+}
+
+.text-shine-blue-light {
+  color: #3B82F6;
+}
+
+.bg-shine-blue-primary {
+  background-color: #2563EB;
+}
+
+.bg-shine-blue-dark {
+  background-color: #1D4ED8;
+}
+
+.bg-shine-blue-light {
+  background-color: #3B82F6;
+}
+
+.border-shine-blue-primary {
+  border-color: #2563EB;
+}
+
+.border-shine-blue-dark {
+  border-color: #1D4ED8;
+}
+
+.border-shine-blue-light {
+  border-color: #3B82F6;
+}
+
+/* ===== VARIABLES CSS OPTIMISÉES ===== */
+:root {
+  --header-height: 80px;
+  --container-padding: 1rem;
+  --border-radius: 0.5rem;
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 350ms ease-out;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== RESPONSIVE DESIGN OPTIMISÉ ===== */
+@media (min-width: 640px) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 2.5rem;
+  }
+}
+
+/* ===== UTILITAIRES DE LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.min-h-svh {
+  min-height: 100svh;
+}
+
+.h-screen-minus-header {
+  height: calc(100vh - var(--header-height));
+}
+
+/* ===== FOCUS ET ACCESSIBILITÉ ===== */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+/* ===== OPTIMISATIONS MOBILES AVANCÉES ===== */
+@media (hover: none) and (pointer: coarse) {
+  button:hover,
+  a:hover,
+  [role="button"]:hover {
+    transform: none !important;
+  }
+  
+  .hover\:scale-110:hover {
+    transform: none !important;
+  }
+}
+
+/* ===== STYLES D'IMAGES OPTIMISÉS ===== */
+/* ===== OPTIMISATION IMAGES RESPONSIVE ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
+}
+
+/* Images dans les conteneurs */
+img[src*="transformations"] {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Images hero et sections principales */
+.hero-image,
+.section-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ===== ANIMATIONS DE BASE ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===== UTILITAIRES DE PERFORMANCE ===== */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+.contain-layout {
+  contain: layout;
+}
+
+.contain-paint {
+  contain: paint;
+}
+
+.contain-size {
+  contain: size;
+}
+
+.contain-style {
+  contain: style;
+}
+
+/* ===== GRILLE GLOBALE SOPHISTIQUÉE ===== */
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(37,99,235,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== SÉPARATEURS MODERNES ===== */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(37,99,235,0.2) 50%, 
+    transparent 100%);
+  margin: 0;
+  border: none;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: rgba(37,99,235,0.8);
+  border-radius: 50%;
+}
+
