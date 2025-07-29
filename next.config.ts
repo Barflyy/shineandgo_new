@@ -12,7 +12,6 @@ const nextConfig: NextConfig = {
   
   // Optimisations pour les performances mobile
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react'],
   },
   
