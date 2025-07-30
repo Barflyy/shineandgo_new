@@ -46,7 +46,7 @@ export default function FAQCompletSection() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Collapsible key={index} className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <Collapsible key={index} className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" >
                 <CollapsibleTrigger className="flex w-full items-center justify-between p-6 text-left">
                   <span className="text-lg font-semibold text-slate-900">{faq.question}</span>
                   <ChevronDown className="h-5 w-5 text-slate-500 transition-transform duration-200" />

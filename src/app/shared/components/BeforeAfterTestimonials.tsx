@@ -60,8 +60,8 @@ export default function BeforeAfterTestimonials() {
 
   const transformations = [
     {
-      before: '/hero-images/lavage-interieur-voiture.jpeg',
-      after: '/hero-images/lavage-voiture-exterieur.jpeg',
+      before: '/transformations/optimized/webp/avant01.webp',
+      after: '/transformations/optimized/webp/apres01.webp',
       title: 'Berline familiale',
       location: 'Herve',
       description: 'Avant – nettoyage intérieur d\'une berline familiale à Herve',
@@ -71,8 +71,8 @@ export default function BeforeAfterTestimonials() {
       clientName: "Marie D."
     },
     {
-      before: '/hero-images/lavage-voiture-exterieur.jpeg',
-      after: '/hero-images/lavage-interieur-voiture.jpeg',
+      before: '/transformations/optimized/webp/avant02.webp',
+      after: '/transformations/optimized/webp/apres02.webp',
       title: 'SUV Premium',
       location: 'Verviers',
       description: 'Après – résultat showroom obtenu avec produits Koch-Chemie',
@@ -80,17 +80,6 @@ export default function BeforeAfterTestimonials() {
       gradient: 'from-emerald-500 to-teal-600',
       clientComment: "Incroyable ! Ma voiture n'a jamais été aussi propre, même neuve !",
       clientName: "Pierre M."
-    },
-    {
-      before: '/hero-images/lavage-interieur-voiture.jpeg',
-      after: '/hero-images/lavage-voiture-exterieur.jpeg',
-      title: 'Voiture Sport',
-      location: 'Spa',
-      description: 'Finition detailing premium exclusive',
-      timeSpent: '150 min',
-      gradient: 'from-purple-500 to-pink-600',
-      clientComment: "Travail exceptionnel ! Même les moindres détails sont parfaits.",
-      clientName: "Sophie L."
     }
   ];
 
@@ -168,7 +157,7 @@ export default function BeforeAfterTestimonials() {
   return (
     <section id="testimonials-section" className="relative py-16 md:py-24 bg-white">
       {/* Clean background like Hero */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/20 to-white"></div>
+      <div className="absolute inset-0 bg-white"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -201,7 +190,7 @@ export default function BeforeAfterTestimonials() {
           
           {/* Clean Before/After Slider like Hero */}
           <div className="xl:col-span-3 group relative">
-            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden relative z-10" >
 
               {/* Before/After Slider Container */}
               <div 
@@ -219,8 +208,9 @@ export default function BeforeAfterTestimonials() {
                 {/* Image SALE (background) - AVANT */}
                 <img
                   src={transformations[currentIndex].before}
-                  alt="Avant après lavage voiture à domicile Shine&Go, nettoyage intérieur et extérieur"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  alt={`Avant nettoyage voiture ${transformations[currentIndex].title} - Shine&Go ${transformations[currentIndex].location}`}
+                  className="absolute inset-0 w-auto h-full max-w-none object-contain bg-gray-100"
+                  style={{ left: '50%', transform: 'translateX(-50%)' }}
                 />
                 
                 {/* Image PROPRE (foreground with clip) - APRÈS */}
@@ -232,8 +222,9 @@ export default function BeforeAfterTestimonials() {
                 >
                   <img
                     src={transformations[currentIndex].after}
-                    alt="Avant après lavage voiture à domicile Shine&Go, nettoyage intérieur et extérieur"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    alt={`Après nettoyage voiture ${transformations[currentIndex].title} - Shine&Go ${transformations[currentIndex].location}`}
+                    className="absolute inset-0 w-auto h-full max-w-none object-contain bg-gray-100"
+                    style={{ left: '50%', transform: 'translateX(-50%)' }}
                   />
                 </div>
                 

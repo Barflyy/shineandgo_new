@@ -41,7 +41,7 @@ export default function FAQ() {
   return (
     <section id="faq-section" className="relative py-16 md:py-24 bg-white">
       {/* Clean background like Hero */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/20 to-white"></div>
+      <div className="absolute inset-0 bg-white"></div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -70,7 +70,7 @@ export default function FAQ() {
             <div 
               key={index}
               className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 faq-item relative z-10"
-              style={{backgroundColor: 'white', opacity: 1}}
+              
             >
               <button
                 className="w-full p-4 sm:p-6 text-left flex items-center justify-between hover:bg-slate-50 rounded-xl transition-all duration-300 min-h-[56px]"

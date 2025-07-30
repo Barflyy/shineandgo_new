@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ===== OPTIMISATION DES POLICES - PERFORMANCE CRITIQUE ===== */
 
 /* Définition de la police Lemfont Bold avec optimisations */

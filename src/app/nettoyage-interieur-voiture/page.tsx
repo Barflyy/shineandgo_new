@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "Shine&Go Premium",
       images: [
         {
-          url: '/hero-images/lavage-interieur-voiture.jpeg',
+          url: '/transformations/optimized/webp/apres01.webp',
           width: 1200,
           height: 630,
           alt: 'Nettoyage intérieur voiture à domicile - Shine&Go',
@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
         card: "summary_large_image",
       title: "Nettoyage intérieur de voiture à domicile – Résultat showroom garanti | Shine&Go",
       description: "Nettoyage intérieur de voiture à domicile en Wallonie. Service rapide avec produits pros pour un habitacle comme neuf. Devis gratuit en 2 min.",
-      images: ['/hero-images/lavage-interieur-voiture.jpeg'],
+      images: ['/transformations/optimized/webp/apres01.webp'],
     },
     alternates: {
       canonical: "https://shineandgo.be/nettoyage-interieur-voiture",

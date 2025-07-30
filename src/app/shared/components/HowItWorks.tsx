@@ -53,7 +53,7 @@ export default function HowItWorks() {
   return (
     <section className="relative py-16 md:py-24 bg-white">
       {/* Clean background like Hero */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/20 to-white"></div>
+      <div className="absolute inset-0 bg-white"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -77,7 +77,7 @@ export default function HowItWorks() {
         {/* Clean process steps like Hero */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-16">
           {steps.map((step, index) => (
-            <div key={index} className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+            <div key={index} className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col relative z-10" >
 
                 {/* Step icon and number */}
                 <div className="flex items-center justify-center mb-6">

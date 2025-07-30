@@ -126,9 +126,10 @@ export default function Hero() {
                   {isDesktop && (
                     /* Desktop image - portrait */
                     <img
-                      src="/hero-images/lavage-interieur-voiture.jpeg"
+                      src="/transformations/optimized/webp/apres01.webp"
                       alt="Nettoyage intérieur voiture professionnel à domicile - Résultat showroom garanti"
-                      className="w-full h-full object-cover"
+                      className="w-auto h-full max-w-none object-contain bg-gray-100"
+                      style={{ left: '50%', transform: 'translateX(-50%)' }}
                       loading="eager"
                     />
                   )}

@@ -130,7 +130,7 @@ export default function ServicesSection() {
   return (
     <section className="relative py-16 md:py-24 bg-white">
       {/* Clean background like Hero */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/20 to-white"></div>
+      <div className="absolute inset-0 bg-white"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -173,7 +173,7 @@ export default function ServicesSection() {
               <div className={`
                 bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full service-card relative z-10
                 ${service.popular ? 'ring-2 ring-green-200 border-green-200' : ''}
-              `} style={{backgroundColor: 'white', opacity: 1}}>
+              `} >
 
                 {/* Content */}
                 <div className="h-full flex flex-col p-4 sm:p-6 md:p-8">
@@ -297,7 +297,7 @@ export default function ServicesSection() {
               {/* Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Zone gratuite */}
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+                <div className="bg-white rounded-xl p-6 border border-green-200">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
                       <Check className="w-5 h-5 text-white" />
@@ -313,7 +313,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Zone payante */}
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+                <div className="bg-white rounded-xl p-6 border border-blue-200">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">€</span>
@@ -330,7 +330,7 @@ export default function ServicesSection() {
               </div>
 
               {/* Zone de couverture avec mini carte */}
-              <div className="mt-6 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+              <div className="mt-6 p-4 bg-white rounded-xl border border-blue-200">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <MapPin className="w-4 h-4 text-white" />

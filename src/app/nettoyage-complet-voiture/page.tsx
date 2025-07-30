@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: 'https://shine-go.be/hero-images/lavage-interieur-voiture.jpeg',
+          url: 'https://shine-go.be/transformations/optimized/webp/apres01.webp',
           width: 1200,
           height: 630,
           alt: 'Nettoyage complet voiture à domicile',
@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: 'Nettoyage complet voiture à domicile – Résultat showroom garanti | Shine&Go',
       description: 'Nettoyage complet voiture à domicile en Wallonie. Lavage intérieur & extérieur premium avec produits pros. Résultat showroom garanti. Devis gratuit.',
-      images: ['https://shine-go.be/hero-images/lavage-interieur-voiture.jpeg'],
+      images: ['https://shine-go.be/transformations/optimized/webp/apres01.webp'],
     },
     alternates: {
       canonical: 'https://shine-go.be/nettoyage-complet-voiture',
@@ -195,20 +195,20 @@ export default function NettoyageCompletPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 mb-8 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 mb-8 relative z-20" >
               <h3 className="text-xl font-bold text-slate-900 mb-4">Niveaux de saleté :</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-3 bg-white border border-green-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-3 bg-white border border-green-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🟢</span>
                   <p className="font-semibold">Léger</p>
                   <p className="text-sm text-slate-600">Entretien régulier</p>
                 </div>
-                <div className="text-center p-3 bg-white border border-yellow-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-3 bg-white border border-yellow-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🟡</span>
                   <p className="font-semibold">Moyen</p>
                   <p className="text-sm text-slate-600">Quelques taches, salissures visibles</p>
                 </div>
-                <div className="text-center p-3 bg-white border border-red-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-3 bg-white border border-red-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🔴</span>
                   <p className="font-semibold">Encrassé</p>
                   <p className="text-sm text-slate-600">Véhicule négligé, préparation vente</p>
@@ -217,39 +217,39 @@ export default function NettoyageCompletPage() {
 
               <h3 className="text-xl font-bold text-slate-900 mb-4">Tarifs par type de véhicule :</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🚗</span>
                   <p className="font-bold">Citadine</p>
                   <p className="text-lg font-semibold text-blue-600">79 €</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🚙</span>
                   <p className="font-bold">Berline</p>
                   <p className="text-lg font-semibold text-blue-600">89 €</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🚗</span>
                   <p className="font-bold">Break</p>
                   <p className="text-lg font-semibold text-blue-600">99 €</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🚐</span>
                   <p className="font-bold">SUV / 4x4</p>
                   <p className="text-lg font-semibold text-blue-600">109 €</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🚐</span>
                   <p className="font-bold">Monospace</p>
                   <p className="text-lg font-semibold text-blue-600">119 €</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🚚</span>
                   <p className="font-bold">Utilitaire</p>
                   <p className="text-lg font-semibold text-blue-600">129 €</p>
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-6 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-lg p-6 relative z-20" >
                 <h4 className="text-lg font-bold text-slate-900 mb-4">Ce qui est inclus :</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -320,7 +320,7 @@ export default function NettoyageCompletPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 mb-8 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 mb-8 relative z-20" >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
                   <div className="text-4xl mb-4">1️⃣</div>
@@ -339,7 +339,7 @@ export default function NettoyageCompletPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm relative z-20" >
                 <h4 className="text-lg font-bold text-slate-900 mb-4">Inclus dans le service :</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <ul className="space-y-2 text-slate-700">

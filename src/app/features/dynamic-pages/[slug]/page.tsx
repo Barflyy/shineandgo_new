@@ -245,7 +245,7 @@ export default function DynamicPage({ params }: { params: Promise<{ slug: string
               {section.type === 'services' && section.services && (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {section.services.map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="bg-white border border-slate-200 rounded-xl p-6 shadow-lg relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+                    <div key={serviceIndex} className="bg-white border border-slate-200 rounded-xl p-6 shadow-lg relative z-10" >
                       <div className="text-4xl mb-4">{service.icon}</div>
                       <h3 className="text-xl font-bold text-slate-900 mb-2">{service.name}</h3>
                       <p className="text-slate-600">{service.description}</p>
@@ -258,7 +258,7 @@ export default function DynamicPage({ params }: { params: Promise<{ slug: string
               {section.type === 'pricing' && section.pricing && (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {section.pricing.map((price, priceIndex) => (
-                    <div key={priceIndex} className="bg-white border border-slate-200 rounded-xl p-6 shadow-lg text-center relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+                    <div key={priceIndex} className="bg-white border border-slate-200 rounded-xl p-6 shadow-lg text-center relative z-10" >
                       <h3 className="text-xl font-bold text-slate-900 mb-2">{price.type}</h3>
                       <div className="text-3xl font-bold text-blue-600 mb-2">{price.price}</div>
                       <p className="text-slate-600">{price.duration}</p>
@@ -271,7 +271,7 @@ export default function DynamicPage({ params }: { params: Promise<{ slug: string
               {section.type === 'faq' && section.faqs && (
                 <div className="max-w-4xl mx-auto space-y-4">
                   {section.faqs.map((faq, faqIndex) => (
-                    <div key={faqIndex} className="bg-white border border-slate-200 rounded-xl p-6 shadow-lg relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+                    <div key={faqIndex} className="bg-white border border-slate-200 rounded-xl p-6 shadow-lg relative z-10" >
                       <h3 className="text-lg font-bold text-slate-900 mb-2">{faq.question}</h3>
                       <p className="text-slate-600">{faq.answer}</p>
                     </div>

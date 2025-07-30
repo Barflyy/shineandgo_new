@@ -63,7 +63,7 @@ export default function FAQCompletSection() {
               <button
                 onClick={() => toggleItem(index)}
                 className="w-full text-left bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20"
-                style={{backgroundColor: 'white', opacity: 1}}
+                
                 aria-expanded={openItems.includes(index)}
                 aria-controls={`faq-answer-${index}`}
               >
@@ -81,7 +81,7 @@ export default function FAQCompletSection() {
                 <div 
                   id={`faq-answer-${index}`}
                   className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 mt-2 shadow-lg relative z-20"
-                  style={{backgroundColor: 'white', opacity: 1}}
+                  
                 >
                   <p className="text-slate-700 leading-relaxed">
                     {item.answer}

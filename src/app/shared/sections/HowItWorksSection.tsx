@@ -58,7 +58,7 @@ export default function HowItWorksSection() {
 
         {/* Détails du processus */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <div className="bg-gray-50 rounded-xl p-6 md:p-8 relative z-10" style={{backgroundColor: '#f9fafb', opacity: 1}}>
+          <div className="bg-gray-50 rounded-xl p-6 md:p-8 relative z-10" >
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
               Ce qui est inclus
             </h3>
@@ -86,7 +86,7 @@ export default function HowItWorksSection() {
             </ul>
           </div>
 
-          <div className="bg-blue-50 rounded-xl p-6 md:p-8 relative z-10" style={{backgroundColor: '#eff6ff', opacity: 1}}>
+          <div className="bg-blue-50 rounded-xl p-6 md:p-8 relative z-10" >
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
               Préparation de votre intervention
             </h3>
@@ -117,7 +117,7 @@ export default function HowItWorksSection() {
 
         {/* Call-to-action */}
         <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-xl p-6 md:p-8 relative z-10" style={{background: 'linear-gradient(to right, #eff6ff, #f0fdf4)', opacity: 1}}>
+          <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-xl p-6 md:p-8 relative z-10" >
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
               Prêt à redonner vie à votre habitacle ?
             </h3>

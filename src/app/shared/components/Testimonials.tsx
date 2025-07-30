@@ -110,7 +110,7 @@ export default function Testimonials() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial) => (
-            <div key={testimonial._id} className="bg-white rounded-lg shadow-lg overflow-hidden relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+            <div key={testimonial._id} className="bg-white rounded-lg shadow-lg overflow-hidden relative z-10" >
               <div className="p-4 sm:p-6">
                 <div className="flex items-center mb-4">
                   <div className="flex-1">

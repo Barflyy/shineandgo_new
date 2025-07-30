@@ -40,7 +40,7 @@ export default function Header({
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-lg border-b border-ui-border/70 pt-safe ${
+      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-lg border-b border-slate-200/70 pt-4 ${
         isScrolled 
           ? 'bg-white/80 shadow-sm' 
           : 'bg-white/95'
@@ -50,7 +50,7 @@ export default function Header({
         <div className="flex items-center justify-between h-12 sm:h-14 md:h-16 lg:h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 min-w-0" aria-label="Retour à l'accueil - Shine&Go">
-            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-shine-blue-dark break-words min-w-0">
+            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-blue-700 break-words min-w-0">
               Shine&Go
             </div>
           </Link>
@@ -74,7 +74,7 @@ export default function Header({
                 aria-expanded={isServicesDropdownOpen}
                 aria-haspopup="true"
                 aria-label="Menu des services"
-                className="flex items-center gap-1 text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md"
+                className="flex items-center gap-1 text-blue-700 hover:text-blue-600 font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md"
               >
                 Services
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
@@ -90,7 +90,7 @@ export default function Header({
                   <div className="py-2">
                     <Link
                       href="/nettoyage-interieur-voiture"
-                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-inset rounded-md"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded-md"
                       onClick={() => setIsServicesDropdownOpen(false)}
                       role="menuitem"
                       aria-label="Nettoyage intérieur voiture - Aspiration et protection UV"
@@ -103,7 +103,7 @@ export default function Header({
                     </Link>
                     <Link
                       href="/nettoyage-exterieur-voiture"
-                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-inset rounded-md"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded-md"
                       onClick={() => setIsServicesDropdownOpen(false)}
                       role="menuitem"
                       aria-label="Nettoyage extérieur voiture - Carrosserie et protection"
@@ -116,7 +116,7 @@ export default function Header({
                     </Link>
                     <Link
                       href="/nettoyage-complet-voiture"
-                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-shine-blue-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-inset rounded-md"
+                      className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded-md"
                       onClick={() => setIsServicesDropdownOpen(false)}
                       role="menuitem"
                       aria-label="Nettoyage complet voiture - Intérieur et extérieur"
@@ -152,7 +152,7 @@ export default function Header({
                     }
                   }}
                   aria-label="Aller à la section avis clients"
-                  className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
+                  className="text-blue-700 hover:text-blue-600 font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
                 >
                   Avis
                 </button>
@@ -174,7 +174,7 @@ export default function Header({
                     }
                   }}
                   aria-label="Aller à la section questions fréquentes"
-                  className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
+                  className="text-blue-700 hover:text-blue-600 font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
                 >
                   FAQ
                 </button>
@@ -200,7 +200,7 @@ export default function Header({
                     }
                   }}
                   aria-label="Aller à la section avis clients"
-                  className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
+                  className="text-blue-700 hover:text-blue-600 font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
                 >
                   Avis
                 </button>
@@ -222,7 +222,7 @@ export default function Header({
                     }
                   }}
                   aria-label="Aller à la section questions fréquentes"
-                  className="text-shine-blue-dark hover:text-shine-blue-primary font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
+                  className="text-blue-700 hover:text-blue-600 font-medium cursor-pointer break-words focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
                 >
                   FAQ
                 </button>
@@ -234,7 +234,7 @@ export default function Header({
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <a 
               href="tel:+32472303701"
-              className="flex items-center space-x-2 text-shine-blue-dark hover:text-shine-blue-primary min-w-0 focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md px-2 py-1"
+              className="flex items-center space-x-2 text-blue-700 hover:text-blue-600 min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
               aria-label="Appeler Shine&Go au 0472 30 37 01"
             >
               <Phone className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" aria-hidden="true" />
@@ -249,7 +249,7 @@ export default function Header({
                 }
               }}
               aria-label="Réserver un nettoyage voiture maintenant"
-              className="inline-flex items-center gap-1 lg:gap-2 rounded-full bg-shine-blue-primary px-2.5 sm:px-3 lg:px-6 py-1.5 sm:py-2 lg:py-3 text-xs lg:text-sm font-semibold text-white shadow-md hover:bg-shine-blue-light focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-shine-blue-primary min-w-0"
+              className="inline-flex items-center gap-1 lg:gap-2 rounded-full bg-blue-600 px-2.5 sm:px-3 lg:px-6 py-1.5 sm:py-2 lg:py-3 text-xs lg:text-sm font-semibold text-white shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 min-w-0"
             >
               <span className="break-words min-w-0 hidden lg:inline">Réserver maintenant</span>
               <span className="break-words min-w-0 lg:hidden">Réserver</span>
@@ -267,7 +267,7 @@ export default function Header({
             }}
             aria-expanded={isMobileMenuOpen}
             aria-label={isMobileMenuOpen ? "Fermer le menu mobile" : "Ouvrir le menu mobile"}
-            className="lg:hidden p-1 sm:p-1.5 md:p-2 text-shine-blue-dark hover:text-shine-blue-primary focus:outline-none focus:ring-2 focus:ring-shine-blue-primary focus:ring-offset-2 rounded-md"
+            className="lg:hidden p-1 sm:p-1.5 md:p-2 text-blue-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md"
           >
             {isMobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" aria-hidden="true" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" aria-hidden="true" />}
           </button>
@@ -287,21 +287,21 @@ export default function Header({
                   <Link
                     href="/nettoyage-interieur-voiture"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full text-left block py-4 px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-medium text-base break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
+                    className="w-full text-left block py-4 px-4 text-blue-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-medium text-base break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
                   >
                     🧹 Nettoyage intérieur voiture
                   </Link>
                   <Link
                     href="/nettoyage-exterieur-voiture"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full text-left block py-4 px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-medium text-base break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
+                    className="w-full text-left block py-4 px-4 text-blue-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-medium text-base break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
                   >
                     🚿 Nettoyage extérieur voiture
                   </Link>
                   <Link
                     href="/nettoyage-complet-voiture"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full text-left block py-4 px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-medium text-base break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
+                    className="w-full text-left block py-4 px-4 text-blue-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-medium text-base break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
                   >
                     ✨ Nettoyage complet voiture
                   </Link>
@@ -320,7 +320,7 @@ export default function Header({
                           }
                         }, 100);
                       }}
-                      className="w-full text-left block py-4 px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
+                      className="w-full text-left block py-4 px-4 text-blue-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
                     >
                       Avis
                     </button>
@@ -335,7 +335,7 @@ export default function Header({
                           }
                         }, 100);
                       }}
-                      className="w-full text-left block py-4 px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
+                      className="w-full text-left block py-4 px-4 text-blue-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
                     >
                       FAQ
                     </button>
@@ -354,7 +354,7 @@ export default function Header({
                           }
                         }, 100);
                       }}
-                      className="w-full text-left block py-4 px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
+                      className="w-full text-left block py-4 px-4 text-blue-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
                     >
                       Avis
                     </button>
@@ -369,7 +369,7 @@ export default function Header({
                           }
                         }, 100);
                       }}
-                      className="w-full text-left block py-4 px-4 text-shine-blue-dark hover:text-shine-blue-primary hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
+                      className="w-full text-left block py-4 px-4 text-blue-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-semibold text-base cursor-pointer break-words min-w-0 min-h-[52px] flex items-center transition-colors duration-200"
                     >
                       FAQ
                     </button>
@@ -381,7 +381,7 @@ export default function Header({
               <div className="pt-4 sm:pt-6 md:pt-8 border-t border-gray-200/50 space-y-3 sm:space-y-4 md:space-y-5">
                 <a 
                   href="tel:+32472303701"
-                  className="flex items-center justify-center space-x-3 text-shine-blue-dark hover:text-shine-blue-primary py-4 px-4 bg-gray-50 rounded-lg min-w-0 transition-colors duration-200"
+                  className="flex items-center justify-center space-x-3 text-blue-700 hover:text-blue-600 py-4 px-4 bg-gray-50 rounded-lg min-w-0 transition-colors duration-200"
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   <span className="font-semibold text-base sm:text-lg break-words min-w-0">0472 30 37 01</span>
@@ -391,7 +391,7 @@ export default function Header({
                     setIsMobileMenuOpen(false);
                     setTimeout(handleBooking, 100);
                   }}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-shine-blue-primary px-4 sm:px-6 md:px-8 py-4 text-base sm:text-lg font-semibold text-white shadow-lg hover:bg-shine-blue-light focus-visible:outline focus-visible:ring-2 focus-visible:ring-shine-blue-primary min-w-0 transition-colors duration-200"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 sm:px-6 md:px-8 py-4 text-base sm:text-lg font-semibold text-white shadow-lg hover:bg-blue-500 focus-visible:outline focus-visible:ring-2 focus-visible:ring-blue-500 min-w-0 transition-colors duration-200"
                 >
                   <span className="break-words min-w-0">Réserver maintenant</span>
                 </button>

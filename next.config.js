@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
-import path from "path";
+const path = require('path');
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Exclure le dossier scripts/ de la compilation
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   
@@ -16,15 +16,7 @@ const nextConfig: NextConfig = {
     optimizeCss: false, // Désactiver LightningCSS explicitement
   },
   
-  // Configuration Turbopack (remplace experimental.turbo)
-  turbopack: {
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
-      },
-    },
-  },
+
   
   // Optimisation des images
   images: {
@@ -284,4 +276,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

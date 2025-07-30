@@ -33,7 +33,7 @@ export default function ServiceAreasSection({
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+          <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" >
             <div className="h-full flex flex-col p-4 sm:p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Villes principales</h3>
               <ul className="text-gray-600 space-y-2 flex-grow">
@@ -44,7 +44,7 @@ export default function ServiceAreasSection({
             </div>
           </div>
           
-          <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+          <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" >
             <div className="h-full flex flex-col p-4 sm:p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Codes postaux</h3>
               <ul className="text-gray-600 space-y-2 flex-grow">
@@ -55,7 +55,7 @@ export default function ServiceAreasSection({
             </div>
           </div>
           
-          <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" style={{backgroundColor: 'white', opacity: 1}}>
+          <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full relative z-10" >
             <div className="h-full flex flex-col p-4 sm:p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Service mobile</h3>
               <p className="text-gray-600 mb-4 flex-grow">

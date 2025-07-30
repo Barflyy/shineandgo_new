@@ -13,7 +13,6 @@ import {
   ServiceAreasSection,
   TestimonialsSectionWrapper,
   SocialProofSectionWrapper,
-  BeforeAfterSectionWrapper,
   HowItWorksSectionWrapper,
   FAQSectionWrapper
 } from '@/shared/sections';
@@ -31,11 +30,11 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "Shine&Go Premium",
       images: [
         {
-          url: '/hero-images/lavage-interieur-voiture.jpeg',
+          url: '/transformations/optimized/webp/apres01.webp',
           width: 1200,
           height: 630,
           alt: 'Lavage voiture à domicile en Wallonie - Shine&Go',
-          type: 'image/jpeg',
+          type: 'image/webp',
         },
       ],
     },
@@ -43,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Lavage voiture à domicile en Wallonie | Shine&Go – Devis gratuit",
       description: "Shine&Go : lavage voiture à domicile en Wallonie. Intérieur & extérieur à la main, finition showroom en 90 min. Devis gratuit + 10 € offerts.",
-      images: ['/hero-images/lavage-interieur-voiture.jpeg'],
+      images: ['/transformations/optimized/webp/apres01.webp'],
     },
     alternates: {
       canonical: "https://shineandgo.be/",
@@ -69,7 +68,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-surface-light/30 to-hero-bg/40 overflow-x-hidden touch-optimized">
+    <div className="min-h-screen bg-white overflow-x-hidden touch-optimized">
       {/* Scroll Progress Indicator */}
       <ScrollProgress />
       
@@ -94,8 +93,7 @@ export default async function HomePage() {
         {/* 5. SOCIAL PROOF SECTION */}
         <SocialProofSectionWrapper />
         
-        {/* 6. BEFORE/AFTER SECTION */}
-        <BeforeAfterSectionWrapper />
+
         
         {/* 7. HOW IT WORKS SECTION */}
         <HowItWorksSectionWrapper />

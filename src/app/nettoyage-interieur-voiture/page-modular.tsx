@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "Shine&Go Premium",
       images: [
         {
-          url: '/hero-images/lavage-interieur-voiture.jpeg',
+          url: '/transformations/optimized/webp/apres01.webp',
           width: 1200,
           height: 630,
           alt: 'Nettoyage intérieur voiture à domicile - Shine&Go',
@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Nettoyage intérieur voiture à domicile en Wallonie | Tarifs dès 39 € – Shine&Go",
       description: "Nettoyage intérieur de voiture à domicile en Wallonie. Aspiration complète, plastiques protégés, vitres sans traces. Tarifs dès 39 €. Devis gratuit – 10 € offerts.",
-      images: ['/hero-images/lavage-interieur-voiture.jpeg'],
+      images: ['/transformations/optimized/webp/apres01.webp'],
     },
     alternates: {
       canonical: "https://shineandgo.be/nettoyage-interieur-voiture",

@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: 'https://shine-go.be/hero-images/lavage-interieur-voiture.jpeg',
+          url: 'https://shine-go.be/transformations/optimized/webp/apres01.webp',
           width: 1200,
           height: 630,
           alt: 'Nettoyage voiture à domicile à Verviers',
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: 'Nettoyage voiture à domicile Verviers – Lavage auto premium Shine&Go',
       description: 'Lavage voiture à domicile à Verviers et alentours (Ensival, Heusy). Intérieur & extérieur à la main, finition showroom garantie en 90 min. Devis gratuit.',
-      images: ['https://shine-go.be/hero-images/lavage-interieur-voiture.jpeg'],
+      images: ['https://shine-go.be/transformations/optimized/webp/apres01.webp'],
     },
     alternates: {
       canonical: 'https://shine-go.be/nettoyage-voiture-verviers',
@@ -75,7 +75,7 @@ export default function LavageVoitureVerviersPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
-              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" >
                 <div className="text-center">
                   <div className="text-3xl mb-3">🚗</div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Intervention directement à domicile</h3>
@@ -83,7 +83,7 @@ export default function LavageVoitureVerviersPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" >
                 <div className="text-center">
                   <div className="text-3xl mb-3">✨</div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Produits haut de gamme</h3>
@@ -91,7 +91,7 @@ export default function LavageVoitureVerviersPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" >
                 <div className="text-center">
                   <div className="text-3xl mb-3">⏰</div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Gain de temps</h3>
@@ -99,7 +99,7 @@ export default function LavageVoitureVerviersPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20" >
                 <div className="text-center">
                   <div className="text-3xl mb-3">✅</div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Satisfaction garantie</h3>
@@ -122,7 +122,7 @@ export default function LavageVoitureVerviersPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" >
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-blue-600 mb-4">🧹 Lavage intérieur voiture</h3>
                 </div>
@@ -146,7 +146,7 @@ export default function LavageVoitureVerviersPage() {
                 </ul>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" >
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-green-600 mb-4">🚿 Lavage extérieur voiture</h3>
                 </div>
@@ -170,7 +170,7 @@ export default function LavageVoitureVerviersPage() {
                 </ul>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" >
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-purple-600 mb-4">✨ Nettoyage complet (intérieur + extérieur)</h3>
                 </div>
@@ -217,7 +217,7 @@ export default function LavageVoitureVerviersPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" >
                 <div className="flex items-center mb-4">
                   <div className="text-yellow-400 text-xl">★★★★★</div>
                 </div>
@@ -235,7 +235,7 @@ export default function LavageVoitureVerviersPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 relative z-20" >
                 <div className="flex items-center mb-4">
                   <div className="text-yellow-400 text-xl">★★★★★</div>
                 </div>
@@ -270,49 +270,49 @@ export default function LavageVoitureVerviersPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 relative z-20" >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Ensival</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Heusy</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Stembert</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Lambermont</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Hodimont</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Pepinster</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Dison</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Theux</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Limbourg</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Dolhain</p>
                 </div>
-                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+                <div className="text-center p-4 bg-white border border-slate-200 rounded-lg relative z-20" >
                   <span className="text-2xl">🏘️</span>
                   <p className="font-bold">Chaineux</p>
                 </div>
@@ -340,7 +340,7 @@ export default function LavageVoitureVerviersPage() {
               </h2>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 mb-8 relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+            <div className="bg-white border border-slate-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 sm:p-8 mb-8 relative z-20" >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
                   <div className="text-4xl mb-4">1️⃣</div>
@@ -359,7 +359,7 @@ export default function LavageVoitureVerviersPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm relative z-20" style={{backgroundColor: 'white', opacity: 1}}>
+              <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm relative z-20" >
                 <h4 className="text-lg font-bold text-slate-900 mb-4">Inclus dans chaque prestation :</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <ul className="space-y-2 text-slate-700">

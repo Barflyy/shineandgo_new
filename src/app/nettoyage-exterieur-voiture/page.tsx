@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "Shine&Go Premium",
       images: [
         {
-          url: '/hero-images/lavage-voiture-exterieur.jpeg',
+          url: '/transformations/optimized/webp/apres02.webp',
           width: 1200,
           height: 630,
           alt: 'Nettoyage extérieur voiture à domicile - Shine&Go',
@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Nettoyage extérieur de voiture à domicile – Résultat showroom garanti | Shine&Go",
       description: "Nettoyage extérieur de voiture à domicile en Wallonie. Lavage auto premium à la main avec produits pros. Résultat showroom garanti. Devis gratuit.",
-      images: ['/hero-images/lavage-voiture-exterieur.jpeg'],
+      images: ['/transformations/optimized/webp/apres02.webp'],
     },
     alternates: {
       canonical: "https://shineandgo.be/nettoyage-exterieur-voiture",
