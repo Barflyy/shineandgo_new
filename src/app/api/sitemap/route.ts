@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
+  // 🔧 SEO: Base URL sans www pour éviter la duplication de contenu
   const baseUrl = 'https://shineandgo.be'
   
-  // Pages principales
+  // 🔧 SEO: Pages existantes uniquement (suppression de /services)
   const pages = [
     {
       url: '/',
@@ -43,7 +44,7 @@ export async function GET() {
     }
   ]
 
-  // Générer le XML du sitemap
+  // 🔧 SEO: Générer le XML du sitemap avec URLs canoniques uniquement
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(page => `  <url>

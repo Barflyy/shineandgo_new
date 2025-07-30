@@ -1,13 +1,14 @@
 /**
- * Fonction utilitaire pour générer les URLs canoniques
+ * 🔧 SEO: Fonction utilitaire pour générer les URLs canoniques
  * Force toujours la version sans www pour éviter la duplication de contenu
+ * Compatible avec Vercel et SSR Next.js
  */
 
 export function generateCanonicalUrl(path: string = '/'): string {
-  // Nettoyer le path (enlever les slashes multiples)
-  const cleanPath = path.replace(/\/+/g, '/');
+  // 🔧 SEO: Nettoyer le path (enlever les slashes multiples et trailing slash)
+  const cleanPath = path.replace(/\/+/g, '/').replace(/\/$/, '') || '/';
   
-  // Construire l'URL canonique sans www
+  // 🔧 SEO: Construire l'URL canonique sans www
   return `https://shineandgo.be${cleanPath}`;
 }
 

@@ -7,6 +7,16 @@ import SmoothScroll from "./shared/components/SmoothScroll";
 import CriticalCSS from "./shared/components/CriticalCSS";
 import { generateStructuredData } from "./config/google-my-business";
 import { generateCanonicalUrl } from "./shared/utils/canonical";
+
+// 🔧 SEO: Fonction pour générer les métadonnées canoniques automatiquement
+function generateCanonicalMetadata(path: string = '/') {
+  return {
+    canonical: generateCanonicalUrl(path),
+    // 🔧 SEO: Meta tags pour éviter la duplication de contenu
+    'og:url': generateCanonicalUrl(path),
+    'twitter:url': generateCanonicalUrl(path),
+  };
+}
 // import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
@@ -43,6 +53,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: generateCanonicalUrl('/'),
   },
+
   category: "Automotive Services",
   classification: "Car Wash & Auto Detailing",
   referrer: "origin-when-cross-origin",
@@ -120,6 +131,9 @@ export const metadata: Metadata = {
     'DC.language': 'fr',
     'DC.coverage': 'Herve, Verviers, Dison, Spa, Limbourg, Liège',
     'DC.rights': '© 2025 Shine&Go Premium',
+    // 🔧 SEO: URLs canoniques pour éviter la duplication de contenu
+    'og:url': generateCanonicalUrl('/'),
+    'twitter:url': generateCanonicalUrl('/'),
   },
 };
 

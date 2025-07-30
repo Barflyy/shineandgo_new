@@ -246,31 +246,53 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Redirection www vers non-www (version canonique)
+      // 🔧 SEO: Redirection www vers non-www (version canonique)
+      // Force toutes les URLs www.shineandgo.be vers shineandgo.be pour éviter la duplication de contenu
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.shineandgo.be' }],
         destination: 'https://shineandgo.be/:path*',
-        permanent: true, // 301
+        permanent: true, // 301 - Redirection permanente pour le SEO
       },
-      // Redirection HTTP vers HTTPS
+      
+      // 🔧 SEO: Redirection HTTP vers HTTPS
+      // Améliore la sécurité et le référencement
       {
         source: '/:path*',
         has: [{ type: 'header', key: 'x-forwarded-proto', value: 'http' }],
         destination: 'https://shineandgo.be/:path*',
-        permanent: true, // 301
+        permanent: true, // 301 - Redirection permanente
       },
-      // Redirection de la page principale zone-intervention vers la page d'accueil
+      
+      // 🔧 SEO: Redirection /services vers page d'accueil
+      // Cette page n'existe plus, redirection vers la page principale
+      {
+        source: '/services',
+        destination: '/',
+        permanent: true, // 301 - Redirection permanente
+      },
+      
+      // 🔧 SEO: Redirection /services/ vers page d'accueil (avec slash)
+      {
+        source: '/services/',
+        destination: '/',
+        permanent: true, // 301 - Redirection permanente
+      },
+      
+      // 🔧 SEO: Redirection zone-intervention vers page d'accueil
+      // Ancienne structure d'URL, maintenant obsolète
       {
         source: '/zone-intervention',
         destination: '/',
-        permanent: true,
+        permanent: true, // 301 - Redirection permanente
       },
-      // Redirection dynamique pour toutes les pages zone-intervention vers nettoyage-voiture
+      
+      // 🔧 SEO: Redirection zone-intervention/:city vers nettoyage-voiture-:city
+      // Migration de l'ancienne structure d'URL vers la nouvelle
       {
         source: '/zone-intervention/:city*',
         destination: '/nettoyage-voiture-:city*',
-        permanent: true,
+        permanent: true, // 301 - Redirection permanente
       },
     ];
   },
