@@ -7,6 +7,7 @@ import Script from 'next/script';
 import Header from '@/shared/components/HeaderWrapper';
 import ScrollProgress from '@/shared/components/ScrollProgress';
 import Footer from '@/shared/components/Footer';
+import { generateCanonicalUrl } from '@/shared/utils/canonical';
 import {
   HeroSection,
   ServicesSectionWrapper,
@@ -45,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: ['/transformations/optimized/webp/apres01.webp'],
     },
     alternates: {
-      canonical: "https://shineandgo.be/",
+      canonical: generateCanonicalUrl('/'),
     },
     robots: {
       index: true,

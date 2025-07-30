@@ -6,6 +6,7 @@ import Analytics from "./analytics";
 import SmoothScroll from "./shared/components/SmoothScroll";
 import CriticalCSS from "./shared/components/CriticalCSS";
 import { generateStructuredData } from "./config/google-my-business";
+import { generateCanonicalUrl } from "./shared/utils/canonical";
 // import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://shineandgo.be'),
   alternates: {
-    canonical: '/',
+    canonical: generateCanonicalUrl('/'),
   },
   category: "Automotive Services",
   classification: "Car Wash & Auto Detailing",
