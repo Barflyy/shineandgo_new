@@ -46,7 +46,7 @@ export default function FAQCompletSection() {
   };
 
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 container-mobile bg-white">
+    <section className="w-full py-12 md:py-16 lg:py-20 container-mobile">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black leading-tight tracking-tight text-slate-900 mb-4">

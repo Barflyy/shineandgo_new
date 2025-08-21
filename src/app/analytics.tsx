@@ -19,6 +19,7 @@ export default function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
+          gtag('config', 'AW-16970215254');
           gtag('config', 'G-9MZK3M3Z7T', {
             page_title: document.title,
             page_location: window.location.href,

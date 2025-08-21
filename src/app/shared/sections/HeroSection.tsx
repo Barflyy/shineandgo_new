@@ -21,7 +21,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className={`snap-start min-h-svh w-full relative ${className}`}>
-      <div className="relative min-h-screen flex items-center justify-center bg-white">
+      <div className="relative min-h-screen flex items-center justify-center">
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
             {title}

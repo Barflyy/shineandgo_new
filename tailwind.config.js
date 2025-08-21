@@ -98,6 +98,10 @@ module.exports = {
           '2xl': '1400px',
         },
       },
+      // Ajout du breakpoint xs pour mobile
+      screens: {
+        'xs': '475px',
+      },
     },
   },
   plugins: [

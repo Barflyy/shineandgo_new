@@ -230,7 +230,7 @@ export default function DynamicPage({ params }: { params: Promise<{ slug: string
 
         {/* Sections dynamiques */}
         {pageData.sections.map((section, sectionIndex) => (
-          <section key={sectionIndex} className="w-full py-12 sm:py-16 bg-white">
+          <section key={sectionIndex} className="w-full py-12 sm:py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">

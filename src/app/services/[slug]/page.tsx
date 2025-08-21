@@ -73,9 +73,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden relative z-10" >
+        <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden relative z-10" >
           <div className="p-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               {service.title}
