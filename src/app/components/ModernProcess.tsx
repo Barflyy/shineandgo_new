@@ -48,11 +48,8 @@ export default function ModernProcess() {
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-950/10 to-transparent"></div>
       </div>
 
-      {/* Subtle dots pattern */}
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
-        backgroundSize: '40px 40px'
-      }}></div>
+      {/* Clean overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.015] to-transparent"></div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

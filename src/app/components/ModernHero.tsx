@@ -18,11 +18,8 @@ export default function ModernHero() {
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-600/5"></div>
       </div>
 
-      {/* Subtle dots pattern */}
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
-        backgroundSize: '40px 40px'
-      }}></div>
+      {/* Clean noise texture overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent"></div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="max-w-6xl mx-auto text-center">
