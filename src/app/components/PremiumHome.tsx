@@ -1,64 +1,122 @@
 "use client"
 
-import PremiumHero from "../components/PremiumHero"
-import PremiumValues from "../components/PremiumValues"
-import PremiumOffers from "../components/PremiumOffers"
-import PremiumBeforeAfter from "../components/PremiumBeforeAfter"
-import PremiumTestimonials from "../components/PremiumTestimonials"
-import PremiumFinalCTA from "../components/PremiumFinalCTA"
-import ServiceAreasSection from "../shared/sections/ServiceAreasSection"
+import ModernHero from "../components/ModernHero"
+import ModernServices from "../components/ModernServices"
+import ModernProcess from "../components/ModernProcess"
+import ModernGallery from "../components/ModernGallery"
+import ModernFAQ from "../components/ModernFAQ"
+import ModernFooter from "../components/ModernFooter"
 
 export default function PremiumHome() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white antialiased">
       <main>
-        <PremiumHero />
-        <PremiumValues />
-        <PremiumOffers />
-        <PremiumBeforeAfter />
-        <ServiceAreasSection className="bg-white" />
-        <PremiumTestimonials />
-        <PremiumFinalCTA />
+        <ModernHero />
+        <ModernServices />
+        <ModernProcess />
+        <ModernGallery />
+        <ModernFAQ />
       </main>
 
-      {/* Schema.org JSON-LD - LocalBusiness */}
+      <ModernFooter />
+
+      {/* Schema.org JSON-LD - Enhanced */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": ["LocalBusiness", "CarWash"],
-            name: "Shine&Go",
+            "@type": ["LocalBusiness", "CarWash", "AutoRepair"],
+            name: "Shine&Go - Detailing Automobile Mobile",
+            description: "Service mobile premium de detailing automobile à domicile. Nettoyage intérieur, extérieur et complet avec produits professionnels.",
             url: "https://shineandgo.be",
             telephone: "+32472303701",
             email: "contact@shineandgo.be",
-            priceRange: "€€€",
-            offers: [
-              { "@type": "Offer", name: "Essentiel Privé", price: "149", priceCurrency: "EUR" },
-              { "@type": "Offer", name: "Signature Privé", price: "249", priceCurrency: "EUR" },
-            ],
+            priceRange: "€€",
+            image: "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Herve",
+              addressRegion: "Liège",
+              postalCode: "4650",
+              addressCountry: "BE"
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "50.6386",
+              longitude: "5.7942"
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              reviewCount: "30",
+              bestRating: "5",
+              worstRating: "1"
+            },
+            openingHours: "Mo-Su 08:00-20:00",
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Services de detailing automobile",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Nettoyage Intérieur Premium",
+                    description: "Nettoyage complet intérieur avec aspiration, traitement surfaces et vitres"
+                  },
+                  price: "49",
+                  priceCurrency: "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Nettoyage Extérieur Showroom",
+                    description: "Lavage extérieur complet avec protection hydrophobe"
+                  },
+                  price: "69",
+                  priceCurrency: "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Formule Complète",
+                    description: "Detailing complet intérieur et extérieur avec finitions premium"
+                  },
+                  price: "99",
+                  priceCurrency: "EUR"
+                }
+              ]
+            },
             areaServed: [
-              { "@type": "AdministrativeArea", name: "Herve" },
-              { "@type": "AdministrativeArea", name: "Verviers" },
-              { "@type": "AdministrativeArea", name: "Liège" },
+              { "@type": "City", name: "Herve" },
+              { "@type": "City", name: "Verviers" },
+              { "@type": "City", name: "Liège" },
+              { "@type": "City", name: "Battice" },
+              { "@type": "City", name: "Soumagne" }
             ],
-          }),
+            serviceType: ["Mobile Car Detailing", "Car Wash", "Interior Cleaning", "Exterior Detailing"],
+            paymentAccepted: ["Cash", "Credit Card", "Bank Transfer"],
+            currenciesAccepted: "EUR"
+          })
         }}
       />
 
-      {/* Sticky CTA Mobile */}
-      <div className="fixed bottom-3 inset-x-3 z-[60] md:hidden">
+      {/* Sticky CTA Mobile - Modern Version */}
+      <div className="fixed bottom-4 inset-x-4 z-50 md:hidden">
         <div className="flex gap-3">
           <a
             href="https://wa.me/32472303701"
-            className="flex-1 text-center rounded-xl bg-blue-600 text-white font-semibold py-3 shadow-lg"
+            className="flex-1 text-center rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold py-4 shadow-glow"
             aria-label="Réserver via WhatsApp"
           >
             📲 WhatsApp
           </a>
           <a
             href="tel:+32472303701"
-            className="flex-1 text-center rounded-xl bg-white border border-slate-200 text-slate-900 font-semibold py-3 shadow-lg"
+            className="flex-1 text-center rounded-2xl bg-white/90 backdrop-blur-xl border-2 border-dark-200 text-dark-900 font-semibold py-4 shadow-xl"
             aria-label="Appeler Shine&Go"
           >
             📞 Appeler
