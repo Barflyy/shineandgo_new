@@ -23,10 +23,10 @@ export default function ModernGallery() {
   ]
 
   return (
-    <section className="relative py-32 bg-gradient-to-b from-dark-50 to-white overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-dark-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 text-sm font-semibold mb-6">
             <Sparkles className="w-4 h-4" />
             <span>Transformations</span>

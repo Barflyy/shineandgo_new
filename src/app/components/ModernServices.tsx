@@ -50,32 +50,32 @@ export default function ModernServices() {
   ]
 
   return (
-    <section className="relative py-32 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-500 to-transparent"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4" />
             <span>Nos formules</span>
           </div>
           
-          <h2 className="text-fluid-4xl font-display font-bold text-dark-900 mb-6 animate-fade-in-up">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-6 animate-fade-in-up px-4">
             Choisissez votre
             <span className="block bg-gradient-to-r from-brand-600 to-purple-600 bg-clip-text text-transparent">
               niveau de brillance
             </span>
           </h2>
           
-          <p className="text-fluid-lg text-dark-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+          <p className="text-base sm:text-lg md:text-xl text-dark-600 max-w-2xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
             Service mobile premium · Produits professionnels · Résultat garanti
           </p>
         </div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {services.map((service, idx) => {
             const Icon = service.icon
             return (
@@ -95,10 +95,10 @@ export default function ModernServices() {
                 )}
 
                 {/* Card */}
-                <div className={`relative h-full rounded-3xl bg-white p-8 transition-all duration-500 border-2 ${
+                <div className={`relative h-full rounded-2xl md:rounded-3xl bg-white p-6 md:p-8 transition-all duration-500 border-2 ${
                   service.popular 
-                    ? 'border-orange-200 shadow-2xl hover:shadow-orange-100 hover:-translate-y-2' 
-                    : 'border-dark-200 shadow-xl hover:shadow-2xl hover:-translate-y-2'
+                    ? 'border-orange-200 shadow-2xl hover:shadow-orange-100 lg:hover:-translate-y-2' 
+                    : 'border-dark-200 shadow-xl hover:shadow-2xl lg:hover:-translate-y-2'
                 }`}>
                   
                   {/* Icon */}

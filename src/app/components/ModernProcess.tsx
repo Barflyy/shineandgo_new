@@ -35,11 +35,11 @@ export default function ModernProcess() {
   ]
 
   return (
-    <section className="relative py-32 bg-dark-950 overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-dark-950 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/20 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-float animation-delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-brand-500/20 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 md:w-96 md:h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {/* Grid overlay */}
@@ -47,7 +47,7 @@ export default function ModernProcess() {
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-white/90 text-sm font-semibold mb-6">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -55,11 +55,11 @@ export default function ModernProcess() {
             <span>Simple & rapide</span>
           </div>
           
-          <h2 className="text-fluid-4xl font-display font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 px-4">
             Comment ça marche ?
           </h2>
           
-          <p className="text-fluid-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto px-4">
             Un service pensé pour vous faire gagner du temps tout en offrant un résultat exceptionnel
           </p>
         </div>
@@ -77,33 +77,33 @@ export default function ModernProcess() {
                   <div className="hidden lg:block absolute left-16 top-32 w-0.5 h-32 bg-gradient-to-b from-white/20 to-transparent"></div>
                 )}
 
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 last:mb-0">
+                <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center mb-12 md:mb-16 lg:mb-20 last:mb-0">
                   {/* Content - Left on even, Right on odd */}
                   <div className={`${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                    <div className="flex items-start gap-6">
+                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                       {/* Icon */}
-                      <div className={`flex-shrink-0 w-32 h-32 rounded-3xl bg-gradient-to-br ${step.color} p-1 shadow-glow`}>
-                        <div className="w-full h-full rounded-3xl bg-dark-900 flex items-center justify-center">
-                          <Icon className="w-12 h-12 text-white" />
+                      <div className={`flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-2xl md:rounded-3xl bg-gradient-to-br ${step.color} p-1 shadow-glow`}>
+                        <div className="w-full h-full rounded-2xl md:rounded-3xl bg-dark-900 flex items-center justify-center">
+                          <Icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" />
                         </div>
                       </div>
 
                       {/* Text */}
-                      <div className="flex-1 pt-4">
-                        <div className={`text-6xl font-bold bg-gradient-to-br ${step.color} bg-clip-text text-transparent mb-4`}>
+                      <div className="flex-1">
+                        <div className={`text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-br ${step.color} bg-clip-text text-transparent mb-3 md:mb-4`}>
                           {step.number}
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                        <p className="text-white/70 leading-relaxed">{step.description}</p>
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 md:mb-3">{step.title}</h3>
+                        <p className="text-sm sm:text-base text-white/70 leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Visual - Right on even, Left on odd */}
                   <div className={`${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <div className={`relative aspect-video rounded-3xl bg-gradient-to-br ${step.color} p-1 shadow-glow-lg hover:shadow-glow transition-all duration-500 hover:-translate-y-2`}>
-                      <div className="w-full h-full rounded-3xl bg-dark-800 flex items-center justify-center overflow-hidden">
-                        <div className={`text-9xl font-bold bg-gradient-to-br ${step.color} bg-clip-text text-transparent opacity-20`}>
+                    <div className={`relative aspect-video rounded-2xl md:rounded-3xl bg-gradient-to-br ${step.color} p-1 shadow-glow-lg lg:hover:shadow-glow transition-all duration-500 lg:hover:-translate-y-2`}>
+                      <div className="w-full h-full rounded-2xl md:rounded-3xl bg-dark-800 flex items-center justify-center overflow-hidden">
+                        <div className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-br ${step.color} bg-clip-text text-transparent opacity-20`}>
                           {step.number}
                         </div>
                       </div>

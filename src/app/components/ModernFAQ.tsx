@@ -34,23 +34,23 @@ export default function ModernFAQ() {
   ]
 
   return (
-    <section className="relative py-32 bg-white overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold mb-6">
             <HelpCircle className="w-4 h-4" />
             <span>Questions fréquentes</span>
           </div>
           
-          <h2 className="text-fluid-4xl font-display font-bold text-dark-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-6 px-4">
             Vous avez des questions ?
             <span className="block text-dark-600">Nous avons les réponses</span>
           </h2>
         </div>
 
         {/* FAQ List */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
           {faqs.map((faq, idx) => (
             <div 
               key={idx}
@@ -58,13 +58,13 @@ export default function ModernFAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full flex items-center justify-between gap-4 p-6 text-left transition-colors"
+                className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left transition-colors touch-manipulation"
               >
-                <span className="text-lg font-semibold text-dark-900 group-hover:text-brand-600 transition-colors">
+                <span className="text-base sm:text-lg font-semibold text-dark-900 group-hover:text-brand-600 transition-colors pr-2">
                   {faq.question}
                 </span>
                 <ChevronDown 
-                  className={`w-6 h-6 flex-shrink-0 text-dark-600 transition-transform duration-300 ${
+                  className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-dark-600 transition-transform duration-300 ${
                     openIndex === idx ? 'rotate-180' : ''
                   }`}
                 />
@@ -78,7 +78,7 @@ export default function ModernFAQ() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-6 pb-6 text-dark-600 leading-relaxed">
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 text-sm sm:text-base text-dark-600 leading-relaxed">
                     {faq.answer}
                   </div>
                 </div>
