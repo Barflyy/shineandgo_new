@@ -56,7 +56,7 @@ export default function UrgencyBanner() {
 
               <div className="flex-shrink-0">
                 <a
-                  href="https://wa.me/32123456789?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20une%20place"
+                  href="https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20une%20place"
                   className="inline-flex items-center gap-2 px-6 md:px-8 py-4 rounded-xl bg-white text-red-600 font-bold text-base md:text-lg hover:bg-slate-50 shadow-xl hover:shadow-2xl transition-all hover:scale-105"
                 >
                   <Calendar className="w-5 h-5 md:w-6 md:h-6" />

@@ -348,7 +348,7 @@ export default function NettoyageExterieurPage() {
                   📲 Recevoir un devis gratuit en 2 minutes – WhatsApp
                 </a>
                 <a
-                  href="https://tally.so/r/w5POJQ"
+                  href="https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20un%20devis%20gratuit%20pour%20un%20lavage%20ext%C3%A9rieur%20voiture"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"

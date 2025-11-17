@@ -165,7 +165,7 @@ export default function WhyChooseUs() {
               Rejoignez les 30+ clients satisfaits ce mois-ci
             </div>
             <a
-              href="https://wa.me/32123456789?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20un%20nettoyage%20de%20voiture"
+              href="https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20un%20devis%20pour%20un%20nettoyage%20de%20voiture"
               className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold text-base md:text-lg hover:from-emerald-600 hover:to-emerald-700 shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

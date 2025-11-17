@@ -172,12 +172,15 @@ export default function ModernServices() {
           <p className="text-dark-600 mb-6">
             ✓ Déplacement gratuit dans un rayon de 25km · ✓ Paiement après validation · ✓ Garantie satisfaction
           </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-dark-100 text-dark-700 text-sm font-medium">
+          <a
+            href="https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20un%20devis%20personnalis%C3%A9"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-dark-100 text-dark-700 text-sm font-medium hover:bg-dark-200 transition-colors"
+          >
             <svg className="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>Besoin d'un devis personnalisé ? Contactez-nous</span>
-          </div>
+          </a>
         </div>
       </div>
     </section>
