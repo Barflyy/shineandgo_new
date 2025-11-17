@@ -7,7 +7,7 @@ export default function PremiumTrustBenefits() {
     {
       icon: Shield,
       title: "Garantie 7 jours",
-      description: "Satisfaction garantie ou remboursÈ",
+      description: "Satisfaction garantie ou rembourse",
       gradient: "from-emerald-500 to-teal-500"
     },
     {
@@ -19,7 +19,7 @@ export default function PremiumTrustBenefits() {
     {
       icon: Clock,
       title: "Service Express",
-      description: "90 minutes ‡ votre domicile",
+      description: "90 minutes a votre domicile",
       gradient: "from-purple-500 to-pink-500"
     },
     {
@@ -32,7 +32,7 @@ export default function PremiumTrustBenefits() {
 
   const comparison = [
     {
-      feature: "Service ‡ domicile",
+      feature: "Service a domicile",
       us: true,
       others: false
     },
@@ -47,7 +47,7 @@ export default function PremiumTrustBenefits() {
       others: false
     },
     {
-      feature: "Paiement aprËs validation",
+      feature: "Paiement apres validation",
       us: true,
       others: false
     },
@@ -74,7 +74,7 @@ export default function PremiumTrustBenefits() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-dark-600 max-w-2xl mx-auto">
-            L'excellence du service premium avec la commoditÈ du mobile
+            Excellence du service premium avec la commodite du mobile
           </p>
         </div>
 
@@ -106,7 +106,7 @@ export default function PremiumTrustBenefits() {
           <div className="bg-white rounded-3xl shadow-2xl border-2 border-dark-100 overflow-hidden">
             {/* Table header */}
             <div className="grid grid-cols-3 gap-4 p-6 bg-gradient-to-br from-slate-50 to-white border-b-2 border-dark-100">
-              <div className="text-sm font-semibold text-dark-600">CaractÈristiques</div>
+              <div className="text-sm font-semibold text-dark-600">Caracteristiques</div>
               <div className="text-center">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white text-sm font-bold shadow-lg">
                   <Sparkles className="w-4 h-4" />
@@ -155,23 +155,28 @@ export default function PremiumTrustBenefits() {
 
         {/* Trust badges */}
         <div className="mt-16 flex flex-wrap justify-center gap-6 md:gap-8">
-          {[
-            { icon: "=", text: "Paiement sÈcurisÈ" },
-            { icon: "=·", text: "RC Pro assurÈe" },
-            { icon: "P", text: "100% Satisfaction" },
-            { icon: "=Ò", text: "RÈservation facile" }
-          ].map((badge, i) => (
-            <div key={i} className="flex items-center gap-3 px-6 py-3 rounded-full bg-white border-2 border-dark-100 shadow-lg">
-              <span className="text-2xl">{badge.icon}</span>
-              <span className="text-sm font-semibold text-dark-700">{badge.text}</span>
-            </div>
-          ))}
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white border-2 border-dark-100 shadow-lg">
+            <span className="text-2xl">üîí</span>
+            <span className="text-sm font-semibold text-dark-700">Paiement securise</span>
+          </div>
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white border-2 border-dark-100 shadow-lg">
+            <span className="text-2xl">üõ°Ô∏è</span>
+            <span className="text-sm font-semibold text-dark-700">RC Pro assuree</span>
+          </div>
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white border-2 border-dark-100 shadow-lg">
+            <span className="text-2xl">‚≠ê</span>
+            <span className="text-sm font-semibold text-dark-700">100% Satisfaction</span>
+          </div>
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white border-2 border-dark-100 shadow-lg">
+            <span className="text-2xl">üì±</span>
+            <span className="text-sm font-semibold text-dark-700">Reservation facile</span>
+          </div>
         </div>
 
         {/* Social proof */}
         <div className="mt-16 text-center">
           <p className="text-lg text-dark-600">
-            <span className="font-bold text-brand-600">30+ clients satisfaits</span> ce mois-ci ∑
+            <span className="font-bold text-brand-600">30+ clients satisfaits</span> ce mois-ci - 
             <span className="font-bold text-brand-600"> 0 client insatisfait</span> depuis le lancement
           </p>
         </div>
