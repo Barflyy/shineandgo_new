@@ -36,7 +36,7 @@ export default function NettoyageInterieurPage() {
   const faqItems = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 49€ pour une citadine, 59€ pour une berline, 69€ pour un break, 79€ pour un SUV/4x4, 89€ pour un monospace et 99€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 65€ pour une citadine, 75€ pour une berline, 85€ pour un break, 95€ pour un SUV/4x4, 110€ pour un monospace et 125€ pour un utilitaire. Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un nettoyage intérieur ?",
@@ -612,7 +612,7 @@ export default function NettoyageInterieurPage() {
             },
             "offers": {
               "@type": "Offer",
-              "price": "49",
+              "price": "65",
               "priceCurrency": "EUR",
               "description": "Nettoyage intérieur voiture à domicile"
             }

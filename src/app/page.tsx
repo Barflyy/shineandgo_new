@@ -56,7 +56,7 @@ export default function HomePage() {
               }
             ],
             "priceRange": "€€",
-            "serviceType": ["Car Wash", "Car Detailing", "Mobile Car Cleaning"],
+            "serviceType": ["Nettoyage Voiture Mobile", "Car Detailing", "Mobile Car Cleaning"],
             "openingHours": "Mo-Su 08:00-20:00"
           })
         }}

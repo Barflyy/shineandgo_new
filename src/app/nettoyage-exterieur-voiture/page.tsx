@@ -36,7 +36,7 @@ export default function NettoyageExterieurPage() {
   const faqItems = [
     {
       question: "Quel est le tarif d'un nettoyage extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 39€ pour une citadine, 49€ pour une berline, 59€ pour un break, 69€ pour un SUV/4x4, 79€ pour un monospace et 89€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 85€ pour une citadine, 95€ pour une berline, 105€ pour un break, 115€ pour un SUV/4x4, 130€ pour un monospace et 145€ pour un utilitaire. Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un nettoyage extérieur ?",
@@ -612,7 +612,7 @@ export default function NettoyageExterieurPage() {
             },
             "offers": {
               "@type": "Offer",
-              "price": "39",
+              "price": "85",
               "priceCurrency": "EUR",
               "description": "Nettoyage extérieur voiture à domicile"
             }

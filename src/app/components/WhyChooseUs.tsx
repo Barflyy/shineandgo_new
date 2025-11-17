@@ -6,46 +6,46 @@ export default function WhyChooseUs() {
   const benefits = [
     {
       icon: Home,
-      title: "Service à domicile",
-      description: "On vient chez vous, au travail, ou où vous voulez. Zéro déplacement, zéro stress.",
+      title: "Votre Temps Préservé",
+      description: "Intervention à domicile ou bureau. Zéro déplacement, zéro contrainte. Pendant que nous travaillons, vous aussi.",
       highlight: "Gain de 2-3h"
     },
     {
       icon: Droplets,
-      title: "Produits professionnels",
-      description: "Koch-Chemie & CarPro : les mêmes produits que les meilleurs detailers. Votre nettoyage auto atteint un résultat showroom garanti.",
-      highlight: "Qualité premium"
+      title: "Excellence Professionnelle",
+      description: "Produits Koch-Chemie & CarPro exclusifs. Les mêmes standards que les concessions premium. Aucun compromis sur vos matériaux.",
+      highlight: "Standards concession"
     },
     {
       icon: Clock,
-      title: "Rapide & efficace",
-      description: "2-3h pour une voiture comme neuve. Pendant que vous travaillez, nous on travaille aussi.",
-      highlight: "Service express"
+      title: "Efficacité Premium",
+      description: "90 minutes pour une transformation complète. Rapidité sans sacrifier la qualité professionnelle.",
+      highlight: "90 min"
     },
     {
       icon: Wallet,
-      title: "Prix transparent",
-      description: "Aucun frais caché. Le prix annoncé est le prix final. Devis gratuit en 2 min par WhatsApp.",
-      highlight: "Sans surprise"
+      title: "Transparence Totale",
+      description: "Tarification claire sans surprises. Le prix annoncé inclut tout : déplacement, produits premium, garantie satisfaction.",
+      highlight: "Tout inclus"
     },
     {
       icon: CheckCircle2,
-      title: "Inspection gratuite",
-      description: "Vous validez le résultat avant de payer. Pas satisfait ? On corrige immédiatement.",
-      highlight: "Zéro risque"
+      title: "Garantie Excellence",
+      description: "Inspection conjointe du résultat. Paiement uniquement après validation. Garantie satisfaction 7 jours.",
+      highlight: "7 jours"
     },
     {
       icon: Sparkles,
-      title: "Résultat durable",
-      description: "Protection hydrophobe incluse. Votre voiture reste propre 3x plus longtemps.",
-      highlight: "Longue durée"
+      title: "Protection Durable",
+      description: "Traitement hydrophobe professionnel inclus. Votre véhicule conserve son éclat 4 à 6 semaines. Durabilité maximale.",
+      highlight: "4-6 semaines"
     }
   ]
 
   const comparison = [
-    { label: "Chez le garagiste", price: "80-150€", time: "4-5h", quality: "Variable", convenience: "⚠️ Déplacement" },
-    { label: "Lave-auto automatique", price: "15-25€", time: "15 min", quality: "Basique", convenience: "✓ Rapide" },
-    { label: "Shine&Go", price: "50-90€", time: "0h pour vous", quality: "Premium", convenience: "✓ À domicile", highlight: true }
+    { label: "Garagiste traditionnel", price: "120-200€", time: "4-5h", quality: "Premium mais long", convenience: "⚠️ Déplacement + délai" },
+    { label: "Station automatique", price: "15-25€", time: "30 min", quality: "Basique / Rayures", convenience: "⚠️ Risque carrosserie" },
+    { label: "⭐Shine&Go Premium", price: "65-120€", time: "0h pour vous", quality: "Excellence pro", convenience: "✓ Mobile premium", highlight: true }
   ]
 
   return (
@@ -62,15 +62,16 @@ export default function WhyChooseUs() {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-6 px-4">
-            Pourquoi 30+ clients
+            L'Excellence Shine&Go
             <span className="block bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              nous choisissent chaque mois
+              Pourquoi 30+ clients nous choisissent
             </span>
           </h2>
           
           <p className="text-base sm:text-lg md:text-xl text-dark-600 px-4">
-            Un service de <strong>nettoyage voiture</strong> premium qui vous fait gagner du temps. 
-            Notre <strong>lavage voiture mobile</strong> à domicile pour un prix juste.
+            Nettoyage voiture premium qui transforme votre véhicule. Notre service 
+            mobile professionnel garantit une finition niveau concession, sans 
+            compromis sur la qualité.
           </p>
         </div>
 
@@ -107,10 +108,10 @@ export default function WhyChooseUs() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold text-dark-900 mb-3">
-              Comparaison honnête : nettoyage voiture vs car wash traditionnel
+              Comparaison honnête : nettoyage voiture premium vs station automatique
             </h3>
             <p className="text-dark-600">
-              Pour que vous puissiez faire le bon choix entre notre <strong>lavage voiture</strong> à domicile 
+              Pour que vous puissiez faire le bon choix entre notre <strong>nettoyage voiture premium</strong> à domicile 
               et les solutions traditionnelles, en toute transparence
             </p>
           </div>
@@ -148,9 +149,9 @@ export default function WhyChooseUs() {
 
           <div className="mt-8 text-center">
             <p className="text-dark-600 text-sm">
-              💡 <span className="font-semibold">Le bon rapport qualité/prix/temps :</span> un service de 
-              <strong> nettoyage auto</strong> premium à prix juste, sans perdre une minute de votre temps. 
-              Notre <strong>car wash mobile</strong> vous fait gagner 2-3h.
+              💡 <span className="font-semibold">L'excellence accessible :</span> un service de 
+              <strong> nettoyage voiture premium</strong> à prix juste, sans perdre une minute de votre temps. 
+              Notre <strong>service mobile professionnel</strong> vous fait gagner 2-3h.
             </p>
           </div>
         </div>

@@ -159,7 +159,7 @@ export default function Analytics() {
           fbq('init', '1234567890123456');
           fbq('track', 'PageView');
 
-          // Track custom events for car wash business
+          // Track custom events for nettoyage voiture premium business
           document.addEventListener('click', function(e) {
             if (e.target.closest('a[href*="wa.me"]')) {
               fbq('track', 'Lead', {

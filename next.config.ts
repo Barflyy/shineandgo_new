@@ -280,6 +280,32 @@ const nextConfig: NextConfig = {
         destination: '/nettoyage-voiture-:city*',
         permanent: true,
       },
+      // === NOUVEAUX REDIRECTS - REBRANDING PREMIUM ===
+      {
+        source: '/car-wash-battice',
+        destination: '/lavage-voiture-battice',
+        permanent: true, // 301
+      },
+      {
+        source: '/car-wash-soumagne',
+        destination: '/lavage-voiture-soumagne',
+        permanent: true,
+      },
+      {
+        source: '/car-wash-verviers',
+        destination: '/nettoyage-voiture-verviers',
+        permanent: true,
+      },
+      {
+        source: '/car-wash-herve',
+        destination: '/nettoyage-voiture-herve',
+        permanent: true,
+      },
+      {
+        source: '/car-wash-liege',
+        destination: '/lavage-voiture-liege',
+        permanent: true,
+      },
     ];
   },
 };

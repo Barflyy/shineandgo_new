@@ -7,16 +7,16 @@ import StickyPhoneButton from '@/components/StickyPhoneButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Lavage Voiture Mobile Herve Verviers Liège | Chez Vous en 2h - 49€ - Shine&Go',
-  description: 'Lavage voiture à domicile Herve, Verviers, Liège. On vient chez vous en 2h. Produits pro Koch-Chemie. Résultat showroom garanti 7j. Dès 49€. Devis en 2 min sur WhatsApp.',
+  title: 'Nettoyage Voiture Premium Herve Verviers Liège | Mobile à Domicile - Shine&Go',
+  description: 'Nettoyage voiture premium à domicile. Service mobile Herve, Verviers, Liège. Produits Koch-Chemie. Résultat showroom garanti. À partir de 65€. Devis WhatsApp 2 min.',
   keywords: 'lavage voiture domicile, nettoyage voiture herve, lavage voiture verviers, nettoyage voiture liege, lavage voiture mobile, nettoyage interieur voiture, lavage exterieur voiture, shine&go, wallonie, belgique',
   authors: [{ name: 'Shine&Go' }],
   creator: 'Shine&Go',
   publisher: 'Shine&Go',
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   openGraph: {
-    title: 'Lavage Voiture Mobile Herve Verviers Liège | Chez Vous en 2h - 49€',
-    description: 'Lavage voiture à domicile Herve, Verviers, Liège. On vient chez vous en 2h. Produits pro. Résultat showroom garanti 7j. Dès 49€.',
+    title: 'Nettoyage Voiture Premium Herve Verviers Liège | À Domicile',
+    description: 'Nettoyage voiture premium mobile. Herve, Verviers, Liège. Produits Koch-Chemie. Résultat showroom. À partir de 65€.',
     url: 'https://shineandgo.be/',
     siteName: 'Shine&Go',
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lavage Voiture Mobile Herve Verviers Liège | Chez Vous en 2h - 49€',
-    description: 'Lavage voiture à domicile. On vient chez vous en 2h. Résultat showroom garanti 7j. Dès 49€. Devis en 2 min sur WhatsApp.',
+    title: 'Nettoyage Voiture Premium Mobile | Herve Verviers Liège',
+    description: 'Nettoyage voiture premium. Service mobile professionnel. Résultat showroom. À partir de 65€.',
     images: ['/transformations/optimized/webp/apres01.webp'],
   },
   alternates: {

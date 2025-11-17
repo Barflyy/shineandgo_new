@@ -546,7 +546,7 @@ function FAQCompletSectionInline() {
   const faqItems = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur et extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 79€ pour une citadine, 89€ pour une berline, 99€ pour un break, 109€ pour un SUV/4x4, 119€ pour un monospace et 129€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 120€ pour une citadine, 140€ pour une berline, 160€ pour un break, 170€ pour un SUV/4x4, 190€ pour un monospace et 220€ pour un utilitaire. Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un lavage complet voiture ?",
@@ -907,7 +907,7 @@ export default function NettoyageCompletPage() {
                 Comment ça se passe ?
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                💡 Fini les déplacements au car wash : Shine&Go, c'est un service mobile rapide et pratique.
+                💡 Fini les déplacements en station : Shine&Go, c'est un service mobile premium rapide et pratique.
               </p>
             </div>
 
@@ -1128,7 +1128,7 @@ export default function NettoyageCompletPage() {
             },
             "offers": {
               "@type": "Offer",
-              "price": "79",
+              "price": "120",
               "priceCurrency": "EUR",
               "description": "Nettoyage complet voiture à domicile"
             }

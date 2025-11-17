@@ -13,7 +13,7 @@ export default function FAQExterieurSection() {
   const faqItems: FAQItem[] = [
     {
       question: "Quel est le tarif d'un nettoyage extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule : Citadine 49€, Berline 54€, Break 59€, SUV/4x4 64€, Monospace 69€, Utilitaire 74€. Tous nos tarifs incluent le lavage extérieur complet, le nettoyage des jantes et la protection hydrophobe."
+      answer: "Nos tarifs varient selon le type de véhicule : Citadine 85€, Berline 95€, Break 105€, SUV/4x4 115€, Monospace 130€, Utilitaire 145€. Tous nos tarifs incluent le lavage extérieur complet, le nettoyage des jantes et la protection hydrophobe."
     },
     {
       question: "Faites-vous le lavage voiture intérieur extérieur à domicile ?",

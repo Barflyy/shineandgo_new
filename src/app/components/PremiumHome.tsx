@@ -117,7 +117,7 @@ export default function PremiumHome() {
                     name: "Nettoyage Intérieur Premium",
                     description: "Nettoyage complet intérieur avec aspiration, traitement surfaces et vitres"
                   },
-                  price: "49",
+                  price: "65",
                   priceCurrency: "EUR"
                 },
                 {
@@ -127,7 +127,7 @@ export default function PremiumHome() {
                     name: "Nettoyage Extérieur Showroom",
                     description: "Lavage extérieur complet avec protection hydrophobe"
                   },
-                  price: "69",
+                  price: "85",
                   priceCurrency: "EUR"
                 },
                 {
@@ -137,7 +137,7 @@ export default function PremiumHome() {
                     name: "Formule Complète",
                     description: "Detailing complet intérieur et extérieur avec finitions premium"
                   },
-                  price: "99",
+                  price: "120",
                   priceCurrency: "EUR"
                 }
               ]
@@ -149,7 +149,7 @@ export default function PremiumHome() {
               { "@type": "City", name: "Battice" },
               { "@type": "City", name: "Soumagne" }
             ],
-            serviceType: ["Mobile Car Detailing", "Car Wash", "Interior Cleaning", "Exterior Detailing"],
+            serviceType: ["Mobile Car Detailing", "Nettoyage Voiture Mobile", "Interior Cleaning", "Exterior Detailing"],
             paymentAccepted: ["Cash", "Credit Card", "Bank Transfer"],
             currenciesAccepted: "EUR"
           })

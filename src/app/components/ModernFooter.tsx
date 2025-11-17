@@ -40,15 +40,28 @@ export default function ModernFooter() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-bold mb-4">Services</h3>
+            <h3 className="text-white font-bold mb-4">Nos Services</h3>
             <ul className="space-y-3">
-              {['Nettoyage intérieur', 'Nettoyage extérieur', 'Formule complète', 'Detailing premium'].map((service) => (
-                <li key={service}>
-                  <a href="#" className="text-white/70 hover:text-brand-400 transition-colors">
-                    {service}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="/nettoyage-interieur-voiture" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Intérieur Premium · 65€
+                </a>
+              </li>
+              <li>
+                <a href="/nettoyage-exterieur-voiture" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Extérieur Showroom · 85€
+                </a>
+              </li>
+              <li>
+                <a href="/nettoyage-complet-voiture" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Formule Complète · 120€
+                </a>
+              </li>
+              <li>
+                <a href="/prix-nettoyage-voiture-domicile" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Tous nos tarifs
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -56,14 +69,28 @@ export default function ModernFooter() {
           <div>
             <h3 className="text-white font-bold mb-4">Zones d'intervention</h3>
             <ul className="space-y-3">
-              {['Herve', 'Verviers', 'Liège', 'Battice', 'Soumagne'].map((city) => (
-                <li key={city}>
-                  <a href="#" className="text-white/70 hover:text-brand-400 transition-colors">
-                    {city}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="/nettoyage-voiture-herve" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Herve & environs
+                </a>
+              </li>
+              <li>
+                <a href="/nettoyage-voiture-verviers" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Verviers
+                </a>
+              </li>
+              <li>
+                <a href="/lavage-voiture-liege" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Liège & agglomération
+                </a>
+              </li>
+              <li>
+                <a href="/lavage-voiture-battice" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Battice
+                </a>
+              </li>
             </ul>
+            <p className="text-white/50 text-xs mt-3">Rayon de 25km autour de Herve</p>
           </div>
 
           {/* Contact */}

@@ -8,7 +8,7 @@ export default function ModernServices() {
     {
       icon: Droplets,
       title: "Intérieur Premium",
-      price: "49",
+      price: "65",
       duration: "45 min",
       features: [
         "Aspiration complète habitacle + coffre",
@@ -22,7 +22,7 @@ export default function ModernServices() {
     {
       icon: Car,
       title: "Extérieur Showroom",
-      price: "69",
+      price: "85",
       duration: "50 min",
       features: [
         "Prélavage haute pression",
@@ -36,7 +36,7 @@ export default function ModernServices() {
     {
       icon: Package,
       title: "Formule Complète",
-      price: "99",
+      price: "120",
       duration: "90 min",
       features: [
         "Tout Intérieur + Extérieur",

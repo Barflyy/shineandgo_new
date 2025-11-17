@@ -36,7 +36,7 @@ export const googleMyBusinessConfig = {
   
   // Services
   services: [
-    "Car Wash",
+    "Nettoyage Voiture Mobile",
     "Auto Detailing", 
     "Interior Cleaning",
     "Exterior Cleaning",
@@ -55,9 +55,9 @@ export const googleMyBusinessConfig = {
   
   // Configuration SEO
   seo: {
-    title: "Shine&Go – Nettoyage auto à domicile - Car wash & nettoyage auto à Herve",
-    description: "Service premium de nettoyage automobile à Herve et dans la région. Car wash haut de gamme, nettoyage intérieur et extérieur, service à domicile 7j/7.",
-    keywords: "car wash, nettoyage auto, lavage voiture, Herve, Verviers, Dison, Spa, Limbourg, service à domicile"
+    title: "Shine&Go – Nettoyage voiture premium à domicile à Herve",
+    description: "Service premium de nettoyage automobile à Herve et dans la région. Nettoyage voiture haut de gamme, intérieur et extérieur, service mobile à domicile 7j/7.",
+    keywords: "nettoyage voiture premium, nettoyage auto, lavage voiture, Herve, Verviers, Dison, Spa, Limbourg, service à domicile"
   }
 };
 
@@ -168,7 +168,7 @@ export const generateStructuredData = () => {
             "name": "Nettoyage extérieur complet",
             "description": "Lavage carrosserie, vitres, jantes avec produits professionnels Koch Chemie"
           },
-          "price": 35,
+          "price": 85,
           "priceCurrency": "EUR"
         },
         {
@@ -178,7 +178,7 @@ export const generateStructuredData = () => {
             "name": "Nettoyage intérieur premium",
             "description": "Nettoyage complet de l'habitacle avec produits spécialisés"
           },
-          "price": 30,
+          "price": 65,
           "priceCurrency": "EUR"
         },
         {
@@ -188,7 +188,7 @@ export const generateStructuredData = () => {
             "name": "Pack complet",
             "description": "Nettoyage intérieur et extérieur avec traitements de protection"
           },
-          "price": 65,
+          "price": 120,
           "priceCurrency": "EUR"
         }
       ]

@@ -36,10 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const cityPages = [
     'nettoyage-voiture-herve',
     'nettoyage-voiture-verviers',
-    'car-wash-battice',
-    'car-wash-soumagne',
-    'car-wash-verviers',
-    'car-wash-herve',
+    'lavage-voiture-battice',
     'lavage-voiture-liege',
     'prix-nettoyage-voiture-domicile',
   ].map(slug => ({

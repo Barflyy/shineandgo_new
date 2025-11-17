@@ -13,7 +13,7 @@ export default function FAQInterieurSection() {
   const faqItems: FAQItem[] = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule : Citadine 39€, Berline 44€, Break 49€, SUV/4x4 54€, Monospace 59€, Utilitaire 64€. Tous nos tarifs incluent l'aspiration complète, le nettoyage des plastiques et la désinfection."
+      answer: "Nos tarifs varient selon le type de véhicule : Citadine 65€, Berline 75€, Break 85€, SUV/4x4 95€, Monospace 110€, Utilitaire 125€. Tous nos tarifs incluent l'aspiration complète, le nettoyage des plastiques et la désinfection."
     },
     {
       question: "Faites-vous le lavage voiture intérieur extérieur à domicile ?",

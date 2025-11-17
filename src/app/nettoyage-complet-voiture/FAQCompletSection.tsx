@@ -13,7 +13,7 @@ export default function FAQCompletSection() {
   const faqItems: FAQItem[] = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur et extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 79€ pour une citadine, 89€ pour une berline, 99€ pour un break, 109€ pour un SUV/4x4, 119€ pour un monospace et 129€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 120€ pour une citadine, 140€ pour une berline, 160€ pour un break, 170€ pour un SUV/4x4, 190€ pour un monospace et 220€ pour un utilitaire. Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un lavage complet voiture ?",

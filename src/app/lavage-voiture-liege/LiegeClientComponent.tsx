@@ -35,7 +35,7 @@ export default function LiegeClientComponent() {
   const faqItems = [
     {
       question: "Quel est le tarif d'un lavage voiture à Liège ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 49€ pour une citadine, 59€ pour une berline, 69€ pour un break, 79€ pour un SUV/4x4, 89€ pour un monospace et 99€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 65€ pour une citadine, 75€ pour une berline, 85€ pour un break, 95€ pour un SUV/4x4, 110€ pour un monospace et 125€ pour un utilitaire. Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un lavage voiture à Liège ?",
@@ -299,12 +299,12 @@ export default function LiegeClientComponent() {
           <div className="relative min-h-screen flex items-center justify-center bg-white">
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                Lavage Voiture Liège | Toute Agglomération - Dès 49€
+                Lavage Voiture Premium Liège | Toute Agglomération - Dès 65€
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
                 Besoin d'un <strong>lavage voiture</strong> professionnel à Liège ? Shine&Go vous propose un service de 
                 <strong> nettoyage voiture</strong> mobile à domicile dans toute l'agglomération liégeoise (Centre, Grivegnée, 
-                Angleur, Bressoux, Chênée). Notre <strong>car wash</strong> mobile utilise des produits professionnels Koch-Chemie. 
+                Angleur, Bressoux, Chênée). Notre <strong>service mobile premium</strong> utilise des produits exclusifs Koch-Chemie. 
                 ✨ Résultat showroom garanti en 90 min, sans vous déplacer.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -420,7 +420,7 @@ export default function LiegeClientComponent() {
                 </h4>
                 <div className="flex items-center gap-2 text-blue-400">
                   <div className="text-xl">✨</div>
-                  <span className="text-sm font-medium">Service Premium Car Wash</span>
+                  <span className="text-sm font-medium">Service Premium Nettoyage Voiture</span>
                 </div>
               </div>
               

@@ -25,7 +25,7 @@ export default function BatticeClientComponent() {
 
   const handleBooking = () => {
     try {
-      window.open('https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20un%20car%20wash%20%C3%A0%20Battice', '_blank', 'noopener,noreferrer');
+      window.open('https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20un%20nettoyage%20voiture%20premium%20%C3%A0%20Battice', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture WhatsApp:', error);
     }
@@ -34,15 +34,15 @@ export default function BatticeClientComponent() {
   // --- DATA FAQ ---
   const faqItems = [
     {
-      question: "Quel est le tarif d'un car wash à Battice ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 49€ pour une citadine, 59€ pour une berline, 69€ pour un break, 79€ pour un SUV/4x4, 89€ pour un monospace et 99€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      question: "Quel est le tarif d'un nettoyage voiture premium à Battice ?",
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 65€ pour une citadine, 75€ pour une berline, 85€ pour un break, 95€ pour un SUV/4x4, 110€ pour un monospace et 125€ pour un utilitaire. Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un lavage voiture ?",
       answer: "La durée varie selon le type de véhicule et l'état de saleté. En général, une intervention prend entre 45 et 90 minutes. Nous prenons le temps nécessaire pour un résultat optimal."
     },
     {
-      question: "Quels produits utilisez-vous pour le car wash ?",
+      question: "Quels produits utilisez-vous pour le nettoyage voiture ?",
       answer: "Nous utilisons exclusivement des produits professionnels haut de gamme Koch-Chemie pour garantir un résultat optimal et protéger votre véhicule. Tous nos produits sont respectueux de l'environnement et de vos matériaux."
     },
     {
@@ -54,7 +54,7 @@ export default function BatticeClientComponent() {
       answer: "Oui, nous intervenons dans toute la région de Battice et environs (Herve, Thimister, Clermont) avec un déplacement gratuit jusqu'à 25 km. Au-delà, un supplément peut s'appliquer selon la distance. Contactez-nous pour vérifier la disponibilité dans votre zone."
     },
     {
-      question: "Que faire si je ne suis pas satisfait du car wash ?",
+      question: "Que faire si je ne suis pas satisfait du nettoyage voiture ?",
       answer: "Votre satisfaction est notre priorité. Si le résultat ne vous convient pas, nous effectuons gratuitement les retouches nécessaires jusqu'à votre entière satisfaction."
     }
   ];
@@ -206,7 +206,7 @@ export default function BatticeClientComponent() {
                     handleBooking();
                   }
                 }}
-                aria-label="Réserver un car wash maintenant"
+                aria-label="Réserver un nettoyage voiture premium maintenant"
                 className="inline-flex items-center gap-1 lg:gap-2 rounded-full bg-blue-600 px-2.5 sm:px-3 lg:px-6 py-1.5 sm:py-2 lg:py-3 text-xs lg:text-sm font-semibold text-white shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 min-w-0"
               >
                 <span className="break-words min-w-0 hidden lg:inline">Réserver maintenant</span>
@@ -299,12 +299,12 @@ export default function BatticeClientComponent() {
           <div className="relative min-h-screen flex items-center justify-center bg-white">
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                Car Wash Battice | Service Rapide à Domicile - Dès 49€
+                Lavage Voiture Battice | Nettoyage Premium Mobile - Dès 65€
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
-                Besoin d'un <strong>car wash</strong> professionnel à Battice ? Shine&Go vous propose un service de 
-                <strong> lavage voiture mobile</strong> à domicile. Notre <strong>nettoyage voiture</strong> à Battice utilise 
-                des produits professionnels Koch-Chemie. ✨ Résultat showroom garanti en 90 min, sans vous déplacer.
+                Vous cherchez un <strong>lavage voiture premium</strong> à Battice ? Shine&Go vous propose un service de 
+                <strong> nettoyage voiture mobile</strong> professionnel à domicile. Notre <strong>nettoyage voiture</strong> à Battice utilise 
+                des produits exclusifs Koch-Chemie. ✨ Finition niveau concession garantie en 90 min, sans vous déplacer.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -316,7 +316,7 @@ export default function BatticeClientComponent() {
                   📲 Recevoir un devis gratuit en 2 minutes – WhatsApp
                 </a>
                 <a
-                  href="https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20un%20devis%20gratuit%20pour%20un%20car%20wash%20%C3%A0%20Battice"
+                  href="https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20un%20devis%20gratuit%20pour%20un%20lavage%20voiture%20premium%20%C3%A0%20Battice"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
@@ -333,10 +333,10 @@ export default function BatticeClientComponent() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-black leading-tight tracking-tight text-slate-900 mb-4">
-                FAQ – Car Wash Battice
+                FAQ – Lavage Voiture Premium Battice
               </h2>
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Questions fréquentes sur notre service de car wash mobile à Battice
+                Questions fréquentes sur notre service de nettoyage voiture mobile à Battice
               </p>
             </div>
 
@@ -390,11 +390,11 @@ export default function BatticeClientComponent() {
                 </div>
                 
                 <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
-                  Votre voiture mérite le meilleur car wash
+                  Votre voiture mérite le meilleur nettoyage premium
                 </h3>
                 
                 <p className="text-slate-300 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
-                  Shine&Go – Service Premium Car Wash Mobile
+                  Shine&Go – Service Premium Nettoyage Voiture Mobile
                 </p>
                 
                 <button
@@ -419,12 +419,12 @@ export default function BatticeClientComponent() {
                 </h4>
                 <div className="flex items-center gap-2 text-blue-400">
                   <div className="text-xl">✨</div>
-                  <span className="text-sm font-medium">Service Premium Car Wash</span>
+                  <span className="text-sm font-medium">Service Premium Nettoyage Voiture</span>
                 </div>
               </div>
               
               <p className="text-slate-300 leading-relaxed text-sm">
-                Car wash mobile à domicile en Wallonie.
+                Nettoyage voiture premium mobile à domicile en Wallonie.
                 <br />
                 Résultat showroom garanti en 90 min.
               </p>

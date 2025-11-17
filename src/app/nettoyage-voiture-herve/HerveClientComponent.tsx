@@ -35,7 +35,7 @@ export default function HerveClientComponent() {
   const faqItems = [
     {
       question: "Quel est le tarif d'un nettoyage voiture à Herve ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 49€ pour une citadine, 59€ pour une berline, 69€ pour un break, 79€ pour un SUV/4x4, 89€ pour un monospace et 99€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 65€ pour une citadine, 75€ pour une berline, 85€ pour un break, 95€ pour un SUV/4x4, 110€ pour un monospace et 125€ pour un utilitaire. Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un nettoyage voiture ?",
@@ -332,12 +332,12 @@ export default function HerveClientComponent() {
           <div className="relative min-h-screen flex items-center justify-center bg-white">
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                Nettoyage Voiture à Domicile Herve | En 90min dès 49€
+                Nettoyage Voiture Premium Herve | En 90min dès 65€
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
                 Vous cherchez un <strong>nettoyage voiture à Herve</strong> ? Shine&Go, spécialiste du 
                 <strong> lavage voiture mobile</strong>, intervient chez vous à Herve, Battice, Thimister et Clermont. 
-                Notre <strong>car wash</strong> à domicile utilise des produits professionnels Koch-Chemie. 
+                Notre <strong>service mobile premium</strong> à domicile utilise des produits exclusifs Koch-Chemie. 
                 ✨ Résultat showroom garanti.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
