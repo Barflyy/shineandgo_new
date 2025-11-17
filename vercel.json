@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/zone-intervention",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zone-intervention/:city*",
+      "destination": "/nettoyage-voiture-:city*",
+      "permanent": true
+    }
+  ]
+} 

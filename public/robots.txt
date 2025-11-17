@@ -1,0 +1,77 @@
+# Robots.txt optimisé pour Shine&Go – Nettoyage auto à domicile
+# https://shineandgo.be/robots.txt
+
+# Tous les robots
+User-agent: *
+Allow: /
+
+# Optimisations spécifiques pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Optimisations pour Googlebot Mobile
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 1
+
+# Optimisations pour les images
+User-agent: Googlebot-Image
+Allow: /
+Allow: /transformations/
+Allow: /public/
+Crawl-delay: 1
+
+# Optimisations pour Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Optimisations pour les autres moteurs
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Autoriser l'indexation des ressources importantes
+Allow: /transformations/*.jpeg
+Allow: /transformations/*.jpg
+Allow: /transformations/*.png
+Allow: /transformations/*.webp
+Allow: /public/*.svg
+Allow: /public/*.ico
+
+# Bloquer les fichiers et dossiers inutiles
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /sitemap.xml
+Disallow: /robots.txt
+
+# Bloquer les paramètres d'URL inutiles
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+
+# Sitemap principal
+Sitemap: https://shineandgo.be/api/sitemap
+
+# Sitemaps spécifiques (optionnels)
+Sitemap: https://shineandgo.be/api/sitemap-images
+Sitemap: https://shineandgo.be/api/sitemap-videos
+
+# Informations sur le site
+# Site: Shine&Go – Nettoyage auto à domicile
+# Adresse: Rue Moreau 20, 4650 Herve, Belgique
+# Contact: +32 472 30 37 01
+# Email: contact@shinego.be
+# Horaires: 24h/24 

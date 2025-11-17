@@ -1,0 +1,3 @@
+Version 1.2.1 - Redirections 301 configurées
+Date: 2025-07-25
+Build: Force deployment for redirects 
