@@ -1,136 +1,162 @@
 "use client"
 
-import Image from "next/image"
+import { ArrowRight, Sparkles, Shield, Clock } from "lucide-react"
 import { trackWhatsApp } from "@/lib/analytics"
-import { Sparkles, Star } from "lucide-react"
 
-interface PremiumHeroProps {
-  title?: string
-  subtitle?: string
-  ctaText?: string
-  ctaHref?: string
-}
-
-export default function PremiumHero({
-  title = "Conciergerie de lavage auto à domicile",
-  subtitle = "Finition showroom à la main. Discrétion, ponctualité, priorité week‑end. Herve, Verviers, Liège.",
-  ctaText = "Réserver un créneau privé",
-  ctaHref = "https://wa.me/32472303701",
-}: PremiumHeroProps) {
+export default function PremiumHero() {
   return (
-    <section className="relative min-h-[95vh] w-full overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      {/* Animated Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(168,85,247,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+      {/* Premium gradient background avec depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950">
+        {/* Animated gradient orbs */}
+        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-br from-brand-500/20 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(14,165,233,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,0.03)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+        {/* Vignette effect */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20">
-        {/* Badge */}
-        <div className="flex justify-center animate-fade-in">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 backdrop-blur-xl shadow-lg">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-            </span>
-            <span className="font-medium">Service premium disponible</span>
-          </div>
-        </div>
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto">
 
-        {/* Title */}
-        <div className="mt-12 text-center">
-          <h1 className="mx-auto max-w-5xl text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            {title.split(' ').slice(0, 3).join(' ')}
-            <span className="block mt-2 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
-              {title.split(' ').slice(3).join(' ')}
-            </span>
-          </h1>
-          <p className="mx-auto mt-8 max-w-3xl text-xl md:text-2xl text-slate-300 leading-relaxed font-light">
-            {subtitle}
-          </p>
-        </div>
-
-        {/* Visual with floating effect */}
-        <div className="mt-16 md:mt-20">
-          <div className="mx-auto max-w-6xl group">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:border-white/20 group-hover:shadow-blue-500/20">
-              <div className="relative aspect-[21/9] w-full">
-                <Image
-                  src="/transformations/optimized/webp/apres02.webp"
-                  alt="Lavage premium – résultat showroom"
-                  fill
-                  sizes="100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                
-                {/* Floating badges on image */}
-                <div className="absolute top-6 left-6 flex gap-3">
-                  <div className="backdrop-blur-xl bg-white/90 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span>4.9/5</span>
-                  </div>
-                  <div className="backdrop-blur-xl bg-white/90 text-slate-900 px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-blue-600" />
-                    <span>Premium</span>
-                  </div>
-                </div>
+          {/* Premium badge avec animation */}
+          <div className="flex justify-center mb-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 shadow-2xl">
+              <div className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-glow-sm"></span>
               </div>
+              <Sparkles className="w-4 h-4 text-yellow-400" />
+              <span className="text-sm font-semibold text-white">Service Premium · Noté 4.9/5 · 5 places disponibles cette semaine</span>
             </div>
           </div>
-        </div>
 
-        {/* CTA */}
-        <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWhatsApp("hero_premium")}
-            className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-5 text-lg font-semibold text-white shadow-[0_20px_60px_rgba(59,130,246,0.3)] hover:shadow-[0_20px_80px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-          >
-            <span className="text-2xl">📲</span>
-            <span>{ctaText}</span>
-            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          
-          <a
-            href="tel:+32472303701"
-            className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-5 text-lg font-semibold text-white hover:bg-white/20 transition-all duration-300 w-full sm:w-auto"
-          >
-            <span className="text-2xl">📞</span>
-            <span>Appeler maintenant</span>
-          </a>
-        </div>
+          {/* Main headline - Optimisé SEO + Impact */}
+          <div className="text-center mb-10 animate-fade-in-up">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-[1.05] tracking-tight">
+              L'Excellence Automobile
+              <span className="block mt-3 bg-gradient-to-r from-brand-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                à Votre Domicile
+              </span>
+            </h1>
 
-        {/* Trust indicators */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-8 text-sm text-slate-400">
-          <div className="flex items-center gap-2 backdrop-blur-sm bg-white/5 px-4 py-2 rounded-full">
-            <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span className="font-medium">100% à la main</span>
+            <p className="text-xl sm:text-2xl md:text-3xl text-white/80 max-w-4xl mx-auto leading-relaxed font-light">
+              Service de detailing automobile premium mobile.
+              <span className="block mt-2 text-lg sm:text-xl text-white/60">
+                Produits professionnels Koch-Chemie · Finition Showroom garantie · 90 minutes
+              </span>
+            </p>
           </div>
-          <div className="flex items-center gap-2 backdrop-blur-sm bg-white/5 px-4 py-2 rounded-full">
-            <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span className="font-medium">Créneaux week-end</span>
+
+          {/* Location badges */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            {['Herve', 'Verviers', 'Liège', 'Battice', 'Soumagne'].map((city) => (
+              <span key={city} className="px-4 py-2 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 text-white/80 text-sm font-medium">
+                {city}
+              </span>
+            ))}
           </div>
-          <div className="flex items-center gap-2 backdrop-blur-sm bg-white/5 px-4 py-2 rounded-full">
-            <svg className="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="font-medium">Satisfaction garantie</span>
+
+          {/* CTA Section */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <a
+              href="https://wa.me/32472303701"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsApp("hero_premium")}
+              className="group relative inline-flex items-center justify-center gap-3 px-10 py-6 rounded-2xl bg-gradient-to-r from-brand-500 via-brand-600 to-blue-600 text-white font-bold text-lg shadow-[0_20px_60px_-15px_rgba(14,165,233,0.5)] hover:shadow-[0_25px_70px_-15px_rgba(14,165,233,0.7)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              <span className="relative">Réserver mon créneau</span>
+              <ArrowRight className="relative w-5 h-5 transition-transform group-hover:translate-x-2" />
+            </a>
+
+            <a
+              href="tel:+32472303701"
+              className="group inline-flex items-center justify-center gap-3 px-10 py-6 rounded-2xl bg-white/10 backdrop-blur-2xl border-2 border-white/20 text-white font-bold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300"
+            >
+              <span>📞 Appeler directement</span>
+            </a>
           </div>
+
+          {/* Premium USPs - 3 colonnes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            {[
+              {
+                icon: Shield,
+                title: "Garantie Satisfaction",
+                desc: "7 jours ou remboursé",
+                gradient: "from-emerald-500 to-teal-500"
+              },
+              {
+                icon: Sparkles,
+                title: "Finition Showroom",
+                desc: "Niveau concession garanti",
+                gradient: "from-brand-500 to-cyan-500"
+              },
+              {
+                icon: Clock,
+                title: "Service Express",
+                desc: "90 minutes · À domicile",
+                gradient: "from-purple-500 to-pink-500"
+              }
+            ].map((item, i) => (
+              <div key={i} className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${item.gradient} mb-4 shadow-glow`}>
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
+                  <p className="text-sm text-white/60">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Social proof bar */}
+          <div className="mt-16 pt-16 border-t border-white/10 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              {[
+                { value: "4.9/5", label: "Note moyenne", stars: true },
+                { value: "42+", label: "Avis vérifiés" },
+                { value: "90min", label: "Service complet" },
+                { value: "100%", label: "Satisfaction" }
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-display">
+                    {stat.value}
+                  </div>
+                  {stat.stars && (
+                    <div className="flex justify-center mb-2">
+                      {[1,2,3,4,5].map((s) => (
+                        <svg key={s} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                  )}
+                  <div className="text-sm text-white/60">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
 
-      {/* Gradient fade at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      {/* Scroll indicator élégant */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse"></div>
+          </div>
+          <span className="text-xs text-white/40 font-medium">Défiler</span>
+        </div>
+      </div>
     </section>
   )
 }

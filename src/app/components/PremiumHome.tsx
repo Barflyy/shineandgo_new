@@ -1,29 +1,27 @@
 "use client"
 
-import ModernHero from "../components/ModernHero"
+import PremiumHero from "../components/PremiumHero"
 import ModernServices from "../components/ModernServices"
-import WhyChooseUs from "../components/WhyChooseUs"
-import TrustSection from "../components/TrustSection"
+import PremiumTrustBenefits from "../components/PremiumTrustBenefits"
 import ModernProcess from "../components/ModernProcess"
-import UrgencyBanner from "../components/UrgencyBanner"
 import ModernGallery from "../components/ModernGallery"
 import RealTestimonials from "../components/RealTestimonials"
 import ModernFAQ from "../components/ModernFAQ"
+import FinalCTA from "../components/FinalCTA"
 import ModernFooter from "../components/ModernFooter"
 
 export default function PremiumHome() {
   return (
     <div className="min-h-screen bg-white antialiased">
       <main>
-        <ModernHero />
+        <PremiumHero />
         <ModernServices />
-        <WhyChooseUs />
-        <TrustSection />
+        <PremiumTrustBenefits />
         <ModernProcess />
-        <UrgencyBanner />
         <ModernGallery />
         <RealTestimonials />
         <ModernFAQ />
+        <FinalCTA />
       </main>
 
       <ModernFooter />
