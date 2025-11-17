@@ -35,15 +35,24 @@ export default function ModernProcess() {
   ]
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-dark-950 overflow-hidden">
-      {/* Animated background */}
+    <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+      {/* Elegant gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-brand-500/20 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 md:w-96 md:h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        {/* Top accent */}
+        <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-blue-950/30 to-transparent"></div>
+        
+        {/* Bottom accent */}
+        <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-t from-purple-950/20 to-transparent"></div>
+        
+        {/* Diagonal overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-950/10 to-transparent"></div>
       </div>
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      {/* Subtle dots pattern */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
+      }}></div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

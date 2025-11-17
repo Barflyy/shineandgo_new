@@ -5,16 +5,24 @@ import { trackWhatsApp } from "@/lib/analytics"
 
 export default function ModernHero() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950">
-      {/* Animated mesh gradient background */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 -left-4 w-72 h-72 md:w-96 md:h-96 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl animate-float opacity-40"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 md:w-96 md:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-float opacity-40" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 md:w-96 md:h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-float opacity-40" style={{ animationDelay: '4s' }}></div>
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-blue-950 to-slate-950">
+      {/* Simplified elegant gradient background */}
+      <div className="absolute inset-0">
+        {/* Top glow */}
+        <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-blue-600/20 via-purple-600/10 to-transparent"></div>
+        
+        {/* Bottom glow */}
+        <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+        
+        {/* Diagonal accent */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-600/5"></div>
       </div>
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000,transparent)]" />
+      {/* Subtle dots pattern */}
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
+      }}></div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="max-w-6xl mx-auto text-center">

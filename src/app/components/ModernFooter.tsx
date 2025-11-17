@@ -4,13 +4,16 @@ import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react"
 
 export default function ModernFooter() {
   return (
-    <footer className="relative bg-dark-950 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
       {/* Decorative gradient */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-500 via-purple-500 to-pink-500"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent"></div>
+
+      {/* Subtle background glow */}
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent pointer-events-none"></div>
 
       {/* Main footer */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Brand */}
           <div>
             <div className="text-3xl font-display font-bold bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent mb-4">
@@ -88,14 +91,16 @@ export default function ModernFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/50 text-sm">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-white/50 text-sm order-2 md:order-1">
             © 2025 Shine&Go. Tous droits réservés.
           </p>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className="text-white/50 hover:text-white transition-colors">Mentions légales</a>
-            <a href="#" className="text-white/50 hover:text-white transition-colors">CGV</a>
-            <a href="#" className="text-white/50 hover:text-white transition-colors">Politique de confidentialité</a>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm order-1 md:order-2">
+            <a href="#" className="text-white/50 hover:text-white transition-colors whitespace-nowrap">Mentions légales</a>
+            <span className="text-white/20 hidden sm:inline">·</span>
+            <a href="#" className="text-white/50 hover:text-white transition-colors whitespace-nowrap">CGV</a>
+            <span className="text-white/20 hidden sm:inline">·</span>
+            <a href="#" className="text-white/50 hover:text-white transition-colors whitespace-nowrap">Confidentialité</a>
           </div>
         </div>
       </div>
