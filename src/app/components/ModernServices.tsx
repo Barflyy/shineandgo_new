@@ -50,32 +50,32 @@ export default function ModernServices() {
   ]
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-500 to-transparent"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4" />
             <span>Nos formules</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-6 animate-fade-in-up px-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-4 sm:mb-6 animate-fade-in-up">
             Nos Formules
             <span className="block bg-gradient-to-r from-brand-600 to-purple-600 bg-clip-text text-transparent">
               Premium
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg md:text-xl text-dark-600 max-w-2xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm sm:text-lg md:text-xl text-dark-600 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Chaque formule inclut : déplacement gratuit · produits professionnels · garantie satisfaction
           </p>
         </div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
           {services.map((service, idx) => {
             const Icon = service.icon
             return (
@@ -95,22 +95,22 @@ export default function ModernServices() {
                 )}
 
                 {/* Card */}
-                <div className={`relative h-full rounded-2xl md:rounded-3xl bg-white p-6 md:p-8 transition-all duration-500 border-2 ${
+                <div className={`relative h-full rounded-xl sm:rounded-2xl md:rounded-3xl bg-white p-5 sm:p-6 md:p-8 transition-all duration-500 border-2 ${
                   service.popular 
                     ? 'border-orange-200 shadow-2xl hover:shadow-orange-100 lg:hover:-translate-y-2' 
                     : 'border-dark-200 shadow-xl hover:shadow-2xl lg:hover:-translate-y-2'
                 }`}>
                   
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg`}>
+                  <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 sm:mb-6 shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-dark-900 mb-2">{service.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-dark-900 mb-2">{service.title}</h3>
                   
                   {/* Duration */}
-                  <div className="flex items-center gap-2 text-dark-600 text-sm mb-6">
+                  <div className="flex items-center gap-2 text-dark-600 text-xs sm:text-sm mb-4 sm:mb-6">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -118,12 +118,12 @@ export default function ModernServices() {
                   </div>
 
                   {/* Price */}
-                  <div className="mb-8 p-4 rounded-xl bg-gradient-to-br from-slate-50 to-white border-2 border-dark-200">
+                  <div className="mb-6 sm:mb-8 p-4 rounded-xl bg-gradient-to-br from-slate-50 to-white border-2 border-dark-200">
                     <div className="flex items-baseline gap-2">
-                      <span className={`text-5xl font-bold text-dark-900`}>
+                      <span className={`text-4xl sm:text-5xl font-bold text-dark-900`}>
                         {service.price}€
                       </span>
-                      <span className="text-dark-500 text-lg">/ service</span>
+                      <span className="text-dark-500 text-base sm:text-lg">/ service</span>
                     </div>
                     <div className="mt-2 text-xs text-dark-600">
                       Prix tout compris · Déplacement gratuit
@@ -131,7 +131,7 @@ export default function ModernServices() {
                   </div>
 
                   {/* Features */}
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className={`flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center mt-0.5`}>
@@ -139,7 +139,7 @@ export default function ModernServices() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-dark-700 text-sm leading-relaxed">{feature}</span>
+                        <span className="text-dark-700 text-xs sm:text-sm leading-relaxed">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -150,7 +150,7 @@ export default function ModernServices() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackWhatsApp(`service_${service.title.toLowerCase().replace(/\s+/g, "_")}`)}
-                    className={`group/btn w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 ${
+                    className={`group/btn w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-base sm:text-lg text-white transition-all duration-300 active:scale-95 sm:hover:scale-105 touch-manipulation min-h-[52px] ${
                       service.popular
                         ? `bg-gradient-to-r ${service.gradient} shadow-lg hover:shadow-xl`
                         : `bg-gradient-to-r ${service.gradient} shadow-lg hover:shadow-xl`

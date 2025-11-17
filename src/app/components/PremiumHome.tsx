@@ -153,18 +153,18 @@ export default function PremiumHome() {
       />
 
       {/* Sticky CTA Mobile - Modern Version */}
-      <div className="fixed bottom-4 inset-x-4 z-50 md:hidden">
-        <div className="flex gap-3">
+      <div className="fixed bottom-3 inset-x-3 z-50 md:hidden">
+        <div className="flex gap-2 shadow-2xl">
           <a
             href="https://wa.me/32472303701"
-            className="flex-1 text-center rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold py-4 shadow-glow"
+            className="flex-1 text-center rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold py-4 shadow-glow active:scale-95 transition-transform touch-manipulation min-h-[56px] flex items-center justify-center"
             aria-label="Réserver via WhatsApp"
           >
             📲 WhatsApp
           </a>
           <a
             href="tel:+32472303701"
-            className="flex-1 text-center rounded-2xl bg-white/90 backdrop-blur-xl border-2 border-dark-200 text-dark-900 font-semibold py-4 shadow-xl"
+            className="flex-1 text-center rounded-xl bg-white/95 backdrop-blur-xl border-2 border-dark-300 text-dark-900 font-bold py-4 shadow-xl active:scale-95 transition-transform touch-manipulation min-h-[56px] flex items-center justify-center"
             aria-label="Appeler Shine&Go"
           >
             📞 Appeler

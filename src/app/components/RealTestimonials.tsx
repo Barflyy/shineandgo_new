@@ -45,37 +45,37 @@ export default function RealTestimonials() {
   ]
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white via-slate-50/50 to-white overflow-hidden">
       {/* Header */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 md:mb-16">
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm font-semibold mb-6">
             <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" />
             <span>Avis clients vérifiés</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-6 px-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-4 sm:mb-6">
             Ils ont essayé,
             <span className="block bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
               ils adorent
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg md:text-xl text-dark-600 px-4">
+          <p className="text-sm sm:text-lg md:text-xl text-dark-600">
             Plus de 30 clients satisfaits ce mois-ci dans la région de Liège
           </p>
         </div>
 
         {/* Stats bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mt-8 sm:mt-12">
           {stats.map((stat, idx) => (
             <div 
               key={idx}
-              className="text-center p-6 rounded-2xl bg-white border border-dark-200 shadow-lg hover:shadow-xl transition-shadow"
+              className="text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white border border-dark-200 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="text-3xl md:text-4xl font-bold text-dark-900 mb-1">{stat.value}</div>
-              <div className="text-sm font-semibold text-dark-700">{stat.label}</div>
-              <div className="text-xs text-dark-500 mt-1">{stat.sublabel}</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-900 mb-1">{stat.value}</div>
+              <div className="text-xs sm:text-sm font-semibold text-dark-700">{stat.label}</div>
+              <div className="text-[10px] sm:text-xs text-dark-500 mt-1">{stat.sublabel}</div>
             </div>
           ))}
         </div>
@@ -83,11 +83,11 @@ export default function RealTestimonials() {
 
       {/* Testimonials */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, idx) => (
             <div 
               key={idx}
-              className="group relative bg-white rounded-2xl border-2 border-dark-200 p-6 md:p-8 shadow-lg hover:shadow-2xl hover:border-yellow-300 transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-white rounded-xl sm:rounded-2xl border-2 border-dark-200 p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl hover:border-yellow-300 transition-all duration-300 sm:hover:-translate-y-1"
             >
               {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-10">
@@ -112,23 +112,23 @@ export default function RealTestimonials() {
               </div>
 
               {/* Text */}
-              <blockquote className="relative text-dark-700 text-sm leading-relaxed mb-6">
+              <blockquote className="relative text-dark-700 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                 "{testimonial.text}"
               </blockquote>
 
               {/* Service tag */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] sm:text-xs font-medium mb-4 sm:mb-6">
                 <span>{testimonial.service}</span>
               </div>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-dark-200">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-lg flex-shrink-0">
+              <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-dark-200">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-lg flex-shrink-0">
                   {testimonial.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-dark-900">{testimonial.name}</div>
-                  <div className="flex items-center gap-1 text-xs text-dark-600">
+                  <div className="font-semibold text-dark-900 text-sm sm:text-base">{testimonial.name}</div>
+                  <div className="flex items-center gap-1 text-[10px] sm:text-xs text-dark-600">
                     <MapPin className="w-3 h-3 flex-shrink-0" />
                     <span className="truncate">{testimonial.location}</span>
                     <span className="text-dark-400">·</span>
@@ -141,8 +141,8 @@ export default function RealTestimonials() {
         </div>
 
         {/* Google Reviews CTA */}
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200">
+        <div className="mt-8 sm:mt-12 md:mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200">
             <div className="text-left">
               <div className="flex items-center gap-2 mb-2">
                 <div className="flex">
@@ -152,12 +152,12 @@ export default function RealTestimonials() {
                 </div>
                 <span className="font-bold text-dark-900">4.9/5</span>
               </div>
-              <div className="text-dark-700 font-medium mb-1">Noté sur Google</div>
-              <div className="text-dark-600 text-sm">Basé sur 32 avis authentiques</div>
+              <div className="text-dark-700 font-medium mb-1 text-sm sm:text-base">Noté sur Google</div>
+              <div className="text-dark-600 text-xs sm:text-sm">Basé sur 32 avis authentiques</div>
             </div>
             <a
               href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border-2 border-dark-200 text-dark-900 font-semibold hover:border-brand-500 hover:shadow-lg transition-all whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-3 rounded-lg sm:rounded-xl bg-white border-2 border-dark-200 text-dark-900 font-semibold text-sm sm:text-base hover:border-brand-500 hover:shadow-lg transition-all whitespace-nowrap touch-manipulation"
             >
               <span>Voir tous les avis</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -12,14 +12,14 @@ export default function ModernFooter() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent pointer-events-none"></div>
 
       {/* Main footer */}
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
           {/* Brand */}
           <div>
-            <div className="text-3xl font-display font-bold bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <div className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent mb-3 sm:mb-4">
               Shine&Go
             </div>
-            <p className="text-white/70 mb-6 leading-relaxed">
+            <p className="text-white/70 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               Nettoyage voiture premium à domicile. Service mobile professionnel. Résultat showroom garanti.
             </p>
             <div className="flex gap-4">
@@ -40,25 +40,25 @@ export default function ModernFooter() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-bold mb-4">Nos Services</h3>
+            <h3 className="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg">Nos Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/nettoyage-interieur-voiture" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/nettoyage-interieur-voiture" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Intérieur Premium · 65€
                 </a>
               </li>
               <li>
-                <a href="/nettoyage-exterieur-voiture" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/nettoyage-exterieur-voiture" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Extérieur Showroom · 85€
                 </a>
               </li>
               <li>
-                <a href="/nettoyage-complet-voiture" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/nettoyage-complet-voiture" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Formule Complète · 120€
                 </a>
               </li>
               <li>
-                <a href="/prix-nettoyage-voiture-domicile" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/prix-nettoyage-voiture-domicile" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Tous nos tarifs
                 </a>
               </li>
@@ -67,36 +67,36 @@ export default function ModernFooter() {
 
           {/* Zones */}
           <div>
-            <h3 className="text-white font-bold mb-4">Zones d'intervention</h3>
-            <ul className="space-y-3">
+            <h3 className="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg">Zones d'intervention</h3>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
-                <a href="/nettoyage-voiture-herve" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/nettoyage-voiture-herve" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Herve & environs
                 </a>
               </li>
               <li>
-                <a href="/nettoyage-voiture-verviers" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/nettoyage-voiture-verviers" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Verviers
                 </a>
               </li>
               <li>
-                <a href="/lavage-voiture-liege" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/lavage-voiture-liege" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Liège & agglomération
                 </a>
               </li>
               <li>
-                <a href="/lavage-voiture-battice" className="text-white/70 hover:text-brand-400 transition-colors">
+                <a href="/lavage-voiture-battice" className="text-white/70 hover:text-brand-400 transition-colors text-sm sm:text-base">
                   Battice
                 </a>
               </li>
             </ul>
-            <p className="text-white/50 text-xs mt-3">Rayon de 25km autour de Herve</p>
+            <p className="text-white/50 text-[10px] sm:text-xs mt-2 sm:mt-3">Rayon de 25km autour de Herve</p>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-bold mb-4">Contact</h3>
-            <ul className="space-y-4">
+            <h3 className="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg">Contact</h3>
+            <ul className="space-y-3 sm:space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" />
                 <span className="text-white/70 text-sm">Rayon de 25km autour de Herve</span>
@@ -118,12 +118,12 @@ export default function ModernFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/10">
+        <div className="pt-6 sm:pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            <p className="text-white/50 text-sm">
+            <p className="text-white/50 text-xs sm:text-sm">
               © 2025 Shine&Go. Tous droits réservés.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-sm">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm">
               <a href="#" className="text-white/50 hover:text-brand-400 transition-colors whitespace-nowrap">Mentions légales</a>
               <span className="text-white/20">·</span>
               <a href="#" className="text-white/50 hover:text-brand-400 transition-colors whitespace-nowrap">CGV</a>

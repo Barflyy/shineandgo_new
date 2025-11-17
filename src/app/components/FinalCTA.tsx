@@ -5,7 +5,7 @@ import { trackWhatsApp } from "@/lib/analytics"
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-20 md:py-32 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
+    <section className="relative py-16 sm:py-20 md:py-32 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -15,13 +15,13 @@ export default function FinalCTA() {
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-6 sm:mb-8">
             <Sparkles className="w-4 h-4 text-brand-400" />
             <span className="text-sm font-medium text-white/90">Réservez maintenant</span>
           </div>
 
           {/* Title */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight">
             Prêt à redonner vie
             <span className="block bg-gradient-to-r from-brand-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               à votre véhicule ?
@@ -29,18 +29,18 @@ export default function FinalCTA() {
           </h2>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-base sm:text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed">
             Réservez votre créneau en 2 minutes. Service à domicile dans les 48h.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
             <a
               href="https://wa.me/32472303701?text=Bonjour,%20je%20souhaite%20réserver%20un%20nettoyage%20premium"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsApp("final_cta")}
-              className="group inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold text-lg shadow-glow-lg hover:shadow-glow transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold text-base sm:text-lg shadow-glow-lg active:scale-95 sm:hover:scale-105 transition-all duration-300 w-full sm:w-auto touch-manipulation min-h-[56px]"
             >
               <span>Réserver par WhatsApp</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -48,7 +48,7 @@ export default function FinalCTA() {
 
             <a
               href="tel:+32472303701"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white font-semibold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-4 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white font-semibold text-base sm:text-lg active:bg-white/20 sm:hover:bg-white/20 transition-all duration-300 w-full sm:w-auto touch-manipulation min-h-[56px]"
             >
               <span>Appeler maintenant</span>
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +58,7 @@ export default function FinalCTA() {
           </div>
 
           {/* Trust indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 text-white/80">
               <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
                 <Clock className="w-6 h-6 text-brand-400" />
