@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
     {
       icon: Droplets,
       title: "Produits professionnels",
-      description: "Koch-Chemie & CarPro : les mêmes produits que les meilleurs detailers. Résultat showroom garanti.",
+      description: "Koch-Chemie & CarPro : les mêmes produits que les meilleurs detailers. Votre nettoyage auto atteint un résultat showroom garanti.",
       highlight: "Qualité premium"
     },
     {
@@ -69,7 +69,8 @@ export default function WhyChooseUs() {
           </h2>
           
           <p className="text-base sm:text-lg md:text-xl text-dark-600 px-4">
-            Un service premium qui vous fait gagner du temps, pour un prix juste
+            Un service de <strong>nettoyage voiture</strong> premium qui vous fait gagner du temps. 
+            Notre <strong>lavage voiture mobile</strong> à domicile pour un prix juste.
           </p>
         </div>
 
@@ -106,10 +107,11 @@ export default function WhyChooseUs() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold text-dark-900 mb-3">
-              Comparaison honnête
+              Comparaison honnête : nettoyage voiture vs car wash traditionnel
             </h3>
             <p className="text-dark-600">
-              Pour que vous puissiez faire le bon choix en toute transparence
+              Pour que vous puissiez faire le bon choix entre notre <strong>lavage voiture</strong> à domicile 
+              et les solutions traditionnelles, en toute transparence
             </p>
           </div>
 
@@ -146,7 +148,9 @@ export default function WhyChooseUs() {
 
           <div className="mt-8 text-center">
             <p className="text-dark-600 text-sm">
-              💡 <span className="font-semibold">Le bon rapport qualité/prix/temps :</span> un service premium à prix juste, sans perdre une minute de votre temps.
+              💡 <span className="font-semibold">Le bon rapport qualité/prix/temps :</span> un service de 
+              <strong> nettoyage auto</strong> premium à prix juste, sans perdre une minute de votre temps. 
+              Notre <strong>car wash mobile</strong> vous fait gagner 2-3h.
             </p>
           </div>
         </div>

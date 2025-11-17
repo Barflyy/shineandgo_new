@@ -332,10 +332,12 @@ export default function VerviersClientComponent() {
           <div className="relative min-h-screen flex items-center justify-center bg-white">
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                🚗 Nettoyage voiture à domicile Verviers – En 90min dès 49€
+                Nettoyage Voiture à Domicile Verviers | En 90min dès 49€
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
-                Votre voiture mérite le meilleur ! Shine&Go vous propose un service de nettoyage voiture à domicile à Verviers et alentours (Dison, Pepinster, Jalhay, Spa), avec des produits professionnels Koch-Chemie. ✨ Résultat showroom garanti.
+                Vous cherchez un <strong>nettoyage voiture à Verviers</strong> ? Shine&Go vous propose un service de 
+                <strong> lavage voiture</strong> mobile à domicile à Verviers et alentours (Dison, Pepinster, Jalhay, Spa). 
+                Notre <strong>nettoyage auto</strong> utilise des produits professionnels Koch-Chemie. ✨ Résultat showroom garanti.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

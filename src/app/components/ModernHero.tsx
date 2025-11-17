@@ -33,18 +33,23 @@ export default function ModernHero() {
             <span className="text-sm font-medium text-white/90">Noté 4.9/5 · Seulement 5 créneaux dispo cette semaine</span>
           </div>
 
-          {/* Main title */}
+          {/* Main title - Optimisé SEO */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-[1.1] tracking-tight animate-fade-in-up px-4">
-            Votre voiture mérite
+            Lavage Voiture Mobile
             <span className="block mt-2 bg-gradient-to-r from-brand-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-              le traitement VIP
+              Herve Verviers Liège
+            </span>
+            <span className="block mt-2 text-3xl sm:text-4xl md:text-5xl text-white/90">
+              Chez Vous en 2h · Dès 49€
             </span>
           </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle - Mots-clés alternés */}
           <p className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
-            Service mobile premium de detailing automobile. À domicile ou en pick-up.
-            <span className="block mt-2 text-base sm:text-lg text-white/60">Herve · Verviers · Liège · 25km autour</span>
+            Service mobile premium de <strong className="text-white">nettoyage voiture</strong> à domicile. 
+            Notre <strong className="text-white">lavage voiture mobile</strong> utilise des produits professionnels Koch-Chemie. 
+            Résultat showroom garanti en 90 min.
+            <span className="block mt-2 text-base sm:text-lg text-white/60">Herve · Verviers · Liège · Battice · 25km autour</span>
           </p>
 
           {/* CTA buttons */}

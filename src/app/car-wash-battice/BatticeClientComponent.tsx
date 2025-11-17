@@ -299,10 +299,12 @@ export default function BatticeClientComponent() {
           <div className="relative min-h-screen flex items-center justify-center bg-white">
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                🚗 Car Wash Battice – Lavage mobile à domicile dès 49€
+                Car Wash Battice | Service Rapide à Domicile - Dès 49€
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
-                Besoin d'un car wash professionnel à Battice ? Shine&Go vous propose un service de lavage voiture mobile à domicile avec des produits professionnels Koch-Chemie. ✨ Résultat showroom garanti en 90 min, sans vous déplacer.
+                Besoin d'un <strong>car wash</strong> professionnel à Battice ? Shine&Go vous propose un service de 
+                <strong> lavage voiture mobile</strong> à domicile. Notre <strong>nettoyage voiture</strong> à Battice utilise 
+                des produits professionnels Koch-Chemie. ✨ Résultat showroom garanti en 90 min, sans vous déplacer.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

@@ -299,10 +299,13 @@ export default function LiegeClientComponent() {
           <div className="relative min-h-screen flex items-center justify-center bg-white">
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                🚗 Lavage Voiture Liège – Service mobile à domicile dès 49€
+                Lavage Voiture Liège | Toute Agglomération - Dès 49€
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
-                Besoin d'un lavage voiture professionnel à Liège ? Shine&Go vous propose un service de lavage voiture mobile à domicile dans toute l'agglomération liégeoise (Centre, Grivegnée, Angleur, Bressoux, Chênée) avec des produits professionnels Koch-Chemie. ✨ Résultat showroom garanti en 90 min, sans vous déplacer.
+                Besoin d'un <strong>lavage voiture</strong> professionnel à Liège ? Shine&Go vous propose un service de 
+                <strong> nettoyage voiture</strong> mobile à domicile dans toute l'agglomération liégeoise (Centre, Grivegnée, 
+                Angleur, Bressoux, Chênée). Notre <strong>car wash</strong> mobile utilise des produits professionnels Koch-Chemie. 
+                ✨ Résultat showroom garanti en 90 min, sans vous déplacer.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

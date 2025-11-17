@@ -332,10 +332,13 @@ export default function HerveClientComponent() {
           <div className="relative min-h-screen flex items-center justify-center bg-white">
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
-                🚗 Nettoyage voiture à domicile Herve – En 90min dès 49€
+                Nettoyage Voiture à Domicile Herve | En 90min dès 49€
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
-                Votre voiture mérite le meilleur ! Shine&Go vous propose un service de nettoyage voiture à domicile à Herve et alentours (Battice, Thimister, Clermont), avec des produits professionnels Koch-Chemie. ✨ Résultat showroom garanti.
+                Vous cherchez un <strong>nettoyage voiture à Herve</strong> ? Shine&Go, spécialiste du 
+                <strong> lavage voiture mobile</strong>, intervient chez vous à Herve, Battice, Thimister et Clermont. 
+                Notre <strong>car wash</strong> à domicile utilise des produits professionnels Koch-Chemie. 
+                ✨ Résultat showroom garanti.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
