@@ -102,14 +102,8 @@ export default function ModernServices() {
                 }`}>
                   
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} p-0.5 mb-6`}>
-                    <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center">
-                      <Icon className={`w-8 h-8 bg-gradient-to-br ${service.gradient} bg-clip-text text-transparent`} style={{
-                        WebkitTextFillColor: 'transparent',
-                        WebkitBackgroundClip: 'text',
-                        backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`
-                      }} />
-                    </div>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg`}>
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Title */}
@@ -124,12 +118,15 @@ export default function ModernServices() {
                   </div>
 
                   {/* Price */}
-                  <div className="mb-8">
+                  <div className="mb-8 p-4 rounded-xl bg-gradient-to-br from-slate-50 to-white border-2 border-dark-200">
                     <div className="flex items-baseline gap-2">
-                      <span className={`text-5xl font-bold bg-gradient-to-br ${service.gradient} bg-clip-text text-transparent`}>
+                      <span className={`text-5xl font-bold text-dark-900`}>
                         {service.price}€
                       </span>
-                      <span className="text-dark-500">/ service</span>
+                      <span className="text-dark-500 text-lg">/ service</span>
+                    </div>
+                    <div className="mt-2 text-xs text-dark-600">
+                      Prix tout compris · Déplacement gratuit
                     </div>
                   </div>
 
