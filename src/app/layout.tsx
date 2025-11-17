@@ -7,16 +7,16 @@ import StickyPhoneButton from '@/components/StickyPhoneButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Lavage voiture à domicile Herve Verviers Liège – Shine&Go | Nettoyage intérieur extérieur',
-  description: 'Lavage voiture à domicile en Wallonie. Service mobile premium avec produits Koch-Chemie & CarPro. Nettoyage intérieur et extérieur, résultat showroom garanti. Devis gratuit, réservation rapide.',
+  title: 'Lavage Voiture Mobile Herve Verviers Liège | Chez Vous en 2h - 49€ - Shine&Go',
+  description: 'Lavage voiture à domicile Herve, Verviers, Liège. On vient chez vous en 2h. Produits pro Koch-Chemie. Résultat showroom garanti 7j. Dès 49€. Devis en 2 min sur WhatsApp.',
   keywords: 'lavage voiture domicile, nettoyage voiture herve, lavage voiture verviers, nettoyage voiture liege, lavage voiture mobile, nettoyage interieur voiture, lavage exterieur voiture, shine&go, wallonie, belgique',
   authors: [{ name: 'Shine&Go' }],
   creator: 'Shine&Go',
   publisher: 'Shine&Go',
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   openGraph: {
-    title: 'Lavage voiture à domicile Herve Verviers Liège – Shine&Go',
-    description: 'Service mobile premium de lavage voiture à domicile en Wallonie. Nettoyage intérieur et extérieur avec produits professionnels. Résultat showroom garanti.',
+    title: 'Lavage Voiture Mobile Herve Verviers Liège | Chez Vous en 2h - 49€',
+    description: 'Lavage voiture à domicile Herve, Verviers, Liège. On vient chez vous en 2h. Produits pro. Résultat showroom garanti 7j. Dès 49€.',
     url: 'https://shineandgo.be/',
     siteName: 'Shine&Go',
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lavage voiture à domicile Herve Verviers Liège – Shine&Go',
-    description: 'Service mobile premium de lavage voiture à domicile en Wallonie. Nettoyage intérieur et extérieur avec produits professionnels.',
+    title: 'Lavage Voiture Mobile Herve Verviers Liège | Chez Vous en 2h - 49€',
+    description: 'Lavage voiture à domicile. On vient chez vous en 2h. Résultat showroom garanti 7j. Dès 49€. Devis en 2 min sur WhatsApp.',
     images: ['/transformations/optimized/webp/apres01.webp'],
   },
   alternates: {

@@ -2,9 +2,12 @@
 
 import ModernHero from "../components/ModernHero"
 import ModernServices from "../components/ModernServices"
+import WhyChooseUs from "../components/WhyChooseUs"
 import TrustSection from "../components/TrustSection"
 import ModernProcess from "../components/ModernProcess"
+import UrgencyBanner from "../components/UrgencyBanner"
 import ModernGallery from "../components/ModernGallery"
+import RealTestimonials from "../components/RealTestimonials"
 import ModernFAQ from "../components/ModernFAQ"
 import ModernFooter from "../components/ModernFooter"
 
@@ -14,9 +17,12 @@ export default function PremiumHome() {
       <main>
         <ModernHero />
         <ModernServices />
+        <WhyChooseUs />
         <TrustSection />
         <ModernProcess />
+        <UrgencyBanner />
         <ModernGallery />
+        <RealTestimonials />
         <ModernFAQ />
       </main>
 
