@@ -20,7 +20,7 @@ export default function ModernFooter() {
               Shine&Go
             </div>
             <p className="text-white/70 mb-6 leading-relaxed">
-              Service mobile premium de detailing automobile. Résultat showroom garanti.
+              Nettoyage voiture premium à domicile. Service mobile professionnel. Résultat showroom garanti.
             </p>
             <div className="flex gap-4">
               <a 
@@ -118,16 +118,18 @@ export default function ModernFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <p className="text-white/50 text-sm order-2 md:order-1">
-            © 2025 Shine&Go. Tous droits réservés.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm order-1 md:order-2">
-            <a href="#" className="text-white/50 hover:text-white transition-colors whitespace-nowrap">Mentions légales</a>
-            <span className="text-white/20 hidden sm:inline">·</span>
-            <a href="#" className="text-white/50 hover:text-white transition-colors whitespace-nowrap">CGV</a>
-            <span className="text-white/20 hidden sm:inline">·</span>
-            <a href="#" className="text-white/50 hover:text-white transition-colors whitespace-nowrap">Confidentialité</a>
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <p className="text-white/50 text-sm">
+              © 2025 Shine&Go. Tous droits réservés.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-sm">
+              <a href="#" className="text-white/50 hover:text-brand-400 transition-colors whitespace-nowrap">Mentions légales</a>
+              <span className="text-white/20">·</span>
+              <a href="#" className="text-white/50 hover:text-brand-400 transition-colors whitespace-nowrap">CGV</a>
+              <span className="text-white/20">·</span>
+              <a href="#" className="text-white/50 hover:text-brand-400 transition-colors whitespace-nowrap">Confidentialité</a>
+            </div>
           </div>
         </div>
       </div>
