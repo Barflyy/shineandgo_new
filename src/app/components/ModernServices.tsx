@@ -63,14 +63,14 @@ export default function ModernServices() {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark-900 mb-6 animate-fade-in-up px-4">
-            Choisissez votre
+            Nos Formules
             <span className="block bg-gradient-to-r from-brand-600 to-purple-600 bg-clip-text text-transparent">
-              niveau de brillance
+              Premium
             </span>
           </h2>
           
           <p className="text-base sm:text-lg md:text-xl text-dark-600 max-w-2xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
-            Service mobile premium · Produits professionnels · Résultat garanti
+            Chaque formule inclut : déplacement gratuit · produits professionnels · garantie satisfaction
           </p>
         </div>
 

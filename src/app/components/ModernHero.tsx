@@ -35,19 +35,20 @@ export default function ModernHero() {
 
           {/* Main title - Optimisé SEO Premium */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-[1.1] tracking-tight animate-fade-in-up px-4">
-            Nettoyage Voiture Premium
+            Detailing Automobile
             <span className="block mt-2 bg-gradient-to-r from-brand-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-              Herve · Verviers · Liège
+              Niveau Concession
             </span>
             <span className="block mt-2 text-3xl sm:text-4xl md:text-5xl text-white/90">
-              Excellence Mobile à Domicile
+              Service Mobile Premium
             </span>
           </h1>
 
           {/* Subtitle - Vocabulaire Premium */}
           <p className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
-            Nettoyage voiture professionnel à domicile. Produits Koch-Chemie exclusifs. 
-            Finition niveau concession garantie. Service mobile en 90 minutes. À partir de 65€.
+            Votre véhicule mérite le meilleur. Produits professionnels Koch-Chemie. 
+            Résultat showroom garanti. Service à domicile en 90 minutes.
+            <span className="block mt-3 text-xl sm:text-2xl font-semibold text-white/90">À partir de 65€</span>
             <span className="block mt-2 text-base sm:text-lg text-white/60">Herve · Verviers · Liège · Battice · 25km autour</span>
           </p>
 
