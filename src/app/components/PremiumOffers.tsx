@@ -1,7 +1,16 @@
 import { trackWhatsApp } from "@/lib/analytics"
 
+interface Offer {
+  name: string;
+  price: string;
+  bullets: readonly string[];
+  href: string;
+  theme: "blue" | "slate";
+  tag?: string;
+}
+
 export default function PremiumOffers() {
-  const offers = [
+  const offers: Offer[] = [
     {
       name: "Essentiel Privé",
       price: "dès 150 €",
@@ -25,7 +34,7 @@ export default function PremiumOffers() {
       theme: "slate",
       tag: "Recommandé",
     },
-  ] as const
+  ]
 
   return (
     <section id="tarifs" className="relative py-16 md:py-20 bg-slate-50">
