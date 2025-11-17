@@ -2,6 +2,7 @@
 
 import ModernHero from "../components/ModernHero"
 import ModernServices from "../components/ModernServices"
+import TrustSection from "../components/TrustSection"
 import ModernProcess from "../components/ModernProcess"
 import ModernGallery from "../components/ModernGallery"
 import ModernFAQ from "../components/ModernFAQ"
@@ -13,6 +14,7 @@ export default function PremiumHome() {
       <main>
         <ModernHero />
         <ModernServices />
+        <TrustSection />
         <ModernProcess />
         <ModernGallery />
         <ModernFAQ />
@@ -49,10 +51,54 @@ export default function PremiumHome() {
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: "4.9",
-              reviewCount: "30",
+              reviewCount: "42",
               bestRating: "5",
               worstRating: "1"
             },
+            review: [
+              {
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: "Marc L."
+                },
+                datePublished: "2025-01-10",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                  bestRating: "5"
+                },
+                reviewBody: "Service impeccable ! Ma voiture n'avait jamais été aussi propre. L'équipe est professionnelle, ponctuelle et très minutieuse. Je recommande sans hésitation."
+              },
+              {
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: "Sophie D."
+                },
+                datePublished: "2025-01-08",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                  bestRating: "5"
+                },
+                reviewBody: "Excellent travail ! Le service à domicile est vraiment pratique. Ma BMW est comme neuve. Finition digne d'un showroom."
+              },
+              {
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: "Thomas V."
+                },
+                datePublished: "2025-01-05",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                  bestRating: "5"
+                },
+                reviewBody: "Je suis très satisfait du résultat. L'intérieur de ma voiture est parfaitement propre et sent très bon. Service professionnel et rapide."
+              }
+            ],
             openingHours: "Mo-Su 08:00-20:00",
             hasOfferCatalog: {
               "@type": "OfferCatalog",

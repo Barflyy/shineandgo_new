@@ -12,24 +12,28 @@ export default function ModernFAQ() {
       answer: "Un service complet (intérieur + extérieur) prend environ 90 minutes. Le nettoyage intérieur seul prend 45 minutes, et l'extérieur environ 50 minutes. Nous ne préciptons jamais le travail pour garantir un résultat impeccable."
     },
     {
+      question: "Êtes-vous assuré et que se passe-t-il en cas de dommage ?",
+      answer: "Oui, nous sommes couverts par une assurance Responsabilité Civile Professionnelle. Votre véhicule est protégé pendant toute la durée de notre intervention. De plus, nous prenons des photos avant/après chaque service pour votre tranquillité d'esprit."
+    },
+    {
       question: "Quels produits utilisez-vous ?",
-      answer: "Nous utilisons exclusivement des produits professionnels Koch-Chemie et CarPro, reconnus dans le monde du detailing. Ces produits sont sans danger pour votre véhicule, l'environnement et offrent des résultats durables."
+      answer: "Nous utilisons exclusivement des produits professionnels Koch-Chemie et CarPro, reconnus dans le monde du detailing. Ces produits sont sans danger pour votre véhicule, l'environnement et offrent des résultats durables. Aucun produit agressif ou pouvant endommager votre peinture."
     },
     {
       question: "Faut-il être présent pendant le service ?",
       answer: "Non, ce n'est pas nécessaire ! C'est tout l'avantage du service mobile. Vous pouvez vaquer à vos occupations pendant que nous nous occupons de votre véhicule. Nous faisons juste une inspection finale ensemble à la fin."
     },
     {
-      question: "Quelle est votre zone d'intervention ?",
-      answer: "Nous intervenons dans un rayon de 25km autour de Herve, couvrant Liège, Verviers, Battice, Soumagne et environs. Le déplacement est gratuit dans cette zone. Au-delà, un supplément peut s'appliquer."
+      question: "Quelle est votre garantie de satisfaction ?",
+      answer: "Si vous n'êtes pas 100% satisfait du résultat, nous revenons gratuitement dans les 7 jours pour effectuer les retouches nécessaires, ou nous vous remboursons intégralement. Votre satisfaction est notre priorité absolue."
     },
     {
       question: "Comment se passe le paiement ?",
-      answer: "Nous acceptons le paiement en espèces, par carte bancaire ou virement. Le paiement se fait après le service, une fois que vous avez validé le résultat. C'est notre garantie de satisfaction !"
+      answer: "Nous acceptons le paiement en espèces, par carte bancaire ou virement. Le paiement se fait APRÈS le service, une fois que vous avez inspecté et validé le résultat. Aucun acompte requis !"
     },
     {
-      question: "Que se passe-t-il s'il pleut ?",
-      answer: "Pour le nettoyage extérieur, nous préférons reporter si la météo est défavorable. Pour l'intérieur, aucun problème ! Nous vous contactons toujours la veille pour confirmer ou reprogrammer si nécessaire."
+      question: "Quelle est votre zone d'intervention ?",
+      answer: "Nous intervenons dans un rayon de 25km autour de Herve, couvrant Liège, Verviers, Battice, Soumagne et environs. Le déplacement est gratuit dans cette zone. Au-delà, un supplément peut s'appliquer selon la distance."
     }
   ]
 
