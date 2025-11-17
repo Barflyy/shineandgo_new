@@ -1,14 +1,14 @@
 'use client';
 
 import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function Analytics() {
   return (
     <>
       {/* Vercel Analytics - Page views, clicks, and custom events */}
-      <Analytics />
+      <VercelAnalytics />
       
       {/* Vercel Speed Insights - Real user performance metrics */}
       <SpeedInsights />
