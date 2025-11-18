@@ -75,7 +75,7 @@ export default function HomePage() {
 
             {/* Titre épuré - Mobile First */}
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-light text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">
-              Detailing automobile
+              Lavage automobile
               <span className="block font-normal mt-1 sm:mt-2">à domicile</span>
             </h1>
 
@@ -395,7 +395,7 @@ export default function HomePage() {
                 Shine<span className="text-blue-600">&</span>Go
               </div>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Detailing automobile premium à domicile en Wallonie
+                Lavage automobile premium à domicile en Wallonie
               </p>
             </div>
 
@@ -461,7 +461,7 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Shine&Go",
-            "description": "Service premium de nettoyage automobile à domicile",
+            "description": "Service premium de lavage automobile à domicile",
             "telephone": "+32472303701",
             "email": "contact@shineandgo.be",
             "address": {
