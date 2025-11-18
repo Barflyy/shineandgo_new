@@ -89,6 +89,11 @@ export default function ModernFooter() {
                   Battice
                 </a>
               </li>
+              <li>
+                <a href="/lavage-voiture-soumagne" className="text-white/70 hover:text-brand-400 transition-colors">
+                  Soumagne
+                </a>
+              </li>
             </ul>
             <p className="text-white/50 text-xs mt-3">Rayon de 25km autour de Herve</p>
           </div>

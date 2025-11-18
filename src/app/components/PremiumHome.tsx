@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import PremiumHero from "../components/PremiumHero"
 import ModernServices from "../components/ModernServices"
 import PremiumTrustBenefits from "../components/PremiumTrustBenefits"
@@ -21,6 +22,54 @@ export default function PremiumHome() {
         <ModernGallery />
         <RealTestimonials />
         <ModernFAQ />
+
+        {/* Section Zones d'Intervention */}
+        <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4 text-dark-900">
+                Nos zones d'intervention en Wallonie
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg text-dark-600 max-w-2xl mx-auto px-4">
+                Service mobile de nettoyage voiture à domicile dans toute la région liégeoise
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 max-w-5xl mx-auto">
+              {[
+                { name: 'Herve', href: '/nettoyage-voiture-herve', icon: '📍' },
+                { name: 'Verviers', href: '/nettoyage-voiture-verviers', icon: '📍' },
+                { name: 'Liège', href: '/lavage-voiture-liege', icon: '📍' },
+                { name: 'Battice', href: '/lavage-voiture-battice', icon: '📍' },
+                { name: 'Soumagne', href: '/lavage-voiture-soumagne', icon: '📍' },
+                { name: 'Spa', href: '#spa', icon: '⏳' },
+              ].map((zone) => (
+                <Link
+                  key={zone.name}
+                  href={zone.href}
+                  className="bg-white border-2 border-dark-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-brand-500 hover:shadow-lg transition-all group"
+                >
+                  <div className="text-2xl sm:text-3xl mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
+                    {zone.icon}
+                  </div>
+                  <div className="font-semibold text-sm sm:text-base text-dark-900 group-hover:text-brand-600 transition-colors">
+                    {zone.name}
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-6 sm:mt-8 px-4">
+              <p className="text-xs sm:text-sm md:text-base text-dark-600">
+                📞 Votre ville n'est pas listée? Appelez-nous au{' '}
+                <a href="tel:+32472303701" className="text-brand-600 font-semibold hover:underline">
+                  0472 30 37 01
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
         <FinalCTA />
       </main>
 
