@@ -38,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'nettoyage-voiture-verviers',
     'lavage-voiture-battice',
     'lavage-voiture-liege',
+    'lavage-voiture-soumagne',
     'prix-nettoyage-voiture-domicile',
   ].map(slug => ({
     url: `${baseUrl}/${slug}`,
