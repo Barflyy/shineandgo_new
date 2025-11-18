@@ -42,7 +42,7 @@ function BeforeAfterSlider() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const handleMove = (event: React.MouseEvent | React.TouchEvent) => {
-    if (!isDragging && event.type !== 'click') return // Permet le click pour jump
+    if (!isDragging && event.type !== 'click') return
     
     const container = containerRef.current
     if (!container) return
@@ -50,19 +50,17 @@ function BeforeAfterSlider() {
     const rect = container.getBoundingClientRect()
     const x = 'touches' in event ? event.touches[0].clientX : (event as React.MouseEvent).clientX
     
-    // Calcul du pourcentage (borné entre 0 et 100)
     const position = ((x - rect.left) / rect.width) * 100
     setSliderPosition(Math.min(100, Math.max(0, position)))
   }
 
-  // Gestionnaires d'événements pour souris et tactile
   const startDrag = () => setIsDragging(true)
   const stopDrag = () => setIsDragging(false)
 
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-64 md:h-96 rounded-[2.5rem] overflow-hidden cursor-ew-resize select-none shadow-2xl shadow-slate-200 touch-none"
+      className="relative w-full h-64 md:h-96 rounded-[2.5rem] overflow-hidden cursor-ew-resize select-none shadow-2xl shadow-slate-200 touch-none border-4 border-white ring-1 ring-slate-100"
       onMouseDown={startDrag}
       onMouseUp={stopDrag}
       onMouseLeave={stopDrag}
@@ -70,31 +68,31 @@ function BeforeAfterSlider() {
       onTouchEnd={stopDrag}
       onMouseMove={handleMove}
       onTouchMove={handleMove}
-      onClick={handleMove} // Permet de cliquer pour déplacer instantanément
+      onClick={handleMove}
     >
-      {/* IMAGE APRÈS (Fond - Propre) */}
+      {/* IMAGE APRÈS (Fond) */}
       <div className="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2300&auto=format&fit=crop" 
           alt="Voiture propre" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-6 right-6 bg-blue-600/90 backdrop-blur text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg">
-          APRÈS (Shine&Go)
+        <div className="absolute top-6 right-6 bg-blue-600/90 backdrop-blur text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg z-20">
+          APRÈS
         </div>
       </div>
 
-      {/* IMAGE AVANT (Dessus - Sale - Masquée par clip-path) */}
+      {/* IMAGE AVANT (Dessus) */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 border-r-2 border-white"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img 
-          src="https://images.unsplash.com/photo-1632823471565-1ec2bd3d0edd?q=80&w=2300&auto=format&fit=crop" // Image boueuse générique
+          src="https://images.unsplash.com/photo-1632823471565-1ec2bd3d0edd?q=80&w=2300&auto=format&fit=crop" 
           alt="Voiture sale" 
-          className="w-full h-full object-cover filter brightness-90 sepia-[0.2]" // Petit filtre pour accentuer l'effet sale
+          className="w-full h-full object-cover filter brightness-75 sepia-[0.3] contrast-125"
         />
-        <div className="absolute top-6 left-6 bg-slate-900/80 backdrop-blur text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg">
+        <div className="absolute top-6 left-6 bg-slate-900/80 backdrop-blur text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg z-20">
           AVANT
         </div>
       </div>
@@ -104,8 +102,8 @@ function BeforeAfterSlider() {
         className="absolute inset-y-0 w-1 bg-white cursor-ew-resize z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]"
         style={{ left: `${sliderPosition}%` }}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-xl text-blue-600 transition-transform hover:scale-110 active:scale-95">
-          <GripVertical className="w-5 h-5" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl text-blue-600 transition-transform hover:scale-110 active:scale-95">
+          <GripVertical className="w-6 h-6" />
         </div>
       </div>
     </div>
@@ -137,11 +135,11 @@ export default function HomePage() {
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled || mobileMenuOpen 
-            ? 'bg-white/90 backdrop-blur-lg border-b border-slate-100 py-3' 
+            ? 'bg-white/90 backdrop-blur-lg border-b border-slate-100 py-3 shadow-sm' 
             : 'bg-transparent py-6'
         }`}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-6 flex items-center justify-between max-w-screen-xl">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 z-50 group">
             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-600/20 group-hover:scale-105 transition-transform">
@@ -174,7 +172,7 @@ export default function HomePage() {
           {/* Mobile Toggle */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden z-50 p-2 -mr-2 text-slate-900"
+            className="md:hidden z-50 p-2 -mr-2 text-slate-900 hover:bg-slate-50 rounded-full transition-colors"
             aria-label="Menu"
           >
             {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -203,39 +201,46 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* --- HERO SECTION --- */}
-      <section className="pt-36 pb-20 md:pt-52 md:pb-32 px-6 overflow-hidden relative">
-        {/* Background subtle blob */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/4"></div>
+      {/* --- HERO SECTION (CORRIGÉ RESPONSIVE) --- */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        
+        {/* Background Elements (Équilibrés G/D) */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+           {/* Blob Droite */}
+           <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/4 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-blue-50/60 rounded-full blur-[80px] md:blur-[120px]"></div>
+           {/* Blob Gauche (Ajouté pour desktop) */}
+           <div className="absolute bottom-0 left-0 -translate-x-1/3 translate-y-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-50/60 rounded-full blur-[80px] md:blur-[100px]"></div>
+        </div>
 
-        <div className="container mx-auto max-w-4xl text-center">
+        {/* Conteneur large pour Desktop (max-w-screen-xl) */}
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl flex flex-col items-center text-center">
           
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wide mb-8 border border-blue-100">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50/80 border border-blue-100 text-blue-700 text-xs sm:text-sm font-bold uppercase tracking-wide mb-8 backdrop-blur-sm">
               <Star className="w-3.5 h-3.5 fill-blue-700" />
               Service Premium à Domicile
             </div>
           </FadeIn>
 
           <FadeIn delay={100}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 tracking-tight mb-8 leading-[1.05]">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 tracking-tight mb-8 leading-[1.1] lg:leading-[1.05]">
               Le detailing qui vient <br className="hidden md:block" />
-              <span className="text-blue-600 relative inline-block">
+              <span className="text-blue-600 relative inline-block whitespace-nowrap">
                 à votre porte
-                <svg className="absolute w-full h-2.5 -bottom-1 left-0 text-blue-100 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" /></svg>
+                <svg className="absolute w-full h-2.5 -bottom-1 sm:-bottom-2 left-0 text-blue-100 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" /></svg>
               </span>.
             </h1>
           </FadeIn>
 
           <FadeIn delay={200}>
-            <p className="text-lg md:text-2xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg md:text-xl lg:text-2xl text-slate-500 mb-10 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-medium px-4">
               Ne perdez plus votre temps en station de lavage. <br className="hidden sm:block"/>
               Nous redonnons l'éclat du neuf à votre véhicule, directement chez vous.
             </p>
           </FadeIn>
 
           <FadeIn delay={300}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <a
                 href="https://wa.me/32472303701"
                 className="w-full sm:w-auto h-14 px-8 rounded-2xl bg-blue-600 text-white font-bold text-lg flex items-center justify-center gap-2 shadow-xl shadow-blue-600/20 hover:bg-blue-700 hover:scale-[1.02] transition-all active:scale-95"
@@ -245,30 +250,32 @@ export default function HomePage() {
               </a>
               <a
                 href="#tarifs"
-                className="w-full sm:w-auto h-14 px-8 rounded-2xl bg-slate-50 text-slate-900 font-bold text-lg flex items-center justify-center hover:bg-slate-100 transition-all border border-slate-100"
+                className="w-full sm:w-auto h-14 px-8 rounded-2xl bg-white text-slate-900 font-bold text-lg flex items-center justify-center hover:bg-slate-50 transition-all border border-slate-200 shadow-sm hover:shadow-md"
               >
                 Voir les prix
               </a>
             </div>
           </FadeIn>
           
-          {/* Indicateurs de confiance */}
-          <FadeIn delay={400} className="mt-16 pt-12 border-t border-slate-100 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-semibold text-slate-500">
-            <span className="flex items-center gap-2"><Check className="w-5 h-5 text-blue-600 bg-blue-50 p-1 rounded-full" /> Déplacement gratuit 25km</span>
-            <span className="flex items-center gap-2"><Check className="w-5 h-5 text-blue-600 bg-blue-50 p-1 rounded-full" /> Produits Koch-Chemie®</span>
-            <span className="flex items-center gap-2"><Check className="w-5 h-5 text-blue-600 bg-blue-50 p-1 rounded-full" /> Assurance Professionnelle</span>
+          {/* Indicateurs de confiance - Grille responsive */}
+          <FadeIn delay={400} className="mt-16 pt-12 border-t border-slate-100/50 w-full max-w-4xl">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm sm:text-base font-semibold text-slate-500">
+              <span className="flex items-center gap-2"><Check className="w-5 h-5 text-blue-600 bg-blue-50 p-1 rounded-full shrink-0" /> Déplacement gratuit 25km</span>
+              <span className="flex items-center gap-2"><Check className="w-5 h-5 text-blue-600 bg-blue-50 p-1 rounded-full shrink-0" /> Produits Koch-Chemie®</span>
+              <span className="flex items-center gap-2"><Check className="w-5 h-5 text-blue-600 bg-blue-50 p-1 rounded-full shrink-0" /> Assurance Professionnelle</span>
+            </div>
           </FadeIn>
 
         </div>
       </section>
 
-      {/* --- SLIDER AVANT/APRÈS (Waw Effect) --- */}
-      <section className="py-12 px-6">
+      {/* --- SLIDER AVANT/APRÈS --- */}
+      <section className="py-12 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-5xl">
           <FadeIn delay={200}>
-             <div className="text-center mb-8">
-               <h2 className="text-2xl font-bold mb-2">Constatez la différence</h2>
-               <p className="text-slate-500 text-sm">Glissez le curseur pour voir le résultat.</p>
+             <div className="text-center mb-8 sm:mb-12">
+               <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-slate-900">Constatez la différence</h2>
+               <p className="text-slate-500 text-sm sm:text-base">Glissez le curseur pour voir le résultat.</p>
              </div>
              <BeforeAfterSlider />
           </FadeIn>
@@ -276,35 +283,35 @@ export default function HomePage() {
       </section>
 
       {/* --- ZONES --- */}
-      <section id="zones" className="py-10 border-b border-slate-50">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-slate-400 text-sm mb-6 font-medium">Nous intervenons à domicile :</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {['Herve', 'Verviers', 'Liège', 'Battice', 'Soumagne', 'Spa', 'Fléron', 'Aubel', 'Visé'].map((city, i) => (
-              <FadeIn key={city} delay={i * 50}>
-                <span className="px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-default">
+      <section id="zones" className="py-12 border-b border-slate-50 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 text-center max-w-screen-xl">
+          <p className="text-slate-400 text-sm mb-6 font-medium uppercase tracking-widest">Nous intervenons à domicile</p>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+            {['Herve', 'Verviers', 'Liège', 'Battice', 'Soumagne', 'Spa', 'Fléron', 'Aubel', 'Visé', 'Chaudfontaine'].map((city, i) => (
+              <FadeIn key={city} delay={i * 30}>
+                <span className="px-4 sm:px-6 py-2.5 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:border-blue-300 hover:text-blue-600 hover:shadow-sm transition-all cursor-default select-none">
                   {city}
                 </span>
               </FadeIn>
             ))}
-            <span className="px-5 py-2 text-sm text-slate-400">+ 25km alentours</span>
+            <span className="px-4 sm:px-6 py-2.5 text-sm text-slate-400 font-medium">+ 25km alentours</span>
           </div>
         </div>
       </section>
 
       {/* --- TARIFS --- */}
       <section id="tarifs" className="py-24 bg-slate-50/50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 max-w-screen-xl">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Tarifs Simples</h2>
             <p className="text-slate-500 text-lg">Pas de devis compliqué. Paiement après validation du résultat.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
             
             {/* Intérieur */}
             <FadeIn delay={0} className="h-full">
-              <article className="bg-white p-8 rounded-[2.5rem] border border-slate-100 flex flex-col hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group">
+              <article className="bg-white p-8 rounded-[2.5rem] border border-slate-100 flex flex-col hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group h-full">
                 <div className="mb-6">
                   <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform">🛋️</div>
                   <h3 className="text-2xl font-bold text-slate-900">Intérieur</h3>
@@ -318,7 +325,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://wa.me/32472303701?text=Rdv Intérieur" className="w-full py-4 rounded-xl border-2 border-slate-100 text-slate-900 font-bold text-center hover:bg-slate-900 hover:border-slate-900 hover:text-white transition-all">
+                <a href="https://wa.me/32472303701?text=Rdv Intérieur" className="w-full py-4 rounded-xl border-2 border-slate-100 text-slate-900 font-bold text-center hover:bg-slate-900 hover:border-slate-900 hover:text-white transition-all mt-auto">
                   Choisir
                 </a>
               </article>
@@ -326,7 +333,7 @@ export default function HomePage() {
 
             {/* Complet (Highlight) */}
             <FadeIn delay={100} className="h-full">
-              <article className="bg-slate-900 p-8 rounded-[2.5rem] flex flex-col shadow-2xl shadow-slate-900/20 transform md:-translate-y-6 relative overflow-hidden group">
+              <article className="bg-slate-900 p-8 rounded-[2.5rem] flex flex-col shadow-2xl shadow-slate-900/20 transform lg:-translate-y-6 relative overflow-hidden group h-full">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-600/30 transition-all" />
                 
                 <div className="mb-6 relative">
@@ -352,7 +359,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://wa.me/32472303701?text=Rdv Complet" className="relative w-full py-4 rounded-xl bg-blue-600 text-white font-bold text-center hover:bg-blue-500 hover:scale-[1.02] transition-all shadow-lg shadow-blue-900/50">
+                <a href="https://wa.me/32472303701?text=Rdv Complet" className="relative w-full py-4 rounded-xl bg-blue-600 text-white font-bold text-center hover:bg-blue-500 hover:scale-[1.02] transition-all shadow-lg shadow-blue-900/50 mt-auto">
                   Réserver le Complet
                 </a>
               </article>
@@ -360,7 +367,7 @@ export default function HomePage() {
 
             {/* Extérieur */}
             <FadeIn delay={200} className="h-full">
-              <article className="bg-white p-8 rounded-[2.5rem] border border-slate-100 flex flex-col hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group">
+              <article className="bg-white p-8 rounded-[2.5rem] border border-slate-100 flex flex-col hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group h-full">
                 <div className="mb-6">
                   <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mb-4 text-3xl group-hover:scale-110 transition-transform">🚗</div>
                   <h3 className="text-2xl font-bold text-slate-900">Extérieur</h3>
@@ -374,7 +381,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://wa.me/32472303701?text=Rdv Extérieur" className="w-full py-4 rounded-xl border-2 border-slate-100 text-slate-900 font-bold text-center hover:bg-slate-900 hover:border-slate-900 hover:text-white transition-all">
+                <a href="https://wa.me/32472303701?text=Rdv Extérieur" className="w-full py-4 rounded-xl border-2 border-slate-100 text-slate-900 font-bold text-center hover:bg-slate-900 hover:border-slate-900 hover:text-white transition-all mt-auto">
                   Choisir
                 </a>
               </article>
@@ -396,9 +403,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- AVIS CLIENTS (Social Proof) --- */}
+      {/* --- AVIS CLIENTS --- */}
       <section id="avis" className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 max-w-screen-xl">
           <div className="text-center mb-16">
              <h2 className="text-3xl font-bold mb-4">Ils nous font confiance</h2>
              <div className="flex justify-center items-center gap-2">
@@ -467,7 +474,7 @@ export default function HomePage() {
 
       {/* --- FOOTER --- */}
       <footer className="bg-white border-t border-slate-100 pt-20 pb-10">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 max-w-screen-xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
             <div className="max-w-xs">
               <div className="text-2xl font-bold mb-6 flex items-center gap-2">
