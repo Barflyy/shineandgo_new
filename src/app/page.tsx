@@ -23,7 +23,7 @@ export default function HomePage() {
       </nav>
 
       {/* HERO - Mobile First */}
-      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 md:pt-44 md:pb-32">
+      <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32">
         <div className="container mx-auto px-6 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             
