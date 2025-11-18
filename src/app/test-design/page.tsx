@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Check, Star, Phone, MapPin, Plus, Clock, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowRight, Check, Star, Phone, MapPin, Plus, Clock, ShieldCheck, Sparkles, ChevronDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export default function HomePage() {
