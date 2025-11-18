@@ -3,37 +3,7 @@
 import { ArrowRight, Check, Star, Phone, Mail, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-
-export const metadata = {
-  title: 'Nettoyage Voiture à Domicile Herve | En 90min dès 65€ - Shine&Go',
-  description: 'Nettoyage voiture premium à Herve et environs. Service mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01',
-  keywords: 'nettoyage voiture herve, lavage voiture herve, nettoyage auto herve, lavage domicile herve, detailing herve, nettoyage voiture battice, lavage auto herve 4650',
-  openGraph: {
-    title: 'Nettoyage Voiture Premium Herve | Service à Domicile dès 65€ - Shine&Go',
-    description: 'Service mobile de nettoyage voiture à Herve. Intérieur & extérieur, produits premium, résultat showroom garanti en 90 min.',
-    url: 'https://shineandgo.be/nettoyage-voiture-herve',
-    siteName: 'Shine&Go',
-    images: [
-      {
-        url: '/transformations/optimized/webp/apres01.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Nettoyage voiture Herve - Résultat professionnel Shine&Go',
-      },
-    ],
-    locale: 'fr_BE',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://shineandgo.be/nettoyage-voiture-herve',
-  },
-  other: {
-    'geo.region': 'BE-WAL',
-    'geo.placename': 'Herve',
-    'geo.position': '50.6386;5.7942',
-    'ICBM': '50.6386, 5.7942',
-  },
-};
+import Head from 'next/head'
 
 export default function HervePage() {
   const [scrolled, setScrolled] = useState(false)
@@ -64,9 +34,15 @@ export default function HervePage() {
   }, [lastScrollY])
 
   return (
-    <main className="bg-white min-h-screen">
+    <>
+      <Head>
+        <title>Nettoyage Voiture à Domicile Herve | En 90min dès 65€ - Shine&Go</title>
+        <meta name="description" content="Nettoyage voiture premium à Herve et environs. Service mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01" />
+      </Head>
       
-      {/* NAVIGATION */}
+      <main className="bg-white min-h-screen">
+        
+        {/* NAVIGATION */}
       <nav className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gray-100 transition-all duration-300 ease-in-out ${
         scrolled ? 'py-2 sm:py-3 shadow-lg' : 'py-4 sm:py-5'
       } ${
@@ -390,5 +366,6 @@ export default function HervePage() {
         </div>
       </footer>
     </main>
+    </>
   )
 }
