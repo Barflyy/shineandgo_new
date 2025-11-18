@@ -53,8 +53,9 @@ Disallow: /temp/
 Disallow: /cache/
 Disallow: /logs/
 Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /sitemap.xml
+# IMPORTANT: Ne PAS bloquer les sitemaps pour le SEO
+# Disallow: /*.xml$ - SUPPRIMÉ pour permettre l'indexation
+# Disallow: /sitemap.xml - SUPPRIMÉ pour permettre l'indexation
 Disallow: /robots.txt
 
 # Bloquer les paramètres d'URL inutiles
