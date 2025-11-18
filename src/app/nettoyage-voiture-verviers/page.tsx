@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import VerviersClientComponent from './VerviersClientComponent';
+import CityPageTemplate from '../shared/components/CityPageTemplate';
 
 export const metadata: Metadata = {
   title: 'Nettoyage Voiture à Domicile Verviers | En 90min dès 65€ - Shine&Go',
@@ -34,108 +34,12 @@ export const metadata: Metadata = {
 
 export default function VerviersPage() {
   return (
-    <>
-      {/* Schema.org LocalBusiness pour SEO local */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Shine&Go - Nettoyage Voiture Verviers",
-            "description": "Service mobile de nettoyage voiture à domicile à Verviers et environs (Dison, Pepinster, Jalhay, Spa)",
-            "url": "https://shineandgo.be/nettoyage-voiture-verviers",
-            "telephone": "+32472303701",
-            "email": "contact@shineandgo.be",
-            "priceRange": "€€",
-            "openingHours": "Mo-Su 08:00-20:00",
-            "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Verviers",
-              "addressRegion": "Liège",
-              "postalCode": "4800",
-              "addressCountry": "BE"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "50.5894",
-              "longitude": "5.8632"
-            },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Verviers"
-              },
-              {
-                "@type": "City",
-                "name": "Dison"
-              },
-              {
-                "@type": "City",
-                "name": "Pepinster"
-              },
-              {
-                "@type": "City",
-                "name": "Jalhay"
-              },
-              {
-                "@type": "City",
-                "name": "Spa"
-              }
-            ],
-            "serviceArea": {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.5894",
-                "longitude": "5.8632"
-              },
-              "geoRadius": "25000"
-            },
-            "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-            "currenciesAccepted": "EUR",
-            "@id": "https://shineandgo.be/nettoyage-voiture-verviers",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Services de nettoyage automobile",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Nettoyage intérieur voiture",
-                    "description": "Nettoyage complet de l'intérieur du véhicule"
-                  },
-                  "price": "65",
-                  "priceCurrency": "EUR"
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Nettoyage extérieur voiture",
-                    "description": "Lavage et lustrage de la carrosserie"
-                  },
-                  "price": "85",
-                  "priceCurrency": "EUR"
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Nettoyage complet voiture",
-                    "description": "Nettoyage intérieur et extérieur complet"
-                  },
-                  "price": "120",
-                  "priceCurrency": "EUR"
-                }
-              ]
-            }
-          })
-        }}
-      />
-      <VerviersClientComponent />
-    </>
+    <CityPageTemplate
+      cityName="Verviers"
+      citySlug="verviers"
+      nearbyCities={['Dison', 'Pepinster', 'Theux', 'Spa', 'Jalhay', 'Limbourg']}
+      postalCode="4800"
+      coordinates={{ lat: '50.5894', lng: '5.8632' }}
+    />
   );
 }

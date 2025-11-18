@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import HerveClientComponent from './HerveClientComponent';
+import CityPageTemplate from '../shared/components/CityPageTemplate';
 
 export const metadata: Metadata = {
   title: 'Nettoyage Voiture à Domicile Herve | En 90min dès 65€ - Shine&Go',
@@ -34,104 +34,12 @@ export const metadata: Metadata = {
 
 export default function HervePage() {
   return (
-    <>
-      {/* Schema.org LocalBusiness pour SEO local */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Shine&Go - Nettoyage Voiture Herve",
-            "description": "Service mobile de nettoyage voiture à domicile à Herve et environs (Battice, Thimister, Clermont)",
-            "url": "https://shineandgo.be/nettoyage-voiture-herve",
-            "telephone": "+32472303701",
-            "email": "contact@shineandgo.be",
-            "priceRange": "€€",
-            "openingHours": "Mo-Su 08:00-20:00",
-            "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Herve",
-              "addressRegion": "Liège",
-              "postalCode": "4650",
-              "addressCountry": "BE"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "50.6386",
-              "longitude": "5.7942"
-            },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Herve"
-              },
-              {
-                "@type": "City",
-                "name": "Battice"
-              },
-              {
-                "@type": "City",
-                "name": "Thimister"
-              },
-              {
-                "@type": "City",
-                "name": "Clermont"
-              }
-            ],
-            "serviceArea": {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6386",
-                "longitude": "5.7942"
-              },
-              "geoRadius": "25000"
-            },
-            "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-            "currenciesAccepted": "EUR",
-            "@id": "https://shineandgo.be/nettoyage-voiture-herve",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Services de nettoyage automobile",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Nettoyage intérieur voiture",
-                    "description": "Nettoyage complet de l'intérieur du véhicule"
-                  },
-                  "price": "65",
-                  "priceCurrency": "EUR"
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Nettoyage extérieur voiture",
-                    "description": "Lavage et lustrage de la carrosserie"
-                  },
-                  "price": "85",
-                  "priceCurrency": "EUR"
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Nettoyage complet voiture",
-                    "description": "Nettoyage intérieur et extérieur complet"
-                  },
-                  "price": "120",
-                  "priceCurrency": "EUR"
-                }
-              ]
-            }
-          })
-        }}
-      />
-      <HerveClientComponent />
-    </>
+    <CityPageTemplate
+      cityName="Herve"
+      citySlug="herve"
+      nearbyCities={['Battice', 'Thimister', 'Clermont', 'Xhendelesse', 'Charneux', 'Bolland']}
+      postalCode="4650"
+      coordinates={{ lat: '50.6386', lng: '5.7942' }}
+    />
   );
 }
