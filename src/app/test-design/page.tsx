@@ -1,56 +1,36 @@
 'use client'
 
-import { ArrowRight, Check, Star, Phone, Mail, MapPin, Clock, Sparkles, ShieldCheck, Menu, X } from 'lucide-react'
+import { ArrowRight, Check, Star, Phone, MapPin, Sparkles, ShieldCheck, Menu, X, Droplets, Plug, Key } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export default function HomePage() {
   const [scrolled, setScrolled] = useState(false)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [navVisible, setNavVisible] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      if (currentScrollY > 20) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setNavVisible(false)
-      } else {
-        setNavVisible(true)
-      }
-      
-      setLastScrollY(currentScrollY)
+      setScrolled(window.scrollY > 20)
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   return (
-    <main className="bg-white min-h-screen selection:bg-blue-100 selection:text-blue-900">
+    <main className="bg-white min-h-screen selection:bg-blue-100 selection:text-blue-900 font-sans">
       
-      {/* BACKGROUND ACCENTS - Donne un effet de brillance subtil */}
+      {/* BACKGROUND ACCENTS */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-50/50 blur-[120px]" />
-        <div className="absolute top-[20%] right-[-5%] w-[30%] h-[30%] rounded-full bg-blue-50/50 blur-[100px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-50/60 blur-[120px]" />
+        <div className="absolute bottom-[10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-gray-50/60 blur-[100px]" />
       </div>
 
-      {/* NAVIGATION */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        scrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm' : 'bg-transparent py-5'
-      } ${
-        navVisible ? 'translate-y-0' : '-translate-y-full'
+      {/* NAVIGATION - Mobile First Optimization */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm' : 'bg-transparent py-4 sm:py-6'
       }`}>
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-             {/* Logo simple avec icone */}
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+          <div className="flex items-center gap-2 z-50">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-600/20">
               <Sparkles className="w-5 h-5" />
             </div>
             <span className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
@@ -60,12 +40,12 @@ export default function HomePage() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Services</a>
+            <a href="#concept" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Concept</a>
             <a href="#tarifs" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tarifs</a>
-            <a href="#zones" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Zones</a>
+            <a href="#zones" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Zones (Herve/Verviers)</a>
             <a
               href="tel:+32472303701"
-              className="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-600/20 transition-all duration-300 transform hover:-translate-y-0.5"
+              className="px-6 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-600/20 transition-all transform hover:-translate-y-0.5"
             >
               0472 30 37 01
             </a>
@@ -73,351 +53,318 @@ export default function HomePage() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 text-gray-600"
+            className="md:hidden p-2 text-gray-800 z-50 bg-white/50 rounded-full"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
         
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-4 shadow-xl animate-in slide-in-from-top-5">
-            <div className="flex flex-col gap-4">
-              <a href="#services" className="text-gray-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Services</a>
-              <a href="#tarifs" className="text-gray-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Tarifs</a>
-              <a href="tel:+32472303701" className="text-blue-600 font-bold">Appeler maintenant</a>
+          <div className="fixed inset-0 z-40 bg-white pt-24 px-6 animate-in slide-in-from-top-10">
+            <div className="flex flex-col gap-6 text-lg font-medium">
+              <a href="#concept" onClick={() => setMobileMenuOpen(false)} className="border-b border-gray-100 pb-4">Comment ça marche ?</a>
+              <a href="#tarifs" onClick={() => setMobileMenuOpen(false)} className="border-b border-gray-100 pb-4">Nos Tarifs</a>
+              <a href="#zones" onClick={() => setMobileMenuOpen(false)} className="border-b border-gray-100 pb-4">Zones d'intervention</a>
+              <a href="tel:+32472303701" className="px-6 py-4 bg-blue-600 text-white text-center rounded-xl font-bold shadow-lg shadow-blue-600/20">
+                Appeler le 0472 30 37 01
+              </a>
             </div>
           </div>
         )}
       </nav>
 
-      {/* HERO - Modernisé avec typographie forte */}
-      <section className="relative pt-36 pb-20 sm:pt-48 sm:pb-32 overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+      {/* HERO - Optimisé pour "Lavage auto domicile" + Prise en charge */}
+      <section className="relative pt-32 pb-16 sm:pt-48 sm:pb-32 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
             
-            {/* Badge Trust - Style 'pill' moderne */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white border border-gray-200 rounded-full shadow-sm animate-fade-in-up">
-              <div className="flex -space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <span className="text-sm font-medium text-gray-700 border-l border-gray-200 pl-2 ml-1">
-                4.9/5 <span className="text-gray-400 font-normal">sur Google</span>
+            {/* SEO Location Tag */}
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full animate-fade-in-up">
+              <MapPin className="w-3 h-3 text-blue-600" />
+              <span className="text-xs sm:text-sm font-bold text-blue-800 uppercase tracking-wide">
+                Herve · Verviers · Liège · Battice
               </span>
             </div>
 
-            {/* Titre H1 Impactant */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up delay-100">
-              Le nettoyage voiture <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-                réinventé à domicile
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up delay-100">
+              Lavage auto à domicile <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                Prise en charge totale
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up delay-200">
-              Service de detailing mobile premium en Wallonie. <br className="hidden sm:block" />
-              Nous transformons votre véhicule pendant que vous restez chez vous.
+              Ne vous déplacez plus. Confiez-nous vos clés, nous nous occupons de tout directement chez vous. <span className="font-medium text-gray-900">Service de detailing premium.</span>
             </p>
 
-            {/* CTA Group */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up delay-300">
-              <a
-                href="https://wa.me/32472303701"
-                className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 shadow-xl shadow-blue-600/20 hover:shadow-2xl hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
-              >
-                Réserver en ligne
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              
+            {/* Mobile Conversion Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300 px-4 sm:px-0">
               <a
                 href="tel:+32472303701"
-                className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-200 text-gray-900 font-semibold rounded-full hover:border-gray-300 hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-3"
               >
-                <Phone className="w-4 h-4 text-gray-500" />
-                0472 30 37 01
+                <Phone className="w-5 h-5" />
+                Appeler maintenant
+              </a>
+              <a
+                href="https://wa.me/32472303701"
+                className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-gray-100 text-gray-900 font-bold rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+              >
+                Réserver par WhatsApp
               </a>
             </div>
-
-            {/* Trust metrics - Design épuré */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-12 border-t border-gray-100/50 pt-8 sm:pt-10 animate-fade-in-up delay-500">
-              {[
-                { label: "Déplacement offert", sub: "Rayon 25km" },
-                { label: "Produits Premium", sub: "Koch-Chemie" },
-                { label: "Disponibilité", sub: "Sous 48h" },
-              ].map((item, i) => (
-                <div key={i} className="text-center">
-                  <p className="font-semibold text-gray-900 text-sm sm:text-base">{item.label}</p>
-                  <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.sub}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ZONES - Carte interactive visuelle */}
-      <section id="zones" className="py-20 bg-gray-50/50 border-y border-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
-                Partout où vous êtes <br />
-                <span className="text-blue-600">en Province de Liège</span>
-              </h2>
-              <p className="text-gray-600 text-lg mb-8">
-                Pas besoin de bouger. Que vous soyez à la maison ou au bureau, notre camionnette autonome équipée arrive chez vous.
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                {['Herve', 'Verviers', 'Liège', 'Battice', 'Soumagne', 'Spa', 'Fléron', 'Visé'].map((city) => (
-                  <span key={city} className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-default">
-                    {city}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-6 text-sm text-gray-500 flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                Déplacement gratuit jusqu'à 25km de Herve
-              </p>
-            </div>
             
-            {/* Illustration abstraite de la zone (ou placeholder pour une carte) */}
-            <div className="md:w-1/2 w-full">
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                <div className="grid grid-cols-2 gap-4">
-                   {[
-                    { ville: 'Herve', icon: '📍' }, { ville: 'Liège', icon: '🏙️' },
-                    { ville: 'Verviers', icon: '🏭' }, { ville: 'Spa', icon: '🌲' }
-                   ].map((z, i) => (
-                     <div key={i} className="p-4 bg-gray-50 rounded-xl flex items-center gap-3">
-                       <span className="text-2xl">{z.icon}</span>
-                       <div>
-                         <div className="font-bold text-gray-900">{z.ville}</div>
-                         <div className="text-xs text-green-600 font-medium">Zone couverte</div>
-                       </div>
-                     </div>
-                   ))}
-                </div>
-                <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-blue-100 text-center">
-                  <p className="text-blue-800 font-medium text-sm">Vous habitez ailleurs ?</p>
-                  <a href="tel:+32472303701" className="text-blue-600 text-sm underline hover:text-blue-800">Appelez-nous pour vérifier</a>
-                </div>
-              </div>
-            </div>
+            <p className="mt-6 text-sm text-gray-500 animate-fade-in-up delay-500">
+              Déplacement gratuit rayon 25km • Réponse immédiate
+            </p>
           </div>
         </div>
       </section>
 
-      {/* TARIFS - Design Cards Modernes */}
-      <section id="tarifs" className="py-24 bg-white">
+      {/* CONCEPT - "Comment ça marche" (Pour gérer la contrainte eau/élec) */}
+      <section id="concept" className="py-16 sm:py-24 bg-white border-y border-gray-100">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">Tarifs clairs, sans surprise</h2>
-            <p className="text-lg text-gray-600">Choisissez la formule adaptée à vos besoins</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">La prise en charge Shine&Go</h2>
+            <p className="text-gray-600">Service clé en main, vous ne levez pas le petit doigt.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Step 1 */}
+            <div className="relative p-8 bg-gray-50 rounded-3xl border border-gray-100">
+              <div className="absolute -top-4 left-8 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+              <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-blue-600" /> On vient à vous
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                À domicile ou au travail. Plus besoin de faire la file au car-wash ou de perdre votre pause midi.
+              </p>
+            </div>
+
+            {/* Step 2 - Constraint Handling */}
+            <div className="relative p-8 bg-blue-50 rounded-3xl border border-blue-100">
+              <div className="absolute -top-4 left-8 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/20">2</div>
+              <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3 flex items-center gap-2">
+                <Plug className="w-5 h-5 text-blue-600" /> Installation
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Nous apportons le matériel professionnel (produits Koch-Chemie®). <span className="font-semibold text-blue-800">Nous avons juste besoin d'un accès à l'eau et une prise électrique.</span>
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative p-8 bg-gray-50 rounded-3xl border border-gray-100">
+              <div className="absolute -top-4 left-8 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+              <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3 flex items-center gap-2">
+                <Key className="w-5 h-5 text-blue-600" /> Résultat Showroom
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Remettez-nous les clés, on s'occupe du reste. Retrouvez votre véhicule transformé en 1h30 environ.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TARIFS - Focus sur "Intérieur" (Data GSC) */}
+      <section id="tarifs" className="py-20 bg-gray-50/50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Nos Formules</h2>
+            <p className="text-gray-600">Produits professionnels Koch-Chemie® • Zéro micro-rayures</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             
-            {/* Option 1 */}
-            <div className="group relative bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Intérieur</h3>
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-bold tracking-tight">65€</span>
-                <span className="text-gray-400 text-sm">/ véhicule</span>
+            {/* INTÉRIEUR - POPULAIRE (GSC Data) */}
+            <div className="relative bg-white p-8 rounded-3xl shadow-lg shadow-blue-900/5 border-2 border-blue-100 md:-translate-y-4">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-xs font-bold tracking-wide uppercase">
+                Le plus demandé
               </div>
-              <ul className="space-y-4 mb-8">
-                {['Aspiration complète', 'Dépoussiérage plastiques', 'Vitres intérieures', 'Désodorisation', 'Contours de portes'].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Intérieur Profond</h3>
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-5xl font-bold tracking-tight text-blue-600">65€</span>
+              </div>
+              <p className="text-sm text-gray-500 mb-6">Idéal pour remettre à neuf l'habitacle (tâches, poils, poussières).</p>
+              
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Aspiration complète (sièges, tapis, coffre)',
+                  'Dépoussiérage minutieux plastiques',
+                  'Nettoyage vitres intérieures',
+                  'Pressing des tapis',
+                  'Désodorisation habitacle'
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-700 text-sm font-medium">
                     <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/32472303701" className="block w-full py-3 rounded-xl bg-gray-50 text-gray-900 font-semibold text-center group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                Choisir Intérieur
+              <a href="https://wa.me/32472303701?text=Je veux le nettoyage intérieur à 65€" className="block w-full py-3.5 rounded-xl bg-blue-600 text-white font-bold text-center hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20">
+                Réserver l'Intérieur
               </a>
             </div>
 
-            {/* Option 3 (Populaire - Mis au milieu visuellement sur desktop) */}
-            <div className="relative bg-gray-900 p-8 rounded-3xl shadow-2xl shadow-blue-900/20 transform md:-translate-y-4 border border-gray-800">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-600 to-blue-400 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg flex items-center gap-1">
-                <Sparkles className="w-3 h-3" /> Le plus demandé
+            {/* EXTÉRIEUR */}
+            <div className="bg-white p-8 rounded-3xl border border-gray-100 hover:border-gray-200 transition-all">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Extérieur Detailing</h3>
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-4xl font-bold tracking-tight text-gray-900">85€</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Complet (Int+Ext)</h3>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-5xl font-bold text-white tracking-tight">120€</span>
-              </div>
-              <p className="text-green-400 text-sm font-medium mb-6">Économisez 30€ sur ce pack</p>
-              
-              <div className="h-px bg-gray-800 mb-6" />
-
-              <ul className="space-y-4 mb-8">
-                {['Tout le pack Intérieur', 'Lavage main pH neutre', 'Jantes & Pneus', 'Cire de protection (3 mois)', 'Traitement plastiques'].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-300 text-sm">
-                    <div className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 mt-[-2px]">
-                      <Check className="w-3 h-3 text-blue-400" />
-                    </div>
+              <p className="text-sm text-gray-500 mb-6">Lavage à la main "2 seaux" pour éviter les rayures des stations automatiques.</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Prélavage mousse active',
+                  'Lavage main pH neutre',
+                  'Nettoyage Jantes & Pneus',
+                  'Séchage microfibre douce',
+                  'Cire de protection (3 mois)'
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
+                    <Check className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/32472303701" className="block w-full py-4 rounded-xl bg-white text-gray-900 font-bold text-center hover:bg-blue-50 transition-colors shadow-lg shadow-white/10">
+              <a href="https://wa.me/32472303701" className="block w-full py-3.5 rounded-xl bg-gray-50 text-gray-900 font-bold text-center hover:bg-gray-100 transition-colors">
+                Réserver l'Extérieur
+              </a>
+            </div>
+
+            {/* COMPLET */}
+            <div className="bg-gray-900 p-8 rounded-3xl border border-gray-800 text-white">
+              <h3 className="text-xl font-bold mb-2">Le Grand Complet</h3>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-4xl font-bold tracking-tight">120€</span>
+              </div>
+              <p className="text-green-400 text-sm font-medium mb-6">Économie de 30€</p>
+              <p className="text-sm text-gray-400 mb-6">La totale. Votre voiture ressort comme neuve.</p>
+              
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-white font-medium text-sm">
+                  <Sparkles className="w-4 h-4 text-yellow-400" /> Formule Intérieur incluse
+                </li>
+                <li className="flex items-center gap-3 text-white font-medium text-sm">
+                  <Sparkles className="w-4 h-4 text-yellow-400" /> Formule Extérieur incluse
+                </li>
+                <li className="flex items-start gap-3 text-gray-400 text-sm">
+                  <Check className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
+                  Traitement plastiques UV
+                </li>
+              </ul>
+              <a href="https://wa.me/32472303701" className="block w-full py-3.5 rounded-xl bg-white text-gray-900 font-bold text-center hover:bg-gray-100 transition-colors">
                 Réserver le Complet
               </a>
             </div>
 
-            {/* Option 2 */}
-            <div className="group relative bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Extérieur</h3>
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-bold tracking-tight">85€</span>
-                <span className="text-gray-400 text-sm">/ véhicule</span>
-              </div>
-              <ul className="space-y-4 mb-8">
-                {['Prélavage mousse active', 'Lavage main 2 seaux', 'Décontamination', 'Séchage microfibre', 'Brillant pneus'].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    {item}
-                  </li>
+          </div>
+        </div>
+      </section>
+
+      {/* ZONES - SEO Local Boost (Basé sur CSV: Herve, Verviers, Liège) */}
+      <section id="zones" className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Zone d'intervention gratuite</h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Nous nous déplaçons gratuitement dans un rayon de 25km autour de Herve.
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+                {['Herve', 'Verviers', 'Liège', 'Battice', 'Soumagne', 'Spa', 'Fléron', 'Visé', 'Thimister'].map((city) => (
+                  <span key={city} className="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium">
+                    {city}
+                  </span>
                 ))}
-              </ul>
-              <a href="https://wa.me/32472303701" className="block w-full py-3 rounded-xl bg-gray-50 text-gray-900 font-semibold text-center group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                Choisir Extérieur
+              </div>
+              <a href="tel:+32472303701" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all">
+                Vérifier ma commune <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* AVANTAGES / SERVICES - Grid bento */}
-      <section id="services" className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-shadow">
-                <div>
-                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Zéro Rayure Garantie</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Les rouleaux automatiques rayent votre carrosserie. Notre méthode manuelle avec gants microfibres et technique "deux seaux" préserve l'éclat de votre peinture.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-shadow">
-                <div>
-                  <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
-                    <Star className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Produits Koch-Chemie®</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Nous utilisons exclusivement la référence allemande du detailing. Des produits pH neutres, biodégradables et ultra-efficaces pour un résultat durable.
-                  </p>
-                </div>
-              </div>
-
-               <div className="bg-blue-600 p-8 rounded-3xl shadow-lg shadow-blue-600/20 md:col-span-2 flex flex-col md:flex-row items-center gap-8 text-white">
-                 <div className="flex-1">
-                   <h3 className="text-2xl font-bold mb-3">100% Autonome</h3>
-                   <p className="text-blue-100 leading-relaxed">
-                     Notre véhicule est équipé d'eau et d'électricité. Nous n'avons besoin de rien de votre part, juste les clés de la voiture. Idéal sur le parking de votre entreprise ou devant chez vous.
-                   </p>
+            <div className="flex-1 w-full max-w-sm bg-gray-50 rounded-2xl p-6 border border-gray-100">
+               <div className="space-y-4">
+                 <div className="flex items-center justify-between pb-4 border-b border-gray-200">
+                   <span className="text-gray-600">Herve</span>
+                   <span className="text-green-600 font-bold text-sm">Déplacement offert</span>
                  </div>
-                 <div className="shrink-0 p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
-                    <Clock className="w-12 h-12 text-white" />
+                 <div className="flex items-center justify-between pb-4 border-b border-gray-200">
+                   <span className="text-gray-600">Verviers</span>
+                   <span className="text-green-600 font-bold text-sm">Déplacement offert</span>
+                 </div>
+                 <div className="flex items-center justify-between pb-4 border-b border-gray-200">
+                   <span className="text-gray-600">Liège Centre</span>
+                   <span className="text-green-600 font-bold text-sm">Déplacement offert</span>
+                 </div>
+                 <div className="pt-2 text-xs text-gray-500 text-center">
+                   Au-delà de 25km : +0,50€/km
                  </div>
                </div>
-
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Simplifiée */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Questions fréquentes</h2>
-          <div className="space-y-4">
-            {[
-              { q: "Faut-il préparer quelque chose ?", a: "Rien du tout ! Assurez-vous simplement que la voiture soit accessible. Nous avons notre propre eau et électricité." },
-              { q: "Combien de temps ça dure ?", a: "Comptez environ 1h30 pour un nettoyage complet. Nous prenons le temps nécessaire pour un résultat parfait." },
-              { q: "Comment payer ?", a: "Paiement facile sur place après validation du résultat : Espèces, Payconiq ou virement instantané." }
-            ].map((item, i) => (
-              <details key={i} className="group bg-gray-50 rounded-2xl border border-gray-100 open:bg-white open:shadow-lg open:border-transparent transition-all duration-300">
-                <summary className="flex items-center justify-between cursor-pointer p-6 font-medium text-gray-900 list-none">
-                  {item.q}
-                  <span className="transition group-open:rotate-180">
-                    <ArrowRight className="w-4 h-4 rotate-90" />
-                  </span>
-                </summary>
-                <div className="text-gray-600 px-6 pb-6 animate-fade-in">
-                  {item.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER - Clean & Simple */}
+      {/* FOOTER */}
       <footer className="py-12 bg-gray-900 text-gray-400 border-t border-gray-800">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-            <div className="text-xl font-bold text-white">
-              Shine<span className="text-blue-500">&</span>Go
+        <div className="container mx-auto px-6 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-8 mb-8">
+            <div>
+              <div className="text-2xl font-bold text-white mb-2">
+                Shine<span className="text-blue-500">&</span>Go
+              </div>
+              <p className="text-sm max-w-xs mx-auto sm:mx-0">
+                Service de lavage et nettoyage voiture à domicile sur Liège, Herve et Verviers.
+              </p>
             </div>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="hover:text-white transition-colors">Accueil</a>
-              <a href="#" className="hover:text-white transition-colors">Services</a>
-              <a href="#" className="hover:text-white transition-colors">Contact</a>
-            </div>
-            <div className="flex gap-4">
-              {/* Social placeholders */}
-              <div className="w-8 h-8 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors cursor-pointer" />
-              <div className="w-8 h-8 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors cursor-pointer" />
+            <div className="flex flex-col sm:flex-row gap-6 text-sm font-medium">
+              <a href="#concept" className="hover:text-white transition-colors">Concept</a>
+              <a href="#tarifs" className="hover:text-white transition-colors">Tarifs</a>
+              <a href="tel:+32472303701" className="hover:text-white transition-colors">0472 30 37 01</a>
             </div>
           </div>
-          <div className="text-center text-xs border-t border-gray-800 pt-8">
-            &copy; 2025 Shine&Go Belgique. Tous droits réservés.
+          <div className="text-xs border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2025 Shine&Go Belgique.</p>
+            <p>Service nécessitant un accès eau & électricité.</p>
           </div>
         </div>
       </footer>
 
-      {/* Schema.org (Conservé de l'original pour le SEO) */}
+      {/* Schema.org Optimisé pour les résultats locaux */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "https://shineandgo.be/og-image.jpg",
-            "priceRange": "€€",
+            "@type": "AutoWash",
+            "name": "Shine&Go - Lavage Auto à Domicile",
+            "description": "Service de nettoyage voiture à domicile (intérieur et extérieur). Intervention sur Herve, Verviers, Liège. Prise en charge complète.",
+            "url": "https://shineandgo.be",
+            "telephone": "+32472303701",
+            "priceRange": "65€ - 120€",
+            "areaServed": ["Herve", "Verviers", "Liège", "Battice", "Soumagne"],
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Herve",
               "addressRegion": "Liège",
               "addressCountry": "BE"
-            }
+            },
+            "image": "https://shineandgo.be/og-image.jpg"
           })
         }}
       />
 
-      {/* Floating Action Button (Apparaît au scroll) */}
-      <div className={`fixed bottom-6 right-6 z-40 transition-all duration-500 transform ${scrolled ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+      {/* STICKY CTA MOBILE - Essentiel car 65% du trafic est mobile */}
+      <div className={`fixed bottom-4 left-4 right-4 z-40 md:hidden transition-all duration-500 ${scrolled ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
         <a
-          href="https://wa.me/32472303701"
-          className="flex items-center gap-3 px-6 py-4 bg-gray-900 text-white font-bold rounded-full shadow-2xl hover:bg-blue-600 transition-colors group"
+          href="tel:+32472303701"
+          className="flex items-center justify-center gap-2 w-full py-4 bg-gray-900 text-white font-bold rounded-xl shadow-2xl"
         >
-          <span className="hidden sm:inline">Réserver</span>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <Phone className="w-5 h-5" />
+          Réserver (0472 30 37 01)
         </a>
       </div>
     </main>
