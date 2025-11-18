@@ -52,6 +52,7 @@ Disallow: /private/
 Disallow: /temp/
 Disallow: /cache/
 Disallow: /logs/
+Disallow: /test-design/
 Disallow: /*.json$
 # IMPORTANT: Ne PAS bloquer les sitemaps pour le SEO
 # Disallow: /*.xml$ - SUPPRIMÉ pour permettre l'indexation
