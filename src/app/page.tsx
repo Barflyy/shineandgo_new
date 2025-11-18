@@ -453,20 +453,6 @@ export default function HomePage() {
         </div>
       </footer>
 
-      {/* Bouton CTA flottant - Apparaît quand nav cachée */}
-      <a
-        href="https://wa.me/32472303701"
-        className={`fixed bottom-6 right-6 z-40 px-6 py-4 bg-blue-600 text-white font-medium rounded-full shadow-2xl hover:bg-blue-700 transition-all duration-300 flex items-center gap-2 touch-manipulation ${
-          !navVisible && scrolled ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
-        }`}
-        style={{
-          boxShadow: '0 10px 40px rgba(37, 99, 235, 0.3)'
-        }}
-      >
-        <Phone className="w-5 h-5" />
-        <span className="hidden sm:inline">Réserver</span>
-      </a>
-
       {/* Schema.org */}
       <script
         type="application/ld+json"
