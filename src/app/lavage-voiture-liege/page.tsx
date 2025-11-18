@@ -3,7 +3,7 @@ import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 import LiegeClientComponent from './LiegeClientComponent';
 
 export const metadata: Metadata = {
-  title: 'Lavage Voiture Premium Liège | Service Mobile dès 65€ - Shine&Go',
+  title: 'Lavage Voiture Liège 🚗 90min · dès 65€ | ⭐4.9/5 - Shine&Go',
   description: 'Lavage voiture premium à domicile à Liège et agglomération. Service mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01',
   keywords: 'lavage voiture liege, nettoyage voiture liege, lavage auto domicile liege, nettoyage auto liege, detailing liege, lavage voiture grivegnée, lavage voiture angleur, nettoyage voiture bressoux',
   openGraph: {

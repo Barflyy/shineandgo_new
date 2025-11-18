@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import VerviersClientComponent from './VerviersClientComponent';
 
 export const metadata: Metadata = {
-  title: 'Nettoyage Voiture à Domicile Verviers | En 90min dès 65€ - Shine&Go',
+  title: 'Nettoyage Voiture Verviers 🚗 90min · dès 65€ | ⭐4.9/5 - Shine&Go',
   description: 'Nettoyage voiture premium à Verviers et environs. Service mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01',
   keywords: 'nettoyage voiture verviers, lavage voiture verviers, nettoyage auto verviers, lavage domicile verviers, detailing verviers, nettoyage voiture dison, lavage auto verviers 4800',
   openGraph: {

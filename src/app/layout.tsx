@@ -7,7 +7,7 @@ import StickyPhoneButton from '@/components/StickyPhoneButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Nettoyage Voiture Premium Herve Verviers Liège | Mobile à Domicile - Shine&Go',
+  title: 'Nettoyage Voiture Mobile 🚗 dès 65€ | Herve Verviers Liège - Shine&Go',
   description: 'Nettoyage voiture premium à domicile. Service mobile Herve, Verviers, Liège. Produits Koch-Chemie. Résultat showroom garanti. À partir de 65€. Devis WhatsApp 2 min.',
   keywords: 'lavage voiture domicile, nettoyage voiture herve, lavage voiture verviers, nettoyage voiture liege, lavage voiture mobile, nettoyage interieur voiture, lavage exterieur voiture, shine&go, wallonie, belgique',
   authors: [{ name: 'Shine&Go' }],

@@ -53,8 +53,6 @@ Disallow: /temp/
 Disallow: /cache/
 Disallow: /logs/
 Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /sitemap.xml
 Disallow: /robots.txt
 
 # Bloquer les paramètres d'URL inutiles

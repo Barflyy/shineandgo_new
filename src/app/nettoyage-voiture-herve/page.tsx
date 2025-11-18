@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import HerveClientComponent from './HerveClientComponent';
 
 export const metadata: Metadata = {
-  title: 'Nettoyage Voiture à Domicile Herve | En 90min dès 65€ - Shine&Go',
+  title: 'Nettoyage Voiture Herve 🚗 90min · dès 65€ | ⭐4.9/5 - Shine&Go',
   description: 'Nettoyage voiture premium à Herve et environs. Service mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01',
   keywords: 'nettoyage voiture herve, lavage voiture herve, nettoyage auto herve, lavage domicile herve, detailing herve, nettoyage voiture battice, lavage auto herve 4650',
   openGraph: {

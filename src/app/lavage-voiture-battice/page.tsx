@@ -3,7 +3,7 @@ import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 import BatticeClientComponent from './BatticeClientComponent';
 
 export const metadata: Metadata = {
-  title: 'Lavage Voiture Battice | Nettoyage Premium Mobile - Shine&Go',
+  title: 'Lavage Voiture Battice 🚗 90min · dès 65€ | ⭐4.9/5 - Shine&Go',
   description: 'Lavage voiture premium à Battice. Nettoyage mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01',
   keywords: 'lavage voiture battice, nettoyage voiture battice, detailing battice, nettoyage auto battice, lavage mobile battice',
   openGraph: {
