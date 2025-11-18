@@ -23,12 +23,12 @@ export default function HomePage() {
       </nav>
 
       {/* HERO - Mobile First */}
-      <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-32">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 md:pt-44 md:pb-32">
+        <div className="container mx-auto px-6 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             
             {/* Badge discret */}
-            <div className="inline-flex items-center gap-2 mb-6 sm:mb-8 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 rounded-full">
+            <div className="inline-flex items-center gap-2 mb-8 sm:mb-8 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 rounded-full">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-blue-600 text-blue-600" />
