@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Check, Star, Phone, Mail, Sparkles } from 'lucide-react'
+import { ArrowRight, Check, Star, Phone, Mail, MapPin, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'

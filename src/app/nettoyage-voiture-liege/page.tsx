@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Check, Star, Phone, Mail, Sparkles } from 'lucide-react'
+import { ArrowRight, Check, Star, Phone, Mail, MapPin, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -36,8 +36,8 @@ export default function LiegePage() {
   return (
     <>
       <Head>
-        <title>Lavage Voiture à Domicile Liège | En 90min dès 65€ - Shine&Go</title>
-        <meta name="description" content="Lavage voiture premium à Liège et environs. Service mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01" />
+        <title>Nettoyage Voiture à Domicile Liège | En 90min dès 65€ - Shine&Go</title>
+        <meta name="description" content="Nettoyage voiture premium à Liège et environs. Service mobile professionnel en 90 min. Produits Koch-Chemie. Résultat showroom. À partir de 65€. ☎ 0472 30 37 01" />
       </Head>
       
       <main className="bg-white min-h-screen">
@@ -77,7 +77,7 @@ export default function LiegePage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-light text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">
-              Lavage voiture Liège
+              Nettoyage voiture Liège
               <span className="block font-normal mt-1 sm:mt-2">Service à domicile</span>
             </h1>
 
@@ -128,7 +128,7 @@ export default function LiegePage() {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {['Ans', 'Seraing', 'Flémalle', 'Grâce-Hollogne', 'Saint-Nicolas', 'Chaudfontaine'].map((city) => (
+              {['Battice', 'Thimister', 'Clermont', 'Xhendelesse', 'Charneux', 'Bolland'].map((city) => (
                 <div
                   key={city}
                   className="p-6 bg-white rounded-xl border border-gray-100 text-center"
@@ -310,57 +310,137 @@ export default function LiegePage() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER - Maillage interne SEO */}
       <footer className="py-12 sm:py-16 border-t border-gray-100 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
             
+            {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <div className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Shine<span className="text-blue-600">&</span>Go
               </div>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Nettoyage voiture à domicile à Liège
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                Service mobile de nettoyage et lavage automobile professionnel à domicile en Wallonie
               </p>
+              <div className="flex items-center gap-1 text-sm">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600" />
+                  ))}
+                </div>
+                <span className="text-gray-600 ml-1">4.9/5 Google</span>
+              </div>
             </div>
 
+            {/* Services - Liens internes */}
             <div>
-              <h4 className="font-medium text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Services</h4>
+              <h4 className="font-medium text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Nos services</h4>
               <ul className="space-y-2 text-xs sm:text-sm">
-                <li><Link href="/nettoyage-interieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">Intérieur</Link></li>
-                <li><Link href="/nettoyage-exterieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">Extérieur</Link></li>
-                <li><Link href="/nettoyage-complet-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">Complet</Link></li>
+                <li>
+                  <a href="/nettoyage-interieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Nettoyage intérieur voiture
+                  </a>
+                </li>
+                <li>
+                  <a href="/nettoyage-exterieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Lavage extérieur voiture
+                  </a>
+                </li>
+                <li>
+                  <a href="/nettoyage-complet-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Nettoyage complet voiture
+                  </a>
+                </li>
+                <li>
+                  <a href="/prix-nettoyage-voiture-domicile" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Prix et tarifs
+                  </a>
+                </li>
               </ul>
             </div>
 
+            {/* Zones - SEO local */}
             <div>
-              <h4 className="font-medium text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Zones</h4>
+              <h4 className="font-medium text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Zones d'intervention</h4>
               <ul className="space-y-2 text-xs sm:text-sm">
-                <li><Link href="/nettoyage-voiture-herve" className="text-gray-600 hover:text-gray-900 transition-colors">Liège</Link></li>
-                <li><Link href="/nettoyage-voiture-verviers" className="text-gray-600 hover:text-gray-900 transition-colors">Verviers</Link></li>
-                <li><Link href="/lavage-voiture-liege" className="text-gray-600 hover:text-gray-900 transition-colors">Liège</Link></li>
+                <li>
+                  <a href="/nettoyage-voiture-liege" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Nettoyage voiture Liège
+                  </a>
+                </li>
+                <li>
+                  <a href="/nettoyage-voiture-verviers" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Lavage voiture Verviers
+                  </a>
+                </li>
+                <li>
+                  <a href="/nettoyage-voiture-liege" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Lavage voiture Liège
+                  </a>
+                </li>
+                <li>
+                  <a href="/nettoyage-voiture-battice" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Nettoyage voiture Battice
+                  </a>
+                </li>
+                <li>
+                  <a href="/nettoyage-voiture-soumagne" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Lavage voiture Soumagne
+                  </a>
+                </li>
+                <li>
+                  <a href="/nettoyage-voiture-spa" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    Nettoyage voiture Spa
+                  </a>
+                </li>
               </ul>
             </div>
 
+            {/* Contact */}
             <div className="col-span-2 md:col-span-1">
               <h4 className="font-medium text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
               <ul className="space-y-3 text-xs sm:text-sm">
                 <li className="flex items-center gap-2 text-gray-600">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <a href="tel:+32472303701" className="hover:text-gray-900 transition-colors">0472 30 37 01</a>
+                  <a 
+                    href="tel:+32472303701" 
+                    className="hover:text-gray-900 transition-colors"
+                    aria-label="Téléphone Shine&Go"
+                  >
+                    0472 30 37 01
+                  </a>
                 </li>
                 <li className="flex items-center gap-2 text-gray-600">
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <a href="mailto:contact@shineandgo.be" className="hover:text-gray-900 transition-colors">contact@shineandgo.be</a>
+                  <a 
+                    href="mailto:contact@shineandgo.be" 
+                    className="hover:text-gray-900 transition-colors"
+                  >
+                    contact@shineandgo.be
+                  </a>
+                </li>
+                <li className="flex items-start gap-2 text-gray-600">
+                  <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                  <span>Service mobile<br/>Liège, Wallonie, Belgique</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-6 sm:pt-8 border-t border-gray-100 text-center">
+          {/* Bottom */}
+          <div className="pt-6 sm:pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
             <div className="text-xs sm:text-sm text-gray-500">
-              © 2025 Shine&Go. Lavage voiture Liège.
+              © 2025 Shine&Go. Nettoyage voiture professionnel à domicile.
+            </div>
+            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">
+              <a href="/mentions-legales" className="hover:text-gray-900 transition-colors">
+                Mentions légales
+              </a>
+              <a href="/politique-confidentialite" className="hover:text-gray-900 transition-colors">
+                Confidentialité
+              </a>
             </div>
           </div>
         </div>
