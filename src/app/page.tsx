@@ -1,14 +1,50 @@
 'use client'
 
 import { ArrowRight, Check, Star, Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function HomePage() {
+  const [scrolled, setScrolled] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [navVisible, setNavVisible] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Détection si scrollé
+      if (currentScrollY > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+      
+      // Comportement hide/show sur mobile
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scroll vers le bas - cacher la nav
+        setNavVisible(false)
+      } else {
+        // Scroll vers le haut - montrer la nav
+        setNavVisible(true)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
   return (
     <main className="bg-white min-h-screen">
       
-      {/* NAVIGATION - Mobile First */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 pt-2 pb-2 sm:pt-0 sm:pb-0">
-        <div className="container mx-auto px-6 sm:px-6 py-4 sm:py-4 flex items-center justify-between">
+      {/* NAVIGATION - Sticky avec réduction au scroll */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gray-100 transition-all duration-300 ease-in-out ${
+        scrolled ? 'py-2 sm:py-3 shadow-lg' : 'py-4 sm:py-5'
+      } ${
+        navVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        <div className="container mx-auto px-6 sm:px-6 flex items-center justify-between">
           <div className="text-xl sm:text-2xl font-bold text-gray-900">
             Shine<span className="text-blue-600">&</span>Go
           </div>
@@ -416,6 +452,20 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Bouton CTA flottant - Apparaît quand nav cachée */}
+      <a
+        href="https://wa.me/32472303701"
+        className={`fixed bottom-6 right-6 z-40 px-6 py-4 bg-blue-600 text-white font-medium rounded-full shadow-2xl hover:bg-blue-700 transition-all duration-300 flex items-center gap-2 touch-manipulation ${
+          !navVisible && scrolled ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
+        }`}
+        style={{
+          boxShadow: '0 10px 40px rgba(37, 99, 235, 0.3)'
+        }}
+      >
+        <Phone className="w-5 h-5" />
+        <span className="hidden sm:inline">Réserver</span>
+      </a>
 
       {/* Schema.org */}
       <script
