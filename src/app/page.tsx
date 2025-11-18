@@ -55,14 +55,14 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* HERO - SEO Optimisé */}
+      {/* HERO - Minimaliste épuré */}
       <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32">
         <div className="container mx-auto px-6 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             
-            {/* Badge avis Google - Rich Snippet */}
+            {/* Badge discret */}
             <div className="inline-flex items-center gap-2 mb-8 sm:mb-8 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 rounded-full">
-              <div className="flex gap-0.5" aria-label="Note 4.9 étoiles sur 5">
+              <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-blue-600 text-blue-600" />
                 ))}
@@ -70,47 +70,42 @@ export default function HomePage() {
               <span className="text-xs sm:text-sm text-gray-600">4.9/5 sur Google</span>
             </div>
 
-            {/* H1 - Mots-clés primaires */}
+            {/* Titre épuré - H1 SEO intégré naturellement */}
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-light text-gray-900 mb-4 sm:mb-6 tracking-tight leading-tight">
-              Nettoyage voiture à domicile
-              <span className="block font-normal mt-1 sm:mt-2">Herve, Verviers, Liège</span>
+              Nettoyage voiture
+              <span className="block font-normal mt-1 sm:mt-2">à domicile</span>
             </h1>
 
-            {/* Description - LSI Keywords */}
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-12 font-light leading-relaxed px-4 sm:px-0">
-              Service mobile de lavage automobile professionnel en Wallonie
-              <span className="block mt-2 text-sm sm:text-base text-gray-400">
-                Nettoyage intérieur et extérieur • Dès 65€ • En 90 minutes
-              </span>
+              Service premium mobile en Wallonie
+              <span className="block mt-2 text-sm sm:text-base text-gray-400">Herve · Verviers · Liège · Battice</span>
             </p>
 
-            {/* CTA - Touch Friendly */}
+            {/* CTA simple */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 px-4 sm:px-0">
               <a
-                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à domicile"
+                href="https://wa.me/32472303701"
                 className="group px-8 py-4 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-all flex items-center justify-center gap-2 touch-manipulation min-h-[56px]"
-                aria-label="Réserver un lavage voiture par WhatsApp"
               >
-                Réserver mon nettoyage
+                Réserver en ligne
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               
               <a
                 href="tel:+32472303701"
                 className="px-8 py-4 border border-gray-200 text-gray-900 font-medium rounded-full hover:border-gray-300 hover:bg-gray-50 transition-all touch-manipulation min-h-[56px] flex items-center justify-center"
-                aria-label="Appeler pour nettoyage voiture"
               >
-                📞 0472 30 37 01
+                0472 30 37 01
               </a>
             </div>
 
-            {/* USPs - Mots-clés secondaires */}
+            {/* Info clés en une ligne */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm text-gray-500">
-              <span>✓ Intervention rapide en 90 min</span>
+              <span>✓ Service en 90 min</span>
               <span className="hidden sm:inline">·</span>
-              <span>✓ Produits professionnels Koch-Chemie</span>
+              <span>✓ Produits Koch-Chemie</span>
               <span className="hidden sm:inline">·</span>
-              <span>✓ Garantie satisfaction 7 jours</span>
+              <span>✓ Garantie satisfaction</span>
             </div>
           </div>
         </div>
