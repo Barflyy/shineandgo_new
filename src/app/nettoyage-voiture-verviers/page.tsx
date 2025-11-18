@@ -365,6 +365,21 @@ export default function VerviersPage() {
           </div>
         </div>
       </footer>
+
+      {/* Bouton CTA flottant */}
+      {scrolled && (
+        <a
+          href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Verviers"
+          className="fixed bottom-6 right-6 z-50 px-6 py-4 bg-blue-600 text-white font-medium rounded-full shadow-2xl hover:bg-blue-700 transition-all flex items-center gap-2 touch-manipulation"
+          style={{
+            boxShadow: '0 10px 40px rgba(37, 99, 235, 0.3)'
+          }}
+          aria-label="Réserver par WhatsApp"
+        >
+          <Phone className="w-5 h-5" />
+          <span className="hidden sm:inline">Réserver</span>
+        </a>
+      )}
     </main>
     </>
   )
