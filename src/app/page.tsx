@@ -23,7 +23,7 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY])
 
-  const handleScrollToPricing = (e) => {
+  const handleScrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     const element = document.getElementById('tarifs')
     if (element) element.scrollIntoView({ behavior: 'smooth' })
