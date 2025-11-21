@@ -6,16 +6,16 @@ import Analytics from './analytics'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Detailing Automobile Premium Herve Verviers Liège | Service Mobile - Shine&Go',
-  description: 'Detailing automobile premium à domicile. Service mobile professionnel Herve, Verviers, Liège. Produits Koch-Chemie exclusifs. Résultat niveau concession garanti. À partir de 65€.',
-  keywords: 'lavage voiture domicile, nettoyage voiture herve, lavage voiture verviers, nettoyage voiture liege, lavage voiture mobile, nettoyage interieur voiture, lavage exterieur voiture, shine&go, wallonie, belgique',
+  title: 'Nettoyage Voiture à Domicile Liège | Shine&Go - Service Mobile Professionnel',
+  description: '🚗 Nettoyage voiture premium à domicile en Wallonie. Service mobile professionnel à Herve, Verviers, Liège. Produits Koch-Chemie. 4.9/5 ⭐ Dès 65€. Réservation WhatsApp.',
+  keywords: 'nettoyage voiture domicile, lavage voiture liège, nettoyage voiture herve, lavage voiture verviers, detailing automobile belgique, nettoyage voiture mobile, lavage auto domicile wallonie, shine&go',
   authors: [{ name: 'Shine&Go' }],
   creator: 'Shine&Go',
   publisher: 'Shine&Go',
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   openGraph: {
-    title: 'Nettoyage Voiture Premium Herve Verviers Liège | À Domicile',
-    description: 'Nettoyage voiture premium mobile. Herve, Verviers, Liège. Produits Koch-Chemie. Résultat showroom. À partir de 65€.',
+    title: 'Nettoyage Voiture à Domicile Liège | Shine&Go - Dès 65€',
+    description: '🚗 Service mobile premium de nettoyage automobile. Herve, Verviers, Liège. Produits Koch-Chemie pro. Note 4.9/5 sur Google. Réservation en 2 clics.',
     url: 'https://shineandgo.be/',
     siteName: 'Shine&Go',
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
-        alt: 'Shine&Go - Lavage voiture à domicile - Résultat avant/après',
+        alt: 'Shine&Go - Nettoyage voiture à domicile Liège - Résultat avant/après professionnel',
       },
     ],
     locale: 'fr_BE',
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nettoyage Voiture Premium Mobile | Herve Verviers Liège',
-    description: 'Nettoyage voiture premium. Service mobile professionnel. Résultat showroom. À partir de 65€.',
+    title: 'Nettoyage Voiture Mobile Liège | Shine&Go - Dès 65€',
+    description: '🚗 Service premium à domicile. Note 4.9/5. Produits Koch-Chemie. Réservation WhatsApp.',
     images: ['/transformations/optimized/webp/apres01.webp'],
   },
   alternates: {
