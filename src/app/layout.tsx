@@ -2,16 +2,23 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Analytics from './analytics'
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
+import FloatingCTA from '@/components/FloatingCTA'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Nettoyage Voiture à Domicile Liège | Shine&Go - Service Mobile Professionnel',
   description: '🚗 Nettoyage voiture premium à domicile en Wallonie. Service mobile professionnel à Herve, Verviers, Liège. Produits Koch-Chemie. 4.9/5 ⭐ Dès 65€. Réservation WhatsApp.',
-  keywords: 'nettoyage voiture domicile, lavage voiture liège, nettoyage voiture herve, lavage voiture verviers, detailing automobile belgique, nettoyage voiture mobile, lavage auto domicile wallonie, shine&go',
+  keywords: 'nettoyage voiture domicile, lavage voiture liège, nettoyage voiture herve, lavage voiture verviers, detailing automobile belgique, nettoyage voiture mobile, lavage auto domicile wallonie, shine&go, car wash à domicile, nettoyage véhicule, lavage auto main',
   authors: [{ name: 'Shine&Go' }],
   creator: 'Shine&Go',
   publisher: 'Shine&Go',
+  metadataBase: new URL('https://shineandgo.be'),
+  alternates: {
+    canonical: './',
+  },
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   openGraph: {
     title: 'Nettoyage Voiture à Domicile Liège | Shine&Go - Dès 65€',
@@ -35,11 +42,9 @@ export const metadata: Metadata = {
     description: '🚗 Service premium à domicile. Note 4.9/5. Produits Koch-Chemie. Réservation WhatsApp.',
     images: ['/transformations/optimized/webp/apres01.webp'],
   },
-  alternates: {
-    canonical: 'https://shineandgo.be/',
-  },
+
   verification: {
-    google: 'your-google-verification-code',
+    google: 'google-site-verification=YOUR_ACTUAL_TOKEN_HERE', // User needs to provide this or I leave a placeholder that is clearly marked
   },
   other: {
     'geo.region': 'BE-WAL',
@@ -58,7 +63,10 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.className}>
         <Analytics />
+        <Navigation />
         {children}
+        <Footer />
+        <FloatingCTA />
       </body>
     </html>
   )

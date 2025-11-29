@@ -45,7 +45,6 @@ Allow: /public/*.svg
 Allow: /public/*.ico
 
 # Bloquer les fichiers et dossiers inutiles
-Disallow: /_next/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
@@ -65,7 +64,7 @@ Disallow: /*?fbclid=*
 Disallow: /*?gclid=*
 
 # Sitemap principal
-Sitemap: https://shineandgo.be/api/sitemap
+Sitemap: https://shineandgo.be/sitemap.xml
 
 # Sitemaps spécifiques (optionnels)
 Sitemap: https://shineandgo.be/api/sitemap-images

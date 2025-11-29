@@ -40,7 +40,7 @@ export default function NettoyageExterieurClient() {
     },
     {
       question: "Combien de temps dure un nettoyage extérieur ?",
-      answer: "La durée varie selon le type de véhicule et l'état de saleté. En général, une intervention prend entre 30 et 45 minutes. Nous prenons le temps nécessaire pour un résultat optimal."
+      answer: "La durée varie selon le type de véhicule et l'état de saleté. En général, une intervention prend environ 3 heures. Nous prenons le temps nécessaire pour un résultat optimal."
     },
     {
       question: "Quels produits utilisez-vous pour l'extérieur ?",
@@ -113,10 +113,10 @@ export default function NettoyageExterieurClient() {
                   Services
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
-                
+
                 {/* Services Dropdown Menu */}
                 {isServicesDropdownOpen && (
-                  <div 
+                  <div
                     className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-lg z-50"
                     role="menu"
                     aria-label="Services disponibles"
@@ -212,7 +212,7 @@ export default function NettoyageExterieurClient() {
 
             {/* CTA Button */}
             <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
-              <a 
+              <a
                 href="tel:+32472303701"
                 className="flex items-center space-x-2 text-blue-700 hover:text-blue-600 min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
                 aria-label="Appeler Shine&Go au 0472 30 37 01"
@@ -282,7 +282,7 @@ export default function NettoyageExterieurClient() {
                     <span>Nettoyage complet</span>
                   </Link>
                 </div>
-                
+
                 <div className="space-y-2">
                   <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Navigation</h3>
                   <button
@@ -414,29 +414,29 @@ export default function NettoyageExterieurClient() {
       <footer className="relative py-16 md:py-24 bg-slate-900">
         {/* Clean background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Clean CTA Section */}
           <div className="text-center mb-16 footer-cta">
             <div className="max-w-4xl mx-auto">
               <div className="bg-slate-800 border border-slate-700 rounded-xl p-8 md:p-12 shadow-lg">
-                
+
                 {/* Icon */}
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-blue-600 shadow-lg mb-6">
                   <div className="text-2xl">🚗</div>
                 </div>
-                
+
                 {/* Title */}
                 <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
                   Votre voiture mérite le meilleur
                 </h3>
-                
+
                 {/* Description */}
                 <p className="text-slate-300 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
                   Shine&Go – Service Premium Car Care
                 </p>
-                
+
                 {/* CTA Button - Mobile Optimized */}
                 <button
                   onClick={handleBooking}
@@ -452,10 +452,10 @@ export default function NettoyageExterieurClient() {
 
           {/* Clean Contact & Information */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            
+
             {/* Company Info */}
             <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
-              
+
               {/* Brand */}
               <div className="mb-4">
                 <h4 className="font-black text-2xl mb-2 text-white">
@@ -466,23 +466,23 @@ export default function NettoyageExterieurClient() {
                   <span className="text-sm font-medium">Service Premium Car Care</span>
                 </div>
               </div>
-              
+
               {/* Description */}
               <p className="text-slate-300 leading-relaxed text-sm">
                 Lavage voiture à domicile en Wallonie.
                 <br />
-                Résultat showroom garanti en 90 min.
+                Résultat showroom garanti.
               </p>
             </div>
 
             {/* Services */}
             <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
-              
+
               <h4 className="font-bold text-xl text-white mb-4 flex items-center gap-2">
                 <div className="text-xl">🚗</div>
                 Services
               </h4>
-              
+
               <ul className="space-y-3">
                 <li>
                   <a
@@ -522,12 +522,12 @@ export default function NettoyageExterieurClient() {
 
             {/* Contact */}
             <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
-              
+
               <h4 className="font-bold text-xl text-white mb-4 flex items-center gap-2">
                 <div className="text-xl">📞</div>
                 Contact
               </h4>
-              
+
               <ul className="space-y-3">
                 <li>
                   <a

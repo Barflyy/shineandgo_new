@@ -283,12 +283,12 @@ const nextConfig: NextConfig = {
       // === NOUVEAUX REDIRECTS - REBRANDING PREMIUM ===
       {
         source: '/car-wash-battice',
-        destination: '/lavage-voiture-battice',
+        destination: '/nettoyage-voiture-battice',
         permanent: true, // 301
       },
       {
         source: '/car-wash-soumagne',
-        destination: '/lavage-voiture-soumagne',
+        destination: '/nettoyage-voiture-soumagne',
         permanent: true,
       },
       {
@@ -303,7 +303,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/car-wash-liege',
-        destination: '/lavage-voiture-liege',
+        destination: '/nettoyage-voiture-liege',
         permanent: true,
       },
     ];

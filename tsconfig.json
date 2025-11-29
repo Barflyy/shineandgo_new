@@ -33,7 +33,7 @@
         "./src/app/shared/*"
       ],
       "@/components/*": [
-        "./src/app/shared/components/*"
+        "./src/components/*"
       ],
       "@/utils/*": [
         "./src/app/shared/utils/*"
