@@ -43,9 +43,7 @@ export const metadata: Metadata = {
     images: ['/transformations/optimized/webp/apres01.webp'],
   },
 
-  verification: {
-    google: 'google-site-verification=YOUR_ACTUAL_TOKEN_HERE', // User needs to provide this or I leave a placeholder that is clearly marked
-  },
+
   other: {
     'geo.region': 'BE-WAL',
     'geo.placename': 'Herve, Verviers, Liège',
