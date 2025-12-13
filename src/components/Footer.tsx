@@ -82,6 +82,11 @@ export default function Footer() {
                                     Lavage voiture Soumagne
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/zones" className="font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1">
+                                    Voir toutes les zones
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
