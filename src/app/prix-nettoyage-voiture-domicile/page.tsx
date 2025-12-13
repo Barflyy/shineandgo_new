@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Prix Nettoyage Voiture Premium | Tarifs 2025 Transparents - Shine&Go',
     description: 'Prix nettoyage voiture premium à domicile : 65€ intérieur, 85€ extérieur, 120€ complet. Tarifs tout compris. Devis gratuit. ☎ 0472 30 37 01',
     url: 'https://shineandgo.be/prix-nettoyage-voiture-domicile',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

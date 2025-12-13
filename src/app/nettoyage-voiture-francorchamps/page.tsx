@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Francorchamps - Lavage Pro',
     description: 'Lavage auto à Francorchamps. Nous venons chez vous ou sur circuit. Nettoyage complet de votre véhicule. Expertise detailing. Réservation facile.',
     url: 'https://shineandgo.be/nettoyage-voiture-francorchamps',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

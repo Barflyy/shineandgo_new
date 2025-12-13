@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Dalhem - Service Mobile à Domicile',
     description: 'Lavage auto professionnel à Dalhem. Shine&Go se déplace chez vous pour nettoyer votre véhicule. Intérieur, extérieur, detailing. Devis et RDV rapides.',
     url: 'https://shineandgo.be/nettoyage-voiture-dalhem',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

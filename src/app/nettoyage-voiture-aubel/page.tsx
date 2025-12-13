@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Mobile Aubel - Nettoyage Auto à Domicile',
     description: 'Lavage voiture à domicile à Aubel. Service mobile professionnel. Nettoyage intérieur et extérieur sur le lieu de votre choix. Déplacement inclus.',
     url: 'https://shineandgo.be/nettoyage-voiture-aubel',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

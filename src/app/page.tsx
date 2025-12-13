@@ -3,16 +3,16 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Lavage Auto à Domicile & Pro (Liège & Verviers) | Shine And Go',
+  title: 'Lavage Auto à Domicile & Pro (Liège & Verviers) | Shine&Go',
   description: 'Nettoyage voiture à domicile à Liège, Herve, Verviers. Prix et Tarifs transparents. Sur devis pour entreprises. Déplacement gratuit. Réservation en ligne.',
   alternates: {
     canonical: 'https://shineandgo.be',
   },
   openGraph: {
-    title: 'Lavage Auto à Domicile | Shine And Go',
+    title: 'Lavage Auto à Domicile | Shine&Go',
     description: 'Votre car wash mobile premium en région liégeoise. On se déplace chez vous !',
     url: 'https://shineandgo.be',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture à Domicile Hermalle - Lavage Pro',
     description: 'Lavage auto professionnel à Hermalle-sous-Argenteau. Nous intervenons chez vous. Nettoyage complet, anti-rayures, produits écologiques. Devis immédiat.',
     url: 'https://shineandgo.be/nettoyage-voiture-hermalle',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

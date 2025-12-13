@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Melen - Lavage à Domicile',
     description: 'Lavage auto professionnel à Melen (Soumagne). Nous nous déplaçons chez vous. Nettoyage complet intérieur/extérieur. Produits de qualité. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-melen',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

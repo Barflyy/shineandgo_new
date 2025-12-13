@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Lavage Voiture Heusy - Nettoyage à Domicile',
     description: 'Service de nettoyage auto à Heusy. Nous nous déplaçons chez vous. Lavage complet, soins des cuirs, traitement carrosserie. Qualité premium.',
     url: 'https://shineandgo.be/nettoyage-voiture-heusy',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

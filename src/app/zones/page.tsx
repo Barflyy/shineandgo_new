@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: 'Zones d\'Intervention | Nettoyage Voiture Domicile Liège',
         description: 'Découvrez nos zones d\'intervention pour le lavage auto à domicile : Liège, Herve, Verviers, Spa, Visé, Battice, Fléron, Soumagne. Déplacement gratuit.',
         url: 'https://shineandgo.be/zones',
-        siteName: 'Shine And Go',
+        siteName: 'Shine&Go',
         images: [
             {
                 url: 'https://shineandgo.be/og-image.jpg',

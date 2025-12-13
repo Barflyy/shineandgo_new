@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Mobile Sart - Nettoyage à Domicile',
     description: 'Nettoyage voiture à Sart-Jalhay. Lavage auto professionnel directement chez vous. Intérieur, extérieur, soin des cuirs. Déplacement gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-sart',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

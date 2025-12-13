@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Domicile Ans - Nettoyage Auto',
     description: 'Lavage auto à Ans et alentours. Nous venons à votre domicile ou bureau. Nettoyage professionnel intérieur et extérieur. Gain de temps garanti.',
     url: 'https://shineandgo.be/nettoyage-voiture-ans',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

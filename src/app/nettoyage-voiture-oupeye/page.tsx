@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture à Domicile Oupeye - Lavage Auto Pro',
     description: 'Expert du nettoyage auto à Oupeye. Nous venons chez vous pour un lavage complet intérieur et extérieur. Déplacement gratuit. Résultat garanti.',
     url: 'https://shineandgo.be/nettoyage-voiture-oupeye',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Theux - Lavage à Domicile',
     description: 'Lavage auto à Theux. Nous nous déplaçons chez vous pour un nettoyage complet de votre voiture. Intérieur, extérieur, finitions soignées. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-theux',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

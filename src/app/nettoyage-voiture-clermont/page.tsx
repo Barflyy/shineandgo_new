@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Lavage Auto Clermont - Nettoyage à Domicile',
     description: 'Expert lavage auto à Clermont-sur-Berwinne. Nous venons chez vous. Nettoyage voiture complet, intérieur, extérieur. Produits professionnels. Devis immédiat.',
     url: 'https://shineandgo.be/nettoyage-voiture-clermont',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

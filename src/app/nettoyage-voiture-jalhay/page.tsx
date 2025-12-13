@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Lavage Voiture Jalhay - Nettoyage Mobile',
     description: 'Nettoyage auto à domicile à Jalhay. Service pro et rapide. Nous venons chez vous. Lavage complet intérieur et extérieur.',
     url: 'https://shineandgo.be/nettoyage-voiture-jalhay',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

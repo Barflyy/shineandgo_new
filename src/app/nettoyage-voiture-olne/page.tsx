@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Esthétique Auto Olne - Lavage Domicile',
     description: 'Lavage auto à domicile à Olne. Nous nous déplaçons chez vous pour un nettoyage complet de votre voiture. Intérieur, extérieur, finitions soignées. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-olne',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

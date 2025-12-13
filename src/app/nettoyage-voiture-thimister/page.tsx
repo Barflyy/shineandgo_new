@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Thimister - Lavage Auto à Domicile',
     description: 'Service de lavage auto mobile à Thimister-Clermont. Nous venons chez vous pour un nettoyage complet. Intérieur, extérieur, simonisation. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-thimister',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

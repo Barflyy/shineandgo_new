@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Dison - Lavage à Domicile',
     description: 'Nettoyage auto à Dison. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-dison',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Domicile Pepinster - Nettoyage Auto',
     description: 'Nettoyage voiture à Pepinster. Shine&Go vient à votre domicile. Lavage complet, produits pro, service impeccable. Réservation en ligne.',
     url: 'https://shineandgo.be/nettoyage-voiture-pepinster',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

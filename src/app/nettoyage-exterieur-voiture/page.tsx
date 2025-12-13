@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Extérieur Voiture à Domicile | Lavage Main & Cire - Shine&Go',
     description: 'Spécialiste du lavage extérieur voiture à la main à domicile. Technique 2 seaux, nettoyage jantes, dégoudronnage, cire de protection. Dès 85€.',
     url: 'https://shineandgo.be/nettoyage-exterieur-voiture',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Melier - Service Pro à Domicile',
     description: 'Lavage auto à Melier. Ne vous déplacez plus ! Shine&Go nettoie votre voiture chez vous. Intérieur, extérieur, finitions parfaites. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-melier',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

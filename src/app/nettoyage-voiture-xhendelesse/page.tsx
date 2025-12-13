@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Xhendelesse - Service Mobile Pro',
     description: 'Nettoyage voiture à domicile à Xhendelesse. Lavage manuel, soins des cuirs, détachage. Service professionnel à votre porte. Tarifs transparents.',
     url: 'https://shineandgo.be/nettoyage-voiture-xhendelesse',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Charneux - Lavage à Domicile',
     description: 'Lavage auto à Charneux (Herve). Service mobile de qualité. Nous nettoyons votre véhicule à votre domicile ou sur votre lieu de travail. Devis rapide.',
     url: 'https://shineandgo.be/nettoyage-voiture-charneux',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

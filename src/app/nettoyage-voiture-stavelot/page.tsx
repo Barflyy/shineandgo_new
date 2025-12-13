@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Lavage Auto Stavelot - Nettoyage Mobile',
     description: 'Nettoyage auto à Stavelot. Shine&Go se déplace chez vous pour un lavage complet. Intérieur, extérieur, polish. Devis gratuit et immédiat.',
     url: 'https://shineandgo.be/nettoyage-voiture-stavelot',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

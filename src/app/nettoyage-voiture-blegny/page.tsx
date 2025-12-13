@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Mobile Blegny - Nettoyage à Domicile',
     description: 'Nettoyage voiture à Blegny. Lavage auto professionnel directement chez vous. Intérieur et extérieur. Service de qualité, déplacement gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-blegny',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

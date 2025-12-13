@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Mobile Trooz - Nettoyage à Domicile',
     description: 'Nettoyage voiture à Trooz. Lavage auto professionnel directement chez vous. Intérieur et extérieur. Gagnez du temps avec Shine&Go.',
     url: 'https://shineandgo.be/nettoyage-voiture-trooz',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

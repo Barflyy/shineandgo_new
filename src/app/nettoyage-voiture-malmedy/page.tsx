@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Esthétique Auto Malmedy - Lavage Domicile',
     description: 'Service de nettoyage voiture à domicile à Malmedy. Nous nous déplaçons chez vous. Lavage intérieur et extérieur, protection céramique. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-malmedy',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

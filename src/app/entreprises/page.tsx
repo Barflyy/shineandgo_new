@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: 'Lavage Voiture Entreprise & Flotte | Shine&Go B2B',
         description: 'Service de nettoyage de flotte automobile pour entreprises. Lavage sur site ou à domicile. Facturation mensuelle. Devis gratuit sous 24h.',
         url: 'https://shineandgo.be/entreprises',
-        siteName: 'Shine And Go',
+        siteName: 'Shine&Go',
         images: [
             {
                 url: 'https://shineandgo.be/og-image.jpg',

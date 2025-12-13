@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Mobile Bassenge - Nettoyage à Domicile',
     description: 'Lavage voiture à domicile à Bassenge et environs. Plus besoin de vous déplacer. Nettoyage intérieur/extérieur professionnel. Tarifs clairs et déplacement gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-bassenge',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

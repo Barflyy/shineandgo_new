@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Car Wash Domicile Bolland - Nettoyage Pro',
     description: 'Car Wash à domicile à Bolland. Lavage auto professionnel directement chez vous. Gain de temps, produits haut de gamme, résultat impeccable.',
     url: 'https://shineandgo.be/nettoyage-voiture-bolland',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

@@ -80,6 +80,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'nettoyage-voiture-pepinster',
     'nettoyage-voiture-dison',
     'nettoyage-voiture-lambermont',
+    'nettoyage-voiture-lambermont',
+    // Corporate & Zones
+    'entreprises',
+    'zones',
+    // Legal
+    'mentions-legales',
+    'politique-confidentialite',
     // Pricing
     'prix-nettoyage-voiture-domicile',
   ].map(slug => ({

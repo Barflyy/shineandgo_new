@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Auto Herstal - Lavage à Domicile',
     description: 'Expert nettoyage voiture à Herstal. Service de lavage auto mobile directement chez vous ou au travail. Detailing, shampoing sièges, polissage. Devis rapide.',
     url: 'https://shineandgo.be/nettoyage-voiture-herstal',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

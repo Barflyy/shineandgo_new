@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Chaudfontaine - Service Premium',
     description: 'Lavage voiture à domicile à Chaudfontaine et Embourg. Service 5 étoiles. Nettoyage complet intérieur/extérieur. Produits haut de gamme.',
     url: 'https://shineandgo.be/nettoyage-voiture-chaudfontaine',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

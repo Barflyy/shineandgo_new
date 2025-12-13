@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Seraing - Lavage Mobile',
     description: 'Service de lavage auto mobile à Seraing. Shine&Go se déplace chez vous ou au bureau. Nettoyage complet, produits écologiques, devis immédiat.',
     url: 'https://shineandgo.be/nettoyage-voiture-seraing',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

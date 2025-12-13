@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Complet Voiture à Domicile | Shine&Go',
     description: 'Nettoyage complet intérieur et extérieur voiture à domicile. Rénovation totale, soins tissus, cire. Service mobile à Herve, Verviers, Liège. 120€.',
     url: 'https://shineandgo.be/nettoyage-complet-voiture',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

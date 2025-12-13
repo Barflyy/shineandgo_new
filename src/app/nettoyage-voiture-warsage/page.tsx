@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture à Domicile Warsage - Intérieur & Extérieur',
     description: 'Service de nettoyage auto à Warsage. Lavage main professionnel à votre domicile. Déplacement gratuit. Dès 65€. Réservation rapide. ☎ 0472 30 37 01',
     url: 'https://shineandgo.be/nettoyage-voiture-warsage',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

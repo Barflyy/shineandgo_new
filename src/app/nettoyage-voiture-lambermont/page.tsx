@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Lavage Auto Lambermont - Nettoyage Mobile',
     description: 'Nettoyage voiture à Lambermont. Service premium à domicile. Lavage complet, produits écologiques, finition parfaite. Réservez maintenant.',
     url: 'https://shineandgo.be/nettoyage-voiture-lambermont',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Intérieur Voiture à Domicile | Tapis & Plastiques - Shine&Go',
     description: 'Spécialiste du nettoyage intérieur voiture à domicile. Nettoyage tapis, plastiques, désinfection habitacle. Élimination taches et odeurs. Dès 65€ à Liège & Verviers.',
     url: 'https://shineandgo.be/nettoyage-interieur-voiture',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

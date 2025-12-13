@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Saint-Nicolas - Service Domicile',
     description: 'Lavage auto à Saint-Nicolas. Shine&Go vient chez vous pour nettoyer votre voiture. Intérieur et extérieur. Résultat impeccable garanti. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-saint-nicolas',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

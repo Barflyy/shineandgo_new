@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture à Domicile Battice - Intérieur & Extérieur',
     description: 'Expert du nettoyage véhicule à Battice. Lavage main anti-rayures à domicile. Prix et Tarifs clairs. Déplacement gratuit. Dès 65€. ☎ 0472 30 37 01',
     url: 'https://shineandgo.be/nettoyage-voiture-battice',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

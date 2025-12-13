@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Argenteau - Lavage Auto Domicile',
     description: 'Expert nettoyage voiture à Argenteau. Nous nous déplaçons chez vous pour un lavage auto complet. Intérieur, extérieur, désinfection. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-argenteau',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

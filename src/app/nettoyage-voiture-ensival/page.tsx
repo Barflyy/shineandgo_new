@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Auto Ensival - Lavage Mobile',
     description: 'Nettoyage voiture à domicile à Ensival. Nous venons chez vous pour un lavage complet. Intérieur, extérieur, soins carrosserie. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-ensival',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',

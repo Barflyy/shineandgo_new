@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Nettoyage Voiture Beyne-Heusay - Lavage à Domicile',
     description: 'Lavage auto professionnel à Beyne-Heusay. Service mobile : nous venons chez vous. Nettoyage intérieur et extérieur de haute qualité. Devis gratuit.',
     url: 'https://shineandgo.be/nettoyage-voiture-beyne-heusay',
-    siteName: 'Shine And Go',
+    siteName: 'Shine&Go',
     images: [
       {
         url: 'https://shineandgo.be/og-image.jpg',
