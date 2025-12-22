@@ -2,6 +2,7 @@ import { ArrowRight, Check, Star, MapPin, Sparkles, Car, Armchair, Clock } from 
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Nettoyage Voiture Argenteau - Lavage Auto Domicile',
@@ -30,6 +31,12 @@ export const metadata: Metadata = {
 export default function ArgenteauPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
+      <Breadcrumbs 
+        items={[
+          { 'label': 'Nettoyage voiture', 'href': '/zones' }, 
+          { 'label': 'Argenteau' }
+        ]} 
+      />
 
       {/* HERO */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -46,9 +53,8 @@ export default function ArgenteauPage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Esthétique Auto
-              <span className="block font-semibold mt-2 text-gray-900">à Argenteau</span>
-            </h1>
+              Lavage et nettoyage de voiture professionnel
+              <span className="block font-semibold mt-2 text-gray-900">à Argenteau</span></h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Pour les habitants d'Argenteau qui exigent le meilleur pour leur véhicule.
@@ -99,9 +105,9 @@ export default function ArgenteauPage() {
                 { name: 'Visé', href: '/nettoyage-voiture-vise' },
                 { name: 'Hermalle', href: '/nettoyage-voiture-hermalle' },
                 { name: 'Oupeye', href: '/nettoyage-voiture-oupeye' },
-                { name: 'Richelle', href: '/nettoyage-voiture-vise' },
-                { name: 'Vivegnis', href: '/nettoyage-voiture-oupeye' },
-                { name: 'Cheratte', href: '/nettoyage-voiture-vise' },
+                { name: 'Dalhem', href: '/nettoyage-voiture-dalhem' },
+                { name: 'Warsage', href: '/nettoyage-voiture-warsage' },
+                { name: 'Bassenge', href: '/nettoyage-voiture-bassenge' },
               ].map((city) => (
                 <Link
                   key={city.name}
@@ -162,7 +168,7 @@ export default function ArgenteauPage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Flexibilité totale</h3>
-                <p className="text-sm text-gray-600 text-pretty">Nous venons quand cela vous arrange, à domicile ou au bureau</p>
+                <p className="text-sm text-gray-600 text-pretty">Nous venons à Argenteau quand cela vous arrange, à domicile ou au bureau</p>
               </div>
             </div>
           </div>
@@ -494,7 +500,7 @@ export default function ArgenteauPage() {
                 },
                 {
                   name: 'Sophie L.',
-                  location: 'Verviers',
+                  location: 'Argenteau',
                   text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
                   rating: 5
                 },
@@ -599,44 +605,27 @@ export default function ArgenteauPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Nettoyage Voiture à Domicile Argenteau",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Shine&Go",
-              "image": "https://shineandgo.be/og-image.jpg",
-              "telephone": "+32472303701",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue de la Station 15",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6402",
-                "longitude": "5.7946"
-              },
-              "sameAs": [
-                "https://www.facebook.com/votrepage",
-                "https://www.instagram.com/shineandgo/"
-              ],
-              "priceRange": "65€ - 120€"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": "Argenteau"
-            },
-            "description": "Service de nettoyage automobile à domicile à Argenteau. Lavage intérieur et extérieur, detailing, protection céramique.",
-            "offers": {
-              "@type": "Offer",
-              "price": "65",
-              "priceCurrency": "EUR"
-            }
-          })
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "Shine&Go - Lavage voiture Argenteau",
+    "description": "Service de nettoyage et detailing automobile à domicile à Argenteau.",
+    "areaServed": {
+        "@type": "City",
+        "name": "Argenteau"
+    },
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Shine&Go",
+        "telephone": "+32472303701",
+        "priceRange": "$$",
+        "image": "https://shineandgo.be/logo.png"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "150"
+    }
+})
         }}
       />
     </main>

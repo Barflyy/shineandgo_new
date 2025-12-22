@@ -29,6 +29,12 @@ export const metadata: Metadata = {
 export default function VisePage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
+      <Breadcrumbs 
+        items={[
+          { 'label': 'Nettoyage voiture', 'href': '/zones' }, 
+          { 'label': 'Visé' }
+        ]} 
+      />
 
       {/* HERO */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -45,9 +51,8 @@ export default function VisePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Votre voiture neuve
-              <span className="block font-semibold mt-2 text-gray-900">sans quitter Visé</span>
-            </h1>
+              Lavage et nettoyage de voiture professionnel
+              <span className="block font-semibold mt-2 text-gray-900">à Visé</span></h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Le service de nettoyage mobile qui change la vie des Visétois.
@@ -95,12 +100,12 @@ export default function VisePage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
-                { name: 'Oupeye', href: '/nettoyage-voiture-oupeye' },
-                { name: 'Dalhem', href: '/nettoyage-voiture-dalhem' },
-                { name: 'Bassenge', href: '/nettoyage-voiture-bassenge' },
                 { name: 'Argenteau', href: '/nettoyage-voiture-argenteau' },
                 { name: 'Hermalle', href: '/nettoyage-voiture-hermalle' },
+                { name: 'Oupeye', href: '/nettoyage-voiture-oupeye' },
+                { name: 'Dalhem', href: '/nettoyage-voiture-dalhem' },
                 { name: 'Warsage', href: '/nettoyage-voiture-warsage' },
+                { name: 'Bassenge', href: '/nettoyage-voiture-bassenge' },
               ].map((city) => (
                 <Link
                   key={city.name}
@@ -310,44 +315,27 @@ export default function VisePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Nettoyage Voiture à Domicile Visé",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Shine&Go",
-              "image": "https://shineandgo.be/og-image.jpg",
-              "telephone": "+32472303701",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue de la Station 15",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6402",
-                "longitude": "5.7946"
-              },
-              "sameAs": [
-                "https://www.facebook.com/votrepage",
-                "https://www.instagram.com/shineandgo/"
-              ],
-              "priceRange": "65€ - 120€"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": "Visé"
-            },
-            "description": "Service de nettoyage automobile à domicile à Visé. Lavage intérieur et extérieur, detailing, protection céramique.",
-            "offers": {
-              "@type": "Offer",
-              "price": "65",
-              "priceCurrency": "EUR"
-            }
-          })
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "Shine&Go - Lavage voiture Visé",
+    "description": "Service de nettoyage et detailing automobile à domicile à Visé.",
+    "areaServed": {
+        "@type": "City",
+        "name": "Visé"
+    },
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Shine&Go",
+        "telephone": "+32472303701",
+        "priceRange": "$$",
+        "image": "https://shineandgo.be/logo.png"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "150"
+    }
+})
         }}
       />
     </main>

@@ -3,6 +3,7 @@ import { ArrowRight, Check, Star, MapPin, Sparkles, Car, Armchair, Clock } from 
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Nettoyage Voiture à Domicile Fléron - Intérieur & Extérieur',
@@ -31,6 +32,12 @@ export const metadata: Metadata = {
 export default function FleronPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
+      <Breadcrumbs 
+        items={[
+          { 'label': 'Nettoyage voiture', 'href': '/zones' }, 
+          { 'label': 'Fléron' }
+        ]} 
+      />
 
       {/* HERO */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -47,9 +54,8 @@ export default function FleronPage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Votre Lavage Auto
-              <span className="block font-semibold mt-2 text-gray-900">à domicile sur Fléron</span>
-            </h1>
+              Lavage et nettoyage de voiture professionnel
+              <span className="block font-semibold mt-2 text-gray-900">à Fléron</span></h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               La solution de nettoyage auto mobile pour les habitants de Fléron et Retinne.
@@ -97,12 +103,12 @@ export default function FleronPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
-                { name: 'Soumagne', href: '/nettoyage-voiture-soumagne' },
-                { name: 'Beyne-Heusay', href: '/nettoyage-voiture-beyne-heusay' },
+                { name: 'Liège', href: '/nettoyage-voiture-liege' },
                 { name: 'Chaudfontaine', href: '/nettoyage-voiture-chaudfontaine' },
-                { name: 'Trooz', href: '/nettoyage-voiture-trooz' },
-                { name: 'Olne', href: '/nettoyage-voiture-olne' },
-                { name: 'Melen', href: '/nettoyage-voiture-melen' },
+                { name: 'Embourg', href: '/nettoyage-voiture-embourg' },
+                { name: 'Beyne-Heusay', href: '/nettoyage-voiture-beyne-heusay' },
+                { name: 'Herstal', href: '/nettoyage-voiture-herstal' },
+                { name: 'Ans', href: '/nettoyage-voiture-ans' },
               ].map((city) => (
                 <Link
                   key={city.name}
@@ -163,7 +169,7 @@ export default function FleronPage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Flexibilité totale</h3>
-                <p className="text-sm text-gray-600 text-pretty">Nous venons quand cela vous arrange, à domicile ou au bureau</p>
+                <p className="text-sm text-gray-600 text-pretty">Nous venons à Fléron quand cela vous arrange, à domicile ou au bureau</p>
               </div>
             </div>
           </div>
@@ -496,7 +502,7 @@ export default function FleronPage() {
                 },
                 {
                   name: 'Sophie L.',
-                  location: 'Verviers',
+                  location: 'Fléron',
                   text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
                   rating: 5
                 },
@@ -600,44 +606,27 @@ export default function FleronPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Nettoyage Voiture à Domicile Fléron",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Shine&Go",
-              "image": "https://shineandgo.be/og-image.jpg",
-              "telephone": "+32472303701",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue de la Station 15",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6402",
-                "longitude": "5.7946"
-              },
-              "sameAs": [
-                "https://www.facebook.com/votrepage",
-                "https://www.instagram.com/shineandgo/"
-              ],
-              "priceRange": "65€ - 120€"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": "Fléron"
-            },
-            "description": "Service de nettoyage automobile à domicile à Fléron. Lavage intérieur et extérieur, detailing, protection céramique.",
-            "offers": {
-              "@type": "Offer",
-              "price": "65",
-              "priceCurrency": "EUR"
-            }
-          })
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "Shine&Go - Lavage voiture Fléron",
+    "description": "Service de nettoyage et detailing automobile à domicile à Fléron.",
+    "areaServed": {
+        "@type": "City",
+        "name": "Fléron"
+    },
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Shine&Go",
+        "telephone": "+32472303701",
+        "priceRange": "$$",
+        "image": "https://shineandgo.be/logo.png"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "150"
+    }
+})
         }}
       />
     </main>

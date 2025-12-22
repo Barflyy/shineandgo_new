@@ -2,6 +2,7 @@ import { ArrowRight, Check, Star, MapPin, Sparkles, Car, Armchair, Clock } from 
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Nettoyage Voiture à Domicile Verviers - Intérieur & Extérieur',
@@ -30,6 +31,12 @@ export const metadata: Metadata = {
 export default function VerviersPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
+      <Breadcrumbs 
+        items={[
+          { 'label': 'Nettoyage voiture', 'href': '/zones' }, 
+          { 'label': 'Verviers' }
+        ]} 
+      />
 
       {/* HERO */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -46,12 +53,11 @@ export default function VerviersPage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage Auto à Domicile
-              <span className="block font-semibold mt-2 text-gray-900">sur Verviers & Alentours</span>
-            </h1>
+              Lavage et nettoyage de voiture professionnel
+              <span className="block font-semibold mt-2 text-gray-900">à Verviers</span></h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Plus besoin de vous déplacer au car wash. Nous venons à vous pour un résultat d'exception.
+              Plus besoin de vous déplacer au car wash. Nous venons à votre domicile à Verviers pour un résultat d'exception.
               <span className="block mt-2 text-base text-gray-400 font-normal">Intervention rapide • Dès 65€ • Produits Premium</span>
             </p>
 
@@ -87,7 +93,7 @@ export default function VerviersPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-light text-gray-900 mb-4 text-balance">
-                Une intervention partout dans l'arrondissement
+                Votre lavage auto mobile à Verviers
               </h2>
               <p className="text-lg text-gray-600 text-pretty">
                 De Heusy à Pepinster, nous sommes mobiles pour vous servir
@@ -98,10 +104,10 @@ export default function VerviersPage() {
               {[
                 { name: 'Heusy', href: '/nettoyage-voiture-heusy' },
                 { name: 'Ensival', href: '/nettoyage-voiture-ensival' },
+                { name: 'Lambermont', href: '/nettoyage-voiture-lambermont' },
+                { name: 'Dison', href: '/nettoyage-voiture-dison' },
                 { name: 'Pepinster', href: '/nettoyage-voiture-pepinster' },
                 { name: 'Theux', href: '/nettoyage-voiture-theux' },
-                { name: 'Dison', href: '/nettoyage-voiture-dison' },
-                { name: 'Lambermont', href: '/nettoyage-voiture-lambermont' },
               ].map((city) => (
                 <Link
                   key={city.name}
@@ -162,7 +168,7 @@ export default function VerviersPage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Flexibilité totale</h3>
-                <p className="text-sm text-gray-600 text-pretty">Nous venons quand cela vous arrange, à domicile ou au bureau</p>
+                <p className="text-sm text-gray-600 text-pretty">Nous venons à Verviers quand cela vous arrange, à domicile ou au bureau</p>
               </div>
             </div>
           </div>
@@ -598,44 +604,27 @@ export default function VerviersPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Nettoyage Voiture à Domicile Verviers",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Shine&Go",
-              "image": "https://shineandgo.be/og-image.jpg",
-              "telephone": "+32472303701",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue de la Station 15",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6402",
-                "longitude": "5.7946" 
-              },
-              "sameAs": [
-                "https://www.facebook.com/votrepage",
-                "https://www.instagram.com/shineandgo/"
-              ],
-              "priceRange": "65€ - 120€"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": "Verviers"
-            },
-            "description": "Service de nettoyage automobile à domicile à Verviers. Lavage intérieur et extérieur, detailing, protection céramique.",
-            "offers": {
-              "@type": "Offer",
-              "price": "65",
-              "priceCurrency": "EUR"
-            }
-          })
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "Shine&Go - Lavage voiture Verviers",
+    "description": "Service de nettoyage et detailing automobile à domicile à Verviers.",
+    "areaServed": {
+        "@type": "City",
+        "name": "Verviers"
+    },
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Shine&Go",
+        "telephone": "+32472303701",
+        "priceRange": "$$",
+        "image": "https://shineandgo.be/logo.png"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "150"
+    }
+})
         }}
       />
     </main>

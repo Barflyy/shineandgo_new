@@ -1,5 +1,6 @@
 import { ArrowRight, Check, Star, Clock, Sparkles, Car, Armchair } from 'lucide-react'
 import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -30,6 +31,12 @@ export const metadata: Metadata = {
 export default function HervePage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
+      <Breadcrumbs
+        items={[
+          { label: 'Nettoyage voiture', href: '/zones' },
+          { label: 'Herve' }
+        ]}
+      />
 
       {/* HERO */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -48,9 +55,8 @@ export default function HervePage() {
 
             {/* Titre épuré */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Nettoyage voiture Herve
-              <span className="block font-semibold mt-2 text-gray-900">Service à domicile</span>
-            </h1>
+              Lavage et nettoyage de voiture professionnel
+              <span className="block font-semibold mt-2 text-gray-900">à Herve</span></h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Lavage mobile professionnel à Herve
@@ -176,7 +182,7 @@ export default function HervePage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Flexibilité totale</h3>
-                <p className="text-sm text-gray-600 text-pretty">Nous venons quand cela vous arrange, à domicile ou au bureau</p>
+                <p className="text-sm text-gray-600 text-pretty">Nous venons à Herve quand cela vous arrange, à domicile ou au bureau</p>
               </div>
             </div>
           </div>
@@ -421,29 +427,29 @@ export default function HervePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-x5.webp', 
-                  title: 'BMW X5', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-x5.webp',
+                  title: 'BMW X5',
                   subtitle: 'Formule Complète',
-                  tags: ['Extérieur', 'Intérieur', 'Cuir'] 
+                  tags: ['Extérieur', 'Intérieur', 'Cuir']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-z4.webp', 
-                  title: 'BMW Z4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-z4.webp',
+                  title: 'BMW Z4',
                   subtitle: 'Préparation à la vente',
-                  tags: ['Capote', 'Polissage', 'Céramique'] 
+                  tags: ['Capote', 'Polissage', 'Céramique']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-audi-rs3.webp', 
-                  title: 'Audi RS3', 
+                {
+                  image: '/images/realisations/lavage-complet-audi-rs3.webp',
+                  title: 'Audi RS3',
                   subtitle: 'Entretien Premium',
-                  tags: ['Lavage Main', 'Jantes', 'Cire'] 
+                  tags: ['Lavage Main', 'Jantes', 'Cire']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-serie4.webp', 
-                  title: 'BMW Série 4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-serie4.webp',
+                  title: 'BMW Série 4',
                   subtitle: 'Remise à neuf',
-                  tags: ['Intérieur', 'Moquettes', 'Plastiques'] 
+                  tags: ['Intérieur', 'Moquettes', 'Plastiques']
                 },
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
@@ -579,77 +585,27 @@ export default function HervePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "https://shineandgo.be/og-image.jpg",
-            "telephone": "+32472303701",
-            "email": "contact@shineandgo.be",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Rue de la Station 15",
-              "addressLocality": "Herve",
-              "postalCode": "4650",
-              "addressRegion": "Liège",
-              "addressCountry": "BE"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "50.6402",
-              "longitude": "5.7946" 
-            },
-            "sameAs": [
-              "https://www.facebook.com/votrepage",
-              "https://www.instagram.com/shineandgo/"
-            ],
-            "priceRange": "65€ - 120€",
-            "areaServed": ["Herve", "Verviers", "Liège", "Battice", "Soumagne", "Spa", "Fléron", "Visé"],
-            "url": "https://shineandgo.be",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "150",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Thomas M."
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "reviewBody": "Service impeccable ! Ma voiture n'avait jamais été aussi propre. Le detailing intérieur a fait des miracles sur mes sièges en tissu. Je recommande à 100%."
-              },
-              {
-                "@type": "Review",
-                "author": {
-                  "@type": "Person",
-                  "name": "Sophie L."
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "reviewBody": "Très pratique d'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant."
-              }
-            ],
-            "openingHours": "Mo-Sa 08:00-19:00",
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "08:00",
-                "closes": "19:00"
-              }
-            ]
-          })
+        "@context": "https://schema.org",
+      "@type": "AutoWash",
+      "name": "Shine&Go - Lavage voiture Herve",
+      "description": "Service de nettoyage et detailing automobile à domicile à Herve.",
+      "areaServed": {
+        "@type": "City",
+      "name": "Herve"
+    },
+      "provider": {
+        "@type": "LocalBusiness",
+      "name": "Shine&Go",
+      "telephone": "+32472303701",
+      "priceRange": "$$",
+      "image": "https://shineandgo.be/logo.png"
+    },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150"
+    }
+})
         }}
       />
     </main>
