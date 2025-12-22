@@ -50,6 +50,11 @@ export default function Footer() {
                                     Prix et tarifs
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/blog" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                    Blog Conseils
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

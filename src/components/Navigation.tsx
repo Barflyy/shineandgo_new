@@ -46,6 +46,7 @@ export default function Navigation() {
                     <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-600">
                         <Link href="/#tarifs" className="hover:text-blue-600 transition-colors" aria-label="Voir nos tarifs">Tarifs</Link>
                         <Link href="/#services" className="hover:text-blue-600 transition-colors" aria-label="Découvrir nos services">Services</Link>
+                        <Link href="/blog" className="hover:text-blue-600 transition-colors" aria-label="Lire notre blog">Blog</Link>
                         <Link href="/#faq" className="hover:text-blue-600 transition-colors" aria-label="Questions fréquentes">FAQ</Link>
                     </div>
                     <a
@@ -79,6 +80,7 @@ export default function Navigation() {
                 <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-6 md:hidden flex flex-col gap-4 shadow-xl animate-fade-in-up">
                     <Link href="/#tarifs" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-gray-900 py-2 border-b border-gray-50">Tarifs</Link>
                     <Link href="/#services" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-gray-900 py-2 border-b border-gray-50">Services</Link>
+                    <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-gray-900 py-2 border-b border-gray-50">Blog</Link>
                     <Link href="/#faq" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-gray-900 py-2 border-b border-gray-50">FAQ</Link>
                     <a href="https://wa.me/32472303701" className="mt-2 w-full py-3 bg-gray-900 text-white text-center rounded-xl font-medium">
                         Réserver par WhatsApp
