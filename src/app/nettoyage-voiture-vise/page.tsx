@@ -1,6 +1,7 @@
 import { ArrowRight, Check, Star, MapPin, Sparkles, Car, Armchair } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Nettoyage Voiture à Domicile Visé - Intérieur & Extérieur',
