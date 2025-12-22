@@ -279,7 +279,18 @@ export default function VisePage() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-16 sm:py-20 md:py-32 bg-white">
+      
+      {/* MAILLAGE INTERNE */}
+      <section className="py-8 bg-gray-50 border-t border-gray-200">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-gray-600">
+            Besoin d'un devis spécifique ? <Link href="/contact" className="text-blue-600 font-medium hover:underline">Contactez-nous</Link> ou consultez <Link href="/services" className="text-blue-600 font-medium hover:underline">tous nos services</Link>.
+            <span className="block mt-2 text-sm text-gray-500">Service disponible à <Link href="/zones" className="hover:text-gray-800">Namur</Link>, <Link href="/zones" className="hover:text-gray-800">Liège</Link> et partout en Wallonie.</span>
+          </p>
+        </div>
+      </section>
+
+<section className="py-16 sm:py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
 
