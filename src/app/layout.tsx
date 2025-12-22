@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
   },
+  icons: {
+    icon: '/globe.svg',
+  },
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   openGraph: {
     title: 'Nettoyage Voiture à Domicile Liège | Shine&Go - Dès 65€',

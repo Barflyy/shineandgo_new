@@ -441,7 +441,7 @@ export default function DisonPage() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={`{item.title} - Nettoyage voiture Dison`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
