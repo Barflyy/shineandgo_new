@@ -66,21 +66,21 @@ export default function ArticlePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { label: 'Blog', href: '/blog' }, 
-          { label: 'Comment Enlever l'Odeur de Cigarette dans une Voiture ? (Méthodes Pro)' }
-        ]} 
+          { label: 'Blog', href: '/blog' },
+          { label: "Comment Enlever l'Odeur de Cigarette dans une Voiture ? (Méthodes Pro)" }
+        ]}
       />
 
       <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        
+
         {/* Header Article */}
         <header className="mb-12 text-center md:text-left">
           <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
           </Link>
-          
+
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Problème</span>
             <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 20 Jan 2024</span>
@@ -100,41 +100,41 @@ export default function ArticlePage() {
 
         {/* Contenu */}
         <div className="prose prose-lg prose-blue max-w-none text-gray-700">
-          
+
           {/* Sections dynamiques */}
-          
+
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Pourquoi l'odeur de tabac est si tenace ?</h2>
             <div dangerouslySetInnerHTML={{ __html: `La fumée de cigarette contient des milliers de particules microscopiques qui pénètrent partout : dans les tissus des sièges, la moquette, le ciel de toit (c'est souvent lui le coupable !), et même dans les conduits d'aération. Masquer l'odeur avec un 'sapin magique' ne fait que créer un mélange écœurant.` }} />
           </section>
-          
+
 
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Méthode 1 : Le Grand Nettoyage (Indispensable)</h2>
             <div dangerouslySetInnerHTML={{ __html: `Avant tout traitement, il faut éliminer la source. Cela signifie vider TOUS les cendriers, nettoyer toutes les surfaces plastiques avec un APC (nettoyant tout usage) pour enlever le film de nicotine jaune/gras, et shampouiner les tissus. N'oubliez pas de nettoyer les vitres intérieures, souvent couvertes d'un film gras de fumée.` }} />
           </section>
-          
+
 
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Méthode 2 : Le Traitement à l'Ozone (La Solution Pro)</h2>
             <div dangerouslySetInnerHTML={{ __html: `C'est l'arme fatale. Un générateur d'ozone est placé dans la voiture fermée pendant 30 à 60 minutes. L'ozone (O3) va oxyder les molécules responsables des odeurs et tuer les bactéries. C'est la seule méthode qui atteint les conduits d'aération et les fibres profondes. Chez Shine&Go, nous combinons toujours nettoyage manuel + ozone pour un résultat 100% garanti.` }} />
           </section>
-          
+
 
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Méthode 3 : Les Solutions Maison (Efficacité Limitée)</h2>
             <div dangerouslySetInnerHTML={{ __html: `Le vinaigre blanc ou le café moulu peuvent absorber une partie des odeurs légères, mais ils ne viendront pas à bout d'une voiture de fumeur régulier. C'est souvent une perte de temps pour des odeurs incrustées depuis des années.` }} />
           </section>
-          
+
 
           <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 my-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Conclusion</h3>
-             <p>Ne laissez pas une mauvaise odeur gâcher votre plaisir de conduire ou faire chuter le prix de revente de votre auto.</p>
+            <p>Ne laissez pas une mauvaise odeur gâcher votre plaisir de conduire ou faire chuter le prix de revente de votre auto.</p>
           </div>
 
           <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">FAQ - Questions Fréquentes</h2>
           <div className="space-y-6">
-            
+
             <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
               <summary className="font-medium text-gray-900 flex justify-between items-center">
                 Combien de temps dure un traitement à l'ozone ?
@@ -144,7 +144,7 @@ export default function ArticlePage() {
                 Le cycle machine dure environ 45min, mais il faut ensuite aérer le véhicule pendant 1h. Comptez une demi-journée pour la prestation complète (nettoyage + ozone).
               </div>
             </details>
-            
+
 
             <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
               <summary className="font-medium text-gray-900 flex justify-between items-center">
@@ -155,7 +155,7 @@ export default function ArticlePage() {
                 Non, si le nettoyage a été fait correctement avant l'ozone, l'odeur est détruite définitivement. Sauf si vous recommencez à fumer dedans bien sûr !
               </div>
             </details>
-            
+
           </div>
 
           {/* CTA FINAL */}
@@ -176,7 +176,7 @@ export default function ArticlePage() {
                   href="https://wa.me/32472303701"
                   className="px-8 py-4 bg-transparent border border-gray-500 text-white font-medium rounded-full hover:bg-white/10 transition-all"
                 >
-                  Devis WhatsApp 
+                  Devis WhatsApp
                 </a>
               </div>
             </div>

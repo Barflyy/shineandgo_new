@@ -59,21 +59,21 @@ export default function ArticlePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { label: 'Blog', href: '/blog' }, 
-          { label: 'Lavage Voiture Propriétaire d'Animaux (Poils + Odeurs)' }
-        ]} 
+          { label: 'Blog', href: '/blog' },
+          { label: "Lavage Voiture Propriétaire d'Animaux (Poils + Odeurs)" }
+        ]}
       />
 
       <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        
+
         {/* Header Article */}
         <header className="mb-12 text-center md:text-left">
           <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
           </Link>
-          
+
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Animaux</span>
             <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 28 Avr 2024</span>
@@ -93,35 +93,35 @@ export default function ArticlePage() {
 
         {/* Contenu */}
         <div className="prose prose-lg prose-blue max-w-none text-gray-700">
-          
+
           {/* Sections dynamiques */}
-          
+
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">La Guerre des Poils</h2>
             <div dangerouslySetInnerHTML={{ __html: `L'aspirateur seul ne suffit pas. Nous utilisons des brosses électrostatiques et des gants caoutchouc pour 'tirer' les poils hors de la moquette avant d'aspirer.` }} />
           </section>
-          
+
 
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Désinfection Bactérienne</h2>
             <div dangerouslySetInnerHTML={{ __html: `Les animaux ramènent germes et bactéries. Un shampoing vapeur des tissus permet de désinfecter en profondeur sans produits chimiques agressifs pour eux.` }} />
           </section>
-          
+
 
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Conseil Pro</h2>
             <div dangerouslySetInnerHTML={{ __html: `Investissez dans une bâche de coffre sur-mesure. Mais pour les dégâts existants, appelez-nous.` }} />
           </section>
-          
+
 
           <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 my-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Conclusion</h3>
-             <div dangerouslySetInnerHTML={{ __html: `Retrouvez une voiture propre où vous pouvez aussi inviter des humains !` }} />
+            <div dangerouslySetInnerHTML={{ __html: `Retrouvez une voiture propre où vous pouvez aussi inviter des humains !` }} />
           </div>
 
           <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">FAQ - Questions Fréquentes</h2>
           <div className="space-y-6">
-            
+
             <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
               <summary className="font-medium text-gray-900 flex justify-between items-center">
                 Utilisez-vous des produits dangereux pour les animaux ?
@@ -131,7 +131,7 @@ export default function ArticlePage() {
                 Non, nos produits sont safe une fois secs. Nous aérons toujours la voiture après intervention.
               </div>
             </details>
-            
+
           </div>
 
           {/* CTA FINAL */}
@@ -152,18 +152,18 @@ export default function ArticlePage() {
                   href="https://wa.me/32472303701"
                   className="px-8 py-4 bg-transparent border border-gray-500 text-white font-medium rounded-full hover:bg-white/10 transition-all"
                 >
-                  Devis WhatsApp 
+                  Devis WhatsApp
                 </a>
               </div>
             </div>
-            
+
             {/* Maillage Interne Contextuel - Strategy Link */}
             <div className="mt-8 pt-8 border-t border-gray-700/50 text-sm text-gray-400">
-                <p>
-                    Besoin d'un service spécifique ? Découvrez notre <Link href="/nettoyage-interieur-voiture" className="text-blue-400 hover:text-blue-300">nettoyage intérieur</Link>, 
-                    notre <Link href="/nettoyage-exterieur-voiture" className="text-blue-400 hover:text-blue-300">lavage extérieur</Link> 
-                    ou consultez nos zones d'intervention à <Link href="/nettoyage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/nettoyage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
-                </p>
+              <p>
+                Besoin d'un service spécifique ? Découvrez notre <Link href="/nettoyage-interieur-voiture" className="text-blue-400 hover:text-blue-300">nettoyage intérieur</Link>,
+                notre <Link href="/nettoyage-exterieur-voiture" className="text-blue-400 hover:text-blue-300">lavage extérieur</Link>
+                ou consultez nos zones d'intervention à <Link href="/nettoyage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/nettoyage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
+              </p>
             </div>
           </div>
 
