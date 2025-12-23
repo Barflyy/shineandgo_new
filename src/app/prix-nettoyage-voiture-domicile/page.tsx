@@ -1,4 +1,5 @@
 import { ArrowRight, Check, Star, MessageCircle, Phone, Shield, Clock, Sparkles, MapPin } from 'lucide-react'
+import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Prix nettoyage voiture domicile Shine and Go',
@@ -30,49 +31,57 @@ export default function PrixPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
 
-      {/* Schema.org */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Nettoyage Voiture Premium à Domicile",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "https://shineandgo.be/og-image.jpg",
-            "telephone": "+32472303701",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Rue de la Station 15",
-              "addressLocality": "Herve",
-              "postalCode": "4650",
-              "addressRegion": "Liège",
-              "addressCountry": "BE"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "AutoWash",
+              "name": "Shine&Go - Tarifs Nettoyage Voiture à Domicile",
+              "description": "Prix et tarifs transparents pour le nettoyage et detailing automobile à domicile en province de Liège.",
+              "url": "https://shineandgo.be/prix-nettoyage-voiture-domicile",
+              "telephone": "+32472303701",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Herve",
+                "addressRegion": "Liège",
+                "addressCountry": "BE"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "50.6386",
+                "longitude": "5.7942"
+              },
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Shine&Go",
+                "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150"
+              }
             },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "50.6402",
-              "longitude": "5.7946" 
-            },
-            "sameAs": [
-              "https://www.facebook.com/votrepage",
-              "https://www.instagram.com/shineandgo/"
-            ],
-            "priceRange": "65€ - 170€"
-          },
-          "offers": [
-            { "@type": "Offer", "name": "Intérieur Premium - Citadine", "price": "65", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Intérieur Premium - Berline", "price": "75", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Intérieur Premium - SUV", "price": "95", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Extérieur Showroom - Citadine", "price": "85", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Extérieur Showroom - Berline", "price": "95", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Extérieur Showroom - SUV", "price": "115", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Formule Complète - Citadine", "price": "120", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Formule Complète - Berline", "price": "140", "priceCurrency": "EUR" },
-            { "@type": "Offer", "name": "Formule Complète - SUV", "price": "170", "priceCurrency": "EUR" }
-          ]
-        })
-      }} />
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Tarifs",
+                  "item": "https://shineandgo.be/prix-nettoyage-voiture-domicile"
+                }
+              ]
+            }
+          ])
+        }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { label: 'Accueil', href: '/' },
+          { label: 'Tarifs' }
+        ]}
+      />
 
       {/* HERO */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -85,17 +94,16 @@ export default function PrixPage() {
                   <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600" />
                 ))}
               </div>
-              <span className="text-sm font-medium text-blue-900">Tarifs 2025</span>
+              <span className="text-sm font-medium text-blue-900">Grille tarifaire 2025</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Prix nettoyage voiture
-              <span className="block font-semibold mt-2 text-gray-900">Transparents & Tout compris</span>
+              Prix Nettoyage Voiture <span className="block font-semibold mt-2 text-gray-900">Liège & Verviers</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Zéro surprise au moment de payer
-              <span className="block mt-2 text-base text-gray-400 font-normal">Déplacement gratuit • Produits inclus • Garantie satisfaction</span>
+              Des tarifs clairs et sans surprise pour un résultat showroom. Nous intervenons partout en province de Liège, directement chez vous ou à votre bureau.
+              <span className="block mt-2 text-base text-gray-400 font-normal">Déplacement gratuit • Intervention sous 48h • Dès 65€</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -103,7 +111,7 @@ export default function PrixPage() {
                 href="https://wa.me/32472303701?text=Bonjour, je souhaite un devis pour un nettoyage voiture"
                 className="group w-full sm:w-auto px-8 py-4 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
               >
-                Demander un devis
+                Demander mon devis WhatsApp
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -126,8 +134,8 @@ export default function PrixPage() {
             {/* Intérieur */}
             <div className="bg-white p-8 rounded-3xl border border-gray-100 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col">
               <div className="mb-8">
-                <h2 className="text-2xl font-medium text-gray-900 mb-2">Intérieur Premium</h2>
-                <p className="text-sm text-gray-500">Rénovation habitacle</p>
+                <h2 className="text-2xl font-medium text-gray-900 mb-2">Nettoyage Intérieur</h2>
+                <p className="text-sm text-gray-500">Rénovation complète de l'habitacle</p>
               </div>
 
               <div className="space-y-4 mb-8 flex-1">
@@ -302,7 +310,7 @@ export default function PrixPage() {
           <div className="max-w-3xl mx-auto text-center">
 
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Prêt pour un nettoyage premium ?
+              Prêt pour un résultat showroom ?
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">

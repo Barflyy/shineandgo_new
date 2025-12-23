@@ -2,6 +2,7 @@ import { ArrowRight, Check, Star, Clock, Sparkles, Car, Armchair, Shield } from 
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Nettoyage Complet Voiture à Domicile | Shine&Go',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Nettoyage complet voiture domicile Shine and Go',
@@ -30,6 +31,12 @@ export const metadata: Metadata = {
 export default function NettoyageCompletPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
+      <Breadcrumbs 
+        items={[
+          { 'label': 'Services', 'href': '/#services' }, 
+          { 'label': 'Nettoyage Complet' }
+        ]} 
+      />
 
       {/* HERO - Minimaliste épuré */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -528,42 +535,85 @@ export default function NettoyageCompletPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Nettoyage Complet Voiture à Domicile",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Shine&Go",
-              "image": "https://shineandgo.be/og-image.jpg",
-              "telephone": "+32472303701",
-              "address": {
+          __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Nettoyage Complet Voiture à Domicile",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
+            "telephone": "+32472303701",
+            "priceRange": "65€ - 190€",
+            "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Rue de la Station 15",
                 "addressLocality": "Herve",
                 "postalCode": "4650",
                 "addressRegion": "Liège",
                 "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6402",
-                "longitude": "5.7946" 
-              },
-              "sameAs": [
-                "https://www.facebook.com/votrepage",
-                "https://www.instagram.com/shineandgo/"
-              ],
-              "priceRange": "120€ - 190€"
-            },
-            "areaServed": ["Herve", "Verviers", "Liège", "Battice", "Soumagne", "Spa", "Fléron", "Visé"],
-            "description": "Nettoyage complet intérieur et extérieur voiture à domicile. Rénovation totale, pressing, polish, cire.",
-            "offers": {
-              "@type": "Offer",
-              "price": "120",
-              "priceCurrency": "EUR"
             }
-          })
+        },
+        "areaServed": [
+            "Herve",
+            "Verviers",
+            "Liège",
+            "Battice",
+            "Soumagne",
+            "Spa",
+            "Fléron",
+            "Visé"
+        ],
+        "description": "Service professionnel de nettoyage complet voiture à domicile partout en province de Liège."
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Besoin d'eau ou d'électricité ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de temps ça dure ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Comptez environ 3h à 3h30 pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment payer ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Et s'il pleut ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
+                }
+            }
+        ]
+    },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Nettoyage Complet",
+                "item": "https://shineandgo.be/nettoyage-complet-voiture"
+            }
+        ]
+    }
+])
         }}
       />
     </main>

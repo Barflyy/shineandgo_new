@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Nettoyage voiture domicile Herve Shine and Go',
@@ -55,12 +55,11 @@ export default function HervePage() {
 
             {/* Titre épuré */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage et nettoyage de voiture professionnel
-              <span className="block font-semibold mt-2 text-gray-900">à Herve</span></h1>
+              Esthétique automobile et lavage à domicile à Herve</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Lavage mobile professionnel à Herve
-              <span className="block mt-2 text-base text-gray-400 font-normal">Dès 65€ • En 90 minutes • Produits Koch-Chemie</span>
+              Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Herve pour un nettoyage intérieur et extérieur de qualité. Notre service à Herve est prisé par les propriétaires exigeants qui souhaitent préserver la valeur de leur véhicule sans perdre de temps dans les files d'attente.
+              <span className="block mt-2 text-base text-gray-400 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
             {/* Badge d'urgence */}
@@ -197,8 +196,7 @@ export default function HervePage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-2xl mx-auto text-center mb-16 md:mb-24">
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 text-balance tracking-tight">
-              Nos formules à Herve
-            </h2>
+              Nos formules à Herve</h2>
             <p className="text-lg text-gray-600 text-pretty font-light">
               Prix fixes et transparents
             </p>
@@ -456,7 +454,7 @@ export default function HervePage() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`{item.title} - Nettoyage voiture Herve`}
+                      alt={`${item.title} - Nettoyage voiture Herve`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -508,12 +506,6 @@ export default function HervePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Thomas M.',
-                  location: 'Herve',
-                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles sur mes sièges en tissu. Je recommande à 100%.',
-                  rating: 5
-                },
-                {
                   name: 'Sophie L.',
                   location: 'Verviers',
                   text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
@@ -523,6 +515,12 @@ export default function HervePage() {
                   name: 'Marc D.',
                   location: 'Liège',
                   text: 'J\'ai testé la formule complète sur ma BMW et je suis scotché du résultat. On dirait qu\'elle sort du concession. Prix très correct pour la qualité du travail.',
+                  rating: 5
+                },
+                {
+                  name: 'Thomas M.',
+                  location: 'Herve',
+                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles sur mes sièges en tissu. Je recommande à 100%.',
                   rating: 5
                 }
               ].map((testimonial, i) => (
@@ -565,9 +563,9 @@ export default function HervePage() {
             <h2 className="text-3xl font-light text-gray-900 mb-12 text-center text-balance">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
+                { q: "Comment payer\u00A0?", a: "Le paiement se fait une fois la prestation terminée et\u00A0validée par\u00A0vos\u00A0soins. Nous acceptons les espèces, Payconiq ou virement instantané." },
                 { q: "Besoin d'eau ou d'électricité\u00A0?", a: "Idéalement oui, une prise et un robinet à\u00A0moins de\u00A025m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
                 { q: "Combien de temps ça dure\u00A0?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." },
-                { q: "Comment payer\u00A0?", a: "Le paiement se fait une fois la prestation terminée et\u00A0validée par\u00A0vos\u00A0soins. Nous acceptons les espèces, Payconiq ou virement instantané." },
                 { q: "Et s'il pleut\u00A0?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." }
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
@@ -583,30 +581,83 @@ export default function HervePage() {
       {/* Schema.org - Enhanced */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
         "@context": "https://schema.org",
-      "@type": "AutoWash",
-      "name": "Shine&Go - Lavage voiture Herve",
-      "description": "Service de nettoyage et detailing automobile à domicile à Herve.",
-      "areaServed": {
-        "@type": "City",
-      "name": "Herve"
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Herve",
+        "description": "Service de nettoyage et detailing automobile à domicile à Herve.",
+        "url": "https://shineandgo.be/nettoyage-voiture-herve",
+        "telephone": "+32472303701",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Herve",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
     },
-      "provider": {
-        "@type": "LocalBusiness",
-      "name": "Shine&Go",
-      "telephone": "+32472303701",
-      "priceRange": "$$",
-      "image": "https://shineandgo.be/logo.png"
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Herve",
+                "item": "https://shineandgo.be/nettoyage-voiture-herve"
+            }
+        ]
     },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150"
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Besoin d'eau ou d'électricité\u00A0?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Idéalement oui, une prise et un robinet à\u00A0moins de\u00A025m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de temps ça dure\u00A0?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment payer\u00A0?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le paiement se fait une fois la prestation terminée et\u00A0validée par\u00A0vos\u00A0soins. Nous acceptons les espèces, Payconiq ou virement instantané."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Et s'il pleut\u00A0?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
+                }
+            }
+        ]
     }
-})
-        }}
+]) }}
       />
     </main>
   )

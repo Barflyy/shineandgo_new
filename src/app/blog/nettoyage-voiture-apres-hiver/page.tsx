@@ -56,7 +56,45 @@ export default function ArticlePage() {
     <main className="bg-white min-h-screen font-sans">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Apres hiver",
+        "description": "Service de nettoyage et detailing automobile à domicile à Apres hiver.",
+        "url": "https://shineandgo.be/nettoyage-voiture-apres-hiver",
+        "telephone": "+32472303701",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Apres hiver",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
+    },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Apres hiver",
+                "item": "https://shineandgo.be/nettoyage-voiture-apres-hiver"
+            }
+        ]
+    }
+]) }}
       />
 
       <Breadcrumbs 
@@ -80,9 +118,8 @@ export default function ArticlePage() {
             <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> 8 min de lecture</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-900 mb-8 text-balance">
-            Nettoyage de Printemps Auto : Réparer les Dégâts de l'Hiver
-          </h1>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
+              Blog : Votre service mobile de lavage auto premium</h1>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl">
             <p className="text-xl text-blue-900 italic">
@@ -143,7 +180,7 @@ export default function ArticlePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/#devis"
+                  href="/#tarifs"
                   className="px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-all shadow-lg hover:shadow-blue-900/50"
                 >
                   Voir nos tarifs

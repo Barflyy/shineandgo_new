@@ -143,7 +143,7 @@ export default function ArticlePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/#devis"
+                  href="/#tarifs"
                   className="px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-all shadow-lg hover:shadow-blue-900/50"
                 >
                   Voir nos tarifs

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Nettoyage voiture domicile Olne Shine and Go',
@@ -53,12 +53,11 @@ export default function OlnePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage et nettoyage de voiture professionnel
-              <span className="block font-semibold mt-2 text-gray-900">à Olne</span></h1>
+              Nettoyage de voiture haut de gamme chez vous à Olne</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Le service de nettoyage auto qui se déplace à Olne pour prendre soin de votre véhicule.
-              <span className="block mt-2 text-base text-gray-400 font-normal">Confort • Qualité • Satisfaction</span>
+              Redonnez l'éclat du neuf à votre véhicule sans quitter Olne. Notre équipe mobile intervient chez vous ou à votre bureau. Que vous soyez situé en plein centre de Olne ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.
+              <span className="block mt-2 text-base text-gray-400 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -441,7 +440,7 @@ export default function OlnePage() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`{item.title} - Nettoyage voiture Olne`}
+                      alt={`${item.title} - Nettoyage voiture Olne`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -530,7 +529,7 @@ export default function OlnePage() {
 
             <div className="text-center mt-12">
               <a
-                href="https://www.google.com/search?q=shine+and+go+herve"
+                href="https://www.google.com/search?q=shine+and+go+olne"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all group"
@@ -550,10 +549,10 @@ export default function OlnePage() {
             <h2 className="text-3xl font-light text-gray-900 mb-12 text-center text-balance">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
-                { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
-                { q: "Combien de temps ça dure ?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." },
                 { q: "Comment payer ?", a: "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané." },
-                { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." }
+                { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." },
+                { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
+                { q: "Combien de temps ça dure ?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." }
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
                   <h3 className="font-medium text-gray-900 mb-2 text-pretty">{item.q}</h3>
@@ -583,8 +582,7 @@ export default function OlnePage() {
           <div className="max-w-3xl mx-auto text-center">
 
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Olne,
-              <span className="block">offrez un spa à votre voiture</span>
+              Prêt pour un résultat showroom ?
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
@@ -614,30 +612,83 @@ export default function OlnePage() {
       {/* Schema.org */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "AutoWash",
-    "name": "Shine&Go - Lavage voiture Olne",
-    "description": "Service de nettoyage et detailing automobile à domicile à Olne.",
-    "areaServed": {
-        "@type": "City",
-        "name": "Olne"
-    },
-    "provider": {
-        "@type": "LocalBusiness",
-        "name": "Shine&Go",
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Olne",
+        "description": "Service de nettoyage et detailing automobile à domicile à Olne.",
+        "url": "https://shineandgo.be/nettoyage-voiture-olne",
         "telephone": "+32472303701",
-        "priceRange": "$$",
-        "image": "https://shineandgo.be/logo.png"
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Olne",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
     },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150"
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Olne",
+                "item": "https://shineandgo.be/nettoyage-voiture-olne"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Besoin d'eau ou d'électricité ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de temps ça dure ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment payer ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Et s'il pleut ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
+                }
+            }
+        ]
     }
-})
-        }}
+]) }}
       />
     </main>
   )

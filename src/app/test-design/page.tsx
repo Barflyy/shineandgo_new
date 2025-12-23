@@ -352,7 +352,7 @@ export default function HomePage() {
               "addressRegion": "Liège",
               "addressCountry": "BE"
             },
-            "image": "https://shineandgo.be/og-image.jpg"
+            "image": "/transformations/optimized/webp/apres01.webp"
           })
         }}
       />

@@ -1,6 +1,7 @@
 import { ArrowRight, Check, Star, Clock, Sparkles, Car, Armchair, ShieldCheck } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Nettoyage Intérieur Voiture à Domicile | Tapis & Plastiques - Shine&Go',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Nettoyage intérieur voiture domicile Shine and Go',
@@ -29,6 +30,12 @@ export const metadata: Metadata = {
 export default function NettoyageInterieurPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
+      <Breadcrumbs 
+        items={[
+          { 'label': 'Services', 'href': '/#services' }, 
+          { 'label': 'Nettoyage Intérieur' }
+        ]} 
+      />
 
       {/* HERO */}
       <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
@@ -407,42 +414,85 @@ export default function NettoyageInterieurPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Nettoyage Intérieur Voiture à Domicile",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Shine&Go",
-              "image": "https://shineandgo.be/og-image.jpg",
-              "telephone": "+32472303701",
-              "address": {
+          __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Nettoyage Intérieur Voiture à Domicile",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
+            "telephone": "+32472303701",
+            "priceRange": "65€ - 190€",
+            "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Rue de la Station 15",
                 "addressLocality": "Herve",
                 "postalCode": "4650",
                 "addressRegion": "Liège",
                 "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6402",
-                "longitude": "5.7946" 
-              },
-              "sameAs": [
-                "https://www.facebook.com/votrepage",
-                "https://www.instagram.com/shineandgo/"
-              ],
-              "priceRange": "65€ - 110€"
-            },
-            "areaServed": ["Herve", "Verviers", "Liège", "Battice", "Soumagne", "Spa", "Fléron", "Visé"],
-            "description": "Service professionnel de nettoyage intérieur voiture à domicile. Pressing sièges, tapis, désinfection habitacle.",
-            "offers": {
-              "@type": "Offer",
-              "price": "65",
-              "priceCurrency": "EUR"
             }
-          })
+        },
+        "areaServed": [
+            "Herve",
+            "Verviers",
+            "Liège",
+            "Battice",
+            "Soumagne",
+            "Spa",
+            "Fléron",
+            "Visé"
+        ],
+        "description": "Service professionnel de nettoyage intérieur voiture à domicile partout en province de Liège."
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Faut-il vider la voiture avant ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oui, merci de retirer vos effets personnels (lunettes, câbles, papiers, sièges auto si possible) pour nous permettre d'aller dans les moindres recoins."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Les tapis seront-ils mouillés ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ils seront légèrement humides après le shampouinage. En été, ils sèchent en 1h. En hiver, comptez quelques heures avec le chauffage. Nous utilisons une aspiration puissante pour extraire 90% de l'eau."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Enlevez-vous les poils de chien ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oui, nous avons des brosses spéciales pour les poils d'animaux. Un supplément peut s'appliquer si la quantité est très importante."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Besoin d'électricité ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oui, une prise classique à moins de 25m est idéale. Si ce n'est pas possible, prévenez-nous !"
+                }
+            }
+        ]
+    },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Nettoyage Intérieur",
+                "item": "https://shineandgo.be/nettoyage-interieur-voiture"
+            }
+        ]
+    }
+])
         }}
       />
 

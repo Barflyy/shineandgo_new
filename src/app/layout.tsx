@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   publisher: 'Shine&Go',
   metadataBase: new URL('https://shineandgo.be'),
   alternates: {
-    canonical: './',
+    canonical: '/',
   },
   icons: {
     icon: '/globe.svg',

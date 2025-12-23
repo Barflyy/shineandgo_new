@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Nettoyage voiture domicile Visé Shine and Go',
@@ -52,12 +52,11 @@ export default function VisePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage et nettoyage de voiture professionnel
-              <span className="block font-semibold mt-2 text-gray-900">à Visé</span></h1>
+              Esthétique automobile et lavage à domicile à Visé</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Le service de nettoyage mobile qui change la vie des Visétois.
-              <span className="block mt-2 text-base text-gray-400 font-normal">De l'île Robinson aux hauteurs • Service 5 étoiles</span>
+              Shine&Go s'occupe de votre voiture à Visé. Profitez d'un service professionnel méticuleux avec les produits Koch-Chemie. Que vous soyez situé en plein centre de Visé ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.
+              <span className="block mt-2 text-base text-gray-400 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -295,7 +294,7 @@ export default function VisePage() {
           <div className="max-w-3xl mx-auto text-center">
 
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Visétois, réservez votre lavage !
+              Réservez votre nettoyage à Visé
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
@@ -325,30 +324,45 @@ export default function VisePage() {
       {/* Schema.org */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "AutoWash",
-    "name": "Shine&Go - Lavage voiture Visé",
-    "description": "Service de nettoyage et detailing automobile à domicile à Visé.",
-    "areaServed": {
-        "@type": "City",
-        "name": "Visé"
-    },
-    "provider": {
-        "@type": "LocalBusiness",
-        "name": "Shine&Go",
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Vise",
+        "description": "Service de nettoyage et detailing automobile à domicile à Vise.",
+        "url": "https://shineandgo.be/nettoyage-voiture-vise",
         "telephone": "+32472303701",
-        "priceRange": "$$",
-        "image": "https://shineandgo.be/logo.png"
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vise",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
     },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150"
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Vise",
+                "item": "https://shineandgo.be/nettoyage-voiture-vise"
+            }
+        ]
     }
-})
-        }}
+]) }}
       />
     </main>
   )

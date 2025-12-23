@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Nettoyage voiture domicile Charneux Shine and Go',
@@ -53,12 +53,11 @@ export default function CharneuxPage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage et nettoyage de voiture professionnel
-              <span className="block font-semibold mt-2 text-gray-900">à Charneux</span></h1>
+              Esthétique automobile et lavage à domicile à Charneux</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Charneux, Val-Dieu, Asse... Nous sillonnons la région pour faire briller vos autos.
-              <span className="block mt-2 text-base text-gray-400 font-normal">Mobile • Pratique • Efficace</span>
+              Plus besoin de vous déplacer au car wash. Nous venons à votre domicile à Charneux pour un résultat d'exception. Que vous soyez situé en plein centre de Charneux ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.
+              <span className="block mt-2 text-base text-gray-400 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -441,7 +440,7 @@ export default function CharneuxPage() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`{item.title} - Nettoyage voiture Charneux`}
+                      alt={`${item.title} - Nettoyage voiture Charneux`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -499,15 +498,15 @@ export default function CharneuxPage() {
                   rating: 5
                 },
                 {
-                  name: 'Sophie L.',
-                  location: 'Charneux',
-                  text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
-                  rating: 5
-                },
-                {
                   name: 'Marc D.',
                   location: 'Liège',
                   text: 'J\'ai testé la formule complète sur ma BMW et je suis scotché du résultat. On dirait qu\'elle sort du concession. Prix très correct pour la qualité du travail.',
+                  rating: 5
+                },
+                {
+                  name: 'Sophie L.',
+                  location: 'Charneux',
+                  text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
                   rating: 5
                 }
               ].map((testimonial, i) => (
@@ -530,7 +529,7 @@ export default function CharneuxPage() {
 
             <div className="text-center mt-12">
               <a
-                href="https://www.google.com/search?q=shine+and+go+herve"
+                href="https://www.google.com/search?q=shine+and+go+charneux"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all group"
@@ -583,8 +582,7 @@ export default function CharneuxPage() {
           <div className="max-w-3xl mx-auto text-center">
 
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Charneux,
-              <span className="block">votre voiture comme au premier jour</span>
+              Envie d'une voiture neuve ?
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
@@ -614,30 +612,83 @@ export default function CharneuxPage() {
       {/* Schema.org */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "AutoWash",
-    "name": "Shine&Go - Lavage voiture Charneux",
-    "description": "Service de nettoyage et detailing automobile à domicile à Charneux.",
-    "areaServed": {
-        "@type": "City",
-        "name": "Charneux"
-    },
-    "provider": {
-        "@type": "LocalBusiness",
-        "name": "Shine&Go",
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Charneux",
+        "description": "Service de nettoyage et detailing automobile à domicile à Charneux.",
+        "url": "https://shineandgo.be/nettoyage-voiture-charneux",
         "telephone": "+32472303701",
-        "priceRange": "$$",
-        "image": "https://shineandgo.be/logo.png"
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Charneux",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
     },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150"
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Charneux",
+                "item": "https://shineandgo.be/nettoyage-voiture-charneux"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Besoin d'eau ou d'électricité ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de temps ça dure ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment payer ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Et s'il pleut ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
+                }
+            }
+        ]
     }
-})
-        }}
+]) }}
       />
     </main>
   )

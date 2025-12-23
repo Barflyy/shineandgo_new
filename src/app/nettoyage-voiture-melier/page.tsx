@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Shine&Go',
     images: [
       {
-        url: 'https://shineandgo.be/og-image.jpg',
+        url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
         alt: 'Nettoyage voiture domicile Melier Shine and Go',
@@ -53,12 +53,11 @@ export default function MelierPage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage et nettoyage de voiture professionnel
-              <span className="block font-semibold mt-2 text-gray-900">à Melier</span></h1>
+              Melier : Votre service mobile de lavage auto premium</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Le car wash vient à vous à Melier.
-              <span className="block mt-2 text-base text-gray-400 font-normal">Service Mobile • Produits Eco • Finition Main</span>
+              Redonnez l'éclat du neuf à votre véhicule sans quitter Melier. Notre équipe mobile intervient chez vous ou à votre bureau. Notre service à Melier est prisé par les propriétaires exigeants qui souhaitent préserver la valeur de leur véhicule sans perdre de temps dans les files d'attente.
+              <span className="block mt-2 text-base text-gray-400 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -441,7 +440,7 @@ export default function MelierPage() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`{item.title} - Nettoyage voiture Melier`}
+                      alt={`${item.title} - Nettoyage voiture Melier`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -530,7 +529,7 @@ export default function MelierPage() {
 
             <div className="text-center mt-12">
               <a
-                href="https://www.google.com/search?q=shine+and+go+herve"
+                href="https://www.google.com/search?q=shine+and+go+melier"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all group"
@@ -550,10 +549,10 @@ export default function MelierPage() {
             <h2 className="text-3xl font-light text-gray-900 mb-12 text-center text-balance">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
-                { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
+                { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." },
                 { q: "Combien de temps ça dure ?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." },
                 { q: "Comment payer ?", a: "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané." },
-                { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." }
+                { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." }
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
                   <h3 className="font-medium text-gray-900 mb-2 text-pretty">{item.q}</h3>
@@ -583,8 +582,7 @@ export default function MelierPage() {
           <div className="max-w-3xl mx-auto text-center">
 
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Melier,
-              <span className="block">un car wash à domicile</span>
+              Prenez rendez-vous à Melier aujourd'hui
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
@@ -614,30 +612,83 @@ export default function MelierPage() {
       {/* Schema.org */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "AutoWash",
-    "name": "Shine&Go - Lavage voiture Melier",
-    "description": "Service de nettoyage et detailing automobile à domicile à Melier.",
-    "areaServed": {
-        "@type": "City",
-        "name": "Melier"
-    },
-    "provider": {
-        "@type": "LocalBusiness",
-        "name": "Shine&Go",
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Melier",
+        "description": "Service de nettoyage et detailing automobile à domicile à Melier.",
+        "url": "https://shineandgo.be/nettoyage-voiture-melier",
         "telephone": "+32472303701",
-        "priceRange": "$$",
-        "image": "https://shineandgo.be/logo.png"
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Melier",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
     },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150"
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Melier",
+                "item": "https://shineandgo.be/nettoyage-voiture-melier"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Besoin d'eau ou d'électricité ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de temps ça dure ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment payer ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Et s'il pleut ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
+                }
+            }
+        ]
     }
-})
-        }}
+]) }}
       />
     </main>
   )

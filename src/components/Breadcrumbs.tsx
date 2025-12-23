@@ -9,8 +9,31 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://shineandgo.be"
+            },
+            ...items.map((item, index) => ({
+                "@type": "ListItem",
+                "position": index + 2,
+                "name": item.label,
+                ...(item.href ? { "item": `https://shineandgo.be${item.href}` } : {})
+            }))
+        ]
+    }
+
     return (
         <nav aria-label="Fil d'ariane" className="py-4 bg-gray-50 border-b border-gray-100">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <div className="container mx-auto px-6">
                 <ol className="flex items-center flex-wrap gap-2 text-sm text-gray-500">
                     <li>
@@ -41,3 +64,4 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         </nav>
     )
 }
+

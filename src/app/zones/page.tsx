@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         siteName: 'Shine&Go',
         images: [
             {
-                url: 'https://shineandgo.be/og-image.jpg',
+                url: '/transformations/optimized/webp/apres01.webp',
                 width: 1200,
                 height: 630,
                 alt: 'Zones intervention Shine and Go',
@@ -106,7 +106,7 @@ export default function ZonesPage() {
                         "@context": "https://schema.org",
                         "@type": "LocalBusiness",
                         "name": "Shine&Go",
-                        "image": "https://shineandgo.be/og-image.jpg",
+                        "image": "/transformations/optimized/webp/apres01.webp",
                         "telephone": "+32472303701",
                         "address": {
                             "@type": "PostalAddress",
