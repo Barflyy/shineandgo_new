@@ -103,7 +103,7 @@ export default function ArticlePage() {
             Prix Lavage Voiture à Domicile 2024 : Est-ce plus Cher qu'une Station ?
           </h1>
 
-          {/* <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-12 shadow-2xl ring-1 ring-gray-100">
+          <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-12 shadow-2xl ring-1 ring-gray-100">
             <Image 
               src="/images/blog/combien-coute-lavage-voiture-domicile.png" 
               alt="Prix Lavage Voiture à Domicile 2024 : Est-ce plus Cher qu'une Station ?" 
@@ -111,7 +111,7 @@ export default function ArticlePage() {
               className="object-cover"
               priority
             />
-          </div> */}
+          </div>
 
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-l-8 border-blue-600 p-10 rounded-r-[2rem] mb-16 shadow-sm">
             <p className="text-2xl text-blue-900 italic font-medium leading-relaxed">

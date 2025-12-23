@@ -103,15 +103,15 @@ export default function ArticlePage() {
             Comment Enlever les Poils de Chien dans une Voiture ? Solutions de Pros
           </h1>
 
-          {/* <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-12 shadow-2xl ring-1 ring-gray-100">
+          <div className="relative aspect-video rounded-[2.5rem] overflow-hidden mb-12 shadow-2xl ring-1 ring-gray-100">
             <Image 
-              src="/images/blog/default-blog.jpg" 
+              src="https://images.unsplash.com/photo-1552933061-90320eecd137?auto=format&fit=crop&q=80&w=1200" 
               alt="Comment Enlever les Poils de Chien dans une Voiture ? Solutions de Pros" 
               fill 
               className="object-cover"
               priority
             />
-          </div> */}
+          </div>
 
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-l-8 border-blue-600 p-10 rounded-r-[2rem] mb-16 shadow-sm">
             <p className="text-2xl text-blue-900 italic font-medium leading-relaxed">
