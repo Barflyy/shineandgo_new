@@ -31,11 +31,11 @@ export const metadata: Metadata = {
 export default function AubelPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { 'label': 'Nettoyage voiture', 'href': '/zones' }, 
+          { 'label': 'Nettoyage voiture', 'href': '/zones' },
           { 'label': 'Aubel' }
-        ]} 
+        ]}
       />
 
       {/* HERO */}
@@ -123,7 +123,7 @@ export default function AubelPage() {
         </div>
       </section>
 
-      
+
       {/* POURQUOI NOUS - Badges de confiance */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -329,7 +329,7 @@ export default function AubelPage() {
         </div>
       </section>
 
-      
+
       {/* SERVICES DETAILLÉS */}
       <section id="services" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -411,29 +411,29 @@ export default function AubelPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-x5.webp', 
-                  title: 'BMW X5', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-x5.webp',
+                  title: 'BMW X5',
                   subtitle: 'Formule Complète',
                   tags: ['Extérieur', 'Intérieur', 'Cuir']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-z4.webp', 
-                  title: 'BMW Z4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-z4.webp',
+                  title: 'BMW Z4',
                   subtitle: 'Préparation à la vente',
                   tags: ['Capote', 'Polissage', 'Céramique']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-audi-rs3.webp', 
-                  title: 'Audi RS3', 
+                {
+                  image: '/images/realisations/lavage-complet-audi-rs3.webp',
+                  title: 'Audi RS3',
                   subtitle: 'Entretien Premium',
                   tags: ['Lavage Main', 'Jantes', 'Cire']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-serie4.webp', 
-                  title: 'BMW Série 4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-serie4.webp',
+                  title: 'BMW Série 4',
                   subtitle: 'Remise à neuf',
-                  tags: ['Intérieur', 'Moquettes', 'Plastiques'] 
+                  tags: ['Intérieur', 'Moquettes', 'Plastiques']
                 },
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
@@ -566,7 +566,7 @@ export default function AubelPage() {
 
 
       {/* CTA FINAL */}
-      
+
       {/* MAILLAGE INTERNE */}
       <section className="py-8 bg-gray-50 border-t border-gray-200">
         <div className="container mx-auto px-6 text-center">
@@ -577,7 +577,7 @@ export default function AubelPage() {
         </div>
       </section>
 
-<section className="py-16 sm:py-20 md:py-32 bg-white">
+      <section className="py-16 sm:py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
 
@@ -612,80 +612,84 @@ export default function AubelPage() {
       {/* Schema.org */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([
-    {
-        "@context": "https://schema.org",
-        "@type": "AutoWash",
-        "name": "Shine&Go - Lavage voiture Aubel",
-        "description": "Service de nettoyage et detailing automobile à domicile à Aubel.",
-        "url": "https://shineandgo.be/nettoyage-voiture-aubel",
-        "telephone": "+32472303701",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Aubel",
-            "addressRegion": "Liège",
-            "addressCountry": "BE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "50.6386",
-            "longitude": "5.7942"
-        },
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "/transformations/optimized/webp/apres01.webp"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150"
-        }
-    },
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Aubel",
-                "item": "https://shineandgo.be/nettoyage-voiture-aubel"
+              "@context": "https://schema.org",
+              "@type": "AutoWash",
+              "name": "Shine&Go - Lavage voiture Aubel",
+              "description": "Service de nettoyage et detailing automobile à domicile à Aubel.",
+              "url": "https://shineandgo.be/nettoyage-voiture-aubel",
+              "telephone": "+32472303701",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Aubel",
+                "addressRegion": "Liège",
+                "addressCountry": "BE"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "50.6386",
+                "longitude": "5.7942"
+              },
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Shine&Go",
+                "image": "/transformations/optimized/webp/apres01.webp"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Aubel",
+              "item": "https://shineandgo.be/nettoyage-voiture-aubel"
             }
-        ,
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
+            ,
             {
-                "@type": "Question",
-                "name": "Besoin d'eau ou d'électricité ?",
-                "acceptedAnswer": {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Besoin d'eau ou d'électricité ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Combien de temps ça dure ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Combien de temps ça dure ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Comment payer ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Comment payer ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Et s'il pleut ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Et s'il pleut ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
+                  }
                 }
+              ]
             }
-        ]) }}
+          ])
+        }}
       />
     </main>
   )

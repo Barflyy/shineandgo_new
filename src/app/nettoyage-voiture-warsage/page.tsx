@@ -685,6 +685,10 @@ export default function WarsagePage() {
                     "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
                 }
             }
+        ]
+
+            }
+
         ]) }}
       />
     </main>
