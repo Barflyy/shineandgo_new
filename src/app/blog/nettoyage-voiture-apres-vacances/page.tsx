@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, Clock, Calendar, Check, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar, Check, ArrowRight, Sparkles, ShieldCheck, ChevronRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Sable de plage, sel marin ou moustiques écrasés ? Nos conseils pour nettoyer votre voiture après un long voyage.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2024-05-01',
+    publishedTime: '2026-05-01',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2024-05-15",
+        "datePublished": "2026-05-15",
         "image": "https://shineandgo.be/images/blog/default-blog.jpg"
       },
       {
@@ -100,94 +100,98 @@ export default function ArticlePage() {
         ]} 
       />
 
-      <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
+      <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
         
         <header className="mb-12">
-          <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
+          <Link href="/blog" className="link-arrow mb-8 inline-flex">
+            <ArrowLeft className="w-4 h-4" /> Retour au blog
           </Link>
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 font-medium">
-            <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Besoin</span>
-            <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 24 Juin 2024</span>
-            <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> 6 min de lecture</span>
+            <span className="badge-category">Besoin</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 24 Juin 2026</span>
+            <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 6 min de lecture</span>
           </div>
 
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
               Esthétique automobile et lavage à domicile à Blog</h1>
 
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-8 rounded-r-3xl mb-12">
-            <p className="text-xl text-blue-900 italic font-medium leading-relaxed">
+          <div className="quote-box">
+            <p className="quote-text">
               "Les vacances laissent des souvenirs, mais aussi beaucoup de saleté. Le sable et le sel peuvent être corrosifs s'ils ne sont pas retirés rapidement."
             </p>
           </div>
         </header>
 
-        <div className="prose prose-lg prose-blue max-w-none text-gray-700">
+        <div className="prose-shineandgo">
           
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Extraction du Sable
-            </h2>
+          <section className="mb-12">
+            <h2>Extraction du Sable</h2>
             <p>Le sable s'incruste partout. Nous utilisons des brosses vibrantes pour le faire remonter des fibres de moquette.</p>
           </section>
         
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Décontamination des Insectes
-            </h2>
+          <section className="mb-12">
+            <h2>Décontamination des Insectes</h2>
             <p>Les moustiques séchés peuvent attaquer le vernis. Nous utilisons des agents enzymatiques pour les dissoudre sans frotter.</p>
           </section>
         
 
-          <div className="bg-gray-900 p-8 md:p-12 rounded-3xl text-white my-16">
-            <h3 className="text-2xl font-bold mb-4">Conclusion</h3>
-            <p className="text-gray-300 leading-relaxed">
+          <div className="cta-block my-12">
+            <div className="relative z-10">
+            <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-blue-400"><Check className="w-6 h-6" /> En conclusion</h3>
+            <p className="text-lg text-gray-300 leading-relaxed mb-4">
                Repartez sur une base saine pour la rentrée.
             </p>
           </div>
 
-          <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-8">FAQ - Questions Fréquentes</h2>
+          <h2>FAQ - Questions Fréquentes</h2>
           <div className="space-y-4">
             
-            <details className="group bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:border-blue-300 transition-colors">
-              <summary className="font-bold text-gray-900 flex justify-between items-center list-none text-balance">
+            <details className="faq-accordion">
+              <summary>
                 Le sel est-il dangereux ?
                 <span className="text-blue-600 transition-transform duration-300 group-open:rotate-180">
                     <ArrowRight className="w-5 h-5 rotate-90" />
                 </span>
               </summary>
-              <div className="mt-4 text-gray-600 leading-relaxed border-t pt-4">
+              <div className="faq-accordion-content mt-4">
                 Oui, il favorise la rouille, un rinçage du châssis est indispensable.
               </div>
             </details>
         
           </div>
 
-          <div className="mt-20 p-8 sm:p-16 bg-blue-600 rounded-[3rem] text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">
+          <div className="cta-block-light mt-16">
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-400/30 rounded-full blur-[100px]" />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Besoin d'un résultat professionnel ?</h2>
-              <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-                Nos experts Shine&Go interviennent à domicile partout en province de Liège. Gagnez du temps et profitez d'un résultat showroom.
+              <span className="badge glass text-white font-semibold mb-6">
+                SERVICE À DOMICILE
+              </span>
+              <h2 className="cta-title text-white">Envie d'un résultat professionnel ?</h2>
+              <p className="text-xl text-blue-50 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Nos experts interviennent chez vous avec tout le matériel pro. Gagnez du temps et profitez d'une voiture impeccable.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/#tarifs"
-                  className="px-10 py-5 bg-white text-blue-600 font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg text-lg"
+                  className="btn btn-large bg-white text-blue-600 font-bold hover:bg-gray-100 shadow-xl"
                 >
-                  Voir nos tarifs
+                  Voir les tarifs <ChevronRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="https://wa.me/32472303701"
-                  className="px-10 py-5 bg-blue-700 text-white font-bold rounded-full hover:bg-blue-800 transition-all text-lg flex items-center justify-center gap-2"
+                  className="btn btn-large bg-blue-900 text-white hover:bg-blue-800"
                 >
-                  Devis WhatsApp
+                  WhatsApp Pro
                 </a>
               </div>
-            </div>
+              <div className="mt-8 text-blue-200 text-sm font-medium">
+                Intervention : <Link href="/zones" className="text-white underline hover:text-blue-100">Herve, Liège, Verviers, Spa</Link>
+              </div>
+            
           </div>
-        </div>
-      </article>
+          
+          </div></div></div></article>
     </main>
   )
 }

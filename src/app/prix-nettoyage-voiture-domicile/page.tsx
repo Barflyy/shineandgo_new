@@ -3,14 +3,14 @@ import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Prix Nettoyage Voiture Premium | Tarifs 2025 Transparents - Shine&Go',
+  title: 'Prix Nettoyage Voiture Premium | Tarifs 2026 Transparents - Shine&Go',
   description: 'Prix nettoyage voiture premium à domicile : 65€ intérieur, 85€ extérieur, 120€ complet. Tarifs tout compris. Devis gratuit. ☎ 0472 30 37 01',
   keywords: 'prix nettoyage voiture, tarif lavage voiture, cout nettoyage auto, prix detailing',
   alternates: {
     canonical: 'https://shineandgo.be/prix-nettoyage-voiture-domicile'
   },
   openGraph: {
-    title: 'Prix Nettoyage Voiture Premium | Tarifs 2025 Transparents - Shine&Go',
+    title: 'Prix Nettoyage Voiture Premium | Tarifs 2026 Transparents - Shine&Go',
     description: 'Prix nettoyage voiture premium à domicile : 65€ intérieur, 85€ extérieur, 120€ complet. Tarifs tout compris. Devis gratuit. ☎ 0472 30 37 01',
     url: 'https://shineandgo.be/prix-nettoyage-voiture-domicile',
     siteName: 'Shine&Go',
@@ -92,14 +92,14 @@ export default function PrixPage() {
                   <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600" />
                 ))}
               </div>
-              <span className="text-sm font-medium text-blue-900">Grille tarifaire 2025</span>
+              <span className="text-sm font-medium text-blue-900">Grille tarifaire 2026</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Prix Nettoyage Voiture <span className="block font-semibold mt-2 text-gray-900">Liège & Verviers</span>
+            <h1 className="page-title animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
+              Prix Nettoyage Voiture <span className="page-title-accent">Liège & Verviers</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
+            <p className="page-description px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto mb-8" style={{ animationDelay: '0.3s' }}>
               Des tarifs clairs et sans surprise pour un résultat showroom. Nous intervenons partout en province de Liège, directement chez vous ou à votre bureau.
               <span className="block mt-2 text-base text-gray-400 font-normal">Déplacement gratuit • Intervention sous 48h • Dès 65€</span>
             </p>
@@ -107,7 +107,7 @@ export default function PrixPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <a
                 href="https://wa.me/32472303701?text=Bonjour, je souhaite un devis pour un nettoyage voiture"
-                className="group w-full sm:w-auto px-8 py-4 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
+                className="btn btn-primary group w-full sm:w-auto"
               >
                 Demander mon devis WhatsApp
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -115,7 +115,7 @@ export default function PrixPage() {
 
               <a
                 href="tel:+32472303701"
-                className="w-full sm:w-auto px-8 py-4 border border-gray-200 text-gray-900 font-medium rounded-full hover:border-gray-300 hover:bg-gray-50 transition-all flex items-center justify-center"
+                className="btn btn-secondary w-full sm:w-auto"
               >
                 0472 30 37 01
               </a>

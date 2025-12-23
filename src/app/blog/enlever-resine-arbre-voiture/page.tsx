@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `La résine de pin colle et durcit. Ne grattez surtout pas ! Voici comment la dissoudre en douceur pour sauver votre peinture.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2024-01-20',
+    publishedTime: '2026-01-20',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2024-01-05",
+        "datePublished": "2026-01-05",
         "image": "https://shineandgo.be/images/blog/enlever-resine-arbre-voiture.webp"
       },
       {
@@ -66,21 +66,21 @@ export default function ArticlePage() {
         ]} 
       />
 
-      <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
+      <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
         
         {/* Header Article */}
         <header className="mb-12 text-center md:text-left">
-          <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
+          <Link href="/blog" className="link-arrow mb-8 inline-flex">
+            <ArrowLeft className="w-4 h-4" /> Retour au blog
           </Link>
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
-            <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Saisonnier</span>
-            <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 05 Avr 2024</span>
-            <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> 5 min de lecture</span>
+            <span className="badge-category">Saisonnier</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 05 Avr 2026</span>
+            <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 5 min de lecture</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-900 mb-8 text-balance">
+          <h1 className="article-title mb-8">
             Taches de Résine sur Voiture : Comment les Enlever Sans Abîmer la Peinture
           </h1>
 
@@ -92,24 +92,24 @@ export default function ArticlePage() {
         </header>
 
         {/* Contenu */}
-        <div className="prose prose-lg prose-blue max-w-none text-gray-700">
+        <div className="prose-shineandgo">
           
           {/* Sections dynamiques */}
           
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Ce qu'il ne faut JAMAIS faire</h2>
+            <h2>Ce qu'il ne faut JAMAIS faire</h2>
             <div dangerouslySetInnerHTML={{ __html: `Ne grattez pas avec l'ongle (risque de rayure). N'utilisez pas le côté vert de l'éponge (catastrophe assurée). N'attendez pas six mois (la résine va cuire).` }} />
           </section>
           
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">La Méthode Douce (Maison)</h2>
+            <h2>La Méthode Douce (Maison)</h2>
             <div dangerouslySetInnerHTML={{ __html: `L'eau très chaude aide à ramollir. L'huile alimentaire ou le beurre peuvent dissoudre la résine fraîche par action lipidique. Laissez poser, essuyez.` }} />
           </section>
           
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">La Méthode Radicale (Produits)</h2>
+            <h2>La Méthode Radicale (Produits)</h2>
             <div dangerouslySetInnerHTML={{ __html: `Utilisez un dégoudronnant/dérésinant spécifique auto. Imbibez un coton, posez-le sur la goutte de résine 1 minute. La résine va fondre. Essuyez doucement.` }} />
           </section>
           
@@ -119,7 +119,7 @@ export default function ArticlePage() {
              <p>Après avoir enlevé la résine, pensez à remettre un peu de cire sur la zone car le produit aura tout enlevé.</p>
           </div>
 
-          <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">FAQ - Questions Fréquentes</h2>
+          <h2>FAQ - Questions Fréquentes</h2>
           <div className="space-y-6">
             
             <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
@@ -137,7 +137,7 @@ export default function ArticlePage() {
           {/* CTA FINAL */}
           <div className="mt-20 p-8 sm:p-12 bg-gray-900 rounded-3xl text-center text-white relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Besoin d'un résultat professionnel ?</h2>
+              <h2>Besoin d'un résultat professionnel ?</h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Nos experts Shine&Go interviennent partout en province de Liège. Évitez les efforts, on s'occupe de tout.
               </p>
@@ -155,11 +155,10 @@ export default function ArticlePage() {
                   Devis WhatsApp 
                 </a>
               </div>
-            </div>
+            
           </div>
-
-        </div>
-      </article>
+          
+          </div></div></article>
     </main>
   )
 }

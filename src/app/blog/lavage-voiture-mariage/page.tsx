@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Pour le plus beau jour de votre vie, la voiture des mariés doit être éblouissante. Forfait préparation esthétique mariage.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2024-Mai-15', // Approx date conv
+    publishedTime: '2026-Mai-15', // Approx date conv
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2024-04-15", // Generic date for schema or parse correctly
+        "datePublished": "2026-04-15", // Generic date for schema or parse correctly
         "image": "https://shineandgo.be/images/blog/default-blog.jpg" // Placeholder if specific img not generated
       },
       {
@@ -66,21 +66,21 @@ export default function ArticlePage() {
         ]} 
       />
 
-      <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
+      <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
         
         {/* Header Article */}
         <header className="mb-12 text-center md:text-left">
-          <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
+          <Link href="/blog" className="link-arrow mb-8 inline-flex">
+            <ArrowLeft className="w-4 h-4" /> Retour au blog
           </Link>
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
-            <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Événement</span>
-            <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 15 Mai 2024</span>
-            <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> 4 min de lecture</span>
+            <span className="badge-category">Événement</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Mai 2026</span>
+            <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 4 min de lecture</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-900 mb-8 text-balance">
+          <h1 className="article-title mb-8">
             Lavage Voiture pour Mariage : Brillance Garantie Jour J
           </h1>
 
@@ -92,18 +92,18 @@ export default function ArticlePage() {
         </header>
 
         {/* Contenu */}
-        <div className="prose prose-lg prose-blue max-w-none text-gray-700">
+        <div className="prose-shineandgo">
           
           {/* Sections dynamiques */}
           
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Brillance Maximale</h2>
+            <h2>Brillance Maximale</h2>
             <div dangerouslySetInnerHTML={{ __html: `Nous utilisons des cires carnauba ou des lustrants rapides (Quick Detailer) juste avant l'événement pour un effet miroir profond.` }} />
           </section>
           
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Intérieur Compatible Robe Blanche</h2>
+            <h2>Intérieur Compatible Robe Blanche</h2>
             <div dangerouslySetInnerHTML={{ __html: `L'intérieur doit être immaculé. Aucune trace de gras ne doit risquer de tacher la robe de la mariée. Seuils de portes ultra-propres garantis.` }} />
           </section>
           
@@ -113,7 +113,7 @@ export default function ArticlePage() {
              <div dangerouslySetInnerHTML={{ __html: `Réservez votre créneau la veille du mariage pour éviter le stress.` }} />
           </div>
 
-          <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">FAQ - Questions Fréquentes</h2>
+          <h2>FAQ - Questions Fréquentes</h2>
           <div className="space-y-6">
             
             <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
@@ -131,7 +131,7 @@ export default function ArticlePage() {
           {/* CTA FINAL */}
           <div className="mt-20 p-8 sm:p-12 bg-gray-900 rounded-3xl text-center text-white relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Besoin d'un résultat professionnel ?</h2>
+              <h2>Besoin d'un résultat professionnel ?</h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Nos experts Shine&Go interviennent partout en province de Liège. Évitez les efforts, on s'occupe de tout.
               </p>
@@ -159,10 +159,15 @@ export default function ArticlePage() {
                     ou consultez nos zones d'intervention à <Link href="/nettoyage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/nettoyage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
                 </p>
             </div>
-          </div>
+          
 
-        </div>
-      </article>
+        
+      
+          
+      
+          </div>
+          
+          </div></article>
     </main>
   )
 }

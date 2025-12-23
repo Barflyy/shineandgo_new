@@ -5,11 +5,11 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-    title: 'Nettoyage Intérieur Voiture : Le Guide Complet 2024 | Shine&Go',
+    title: 'Nettoyage Intérieur Voiture : Le Guide Complet 2026 | Shine&Go',
     description: 'Guide expert : Comment nettoyer l\'intérieur de sa voiture comme un pro ? Tableau de bord, sièges, tapis... Toutes les étapes et astuces de detailing.',
     openGraph: {
         type: 'article',
-        publishedTime: '2024-01-15',
+        publishedTime: '2026-01-15',
         authors: ['Shine&Go'],
     }
 }
@@ -20,7 +20,7 @@ export default function ArticleNettoyageInterieur() {
         "@graph": [
             {
                 "@type": "Article",
-                "headline": "Nettoyage Intérieur Voiture : Le Guide Complet 2024",
+                "headline": "Nettoyage Intérieur Voiture : Le Guide Complet 2026",
                 "author": {
                     "@type": "Organization",
                     "name": "Shine & Go"
@@ -33,8 +33,8 @@ export default function ArticleNettoyageInterieur() {
                         "url": "https://shineandgo.be/logo.png"
                     }
                 },
-                "datePublished": "2024-01-15",
-                "dateModified": "2024-01-15",
+                "datePublished": "2026-01-15",
+                "dateModified": "2026-01-15",
                 "image": "https://shineandgo.be/images/blog/nettoyage-interieur.webp"
             },
             {
@@ -83,22 +83,22 @@ export default function ArticleNettoyageInterieur() {
                 ]}
             />
 
-            <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
+            <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
 
                 {/* Header Article */}
                 <header className="mb-12 text-center md:text-left">
-                    <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
-                    </Link>
+                    <Link href="/blog" className="link-arrow mb-8 inline-flex">
+            <ArrowLeft className="w-4 h-4" /> Retour au blog
+          </Link>
 
                     <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
-                        <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Guide</span>
-                        <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 15 Jan 2024</span>
-                        <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> 10 min de lecture</span>
+                        <span className="badge-category">Guide</span>
+                        <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Jan 2026</span>
+                        <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 10 min de lecture</span>
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-900 mb-8">
-                        Nettoyage Intérieur Voiture : Le Guide Complet 2024
+                    <h1 className="article-title mb-8">
+                        Nettoyage Intérieur Voiture : Le Guide Complet 2026
                     </h1>
 
                     <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl">
@@ -109,13 +109,13 @@ export default function ArticleNettoyageInterieur() {
                 </header>
 
                 {/* Contenu */}
-                <div className="prose prose-lg prose-blue max-w-none text-gray-700">
+                <div className="prose-shineandgo">
 
                     <p className="lead text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
                         Vous passez des heures dans votre voiture chaque semaine. Pourtant, son intérieur est souvent négligé jusqu'à ce que la poussière, les miettes et les taches deviennent insupportables. Dans ce guide complet, nous vous dévoilons les techniques des professionnels du detailing pour transformer votre habitacle.
                     </p>
 
-                    <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">Pourquoi nettoyer régulièrement l'intérieur ?</h2>
+                    <h2>Pourquoi nettoyer régulièrement l'intérieur ?</h2>
                     <p>Au-delà de l'esthétique, un habitacle propre est crucial pour :</p>
                     <ul className="space-y-2 mb-8">
                         <li className="flex items-start gap-3">
@@ -132,7 +132,7 @@ export default function ArticleNettoyageInterieur() {
                         </li>
                     </ul>
 
-                    <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">Le Matériel Nécessaire</h2>
+                    <h2>Le Matériel Nécessaire</h2>
                     <div className="grid md:grid-cols-2 gap-8 mb-12">
                         <div className="bg-gray-50 p-6 rounded-2xl">
                             <h3 className="text-xl font-bold mb-4 text-blue-900">Les Indispensables</h3>
@@ -155,7 +155,7 @@ export default function ArticleNettoyageInterieur() {
                         </div>
                     </div>
 
-                    <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">Nettoyage Étape par Étape</h2>
+                    <h2>Nettoyage Étape par Étape</h2>
 
                     <div className="space-y-12">
                         <section>
@@ -187,7 +187,7 @@ export default function ArticleNettoyageInterieur() {
                         </section>
                     </div>
 
-                    <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">3 Erreurs à Éviter Absolument</h2>
+                    <h2>3 Erreurs à Éviter Absolument</h2>
                     <div className="space-y-4 mb-12">
                         <div className="flex gap-4 items-start bg-red-50 p-4 rounded-xl">
                             <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
@@ -212,7 +212,7 @@ export default function ArticleNettoyageInterieur() {
                         </div>
                     </div>
 
-                    <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">FAQ - Questions Fréquentes</h2>
+                    <h2>FAQ - Questions Fréquentes</h2>
                     <div className="space-y-6">
                         <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
                             <summary className="font-medium text-gray-900 flex justify-between items-center">
@@ -237,7 +237,7 @@ export default function ArticleNettoyageInterieur() {
                     {/* CTA FINAL */}
                     <div className="mt-20 p-8 sm:p-12 bg-gray-900 rounded-3xl text-center text-white relative overflow-hidden">
                         <div className="relative z-10">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Pas le temps ou pas le matériel ?</h2>
+                            <h2>Pas le temps ou pas le matériel ?</h2>
                             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                                 Confiez-nous votre véhicule. Nos experts Shine&Go interviennent à domicile avec tout le matériel professionnel nécessaire.
                             </p>
@@ -259,10 +259,13 @@ export default function ArticleNettoyageInterieur() {
                         {/* Décoration background */}
                         <div className="absolute top-0 right-0 -mt-12 -mr-12 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl"></div>
-                    </div>
+                    
 
-                </div>
-            </article>
-        </main>
+                
+            
+          </div>
+          
+          </div></article>
+    </main>
     )
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Boue, déchets, moisissures... Votre voiture est dans un état critique ? Pas de jugement, juste des solutions radicales.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2024-Avr-18', // Approx date conv
+    publishedTime: '2026-Avr-18', // Approx date conv
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2024-04-15", // Generic date for schema or parse correctly
+        "datePublished": "2026-04-15", // Generic date for schema or parse correctly
         "image": "https://shineandgo.be/images/blog/default-blog.jpg" // Placeholder if specific img not generated
       },
       {
@@ -100,18 +100,18 @@ export default function ArticlePage() {
         ]} 
       />
 
-      <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
+      <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
         
         {/* Header Article */}
         <header className="mb-12 text-center md:text-left">
-          <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
+          <Link href="/blog" className="link-arrow mb-8 inline-flex">
+            <ArrowLeft className="w-4 h-4" /> Retour au blog
           </Link>
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
-            <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Solutions</span>
-            <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 18 Avr 2024</span>
-            <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> 8 min de lecture</span>
+            <span className="badge-category">Solutions</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 18 Avr 2026</span>
+            <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 8 min de lecture</span>
           </div>
 
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
@@ -125,24 +125,24 @@ export default function ArticlePage() {
         </header>
 
         {/* Contenu */}
-        <div className="prose prose-lg prose-blue max-w-none text-gray-700">
+        <div className="prose-shineandgo">
           
           {/* Sections dynamiques */}
           
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Le 'Disaster Detail' : Notre Spécialité</h2>
+            <h2>Le 'Disaster Detail' : Notre Spécialité</h2>
             <div dangerouslySetInnerHTML={{ __html: `Nous procédons par étapes : évacuation des déchets, démontage des sièges si nécessaire, aspiration gros débit, shampoing mousse active, et désinfection finale.` }} />
           </section>
           
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Ne le faites pas vous-même</h2>
+            <h2>Ne le faites pas vous-même</h2>
             <div dangerouslySetInnerHTML={{ __html: `Avec un aspirateur domestique et une éponge, vous allez juste étaler la crasse et boucher votre appareil. Il faut du matériel industriel pour les cas extrêmes.` }} />
           </section>
           
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Pas de Honte</h2>
+            <h2>Pas de Honte</h2>
             <div dangerouslySetInnerHTML={{ __html: `Nos techniciens sont pros. Nous sommes là pour résoudre un problème, pas pour juger l'état de votre véhicule. Confidentialité assurée.` }} />
           </section>
           
@@ -152,7 +152,7 @@ export default function ArticlePage() {
              <div dangerouslySetInnerHTML={{ __html: `Offrez un nouveau départ à votre voiture (et à vous-même).` }} />
           </div>
 
-          <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-6">FAQ - Questions Fréquentes</h2>
+          <h2>FAQ - Questions Fréquentes</h2>
           <div className="space-y-6">
             
             <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
@@ -170,7 +170,7 @@ export default function ArticlePage() {
           {/* CTA FINAL */}
           <div className="mt-20 p-8 sm:p-12 bg-gray-900 rounded-3xl text-center text-white relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Besoin d'un résultat professionnel ?</h2>
+              <h2>Besoin d'un résultat professionnel ?</h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Nos experts Shine&Go interviennent partout en province de Liège. Évitez les efforts, on s'occupe de tout.
               </p>
@@ -198,10 +198,15 @@ export default function ArticlePage() {
                     ou consultez nos zones d'intervention à <Link href="/nettoyage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/nettoyage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
                 </p>
             </div>
-          </div>
+          
 
-        </div>
-      </article>
+        
+      
+          
+      
+          </div>
+          
+          </div></article>
     </main>
   )
 }

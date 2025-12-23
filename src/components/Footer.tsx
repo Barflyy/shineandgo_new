@@ -129,7 +129,7 @@ export default function Footer() {
                 {/* Bottom */}
                 <div className="pt-6 sm:pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
                     <div className="text-xs sm:text-sm text-gray-500">
-                        © 2025 Shine&Go. Nettoyage voiture professionnel à domicile.
+                        © 2026 Shine&Go. Nettoyage voiture professionnel à domicile.
                     </div>
                     <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">
                         <Link href="/mentions-legales" className="hover:text-gray-900 transition-colors">

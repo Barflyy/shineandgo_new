@@ -327,7 +327,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="text-xs border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; 2025 Shine&Go Belgique.</p>
+            <p>&copy; 2026 Shine&Go Belgique.</p>
             <p>Service nécessitant un accès eau & électricité.</p>
           </div>
         </div>

@@ -33,12 +33,12 @@ export default function BlogListing() {
 
                 <div className="relative">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white border border-blue-100 text-blue-700 text-xs font-black mb-8 shadow-sm tracking-[0.2em] uppercase">
-                        <Sparkles className="w-4 h-4 text-amber-400 fill-amber-400" /> Guide Expert 2024
+                        <Sparkles className="w-4 h-4 text-amber-400 fill-amber-400" /> Guide Expert 2026
                     </div>
-                    <h1 className="text-5xl md:text-8xl font-black text-gray-950 mb-8 tracking-tighter leading-[0.95]">
-                        Le Blog du <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Detailing</span>
+                    <h1 className="page-title mb-8">
+                        Le Blog du <br /><span className="text-gradient font-semibold">Detailing</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                    <p className="page-description max-w-2xl mx-auto mb-12">
                         Secrets de pro, guides d'achat et astuces d'entretien pour transformer votre véhicule en showroom roulant.
                     </p>
 

@@ -484,7 +484,7 @@ function NettoyageCompletFooter() {
         <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-slate-400 text-sm mb-4 md:mb-0">
-              © 2024 Shine&Go. Tous droits réservés.
+              © 2026 Shine&Go. Tous droits réservés.
             </div>
             <div className="flex items-center gap-6 text-slate-400 text-sm">
               <a href="/mentions-legales" className="hover:text-white transition-colors">

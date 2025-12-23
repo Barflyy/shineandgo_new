@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Script de mise à jour des articles de blog vers le design system unifié
+# Usage: ./update-blog-design-guide.sh
+
+# Ce script affiche les patterns à rechercher/remplacer manuellement dans les articles
+
+echo "=== Guide de mise à jour des articles de blog vers le design system unifié ==="
+echo ""
+echo "Patterns à remplacer dans chaque fichier blog/*/page.tsx :"
+echo ""
+echo "1. BREADCRUMBS:"
+echo "   Avant: { label: 'Blog Detailing', href: '/blog' }"
+echo "   Après: { label: 'Blog', href: '/blog' }"
+echo ""
+echo "2. ARTICLE CONTAINER:"
+echo "   Avant: <article className=\"max-w-4xl mx-auto px-6 py-12\">"
+echo "   Après: <article className=\"max-w-4xl mx-auto px-6 py-12 md:py-16\">"
+echo ""
+echo "3. HEADER:"
+echo "   Avant: <header className=\"mb-16\">"
+echo "   Après: <header className=\"mb-12\">"
+echo ""
+echo "4. LIEN RETOUR:"
+echo "   Avant: <Link href=\"/blog\" className=\"inline-flex items-center text-blue-600 font-bold...\">"
+echo "   Après: <Link href=\"/blog\" className=\"link-arrow mb-8 inline-flex\">"
+echo ""
+echo "5. BADGE CATEGORIE:"
+echo "   Avant: <span className=\"bg-blue-600 text-white px-4 py-1.5 rounded-full font-bold...\">"
+echo "   Après: <span className=\"badge-category\">"
+echo ""
+echo "6. META (date/temps):"
+echo "   Avant: <span className=\"flex items-center gap-2 text-gray-500 font-medium\">"
+echo "   Après: <span className=\"meta-text flex items-center gap-2\">"
+echo ""
+echo "7. TITRE H1:"
+echo "   Avant: <h1 className=\"text-4xl md:text-6xl font-black text-gray-900 mb-8 leading-[1.1]\">"
+echo "   Après: <h1 className=\"article-title mb-8\">"
+echo ""
+echo "=== FIN DU GUIDE ==="
