@@ -92,27 +92,58 @@ export default function ArticlePage() {
 
         <div className="prose prose-lg prose-blue max-w-none text-gray-700">
           
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Pourquoi est-ce important ?
+          
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <ShieldCheck className="text-blue-600 w-8 h-8 flex-shrink-0" /> Pourquoi le problème de nettoyer le ciel de toit sans décoller persiste ?
             </h2>
-            <p>Un entretien régulier prévient les dégradations irréversibles.</p>
-          </section>
-        
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Notre approche
-            </h2>
-            <p>Nous utilisons des techniques professionnelles adaptées à chaque cas.</p>
-          </section>
-        
-
-          <div className="bg-gray-900 p-8 md:p-12 rounded-3xl text-white my-16">
-            <h3 className="text-2xl font-bold mb-4">Conclusion</h3>
-            <p className="text-gray-300 leading-relaxed">
-               Faites confiance à des professionnels pour un résultat optimal.
+            <p className="text-xl leading-relaxed text-gray-700 mb-6">
+              Traiter le nettoyer le ciel de toit sans décoller est souvent un cauchemar pour les particuliers. La raison est simple : les méthodes grand public ne traitent souvent que la surface visible du problème.
             </p>
-          </div>
+            <p className="text-xl leading-relaxed text-gray-700">
+              Les odeurs s'incrustent dans les mousses des sièges, les taches grasses repoussent si elles ne sont pas extraites en profondeur, et les micro-rayures nécessitent un polissage abrasif maîtrisé pour disparaître sans percer le vernis.
+            </p>
+          </section>
+
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <Sparkles className="text-blue-600 w-8 h-8 flex-shrink-0" /> L'approche professionnelle Shine&Go
+            </h2>
+            <div className="bg-white shadow-xl shadow-gray-100 rounded-3xl p-8 border border-gray-100">
+                <p className="text-xl leading-relaxed text-gray-700 mb-8">
+                    Contre le nettoyer le ciel de toit sans décoller, nous déployons l'artillerie lourde du detailing :
+                </p>
+                <div className="grid gap-6">
+                    <div className="flex gap-4">
+                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <Sparkles className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold text-gray-900">Chimie Active</h3>
+                            <p className="text-gray-600">Utilisation d'enzymes gloutons pour les odeurs organiques ou de dissolvants spécifiques pour les goudrons et résines, sans abîmer les supports.</p>
+                        </div>
+                    </div>
+                    <div className="flex gap-4">
+                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <Clock className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold text-gray-900">Action Mécanique & Thermique</h3>
+                            <p className="text-gray-600">La vapeur sèche à 160°C ou l'injection-extraction permettent de désincruster ce que la main seule ne peut atteindre.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <Check className="text-blue-600 w-8 h-8 flex-shrink-0" /> Résultat Garanti
+            </h2>
+            <p className="text-xl leading-relaxed text-gray-700">
+              Ne perdez plus de temps et d'argent dans des produits miracles de supermarché. Pour le nettoyer le ciel de toit sans décoller, une intervention unique d'un pro vaut souvent moins cher que l'accumulation de tentatives ratées, sans parler du risque d'aggraver la situation.
+            </p>
+          </section>
 
           <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-8">FAQ - Questions Fréquentes</h2>
           <div className="space-y-4">

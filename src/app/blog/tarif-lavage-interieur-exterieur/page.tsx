@@ -92,27 +92,50 @@ export default function ArticlePage() {
 
         <div className="prose prose-lg prose-blue max-w-none text-gray-700">
           
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Pourquoi est-ce important ?
+          
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <Sparkles className="text-blue-600 w-8 h-8 flex-shrink-0" /> Comprendre le prix du tarif lavage intérieur + extérieur
             </h2>
-            <p>Un entretien régulier prévient les dégradations irréversibles.</p>
-          </section>
-        
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Notre approche
-            </h2>
-            <p>Nous utilisons des techniques professionnelles adaptées à chaque cas.</p>
-          </section>
-        
-
-          <div className="bg-gray-900 p-8 md:p-12 rounded-3xl text-white my-16">
-            <h3 className="text-2xl font-bold mb-4">Conclusion</h3>
-            <p className="text-gray-300 leading-relaxed">
-               Faites confiance à des professionnels pour un résultat optimal.
+            <p className="text-xl leading-relaxed text-gray-700 mb-6">
+              Une question revient souvent : pourquoi existe-t-il de tels écarts de prix pour le tarif lavage intérieur + extérieur ? La réponse réside dans la différence fondamentale entre un simple "lavage" et une véritable prestation de "detailing".
             </p>
-          </div>
+            <p className="text-xl leading-relaxed text-gray-700">
+              Là où une station de lavage automatise le processus en 5 minutes avec des brosses agressives, un detailer passe plusieurs heures à traiter chaque centimètre carré du véhicule avec des outils de précision.
+            </p>
+          </section>
+
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <ShieldCheck className="text-blue-600 w-8 h-8 flex-shrink-0" /> Ce qui influence le devis final
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <h3 className="font-bold text-lg mb-3 text-gray-900">1. La Taille</h3>
+                    <p className="text-gray-600 text-sm">Une Fiat 500 demande logiquement moins de produits et de temps qu'un Range Rover ou une camionnette utilitaire.</p>
+                </div>
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <h3 className="font-bold text-lg mb-3 text-gray-900">2. L'État initial</h3>
+                    <p className="text-gray-600 text-sm">Poils de chiens incrustés, moisissures, taches de vomi ou boue séchée nécessitent des équipements spécifiques (injecteur-extracteur, vapeur) qui allongent la prestation.</p>
+                </div>
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <h3 className="font-bold text-lg mb-3 text-gray-900">3. Le Niveau de finition</h3>
+                    <p className="text-gray-600 text-sm">Souhaitez-vous juste "propre" ou "comme neuf" ? L'ajout de protections céramiques, le dressing des plastiques ou le soin des cuirs sont des étapes premium.</p>
+                </div>
+            </div>
+          </section>
+
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <Sparkles className="text-blue-600 w-8 h-8 flex-shrink-0" /> Est-ce un investissement rentable ?
+            </h2>
+            <p className="text-xl leading-relaxed text-gray-700 mb-6">
+              Absolument. Un véhicule régulièrement entretenu par un professionnel se revend en moyenne <strong>15% à 20% plus cher</strong>.
+            </p>
+            <p className="text-xl leading-relaxed text-gray-700">
+              Pour le tarif lavage intérieur + extérieur, voir cela comme une dépense est une erreur : c'est un investissement qui protège la valeur de votre capital automobile contre la décote naturelle et l'usure du temps.
+            </p>
+          </section>
 
           <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-8">FAQ - Questions Fréquentes</h2>
           <div className="space-y-4">

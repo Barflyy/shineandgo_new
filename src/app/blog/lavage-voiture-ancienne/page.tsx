@@ -92,27 +92,78 @@ export default function ArticlePage() {
 
         <div className="prose prose-lg prose-blue max-w-none text-gray-700">
           
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Pourquoi est-ce important ?
+          
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <Sparkles className="text-blue-600 w-8 h-8 flex-shrink-0" /> Pourquoi le lavage voiture de collection est essentiel ?
             </h2>
-            <p>Un entretien régulier prévient les dégradations irréversibles.</p>
-          </section>
-        
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Sparkles className="text-blue-600" /> Notre approche
-            </h2>
-            <p>Nous utilisons des techniques professionnelles adaptées à chaque cas.</p>
-          </section>
-        
-
-          <div className="bg-gray-900 p-8 md:p-12 rounded-3xl text-white my-16">
-            <h3 className="text-2xl font-bold mb-4">Conclusion</h3>
-            <p className="text-gray-300 leading-relaxed">
-               Faites confiance à des professionnels pour un résultat optimal.
+            <p className="text-xl leading-relaxed text-gray-700 mb-6">
+              Beaucoup de propriétaires sous-estiment l'importance de ce point. Pourtant, négliger le lavage voiture de collection peut entraîner une dégradation accélérée de vos matériaux (cuirs, plastiques, tissus) et une perte significative de la valeur de revente de votre véhicule.
             </p>
-          </div>
+            <p className="text-xl leading-relaxed text-gray-700">
+              Au-delà de l'esthétique, il s'agit de préserver votre capital automobile. Une intervention professionnelle permet de stopper l'usure et de redonner un aspect 'sortie d'usine' durable.
+            </p>
+          </section>
+
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <ShieldCheck className="text-blue-600 w-8 h-8 flex-shrink-0" /> Les 3 erreurs à éviter absolument
+            </h2>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4">
+                <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-red-600 font-bold">1</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Utiliser des produits ménagers</h3>
+                  <p className="text-gray-600">Le liquide vaisselle ou les nettoyants multi-surfaces sont souvent trop agressifs pour les vernis et les cuirs automobiles. Ils assèchent les matières et créent des micro-rayures.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-red-600 font-bold">2</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Agir trop tard</h3>
+                  <p className="text-gray-600">Attendre que la saleté soit incrustée rend le nettoyage deux fois plus difficile et coûteux. L'entretien régulier est la clé de la longévité.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-red-600 font-bold">3</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Ignorer les finitions</h3>
+                  <p className="text-gray-600">Un nettoyage sans protection (cire, dressing plastiques) ne dure pas. Les surfaces, mises à nu, se ré-encrassent immédiatement si elles ne sont pas protégées.</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8 flex items-center gap-4">
+              <Sparkles className="text-blue-600 w-8 h-8 flex-shrink-0" /> La solution Shine&Go : Expertise à Domicile
+            </h2>
+            <div className="bg-blue-50 rounded-3xl p-8 border border-blue-100">
+              <p className="text-xl leading-relaxed text-blue-900 mb-6">
+                Pour garantir un résultat parfait sur le lavage voiture de collection, nous utilisons une approche méthodique :
+              </p>
+              <ul className="grid md:grid-cols-2 gap-6">
+                <li className="flex items-center gap-3 text-blue-800 font-medium">
+                  <Check className="w-5 h-5 text-blue-600" /> Diagnostic précis de l'état
+                </li>
+                <li className="flex items-center gap-3 text-blue-800 font-medium">
+                  <Check className="w-5 h-5 text-blue-600" /> Chimie professionnelle (pH neutre)
+                </li>
+                <li className="flex items-center gap-3 text-blue-800 font-medium">
+                  <Check className="w-5 h-5 text-blue-600" /> Outillage spécialisé (Vapeur, souffleur)
+                </li>
+                <li className="flex items-center gap-3 text-blue-800 font-medium">
+                  <Check className="w-5 h-5 text-blue-600" /> Finitions et protections haut de gamme
+                </li>
+              </ul>
+            </div>
+          </section>
 
           <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-8">FAQ - Questions Fréquentes</h2>
           <div className="space-y-4">
