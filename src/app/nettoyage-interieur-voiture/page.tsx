@@ -30,11 +30,11 @@ export const metadata: Metadata = {
 export default function NettoyageInterieurPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { 'label': 'Services', 'href': '/#services' }, 
+          { 'label': 'Services', 'href': '/#services' },
           { 'label': 'Nettoyage Intérieur' }
-        ]} 
+        ]}
       />
 
       {/* HERO */}
@@ -415,84 +415,82 @@ export default function NettoyageInterieurPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Nettoyage Intérieur Voiture à Domicile",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
-            "telephone": "+32472303701",
-            "priceRange": "65€ - 190€",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue de la Station 15",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-            }
-        },
-        "areaServed": [
-            "Herve",
-            "Verviers",
-            "Liège",
-            "Battice",
-            "Soumagne",
-            "Spa",
-            "Fléron",
-            "Visé"
-        ],
-        "description": "Service professionnel de nettoyage intérieur voiture à domicile partout en province de Liège."
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
             {
-                "@type": "Question",
-                "name": "Faut-il vider la voiture avant ?",
-                "acceptedAnswer": {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Nettoyage Intérieur Voiture à Domicile",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Shine&Go",
+                "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
+                "telephone": "+32472303701",
+                "priceRange": "65€ - 190€",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Rue de la Station 15",
+                  "addressLocality": "Herve",
+                  "postalCode": "4650",
+                  "addressRegion": "Liège",
+                  "addressCountry": "BE"
+                }
+              },
+              "areaServed": [
+                "Herve",
+                "Verviers",
+                "Liège",
+                "Battice",
+                "Soumagne",
+                "Spa",
+                "Fléron",
+                "Visé"
+              ],
+              "description": "Service professionnel de nettoyage intérieur voiture à domicile partout en province de Liège."
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Faut-il vider la voiture avant ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Oui, merci de retirer vos effets personnels (lunettes, câbles, papiers, sièges auto si possible) pour nous permettre d'aller dans les moindres recoins."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Les tapis seront-ils mouillés ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Les tapis seront-ils mouillés ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Ils seront légèrement humides après le shampouinage. En été, ils sèchent en 1h. En hiver, comptez quelques heures avec le chauffage. Nous utilisons une aspiration puissante pour extraire 90% de l'eau."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Enlevez-vous les poils de chien ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Enlevez-vous les poils de chien ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Oui, nous avons des brosses spéciales pour les poils d'animaux. Un supplément peut s'appliquer si la quantité est très importante."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Besoin d'électricité ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Besoin d'électricité ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Oui, une prise classique à moins de 25m est idéale. Si ce n'est pas possible, prévenez-nous !"
+                  }
                 }
-            }
-        ]
-    },
+              ]
+            },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Nettoyage Intérieur",
-                "item": "https://shineandgo.be/nettoyage-interieur-voiture"
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Nettoyage Intérieur",
+              "item": "https://shineandgo.be/nettoyage-interieur-voiture"
             }
-        ]
-    }
-])
+          ])
         }}
       />
 

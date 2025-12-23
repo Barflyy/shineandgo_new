@@ -31,11 +31,11 @@ export const metadata: Metadata = {
 export default function NettoyageExterieurPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { 'label': 'Services', 'href': '/#services' }, 
+          { 'label': 'Services', 'href': '/#services' },
           { 'label': 'Nettoyage Extérieur' }
-        ]} 
+        ]}
       />
 
       {/* HERO - Minimaliste épuré */}
@@ -368,29 +368,29 @@ export default function NettoyageExterieurPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-x5.webp', 
-                  title: 'BMW X5', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-x5.webp',
+                  title: 'BMW X5',
                   subtitle: 'Formule Complète',
-                  tags: ['Extérieur', 'Intérieur', 'Cuir'] 
+                  tags: ['Extérieur', 'Intérieur', 'Cuir']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-z4.webp', 
-                  title: 'BMW Z4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-z4.webp',
+                  title: 'BMW Z4',
                   subtitle: 'Préparation à la vente',
-                  tags: ['Capote', 'Polissage', 'Céramique'] 
+                  tags: ['Capote', 'Polissage', 'Céramique']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-audi-rs3.webp', 
-                  title: 'Audi RS3', 
+                {
+                  image: '/images/realisations/lavage-complet-audi-rs3.webp',
+                  title: 'Audi RS3',
                   subtitle: 'Entretien Premium',
-                  tags: ['Lavage Main', 'Jantes', 'Cire'] 
+                  tags: ['Lavage Main', 'Jantes', 'Cire']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-serie4.webp', 
-                  title: 'BMW Série 4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-serie4.webp',
+                  title: 'BMW Série 4',
                   subtitle: 'Remise à neuf',
-                  tags: ['Intérieur', 'Moquettes', 'Plastiques'] 
+                  tags: ['Intérieur', 'Moquettes', 'Plastiques']
                 },
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
@@ -526,84 +526,82 @@ export default function NettoyageExterieurPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Nettoyage Extérieur Voiture à Domicile",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
-            "telephone": "+32472303701",
-            "priceRange": "65€ - 190€",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue de la Station 15",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-            }
-        },
-        "areaServed": [
-            "Herve",
-            "Verviers",
-            "Liège",
-            "Battice",
-            "Soumagne",
-            "Spa",
-            "Fléron",
-            "Visé"
-        ],
-        "description": "Service professionnel de nettoyage extérieur voiture à domicile partout en province de Liège."
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
             {
-                "@type": "Question",
-                "name": "Utilisez-vous de l'eau ?",
-                "acceptedAnswer": {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Nettoyage Extérieur Voiture à Domicile",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Shine&Go",
+                "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
+                "telephone": "+32472303701",
+                "priceRange": "65€ - 190€",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Rue de la Station 15",
+                  "addressLocality": "Herve",
+                  "postalCode": "4650",
+                  "addressRegion": "Liège",
+                  "addressCountry": "BE"
+                }
+              },
+              "areaServed": [
+                "Herve",
+                "Verviers",
+                "Liège",
+                "Battice",
+                "Soumagne",
+                "Spa",
+                "Fléron",
+                "Visé"
+              ],
+              "description": "Service professionnel de nettoyage extérieur voiture à domicile partout en province de Liège."
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Utilisez-vous de l'eau ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Oui, nous utilisons un nettoyeur haute pression professionnel avec un débit maîtrisé pour rincer. Nous avons besoin d'un robinet à moins de 25m. Si ce n'est pas possible, nous avons une réserve d'eau (à préciser à la réservation)."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Risque de rayures ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Risque de rayures ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Aucun. Nous n'utilisons pas de rouleaux, mais des gants microfibres et la technique des deux seaux. C'est la méthode la plus sûre pour votre peinture."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Et s'il pleut ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Et s'il pleut ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Si vous n'avez pas de carport ou de garage où nous pouvons travailler à l'abri, nous devrons reporter le rendez-vous. Nous vous contacterons la veille si la météo est mauvaise."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "La cire dure combien de temps ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "La cire dure combien de temps ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "La cire de protection incluse dans la formule dure environ 2 à 3 mois selon l'utilisation du véhicule et son stationnement (garage ou extérieur)."
+                  }
                 }
-            }
-        ]
-    },
+              ]
+            },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Nettoyage Extérieur",
-                "item": "https://shineandgo.be/nettoyage-exterieur-voiture"
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Nettoyage Extérieur",
+              "item": "https://shineandgo.be/nettoyage-exterieur-voiture"
             }
-        ]
-    }
-])
+          ])
         }}
       />
 

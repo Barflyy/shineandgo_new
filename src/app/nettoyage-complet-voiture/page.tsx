@@ -31,11 +31,11 @@ export const metadata: Metadata = {
 export default function NettoyageCompletPage() {
   return (
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { 'label': 'Services', 'href': '/#services' }, 
+          { 'label': 'Services', 'href': '/#services' },
           { 'label': 'Nettoyage Complet' }
-        ]} 
+        ]}
       />
 
       {/* HERO - Minimaliste épuré */}
@@ -378,29 +378,29 @@ export default function NettoyageCompletPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-x5.webp', 
-                  title: 'BMW X5', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-x5.webp',
+                  title: 'BMW X5',
                   subtitle: 'Formule Complète',
-                  tags: ['Extérieur', 'Intérieur', 'Cuir'] 
+                  tags: ['Extérieur', 'Intérieur', 'Cuir']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-z4.webp', 
-                  title: 'BMW Z4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-z4.webp',
+                  title: 'BMW Z4',
                   subtitle: 'Préparation à la vente',
-                  tags: ['Capote', 'Polissage', 'Céramique'] 
+                  tags: ['Capote', 'Polissage', 'Céramique']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-audi-rs3.webp', 
-                  title: 'Audi RS3', 
+                {
+                  image: '/images/realisations/lavage-complet-audi-rs3.webp',
+                  title: 'Audi RS3',
                   subtitle: 'Entretien Premium',
-                  tags: ['Lavage Main', 'Jantes', 'Cire'] 
+                  tags: ['Lavage Main', 'Jantes', 'Cire']
                 },
-                { 
-                  image: '/images/realisations/lavage-complet-bmw-serie4.webp', 
-                  title: 'BMW Série 4', 
+                {
+                  image: '/images/realisations/lavage-complet-bmw-serie4.webp',
+                  title: 'BMW Série 4',
                   subtitle: 'Remise à neuf',
-                  tags: ['Intérieur', 'Moquettes', 'Plastiques'] 
+                  tags: ['Intérieur', 'Moquettes', 'Plastiques']
                 },
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
@@ -536,84 +536,82 @@ export default function NettoyageCompletPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Nettoyage Complet Voiture à Domicile",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
-            "telephone": "+32472303701",
-            "priceRange": "65€ - 190€",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rue de la Station 15",
-                "addressLocality": "Herve",
-                "postalCode": "4650",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-            }
-        },
-        "areaServed": [
-            "Herve",
-            "Verviers",
-            "Liège",
-            "Battice",
-            "Soumagne",
-            "Spa",
-            "Fléron",
-            "Visé"
-        ],
-        "description": "Service professionnel de nettoyage complet voiture à domicile partout en province de Liège."
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
             {
-                "@type": "Question",
-                "name": "Besoin d'eau ou d'électricité ?",
-                "acceptedAnswer": {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Nettoyage Complet Voiture à Domicile",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Shine&Go",
+                "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp",
+                "telephone": "+32472303701",
+                "priceRange": "65€ - 190€",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Rue de la Station 15",
+                  "addressLocality": "Herve",
+                  "postalCode": "4650",
+                  "addressRegion": "Liège",
+                  "addressCountry": "BE"
+                }
+              },
+              "areaServed": [
+                "Herve",
+                "Verviers",
+                "Liège",
+                "Battice",
+                "Soumagne",
+                "Spa",
+                "Fléron",
+                "Visé"
+              ],
+              "description": "Service professionnel de nettoyage complet voiture à domicile partout en province de Liège."
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Besoin d'eau ou d'électricité ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Combien de temps ça dure ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Combien de temps ça dure ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Comptez environ 3h à 3h30 pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Comment payer ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Comment payer ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Et s'il pleut ?",
-                "acceptedAnswer": {
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Et s'il pleut ?",
+                  "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
+                  }
                 }
-            }
-        ]
-    },
+              ]
+            },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Nettoyage Complet",
-                "item": "https://shineandgo.be/nettoyage-complet-voiture"
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Nettoyage Complet",
+              "item": "https://shineandgo.be/nettoyage-complet-voiture"
             }
-        ]
-    }
-])
+          ])
         }}
       />
     </main>

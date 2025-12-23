@@ -64,13 +64,11 @@ export default function PrixPage() {
                 "reviewCount": "150"
               }
             },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Tarifs",
-                  "item": "https://shineandgo.be/prix-nettoyage-voiture-domicile"
-                }
-              ]
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tarifs",
+              "item": "https://shineandgo.be/prix-nettoyage-voiture-domicile"
             }
           ])
         }}

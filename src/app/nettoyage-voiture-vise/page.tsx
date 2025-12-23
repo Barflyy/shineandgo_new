@@ -360,9 +360,7 @@ export default function VisePage() {
                 "name": "Vise",
                 "item": "https://shineandgo.be/nettoyage-voiture-vise"
             }
-        ]
-    }
-]) }}
+        ]) }}
       />
     </main>
   )

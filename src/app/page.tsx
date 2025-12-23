@@ -508,19 +508,19 @@ export default function HomePage() {
                   image: '/images/realisations/lavage-complet-bmw-x5.webp', 
                   title: 'BMW X5', 
                   subtitle: 'Formule Complète',
-                  tags: ['Extérieur', 'Intérieur', 'Cuir'] 
+                  tags: ['Extérieur', 'Intérieur', 'Cuir']
                 },
                 { 
                   image: '/images/realisations/lavage-complet-bmw-z4.webp', 
                   title: 'BMW Z4', 
                   subtitle: 'Préparation à la vente',
-                  tags: ['Capote', 'Polissage', 'Céramique'] 
+                  tags: ['Capote', 'Polissage', 'Céramique']
                 },
                 { 
                   image: '/images/realisations/lavage-complet-audi-rs3.webp', 
                   title: 'Audi RS3', 
                   subtitle: 'Entretien Premium',
-                  tags: ['Lavage Main', 'Jantes', 'Cire'] 
+                  tags: ['Lavage Main', 'Jantes', 'Cire']
                 },
                 { 
                   image: '/images/realisations/lavage-complet-bmw-serie4.webp', 
