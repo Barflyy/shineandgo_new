@@ -131,7 +131,7 @@ export default function BlogListing() {
                                 <div className="grid lg:grid-cols-2 gap-0">
                                     <div className="relative aspect-[16/10] lg:aspect-auto overflow-hidden">
                                         <Image
-                                            src={article.image || '/images/blog/default-blog.jpg'}
+                                            src={article.image || 'https://images.unsplash.com/photo-1552933061-90320eecd137?auto=format&fit=crop&q=80&w=1200'}
                                             alt={article.title}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-1000"
@@ -241,7 +241,7 @@ function ArticleCard({ article }: { article: any }) {
         >
             <div className="relative h-64 overflow-hidden">
                 <Image
-                    src={article.image || '/images/blog/default-blog.jpg'}
+                    src={article.image || 'https://images.unsplash.com/photo-1552933061-90320eecd137?auto=format&fit=crop&q=80&w=1200'}
                     alt={article.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
