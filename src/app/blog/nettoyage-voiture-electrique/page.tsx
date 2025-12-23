@@ -56,61 +56,61 @@ export default function ArticlePage() {
     <main className="bg-white min-h-screen font-sans">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([
-    {
-        "@context": "https://schema.org",
-        "@type": "AutoWash",
-        "name": "Shine&Go - Lavage voiture Electrique",
-        "description": "Service de nettoyage et detailing automobile à domicile à Electrique.",
-        "url": "https://shineandgo.be/nettoyage-voiture-electrique",
-        "telephone": "+32472303701",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Electrique",
-            "addressRegion": "Liège",
-            "addressCountry": "BE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "50.6386",
-            "longitude": "5.7942"
-        },
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Shine&Go",
-            "image": "/transformations/optimized/webp/apres01.webp"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150"
-        }
-    },
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Electrique",
-                "item": "https://shineandgo.be/nettoyage-voiture-electrique"
+              "@context": "https://schema.org",
+              "@type": "AutoWash",
+              "name": "Shine&Go - Lavage voiture Electrique",
+              "description": "Service de nettoyage et detailing automobile à domicile à Electrique.",
+              "url": "https://shineandgo.be/nettoyage-voiture-electrique",
+              "telephone": "+32472303701",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Electrique",
+                "addressRegion": "Liège",
+                "addressCountry": "BE"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "50.6386",
+                "longitude": "5.7942"
+              },
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Shine&Go",
+                "image": "https://shineandgo.be/transformations/optimized/webp/apres01.webp"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Electrique",
+              "item": "https://shineandgo.be/nettoyage-voiture-electrique"
             }
-        ]
-    }
-]) }}
+          ])
+        }}
       />
 
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { label: 'Blog', href: '/blog' }, 
+          { label: 'Blog', href: '/blog' },
           { label: 'Nettoyage Voiture Électrique ' }
-        ]} 
+        ]}
       />
 
       <article className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        
+
         <header className="mb-12">
           <Link href="/blog" className="inline-flex items-center text-gray-500 hover:text-blue-600 mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
           </Link>
-          
+
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 font-medium">
             <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Véhicule</span>
             <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> 15 Juil 2024</span>
@@ -118,7 +118,7 @@ export default function ArticlePage() {
           </div>
 
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Esthétique automobile et lavage à domicile à Blog</h1>
+            Esthétique automobile et lavage à domicile à Blog</h1>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 p-8 rounded-r-3xl mb-12">
             <p className="text-xl text-blue-900 italic font-medium leading-relaxed">
@@ -128,44 +128,44 @@ export default function ArticlePage() {
         </header>
 
         <div className="prose prose-lg prose-blue max-w-none text-gray-700">
-          
+
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
               <Sparkles className="text-blue-600" /> Pourquoi est-ce important ?
             </h2>
             <p>Un entretien régulier prévient les dégradations irréversibles.</p>
           </section>
-        
+
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
               <Sparkles className="text-blue-600" /> Notre approche
             </h2>
             <p>Nous utilisons des techniques professionnelles adaptées à chaque cas.</p>
           </section>
-        
+
 
           <div className="bg-gray-900 p-8 md:p-12 rounded-3xl text-white my-16">
             <h3 className="text-2xl font-bold mb-4">Conclusion</h3>
             <p className="text-gray-300 leading-relaxed">
-               Faites confiance à des professionnels pour un résultat optimal.
+              Faites confiance à des professionnels pour un résultat optimal.
             </p>
           </div>
 
           <h2 className="text-3xl font-bold text-gray-900 mt-16 mb-8">FAQ - Questions Fréquentes</h2>
           <div className="space-y-4">
-            
+
             <details className="group bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:border-blue-300 transition-colors">
               <summary className="font-bold text-gray-900 flex justify-between items-center list-none text-balance">
                 Est-ce cher ?
                 <span className="text-blue-600 transition-transform duration-300 group-open:rotate-180">
-                    <ArrowRight className="w-5 h-5 rotate-90" />
+                  <ArrowRight className="w-5 h-5 rotate-90" />
                 </span>
               </summary>
               <div className="mt-4 text-gray-600 leading-relaxed border-t pt-4">
                 Le prix dépend de l'état du véhicule, contactez-nous pour un devis.
               </div>
             </details>
-        
+
           </div>
 
           <div className="mt-20 p-8 sm:p-16 bg-blue-600 rounded-[3rem] text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">

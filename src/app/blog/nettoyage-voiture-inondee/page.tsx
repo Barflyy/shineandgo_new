@@ -56,8 +56,7 @@ export default function ArticlePage() {
     <main className="bg-white min-h-screen font-sans">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([
-    {
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([{
         "@context": "https://schema.org",
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Inondee",
@@ -91,10 +90,7 @@ export default function ArticlePage() {
                 "position": 2,
                 "name": "Inondee",
                 "item": "https://shineandgo.be/nettoyage-voiture-inondee"
-            }
-        ]
-    }
-]) }}
+            }]) }}
       />
 
       <Breadcrumbs 
