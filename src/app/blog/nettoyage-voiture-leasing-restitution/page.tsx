@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: `Nettoyage Voiture Leasing : Évitez les Pénalités de Restitution | Shine&Go`,
+  title: `Lavage Voiture Leasing : Évitez les Pénalités de Restitution | Shine&Go`,
   description: `Rendre un leasing peut coûter cher en frais de remise en état. Un nettoyage pro coûte 10x moins cher que la facture du loueur.`,
   openGraph: {
     type: 'article',
@@ -20,7 +20,7 @@ export default function ArticlePage() {
     "@graph": [
       {
         "@type": "Article",
-        "headline": "Nettoyage Voiture Leasing : Évitez les Pénalités de Restitution",
+        "headline": "Lavage Voiture Leasing : Évitez les Pénalités de Restitution",
         "author": {
           "@type": "Organization",
           "name": "Shine & Go"
@@ -96,7 +96,7 @@ export default function ArticlePage() {
       <Breadcrumbs 
         items={[
           { label: 'Blog', href: '/blog' }, 
-          { label: 'Nettoyage Voiture Leasing ' }
+          { label: 'Lavage Voiture Leasing ' }
         ]} 
       />
 

@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: `Nettoyage Voiture Express : L'Essentiel en 30 Minutes | Shine&Go`,
+  title: `Lavage Voiture Express : L'Essentiel en 30 Minutes | Shine&Go`,
   description: `Découvrez tout ce qu'il faut savoir sur nettoyage voiture express : l'essentiel en 30 minutes. Conseils d'experts Shine&Go.`,
   openGraph: {
     type: 'article',
@@ -20,7 +20,7 @@ export default function ArticlePage() {
     "@graph": [
       {
         "@type": "Article",
-        "headline": "Nettoyage Voiture Express : L'Essentiel en 30 Minutes",
+        "headline": "Lavage Voiture Express : L'Essentiel en 30 Minutes",
         "author": {
           "@type": "Organization",
           "name": "Shine & Go"
@@ -96,7 +96,7 @@ export default function ArticlePage() {
       <Breadcrumbs 
         items={[
           { label: 'Blog', href: '/blog' }, 
-          { label: 'Nettoyage Voiture Express ' }
+          { label: 'Lavage Voiture Express ' }
         ]} 
       />
 
@@ -236,7 +236,7 @@ export default function ArticlePage() {
                 </a>
               </div>
               <div className="mt-8 text-blue-200 text-sm font-medium">
-                Intervention : <Link href="/zones" className="text-white underline hover:text-blue-100">Herve, Liège, Verviers, Spa</Link>
+                Intervention : <Link href="/lavage-voiture-liege" className="text-white underline hover:text-blue-100">Liège</Link>, <Link href="/lavage-voiture-herve" className="text-white underline hover:text-blue-100">Herve</Link>, <Link href="/lavage-voiture-verviers" className="text-white underline hover:text-blue-100">Verviers</Link>, <Link href="/lavage-voiture-soumagne" className="text-white underline hover:text-blue-100">Soumagne</Link>, <Link href="/lavage-voiture-fleron" className="text-white underline hover:text-blue-100">Fléron</Link>, <Link href="/lavage-voiture-vise" className="text-white underline hover:text-blue-100">Visé</Link>
               </div>
             
           </div>

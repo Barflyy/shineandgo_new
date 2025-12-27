@@ -419,6 +419,13 @@ export default function NettoyageInterieurPage() {
               "@context": "https://schema.org",
               "@type": "Service",
               "name": "Nettoyage Intérieur Voiture à Domicile",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150",
+                "bestRating": "5",
+                "worstRating": "1"
+},
               "provider": {
                 "@type": "LocalBusiness",
                 "name": "Shine&Go",

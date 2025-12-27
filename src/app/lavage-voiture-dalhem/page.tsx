@@ -5,13 +5,13 @@ import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Nettoyage Voiture Dalhem - Service Mobile à Domicile',
+  title: 'Lavage Voiture Dalhem - Service Mobile à Domicile',
   description: 'Lavage auto professionnel à Dalhem. Shine&Go se déplace chez vous pour nettoyer votre véhicule. Intérieur, extérieur, detailing. Devis et RDV rapides.',
   alternates: {
     canonical: 'https://shineandgo.be/lavage-voiture-dalhem',
   },
   openGraph: {
-    title: 'Nettoyage Voiture Dalhem - Service Mobile à Domicile',
+    title: 'Lavage Voiture Dalhem - Service Mobile à Domicile',
     description: 'Lavage auto professionnel à Dalhem. Shine&Go se déplace chez vous pour nettoyer votre véhicule. Intérieur, extérieur, detailing. Devis et RDV rapides.',
     url: 'https://shineandgo.be/lavage-voiture-dalhem',
     siteName: 'Shine&Go',
@@ -33,13 +33,13 @@ export default function DalhemPage() {
     <main className="bg-white min-h-screen font-sans selection:bg-blue-100">
       <Breadcrumbs 
         items={[
-          { 'label': 'Nettoyage voiture', 'href': '/zones' }, 
+          { 'label': 'Lavage voiture', 'href': '/zones' }, 
           { 'label': 'Dalhem' }
         ]} 
       />
 
       {/* HERO */}
-      <section className="relative pt-28 pb-12 sm:pt-40 sm:pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-16 pb-6 sm:pt-20 sm:pb-10 md:pt-28 md:pb-12 overflow-hidden">
         <div className="container mx-auto px-6 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
 
@@ -56,7 +56,7 @@ export default function DalhemPage() {
               Lavage et nettoyage de voiture professionnel à Dalhem</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Plus besoin de vous déplacer au car wash. Nous venons à votre domicile à Dalhem pour un résultat d'exception. Que vous soyez situé en plein centre de Dalhem ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.
+              Lavage voiture professionnel directement chez vous à Dalhem. Profitez d'un service premium avec les meilleurs produits du marché.
               <span className="block mt-2 text-base text-gray-400 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
@@ -85,6 +85,20 @@ export default function DalhemPage() {
           </div>
         </div>
       </section>
+      {/* SECTION DESCRIPTIVE UNIQUE */}
+      <section className="py-12 bg-gray-50 border-y border-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-6">
+              Expert en lavage auto à <span className="font-semibold">Dalhem</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed text-pretty">
+              Plus besoin de vous déplacer au car wash. Nous venons à votre domicile à Dalhem pour un résultat d'exception. Que vous soyez situé en plein centre de Dalhem ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.
+            </p>
+          </div>
+        </div>
+      </section>
+
 
       {/* VILLES PROCHES */}
       <section className="py-12 md:py-20 bg-white border-y border-gray-100">
@@ -440,7 +454,7 @@ export default function DalhemPage() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`${item.title} - Nettoyage voiture Dalhem`}
+                      alt={`${item.title} - Lavage voiture Dalhem`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -637,10 +651,12 @@ export default function DalhemPage() {
             "image": "/transformations/optimized/webp/apres01.webp"
         },
         "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150"
-        }
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150",
+                "bestRating": "5",
+                "worstRating": "1"
+}
     },
             {
                 "@type": "ListItem",

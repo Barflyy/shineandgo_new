@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: `Nettoyage Voiture Avant Vente : Gagnez jusqu'à 1500€ de Plus | Shine&Go Detailing`,
+  title: `Lavage Voiture Avant Vente : Gagnez jusqu'à 1500€ de Plus | Shine&Go Detailing`,
   description: `Vendre sa voiture rapidement et au meilleur prix demande une préparation esthétique irréprochable. Découvrez comment le detailing augmente votre plus-value.`,
   keywords: "préparation voiture vente, nettoyage auto avant vente liège, augmenter prix revente voiture, detailing premium belgique",
   openGraph: {
@@ -22,7 +22,7 @@ export default function ArticlePage() {
     "@graph": [
       {
         "@type": "Article",
-        "headline": "Nettoyage Voiture Avant Vente : Gagnez jusqu'à 1500€ de Plus",
+        "headline": "Lavage Voiture Avant Vente : Gagnez jusqu'à 1500€ de Plus",
         "description": "Vendre sa voiture rapidement et au meilleur prix demande une préparation esthétique irréprochable. Découvrez comment le detailing augmente votre plus-value.",
         "image": "https://shineandgo.be/images/blog/lavage-voiture-avant-vente.png",
         "author": {
@@ -91,13 +91,13 @@ export default function ArticlePage() {
           </div>
 
           <h1 className="article-title mb-8">
-            Nettoyage Voiture Avant Vente : Gagnez jusqu'à 1500€ de Plus
+            Lavage Voiture Avant Vente : Gagnez jusqu'à 1500€ de Plus
           </h1>
 
           <div className="relative aspect-video rounded-3xl overflow-hidden mb-10 shadow-xl ring-1 ring-gray-100">
             <Image
               src="/images/blog/lavage-voiture-avant-vente.png"
-              alt="Nettoyage Voiture Avant Vente"
+              alt="Lavage Voiture Avant Vente"
               fill
               className="object-cover"
               priority
@@ -208,7 +208,7 @@ export default function ArticlePage() {
                 </a>
               </div>
               <div className="mt-8 text-blue-200 text-sm font-medium">
-                Intervention : <Link href="/zones" className="text-white underline hover:text-blue-100">Herve, Liège, Verviers, Spa</Link>
+                Intervention : <Link href="/lavage-voiture-liege" className="text-white underline hover:text-blue-100">Liège</Link>, <Link href="/lavage-voiture-herve" className="text-white underline hover:text-blue-100">Herve</Link>, <Link href="/lavage-voiture-verviers" className="text-white underline hover:text-blue-100">Verviers</Link>, <Link href="/lavage-voiture-soumagne" className="text-white underline hover:text-blue-100">Soumagne</Link>, <Link href="/lavage-voiture-fleron" className="text-white underline hover:text-blue-100">Fléron</Link>, <Link href="/lavage-voiture-vise" className="text-white underline hover:text-blue-100">Visé</Link>
               </div>
             
           </div>

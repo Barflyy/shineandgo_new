@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: `Nettoyage Voiture Retour de Vacances (Sable, Sel, Insectes) | Shine&Go`,
+  title: `Lavage Voiture Retour de Vacances (Sable, Sel, Insectes) | Shine&Go`,
   description: `Sable de plage, sel marin ou moustiques écrasés ? Nos conseils pour nettoyer votre voiture après un long voyage.`,
   openGraph: {
     type: 'article',
@@ -20,7 +20,7 @@ export default function ArticlePage() {
     "@graph": [
       {
         "@type": "Article",
-        "headline": "Nettoyage Voiture Retour de Vacances (Sable, Sel, Insectes)",
+        "headline": "Lavage Voiture Retour de Vacances (Sable, Sel, Insectes)",
         "author": {
           "@type": "Organization",
           "name": "Shine & Go"
@@ -186,7 +186,7 @@ export default function ArticlePage() {
                 </a>
               </div>
               <div className="mt-8 text-blue-200 text-sm font-medium">
-                Intervention : <Link href="/zones" className="text-white underline hover:text-blue-100">Herve, Liège, Verviers, Spa</Link>
+                Intervention : <Link href="/lavage-voiture-liege" className="text-white underline hover:text-blue-100">Liège</Link>, <Link href="/lavage-voiture-herve" className="text-white underline hover:text-blue-100">Herve</Link>, <Link href="/lavage-voiture-verviers" className="text-white underline hover:text-blue-100">Verviers</Link>, <Link href="/lavage-voiture-soumagne" className="text-white underline hover:text-blue-100">Soumagne</Link>, <Link href="/lavage-voiture-fleron" className="text-white underline hover:text-blue-100">Fléron</Link>, <Link href="/lavage-voiture-vise" className="text-white underline hover:text-blue-100">Visé</Link>
               </div>
             
           </div>

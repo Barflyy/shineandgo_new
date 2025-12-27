@@ -14,7 +14,7 @@ export default function Footer() {
                             Shine<span className="text-blue-600">&</span>Go
                         </div>
                         <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 text-pretty">
-                            Service mobile de&nbsp;nettoyage et lavage automobile professionnel à&nbsp;domicile en&nbsp;Wallonie
+                            Service mobile de&nbsp;lavage et nettoyage automobile professionnel à&nbsp;domicile en&nbsp;Wallonie
                         </p>
                         <div className="flex items-center gap-1 text-sm">
                             <div className="flex gap-0.5">
@@ -31,22 +31,22 @@ export default function Footer() {
                         <h4 className="font-medium text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Nos services</h4>
                         <ul className="space-y-2 text-xs sm:text-sm">
                             <li>
-                                <Link href="/nettoyage-interieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
-                                    Nettoyage intérieur voiture
+                                <Link href="/lavage-interieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                    Lavage intérieur voiture
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/nettoyage-exterieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                <Link href="/lavage-exterieur-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
                                     Lavage extérieur voiture
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/nettoyage-complet-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
-                                    Nettoyage complet voiture
+                                <Link href="/lavage-complet-voiture" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                    Lavage complet voiture
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/prix-nettoyage-voiture-domicile" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                <Link href="/prix-lavage-voiture-domicile" className="text-gray-600 hover:text-gray-900 transition-colors">
                                     Prix et tarifs
                                 </Link>
                             </li>

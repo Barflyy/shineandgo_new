@@ -3,13 +3,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'Zones d\'Intervention | Nettoyage Voiture Domicile Liège',
+    title: 'Zones d\'Intervention | Lavage Voiture Domicile Liège',
     description: 'Découvrez nos zones d\'intervention pour le lavage auto à domicile : Liège, Herve, Verviers, Spa, Visé, Battice, Fléron, Soumagne. Déplacement gratuit.',
     alternates: {
         canonical: 'https://shineandgo.be/zones',
     },
     openGraph: {
-        title: 'Zones d\'Intervention | Nettoyage Voiture Domicile Liège',
+        title: 'Zones d\'Intervention | Lavage Voiture Domicile Liège',
         description: 'Découvrez nos zones d\'intervention pour le lavage auto à domicile : Liège, Herve, Verviers, Spa, Visé, Battice, Fléron, Soumagne. Déplacement gratuit.',
         url: 'https://shineandgo.be/zones',
         siteName: 'Shine&Go',

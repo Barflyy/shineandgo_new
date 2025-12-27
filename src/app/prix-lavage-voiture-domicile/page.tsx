@@ -38,7 +38,7 @@ export default function PrixPage() {
             {
               "@context": "https://schema.org",
               "@type": "AutoWash",
-              "name": "Shine&Go - Tarifs Nettoyage Voiture à Domicile",
+              "name": "Shine&Go - Tarifs Lavage Voiture à Domicile",
               "description": "Prix et tarifs transparents pour le nettoyage et detailing automobile à domicile en province de Liège.",
               "url": "https://shineandgo.be/prix-nettoyage-voiture-domicile",
               "telephone": "+32472303701",
