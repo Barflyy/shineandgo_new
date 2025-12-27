@@ -3,14 +3,14 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Lavage Auto à Domicile & Pro (Liège & Verviers) | Shine&Go',
-  description: 'Nettoyage voiture à domicile à Liège, Herve, Verviers. Prix et Tarifs transparents. Sur devis pour entreprises. Déplacement gratuit. Réservation en ligne.',
+  title: 'Lavage Voiture à Domicile Liège, Verviers, Herve | Shine&Go',
+  description: 'Service de lavage voiture à domicile en région liégeoise. Lavage auto professionnel, nettoyage véhicule intérieur/extérieur. Dès 65€. Déplacement gratuit. ☎ 0472 30 37 01',
   alternates: {
     canonical: 'https://shineandgo.be',
   },
   openGraph: {
-    title: 'Lavage Auto à Domicile | Shine&Go',
-    description: 'Votre car wash mobile premium en région liégeoise. On se déplace chez vous !',
+    title: 'Lavage Voiture à Domicile | Shine&Go Liège',
+    description: 'Lavage voiture professionnel à domicile. Service mobile premium en Wallonie. Lavage auto main, nettoyage véhicule complet. Dès 65€.',
     url: 'https://shineandgo.be',
     siteName: 'Shine&Go',
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
-        alt: 'Lavage auto domicile Shine and Go',
+        alt: 'Lavage voiture à domicile Liège - Shine&Go',
       },
     ],
     locale: 'fr_BE',
@@ -47,13 +47,13 @@ export default function HomePage() {
 
             {/* Titre épuré */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Nettoyage & Lavage voiture à&nbsp;domicile
+              Lavage voiture à&nbsp;domicile
               <span className="block font-semibold mt-2 text-gray-900">Liège · Herve · Verviers</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
-              Votre car wash mobile premium en&nbsp;Wallonie
-              <span className="block mt-2 text-base text-gray-400 font-normal">Nettoyage véhicule complet • Intervention en&nbsp;48h • Satisfait ou&nbsp;remboursé</span>
+              Lavage auto professionnel directement chez&nbsp;vous
+              <span className="block mt-2 text-base text-gray-400 font-normal">Lavage véhicule complet • Intervention en&nbsp;48h • Satisfait ou&nbsp;remboursé</span>
             </p>
 
             {/* Badge d'urgence */}
@@ -110,14 +110,14 @@ export default function HomePage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
-                { ville: 'Herve', href: '/nettoyage-voiture-herve' },
-                { ville: 'Verviers', href: '/nettoyage-voiture-verviers' },
-                { ville: 'Liège', href: '/nettoyage-voiture-liege' },
-                { ville: 'Battice', href: '/nettoyage-voiture-battice' },
-                { ville: 'Soumagne', href: '/nettoyage-voiture-soumagne' },
-                { ville: 'Spa', href: '/nettoyage-voiture-spa' },
-                { ville: 'Fléron', href: '/nettoyage-voiture-fleron' },
-                { ville: 'Visé', href: '/nettoyage-voiture-vise' },
+                { ville: 'Herve', href: '/lavage-voiture-herve' },
+                { ville: 'Verviers', href: '/lavage-voiture-verviers' },
+                { ville: 'Liège', href: '/lavage-voiture-liege' },
+                { ville: 'Battice', href: '/lavage-voiture-battice' },
+                { ville: 'Soumagne', href: '/lavage-voiture-soumagne' },
+                { ville: 'Spa', href: '/lavage-voiture-spa' },
+                { ville: 'Fléron', href: '/lavage-voiture-fleron' },
+                { ville: 'Visé', href: '/lavage-voiture-vise' },
               ].map((zone) => (
                 <a
                   key={zone.ville}

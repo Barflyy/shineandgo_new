@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Tres sale",
         "description": "Service de nettoyage et detailing automobile à domicile à Tres sale.",
-        "url": "https://shineandgo.be/nettoyage-voiture-tres-sale",
+        "url": "https://shineandgo.be/lavage-voiture-tres-sale",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Tres sale",
-                "item": "https://shineandgo.be/nettoyage-voiture-tres-sale"
+                "item": "https://shineandgo.be/lavage-voiture-tres-sale"
             }]) }}
       />
 
@@ -195,7 +195,7 @@ export default function ArticlePage() {
                 <p>
                     Besoin d'un service spécifique ? Découvrez notre <Link href="/nettoyage-interieur-voiture" className="text-blue-400 hover:text-blue-300">nettoyage intérieur</Link>, 
                     notre <Link href="/nettoyage-exterieur-voiture" className="text-blue-400 hover:text-blue-300">lavage extérieur</Link> 
-                    ou consultez nos zones d'intervention à <Link href="/nettoyage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/nettoyage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
+                    ou consultez nos zones d'intervention à <Link href="/lavage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/lavage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
                 </p>
             </div>
           

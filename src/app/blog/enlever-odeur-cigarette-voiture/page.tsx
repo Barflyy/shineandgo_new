@@ -196,7 +196,7 @@ export default function ArticlePage() {
           <div className="bg-gray-50 rounded-3xl p-8 md:p-10 border border-gray-100 mb-12">
             <h3 className="subsection-title mb-6">Articles recommandés :</h3>
             <div className="grid sm:grid-cols-2 gap-4">
-              <RelatedLink href="/blog/nettoyage-voiture-avant-vente" title="Nettoyage Avant Vente" />
+              <RelatedLink href="/blog/lavage-voiture-avant-vente" title="Nettoyage Avant Vente" />
               <RelatedLink href="/blog/nettoyage-siege-tissu-tache" title="Nettoyage Sièges Tissu" />
             </div>
           </div>

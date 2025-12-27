@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Enfants",
         "description": "Service de nettoyage et detailing automobile à domicile à Enfants.",
-        "url": "https://shineandgo.be/nettoyage-voiture-enfants",
+        "url": "https://shineandgo.be/lavage-voiture-enfants",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Enfants",
-                "item": "https://shineandgo.be/nettoyage-voiture-enfants"
+                "item": "https://shineandgo.be/lavage-voiture-enfants"
             }]) }}
       />
 

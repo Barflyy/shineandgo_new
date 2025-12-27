@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Apres vacances",
         "description": "Service de nettoyage et detailing automobile à domicile à Apres vacances.",
-        "url": "https://shineandgo.be/nettoyage-voiture-apres-vacances",
+        "url": "https://shineandgo.be/lavage-voiture-apres-vacances",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Apres vacances",
-                "item": "https://shineandgo.be/nettoyage-voiture-apres-vacances"
+                "item": "https://shineandgo.be/lavage-voiture-apres-vacances"
             }]) }}
       />
 

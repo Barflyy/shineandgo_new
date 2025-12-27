@@ -63,27 +63,27 @@ export default function Footer() {
                         <h4 className="font-medium text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Zones d'intervention</h4>
                         <ul className="space-y-2 text-xs sm:text-sm">
                             <li>
-                                <Link href="/nettoyage-voiture-herve" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                <Link href="/lavage-voiture-herve" className="text-gray-600 hover:text-gray-900 transition-colors">
                                     Nettoyage voiture Herve
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/nettoyage-voiture-verviers" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                <Link href="/lavage-voiture-verviers" className="text-gray-600 hover:text-gray-900 transition-colors">
                                     Lavage voiture Verviers
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/nettoyage-voiture-liege" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                <Link href="/lavage-voiture-liege" className="text-gray-600 hover:text-gray-900 transition-colors">
                                     Lavage voiture Liège
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/nettoyage-voiture-battice" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                <Link href="/lavage-voiture-battice" className="text-gray-600 hover:text-gray-900 transition-colors">
                                     Nettoyage voiture Battice
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/nettoyage-voiture-soumagne" className="text-gray-600 hover:text-gray-900 transition-colors">
+                                <Link href="/lavage-voiture-soumagne" className="text-gray-600 hover:text-gray-900 transition-colors">
                                     Lavage voiture Soumagne
                                 </Link>
                             </li>

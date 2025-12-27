@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Express 30 minutes",
         "description": "Service de nettoyage et detailing automobile à domicile à Express 30 minutes.",
-        "url": "https://shineandgo.be/nettoyage-voiture-express-30-minutes",
+        "url": "https://shineandgo.be/lavage-voiture-express-30-minutes",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Express 30 minutes",
-                "item": "https://shineandgo.be/nettoyage-voiture-express-30-minutes"
+                "item": "https://shineandgo.be/lavage-voiture-express-30-minutes"
             }]) }}
       />
 

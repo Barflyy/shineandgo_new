@@ -162,7 +162,7 @@ export default function ArticlePage() {
                 <p>
                     Besoin d'un service spécifique ? Découvrez notre <Link href="/nettoyage-interieur-voiture" className="text-blue-400 hover:text-blue-300">nettoyage intérieur</Link>, 
                     notre <Link href="/nettoyage-exterieur-voiture" className="text-blue-400 hover:text-blue-300">lavage extérieur</Link> 
-                    ou consultez nos zones d'intervention à <Link href="/nettoyage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/nettoyage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
+                    ou consultez nos zones d'intervention à <Link href="/lavage-voiture-liege" className="text-blue-400 hover:text-blue-300">Liège</Link> et <Link href="/lavage-voiture-verviers" className="text-blue-400 hover:text-blue-300">Verviers</Link>.
                 </p>
             </div>
           

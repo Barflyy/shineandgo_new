@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Vapeur vs classique",
         "description": "Service de nettoyage et detailing automobile à domicile à Vapeur vs classique.",
-        "url": "https://shineandgo.be/nettoyage-voiture-vapeur-vs-classique",
+        "url": "https://shineandgo.be/lavage-voiture-vapeur-vs-classique",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Vapeur vs classique",
-                "item": "https://shineandgo.be/nettoyage-voiture-vapeur-vs-classique"
+                "item": "https://shineandgo.be/lavage-voiture-vapeur-vs-classique"
             }]) }}
       />
 

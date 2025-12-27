@@ -34,7 +34,7 @@ export default function ArticlePage() {
           }
         },
         "datePublished": "2026-05-15",
-        "image": "/images/blog/nettoyage-voiture-luxe.png"
+        "image": "/images/blog/lavage-voiture-luxe.png"
       },
       {
         "@type": "FAQPage",
@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Luxe",
         "description": "Service de nettoyage et detailing automobile à domicile à Luxe.",
-        "url": "https://shineandgo.be/nettoyage-voiture-luxe",
+        "url": "https://shineandgo.be/lavage-voiture-luxe",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Luxe",
-                "item": "https://shineandgo.be/nettoyage-voiture-luxe"
+                "item": "https://shineandgo.be/lavage-voiture-luxe"
             }]) }}
       />
 

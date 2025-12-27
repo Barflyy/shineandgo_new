@@ -40,7 +40,7 @@ export default function ArticlePage() {
         "datePublished": "2026-05-15",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://shineandgo.be/blog/nettoyage-voiture-avant-vente"
+          "@id": "https://shineandgo.be/blog/lavage-voiture-avant-vente"
         }
       },
       {

@@ -34,7 +34,7 @@ export default function ArticlePage() {
           }
         },
         "datePublished": "2026-01-20",
-        "image": "https://shineandgo.be/images/blog/nettoyage-voiture-apres-hiver.webp"
+        "image": "https://shineandgo.be/images/blog/lavage-voiture-apres-hiver.webp"
       },
       {
         "@type": "FAQPage",
@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Apres hiver",
         "description": "Service de nettoyage et detailing automobile à domicile à Apres hiver.",
-        "url": "https://shineandgo.be/nettoyage-voiture-apres-hiver",
+        "url": "https://shineandgo.be/lavage-voiture-apres-hiver",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Apres hiver",
-                "item": "https://shineandgo.be/nettoyage-voiture-apres-hiver"
+                "item": "https://shineandgo.be/lavage-voiture-apres-hiver"
             }]) }}
       />
 

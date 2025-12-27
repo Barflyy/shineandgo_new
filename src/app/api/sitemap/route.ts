@@ -31,13 +31,13 @@ export async function GET() {
       priority: '0.9'
     },
     {
-      url: '/nettoyage-voiture-herve',
+      url: '/lavage-voiture-herve',
       lastmod: new Date().toISOString(),
       changefreq: 'weekly',
       priority: '0.8'
     },
     {
-      url: '/nettoyage-voiture-verviers',
+      url: '/lavage-voiture-verviers',
       lastmod: new Date().toISOString(),
       changefreq: 'weekly',
       priority: '0.8'

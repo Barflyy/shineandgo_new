@@ -9,9 +9,9 @@ import FloatingCTA from '@/components/FloatingCTA'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Nettoyage Voiture à Domicile Liège | Shine&Go - Service Mobile Professionnel',
-  description: '🚗 Nettoyage voiture premium à domicile en Wallonie. Service mobile professionnel à Herve, Verviers, Liège. Produits Koch-Chemie. 4.9/5 ⭐ Dès 65€. Réservation WhatsApp.',
-  keywords: 'nettoyage voiture domicile, lavage voiture liège, nettoyage voiture herve, lavage voiture verviers, detailing automobile belgique, nettoyage voiture mobile, lavage auto domicile wallonie, shine&go, car wash à domicile, nettoyage véhicule, lavage auto main',
+  title: 'Lavage Voiture à Domicile Liège | Shine&Go - Service Mobile Professionnel',
+  description: '🚗 Lavage voiture à domicile en Wallonie. Service de lavage auto professionnel à Liège, Herve, Verviers. Lavage véhicule main. Produits Koch-Chemie. 4.9/5 ⭐ Dès 65€.',
+  keywords: 'lavage voiture, lavage voiture domicile, lavage voiture liège, lavage auto, lavage véhicule, lavage voiture belgique, lavage voiture herve, lavage voiture verviers, nettoyage voiture, lavage auto domicile, car wash domicile, lavage voiture main, shine&go',
   authors: [{ name: 'Shine&Go' }],
   creator: 'Shine&Go',
   publisher: 'Shine&Go',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
-        alt: 'Shine&Go - Nettoyage voiture à domicile Liège - Résultat avant/après professionnel',
+        alt: 'Lavage voiture à domicile Liège - Shine&Go - Résultat avant/après',
       },
     ],
     locale: 'fr_BE',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nettoyage Voiture Mobile Liège | Shine&Go - Dès 65€',
-    description: '🚗 Service premium à domicile. Note 4.9/5. Produits Koch-Chemie. Réservation WhatsApp.',
+    title: 'Lavage Voiture à Domicile Liège | Shine&Go - Dès 65€',
+    description: '🚗 Lavage voiture professionnel à domicile. Note 4.9/5. Produits Koch-Chemie. Réservation WhatsApp.',
     images: ['/transformations/optimized/webp/apres01.webp'],
   },
 

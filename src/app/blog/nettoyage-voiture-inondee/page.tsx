@@ -61,7 +61,7 @@ export default function ArticlePage() {
         "@type": "AutoWash",
         "name": "Shine&Go - Lavage voiture Inondee",
         "description": "Service de nettoyage et detailing automobile à domicile à Inondee.",
-        "url": "https://shineandgo.be/nettoyage-voiture-inondee",
+        "url": "https://shineandgo.be/lavage-voiture-inondee",
         "telephone": "+32472303701",
         "address": {
             "@type": "PostalAddress",
@@ -89,7 +89,7 @@ export default function ArticlePage() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Inondee",
-                "item": "https://shineandgo.be/nettoyage-voiture-inondee"
+                "item": "https://shineandgo.be/lavage-voiture-inondee"
             }]) }}
       />
 

@@ -15,10 +15,28 @@ export function middleware(request: NextRequest) {
         )
     }
 
-    // 2. Force HTTPS (Optional: usually handled by Vercel/Netlify/Host, but good as fallback)
-    // Note: request.url in middleware might be http even on https in some environments due to proxies.
-    // We rely on x-forwarded-proto usually, but Next.js middleware runs on edge.
-    // For Vercel/Netlify, this is automatic. We'll focus on the www redirect.
+    // 2. Redirect legacy URLs to new lavage-voiture structure (SEO Migration)
+    if (pathname.includes('nettoyage-voiture-')) {
+        const newPathname = pathname.replace('nettoyage-voiture-', 'lavage-voiture-')
+        return NextResponse.redirect(
+            new URL(`${newPathname}${search}`, request.url),
+            301
+        )
+    }
+
+    const serviceRedirects: Record<string, string> = {
+        '/nettoyage-interieur-voiture': '/lavage-interieur-voiture',
+        '/nettoyage-exterieur-voiture': '/lavage-exterieur-voiture',
+        '/nettoyage-complet-voiture': '/lavage-complet-voiture',
+        '/prix-nettoyage-voiture-domicile': '/prix-lavage-voiture-domicile',
+    }
+
+    if (serviceRedirects[pathname]) {
+        return NextResponse.redirect(
+            new URL(`${serviceRedirects[pathname]}${search}`, request.url),
+            301
+        )
+    }
 
     return NextResponse.next()
 }

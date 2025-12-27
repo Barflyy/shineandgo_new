@@ -63,7 +63,7 @@ export default function ArticlePage() {
               "@type": "AutoWash",
               "name": "Shine&Go - Lavage voiture Electrique",
               "description": "Service de nettoyage et detailing automobile à domicile à Electrique.",
-              "url": "https://shineandgo.be/nettoyage-voiture-electrique",
+              "url": "https://shineandgo.be/lavage-voiture-electrique",
               "telephone": "+32472303701",
               "address": {
                 "@type": "PostalAddress",
@@ -91,7 +91,7 @@ export default function ArticlePage() {
               "@type": "ListItem",
               "position": 2,
               "name": "Electrique",
-              "item": "https://shineandgo.be/nettoyage-voiture-electrique"
+              "item": "https://shineandgo.be/lavage-voiture-electrique"
             }
           ])
         }}
