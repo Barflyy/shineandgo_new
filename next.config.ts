@@ -4,18 +4,18 @@ import path from "path";
 const nextConfig: NextConfig = {
   // Exclure le dossier scripts/ de la compilation
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  
+
   // Désactiver ESLint temporairement pour le build
   eslint: {
     ignoreDuringBuilds: true,
   },
-  
+
   // Optimisations pour les performances mobile
   experimental: {
     optimizePackageImports: ['lucide-react'],
     optimizeCss: false, // Désactiver LightningCSS explicitement
   },
-  
+
   // Configuration Turbopack (remplace experimental.turbo)
   turbopack: {
     rules: {
@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  
+
   // Optimisation des images
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -45,17 +45,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  
+
   // Compression et optimisation
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
-  
+
   // Optimisations de build
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  
+
   // Headers de sécurité et performance
   async headers() {
     return [
@@ -161,7 +161,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  
+
   // Optimisation du webpack
   webpack: (config, { dev, isServer }) => {
     // Exclure le dossier scripts/ de la compilation
@@ -169,7 +169,7 @@ const nextConfig: NextConfig = {
       test: /\.(ts|tsx|js|jsx)$/,
       exclude: /scripts/,
     });
-    
+
     // Ajouter les alias de chemins
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -185,7 +185,7 @@ const nextConfig: NextConfig = {
       "@/content": path.join(__dirname, "content"),
       "@/docs": path.join(__dirname, "docs"),
     };
-    
+
     // Optimisations pour la production
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
@@ -211,7 +211,7 @@ const nextConfig: NextConfig = {
           },
         },
       };
-      
+
       // Optimisation des images
       config.module.rules.push({
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
@@ -225,7 +225,7 @@ const nextConfig: NextConfig = {
           },
         ],
       });
-      
+
       // Optimisation des polices
       config.module.rules.push({
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -235,10 +235,10 @@ const nextConfig: NextConfig = {
         },
       });
     }
-    
+
     return config;
   },
-  
+
   // Configuration pour le SEO
   async rewrites() {
     return [
@@ -261,49 +261,49 @@ const nextConfig: NextConfig = {
         destination: 'https://shineandgo.be/:path*',
         permanent: true, // 301
       },
-      // Redirection HTTP vers HTTPS
+
+      // 1. ANCIENNES URLs ZONE (ex: /zone-intervention/herve)
       {
-        source: '/:path*',
-        has: [{ type: 'header', key: 'x-forwarded-proto', value: 'http' }],
-        destination: 'https://shineandgo.be/:path*',
-        permanent: true, // 301
+        source: '/zone-intervention/:city',
+        destination: '/lavage-voiture-:city',
+        permanent: true,
       },
-      // Redirection de la page principale zone-intervention vers la page d'accueil
+      // Gestion des extensions .html
+      {
+        source: '/zone-intervention/:city.html',
+        destination: '/lavage-voiture-:city',
+        permanent: true,
+      },
+      // Root /zone-intervention -> /zones
       {
         source: '/zone-intervention',
-        destination: '/',
+        destination: '/zones',
         permanent: true,
       },
-      // Redirection dynamique pour toutes les pages zone-intervention vers nettoyage-voiture
+
+      // 2. ANCIENNES URLs NETTOYAGE (ex: /nettoyage-voiture-spa)
+      // Note: Le paramètre :slug prendra "spa" dans "nettoyage-voiture-spa"
+      // SI la source est /nettoyage-voiture-:slug, cela matche /nettoyage-voiture-spa ??
+      // NON, Next.js route matching is path segment based usually.
+      // Mais :slug peut matcher le reste.
+      // Si la page est /nettoyage-voiture-spa, c'est un seul segment.
+      // Donc je dois utiliser une regex pour capturer la fin.
       {
-        source: '/zone-intervention/:city*',
-        destination: '/nettoyage-voiture-:city*',
+        source: '/nettoyage-voiture-:city',
+        destination: '/lavage-voiture-:city',
         permanent: true,
       },
-      // === NOUVEAUX REDIRECTS - REBRANDING PREMIUM ===
+      // Et pour .html
       {
-        source: '/car-wash-battice',
-        destination: '/nettoyage-voiture-battice',
-        permanent: true, // 301
-      },
-      {
-        source: '/car-wash-soumagne',
-        destination: '/nettoyage-voiture-soumagne',
+        source: '/nettoyage-voiture-:city.html',
+        destination: '/lavage-voiture-:city',
         permanent: true,
       },
+
+      // 3. ANCIENNES URLs CAR-WASH (ex: /car-wash-verviers)
       {
-        source: '/car-wash-verviers',
-        destination: '/nettoyage-voiture-verviers',
-        permanent: true,
-      },
-      {
-        source: '/car-wash-herve',
-        destination: '/nettoyage-voiture-herve',
-        permanent: true,
-      },
-      {
-        source: '/car-wash-liege',
-        destination: '/nettoyage-voiture-liege',
+        source: '/car-wash-:city',
+        destination: '/lavage-voiture-:city',
         permanent: true,
       },
     ];
