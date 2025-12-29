@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Découvrez tout ce qu'il faut savoir sur tarif lavage intérieur + extérieur : à quoi s'attendre. Conseils d'experts Shine&Go.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-05-01',
+    publishedTime: '2025-05-01',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-05-15",
+        "datePublished": "2025-05-15",
         "image": "https://shineandgo.be/images/blog/default-blog.jpg"
       },
       {
@@ -59,23 +59,23 @@ export default function ArticlePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { label: 'Blog', href: '/blog' }, 
+          { label: 'Blog', href: '/blog' },
           { label: 'Tarif Lavage Intérieur + Extérieur ' }
-        ]} 
+        ]}
       />
 
       <article className="max-w-4xl mx-auto px-6 py-12 md:py-16">
-        
+
         <header className="mb-12">
           <Link href="/blog" className="link-arrow mb-8 inline-flex">
             <ArrowLeft className="w-4 h-4" /> Retour au blog
           </Link>
-          
+
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 font-medium">
             <span className="badge-category">Tarifs</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Juil 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Juil 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 5 min de lecture</span>
           </div>
 
@@ -91,8 +91,8 @@ export default function ArticlePage() {
         </header>
 
         <div className="prose-shineandgo">
-          
-          
+
+
           <section className="mb-12">
             <h2>Comprendre le prix du tarif lavage intérieur + extérieur</h2>
             <p className="text-xl leading-relaxed text-gray-700 mb-6">
@@ -108,18 +108,18 @@ export default function ArticlePage() {
               <ShieldCheck className="text-blue-600 w-8 h-8 flex-shrink-0" /> Ce qui influence le devis final
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                    <h3 className="font-bold text-lg mb-3 text-gray-900">1. La Taille</h3>
-                    <p className="text-gray-600 text-sm">Une Fiat 500 demande logiquement moins de produits et de temps qu'un Range Rover ou une camionnette utilitaire.</p>
-                </div>
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                    <h3 className="font-bold text-lg mb-3 text-gray-900">2. L'État initial</h3>
-                    <p className="text-gray-600 text-sm">Poils de chiens incrustés, moisissures, taches de vomi ou boue séchée nécessitent des équipements spécifiques (injecteur-extracteur, vapeur) qui allongent la prestation.</p>
-                </div>
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                    <h3 className="font-bold text-lg mb-3 text-gray-900">3. Le Niveau de finition</h3>
-                    <p className="text-gray-600 text-sm">Souhaitez-vous juste "propre" ou "comme neuf" ? L'ajout de protections céramiques, le dressing des plastiques ou le soin des cuirs sont des étapes premium.</p>
-                </div>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <h3 className="font-bold text-lg mb-3 text-gray-900">1. La Taille</h3>
+                <p className="text-gray-600 text-sm">Une Fiat 500 demande logiquement moins de produits et de temps qu'un Range Rover ou une camionnette utilitaire.</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <h3 className="font-bold text-lg mb-3 text-gray-900">2. L'État initial</h3>
+                <p className="text-gray-600 text-sm">Poils de chiens incrustés ou boue séchée nécessitent un temps de travail supplémentaire pour un résultat parfait.</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <h3 className="font-bold text-lg mb-3 text-gray-900">3. Le Niveau de finition</h3>
+                <p className="text-gray-600 text-sm">Souhaitez-vous juste "propre" ou "comme neuf" ? L'ajout de protections céramiques, le dressing des plastiques ou le soin des cuirs sont des étapes premium.</p>
+              </div>
             </div>
           </section>
 
@@ -135,19 +135,19 @@ export default function ArticlePage() {
 
           <h2>FAQ - Questions Fréquentes</h2>
           <div className="space-y-4">
-            
+
             <details className="faq-accordion">
               <summary>
                 Est-ce cher ?
                 <span className="text-blue-600 transition-transform duration-300 group-open:rotate-180">
-                    <ArrowRight className="w-5 h-5 rotate-90" />
+                  <ArrowRight className="w-5 h-5 rotate-90" />
                 </span>
               </summary>
               <div className="faq-accordion-content mt-4">
                 Le prix dépend de l'état du véhicule, contactez-nous pour un devis.
               </div>
             </details>
-        
+
           </div>
 
           <div className="cta-block-light mt-16">
@@ -177,9 +177,9 @@ export default function ArticlePage() {
               <div className="mt-8 text-blue-200 text-sm font-medium">
                 Intervention : <Link href="/lavage-voiture-liege" className="text-white underline hover:text-blue-100">Liège</Link>, <Link href="/lavage-voiture-herve" className="text-white underline hover:text-blue-100">Herve</Link>, <Link href="/lavage-voiture-verviers" className="text-white underline hover:text-blue-100">Verviers</Link>, <Link href="/lavage-voiture-soumagne" className="text-white underline hover:text-blue-100">Soumagne</Link>, <Link href="/lavage-voiture-fleron" className="text-white underline hover:text-blue-100">Fléron</Link>, <Link href="/lavage-voiture-vise" className="text-white underline hover:text-blue-100">Visé</Link>
               </div>
-            
-          </div>
-          
+
+            </div>
+
           </div></div></article>
     </main>
   )

@@ -7,7 +7,7 @@ export default function FAQCompletSection() {
   const faqs = [
     {
       question: "Quel est le tarif pour un lavage voiture complet à Verviers ?",
-      answer: "Le tarif pour un nettoyage complet (intérieur + extérieur) varie selon le type de véhicule : Citadine à partir de 89 €, Berline à partir de 99 €, Break à partir de 104 €, SUV/4x4 à partir de 109 €, Monospace à partir de 114 €, et Utilitaire à partir de 129 €. Le prix final dépend de l'état de saleté du véhicule."
+      answer: "Nos tarifs démarrent à 120€ pour un nettoyage complet (intérieur + extérieur). Un supplément s'applique selon la taille du véhicule. Le prix final dépend également de l'état de saleté."
     },
     {
       question: "Puis-je réserver uniquement l'intérieur ou l'extérieur ?",

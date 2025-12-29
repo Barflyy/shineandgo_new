@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Sel, boue, humidité... L'hiver est rude pour votre voiture. Voici la checklist indispensable pour la remettre à neuf aux beaux jours.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-01-20',
+    publishedTime: '2025-01-20',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-01-20",
+        "datePublished": "2025-01-20",
         "image": "https://shineandgo.be/images/blog/lavage-voiture-apres-hiver.webp"
       },
       {
@@ -110,7 +110,7 @@ export default function ArticlePage() {
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="badge-category">Saisonnier</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 20 Fev 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 20 Fev 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 8 min de lecture</span>
           </div>
 

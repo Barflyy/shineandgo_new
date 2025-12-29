@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: "préparation voiture vente, nettoyage auto avant vente liège, augmenter prix revente voiture, detailing premium belgique",
   openGraph: {
     type: 'article',
-    publishedTime: '2026-05-15',
+    publishedTime: '2025-05-15',
     authors: ['Shine&Go'],
     images: [{ url: '/images/blog/lavage-voiture-avant-vente.png' }]
   }
@@ -37,7 +37,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-05-15",
+        "datePublished": "2025-05-15",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://shineandgo.be/blog/lavage-voiture-avant-vente"
@@ -83,7 +83,7 @@ export default function ArticlePage() {
           <div className="flex flex-wrap gap-4 items-center mb-8">
             <span className="badge-category">Conseils</span>
             <span className="meta-text flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-blue-500" /> 10 Avr 2026
+              <Calendar className="w-4 h-4 text-blue-500" /> 10 Avr 2025
             </span>
             <span className="meta-text flex items-center gap-2">
               <Clock className="w-4 h-4 text-blue-500" /> 10 min de lecture
@@ -178,7 +178,7 @@ export default function ArticlePage() {
             <h3 className="subsection-title mb-6">Articles recommandés :</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               <RelatedLink href="/blog/lavage-voiture-fumeur" title="Traitement Fumeur" />
-              <RelatedLink href="/blog/nettoyage-siege-tissu-tache" title="Nettoyage Sièges Tissu" />
+              
             </div>
           </div>
 

@@ -5,14 +5,14 @@ import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Lavage Voiture & Detailing Liège à Domicile | Shine&Go',
-  description: 'Expert en detailing Liège et lavage voiture à domicile. Nettoyage véhicule premium intérieur/extérieur, simonisage et protection carrosserie à Liège. Dès 65€.',
+  title: 'Lavage Voiture Liege - Lavage à Domicile',
+  description: 'Nettoyage auto à Liege. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
   alternates: {
     canonical: 'https://shineandgo.be/lavage-voiture-liege',
   },
   openGraph: {
-    title: 'Lavage Voiture & Detailing Liège à Domicile | Shine&Go',
-    description: 'Service de detailing Liège et lavage auto professionnel à domicile. Résultat showroom garanti. On se déplace chez vous partout à Liège.',
+    title: 'Lavage Voiture Liege - Lavage à Domicile',
+    description: 'Nettoyage auto à Liege. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
     url: 'https://shineandgo.be/lavage-voiture-liege',
     siteName: 'Shine&Go',
     images: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
-        alt: 'Lavage voiture domicile Liège - Shine&Go',
+        alt: 'Lavage voiture domicile Liege - Shine&Go',
       },
     ],
     locale: 'fr_BE',
@@ -28,50 +28,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default function LiègePage() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Combien coûte un lavage voiture à domicile à Liege ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nos tarifs à Liege démarrent à 65€ pour un lavage intérieur, 50€ pour l'extérieur, et 100€ pour la formule complète. Le déplacement est inclus."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Intervenez-vous à Liege pour le lavage voiture ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, nous intervenons à Liege et dans toutes les communes environnantes. Réservez en ligne ou par téléphone."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels services de lavage proposez-vous à Liege ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nous proposons le lavage intérieur, extérieur et complet à Liege. Nous utilisons des produits professionnels Koch-Chemie."
-        }
-      }
-    ]
-  }
-
+export default function LiegePage() {
+  
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
       <main className="bg-white dark:bg-slate-950 min-h-screen font-sans selection:bg-blue-100">
-      <Breadcrumbs
+      <Breadcrumbs 
         items={[
-          { 'label': 'Lavage voiture', 'href': '/zones' },
-          { 'label': 'Liège' }
-        ]}
+          { 'label': 'Lavage voiture', 'href': '/zones' }, 
+          { 'label': 'Liege' }
+        ]} 
       />
 
       {/* HERO */}
@@ -85,23 +52,23 @@ export default function LiègePage() {
                   <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600 dark:fill-blue-400 dark:text-blue-400" />
                 ))}
               </div>
-              <span className="text-sm font-medium text-blue-900 dark:text-blue-300">4.9/5 sur Google</span>
+              <span className="text-sm font-medium text-blue-900 dark:text-blue-300">Clients Satisfaits</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage voiture & <span className="font-semibold text-blue-600">Detailing</span> à domicile à Liège</h1>
+              Lavage et nettoyage de voiture professionnel à Liege</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Lavage voiture professionnel directement chez vous à Liege. Profitez d'un service premium avec les meilleurs produits du marché.
-              <span className="block mt-2 text-base text-gray-400 dark:text-gray-500 font-normal">Intervention sous 48h • Déplacement gratuit • Dès 65€</span>
+              <span className="block mt-2 text-base text-gray-400 dark:text-gray-500 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <a
-                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Liège"
+                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Liege"
                 className="group w-full sm:w-auto px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
               >
-                Réserver à Liège
+                Réserver à Liege
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -114,9 +81,9 @@ export default function LiègePage() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Lavage main anti-rayures</span>
+              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Lavage main</span>
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Déplacement gratuit</span>
-              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Paiement après validation</span>
+              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Prix clairs</span>
             </div>
           </div>
         </div>
@@ -129,8 +96,51 @@ export default function LiègePage() {
               Expert en lavage auto à <span className="font-semibold">Liege</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
-              Vous cherchez un <strong>car wash</strong> ou un expert en <strong>detailing à Liège</strong> ? Shine&Go intervient directement chez vous pour un nettoyage méticuleux avec les produits Koch-Chemie.
+              Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Liege pour un nettoyage intérieur et extérieur de qualité. En tant qu'experts locaux à Liege, nous connaissons les exigences des conducteurs de la région et adaptons nos soins aux conditions climatiques belges.
             </p>
+          </div>
+        </div>
+      </section>
+
+
+      
+      {/* SECTION LOCALISEE UNIQUE */}
+      <section className="py-16 bg-blue-50/50 dark:bg-slate-900/50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-8 text-center">
+              Lavage auto au cœur de la Cité Ardente
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                  Circuler et se garer à Liège n'est pas toujours simple. C'est pourquoi notre service mobile est la solution idéale pour les Liégeois. Que vous habitiez dans le centre historique, près des Guillemins ou sur les hauteurs de Sainte-Walburge, nous venons directement à vous.
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
+                  Fini le stress des files au car-wash ou la recherche d'une station de lavage. Nous intervenons en rue (si autorisé) ou dans votre garage, offrant un gain de temps précieux aux citadins actifs.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Zone Liege</h3>
+                        <p className="text-sm text-gray-500">Déplacement inclus</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Disponibilité</h3>
+                        <p className="text-sm text-gray-500">Du lundi au samedi</p>
+                    </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -142,21 +152,21 @@ export default function LiègePage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-4 text-balance">
-                Nous intervenons aussi près de Liège
+                Zone d'intervention Liege
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 text-pretty">
-                Service mobile dans toute la région
+                Nous intervenons à Liege et Andrimont
               </p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
-                { name: 'Chaudfontaine', href: '/lavage-voiture-chaudfontaine' },
-                { name: 'Embourg', href: '/lavage-voiture-embourg' },
-                { name: 'Fléron', href: '/lavage-voiture-fleron' },
-                { name: 'Beyne-Heusay', href: '/lavage-voiture-beyne-heusay' },
-                { name: 'Herstal', href: '/lavage-voiture-herstal' },
-                { name: 'Ans', href: '/lavage-voiture-ans' },
+                { name: 'Verviers', href: '/lavage-voiture-verviers' },
+                { name: 'Heusy', href: '/lavage-voiture-heusy' },
+                { name: 'Ensival', href: '/lavage-voiture-ensival' },
+                { name: 'Lambermont', href: '/lavage-voiture-lambermont' },
+                { name: 'Pepinster', href: '/lavage-voiture-pepinster' },
+                { name: 'Theux', href: '/lavage-voiture-theux' },
               ].map((city) => (
                 <Link
                   key={city.name}
@@ -173,7 +183,7 @@ export default function LiègePage() {
         </div>
       </section>
 
-
+      
       {/* POURQUOI NOUS - Badges de confiance */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -217,7 +227,7 @@ export default function LiègePage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Flexibilité totale</h3>
-                <p className="text-sm text-gray-600 text-pretty">Nous venons à Liège quand cela vous arrange, à domicile ou au bureau</p>
+                <p className="text-sm text-gray-600 text-pretty">Nous venons à Liege quand cela vous arrange, à domicile ou au bureau</p>
               </div>
             </div>
           </div>
@@ -230,9 +240,10 @@ export default function LiègePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-light text-gray-900 mb-4 text-balance">
-              Tarifs Car Wash & Detailing Liège</h2>
+              Tarifs Lavage Liege
+            </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 text-pretty">
-              Prix fixes et transparents
+              Des formules simples et efficaces
             </p>
           </div>
 
@@ -245,7 +256,7 @@ export default function LiègePage() {
                   <Armchair className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Intérieur</h3>
-                <p className="text-gray-500 text-sm">Pour un habitacle comme neuf</p>
+                <p className="text-gray-500 text-sm">Nettoyage en profondeur</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-gray-50">
@@ -274,7 +285,7 @@ export default function LiègePage() {
               </ul>
 
               <a
-                href="https://wa.me/32472303701?text=Je souhaite un nettoyage intérieur à Liège - 65€"
+                href="https://wa.me/32472303701?text=Je souhaite un nettoyage intérieur à Liege - 65€"
                 className="block w-full py-4 border border-gray-200 text-gray-900 font-medium rounded-xl text-center hover:bg-gray-50 hover:border-gray-300 transition-all"
               >
                 Réserver
@@ -294,7 +305,7 @@ export default function LiègePage() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Complet</h3>
-                <p className="text-slate-400 text-sm">L'expérience ultime Shine&Go</p>
+                <p className="text-slate-400 text-sm">La totale</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-slate-800">
@@ -325,7 +336,7 @@ export default function LiègePage() {
               </ul>
 
               <a
-                href="https://wa.me/32472303701?text=Je souhaite le nettoyage complet à Liège - 120€"
+                href="https://wa.me/32472303701?text=Je souhaite le nettoyage complet à Liege - 120€"
                 className="block w-full py-4 bg-white text-gray-900 font-bold rounded-xl text-center hover:bg-gray-100 transition-all shadow-lg"
               >
                 Réserver le complet
@@ -339,7 +350,7 @@ export default function LiègePage() {
                   <Car className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Extérieur</h3>
-                <p className="text-gray-500 text-sm">Lavage & Protection carrosserie</p>
+                <p className="text-gray-500 text-sm">Lavage carrosserie</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-gray-50">
@@ -368,7 +379,7 @@ export default function LiègePage() {
               </ul>
 
               <a
-                href="https://wa.me/32472303701?text=Je souhaite un lavage extérieur à Liège - 85€"
+                href="https://wa.me/32472303701?text=Je souhaite un lavage extérieur à Liege - 85€"
                 className="block w-full py-4 border border-gray-200 text-gray-900 font-medium rounded-xl text-center hover:bg-gray-50 hover:border-gray-300 transition-all"
               >
                 Réserver
@@ -378,7 +389,7 @@ export default function LiègePage() {
         </div>
       </section>
 
-
+      
       {/* SERVICES DETAILLÉS */}
       <section id="services" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -412,7 +423,7 @@ export default function LiègePage() {
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-3">Nettoyage Tapis & Moquettes</h3>
                   <p className="text-gray-600 leading-relaxed text-pretty">
-                    Taches sur les tapis ? Poussière incrustée ? Notre injecteur-extracteur professionnel élimine la saleté au cœur des fibres (tapis de sol) pour un habitacle sain.
+                    Poussière et saletés ? Notre aspiration minutieuse et puissante élimine tout ce qui traîne sur vos tapis et moquettes pour un habitacle parfaitement propre.
                   </p>
                 </div>
               </div>
@@ -460,36 +471,36 @@ export default function LiègePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                {
-                  image: '/images/realisations/lavage-complet-bmw-x5.webp',
-                  title: 'BMW X5',
+                { 
+                  image: '/images/realisations/lavage-complet-bmw-x5.webp', 
+                  title: 'BMW X5', 
                   subtitle: 'Formule Complète',
                   tags: ['Extérieur', 'Intérieur', 'Cuir']
                 },
-                {
-                  image: '/images/realisations/lavage-complet-bmw-z4.webp',
-                  title: 'BMW Z4',
+                { 
+                  image: '/images/realisations/lavage-complet-bmw-z4.webp', 
+                  title: 'BMW Z4', 
                   subtitle: 'Préparation à la vente',
                   tags: ['Capote', 'Polissage', 'Céramique']
                 },
-                {
-                  image: '/images/realisations/lavage-complet-audi-rs3.webp',
-                  title: 'Audi RS3',
+                { 
+                  image: '/images/realisations/lavage-complet-audi-rs3.webp', 
+                  title: 'Audi RS3', 
                   subtitle: 'Entretien Premium',
                   tags: ['Lavage Main', 'Jantes', 'Cire']
                 },
-                {
-                  image: '/images/realisations/lavage-complet-bmw-serie4.webp',
-                  title: 'BMW Série 4',
+                { 
+                  image: '/images/realisations/lavage-complet-bmw-serie4.webp', 
+                  title: 'BMW Série 4', 
                   subtitle: 'Remise à neuf',
-                  tags: ['Intérieur', 'Moquettes', 'Plastiques']
+                  tags: ['Intérieur', 'Moquettes', 'Plastiques'] 
                 },
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`${item.title} - Lavage voiture Liège`}
+                      alt={`${item.title} - Lavage voiture Liege`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -541,21 +552,21 @@ export default function LiègePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Sophie L.',
-                  location: 'Verviers',
-                  text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
+                  name: 'Marc D.',
+                  location: 'Liège',
+                  text: 'J\'ai testé la formule complète sur ma BMW et je suis scotché du résultat. On dirait qu\'elle sort du concession. Prix très correct pour la qualité du travail.',
                   rating: 5
                 },
                 {
                   name: 'Thomas M.',
                   location: 'Herve',
-                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles sur mes sièges en tissu. Je recommande à 100%.',
+                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles : plastiques brillants, tapis impeccables. Je recommande à 100%.',
                   rating: 5
                 },
                 {
-                  name: 'Marc D.',
-                  location: 'Liège',
-                  text: 'J\'ai testé la formule complète sur ma BMW et je suis scotché du résultat. On dirait qu\'elle sort du concession. Prix très correct pour la qualité du travail.',
+                  name: 'Sophie L.',
+                  location: 'Liege',
+                  text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
                   rating: 5
                 }
               ].map((testimonial, i) => (
@@ -578,7 +589,7 @@ export default function LiègePage() {
 
             <div className="text-center mt-12">
               <a
-                href="https://www.google.com/search?q=shine+and+go+liège"
+                href="https://www.google.com/search?q=shine+and+go+liege"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all group"
@@ -598,10 +609,10 @@ export default function LiègePage() {
             <h2 className="text-3xl font-light text-gray-900 mb-12 text-center text-balance">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
-                { q: "Comment payer ?", a: "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané." },
-                { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." },
                 { q: "Combien de temps ça dure ?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." },
-                { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." }
+                { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." },
+                { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
+                { q: "Comment payer ?", a: "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané." }
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
                   <h3 className="font-medium text-gray-900 mb-2 text-pretty">{item.q}</h3>
@@ -615,7 +626,7 @@ export default function LiègePage() {
 
 
       {/* CTA FINAL */}
-
+      
       {/* MAILLAGE INTERNE */}
       <section className="py-8 bg-gray-50 border-t border-gray-200">
         <div className="container mx-auto px-6 text-center">
@@ -626,21 +637,21 @@ export default function LiègePage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 md:py-32 bg-white">
+<section className="py-16 sm:py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
 
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Votre voiture propre à Liège ?
+              Envie d'une voiture neuve ?
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
-              Intervention sous 48h • Déplacement gratuit • Paiement après validation
+              Réservez en ligne, on s'occupe du reste.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Liège"
+                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Liege"
                 className="group px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
               >
                 Réserver par WhatsApp
@@ -661,88 +672,79 @@ export default function LiègePage() {
       {/* Schema.org */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "AutoWash",
-              "name": "Shine&Go - Lavage voiture Liege",
-              "description": "Service de nettoyage et detailing automobile à domicile à Liege.",
-              "url": "https://shineandgo.be/lavage-voiture-liege",
-              "telephone": "+32472303701",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Liege",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6386",
-                "longitude": "5.7942"
-              },
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Shine&Go",
-                "image": "/transformations/optimized/webp/apres01.webp"
-              },
-              "aggregateRating": {
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Liege",
+        "description": "Service de nettoyage et detailing automobile à domicile à Liege.",
+        "url": "https://shineandgo.be/lavage-voiture-liege",
+        "telephone": "+32472303701",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Liege",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
                 "reviewCount": "150",
                 "bestRating": "5",
                 "worstRating": "1"
 }
-            },
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
             {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Liège",
-              "item": "https://shineandgo.be/lavage-voiture-liege"
-            }
-            ,
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Besoin d'eau ou d'électricité ?",
-                  "acceptedAnswer": {
+                "@type": "Question",
+                "name": "Besoin d'eau ou d'électricité ?",
+                "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Combien de temps ça dure ?",
-                  "acceptedAnswer": {
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien de temps ça dure ?",
+                "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Comment payer ?",
-                  "acceptedAnswer": {
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment payer ?",
+                "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Et s'il pleut ?",
-                  "acceptedAnswer": {
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Et s'il pleut ?",
+                "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
-                  }
                 }
-              ]
+            }
+        ]
 
             }
 
-          ])
-        }}
+        ]) }}
       />
     </main>
     </>

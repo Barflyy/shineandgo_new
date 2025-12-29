@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Chiens et chats laissent poils, bave et odeurs. Découvrez notre protocole spécial animaux pour assainir votre habitacle.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-Avr-28', // Approx date conv
+    publishedTime: '2025-Avr-28', // Approx date conv
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-04-15", // Generic date for schema or parse correctly
+        "datePublished": "2025-04-15", // Generic date for schema or parse correctly
         "image": "https://shineandgo.be/images/blog/default-blog.jpg" // Placeholder if specific img not generated
       },
       {
@@ -76,7 +76,7 @@ export default function ArticlePage() {
 
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="badge-category">Animaux</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 28 Avr 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 28 Avr 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 6 min de lecture</span>
           </div>
 

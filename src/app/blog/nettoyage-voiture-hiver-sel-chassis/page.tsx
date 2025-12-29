@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: "lavage voiture hiver, sel déneigement carrosserie, nettoyage châssis voiture rouille, protection peinture hiver",
   openGraph: {
     type: 'article',
-    publishedTime: '2026-05-15',
+    publishedTime: '2025-05-15',
     authors: ['Shine&Go'],
     images: [{ url: '/images/blog/default-blog.jpg' }]
   }
@@ -37,7 +37,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-05-15",
+        "datePublished": "2025-05-15",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://shineandgo.be/blog/lavage-voiture-hiver-sel-chassis"
@@ -90,7 +90,7 @@ export default function ArticlePage() {
           <div className="flex flex-wrap gap-4 items-center mb-8">
             <span className="badge-category">Saisonnier</span>
             <span className="meta-text flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-blue-500" /> 10 Jan 2026
+              <Calendar className="w-4 h-4 text-blue-500" /> 10 Jan 2025
             </span>
             <span className="meta-text flex items-center gap-2">
               <Clock className="w-4 h-4 text-blue-500" /> 8 min de lecture

@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Prix Lavage Voiture à Domicile | Tarifs Lavage Auto 2026 - Shine&Go',
+  title: 'Prix Lavage Voiture à Domicile | Tarifs Lavage Auto 2025 - Shine&Go',
   description: 'Découvrez nos prix pour le lavage voiture à domicile et nettoyage auto premium. Tarif transparent dès 65€. Nettoyage intérieur, extérieur ou complet à Liège & Verviers.',
   keywords: 'prix lavage voiture, tarif nettoyage voiture, lavage auto domicile prix, prix car wash domicile, tarif detailing voiture liège',
   alternates: {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Prix Lavage Voiture & Lavage Auto à Domicile | Shine&Go',
-    description: 'Consultez nos tarifs 2026 pour le lavage de voiture à domicile. Service premium dès 65€. Devis gratuit.',
+    description: 'Consultez nos tarifs 2025 pour le lavage de voiture à domicile. Service premium dès 65€. Devis gratuit.',
     url: 'https://shineandgo.be/prix-nettoyage-voiture-domicile',
     siteName: 'Shine&Go',
     images: [
@@ -92,7 +92,7 @@ export default function PrixPage() {
                   <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600" />
                 ))}
               </div>
-              <span className="text-sm font-medium text-blue-900">Grille tarifaire 2026</span>
+              <span className="text-sm font-medium text-blue-900">Grille tarifaire 2025</span>
             </div>
 
             <h1 className="page-title animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
@@ -136,27 +136,9 @@ export default function PrixPage() {
                 <p className="text-sm text-gray-500">Rénovation complète de l'habitacle</p>
               </div>
 
-              <div className="space-y-4 mb-8 flex-1">
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Citadine</span>
-                  <span className="font-semibold text-xl text-gray-900">65€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Berline</span>
-                  <span className="font-semibold text-xl text-gray-900">75€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Break</span>
-                  <span className="font-semibold text-xl text-gray-900">85€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">SUV / 4x4</span>
-                  <span className="font-semibold text-xl text-gray-900">95€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Monospace</span>
-                  <span className="font-semibold text-xl text-gray-900">110€</span>
-                </div>
+              <div className="text-center py-8 flex-1">
+                <span className="text-4xl font-bold text-gray-900">Dès 65€</span>
+                <p className="text-sm text-gray-500 mt-2">Supplément selon taille</p>
               </div>
 
               <a
@@ -174,27 +156,9 @@ export default function PrixPage() {
                 <p className="text-sm text-gray-500">Lavage & Protection</p>
               </div>
 
-              <div className="space-y-4 mb-8 flex-1">
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Citadine</span>
-                  <span className="font-semibold text-xl text-gray-900">85€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Berline</span>
-                  <span className="font-semibold text-xl text-gray-900">95€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Break</span>
-                  <span className="font-semibold text-xl text-gray-900">105€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">SUV / 4x4</span>
-                  <span className="font-semibold text-xl text-gray-900">115€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-50">
-                  <span className="text-gray-600">Monospace</span>
-                  <span className="font-semibold text-xl text-gray-900">130€</span>
-                </div>
+              <div className="text-center py-8 flex-1">
+                <span className="text-4xl font-bold text-gray-900">Dès 85€</span>
+                <p className="text-sm text-gray-500 mt-2">Supplément selon taille</p>
               </div>
 
               <a
@@ -217,27 +181,9 @@ export default function PrixPage() {
                 <p className="text-sm text-gray-400">Nettoyage Intérieur + Extérieur</p>
               </div>
 
-              <div className="space-y-4 mb-8 flex-1">
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">Citadine</span>
-                  <span className="font-semibold text-xl text-white">120€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">Berline</span>
-                  <span className="font-semibold text-xl text-white">140€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">Break</span>
-                  <span className="font-semibold text-xl text-white">160€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">SUV / 4x4</span>
-                  <span className="font-semibold text-xl text-white">170€</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">Monospace</span>
-                  <span className="font-semibold text-xl text-white">190€</span>
-                </div>
+              <div className="text-center py-8 flex-1">
+                <span className="text-4xl font-bold text-white">Dès 120€</span>
+                <p className="text-sm text-green-400 mt-2">Économisez 30€</p>
               </div>
 
               <a
@@ -247,6 +193,7 @@ export default function PrixPage() {
                 Réserver le Complet
               </a>
             </div>
+
 
           </div>
         </div>
@@ -298,6 +245,52 @@ export default function PrixPage() {
                 <p className="text-sm text-gray-500">Nous travaillons pendant que vous profitez de votre temps</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CLUB ENTRETIEN */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-600/10 via-transparent to-transparent"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full">
+              <Sparkles className="w-4 h-4 text-blue-400" />
+              <span className="text-sm font-medium text-blue-300">Économisez sur vos prochains lavages</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-light text-white mb-6 text-balance">
+              Club Entretien : <span className="font-semibold text-blue-400">-25%</span> à vie
+            </h2>
+            <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto text-pretty">
+              Après votre 1er lavage, réservez le suivant sous 6 semaines et bénéficiez automatiquement de -25% sur tous vos passages. Sans engagement.
+            </p>
+
+            <div className="grid sm:grid-cols-3 gap-6 mb-10">
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                <p className="text-slate-400 text-sm mb-1">Intérieur</p>
+                <p className="text-slate-500 line-through text-lg">65€</p>
+                <p className="text-3xl font-light text-white">49€</p>
+              </div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-blue-500/30">
+                <p className="text-blue-400 text-sm mb-1">Complet</p>
+                <p className="text-slate-500 line-through text-lg">120€</p>
+                <p className="text-3xl font-light text-white">90€</p>
+              </div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                <p className="text-slate-400 text-sm mb-1">Extérieur</p>
+                <p className="text-slate-500 line-through text-lg">85€</p>
+                <p className="text-3xl font-light text-white">64€</p>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver mon premier lavage et rejoindre le Club Entretien"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-blue-50 transition-all group"
+            >
+              Réserver mon 1er lavage
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
       </section>

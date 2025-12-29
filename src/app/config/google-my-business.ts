@@ -193,7 +193,7 @@ export const generateStructuredData = () => {
         }
       ]
     },
-    "foundingDate": "2026",
+    "foundingDate": "2025",
     "numberOfEmployees": 2,
     "knowsAbout": [
       "Nettoyage automobile professionnel",

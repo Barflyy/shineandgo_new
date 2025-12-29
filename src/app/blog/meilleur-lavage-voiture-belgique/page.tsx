@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Découvrez tout ce qu'il faut savoir sur meilleur service de lavage auto en belgique. Conseils d'experts Shine&Go.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-05-01',
+    publishedTime: '2025-05-01',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-05-15",
+        "datePublished": "2025-05-15",
         "image": "https://shineandgo.be/images/blog/default-blog.jpg"
       },
       {
@@ -75,7 +75,7 @@ export default function ArticlePage() {
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 font-medium">
             <span className="badge-category">Guide</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Juil 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Juil 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 5 min de lecture</span>
           </div>
 

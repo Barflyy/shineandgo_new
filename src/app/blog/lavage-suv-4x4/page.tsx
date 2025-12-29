@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Les SUV et 4x4 sont grands, hauts et souvent plus sales (boue). Ils nécessitent un équipement et de l'huile de coude supplémentaires.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-Mai-08', // Approx date conv
+    publishedTime: '2025-Mai-08', // Approx date conv
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-04-15", // Generic date for schema or parse correctly
+        "datePublished": "2025-04-15", // Generic date for schema or parse correctly
         "image": "https://shineandgo.be/images/blog/default-blog.jpg" // Placeholder if specific img not generated
       },
       {
@@ -76,7 +76,7 @@ export default function ArticlePage() {
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="badge-category">Type de Véhicule</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 08 Mai 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 08 Mai 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 4 min de lecture</span>
           </div>
 

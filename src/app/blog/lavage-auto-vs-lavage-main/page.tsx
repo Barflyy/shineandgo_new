@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Rouleaux, Karcher ou lavage main ? Quel est le meilleur choix pour votre peinture et votre portefeuille ? Comparatif sans filtre.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-01-20',
+    publishedTime: '2025-01-20',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-01-22",
+        "datePublished": "2025-01-22",
         "image": "https://shineandgo.be/images/blog/lavage-auto-vs-lavage-main.webp"
       },
       {
@@ -76,7 +76,7 @@ export default function ArticlePage() {
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="badge-category">Comparatif</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 22 Mar 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 22 Mar 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 9 min de lecture</span>
           </div>
 

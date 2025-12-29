@@ -33,7 +33,7 @@ export default function BlogListing() {
 
                 <div className="relative">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white border border-blue-100 text-blue-700 text-xs font-black mb-8 shadow-sm tracking-[0.2em] uppercase">
-                        <Sparkles className="w-4 h-4 text-amber-400 fill-amber-400" /> Guide Expert 2026
+                        <Sparkles className="w-4 h-4 text-amber-400 fill-amber-400" /> Guide Expert 2025
                     </div>
                     <h1 className="page-title mb-8">
                         Le Blog du <br /><span className="text-gradient font-semibold">Detailing</span>

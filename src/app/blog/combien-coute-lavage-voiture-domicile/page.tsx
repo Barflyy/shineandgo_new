@@ -5,12 +5,12 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: `Prix Lavage Voiture à Domicile 2026 : Est-ce plus Cher qu'une Station ? | Shine&Go Detailing`,
+  title: `Prix Lavage Voiture à Domicile 2025 : Est-ce plus Cher qu'une Station ? | Shine&Go Detailing`,
   description: `Découvrez les tarifs réels d'un lavage auto à domicile. Comparatif complet entre station haute pression, portique rouleaux et detailing professionnel.`,
   keywords: "prix lavage voiture domicile, tarif nettoyage auto liège, combien coûte detailing voiture, lavage auto pas cher belgique",
   openGraph: {
     type: 'article',
-    publishedTime: '2026-05-15',
+    publishedTime: '2025-05-15',
     authors: ['Shine&Go'],
     images: [{ url: '/images/blog/combien-coute-lavage-voiture-domicile.png' }]
   }
@@ -22,7 +22,7 @@ export default function ArticlePage() {
     "@graph": [
       {
         "@type": "Article",
-        "headline": "Prix Lavage Voiture à Domicile 2026 : Est-ce plus Cher qu'une Station ?",
+        "headline": "Prix Lavage Voiture à Domicile 2025 : Est-ce plus Cher qu'une Station ?",
         "description": "Découvrez les tarifs réels d'un lavage auto à domicile. Comparatif complet entre station haute pression, portique rouleaux et detailing professionnel.",
         "image": "https://shineandgo.be/images/blog/combien-coute-lavage-voiture-domicile.png",
         "author": {
@@ -37,7 +37,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-05-15",
+        "datePublished": "2025-05-15",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://shineandgo.be/blog/combien-coute-lavage-voiture-domicile"
@@ -92,7 +92,7 @@ export default function ArticlePage() {
               Tarifs
             </span>
             <span className="meta-text flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-blue-500" /> 15 Avr 2026
+              <Calendar className="w-4 h-4 text-blue-500" /> 15 Avr 2025
             </span>
             <span className="meta-text flex items-center gap-2">
               <Clock className="w-4 h-4 text-blue-500" /> 11 min de lecture
@@ -100,13 +100,13 @@ export default function ArticlePage() {
           </div>
 
           <h1 className="article-title mb-8">
-            Prix Lavage Voiture à Domicile 2026 : Est-ce plus Cher qu'une Station ?
+            Prix Lavage Voiture à Domicile 2025 : Est-ce plus Cher qu'une Station ?
           </h1>
 
           <div className="relative aspect-video rounded-3xl overflow-hidden mb-10 shadow-xl ring-1 ring-gray-100">
             <Image 
               src="/images/blog/combien-coute-lavage-voiture-domicile.png" 
-              alt="Prix Lavage Voiture à Domicile 2026 : Est-ce plus Cher qu'une Station ?" 
+              alt="Prix Lavage Voiture à Domicile 2025 : Est-ce plus Cher qu'une Station ?" 
               fill 
               className="object-cover"
               priority
@@ -187,7 +187,7 @@ export default function ArticlePage() {
           <div className="bg-gray-50 rounded-3xl p-8 md:p-10 border border-gray-100 mb-12">
             <h3 className="subsection-title mb-6">Articles recommandés :</h3>
             <div className="grid sm:grid-cols-2 gap-4">
-              <RelatedLink href="/blog/lavage-voiture-avant-vente" title="Nettoyage Avant Vente" /><RelatedLink href="/blog/lavage-voiture-fumeur" title="Traitement Fumeur" /><RelatedLink href="/blog/nettoyage-siege-tissu-tache" title="Nettoyage Sièges Tissu" /><RelatedLink href="/blog/lavage-voiture-poils-chien-astuces" title="Extraction Poils de Chien" />
+              <RelatedLink href="/blog/lavage-voiture-avant-vente" title="Nettoyage Avant Vente" /><RelatedLink href="/blog/lavage-voiture-fumeur" title="Traitement Fumeur" /><RelatedLink href="/blog/lavage-voiture-poils-chien-astuces" title="Extraction Poils de Chien" />
             </div>
           </div>
 

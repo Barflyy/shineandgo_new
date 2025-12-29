@@ -1,4 +1,3 @@
-
 import { ArrowRight, Check, Star, MapPin, Sparkles, Car, Armchair, Clock } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -6,14 +5,14 @@ import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Lavage Voiture Fléron à Domicile - Intérieur & Extérieur | Shine&Go',
-  description: 'Lavage voiture à domicile à Fléron. Service de lavage auto professionnel, nettoyage véhicule intérieur/extérieur. Prix clairs dès 65€. Déplacement gratuit. ☎ 0472 30 37 01',
+  title: 'Lavage Voiture Fleron - Lavage à Domicile',
+  description: 'Nettoyage auto à Fleron. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
   alternates: {
     canonical: 'https://shineandgo.be/lavage-voiture-fleron',
   },
   openGraph: {
-    title: 'Lavage Voiture Fléron à Domicile - Intérieur & Extérieur | Shine&Go',
-    description: 'Lavage voiture à domicile à Fléron. Service de lavage auto professionnel, nettoyage véhicule intérieur/extérieur. Prix clairs dès 65€. Déplacement gratuit. ☎ 0472 30 37 01',
+    title: 'Lavage Voiture Fleron - Lavage à Domicile',
+    description: 'Nettoyage auto à Fleron. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
     url: 'https://shineandgo.be/lavage-voiture-fleron',
     siteName: 'Shine&Go',
     images: [
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
         url: '/transformations/optimized/webp/apres01.webp',
         width: 1200,
         height: 630,
-        alt: 'Lavage voiture domicile Fléron - Shine&Go',
+        alt: 'Lavage voiture domicile Fleron - Shine&Go',
       },
     ],
     locale: 'fr_BE',
@@ -30,48 +29,15 @@ export const metadata: Metadata = {
 }
 
 export default function FleronPage() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Combien coûte un lavage voiture à domicile à Fleron ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nos tarifs à Fleron démarrent à 65€ pour un lavage intérieur, 50€ pour l'extérieur, et 100€ pour la formule complète. Le déplacement est inclus."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Intervenez-vous à Fleron pour le lavage voiture ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, nous intervenons à Fleron et dans toutes les communes environnantes. Réservez en ligne ou par téléphone."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels services de lavage proposez-vous à Fleron ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nous proposons le lavage intérieur, extérieur et complet à Fleron. Nous utilisons des produits professionnels Koch-Chemie."
-        }
-      }
-    ]
-  }
-
+  
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
       <main className="bg-white dark:bg-slate-950 min-h-screen font-sans selection:bg-blue-100">
       <Breadcrumbs 
         items={[
           { 'label': 'Lavage voiture', 'href': '/zones' }, 
-          { 'label': 'Fléron' }
+          { 'label': 'Fleron' }
         ]} 
       />
 
@@ -86,11 +52,11 @@ export default function FleronPage() {
                   <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600 dark:fill-blue-400 dark:text-blue-400" />
                 ))}
               </div>
-              <span className="text-sm font-medium text-blue-900 dark:text-blue-300">4.9/5 sur Google</span>
+              <span className="text-sm font-medium text-blue-900 dark:text-blue-300">Clients Satisfaits</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Fléron : Votre service mobile de lavage auto premium</h1>
+              Lavage et nettoyage de voiture professionnel à Fleron</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Lavage voiture professionnel directement chez vous à Fleron. Profitez d'un service premium avec les meilleurs produits du marché.
@@ -99,10 +65,10 @@ export default function FleronPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <a
-                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Fléron"
+                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Fleron"
                 className="group w-full sm:w-auto px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
               >
-                Réserver à Fléron
+                Réserver à Fleron
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -115,9 +81,9 @@ export default function FleronPage() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Service en 3h</span>
+              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Lavage main</span>
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Déplacement gratuit</span>
-              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Paiement après validation</span>
+              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Prix clairs</span>
             </div>
           </div>
         </div>
@@ -130,8 +96,51 @@ export default function FleronPage() {
               Expert en lavage auto à <span className="font-semibold">Fleron</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
-              Expert du detailing mobile à Fléron : nous réalisons un nettoyage complet de votre voiture directement à votre adresse. Que vous soyez situé en plein centre de Fléron ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.
+              Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Fleron pour un nettoyage intérieur et extérieur de qualité. En tant qu'experts locaux à Fleron, nous connaissons les exigences des conducteurs de la région et adaptons nos soins aux conditions climatiques belges.
             </p>
+          </div>
+        </div>
+      </section>
+
+
+      
+      {/* SECTION LOCALISEE UNIQUE */}
+      <section className="py-16 bg-blue-50/50 dark:bg-slate-900/50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-8 text-center">
+              Lavage auto au cœur du Plateau
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                  Fléron est un centre névralgique. Résidents de Retinne, Magnée ou Romsée, nous sommes à votre service. La densité de la circulation à Fléron rend le service à domicile particulièrement attractif.
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
+                  Laissez votre voiture dans votre allée, nous nous occupons de tout pendant que vous profitez de votre temps libre.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Zone Fleron</h3>
+                        <p className="text-sm text-gray-500">Déplacement inclus</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Disponibilité</h3>
+                        <p className="text-sm text-gray-500">Du lundi au samedi</p>
+                    </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -143,21 +152,21 @@ export default function FleronPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-4 text-balance">
-                Nos zones de service près de Fléron
+                Zone d'intervention Fleron
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 text-pretty">
-                De Beyne à Soumagne, notre camionnette sillonne la région
+                Nous intervenons à Fleron et Andrimont
               </p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
-                { name: 'Liège', href: '/lavage-voiture-liege' },
-                { name: 'Chaudfontaine', href: '/lavage-voiture-chaudfontaine' },
-                { name: 'Embourg', href: '/lavage-voiture-embourg' },
-                { name: 'Beyne-Heusay', href: '/lavage-voiture-beyne-heusay' },
-                { name: 'Herstal', href: '/lavage-voiture-herstal' },
-                { name: 'Ans', href: '/lavage-voiture-ans' },
+                { name: 'Verviers', href: '/lavage-voiture-verviers' },
+                { name: 'Heusy', href: '/lavage-voiture-heusy' },
+                { name: 'Ensival', href: '/lavage-voiture-ensival' },
+                { name: 'Lambermont', href: '/lavage-voiture-lambermont' },
+                { name: 'Pepinster', href: '/lavage-voiture-pepinster' },
+                { name: 'Theux', href: '/lavage-voiture-theux' },
               ].map((city) => (
                 <Link
                   key={city.name}
@@ -218,7 +227,7 @@ export default function FleronPage() {
                   <Clock className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Flexibilité totale</h3>
-                <p className="text-sm text-gray-600 text-pretty">Nous venons à Fléron quand cela vous arrange, à domicile ou au bureau</p>
+                <p className="text-sm text-gray-600 text-pretty">Nous venons à Fleron quand cela vous arrange, à domicile ou au bureau</p>
               </div>
             </div>
           </div>
@@ -231,10 +240,10 @@ export default function FleronPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-light text-gray-900 mb-4 text-balance">
-              Nos Packs Nettoyage Fléron
+              Tarifs Lavage Fleron
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 text-pretty">
-              Qualité showroom, tarifs transparents
+              Des formules simples et efficaces
             </p>
           </div>
 
@@ -247,7 +256,7 @@ export default function FleronPage() {
                   <Armchair className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Intérieur</h3>
-                <p className="text-gray-500 text-sm">Pour un habitacle comme neuf</p>
+                <p className="text-gray-500 text-sm">Nettoyage en profondeur</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-gray-50">
@@ -276,7 +285,7 @@ export default function FleronPage() {
               </ul>
 
               <a
-                href="https://wa.me/32472303701?text=Je souhaite un nettoyage intérieur à Fléron - 65€"
+                href="https://wa.me/32472303701?text=Je souhaite un nettoyage intérieur à Fleron - 65€"
                 className="block w-full py-4 border border-gray-200 text-gray-900 font-medium rounded-xl text-center hover:bg-gray-50 hover:border-gray-300 transition-all"
               >
                 Réserver
@@ -296,7 +305,7 @@ export default function FleronPage() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Complet</h3>
-                <p className="text-slate-400 text-sm">L'expérience ultime Shine&Go</p>
+                <p className="text-slate-400 text-sm">La totale</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-slate-800">
@@ -327,7 +336,7 @@ export default function FleronPage() {
               </ul>
 
               <a
-                href="https://wa.me/32472303701?text=Je souhaite le nettoyage complet à Fléron - 120€"
+                href="https://wa.me/32472303701?text=Je souhaite le nettoyage complet à Fleron - 120€"
                 className="block w-full py-4 bg-white text-gray-900 font-bold rounded-xl text-center hover:bg-gray-100 transition-all shadow-lg"
               >
                 Réserver le complet
@@ -341,7 +350,7 @@ export default function FleronPage() {
                   <Car className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Extérieur</h3>
-                <p className="text-gray-500 text-sm">Lavage & Protection carrosserie</p>
+                <p className="text-gray-500 text-sm">Lavage carrosserie</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-gray-50">
@@ -370,14 +379,13 @@ export default function FleronPage() {
               </ul>
 
               <a
-                href="https://wa.me/32472303701?text=Je souhaite un lavage extérieur à Fléron - 85€"
+                href="https://wa.me/32472303701?text=Je souhaite un lavage extérieur à Fleron - 85€"
                 className="block w-full py-4 border border-gray-200 text-gray-900 font-medium rounded-xl text-center hover:bg-gray-50 hover:border-gray-300 transition-all"
               >
                 Réserver
               </a>
             </article>
           </div>
-
         </div>
       </section>
 
@@ -415,7 +423,7 @@ export default function FleronPage() {
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-3">Nettoyage Tapis & Moquettes</h3>
                   <p className="text-gray-600 leading-relaxed text-pretty">
-                    Taches sur les tapis ? Poussière incrustée ? Notre injecteur-extracteur professionnel élimine la saleté au cœur des fibres (tapis de sol) pour un habitacle sain.
+                    Poussière et saletés ? Notre aspiration minutieuse et puissante élimine tout ce qui traîne sur vos tapis et moquettes pour un habitacle parfaitement propre.
                   </p>
                 </div>
               </div>
@@ -492,7 +500,7 @@ export default function FleronPage() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`${item.title} - Lavage voiture Fléron`}
+                      alt={`${item.title} - Lavage voiture Fleron`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -544,20 +552,20 @@ export default function FleronPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Thomas M.',
-                  location: 'Herve',
-                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles sur mes sièges en tissu. Je recommande à 100%.',
-                  rating: 5
-                },
-                {
                   name: 'Marc D.',
                   location: 'Liège',
                   text: 'J\'ai testé la formule complète sur ma BMW et je suis scotché du résultat. On dirait qu\'elle sort du concession. Prix très correct pour la qualité du travail.',
                   rating: 5
                 },
                 {
+                  name: 'Thomas M.',
+                  location: 'Herve',
+                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles : plastiques brillants, tapis impeccables. Je recommande à 100%.',
+                  rating: 5
+                },
+                {
                   name: 'Sophie L.',
-                  location: 'Fléron',
+                  location: 'Fleron',
                   text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
                   rating: 5
                 }
@@ -601,10 +609,10 @@ export default function FleronPage() {
             <h2 className="text-3xl font-light text-gray-900 mb-12 text-center text-balance">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
+                { q: "Combien de temps ça dure ?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." },
                 { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." },
-                { q: "Comment payer ?", a: "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané." },
                 { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
-                { q: "Combien de temps ça dure ?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." }
+                { q: "Comment payer ?", a: "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané." }
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
                   <h3 className="font-medium text-gray-900 mb-2 text-pretty">{item.q}</h3>
@@ -638,12 +646,12 @@ export default function FleronPage() {
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
-              Réservez en 2 min. On arrive, on lave, vous brillez.
+              Réservez en ligne, on s'occupe du reste.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Fléron"
+                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Fleron"
                 className="group px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
               >
                 Réserver par WhatsApp
@@ -696,13 +704,6 @@ export default function FleronPage() {
                 "worstRating": "1"
 }
     },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Fleron",
-                "item": "https://shineandgo.be/lavage-voiture-fleron"
-            }
-        ,
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",

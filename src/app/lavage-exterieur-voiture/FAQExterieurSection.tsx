@@ -13,7 +13,7 @@ export default function FAQExterieurSection() {
   const faqItems: FAQItem[] = [
     {
       question: "Quel est le tarif d'un nettoyage extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule : Citadine 85€, Berline 95€, Break 105€, SUV/4x4 115€, Monospace 130€, Utilitaire 145€. Tous nos tarifs incluent le lavage extérieur complet, le nettoyage des jantes et la protection hydrophobe."
+      answer: "Nos tarifs démarrent à 85€ pour un lavage extérieur complet. Un supplément s'applique selon la taille du véhicule. Tous nos tarifs incluent le lavage à la main, le nettoyage des jantes et la protection hydrophobe."
     },
     {
       question: "Faites-vous le lavage voiture intérieur extérieur à domicile ?",
@@ -25,7 +25,7 @@ export default function FAQExterieurSection() {
     },
     {
       question: "Combien de temps dure une intervention ?",
-      answer: "La durée varie selon le type de véhicule et l'état de saleté : 30 minutes pour une citadine légèrement sale, jusqu'à 45 minutes pour un SUV très encrassé. Nous vous donnons une estimation précise lors du devis."
+      answer: "La durée varie selon l'état de saleté du véhicule : comptez environ 1h30 à 2h pour un lavage extérieur complet. Nous vous donnons une estimation précise lors du devis."
     },
     {
       question: "Intervenez-vous dans toute la Wallonie ?",
@@ -38,8 +38,8 @@ export default function FAQExterieurSection() {
   ];
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
+    setOpenItems(prev =>
+      prev.includes(index)
         ? prev.filter(item => item !== index)
         : [...prev, index]
     );
@@ -78,9 +78,9 @@ export default function FAQExterieurSection() {
                   </div>
                 </div>
               </button>
-              
+
               {openItems.includes(index) && (
-                <div 
+                <div
                   id={`faq-answer-${index}`}
                   className="bg-white border border-slate-200 rounded-b-xl p-6 mt-1 relative z-10"
                 >

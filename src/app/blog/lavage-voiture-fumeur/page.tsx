@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: "nettoyage voiture fumeur, enlever odeur tabac voiture, traitement ozone voiture liège, shampooing ciel de toit nicotine",
   openGraph: {
     type: 'article',
-    publishedTime: '2026-05-15',
+    publishedTime: '2025-05-15',
     authors: ['Shine&Go'],
     images: [{ url: '/images/blog/lavage-voiture-fumeur.png' }]
   }
@@ -37,7 +37,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-05-15",
+        "datePublished": "2025-05-15",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://shineandgo.be/blog/lavage-voiture-fumeur"
@@ -92,7 +92,7 @@ export default function ArticlePage() {
               Problèmes
             </span>
             <span className="meta-text flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-blue-500" /> 12 Avr 2026
+              <Calendar className="w-4 h-4 text-blue-500" /> 12 Avr 2025
             </span>
             <span className="meta-text flex items-center gap-2">
               <Clock className="w-4 h-4 text-blue-500" /> 9 min de lecture
@@ -187,7 +187,7 @@ export default function ArticlePage() {
           <div className="bg-gray-50 rounded-3xl p-8 md:p-10 border border-gray-100 mb-12">
             <h3 className="subsection-title mb-6">Articles recommandés :</h3>
             <div className="grid sm:grid-cols-2 gap-4">
-              <RelatedLink href="/blog/lavage-voiture-avant-vente" title="Nettoyage Avant Vente" /><RelatedLink href="/blog/nettoyage-siege-tissu-tache" title="Nettoyage Sièges Tissu" /><RelatedLink href="/blog/lavage-voiture-poils-chien-astuces" title="Extraction Poils de Chien" /><RelatedLink href="/blog/combien-coute-lavage-voiture-domicile" title="Prix Lavage Domicile" />
+              <RelatedLink href="/blog/lavage-voiture-avant-vente" title="Nettoyage Avant Vente" /><RelatedLink href="/blog/lavage-voiture-poils-chien-astuces" title="Extraction Poils de Chien" /><RelatedLink href="/blog/combien-coute-lavage-voiture-domicile" title="Prix Lavage Domicile" />
             </div>
           </div>
 

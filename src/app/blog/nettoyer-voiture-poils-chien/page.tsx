@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Votre chien laisse des souvenirs partout ? Voici les techniques des pros pour retirer les poils incrustés dans la moquette et les sièges.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-01-20',
+    publishedTime: '2025-01-20',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-01-15",
+        "datePublished": "2025-01-15",
         "image": "https://shineandgo.be/images/blog/nettoyer-voiture-poils-chien.webp"
       },
       {
@@ -76,7 +76,7 @@ export default function ArticlePage() {
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="badge-category">Tutoriel</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Mar 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Mar 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 6 min de lecture</span>
           </div>
 

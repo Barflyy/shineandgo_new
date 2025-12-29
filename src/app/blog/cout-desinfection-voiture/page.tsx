@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Découvrez tout ce qu'il faut savoir sur coût désinfection voiture : ozone, vapeur, chimique. Conseils d'experts Shine&Go.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-05-01',
+    publishedTime: '2025-05-01',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-05-15",
+        "datePublished": "2025-05-15",
         "image": "https://shineandgo.be/images/blog/default-blog.jpg"
       },
       {
@@ -75,7 +75,7 @@ export default function ArticlePage() {
 
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 font-medium">
             <span className="badge-category">Tarifs</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Juil 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Juil 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 5 min de lecture</span>
           </div>
 
@@ -114,7 +114,7 @@ export default function ArticlePage() {
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
                 <h3 className="font-bold text-lg mb-3 text-gray-900">2. L'État initial</h3>
-                <p className="text-gray-600 text-sm">Poils de chiens incrustés, moisissures, taches de vomi ou boue séchée nécessitent des équipements spécifiques (injecteur-extracteur, vapeur) qui allongent la prestation.</p>
+                <p className="text-gray-600 text-sm">Poils de chiens incrustés ou boue séchée nécessitent un temps de travail supplémentaire pour un résultat parfait.</p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
                 <h3 className="font-bold text-lg mb-3 text-gray-900">3. Le Niveau de finition</h3>

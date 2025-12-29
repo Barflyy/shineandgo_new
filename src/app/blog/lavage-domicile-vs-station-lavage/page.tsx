@@ -5,11 +5,11 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: `Lavage à Domicile vs Station de Lavage : Comparatif Honnête 2026 | Shine&Go`,
+  title: `Lavage à Domicile vs Station de Lavage : Comparatif Honnête 2025 | Shine&Go`,
   description: `Faut-il choisir la facilité de la station ou la qualité du domicile ? Avantages et inconvénients des deux méthodes.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-Avr-22', // Approx date conv
+    publishedTime: '2025-Avr-22', // Approx date conv
     authors: ['Shine&Go'],
   }
 }
@@ -20,7 +20,7 @@ export default function ArticlePage() {
     "@graph": [
       {
         "@type": "Article",
-        "headline": "Lavage à Domicile vs Station de Lavage : Comparatif Honnête 2026",
+        "headline": "Lavage à Domicile vs Station de Lavage : Comparatif Honnête 2025",
         "author": {
           "@type": "Organization",
           "name": "Shine & Go"
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-04-15", // Generic date for schema or parse correctly
+        "datePublished": "2025-04-15", // Generic date for schema or parse correctly
         "image": "https://shineandgo.be/images/blog/default-blog.jpg" // Placeholder if specific img not generated
       },
       {
@@ -76,12 +76,12 @@ export default function ArticlePage() {
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="badge-category">Comparatif</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 22 Avr 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 22 Avr 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 6 min de lecture</span>
           </div>
 
           <h1 className="article-title mb-8">
-            Lavage à Domicile vs Station de Lavage : Comparatif Honnête 2026
+            Lavage à Domicile vs Station de Lavage : Comparatif Honnête 2025
           </h1>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl">

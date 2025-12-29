@@ -4,20 +4,20 @@ const path = require('path');
 const nextConfig = {
   // Exclure le dossier scripts/ de la compilation
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  
+
   // Désactiver ESLint temporairement pour le build
   eslint: {
     ignoreDuringBuilds: true,
   },
-  
+
   // Optimisations pour les performances mobile
   experimental: {
     optimizePackageImports: ['lucide-react'],
     optimizeCss: false, // Désactiver LightningCSS explicitement
   },
-  
 
-  
+
+
   // Optimisation des images
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -37,17 +37,17 @@ const nextConfig = {
       },
     ],
   },
-  
+
   // Compression et optimisation
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
-  
+
   // Optimisations de build
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  
+
   // Headers de sécurité et performance
   async headers() {
     return [
@@ -153,7 +153,7 @@ const nextConfig = {
       },
     ];
   },
-  
+
   // Optimisation du webpack
   webpack: (config, { dev, isServer }) => {
     // Exclure le dossier scripts/ de la compilation
@@ -161,7 +161,7 @@ const nextConfig = {
       test: /\.(ts|tsx|js|jsx)$/,
       exclude: /scripts/,
     });
-    
+
     // Ajouter les alias de chemins
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -177,7 +177,7 @@ const nextConfig = {
       "@/content": path.join(__dirname, "content"),
       "@/docs": path.join(__dirname, "docs"),
     };
-    
+
     // Optimisations pour la production
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
@@ -203,7 +203,7 @@ const nextConfig = {
           },
         },
       };
-      
+
       // Optimisation des images
       config.module.rules.push({
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
@@ -217,7 +217,7 @@ const nextConfig = {
           },
         ],
       });
-      
+
       // Optimisation des polices
       config.module.rules.push({
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -227,10 +227,10 @@ const nextConfig = {
         },
       });
     }
-    
+
     return config;
   },
-  
+
   // Configuration pour le SEO
   async rewrites() {
     return [
@@ -254,7 +254,7 @@ const nextConfig = {
         destination: 'https://shineandgo.be/:path*',
         permanent: true, // 301 - Redirection permanente pour le SEO
       },
-      
+
       // 🔧 SEO: Redirection HTTP vers HTTPS
       // Améliore la sécurité et le référencement
       {
@@ -263,37 +263,63 @@ const nextConfig = {
         destination: 'https://shineandgo.be/:path*',
         permanent: true, // 301 - Redirection permanente
       },
-      
+
       // 🔧 SEO: Redirection /services vers page d'accueil
-      // Cette page n'existe plus, redirection vers la page principale
       {
         source: '/services',
         destination: '/',
-        permanent: true, // 301 - Redirection permanente
+        permanent: true,
       },
-      
-      // 🔧 SEO: Redirection /services/ vers page d'accueil (avec slash)
+
+      // 🔧 SEO: Redirection anciennes URLs "zone-intervention"
+      // Ex: /zone-intervention/herve -> /lavage-voiture-herve
       {
-        source: '/services/',
-        destination: '/',
-        permanent: true, // 301 - Redirection permanente
+        source: '/zone-intervention/:slug',
+        destination: '/lavage-voiture-:slug',
+        permanent: true,
       },
-      
-      // 🔧 SEO: Redirection zone-intervention vers page d'accueil
-      // Ancienne structure d'URL, maintenant obsolète
       {
         source: '/zone-intervention',
-        destination: '/',
-        permanent: true, // 301 - Redirection permanente
+        destination: '/zones',
+        permanent: true,
       },
-      
-      // 🔧 SEO: Redirection zone-intervention/:city vers nettoyage-voiture-:city
-      // Migration de l'ancienne structure d'URL vers la nouvelle
+
+      // 🔧 SEO: Redirection anciennes URLs "nettoyage-voiture"
+      // Ex: /nettoyage-voiture-verviers -> /lavage-voiture-verviers
       {
-        source: '/zone-intervention/:city*',
-        destination: '/nettoyage-voiture-:city*',
-        permanent: true, // 301 - Redirection permanente
+        source: '/nettoyage-voiture-:slug',
+        destination: '/lavage-voiture-:slug',
+        permanent: true,
       },
+
+      // 🔧 SEO: Redirection pages services nettoyage spécifiques (si elles existaient)
+      {
+        source: '/nettoyage-interieur-voiture',
+        destination: '/lavage-interieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/nettoyage-exterieur-voiture',
+        destination: '/lavage-exterieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/nettoyage-complet-voiture',
+        destination: '/lavage-complet-voiture',
+        permanent: true,
+      },
+
+      // 🔧 SEO: Redirects for other missing legacy pages
+      {
+        source: '/nettoyage-voiture',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: 'https://wa.me/32472303701', // Redirecting to WhatsApp as there is no contact page
+        permanent: false, // Temporary until a contact page is built
+      }
     ];
   },
 };

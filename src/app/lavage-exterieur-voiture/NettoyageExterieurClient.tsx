@@ -36,7 +36,7 @@ export default function NettoyageExterieurClient() {
   const faqItems = [
     {
       question: "Quel est le tarif d'un nettoyage extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 85€ pour une citadine, 95€ pour une berline, 105€ pour un break, 115€ pour un SUV/4x4, 130€ pour un monospace et 145€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. Nos tarifs démarrent à 85€. Un supplément s'applique selon la taille du véhicule. Devis gratuit disponible."
     },
     {
       question: "Combien de temps dure un nettoyage extérieur ?",
@@ -572,7 +572,7 @@ export default function NettoyageExterieurClient() {
           <div className="border-t border-slate-700 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-slate-400 text-sm mb-4 md:mb-0">
-                © 2026 Shine&Go. Tous droits réservés.
+                © 2025 Shine&Go. Tous droits réservés.
               </div>
               <div className="flex items-center gap-6 text-slate-400 text-sm">
                 <a href="/mentions-legales" className="hover:text-white transition-colors">

@@ -5,11 +5,11 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-    title: 'Nettoyage Intérieur Voiture : Le Guide Complet 2026 | Shine&Go',
+    title: 'Nettoyage Intérieur Voiture : Le Guide Complet 2025 | Shine&Go',
     description: 'Guide expert : Comment nettoyer l\'intérieur de sa voiture comme un pro ? Tableau de bord, sièges, tapis... Toutes les étapes et astuces de detailing.',
     openGraph: {
         type: 'article',
-        publishedTime: '2026-01-15',
+        publishedTime: '2025-01-15',
         authors: ['Shine&Go'],
     }
 }
@@ -20,7 +20,7 @@ export default function ArticleNettoyageInterieur() {
         "@graph": [
             {
                 "@type": "Article",
-                "headline": "Nettoyage Intérieur Voiture : Le Guide Complet 2026",
+                "headline": "Nettoyage Intérieur Voiture : Le Guide Complet 2025",
                 "author": {
                     "@type": "Organization",
                     "name": "Shine & Go"
@@ -33,8 +33,8 @@ export default function ArticleNettoyageInterieur() {
                         "url": "https://shineandgo.be/logo.png"
                     }
                 },
-                "datePublished": "2026-01-15",
-                "dateModified": "2026-01-15",
+                "datePublished": "2025-01-15",
+                "dateModified": "2025-01-15",
                 "image": "https://shineandgo.be/images/blog/nettoyage-interieur.webp"
             },
             {
@@ -88,17 +88,17 @@ export default function ArticleNettoyageInterieur() {
                 {/* Header Article */}
                 <header className="mb-12 text-center md:text-left">
                     <Link href="/blog" className="link-arrow mb-8 inline-flex">
-            <ArrowLeft className="w-4 h-4" /> Retour au blog
-          </Link>
+                        <ArrowLeft className="w-4 h-4" /> Retour au blog
+                    </Link>
 
                     <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
                         <span className="badge-category">Guide</span>
-                        <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Jan 2026</span>
+                        <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 15 Jan 2025</span>
                         <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 10 min de lecture</span>
                     </div>
 
                     <h1 className="article-title mb-8">
-                        Nettoyage Intérieur Voiture : Le Guide Complet 2026
+                        Nettoyage Intérieur Voiture : Le Guide Complet 2025
                     </h1>
 
                     <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl">
@@ -176,7 +176,7 @@ export default function ArticleNettoyageInterieur() {
                         <section>
                             <h3 className="text-2xl font-bold text-blue-800 mb-4">4. Le nettoyage des sièges</h3>
                             <div className="pl-6 border-l-2 border-gray-200">
-                                <p className="mb-2"><strong>Pour le tissu :</strong> Vaporisez votre nettoyant, brossez doucement, puis essuyez avec une microfibre propre (ou aspirez l'excédent si vous avez un injecteur-extracteur).</p>
+                                <p className="mb-2"><strong>Pour le tissu :</strong> Vaporisez votre nettoyant, brossez doucement, puis essuyez avec une microfibre propre.</p>
                                 <p><strong>Pour le cuir :</strong> Utilisez un nettoyant spécifique cuir et une brosse à poils très souples. Ne mouillez pas trop. Appliquez ensuite un lait nourrissant.</p>
                             </div>
                         </section>
@@ -220,7 +220,7 @@ export default function ArticleNettoyageInterieur() {
                                 <span className="text-blue-600 transition-transform group-open:rotate-180">▼</span>
                             </summary>
                             <div className="mt-4 text-gray-600 pl-4 border-l-2 border-blue-100">
-                                Le nettoyage classique (type car-wash) vise la rapidité et le superficiel. Le detailing est une rénovation minutieuse qui vise à restaurer l'état neuf du véhicule dans les moindres détails (grilles d'aération, rails de sièges, détachage profond...).
+                                Le nettoyage classique (type car-wash) vise la rapidité et le superficiel. Notre valeting est un nettoyage minutieux qui vise à rendre le véhicule parfaitement propre dans les moindres détails (grilles d'aération, rails de sièges, aspiration soignée...).
                             </div>
                         </details>
                         <details className="group bg-white border border-gray-200 rounded-xl p-4 cursor-pointer">
@@ -259,13 +259,13 @@ export default function ArticleNettoyageInterieur() {
                         {/* Décoration background */}
                         <div className="absolute top-0 right-0 -mt-12 -mr-12 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl"></div>
-                    
 
-                
-            
-          </div>
-          
-          </div></article>
-    </main>
+
+
+
+                    </div>
+
+                </div></article>
+        </main>
     )
 }

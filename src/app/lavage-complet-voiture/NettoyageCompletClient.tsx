@@ -29,11 +29,10 @@ function NettoyageCompletHeader() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-lg border-b border-slate-200/70 pt-4 ${
-        isScrolled 
-          ? 'bg-white/80 shadow-sm' 
+      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-lg border-b border-slate-200/70 pt-4 ${isScrolled
+          ? 'bg-white/80 shadow-sm'
           : 'bg-white/95'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-12 sm:h-14 md:h-16 lg:h-18">
@@ -68,10 +67,10 @@ function NettoyageCompletHeader() {
                 Services
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-              
+
               {/* Services Dropdown Menu */}
               {isServicesDropdownOpen && (
-                <div 
+                <div
                   className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-lg z-50"
                   role="menu"
                   aria-label="Services disponibles"
@@ -169,7 +168,7 @@ function NettoyageCompletHeader() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
-            <a 
+            <a
               href="tel:+32472303701"
               className="flex items-center space-x-2 text-blue-700 hover:text-blue-600 min-w-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
               aria-label="Appeler Shine&Go au 0472 30 37 01"
@@ -239,7 +238,7 @@ function NettoyageCompletHeader() {
                   <span>Nettoyage complet</span>
                 </Link>
               </div>
-              
+
               <div className="space-y-2">
                 <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Navigation</h3>
                 <button
@@ -267,7 +266,7 @@ function NettoyageCompletHeader() {
                   <span>FAQ</span>
                 </button>
               </div>
-              
+
 
 
               <div className="pt-4">
@@ -326,29 +325,29 @@ function NettoyageCompletFooter() {
     <footer className="relative py-16 md:py-24 bg-slate-900">
       {/* Clean background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Clean CTA Section */}
         <div className="text-center mb-16 footer-cta">
           <div className="max-w-4xl mx-auto">
             <div className="bg-slate-800 border border-slate-700 rounded-xl p-8 md:p-12 shadow-lg">
-              
+
               {/* Icon */}
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-blue-600 shadow-lg mb-6">
                 <div className="text-2xl">🚗</div>
               </div>
-              
+
               {/* Title */}
               <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
                 Votre voiture mérite le meilleur
               </h3>
-              
+
               {/* Description */}
               <p className="text-slate-300 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
                 Shine&Go – Service Premium Car Care
               </p>
-              
+
               {/* CTA Button - Mobile Optimized */}
               <button
                 onClick={handleBooking}
@@ -364,10 +363,10 @@ function NettoyageCompletFooter() {
 
         {/* Clean Contact & Information */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          
+
           {/* Company Info */}
           <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
-            
+
             {/* Brand */}
             <div className="mb-4">
               <h4 className="font-black text-2xl mb-2 text-white">
@@ -378,7 +377,7 @@ function NettoyageCompletFooter() {
                 <span className="text-sm font-medium">Service Premium Car Care</span>
               </div>
             </div>
-            
+
             {/* Description */}
             <p className="text-slate-300 leading-relaxed text-sm">
               Lavage voiture à domicile en Wallonie.
@@ -389,12 +388,12 @@ function NettoyageCompletFooter() {
 
           {/* Services */}
           <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
-            
+
             <h4 className="font-bold text-xl text-white mb-4 flex items-center gap-2">
               <div className="text-xl">🚗</div>
               Services
             </h4>
-            
+
             <ul className="space-y-3">
               <li>
                 <a
@@ -434,12 +433,12 @@ function NettoyageCompletFooter() {
 
           {/* Contact */}
           <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
-            
+
             <h4 className="font-bold text-xl text-white mb-4 flex items-center gap-2">
               <div className="text-xl">📞</div>
               Contact
             </h4>
-            
+
             <ul className="space-y-3">
               <li>
                 <a
@@ -473,7 +472,7 @@ function NettoyageCompletFooter() {
                   <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
                     <div className="text-sm">📧</div>
                   </div>
-                    <span className="text-sm">contact@shineandgo.be</span>
+                  <span className="text-sm">contact@shineandgo.be</span>
                 </a>
               </li>
             </ul>
@@ -484,7 +483,7 @@ function NettoyageCompletFooter() {
         <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-slate-400 text-sm mb-4 md:mb-0">
-              © 2026 Shine&Go. Tous droits réservés.
+              © 2025 Shine&Go. Tous droits réservés.
             </div>
             <div className="flex items-center gap-6 text-slate-400 text-sm">
               <a href="/mentions-legales" className="hover:text-white transition-colors">
@@ -507,7 +506,7 @@ function FAQCompletSectionInline() {
   const faqItems = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur et extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 120€ pour une citadine, 140€ pour une berline, 160€ pour un break, 170€ pour un SUV/4x4, 190€ pour un monospace et 220€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. Nos tarifs démarrent à 120€ pour un lavage complet. Un supplément s'applique selon la taille du véhicule. Économisez 30€ vs formules séparées."
     },
     {
       question: "Combien de temps dure un lavage complet voiture ?",
@@ -515,7 +514,7 @@ function FAQCompletSectionInline() {
     },
     {
       question: "Intervenez-vous sur tous types de véhicules (SUV, utilitaires, 7 places) ?",
-      answer: "Oui, nous intervenons sur tous types de véhicules : citadines, berlines, breaks, SUV, 4x4, monospaces, utilitaires et véhicules 7 places. Nos tarifs s'adaptent au type de véhicule."
+      answer: "Oui, nous intervenons sur tous types de véhicules : citadines, berlines, breaks, SUV, 4x4, monospaces, utilitaires et véhicules 7 places. Un supplément s'applique selon la taille."
     },
     {
       question: "Quels produits utilisez-vous ?",
@@ -579,7 +578,7 @@ export default function NettoyageCompletClient() {
     <div className="bg-white">
       <NettoyageCompletHeader />
       <NettoyageCompletScrollProgress />
-      
+
       <main>
         {/* Hero Section */}
         <section className="snap-start min-h-svh w-full relative">
@@ -767,38 +766,11 @@ export default function NettoyageCompletClient() {
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Tarifs par type de véhicule :</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
-                  <span className="text-2xl">🚗</span>
-                  <p className="font-bold">Citadine</p>
-                  <p className="text-lg font-semibold text-blue-600">79 €</p>
-                </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
-                  <span className="text-2xl">🚙</span>
-                  <p className="font-bold">Berline</p>
-                  <p className="text-lg font-semibold text-blue-600">89 €</p>
-                </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
-                  <span className="text-2xl">🚗</span>
-                  <p className="font-bold">Break</p>
-                  <p className="text-lg font-semibold text-blue-600">99 €</p>
-                </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
-                  <span className="text-2xl">🚐</span>
-                  <p className="font-bold">SUV / 4x4</p>
-                  <p className="text-lg font-semibold text-blue-600">109 €</p>
-                </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
-                  <span className="text-2xl">🚐</span>
-                  <p className="font-bold">Monospace</p>
-                  <p className="text-lg font-semibold text-blue-600">119 €</p>
-                </div>
-                <div className="text-center p-4 bg-white border border-blue-200 rounded-lg relative z-20" >
-                  <span className="text-2xl">🚚</span>
-                  <p className="font-bold">Utilitaire</p>
-                  <p className="text-lg font-semibold text-blue-600">129 €</p>
-                </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Notre tarif :</h3>
+              <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl mb-6">
+                <span className="text-5xl font-bold text-blue-600">Dès 120€</span>
+                <p className="text-slate-600 mt-3">Supplément selon taille du véhicule</p>
+                <p className="text-green-600 text-sm mt-1">Économisez 30€ vs formules séparées</p>
               </div>
 
               <div className="bg-white border border-slate-200 rounded-lg p-6 relative z-20" >

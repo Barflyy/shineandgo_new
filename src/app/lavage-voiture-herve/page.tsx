@@ -1,18 +1,18 @@
-import { ArrowRight, Check, Star, Clock, Sparkles, Car, Armchair } from 'lucide-react'
-import Image from 'next/image'
-import Breadcrumbs from '@/components/Breadcrumbs'
+import { ArrowRight, Check, Star, MapPin, Sparkles, Car, Armchair, Clock } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Lavage Voiture Herve à Domicile - Intérieur & Extérieur | Shine&Go',
-  description: 'Lavage voiture à domicile à Herve. Service de lavage auto professionnel, nettoyage véhicule intérieur/extérieur. Prix clairs dès 65€. Déplacement gratuit. ☎ 0472 30 37 01',
+  title: 'Lavage Voiture Herve - Lavage à Domicile',
+  description: 'Nettoyage auto à Herve. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
   alternates: {
     canonical: 'https://shineandgo.be/lavage-voiture-herve',
   },
   openGraph: {
-    title: 'Lavage Voiture Herve à Domicile | Shine&Go',
-    description: 'Lavage voiture professionnel à domicile à Herve. Lavage auto main, nettoyage véhicule complet. Dès 65€. Déplacement gratuit.',
+    title: 'Lavage Voiture Herve - Lavage à Domicile',
+    description: 'Nettoyage auto à Herve. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
     url: 'https://shineandgo.be/lavage-voiture-herve',
     siteName: 'Shine&Go',
     images: [
@@ -29,49 +29,16 @@ export const metadata: Metadata = {
 }
 
 export default function HervePage() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Combien coûte un lavage voiture à domicile à Herve ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nos tarifs à Herve démarrent à 65€ pour un lavage intérieur, 50€ pour l'extérieur, et 100€ pour la formule complète. Le déplacement est inclus."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Intervenez-vous à Herve pour le lavage voiture ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, nous intervenons à Herve et dans toutes les communes environnantes. Réservez en ligne ou par téléphone."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels services de lavage proposez-vous à Herve ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nous proposons le lavage intérieur, extérieur et complet à Herve. Nous utilisons des produits professionnels Koch-Chemie."
-        }
-      }
-    ]
-  }
-
+  
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
       <main className="bg-white dark:bg-slate-950 min-h-screen font-sans selection:bg-blue-100">
-      <Breadcrumbs
+      <Breadcrumbs 
         items={[
-          { label: 'Lavage voiture', href: '/zones' },
-          { label: 'Herve' }
-        ]}
+          { 'label': 'Lavage voiture', 'href': '/zones' }, 
+          { 'label': 'Herve' }
+        ]} 
       />
 
       {/* HERO */}
@@ -79,40 +46,27 @@ export default function HervePage() {
         <div className="container mx-auto px-6 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
 
-            {/* Badge discret */}
             <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-blue-50 dark:bg-blue-500/10 border border-transparent dark:border-blue-500/20 rounded-full animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600 dark:fill-blue-400 dark:text-blue-400" />
                 ))}
               </div>
-              <span className="text-sm font-medium text-blue-900 dark:text-blue-300">4.9/5 sur Google</span>
+              <span className="text-sm font-medium text-blue-900 dark:text-blue-300">Clients Satisfaits</span>
             </div>
 
-            {/* Titre épuré */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage voiture à domicile à Herve</h1>
+              Lavage et nettoyage de voiture professionnel à Herve</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Lavage voiture professionnel directement chez vous à Herve. Profitez d'un service premium avec les meilleurs produits du marché.
               <span className="block mt-2 text-base text-gray-400 dark:text-gray-500 font-normal">Intervention sous 48h • Dès 65€ • Satisfaction Garantie</span>
             </p>
 
-            {/* Badge d'urgence */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2.5 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-500/10 dark:to-red-500/10 border border-orange-200 dark:border-orange-500/30 rounded-full animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-              </span>
-              <span className="text-sm font-semibold text-orange-900 dark:text-orange-300">Plus que 3&nbsp;créneaux cette&nbsp;semaine</span>
-            </div>
-
-            {/* CTA simple */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <a
                 href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Herve"
                 className="group w-full sm:w-auto px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
-                aria-label="Réserver un nettoyage via WhatsApp"
               >
                 Réserver à Herve
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -121,17 +75,15 @@ export default function HervePage() {
               <a
                 href="tel:+32472303701"
                 className="w-full sm:w-auto px-8 py-4 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white font-medium rounded-full hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all flex items-center justify-center"
-                aria-label="Appeler maintenant pour réserver"
               >
                 0472 30 37 01
               </a>
             </div>
 
-            {/* Info clés */}
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-500 dark:text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Service en 3h</span>
-              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Produits Koch-Chemie</span>
-              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Garantie satisfaction</span>
+              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Lavage main</span>
+              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Déplacement gratuit</span>
+              <span className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-600 dark:text-blue-400" /> Prix clairs</span>
             </div>
           </div>
         </div>
@@ -144,34 +96,77 @@ export default function HervePage() {
               Expert en lavage auto à <span className="font-semibold">Herve</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
-              Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Herve pour un nettoyage intérieur et extérieur de qualité. Notre service à Herve est prisé par les propriétaires exigeants qui souhaitent préserver la valeur de leur véhicule sans perdre de temps dans les files d'attente.
+              Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Herve pour un nettoyage intérieur et extérieur de qualité. En tant qu'experts locaux à Herve, nous connaissons les exigences des conducteurs de la région et adaptons nos soins aux conditions climatiques belges.
             </p>
           </div>
         </div>
       </section>
 
 
-      {/* SECTION ZONES */}
+      
+      {/* SECTION LOCALISEE UNIQUE */}
+      <section className="py-16 bg-blue-50/50 dark:bg-slate-900/50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-8 text-center">
+              Lavage auto au centre du Plateau
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                  Herve, capitale du fromage mais aussi carrefour géographique. Nous desservons tout le centre et les villages alentours (Battice, Bolland...).
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
+                  Les routes de campagne du Pays de Herve chargent souvent les voitures en boue. Nous sommes équipés pour tout faire disparaître.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Zone Herve</h3>
+                        <p className="text-sm text-gray-500">Déplacement inclus</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Disponibilité</h3>
+                        <p className="text-sm text-gray-500">Du lundi au samedi</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* VILLES PROCHES */}
       <section className="py-12 md:py-20 bg-white dark:bg-slate-950 border-y border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-4 text-balance">
-                Nous intervenons aussi près de Herve
+                Zone d'intervention Herve
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 text-pretty">
-                Service mobile dans toute la région
+                Nous intervenons à Herve et Andrimont
               </p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
-                { name: 'Battice', href: '/lavage-voiture-battice' },
-                { name: 'Thimister', href: '/lavage-voiture-thimister' },
-                { name: 'Clermont', href: '/lavage-voiture-clermont' },
-                { name: 'Xhendelesse', href: '/lavage-voiture-xhendelesse' },
-                { name: 'Charneux', href: '/lavage-voiture-charneux' },
-                { name: 'Bolland', href: '/lavage-voiture-bolland' },
+                { name: 'Verviers', href: '/lavage-voiture-verviers' },
+                { name: 'Heusy', href: '/lavage-voiture-heusy' },
+                { name: 'Ensival', href: '/lavage-voiture-ensival' },
+                { name: 'Lambermont', href: '/lavage-voiture-lambermont' },
+                { name: 'Pepinster', href: '/lavage-voiture-pepinster' },
+                { name: 'Theux', href: '/lavage-voiture-theux' },
               ].map((city) => (
                 <Link
                   key={city.name}
@@ -188,6 +183,7 @@ export default function HervePage() {
         </div>
       </section>
 
+      
       {/* POURQUOI NOUS - Badges de confiance */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -238,17 +234,16 @@ export default function HervePage() {
         </div>
       </section>
 
-      {/* NOS FORMULES */}
-      <section id="tarifs" className="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mx-auto text-center mb-16 md:mb-24">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 text-balance tracking-tight">
-              Nos formules à Herve</h2>
-            <p className="text-lg text-gray-600 text-pretty font-light">
-              Prix fixes et transparents
+      {/* NOS FORMULES */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-light text-gray-900 mb-4 text-balance">
+              Tarifs Lavage Herve
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 text-pretty">
+              Des formules simples et efficaces
             </p>
           </div>
 
@@ -261,7 +256,7 @@ export default function HervePage() {
                   <Armchair className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Intérieur</h3>
-                <p className="text-gray-500 text-sm">Pour un habitacle comme neuf</p>
+                <p className="text-gray-500 text-sm">Nettoyage en profondeur</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-gray-50">
@@ -310,7 +305,7 @@ export default function HervePage() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Complet</h3>
-                <p className="text-slate-400 text-sm">L'expérience ultime Shine&Go</p>
+                <p className="text-slate-400 text-sm">La totale</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-slate-800">
@@ -355,7 +350,7 @@ export default function HervePage() {
                   <Car className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Extérieur</h3>
-                <p className="text-gray-500 text-sm">Lavage & Protection carrosserie</p>
+                <p className="text-gray-500 text-sm">Lavage carrosserie</p>
               </div>
 
               <div className="mb-8 pb-8 border-b border-gray-50">
@@ -371,7 +366,7 @@ export default function HervePage() {
                   'Nettoyage jantes, pneus & passages de roues',
                   'Pré-lavage & Lavage manuel',
                   'Nettoyage passages de portes',
-                  'Séchage microfibre + soufflage',
+                  'Séchage microfibre & soufflage',
                   'Dressing pneus & Protection hydrophobe'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600">
@@ -394,6 +389,7 @@ export default function HervePage() {
         </div>
       </section>
 
+      
       {/* SERVICES DETAILLÉS */}
       <section id="services" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -427,7 +423,7 @@ export default function HervePage() {
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-3">Nettoyage Tapis & Moquettes</h3>
                   <p className="text-gray-600 leading-relaxed text-pretty">
-                    Taches sur les tapis ? Poussière incrustée ? Notre injecteur-extracteur professionnel élimine la saleté au cœur des fibres (tapis de sol) pour un habitacle sain.
+                    Poussière et saletés ? Notre aspiration minutieuse et puissante élimine tout ce qui traîne sur vos tapis et moquettes pour un habitacle parfaitement propre.
                   </p>
                 </div>
               </div>
@@ -475,29 +471,29 @@ export default function HervePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                {
-                  image: '/images/realisations/lavage-complet-bmw-x5.webp',
-                  title: 'BMW X5',
+                { 
+                  image: '/images/realisations/lavage-complet-bmw-x5.webp', 
+                  title: 'BMW X5', 
                   subtitle: 'Formule Complète',
                   tags: ['Extérieur', 'Intérieur', 'Cuir']
                 },
-                {
-                  image: '/images/realisations/lavage-complet-bmw-z4.webp',
-                  title: 'BMW Z4',
+                { 
+                  image: '/images/realisations/lavage-complet-bmw-z4.webp', 
+                  title: 'BMW Z4', 
                   subtitle: 'Préparation à la vente',
                   tags: ['Capote', 'Polissage', 'Céramique']
                 },
-                {
-                  image: '/images/realisations/lavage-complet-audi-rs3.webp',
-                  title: 'Audi RS3',
+                { 
+                  image: '/images/realisations/lavage-complet-audi-rs3.webp', 
+                  title: 'Audi RS3', 
                   subtitle: 'Entretien Premium',
                   tags: ['Lavage Main', 'Jantes', 'Cire']
                 },
-                {
-                  image: '/images/realisations/lavage-complet-bmw-serie4.webp',
-                  title: 'BMW Série 4',
+                { 
+                  image: '/images/realisations/lavage-complet-bmw-serie4.webp', 
+                  title: 'BMW Série 4', 
                   subtitle: 'Remise à neuf',
-                  tags: ['Intérieur', 'Moquettes', 'Plastiques']
+                  tags: ['Intérieur', 'Moquettes', 'Plastiques'] 
                 },
               ].map((item, i) => (
                 <div key={i} className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
@@ -556,12 +552,6 @@ export default function HervePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Sophie L.',
-                  location: 'Verviers',
-                  text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
-                  rating: 5
-                },
-                {
                   name: 'Marc D.',
                   location: 'Liège',
                   text: 'J\'ai testé la formule complète sur ma BMW et je suis scotché du résultat. On dirait qu\'elle sort du concession. Prix très correct pour la qualité du travail.',
@@ -570,7 +560,13 @@ export default function HervePage() {
                 {
                   name: 'Thomas M.',
                   location: 'Herve',
-                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles sur mes sièges en tissu. Je recommande à 100%.',
+                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles : plastiques brillants, tapis impeccables. Je recommande à 100%.',
+                  rating: 5
+                },
+                {
+                  name: 'Sophie L.',
+                  location: 'Herve',
+                  text: 'Très pratique d\'avoir le service à domicile. Professionnel, ponctuel et le résultat est bluffant. Les produits Koch-Chemie font vraiment la différence.',
                   rating: 5
                 }
               ].map((testimonial, i) => (
@@ -613,10 +609,10 @@ export default function HervePage() {
             <h2 className="text-3xl font-light text-gray-900 mb-12 text-center text-balance">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
-                { q: "Comment payer\u00A0?", a: "Le paiement se fait une fois la prestation terminée et\u00A0validée par\u00A0vos\u00A0soins. Nous acceptons les espèces, Payconiq ou virement instantané." },
-                { q: "Besoin d'eau ou d'électricité\u00A0?", a: "Idéalement oui, une prise et un robinet à\u00A0moins de\u00A025m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
-                { q: "Combien de temps ça dure\u00A0?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." },
-                { q: "Et s'il pleut\u00A0?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." }
+                { q: "Combien de temps ça dure ?", a: "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait." },
+                { q: "Et s'il pleut ?", a: "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine." },
+                { q: "Besoin d'eau ou d'électricité ?", a: "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes." },
+                { q: "Comment payer ?", a: "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané." }
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
                   <h3 className="font-medium text-gray-900 mb-2 text-pretty">{item.q}</h3>
@@ -628,91 +624,127 @@ export default function HervePage() {
         </div>
       </section>
 
-      {/* Schema.org - Enhanced */}
+
+      {/* CTA FINAL */}
+      
+      {/* MAILLAGE INTERNE */}
+      <section className="py-8 bg-gray-50 border-t border-gray-200">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-gray-600">
+            Besoin d'un devis spécifique ? <Link href="/contact" className="text-blue-600 font-medium hover:underline">Contactez-nous</Link> ou consultez <Link href="/services" className="text-blue-600 font-medium hover:underline">tous nos services</Link>.
+            <span className="block mt-2 text-sm text-gray-500">Service disponible à <Link href="/zones" className="hover:text-gray-800">Namur</Link>, <Link href="/zones" className="hover:text-gray-800">Liège</Link> et partout en Wallonie.</span>
+          </p>
+        </div>
+      </section>
+
+<section className="py-16 sm:py-20 md:py-32 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
+              Envie d'une voiture neuve ?
+            </h2>
+
+            <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
+              Réservez en ligne, on s'occupe du reste.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://wa.me/32472303701?text=Bonjour, je souhaite réserver un nettoyage voiture à Herve"
+                className="group px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5"
+              >
+                Réserver par WhatsApp
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="tel:+32472303701"
+                className="px-8 py-4 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white font-medium rounded-full hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all flex items-center justify-center"
+              >
+                0472 30 37 01
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Schema.org */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "AutoWash",
-              "name": "Shine&Go - Lavage voiture Herve",
-              "description": "Service de nettoyage et detailing automobile à domicile à Herve.",
-              "url": "https://shineandgo.be/lavage-voiture-herve",
-              "telephone": "+32472303701",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Herve",
-                "addressRegion": "Liège",
-                "addressCountry": "BE"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "50.6386",
-                "longitude": "5.7942"
-              },
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Shine&Go",
-                "image": "/transformations/optimized/webp/apres01.webp"
-              },
-              "aggregateRating": {
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoWash",
+        "name": "Shine&Go - Lavage voiture Herve",
+        "description": "Service de nettoyage et detailing automobile à domicile à Herve.",
+        "url": "https://shineandgo.be/lavage-voiture-herve",
+        "telephone": "+32472303701",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Herve",
+            "addressRegion": "Liège",
+            "addressCountry": "BE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.6386",
+            "longitude": "5.7942"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Shine&Go",
+            "image": "/transformations/optimized/webp/apres01.webp"
+        },
+        "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
                 "reviewCount": "150",
                 "bestRating": "5",
                 "worstRating": "1"
 }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Besoin d'eau ou d'électricité ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Idéalement oui, une prise et un robinet à moins de 25m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
+                }
             },
             {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Herve",
-              "item": "https://shineandgo.be/lavage-voiture-herve"
-            }
-            ,
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Besoin d'eau ou d'électricité\u00A0?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Idéalement oui, une prise et un robinet à\u00A0moins de\u00A025m. Si ce n'est pas possible, prévenez-nous, nous avons des solutions autonomes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Combien de temps ça dure\u00A0?",
-                  "acceptedAnswer": {
+                "@type": "Question",
+                "name": "Combien de temps ça dure ?",
+                "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Comptez environ 3h pour une prestation complète. Nous prenons le temps nécessaire pour un résultat parfait."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Comment payer\u00A0?",
-                  "acceptedAnswer": {
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment payer ?",
+                "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Le paiement se fait une fois la prestation terminée et\u00A0validée par\u00A0vos\u00A0soins. Nous acceptons les espèces, Payconiq ou virement instantané."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Et s'il pleut\u00A0?",
-                  "acceptedAnswer": {
+                    "text": "Le paiement se fait une fois la prestation terminée et validée par vos soins. Nous acceptons les espèces, Payconiq ou virement instantané."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Et s'il pleut ?",
+                "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Pour l'extérieur, nous devrons reporter si vous n'avez pas d'abri (carport/garage). Pour l'intérieur, nous pouvons travailler sous une pluie fine."
-                  }
                 }
-              ]
+            }
+        ]
 
             }
 
-          ])
-        }}
+        ]) }}
       />
     </main>
     </>

@@ -13,7 +13,7 @@ export default function FAQInterieurSection() {
   const faqItems: FAQItem[] = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule : Citadine 65€, Berline 75€, Break 85€, SUV/4x4 95€, Monospace 110€, Utilitaire 125€. Tous nos tarifs incluent l'aspiration complète, le nettoyage des plastiques et la désinfection."
+      answer: "Nos tarifs démarrent à 65€ pour un nettoyage intérieur complet. Un supplément s'applique selon la taille du véhicule. Tous nos tarifs incluent l'aspiration complète, le nettoyage des plastiques et la désinfection."
     },
     {
       question: "Faites-vous le lavage voiture intérieur extérieur à domicile ?",
@@ -25,7 +25,7 @@ export default function FAQInterieurSection() {
     },
     {
       question: "Combien de temps dure une intervention ?",
-      answer: "La durée varie selon le type de véhicule et l'état de saleté : 20 minutes pour une citadine légèrement sale, jusqu'à 35 minutes pour un SUV très encrassé. Nous vous donnons une estimation précise lors du devis."
+      answer: "La durée varie selon l'état de saleté du véhicule : comptez environ 1h30 à 2h30 pour un nettoyage intérieur complet. Nous vous donnons une estimation précise lors du devis."
     },
     {
       question: "Intervenez-vous dans toute la Wallonie ?",
@@ -38,8 +38,8 @@ export default function FAQInterieurSection() {
   ];
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
+    setOpenItems(prev =>
+      prev.includes(index)
         ? prev.filter(item => item !== index)
         : [...prev, index]
     );
@@ -78,9 +78,9 @@ export default function FAQInterieurSection() {
                   </div>
                 </div>
               </button>
-              
+
               {openItems.includes(index) && (
-                <div 
+                <div
                   id={`faq-answer-${index}`}
                   className="bg-white border border-slate-200 rounded-b-xl p-6 mt-1 relative z-10"
                 >

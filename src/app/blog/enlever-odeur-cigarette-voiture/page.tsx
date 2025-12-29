@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `L'odeur de tabac dans une voiture est tenace. Découvrez nos méthodes professionnelles (ozone, nettoyage profond) pour éliminer définitivement l'odeur de cigarette.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-01-20',
+    publishedTime: '2025-01-20',
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-01-20",
+        "datePublished": "2025-01-20",
         "image": "https://shineandgo.be/images/blog/enlever-odeur-cigarette-voiture.webp"
       },
       {
@@ -84,7 +84,7 @@ export default function ArticlePage() {
           <div className="flex flex-wrap gap-4 items-center mb-8">
             <span className="badge-category">Problème</span>
             <span className="meta-text flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-blue-500" /> 20 Jan 2026
+              <Calendar className="w-4 h-4 text-blue-500" /> 20 Jan 2025
             </span>
             <span className="meta-text flex items-center gap-2">
               <Clock className="w-4 h-4 text-blue-500" /> 8 min de lecture
@@ -197,7 +197,7 @@ export default function ArticlePage() {
             <h3 className="subsection-title mb-6">Articles recommandés :</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               <RelatedLink href="/blog/lavage-voiture-avant-vente" title="Nettoyage Avant Vente" />
-              <RelatedLink href="/blog/nettoyage-siege-tissu-tache" title="Nettoyage Sièges Tissu" />
+              
             </div>
           </div>
 

@@ -29,43 +29,10 @@ export const metadata: Metadata = {
 }
 
 export default function BeyneHeusayPage() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Combien coûte un lavage voiture à domicile à Beyne Heusay ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nos tarifs à Beyne Heusay démarrent à 65€ pour un lavage intérieur, 50€ pour l'extérieur, et 100€ pour la formule complète. Le déplacement est inclus."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Intervenez-vous à Beyne Heusay pour le lavage voiture ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, nous intervenons à Beyne Heusay et dans toutes les communes environnantes. Réservez en ligne ou par téléphone."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels services de lavage proposez-vous à Beyne Heusay ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nous proposons le lavage intérieur, extérieur et complet à Beyne Heusay. Nous utilisons des produits professionnels Koch-Chemie."
-        }
-      }
-    ]
-  }
-
+  
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
       <main className="bg-white dark:bg-slate-950 min-h-screen font-sans selection:bg-blue-100">
       <Breadcrumbs 
         items={[
@@ -131,6 +98,49 @@ export default function BeyneHeusayPage() {
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
               Plus besoin de vous déplacer au car wash. Nous venons à votre domicile à Beyne-Heusay pour un résultat d'exception. Notre service à Beyne-Heusay est prisé par les propriétaires exigeants qui souhaitent préserver la valeur de leur véhicule sans perdre de temps dans les files d'attente.
             </p>
+          </div>
+        </div>
+      </section>
+
+
+      
+      {/* SECTION LOCALISEE UNIQUE */}
+      <section className="py-16 bg-blue-50/50 dark:bg-slate-900/50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-light text-gray-900 dark:text-white mb-8 text-center">
+              Lavage auto sur la route de Fléron
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                  Beyne-Heusay, Bellaire, Queue-du-Bois... nous connaissons chaque coin. Ne perdez plus de temps dans les embouteillages de la N3 pour aller laver votre voiture.
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
+                  Nous venons chez vous, équipés de l'eau et de l'électricité si nécessaire, pour un résultat bluffant.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Zone Beyne Heusay</h3>
+                        <p className="text-sm text-gray-500">Déplacement inclus</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white">Disponibilité</h3>
+                        <p className="text-sm text-gray-500">Du lundi au samedi</p>
+                    </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -413,7 +423,7 @@ export default function BeyneHeusayPage() {
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-3">Nettoyage Tapis & Moquettes</h3>
                   <p className="text-gray-600 leading-relaxed text-pretty">
-                    Taches sur les tapis ? Poussière incrustée ? Notre injecteur-extracteur professionnel élimine la saleté au cœur des fibres (tapis de sol) pour un habitacle sain.
+                    Poussière et saletés ? Notre aspiration minutieuse et puissante élimine tout ce qui traîne sur vos tapis et moquettes pour un habitacle parfaitement propre.
                   </p>
                 </div>
               </div>
@@ -556,7 +566,7 @@ export default function BeyneHeusayPage() {
                 {
                   name: 'Thomas M.',
                   location: 'Herve',
-                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles sur mes sièges en tissu. Je recommande à 100%.',
+                  text: 'Service impeccable ! Ma voiture n\'avait jamais été aussi propre. Le detailing intérieur a fait des miracles : plastiques brillants, tapis impeccables. Je recommande à 100%.',
                   rating: 5
                 }
               ].map((testimonial, i) => (
@@ -694,13 +704,6 @@ export default function BeyneHeusayPage() {
                 "worstRating": "1"
 }
     },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Beyne-Heusay",
-                "item": "https://shineandgo.be/lavage-voiture-beyne-heusay"
-            }
-        ,
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",

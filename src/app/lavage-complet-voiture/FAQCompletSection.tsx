@@ -13,7 +13,7 @@ export default function FAQCompletSection() {
   const faqItems: FAQItem[] = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur et extérieur voiture ?",
-      answer: "Nos tarifs varient selon le type de véhicule et l'état de saleté. À partir de 120€ pour une citadine, 140€ pour une berline, 160€ pour un break, 170€ pour un SUV/4x4, 190€ pour un monospace et 220€ pour un utilitaire. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs démarrent à 120€ pour un lavage complet intérieur + extérieur. Un supplément s'applique selon la taille du véhicule. Cette formule vous fait économiser 30€ par rapport aux formules séparées."
     },
     {
       question: "Combien de temps dure un lavage complet voiture ?",
@@ -21,7 +21,7 @@ export default function FAQCompletSection() {
     },
     {
       question: "Intervenez-vous sur tous types de véhicules (SUV, utilitaires, 7 places) ?",
-      answer: "Oui, nous intervenons sur tous types de véhicules : citadines, berlines, breaks, SUV, 4x4, monospaces, utilitaires et véhicules 7 places. Nos tarifs s'adaptent au type de véhicule."
+      answer: "Oui, nous intervenons sur tous types de véhicules : citadines, berlines, breaks, SUV, 4x4, monospaces, utilitaires et véhicules 7 places. Un supplément s'applique selon la taille."
     },
     {
       question: "Quels produits utilisez-vous ?",
@@ -38,8 +38,8 @@ export default function FAQCompletSection() {
   ];
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
+    setOpenItems(prev =>
+      prev.includes(index)
         ? prev.filter(item => item !== index)
         : [...prev, index]
     );
@@ -63,7 +63,7 @@ export default function FAQCompletSection() {
               <button
                 onClick={() => toggleItem(index)}
                 className="w-full text-left bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative z-20"
-                
+
                 aria-expanded={openItems.includes(index)}
                 aria-controls={`faq-answer-${index}`}
               >
@@ -76,12 +76,12 @@ export default function FAQCompletSection() {
                   </span>
                 </div>
               </button>
-              
+
               {openItems.includes(index) && (
-                <div 
+                <div
                   id={`faq-answer-${index}`}
                   className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 mt-2 shadow-lg relative z-20"
-                  
+
                 >
                   <p className="text-slate-700 leading-relaxed">
                     {item.answer}

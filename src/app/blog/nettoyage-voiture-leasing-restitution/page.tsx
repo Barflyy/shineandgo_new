@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Rendre un leasing peut coûter cher en frais de remise en état. Un nettoyage pro coûte 10x moins cher que la facture du loueur.`,
   openGraph: {
     type: 'article',
-    publishedTime: '2026-Avr-25', // Approx date conv
+    publishedTime: '2025-Avr-25', // Approx date conv
     authors: ['Shine&Go'],
   }
 }
@@ -33,7 +33,7 @@ export default function ArticlePage() {
             "url": "https://shineandgo.be/logo.png"
           }
         },
-        "datePublished": "2026-04-15", // Generic date for schema or parse correctly
+        "datePublished": "2025-04-15", // Generic date for schema or parse correctly
         "image": "https://shineandgo.be/images/blog/default-blog.jpg" // Placeholder if specific img not generated
       },
       {
@@ -110,7 +110,7 @@ export default function ArticlePage() {
           
           <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-6 justify-center md:justify-start">
             <span className="badge-category">Leasing</span>
-            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 25 Avr 2026</span>
+            <span className="meta-text flex items-center gap-2"><Calendar className="w-4 h-4" /> 25 Avr 2025</span>
             <span className="meta-text flex items-center gap-2"><Clock className="w-4 h-4" /> 5 min de lecture</span>
           </div>
 
