@@ -1,18 +1,45 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { MessageCircle, X, Check } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { MessageCircle, X, Check, Send, Phone } from 'lucide-react'
 
 export default function WhatsAppWidget() {
     const [isOpen, setIsOpen] = useState(false)
-    const [showWidget, setShowWidget] = useState(false)
+    const [showWidget, setShowWidget] = useState(true) // Set to true immediately
     const [hasInteracted, setHasInteracted] = useState(false)
+    const [isTyping, setIsTyping] = useState(false)
+    const [messages, setMessages] = useState<Array<{ text: React.ReactNode; isUser: boolean; time: string }>>([])
+    const messagesEndRef = useRef<HTMLDivElement>(null)
 
+    // Chat flow simulation
     useEffect(() => {
-        // Show widget after 2 seconds
-        const timer = setTimeout(() => setShowWidget(true), 2000)
-        return () => clearTimeout(timer)
-    }, [])
+        if (isOpen && messages.length === 0) {
+            // First message immediately
+            setMessages([
+                {
+                    text: "👋 Bonjour ! Bienvenue chez Shine&Go.",
+                    isUser: false,
+                    time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                }
+            ])
+
+            // Typing animation for second message
+            setIsTyping(true)
+            const typingTimer = setTimeout(() => {
+                setIsTyping(false)
+                setMessages(prev => [
+                    ...prev,
+                    {
+                        text: <>Envie de retrouver une voiture <span className="font-bold">comme neuve</span> ?</>,
+                        isUser: false,
+                        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                    }
+                ])
+            }, 1500)
+
+            return () => clearTimeout(typingTimer)
+        }
+    }, [isOpen])
 
     const handleOpen = () => {
         setIsOpen(!isOpen)
@@ -27,66 +54,129 @@ export default function WhatsAppWidget() {
     if (!showWidget) return null
 
     return (
-        <div className="fixed bottom-6 right-4 md:right-8 z-50 flex flex-col items-end">
+        <div className="fixed bottom-6 right-4 md:bottom-8 md:right-8 z-50 flex flex-col items-end font-sans">
             {/* Chat Popup */}
             <div
-                className={`mb-4 w-[320px] md:w-[360px] transform transition-all duration-500 origin-bottom-right ${isOpen
-                        ? 'opacity-100 scale-100 pointer-events-auto'
-                        : 'opacity-0 scale-90 pointer-events-none'
+                className={`mb-4 w-[calc(100vw-32px)] md:w-[380px] transform transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] origin-bottom-right ${isOpen
+                    ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
+                    : 'opacity-0 scale-90 translate-y-4 pointer-events-none'
                     }`}
             >
-                <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl border border-gray-100 dark:border-gray-800 overflow-hidden">
-                    {/* Header */}
-                    <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 flex items-center gap-4">
+                <div className="bg-[#E5DDD5] dark:bg-slate-900 rounded-[1.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[600px] border border-white/20">
+
+                    {/* Header aka "WhatsApp Top Bar" */}
+                    <div className="bg-[#075E54] p-4 flex items-center gap-3 shadow-md z-10">
                         <div className="relative">
-                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-inner overflow-hidden">
-                                <span className="text-2xl">✨</span>
+                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden border-2 border-white/20">
+                                <span className="text-xl">🏎️</span>
                             </div>
-                            <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-400 border-2 border-green-500 rounded-full animate-pulse"></span>
+                            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#075E54] rounded-full"></span>
                         </div>
-                        <div className="flex-1">
-                            <h4 className="text-white font-bold text-lg leading-tight">Shine&Go</h4>
-                            <p className="text-green-100 text-xs font-medium flex items-center gap-1.5 pt-0.5">
-                                <span className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></span>
-                                Réponse ultra-rapide
+                        <div className="flex-1 text-white">
+                            <h4 className="font-semibold text-base leading-tight">Shine&Go</h4>
+                            <p className="text-green-100 text-[11px] font-medium leading-tight opacity-90">
+                                En ligne • Répond en &lt; 5 min
                             </p>
                         </div>
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="w-10 h-10 rounded-full bg-black/10 hover:bg-black/20 flex items-center justify-center text-white transition-colors"
+                            className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-white transition-colors"
                         >
                             <X className="w-5 h-5" />
                         </button>
                     </div>
 
-                    {/* Chat Body */}
-                    <div className="p-6 bg-gray-50 dark:bg-slate-950/50 space-y-4">
-                        <div className="bg-white dark:bg-slate-900 rounded-2xl rounded-tl-none p-4 shadow-sm border border-gray-100 dark:border-gray-800 max-w-[90%]">
-                            <p className="text-gray-700 dark:text-gray-200 text-[15px] leading-relaxed">
-                                👋 Bonjour ! Envie d'une voiture comme neuve ?
-                            </p>
-                            <span className="text-[10px] text-gray-400 dark:text-gray-500 mt-2 block font-medium uppercase tracking-wider">Shine&Go • Maintenant</span>
+                    {/* Chat Body with "WhatsApp Pattern" background */}
+                    <div className="flex-1 p-4 space-y-4 overflow-y-auto min-h-[250px] relative">
+                        {/* Doodle Background Pattern Overlay */}
+                        <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
+                            style={{ backgroundImage: 'url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png")' }}>
                         </div>
 
-                        <div className="bg-white dark:bg-slate-900 rounded-2xl rounded-tl-none p-4 shadow-sm border border-gray-100 dark:border-gray-800 max-w-[95%] animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                            <p className="text-gray-700 dark:text-gray-200 text-[15px] leading-relaxed">
-                                Envoyez-nous <span className="font-bold text-green-600 dark:text-green-400">votre ville</span> pour recevoir un devis gratuit en 2 minutes ! 🚗💨
-                            </p>
+                        {/* Date Label */}
+                        <div className="flex justify-center mb-4 relative z-10">
+                            <span className="bg-[#E1F3FB] dark:bg-slate-800 text-gray-600 dark:text-gray-300 text-[10px] font-medium px-2 py-1 rounded shadow-sm">
+                                Aujourd'hui
+                            </span>
                         </div>
+
+                        {/* Messages */}
+                        {messages.map((msg, idx) => (
+                            <div key={idx} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'} animate-fade-in-up md:max-w-[85%] relative z-10`}>
+                                <div className={`
+                                    rounded-lg p-2 px-3 shadow-sm text-[15px] leading-relaxed relative
+                                    ${msg.isUser
+                                        ? 'bg-[#DCF8C6] text-gray-900 rounded-tr-none'
+                                        : 'bg-white text-gray-900 rounded-tl-none'}
+                                `}>
+                                    {msg.text}
+                                    <div className="text-[10px] text-gray-400 mt-1 flex items-center justify-end gap-1">
+                                        {msg.time}
+                                        <Check className="w-3 h-3 text-blue-400" />
+                                    </div>
+
+                                    {/* Triangle Bubble Tip */}
+                                    <div className={`absolute top-0 w-0 h-0 border-[6px] border-transparent 
+                                        ${msg.isUser
+                                            ? 'right-[-6px] border-t-[#DCF8C6]'
+                                            : 'left-[-6px] border-t-white'}
+                                    `}></div>
+                                </div>
+                            </div>
+                        ))}
+
+                        {/* Typing Indicator */}
+                        {isTyping && (
+                            <div className="flex justify-start animate-fade-in-up relative z-10">
+                                <div className="bg-white rounded-lg p-3 rounded-tl-none shadow-sm flex gap-1 items-center h-[34px]">
+                                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></span>
+                                </div>
+                            </div>
+                        )}
+                        <div ref={messagesEndRef} />
                     </div>
 
-                    {/* Action Area */}
-                    <div className="p-6 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-slate-900 space-y-3">
+                    {/* Input Area (Fake) */}
+                    <div className="bg-[#F0F2F5] dark:bg-slate-900 p-2 px-3 flex items-center gap-2 relative z-20">
+                        <button className="p-2 text-gray-500 hover:text-gray-600 transition-colors hidden sm:block">
+                            <span className="text-xl">😃</span>
+                        </button>
                         <button
                             onClick={handleSendMessage}
-                            className="w-full py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_-10px_rgba(34,197,94,0.5)] hover:shadow-[0_15px_35px_-10px_rgba(34,197,94,0.6)] hover:-translate-y-1 active:scale-[0.98]"
+                            className="flex-1 bg-white dark:bg-slate-800 h-10 rounded-full px-4 text-sm text-gray-500 dark:text-gray-400 flex items-center text-left hover:bg-gray-50 transition-colors border border-transparent focus:border-green-500 outline-none"
+                        >
+                            Écrire un message...
+                        </button>
+                        <button
+                            onClick={handleSendMessage}
+                            className="w-10 h-10 bg-[#00A884] hover:bg-[#008f6f] rounded-full flex items-center justify-center text-white shadow-sm transition-all hover:scale-105 active:scale-95"
+                        >
+                            <Send className="w-5 h-5 ml-0.5" />
+                        </button>
+                    </div>
+
+                    {/* Big CTA with Call Option */}
+                    <div className="bg-white dark:bg-slate-800 p-3 pt-2 border-t border-gray-100 dark:border-gray-700 relative z-20 space-y-3">
+                        <button
+                            onClick={handleSendMessage}
+                            className="w-full py-3 bg-[#25D366] hover:bg-[#1fa851] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-green-500/20 active:scale-[0.98]"
                         >
                             <MessageCircle className="w-5 h-5" />
-                            Démarrer sur WhatsApp
+                            Démarrer la discussion
                         </button>
-                        <div className="flex items-center justify-center gap-4 text-[11px] text-gray-400 font-medium uppercase tracking-widest">
-                            <span className="flex items-center gap-1"><Check className="w-3 h-3 text-green-500" /> Gratuit</span>
-                            <span className="flex items-center gap-1"><Check className="w-3 h-3 text-green-500" /> Sans engagement</span>
+
+                        {/* Alternative Call Option */}
+                        <div className="flex items-center justify-center gap-2">
+                            <span className="text-[11px] text-gray-400">Pas de WhatsApp ?</span>
+                            <a
+                                href="tel:+32472303701"
+                                className="text-[11px] font-bold text-gray-600 dark:text-gray-300 hover:text-[#075E54] dark:hover:text-[#25D366] transition-colors flex items-center gap-1 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-md"
+                            >
+                                <Phone className="w-3 h-3" />
+                                Appeler le 0472 30 37 01
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -96,13 +186,15 @@ export default function WhatsAppWidget() {
             <div className="flex items-center gap-4">
                 {/* Desktop Label */}
                 {!isOpen && (
-                    <div className="hidden md:flex items-center gap-3 animate-fade-in-right">
-                        <div className="bg-white dark:bg-slate-900 px-6 py-3 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 pointer-events-none relative">
-                            <p className="text-sm font-bold text-gray-800 dark:text-gray-100 whitespace-nowrap">
-                                Un devis gratuit ? 👋
+                    <div
+                        onClick={handleOpen}
+                        className="hidden md:flex items-center gap-3 animate-fade-in-right cursor-pointer group"
+                    >
+                        <div className="bg-white dark:bg-slate-900 px-5 py-2.5 rounded-full shadow-lg border border-gray-100 dark:border-gray-800 relative transition-transform group-hover:-translate-x-1">
+                            <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 whitespace-nowrap flex items-center gap-2">
+                                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                Un devis en 2 min ?
                             </p>
-                            {/* Decorative arrow */}
-                            <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 bg-white dark:bg-slate-900 border-r border-t border-gray-100 dark:border-gray-800 rotate-45"></div>
                         </div>
                     </div>
                 )}
@@ -110,29 +202,26 @@ export default function WhatsAppWidget() {
                 {/* Main Button */}
                 <button
                     onClick={handleOpen}
-                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl group ${isOpen
-                            ? 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rotate-90'
-                            : 'bg-green-500 hover:bg-green-600 text-white hover:scale-110 active:scale-95'
+                    className={`relative w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] z-50 ${isOpen
+                        ? 'bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rotate-90 scale-90'
+                        : 'bg-[#25D366] hover:bg-[#20bd5a] text-white hover:scale-110'
                         }`}
                     aria-label="Chat WhatsApp"
                 >
-                    {/* Ring animation */}
+                    {/* Ripple Effect */}
                     {!isOpen && !hasInteracted && (
-                        <>
-                            <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-40"></span>
-                            <span className="absolute inset-[-8px] rounded-full border-2 border-green-500/30 animate-pulse"></span>
-                        </>
+                        <span className="absolute inset-0 rounded-full border-2 border-[#25D366] opacity-75 animate-ping"></span>
                     )}
 
                     {isOpen ? (
-                        <X className="w-7 h-7 md:w-8 md:h-8" />
+                        <X className="w-6 h-6 md:w-7 md:h-7" />
                     ) : (
-                        <MessageCircle className="w-8 h-8 md:w-10 md:h-10 fill-current" />
+                        <MessageCircle className="w-8 h-8 md:w-9 md:h-9 fill-current" />
                     )}
 
                     {/* Notification Badge */}
                     {!isOpen && !hasInteracted && (
-                        <span className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 text-white text-[10px] font-black flex items-center justify-center rounded-full border-2 border-white dark:border-slate-950 shadow-lg animate-bounce">
+                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white dark:border-slate-950 shadow-sm animate-bounce">
                             1
                         </span>
                     )}
