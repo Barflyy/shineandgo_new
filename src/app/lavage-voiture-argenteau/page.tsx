@@ -93,7 +93,7 @@ export default function ArgenteauPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-              Expert en lavage auto à <span className="font-semibold">Argenteau</span>
+              Expert en lavage voiture à <span className="font-semibold">Argenteau</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
               Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Argenteau pour un nettoyage intérieur et extérieur de qualité. Que vous soyez situé en plein centre de Argenteau ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.

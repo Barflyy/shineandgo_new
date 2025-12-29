@@ -55,8 +55,7 @@ export default function DalhemPage() {
               <span className="text-sm font-medium text-blue-900 dark:text-blue-300">Service 5 étoiles</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage et nettoyage de voiture professionnel à Dalhem</h1>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>Lavage voiture professionnel à Dalhem</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Lavage voiture professionnel directement chez vous à Dalhem. Profitez d'un service premium avec les meilleurs produits du marché.
@@ -93,7 +92,7 @@ export default function DalhemPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-              Expert en lavage auto à <span className="font-semibold">Dalhem</span>
+              Expert en lavage voiture à <span className="font-semibold">Dalhem</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
               Plus besoin de vous déplacer au car wash. Nous venons à votre domicile à Dalhem pour un résultat d'exception. Que vous soyez situé en plein centre de Dalhem ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.

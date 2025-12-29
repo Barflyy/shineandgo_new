@@ -93,7 +93,7 @@ export default function MelenPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-              Expert en lavage auto à <span className="font-semibold">Melen</span>
+              Expert en lavage voiture à <span className="font-semibold">Melen</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
               Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Melen pour un nettoyage intérieur et extérieur de qualité. Notre service à Melen est prisé par les propriétaires exigeants qui souhaitent préserver la valeur de leur véhicule sans perdre de temps dans les files d'attente.

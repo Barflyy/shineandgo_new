@@ -6,13 +6,13 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Lavage Voiture Jalhay - Nettoyage Mobile',
-  description: 'Nettoyage auto à domicile à Jalhay. Service pro et rapide. Nous venons chez vous. Lavage complet intérieur et extérieur.',
+  description: 'Lavage voiture à domicile à Jalhay. Service pro et rapide. Nous venons chez vous. Lavage complet intérieur et extérieur.',
   alternates: {
     canonical: 'https://shineandgo.be/lavage-voiture-jalhay',
   },
   openGraph: {
     title: 'Lavage Voiture Jalhay - Nettoyage Mobile',
-    description: 'Nettoyage auto à domicile à Jalhay. Service pro et rapide. Nous venons chez vous. Lavage complet intérieur et extérieur.',
+    description: 'Lavage voiture à domicile à Jalhay. Service pro et rapide. Nous venons chez vous. Lavage complet intérieur et extérieur.',
     url: 'https://shineandgo.be/lavage-voiture-jalhay',
     siteName: 'Shine&Go',
     images: [
@@ -93,7 +93,7 @@ export default function JalhayPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-              Expert en lavage auto à <span className="font-semibold">Jalhay</span>
+              Expert en lavage voiture à <span className="font-semibold">Jalhay</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
               Redonnez l'éclat du neuf à votre véhicule sans quitter Jalhay. Notre équipe mobile intervient chez vous ou à votre bureau. Nous couvrons l'ensemble des codes postaux de Jalhay, apportant notre savoir-faire de detailer professionnel directement dans votre garage ou sur votre allée.

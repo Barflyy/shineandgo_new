@@ -6,13 +6,13 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Lavage Voiture Chaudfontaine - Lavage à Domicile',
-  description: 'Nettoyage auto à Chaudfontaine. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
+  description: 'Lavage voiture à Chaudfontaine. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
   alternates: {
     canonical: 'https://shineandgo.be/lavage-voiture-chaudfontaine',
   },
   openGraph: {
     title: 'Lavage Voiture Chaudfontaine - Lavage à Domicile',
-    description: 'Nettoyage auto à Chaudfontaine. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
+    description: 'Lavage voiture à Chaudfontaine. Service mobile de qualité. Nous venons chez vous pour un lavage complet intérieur et extérieur. Devis gratuit.',
     url: 'https://shineandgo.be/lavage-voiture-chaudfontaine',
     siteName: 'Shine&Go',
     images: [
@@ -55,8 +55,7 @@ export default function ChaudfontainePage() {
                 <span className="text-sm font-medium text-blue-900 dark:text-blue-300">Clients Satisfaits</span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-                Lavage et nettoyage de voiture professionnel à Chaudfontaine</h1>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>Lavage voiture professionnel à Chaudfontaine</h1>
 
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
                 Lavage voiture professionnel directement chez vous à Chaudfontaine. Profitez d'un service premium avec les meilleurs produits du marché.
@@ -93,7 +92,7 @@ export default function ChaudfontainePage() {
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-                Expert en lavage auto à <span className="font-semibold">Chaudfontaine</span>
+                Expert en lavage voiture à <span className="font-semibold">Chaudfontaine</span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
                 Votre voiture mérite le meilleur traitement. Shine&Go se déplace partout à Chaudfontaine pour un nettoyage intérieur et extérieur de qualité. Que vous soyez à Embourg, Beaufays ou Vaux-sous-Chèvremont, nos experts locaux connaissent les exigences des conducteurs de la région et adaptent leurs soins.

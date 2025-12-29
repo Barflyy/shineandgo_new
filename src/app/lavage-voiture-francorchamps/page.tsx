@@ -55,8 +55,7 @@ export default function FrancorchampsPage() {
               <span className="text-sm font-medium text-blue-900 dark:text-blue-300">Expert Detailing</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>
-              Lavage et nettoyage de voiture professionnel à Francorchamps</h1>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1] animate-fade-in-up text-balance" style={{ animationDelay: '0.2s' }}>Lavage voiture professionnel à Francorchamps</h1>
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed px-4 animate-fade-in-up text-pretty max-w-2xl mx-auto" style={{ animationDelay: '0.3s' }}>
               Lavage voiture professionnel directement chez vous à Francorchamps. Profitez d'un service premium avec les meilleurs produits du marché.
@@ -93,7 +92,7 @@ export default function FrancorchampsPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-              Expert en lavage auto à <span className="font-semibold">Francorchamps</span>
+              Expert en lavage voiture à <span className="font-semibold">Francorchamps</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
               Shine&Go s'occupe de votre voiture à Francorchamps. Profitez d'un service professionnel méticuleux avec les produits Koch-Chemie. Notre service à Francorchamps est prisé par les propriétaires exigeants qui souhaitent préserver la valeur de leur véhicule sans perdre de temps dans les files d'attente.

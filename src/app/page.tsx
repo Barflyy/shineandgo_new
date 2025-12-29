@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'Lavage Voiture à Domicile Liège, Verviers, Herve | Shine&Go',
-    description: 'Service de lavage voiture à domicile en région liégeoise. Lavage auto professionnel, nettoyage véhicule intérieur/extérieur. Dès 65€. Déplacement gratuit. ☎ 0472 30 37 01',
+    description: 'Service de lavage voiture à domicile en région liégeoise. Lavage voiture professionnel, nettoyage véhicule intérieur/extérieur. Dès 65€. Déplacement gratuit. ☎ 0472 30 37 01',
     alternates: {
         canonical: 'https://shineandgo.be',
     },
@@ -101,7 +101,7 @@ export default function TestCardsPage() {
 
                             {/* Titre */}
                             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
-                                Lavage auto à domicile
+                                Lavage voiture à domicile
                             </h1>
 
                             <p className="text-xl text-gray-500 mb-10 max-w-xl mx-auto">

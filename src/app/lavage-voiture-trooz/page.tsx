@@ -93,7 +93,7 @@ export default function TroozPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-              Expert en lavage auto à <span className="font-semibold">Trooz</span>
+              Expert en lavage voiture à <span className="font-semibold">Trooz</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
               Plus besoin de vous déplacer au car wash. Nous venons à votre domicile à Trooz pour un résultat d'exception. Que vous soyez situé en plein centre de Trooz ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.

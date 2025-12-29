@@ -92,7 +92,7 @@ export default function VisePage() {
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-light text-gray-900 dark:text-white mb-6">
-                Expert en lavage auto à <span className="font-semibold">Vise</span>
+                Expert en lavage voiture à <span className="font-semibold">Vise</span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
                 Shine&Go s'occupe de votre voiture à Visé. Profitez d'un service professionnel méticuleux avec les produits Koch-Chemie. Que vous soyez situé en plein centre de Visé ou dans les quartiers résidentiels en périphérie, notre unité mobile est équipée pour intervenir en totale autonomie.
