@@ -25,7 +25,7 @@ const productSchema = {
   "description": "Nettoyage complet intérieur + extérieur : aspiration, plastiques, lavage main 2 seaux, jantes, cire hydrophobe. Service tout-en-un à domicile.",
   "image": "https://shineandgo.be/images/realisations/lavage-complet-bmw-x5.webp",
   "brand": {
-    "@type": "LocalBusiness",
+    "@type": "Brand",
     "name": "Shine&Go"
   },
   "offers": {
@@ -34,7 +34,26 @@ const productSchema = {
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
     "priceValidUntil": "2026-12-31",
-    "url": "https://shineandgo.be/lavage-complet-voiture"
+    "url": "https://shineandgo.be/lavage-complet-voiture",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "BE",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnInStore"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": 0,
+        "currency": "EUR"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "BE"
+      }
+    }
   },
   "aggregateRating": {
     "@type": "AggregateRating",

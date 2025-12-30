@@ -25,7 +25,7 @@ const productSchema = {
   "description": "Nettoyage complet de l'habitacle : aspiration, tapis, plastiques, tableau de bord, vitres intérieures. Finitions au pinceau et désodorisation.",
   "image": "https://shineandgo.be/images/realisations/lavage-complet-bmw-serie4.webp",
   "brand": {
-    "@type": "LocalBusiness",
+    "@type": "Brand",
     "name": "Shine&Go"
   },
   "offers": {
@@ -34,7 +34,26 @@ const productSchema = {
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
     "priceValidUntil": "2026-12-31",
-    "url": "https://shineandgo.be/lavage-interieur-voiture"
+    "url": "https://shineandgo.be/lavage-interieur-voiture",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "BE",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnInStore"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": 0,
+        "currency": "EUR"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "BE"
+      }
+    }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
