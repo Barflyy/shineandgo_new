@@ -281,13 +281,57 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // 2. ANCIENNES URLs NETTOYAGE (ex: /nettoyage-voiture-spa)
-      // Note: Le paramètre :slug prendra "spa" dans "nettoyage-voiture-spa"
-      // SI la source est /nettoyage-voiture-:slug, cela matche /nettoyage-voiture-spa ??
-      // NON, Next.js route matching is path segment based usually.
-      // Mais :slug peut matcher le reste.
-      // Si la page est /nettoyage-voiture-spa, c'est un seul segment.
-      // Donc je dois utiliser une regex pour capturer la fin.
+      // 2. PAGES SPÉCIFIQUES (Exceptions aux patterns génériques)
+      {
+        source: '/nettoyage-complet-voiture',
+        destination: '/lavage-complet-voiture',
+        permanent: true,
+      },
+      {
+        source: '/nettoyage-interieur-voiture',
+        destination: '/lavage-interieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/nettoyage-exterieur-voiture',
+        destination: '/lavage-exterieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/nettoyage-voiture-domicile-prix',
+        destination: '/prix-lavage-voiture-domicile',
+        permanent: true,
+      },
+      {
+        source: '/prix-nettoyage-voiture-domicile',
+        destination: '/prix-lavage-voiture-domicile',
+        permanent: true,
+      },
+      {
+        source: '/legal',
+        destination: '/mentions-legales',
+        permanent: true,
+      },
+
+      // 3. VILLES NON DESSERVIES OU SANS PAGE DÉDIÉE -> /zones
+      {
+        source: '/nettoyage-voiture-:city(baelen|kelmis|amay|sprimont|vaals|saint-georges|huy|waremme|waimes|wanze|esneux|engis|robertville|aix-la-chapelle|beaufays|welkenraedt|ovifat|verlaine|montzen|raeren|gemmenich|remicourt|donceel|nessonvaux|trois-ponts|mouland|plombieres|eupen|remouchamps|flemalle|jemeppe)',
+        destination: '/zones',
+        permanent: true,
+      },
+      {
+        source: '/zone-intervention/:city(baelen|kelmis|amay|sprimont|vaals|saint-georges|huy|waremme|waimes|wanze|esneux|engis|robertville|aix-la-chapelle|beaufays|welkenraedt|ovifat|verlaine|montzen|raeren|gemmenich|remicourt|donceel|nessonvaux|trois-ponts|mouland|plombieres|eupen|remouchamps|flemalle|jemeppe)',
+        destination: '/zones',
+        permanent: true,
+      },
+      // Et pour .html
+      {
+        source: '/zone-intervention/:city(baelen|kelmis|amay|sprimont|vaals|saint-georges|huy|waremme|waimes|wanze|esneux|engis|robertville|aix-la-chapelle|beaufays|welkenraedt|ovifat|verlaine|montzen|raeren|gemmenich|remicourt|donceel|nessonvaux|trois-ponts|mouland|plombieres|eupen|remouchamps|flemalle|jemeppe).html',
+        destination: '/zones',
+        permanent: true,
+      },
+
+      // 4. ANCIENNES URLs NETTOYAGE (ex: /nettoyage-voiture-spa -> /lavage-voiture-spa)
       {
         source: '/nettoyage-voiture-:city',
         destination: '/lavage-voiture-:city',
@@ -300,7 +344,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // 3. ANCIENNES URLs CAR-WASH (ex: /car-wash-verviers)
+      // 5. ANCIENNES URLs CAR-WASH (ex: /car-wash-verviers)
       {
         source: '/car-wash-:city',
         destination: '/lavage-voiture-:city',
