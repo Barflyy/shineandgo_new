@@ -1,146 +1,172 @@
-import Link from 'next/link'
-import { Phone, Mail, MapPin, Star } from 'lucide-react'
+'use client';
+
+import Link from 'next/link';
+import {
+    Phone,
+    Sparkles,
+    Clock,
+    MapPin,
+    ArrowRight,
+    MessageCircle
+} from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="py-12 sm:py-16 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 transition-colors">
-            <div className="container mx-auto px-4 sm:px-6">
+        <footer className="relative bg-slate-900 text-white overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -top-40 -right-40 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+            </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
+            <div className="relative z-10">
+                {/* Main Footer Content */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-                    {/* Brand */}
-                    <div className="col-span-2 md:col-span-1">
-                        <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-                            Shine<span className="text-blue-600">&</span>Go
-                        </div>
-                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 text-pretty">
-                            Service mobile de&nbsp;lavage et nettoyage automobile professionnel à&nbsp;domicile en&nbsp;Wallonie
-                        </p>
-                        <div className="flex items-center gap-1 text-sm">
-                            <div className="flex gap-0.5">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-3.5 h-3.5 fill-blue-600 text-blue-600" />
-                                ))}
+                        {/* Brand Column */}
+                        <div className="lg:col-span-1">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center shadow-lg shadow-sky-500/30">
+                                    <Sparkles className="w-6 h-6 text-white" />
+                                </div>
+                                <span className="text-2xl font-bold">Shine&Go</span>
                             </div>
-                            <span className="text-gray-600 dark:text-gray-400 ml-1">4.9/5 Google</span>
-                        </div>
-                    </div>
-
-                    {/* Services - Liens internes */}
-                    <div>
-                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 sm:mb-4 text-sm sm:text-base">Nos services</h4>
-                        <ul className="space-y-2 text-xs sm:text-sm">
-                            <li>
-                                <Link href="/lavage-interieur-voiture" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Lavage intérieur voiture
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/lavage-exterieur-voiture" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Lavage extérieur voiture
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/lavage-complet-voiture" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Lavage complet voiture
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/prix-lavage-voiture-domicile" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Prix et tarifs
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Blog Conseils
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Zones - SEO local */}
-                    <div>
-                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 sm:mb-4 text-sm sm:text-base">Zones d'intervention</h4>
-                        <ul className="space-y-2 text-xs sm:text-sm">
-                            <li>
-                                <Link href="/lavage-voiture-herve" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Nettoyage voiture Herve
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/lavage-voiture-verviers" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Lavage voiture Verviers
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/lavage-voiture-liege" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Lavage voiture Liège
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/lavage-voiture-battice" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Nettoyage voiture Battice
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/lavage-voiture-soumagne" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                                    Lavage voiture Soumagne
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/zones" className="font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors flex items-center gap-1">
-                                    Voir toutes les zones
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="col-span-2 md:col-span-1">
-                        <h4 className="font-medium text-gray-900 dark:text-white mb-3 sm:mb-4 text-sm sm:text-base text-balance">Contact</h4>
-                        <ul className="space-y-3 text-xs sm:text-sm">
-                            <li className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                                <Phone className="w-4 h-4 flex-shrink-0 text-blue-600 dark:text-blue-400" />
+                            <p className="text-slate-400 mb-6 leading-relaxed">
+                                Service de lavage voiture à domicile en Wallonie. Résultat showroom garanti avec des produits professionnels.
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <a
+                                    href="https://wa.me/32472303701"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-xl bg-white/10 hover:bg-green-500 flex items-center justify-center transition-all duration-300"
+                                    aria-label="WhatsApp"
+                                >
+                                    <MessageCircle className="w-5 h-5" />
+                                </a>
                                 <a
                                     href="tel:+32472303701"
-                                    className="hover:text-gray-900 dark:hover:text-white transition-colors"
-                                    aria-label="Téléphone Shine&Go"
+                                    className="w-10 h-10 rounded-xl bg-white/10 hover:bg-sky-500 flex items-center justify-center transition-all duration-300"
+                                    aria-label="Téléphone"
                                 >
-                                    0472 30 37 01
+                                    <Phone className="w-5 h-5" />
                                 </a>
-                            </li>
-                            <li className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                                <Mail className="w-4 h-4 flex-shrink-0 text-blue-600 dark:text-blue-400" />
-                                <a
-                                    href="mailto:contact@shineandgo.be"
-                                    className="hover:text-gray-900 dark:hover:text-white transition-colors"
-                                >
-                                    contact@shineandgo.be
-                                </a>
-                            </li>
-                            <li className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
-                                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5 text-blue-600 dark:text-blue-400" />
-                                <span className="text-pretty">Service mobile<br />Herve, Wallonie, Belgique</span>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+
+                        {/* Services Column */}
+                        <div>
+                            <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
+                                <span className="w-2 h-2 bg-sky-500 rounded-full" />
+                                Nos Services
+                            </h4>
+                            <ul className="space-y-3">
+                                {[
+                                    { name: 'Lavage Intérieur', href: '/lavage-interieur-voiture' },
+                                    { name: 'Lavage Extérieur', href: '/lavage-exterieur-voiture' },
+                                    { name: 'Lavage Complet', href: '/lavage-complet-voiture' },
+                                    { name: 'Tarifs', href: '/prix-lavage-voiture-domicile' },
+                                ].map((link) => (
+                                    <li key={link.name}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                                        >
+                                            <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Zones Column */}
+                        <div>
+                            <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
+                                <span className="w-2 h-2 bg-sky-500 rounded-full" />
+                                Zones d'Intervention
+                            </h4>
+                            <ul className="space-y-3">
+                                {[
+                                    { name: 'Herve', href: '/lavage-voiture-herve' },
+                                    { name: 'Battice', href: '/lavage-voiture-battice' },
+                                    { name: 'Liège', href: '/lavage-voiture-liege' },
+                                    { name: 'Verviers', href: '/lavage-voiture-verviers' },
+                                    { name: 'Toutes les zones', href: '/zones' },
+                                ].map((link) => (
+                                    <li key={link.name}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                                        >
+                                            <MapPin className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Contact Column */}
+                        <div>
+                            <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
+                                <span className="w-2 h-2 bg-sky-500 rounded-full" />
+                                Contact
+                            </h4>
+                            <ul className="space-y-4">
+                                <li>
+                                    <a
+                                        href="tel:+32472303701"
+                                        className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
+                                    >
+                                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                                            <Phone className="w-4 h-4 text-sky-400" />
+                                        </div>
+                                        <span>0472 30 37 01</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="mailto:contact@shineandgo.be"
+                                        className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
+                                    >
+                                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                                            <span className="text-sky-400">@</span>
+                                        </div>
+                                        <span>contact@shineandgo.be</span>
+                                    </a>
+                                </li>
+                                <li className="flex items-center gap-3 text-slate-400">
+                                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                                        <Clock className="w-4 h-4 text-sky-400" />
+                                    </div>
+                                    <span>Lun-Sam: 8h-19h</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                {/* Bottom */}
-                <div className="pt-6 sm:pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
-                    <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-                        © 2025 Shine&Go. Nettoyage voiture professionnel à domicile.
-                    </div>
-                    <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">
-                        <Link href="/mentions-legales" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                            Mentions légales
-                        </Link>
-                        <Link href="/politique-confidentialite" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                            Confidentialité
-                        </Link>
+                {/* Bottom Bar */}
+                <div className="border-t border-white/10">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <p className="text-sm text-slate-500">
+                                © 2025 Shine&Go. Tous droits réservés.
+                            </p>
+                            <div className="flex items-center gap-6 text-sm">
+                                <Link href="/mentions-legales" className="text-slate-500 hover:text-white transition-colors">
+                                    Mentions légales
+                                </Link>
+                                <Link href="/politique-confidentialite" className="text-slate-500 hover:text-white transition-colors">
+                                    Confidentialité
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </footer>
-    )
+    );
 }

@@ -38,6 +38,7 @@ Allow: /public/*.svg
 Allow: /public/*.ico
 
 # Bloquer les fichiers et dossiers inutiles
+Disallow: /_next/static/media/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
@@ -45,6 +46,7 @@ Disallow: /temp/
 Disallow: /cache/
 Disallow: /logs/
 Disallow: /test-design/
+Disallow: /test-cards/
 Disallow: /*.json$
 
 # Bloquer les paramètres d'URL inutiles

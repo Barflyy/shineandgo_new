@@ -13,7 +13,7 @@ export default function FAQCompletSection() {
   const faqItems: FAQItem[] = [
     {
       question: "Quel est le tarif d'un nettoyage intérieur et extérieur voiture ?",
-      answer: "Nos tarifs démarrent à 120€ pour un lavage complet intérieur + extérieur. Un supplément s'applique selon la taille du véhicule. Devis gratuit et personnalisé disponible."
+      answer: "Nos tarifs démarrent à 150€ pour un lavage complet intérieur + extérieur. Un supplément s'applique selon la taille du véhicule (SUV +20€, 7 places +30€). Devis gratuit et personnalisé disponible."
     },
     {
       question: "Combien de temps dure un lavage complet voiture ?",

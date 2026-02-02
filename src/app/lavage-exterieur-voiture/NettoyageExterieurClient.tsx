@@ -26,7 +26,7 @@ export default function NettoyageExterieurClient() {
 
   const handleBooking = () => {
     try {
-      window.open('https://calendly.com/nathangodfroid/lavage-voiture-shine-go', '_blank', 'noopener,noreferrer');
+      window.open('https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite réserver un lavage extérieur. 🚗', '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Erreur ouverture Calendly:', error);
     }

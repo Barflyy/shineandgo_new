@@ -7,7 +7,7 @@ export default function FAQCompletSection() {
   const faqs = [
     {
       question: "Quel est le tarif pour un lavage voiture complet à Verviers ?",
-      answer: "Nos tarifs démarrent à 120€ pour un nettoyage complet (intérieur + extérieur). Un supplément s'applique selon la taille du véhicule. Le prix final dépend également de l'état de saleté."
+      answer: "Nos tarifs démarrent à 150€ pour un nettoyage complet (intérieur + extérieur). Un supplément s'applique selon la taille du véhicule (SUV +20€, 7 places +30€). Le prix final dépend également de l'état de saleté."
     },
     {
       question: "Puis-je réserver uniquement l'intérieur ou l'extérieur ?",

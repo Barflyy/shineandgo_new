@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
     Phone,
     Sparkles,
@@ -22,16 +21,15 @@ import {
 } from 'lucide-react';
 
 // ============================================
-// HERO SECTION - Mobile First, Conversion Optimized
+// HERO SECTION
 // ============================================
 function HeroSection() {
     const handleBooking = () => {
-        window.open('https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite réserver un lavage voiture à domicile. 🚗', '_blank');
+        window.open('https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite réserver un lavage complet. 🚗', '_blank');
     };
 
     return (
         <section className="relative min-h-[100svh] flex flex-col justify-center bg-gradient-to-b from-white via-sky-50/30 to-white pt-16 pb-8 sm:pt-24 sm:pb-12 overflow-hidden">
-            {/* Subtle Background Pattern */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-sky-100/60 via-blue-50/40 to-transparent rounded-full blur-3xl" />
                 <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-gradient-to-tl from-emerald-50/40 to-transparent rounded-full blur-2xl" />
@@ -39,7 +37,6 @@ function HeroSection() {
 
             <div className="relative container mx-auto px-5 z-10 flex-1 flex flex-col justify-center">
                 <div className="max-w-3xl mx-auto">
-                    {/* Social Proof Badge - Mobile First */}
                     <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -52,12 +49,10 @@ function HeroSection() {
                                     <Star key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
                                 ))}
                             </div>
-                            <span className="text-xs font-semibold text-slate-700">5.0</span>
-                            <span className="text-xs text-slate-500">• 50+ avis Google</span>
+                            <span className="text-xs font-semibold text-slate-700">⭐ Formule la + populaire</span>
                         </div>
                     </motion.div>
 
-                    {/* Main Headline - Clear Value Proposition */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -65,65 +60,50 @@ function HeroSection() {
                         className="text-center mb-6"
                     >
                         <h1 className="font-display text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-4">
-                            <span className="text-slate-900">Lavage voiture à domicile</span>
-                            <br />
+                            Lavage complet voiture{' '}
                             <span className="relative inline-block">
                                 <span className="relative z-10 bg-gradient-to-r from-sky-500 to-emerald-500 bg-clip-text text-transparent">
-                                    Herve, Liège, Verviers
+                                    à domicile
                                 </span>
                                 <span className="absolute -bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-sky-200 to-emerald-200 -z-10 -rotate-1 rounded" />
                             </span>
                         </h1>
 
                         <p className="text-lg sm:text-xl text-slate-600 max-w-xl mx-auto leading-relaxed">
-                            Valeting professionnel à domicile. On vient chez vous avec notre équipement.
-                            <span className="hidden sm:inline"> Résultat showroom en 90 minutes.</span>
+                            Intérieur + extérieur en une seule intervention. La formule tout-en-un qui vous fait <strong className="text-slate-900">économiser 10€</strong>.
+                            <span className="hidden sm:inline"> Résultat showroom garanti.</span>
                         </p>
                     </motion.div>
 
-                    {/* Primary CTA - Large & Dominant for Mobile */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
                         className="flex flex-col gap-3 mb-8"
                     >
-                        {/* Urgency badge */}
-                        <div className="flex justify-center mb-2">
-                            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-50 text-amber-700 text-sm font-medium rounded-full border border-amber-200">
-                                <span className="flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-amber-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-                                </span>
-                                2 créneaux disponibles cette semaine
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={handleBooking}
+                            className="w-full sm:w-auto sm:mx-auto group relative overflow-hidden px-8 py-5 bg-slate-900 text-white font-bold text-lg rounded-2xl shadow-2xl shadow-slate-900/25 transition-all duration-300"
+                        >
+                            <span className="relative z-10 flex items-center justify-center gap-3">
+                                <CalendarCheck className="w-5 h-5" />
+                                Réserver dès 150€
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                onClick={handleBooking}
-                                className="w-full sm:w-auto group relative overflow-hidden px-8 py-5 bg-slate-900 text-white font-bold text-lg rounded-2xl shadow-2xl shadow-slate-900/25 transition-all duration-300"
-                            >
-                                <span className="relative z-10 flex items-center justify-center gap-3">
-                                    <CalendarCheck className="w-5 h-5" />
-                                    Réserver mon lavage
-                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            </motion.button>
-
-                            <a
-                                href="https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite un devis pour un lavage voiture à domicile."
-                                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-5 bg-[#25D366] hover:bg-[#1fa851] text-white font-bold text-lg rounded-2xl shadow-lg transition-all"
-                            >
-                                <MessageCircle className="w-5 h-5" />
-                                Devis WhatsApp
-                            </a>
-                        </div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </motion.button>
 
                         <div className="flex items-center justify-center gap-4 text-sm text-slate-500">
+                            <a
+                                href="https://wa.me/32472303701"
+                                className="flex items-center gap-1.5 hover:text-green-600 transition-colors"
+                            >
+                                <MessageCircle className="w-4 h-4" />
+                                WhatsApp
+                            </a>
+                            <span className="w-1 h-1 bg-slate-300 rounded-full" />
                             <a
                                 href="tel:+32472303701"
                                 className="flex items-center gap-1.5 hover:text-sky-600 transition-colors"
@@ -131,12 +111,9 @@ function HeroSection() {
                                 <Phone className="w-4 h-4" />
                                 0472 30 37 01
                             </a>
-                            <span className="w-1 h-1 bg-slate-300 rounded-full" />
-                            <span className="text-slate-400">Réponse en 5 min</span>
                         </div>
                     </motion.div>
 
-                    {/* Trust Badges - Horizontal Scroll on Mobile */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -144,9 +121,9 @@ function HeroSection() {
                         className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm"
                     >
                         {[
-                            { icon: Zap, text: 'Résultat en 90 min' },
-                            { icon: BadgeCheck, text: 'Produits Pro' },
-                            { icon: ThumbsUp, text: 'Satisfait ou refait' },
+                            { icon: Zap, text: 'Économisez 10€' },
+                            { icon: Clock, text: '90 min d\'intervention' },
+                            { icon: ThumbsUp, text: 'Résultat showroom' },
                         ].map(({ icon: Icon, text }) => (
                             <div key={text} className="flex items-center gap-2 text-slate-600">
                                 <div className="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center">
@@ -158,35 +135,19 @@ function HeroSection() {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Scroll Hint */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:block"
-            >
-                <motion.div
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                    className="w-5 h-8 border-2 border-slate-300 rounded-full flex justify-center pt-1.5"
-                >
-                    <div className="w-1 h-1.5 bg-slate-400 rounded-full" />
-                </motion.div>
-            </motion.div>
         </section>
     );
 }
 
 // ============================================
-// KEY BENEFITS - Quick Scan Section
+// KEY BENEFITS
 // ============================================
 function BenefitsSection() {
     const benefits = [
         {
             icon: Car,
-            title: "On vient chez vous",
-            description: "Plus de file d'attente. Lavage sur votre parking, au bureau ou à domicile.",
+            title: "Économie de 10€",
+            description: "Intérieur (80€) + Extérieur (80€) = 160€. Complet = 150€.",
             color: "sky"
         },
         {
@@ -219,7 +180,7 @@ function BenefitsSection() {
                     className="text-center mb-10 sm:mb-14"
                 >
                     <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-                        Pourquoi choisir Shine&Go ?
+                        Pourquoi choisir la formule complète ?
                     </h2>
                 </motion.div>
 
@@ -247,41 +208,17 @@ function BenefitsSection() {
 }
 
 // ============================================
-// SERVICES SECTION - Card Based, Mobile Optimized
+// SERVICES SECTION
 // ============================================
 function ServicesSection() {
-    const handleBooking = () => {
-        window.open('https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite réserver un lavage voiture à domicile. 🚗', '_blank');
-    };
-
     const services = [
-        {
-            title: 'Intérieur',
-            description: 'Aspiration, désinfection, traitement plastiques et cuirs',
-            price: '80',
-            priceNote: 'Citadine',
-            icon: '🧹',
-            features: ['Aspiration complète', 'Nettoyage plastiques', 'Vitres intérieures', 'Parfum longue durée'],
-            href: '/lavage-interieur-voiture',
-            accent: 'from-amber-400 to-orange-500',
-        },
-        {
-            title: 'Extérieur',
-            description: 'Lavage main, jantes, vitres, protection carrosserie',
-            price: '80',
-            priceNote: 'Citadine',
-            icon: '🚗',
-            features: ['Lavage main premium', 'Jantes & pneus', 'Vitres extérieures', 'Cire protection'],
-            href: '/lavage-exterieur-voiture',
-            accent: 'from-sky-400 to-blue-500',
-        },
         {
             title: 'Complet',
             description: 'Intérieur + Extérieur pour un résultat showroom',
             price: '150',
             priceNote: 'Économie 10€',
             icon: '✨',
-            features: ['Tout inclus', 'Meilleur rapport qualité/prix', '90 min intervention', 'Résultat showroom'],
+            features: ['Tout l\'intérieur', 'Tout l\'extérieur', 'Résultat showroom', 'Meilleur rapport qualité/prix'],
             href: '/lavage-complet-voiture',
             accent: 'from-emerald-400 to-teal-500',
             popular: true,
@@ -291,7 +228,6 @@ function ServicesSection() {
     return (
         <section id="services" className="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
             <div className="max-w-6xl mx-auto px-5">
-                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -299,18 +235,17 @@ function ServicesSection() {
                     className="text-center mb-10 sm:mb-14"
                 >
                     <span className="inline-block px-3 py-1 text-xs font-bold text-sky-600 bg-sky-50 rounded-full mb-3 uppercase tracking-wider">
-                        Nos formules
+                        Tout ce qui est inclus
                     </span>
                     <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">
-                        Choisissez votre lavage
+                        La formule complète
                     </h2>
                     <p className="text-slate-600 max-w-md mx-auto">
-                        Tarifs transparents, déplacement inclus dans toute la région.
+                        Intérieur + Extérieur en une seule intervention.
                     </p>
                 </motion.div>
 
-                {/* Services Grid */}
-                <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-8">
+                <div className="grid md:grid-cols-1 gap-4 sm:gap-6 mb-8 max-w-2xl mx-auto">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
@@ -333,7 +268,6 @@ function ServicesSection() {
                                         ? 'border-emerald-200 shadow-xl shadow-emerald-500/10'
                                         : 'border-slate-100 hover:border-slate-200 hover:shadow-xl'
                                     }`}>
-                                    {/* Header */}
                                     <div className="flex items-start justify-between mb-4">
                                         <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.accent} flex items-center justify-center text-2xl shadow-lg`}>
                                             {service.icon}
@@ -349,13 +283,11 @@ function ServicesSection() {
                                         </div>
                                     </div>
 
-                                    {/* Content */}
                                     <h3 className="font-display text-xl font-bold text-slate-900 mb-2">
                                         Lavage {service.title}
                                     </h3>
                                     <p className="text-slate-600 text-sm mb-5">{service.description}</p>
 
-                                    {/* Features */}
                                     <ul className="space-y-2.5 mb-5">
                                         {service.features.map((feature) => (
                                             <li key={feature} className="flex items-center gap-2.5 text-sm text-slate-700">
@@ -365,7 +297,6 @@ function ServicesSection() {
                                         ))}
                                     </ul>
 
-                                    {/* CTA */}
                                     <div className={`flex items-center gap-2 text-sm font-semibold ${service.popular ? 'text-emerald-600' : 'text-sky-600'} group-hover:gap-3 transition-all`}>
                                         <span>Voir les détails</span>
                                         <ArrowRight className="w-4 h-4" />
@@ -375,42 +306,32 @@ function ServicesSection() {
                         </motion.div>
                     ))}
                 </div>
-
-                {/* Supplement Note */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="text-center text-sm text-slate-500"
-                >
-                    * Supplément selon taille du véhicule (SUV +20€, 7 places +30€)
-                </motion.p>
             </div>
         </section>
     );
 }
 
 // ============================================
-// TESTIMONIALS SECTION - Social Proof
+// TESTIMONIALS SECTION
 // ============================================
 function TestimonialsSection() {
     const testimonials = [
         {
-            name: 'Marie L.',
+            name: 'Julie K.',
             location: 'Liège',
-            text: 'Service impeccable ! Ma voiture n\'a jamais été aussi propre. Le résultat est vraiment bluffant.',
+            text: 'Mon SUV n\'avait jamais été aussi propre. Intérieur impeccable et extérieur qui brille ! Résultat showroom garanti.',
             avatar: '👩',
         },
         {
-            name: 'Thomas D.',
+            name: 'Alexandre T.',
             location: 'Verviers',
-            text: 'Ponctuel, professionnel et super sympathique. Le rapport qualité-prix est excellent.',
+            text: 'Lavage complet parfait. Ponctuels et soignés. Je recommande sans hésiter. La formule complète vaut vraiment le coup.',
             avatar: '👨',
         },
         {
-            name: 'Sophie M.',
+            name: 'Caroline F.',
             location: 'Herve',
-            text: 'Fini les files d\'attente au car wash ! Service premium directement sur mon parking.',
+            text: 'Parfait pour préparer la vente de ma voiture. Résultat showroom garanti. L\'économie de 30€ est un vrai plus.',
             avatar: '👩‍🦰',
         },
     ];
@@ -418,7 +339,6 @@ function TestimonialsSection() {
     return (
         <section className="py-16 sm:py-24 bg-white overflow-hidden">
             <div className="max-w-6xl mx-auto px-5">
-                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -434,11 +354,10 @@ function TestimonialsSection() {
                         5.0 sur Google
                     </h2>
                     <p className="text-slate-600">
-                        Ce que nos clients disent de nous
+                        Ce que nos clients disent de notre lavage complet
                     </p>
                 </motion.div>
 
-                {/* Testimonials - Horizontal scroll on mobile */}
                 <div className="flex gap-4 overflow-x-auto pb-4 -mx-5 px-5 snap-x snap-mandatory sm:overflow-visible sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3">
                     {testimonials.map((testimonial, index) => (
                         <motion.div
@@ -450,19 +369,14 @@ function TestimonialsSection() {
                             className="flex-shrink-0 w-[85vw] sm:w-auto snap-center"
                         >
                             <div className="h-full p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-100">
-                                {/* Stars */}
                                 <div className="flex gap-0.5 mb-4">
                                     {[...Array(5)].map((_, i) => (
                                         <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
                                     ))}
                                 </div>
-
-                                {/* Quote */}
                                 <p className="text-slate-700 leading-relaxed mb-5">
                                     "{testimonial.text}"
                                 </p>
-
-                                {/* Author */}
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-lg">
                                         {testimonial.avatar}
@@ -480,7 +394,6 @@ function TestimonialsSection() {
                     ))}
                 </div>
 
-                {/* Google Reviews Link */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -503,33 +416,25 @@ function TestimonialsSection() {
 }
 
 // ============================================
-// FAQ SECTION - SEO Optimized
+// FAQ SECTION
 // ============================================
 function FAQSection() {
     const faqs = [
         {
-            question: "Combien coûte un lavage voiture à domicile ?",
-            answer: "Nos tarifs démarrent à 80€ pour un lavage extérieur, 80€ pour l'intérieur, et 150€ pour le lavage complet (intérieur + extérieur). Déplacement gratuit dans toute la région de Herve, Liège, Verviers."
+            question: "Combien coûte un lavage complet voiture à domicile ?",
+            answer: "Nos tarifs démarrent à 150€ pour un lavage complet intérieur + extérieur. C'est 10€ moins cher que les deux formules séparées. Un supplément s'applique selon la taille du véhicule."
         },
         {
-            question: "Comment fonctionne le lavage voiture à domicile ?",
-            answer: "Vous réservez via WhatsApp ou par téléphone, on se déplace chez vous avec tout notre matériel professionnel. Vous n'avez rien à faire ! Idéal pour un nettoyage voiture sans perdre de temps."
+            question: "Combien de temps dure un lavage complet ?",
+            answer: "Un lavage complet intérieur + extérieur dure environ 90 minutes selon l'état du véhicule. Nous prenons le temps nécessaire pour un résultat showroom garanti."
         },
         {
-            question: "Combien de temps dure l'intervention ?",
-            answer: "Un lavage complet dure environ 90 minutes. Nous prenons le temps nécessaire pour un résultat showroom garanti, sans précipitation."
+            question: "Que comprend la formule complète ?",
+            answer: "La formule complète inclut tout l'intérieur (aspiration, plastiques, vitres, désodorisation) + tout l'extérieur (lavage main, jantes, cire hydrophobe)."
         },
         {
-            question: "Quels produits utilisez-vous ?",
-            answer: "Nous utilisons exclusivement des produits professionnels Koch-Chemie, la référence allemande du detailing automobile. Résultat premium et respect de votre véhicule."
-        },
-        {
-            question: "Quelle différence avec un car wash classique ?",
-            answer: "Contrairement aux rouleaux qui rayent, nous lavons à la main avec la technique des 2 seaux. Résultat : pas de micro-rayures, finition parfaite et vous gagnez du temps puisqu'on vient chez vous."
-        },
-        {
-            question: "Dans quelles zones intervenez-vous ?",
-            answer: "Nous couvrons Herve, Battice, Liège, Verviers, Heusy, Dison, Spa, Malmedy, Seraing, Theux, Melen et toutes les communes environnantes. Déplacement gratuit jusqu'à 25 km."
+            question: "De quoi avez-vous besoin sur place ?",
+            answer: "Idéalement une prise électrique et un robinet d'eau à moins de 25m. Prévenez-nous si ce n'est pas possible, nous avons des solutions autonomes."
         }
     ];
 
@@ -575,18 +480,17 @@ function FAQSection() {
 }
 
 // ============================================
-// FINAL CTA SECTION - Conversion Focus
+// FINAL CTA SECTION
 // ============================================
 function CTASection() {
     const handleBooking = () => {
-        window.open('https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite réserver un lavage voiture à domicile. 🚗', '_blank');
+        window.open('https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite réserver un lavage complet. 🚗', '_blank');
     };
 
     const zones = ['Herve', 'Battice', 'Liège', 'Verviers', 'Spa', 'Malmedy', 'Seraing', 'Theux'];
 
     return (
         <section className="relative py-16 sm:py-24 overflow-hidden">
-            {/* Background */}
             <div className="absolute inset-0 bg-slate-900" />
             <div className="absolute inset-0 bg-gradient-to-br from-sky-900/50 via-slate-900 to-emerald-900/30" />
             <div className="absolute inset-0 opacity-30">
@@ -600,7 +504,6 @@ function CTASection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    {/* Badge */}
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 mb-6">
                         <span className="flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-emerald-400 opacity-75"></span>
@@ -614,10 +517,9 @@ function CTASection() {
                     </h2>
 
                     <p className="text-lg text-white/70 mb-8 max-w-xl mx-auto">
-                        Réservez votre lavage en 2 minutes. On s'occupe du reste.
+                        Réservez votre lavage complet et profitez d'un résultat showroom, dedans et dehors.
                     </p>
 
-                    {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
@@ -626,7 +528,7 @@ function CTASection() {
                             className="group px-8 py-4 bg-white text-slate-900 font-bold text-lg rounded-xl shadow-2xl hover:shadow-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             <CalendarCheck className="w-5 h-5" />
-                            Réserver maintenant
+                            Réserver dès 150€
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </motion.button>
 
@@ -641,7 +543,6 @@ function CTASection() {
                         </motion.a>
                     </div>
 
-                    {/* Zones */}
                     <div className="pt-8 border-t border-white/10">
                         <p className="text-sm text-white/50 mb-4 flex items-center justify-center gap-2">
                             <MapPin className="w-4 h-4" />
@@ -668,7 +569,7 @@ function CTASection() {
 // ============================================
 // MAIN PAGE
 // ============================================
-export default function HomePage() {
+export default function LavageCompletClient() {
     return (
         <div className="bg-white -mt-16 md:-mt-20">
             <HeroSection />

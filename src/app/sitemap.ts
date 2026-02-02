@@ -1,5 +1,4 @@
 import { MetadataRoute } from 'next';
-import { allArticles } from '@/constants/blog-articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://shineandgo.be';
@@ -32,12 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog`,
-      lastModified: currentDate,
-      changeFrequency: 'daily' as const,
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/zones`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
@@ -57,63 +50,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ];
 
-  // Articles de Blog
-  const blogPages = allArticles.map(article => ({
-    url: `${baseUrl}/blog/${article.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
-
-  // Pages ville - Extracted from filesystem
+  // Pages ville - Only existing pages
   const citySlugs = [
     'lavage-voiture-ans',
-    'lavage-voiture-argenteau',
-    'lavage-voiture-aubel',
-    'lavage-voiture-bassenge',
     'lavage-voiture-battice',
-    'lavage-voiture-beyne-heusay',
-    'lavage-voiture-blegny',
-    'lavage-voiture-bolland',
-    'lavage-voiture-boncelles',
-    'lavage-voiture-charneux',
-    'lavage-voiture-chaudfontaine',
-    'lavage-voiture-clermont',
-    'lavage-voiture-dalhem',
     'lavage-voiture-dison',
-    'lavage-voiture-embourg',
-    'lavage-voiture-ensival',
-    'lavage-voiture-fleron',
-    'lavage-voiture-francorchamps',
     'lavage-voiture-hermalle',
-    'lavage-voiture-herstal',
     'lavage-voiture-herve',
     'lavage-voiture-heusy',
-    'lavage-voiture-jalhay',
-    'lavage-voiture-lambermont',
     'lavage-voiture-liege',
-    'lavage-voiture-limbourg',
     'lavage-voiture-malmedy',
     'lavage-voiture-melen',
-    'lavage-voiture-melier',
-    'lavage-voiture-olne',
-    'lavage-voiture-oupeye',
-    'lavage-voiture-pepinster',
-    'lavage-voiture-rocourt',
     'lavage-voiture-saint-nicolas',
-    'lavage-voiture-saive',
-    'lavage-voiture-sart',
     'lavage-voiture-seraing',
     'lavage-voiture-soumagne',
     'lavage-voiture-spa',
-    'lavage-voiture-stavelot',
     'lavage-voiture-theux',
-    'lavage-voiture-thimister',
-    'lavage-voiture-trooz',
-    'lavage-voiture-verviers',
-    'lavage-voiture-vise',
-    'lavage-voiture-warsage',
-    'lavage-voiture-xhendelesse'
+    'lavage-voiture-verviers'
   ];
 
   const cityPages = citySlugs.map(slug => ({
@@ -123,5 +76,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...mainPages, ...blogPages, ...cityPages];
+  return [...mainPages, ...cityPages];
 }

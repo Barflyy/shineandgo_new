@@ -1,11 +1,11 @@
 {
-  "name": "Shine&Go – Nettoyage auto à domicile",
+  "name": "Shine&Go – Lavage voiture à domicile",
   "short_name": "Shine&Go",
-  "description": "Service de nettoyage automobile à domicile à Herve et dans la région. À domicile, 24h/24.",
+  "description": "Service de lavage automobile à domicile à Herve, Liège, Verviers et région. Valeting professionnel.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
-  "theme_color": "#1f2937",
+  "theme_color": "#0f172a",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "fr",
@@ -13,21 +13,15 @@
   "categories": ["automotive", "lifestyle", "business"],
   "icons": [
     {
-      "src": "/vercel.svg",
-      "sizes": "192x192",
+      "src": "/logo-icon.svg",
+      "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/vercel.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/vercel.svg",
-      "sizes": "180x180",
-      "type": "image/svg+xml"
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
     }
   ],
   "shortcuts": [
@@ -36,40 +30,16 @@
       "short_name": "WhatsApp",
       "description": "Contactez-nous directement via WhatsApp",
       "url": "https://wa.me/32472303701",
-      "icons": [
-        {
-          "src": "/vercel.svg",
-          "sizes": "96x96"
-        }
-      ]
+      "icons": [{ "src": "/logo-icon.svg", "sizes": "any" }]
     },
     {
       "name": "Appel Direct",
       "short_name": "Appeler",
       "description": "Appelez-nous directement",
       "url": "tel:+32472303701",
-      "icons": [
-        {
-          "src": "/vercel.svg",
-          "sizes": "96x96"
-        }
-      ]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/vercel.svg",
-      "sizes": "390x844",
-      "type": "image/svg+xml",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "/vercel.svg",
-      "sizes": "1280x720",
-      "type": "image/svg+xml",
-      "form_factor": "wide"
+      "icons": [{ "src": "/logo-icon.svg", "sizes": "any" }]
     }
   ],
   "related_applications": [],
   "prefer_related_applications": false
-} 
+}

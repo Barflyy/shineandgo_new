@@ -34,10 +34,10 @@ export default function NotFound() {
                     </Link>
 
                     <Link
-                        href="/blog"
+                        href="/lavage-complet-voiture"
                         className="w-full sm:w-auto px-8 py-4 border border-gray-200 text-gray-900 font-bold rounded-full hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
                     >
-                        Voir nos conseils
+                        Voir nos services
                     </Link>
                 </div>
 

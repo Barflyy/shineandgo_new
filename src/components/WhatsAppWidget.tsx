@@ -1,36 +1,39 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { MessageCircle, X, Check, Send, Phone } from 'lucide-react'
+import { MessageCircle, X, Check, Send, Phone, Clock, Sparkles } from 'lucide-react'
 
 export default function WhatsAppWidget() {
     const [isOpen, setIsOpen] = useState(false)
-    const [showWidget, setShowWidget] = useState(true) // Set to true immediately
+    const [showWidget, setShowWidget] = useState(true)
     const [hasInteracted, setHasInteracted] = useState(false)
     const [isTyping, setIsTyping] = useState(false)
     const [messages, setMessages] = useState<Array<{ text: React.ReactNode; isUser: boolean; time: string }>>([])
     const messagesEndRef = useRef<HTMLDivElement>(null)
 
-    // Chat flow simulation
+    // Get current hour for dynamic messaging
+    const currentHour = new Date().getHours()
+    const isBusinessHours = currentHour >= 8 && currentHour < 19
+    const greeting = currentHour < 12 ? "Bonjour" : currentHour < 18 ? "Bonjour" : "Bonsoir"
+
+    // Chat flow simulation with more engaging messages
     useEffect(() => {
         if (isOpen && messages.length === 0) {
-            // First message immediately
             setMessages([
                 {
-                    text: "👋 Bonjour ! Bienvenue chez Shine&Go.",
+                    text: `${greeting} ! 👋 Je suis Nathan de Shine&Go.`,
                     isUser: false,
                     time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
                 }
             ])
 
-            // Typing animation for second message
             setIsTyping(true)
             const typingTimer = setTimeout(() => {
                 setIsTyping(false)
                 setMessages(prev => [
                     ...prev,
                     {
-                        text: <>Envie de retrouver une voiture <span className="font-bold">comme neuve</span> ?</>,
+                        text: <>J'ai encore <span className="font-bold text-green-700">2 créneaux dispo</span> cette semaine. Votre voiture a besoin d'un coup de frais ? 🚗✨</>,
                         isUser: false,
                         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
                     }
@@ -39,7 +42,7 @@ export default function WhatsAppWidget() {
 
             return () => clearTimeout(typingTimer)
         }
-    }, [isOpen])
+    }, [isOpen, greeting])
 
     const handleOpen = () => {
         setIsOpen(!isOpen)
@@ -47,7 +50,8 @@ export default function WhatsAppWidget() {
     }
 
     const handleSendMessage = () => {
-        window.open('https://wa.me/32472303701?text=Bonjour, je souhaite réserver un lavage voiture à domicile', '_blank')
+        const message = encodeURIComponent(`${greeting} Nathan ! Je souhaite un devis pour un lavage voiture à domicile. 🚗`)
+        window.open(`https://wa.me/32472303701?text=${message}`, '_blank')
         setIsOpen(false)
     }
 
@@ -70,12 +74,13 @@ export default function WhatsAppWidget() {
                             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden border-2 border-white/20">
                                 <span className="text-xl">🏎️</span>
                             </div>
-                            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#075E54] rounded-full"></span>
+                            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#075E54] rounded-full animate-pulse"></span>
                         </div>
                         <div className="flex-1 text-white">
-                            <h4 className="font-semibold text-base leading-tight">Shine&Go</h4>
-                            <p className="text-green-100 text-[11px] font-medium leading-tight opacity-90">
-                                En ligne • Répond en &lt; 5 min
+                            <h4 className="font-semibold text-base leading-tight">Nathan - Shine&Go</h4>
+                            <p className="text-green-100 text-[11px] font-medium leading-tight opacity-90 flex items-center gap-1">
+                                <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                                {isBusinessHours ? "En ligne • Répond en 2 min" : "Répond demain matin"}
                             </p>
                         </div>
                         <button
@@ -159,12 +164,18 @@ export default function WhatsAppWidget() {
 
                     {/* Big CTA with Call Option */}
                     <div className="bg-white dark:bg-slate-800 p-3 pt-2 border-t border-gray-100 dark:border-gray-700 relative z-20 space-y-3">
+                        {/* Urgency badge */}
+                        <div className="flex items-center justify-center gap-2 text-[11px] text-amber-700 bg-amber-50 py-1.5 px-3 rounded-lg">
+                            <Clock className="w-3 h-3" />
+                            <span className="font-medium">Devis gratuit en 2 min • Dès 80€</span>
+                        </div>
+
                         <button
                             onClick={handleSendMessage}
-                            className="w-full py-3 bg-[#25D366] hover:bg-[#1fa851] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-green-500/20 active:scale-[0.98]"
+                            className="w-full py-3.5 bg-[#25D366] hover:bg-[#1fa851] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-green-500/20 active:scale-[0.98]"
                         >
                             <MessageCircle className="w-5 h-5" />
-                            Démarrer la discussion
+                            Demander mon devis gratuit
                         </button>
 
                         {/* Alternative Call Option */}
@@ -193,7 +204,7 @@ export default function WhatsAppWidget() {
                         <div className="bg-white dark:bg-slate-900 px-5 py-2.5 rounded-full shadow-lg border border-gray-100 dark:border-gray-800 relative transition-transform group-hover:-translate-x-1">
                             <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 whitespace-nowrap flex items-center gap-2">
                                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                                Un devis en 2 min ?
+                                Devis gratuit en 2 min 💬
                             </p>
                         </div>
                     </div>
