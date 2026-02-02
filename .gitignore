@@ -42,3 +42,9 @@ next-env.d.ts
 
 # scripts and templates (not compiled by Next.js)
 /scripts/
+
+# Google Search Console exports
+/GSC/
+
+# Temporary HTML files
+public/*.html
