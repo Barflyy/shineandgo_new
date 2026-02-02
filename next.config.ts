@@ -350,6 +350,49 @@ const nextConfig: NextConfig = {
         destination: '/lavage-voiture-:city',
         permanent: true,
       },
+
+      // 6. REDIRECTIONS BLOG (Suppression du blog)
+      {
+        source: '/blog/renovation-interieur-voiture',
+        destination: '/lavage-interieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/blog/nettoyage-interieur-voiture-guide-complet',
+        destination: '/lavage-interieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/blog/detailing-voiture-prix-belgique',
+        destination: '/prix-lavage-voiture-domicile',
+        permanent: true,
+      },
+      {
+        source: '/blog/nettoyage-siege-voiture-professionnel',
+        destination: '/lavage-interieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/blog/protection-ceramique-voiture-avis',
+        destination: '/lavage-exterieur-voiture',
+        permanent: true,
+      },
+      {
+        source: '/blog/preparer-voiture-controle-technique',
+        destination: '/lavage-complet-voiture',
+        permanent: true,
+      },
+      // Catch-all pour les autres articles de blog vers l'accueil
+      {
+        source: '/blog/:slug*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };

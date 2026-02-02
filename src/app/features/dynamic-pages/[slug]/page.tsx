@@ -89,7 +89,7 @@ export default function DynamicPage({ params }: { params: Promise<{ slug: string
   }, [slug]);
 
   const handleBooking = () => {
-    window.open('https://calendly.com/nathangodfroid/lavage-voiture-shine-go', '_blank', 'noopener,noreferrer');
+    window.open('https://wa.me/32472303701?text=Bonjour Nathan ! Je souhaite réserver un lavage voiture. 🚗', '_blank', 'noopener,noreferrer');
   };
 
   // Affichage de chargement
